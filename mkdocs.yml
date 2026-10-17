@@ -59,5 +59,11 @@ nav:
   - 首页: index.md
   - 观测指南:
       - 专栏概述: topic1/index.md
+      - 金星：地球姊妹星，为何是西升东落的地狱？: topic1/venus.md
+      - 水星离太阳最近，为何不是最热行星？: topic1/mercury.md
+      - 火星为什么被定为人类星际探索的下一站？: topic1/mars.md
   - 宇宙奇观:
       - 专栏概述: topic2/index.md
+      - 冥王星比月球还小，当年凭什么是第九大行星？: topic2/pluto.md
+      - 木星体积能装1300个地球，为何被称作地球守护神？: topic2/jupiter.md
+      - 土星环宽达28万公里，为什么却只有几十米厚？: topic2/saturn.md
