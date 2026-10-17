@@ -39,6 +39,7 @@ theme:
 
 # ---- Markdown 扩展（科普类文章常用） ----
 markdown_extensions:
+  - meta                              # YAML frontmatter 支持（blog-pipeline 生成文章的头部元数据）
   - admonition                        # 提示框：!!! note / tip / warning
   - attr_list                         # 给元素加 class（首页专栏卡片用到）
   - md_in_html                        # 在 HTML 块中写 Markdown（首页专栏卡片用到）
@@ -53,9 +54,10 @@ plugins:
   - search
 
 # ---- 导航结构（多级） ----
+# 注意：blog-pipeline 的 publisher.py 会按缩进向本 nav 追加文章条目（幂等，slug 去重）
 nav:
   - 首页: index.md
-  - 专题一:
+  - 观测指南:
       - 专栏概述: topic1/index.md
-  - 专题二:
+  - 宇宙奇观:
       - 专栏概述: topic2/index.md
