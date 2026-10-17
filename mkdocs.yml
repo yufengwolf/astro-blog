@@ -4,10 +4,10 @@
 # ============================================================
 
 # ---- 站点基本信息（按需修改） ----
-site_name: 站点名称
-site_description: 站点的一句话描述
-site_author: 作者名
-site_url: https://your-site.pages.dev/
+site_name: 星野笔记
+site_description: 通俗有趣的天文科普，一起仰望星空
+site_author: 御风研墨
+site_url: https://astro-blog-eqt.pages.dev/
 
 # ---- 主题 ----
 theme:
