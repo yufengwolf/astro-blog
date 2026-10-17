@@ -1,0 +1,61 @@
+# ============================================================
+# MkDocs + Material 博客骨架配置
+# 套用为新站点时：只需修改下方 site_* 四项与 nav 栏目名
+# ============================================================
+
+# ---- 站点基本信息（按需修改） ----
+site_name: 站点名称
+site_description: 站点的一句话描述
+site_author: 作者名
+site_url: https://your-site.pages.dev/
+
+# ---- 主题 ----
+theme:
+  name: material
+  language: zh
+
+  # 浅色 / 深色双主题切换
+  palette:
+    - scheme: default                 # 浅色
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换深色模式
+    - scheme: slate                   # 深色
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换浅色模式
+
+  # 侧边栏多级导航 / 站内搜索 / 体验特性
+  features:
+    - navigation.sections              # 侧边栏按章节分组（多级导航）
+    - navigation.top                   # 返回顶部按钮
+    - search.suggest                   # 搜索输入建议
+    - search.highlight                 # 搜索结果关键词高亮
+    - content.code.copy                # 代码块一键复制
+
+# ---- Markdown 扩展（科普类文章常用） ----
+markdown_extensions:
+  - admonition                        # 提示框：!!! note / tip / warning
+  - attr_list                         # 给元素加 class（首页专栏卡片用到）
+  - md_in_html                        # 在 HTML 块中写 Markdown（首页专栏卡片用到）
+  - pymdownx.details                  # 折叠块：??? 语法
+  - pymdownx.superfences              # 代码块增强
+  - toc:
+      permalink: true                 # 标题右侧锚点链接
+
+# ---- 插件：仅保留内置搜索 ----
+# 中文站如需改善分词，可安装 jieba 后配置 lang: zh
+plugins:
+  - search
+
+# ---- 导航结构（多级） ----
+nav:
+  - 首页: index.md
+  - 专题一:
+      - 专栏概述: topic1/index.md
+  - 专题二:
+      - 专栏概述: topic2/index.md

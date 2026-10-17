@@ -1,0 +1,16 @@
+# MkDocs 构建产物（Cloudflare Pages 服务器上构建，不进仓库）
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 本地敏感配置（如流水线接入后产生）
+config.json
+*.local
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
+desktop.ini
