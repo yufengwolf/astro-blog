@@ -61,7 +61,7 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/太阳.webp"
+      "image": "assets/planets/sun.webp"
     },
     {
       "id": "mercury",
@@ -106,7 +106,7 @@
       ],
       "verified": "2026-10-18",
       "article": "mercury",
-      "image": "assets/planets/水星.webp"
+      "image": "assets/planets/mercury.webp"
     },
     {
       "id": "venus",
@@ -151,7 +151,7 @@
       ],
       "verified": "2026-10-18",
       "article": "venus",
-      "image": "assets/planets/金星.webp"
+      "image": "assets/planets/venus.webp"
     },
     {
       "id": "earth",
@@ -199,7 +199,7 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/地球.webp"
+      "image": "assets/planets/earth.webp"
     },
     {
       "id": "mars",
@@ -247,7 +247,7 @@
       ],
       "verified": "2026-10-18",
       "article": "mars",
-      "image": "assets/planets/火星.webp"
+      "image": "assets/planets/mars.webp"
     },
     {
       "id": "jupiter",
@@ -297,7 +297,7 @@
       ],
       "verified": "2026-10-18",
       "article": "jupiter",
-      "image": "assets/planets/木星.webp"
+      "image": "assets/planets/jupiter.webp"
     },
     {
       "id": "saturn",
@@ -489,7 +489,7 @@
       ],
       "verified": "2026-10-18",
       "article": "pluto",
-      "image": "assets/planets/冥王星.webp"
+      "image": "assets/planets/pluto.webp"
     },
     {
       "id": "ceres",
@@ -579,7 +579,7 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/月球.webp"
+      "image": "assets/planets/moon.webp"
     },
     {
       "id": "phobos",

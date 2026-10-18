@@ -11,14 +11,16 @@
 ├─ articles/             # 科普文章源（不在 docs/ 内，不单独建页，合成进详情页）
 ├─ scripts/
 │  ├─ lint_data.py       # 数据 lint：结构+派生量+已知事实校验（不过则阻断）
-│  └─ gen_pages.py       # 页面生成器：astro.json → 首页/详情页/总表/数据集页/CSV
+│  ├─ gen_pages.py       # 页面生成器：astro.json → 首页/详情页/总表/数据集页/CSV
+│  └─ test_compare.js    # 对比功能回归测试（Node + DOM stub，31 项断言）
 └─ docs/
    ├─ index.md           # 【生成】天体总览工具页（勿手改）
    ├─ objects/           # 【生成】32 个天体详情页 + index.md 总表（勿手改）
-   ├─ data.md            # 【生成】数据集下载页（勿手改）
+   ├─ data.md            # 【生成】数据集下载页（勿手改；不挂导航，仅 URL/sitemap 可达）
    ├─ data/astro.json    # 天体数据库（唯一事实源，手维护）
    ├─ data/astro_flat.csv# 【生成】扁平 CSV
    ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）
+   ├─ js/astro-compare.js# 详情页多天体对比
    ├─ stylesheets/extra.css
    └─ assets/            # 图片：文章配图 + assets/planets/*.webp 星球贴图
 ```
@@ -40,10 +42,26 @@ mkdocs build --strict
 
 ### 发布一篇科普文章
 
-1. 文章写入仓库根 `articles/<slug>.md`（文内 H1 会成为详情页「延伸阅读」标题）
+1. 文章写入仓库根 `articles/<slug>.md`（文内 H1 或 frontmatter `title` 会成为详情页「延伸阅读」标题）
 2. 在 `docs/data/astro.json` 对应天体的 `article` 字段填 `<slug>`
 3. 跑 `python scripts/gen_pages.py`，文章自动合成进该天体详情页，并登记到底部「相关文章」区块
 4. 配图放 `docs/assets/`，文中相对路径写 `../assets/xxx.jpg`
+
+### 天体对比（详情页）
+
+每个详情页有「⚖ 与其他天体对比」按钮：搜索数据库内任意天体（可多选，上限 5 列），
+逐参数对比（含"质量/半径（地球=1）"派生行）；对比组合同步到 URL hash
+（`#compare=earth,moon`），刷新/分享保持。改 `astro-compare.js` 或生成器后跑回归测试：
+
+```bash
+node scripts/test_compare.js   # 31 项断言：渲染/增删/hash/上限/格式化一致性
+```
+
+### 数据集页策略
+
+`data.md`（数据集下载）**不挂导航、界面无入口**，仅经 URL 直达与 sitemap 收录，
+人类访客在界面上看不到下载链接；`astro.json` 同时以精简形式内嵌在每个详情页中
+供对比功能使用。
 
 ### 本地预览
 

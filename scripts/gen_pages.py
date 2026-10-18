@@ -195,8 +195,8 @@ def build_index(data):
         if cats.get(key):
             L.append(f'    <span class="astro-stat"><b>{cats[key]}</b> {CAT_ZH[key]}</span>')
     L.append("  </p>")
-    L.append(f'  <p class="astro-hero-links"><a href="data/">下载数据集</a>'
-             f'<span class="sep">·</span><a href="#articles">科普文章</a></p>')
+    L.append(f'  <p class="astro-hero-links"><a href="#articles">科普文章</a>'
+             f'<span class="sep">·</span><a href="objects/">天体库总表</a></p>')
     L.append("</div>")
     L.append("")
     L.append('<div class="astro-toolbar">')
@@ -265,7 +265,6 @@ def build_index(data):
     L.append("  <h2>数据说明</h2>")
     L.append(f'  <p>全部数值整理自 NASA 公开资料（公共领域），每个天体页面均标注来源与核对日期（最近核对：{meta["updated"]}）。'
              f'发现数据错误？欢迎到 <a href="{REPO_URL}/issues">GitHub Issues</a> 反馈。</p>')
-    L.append(f'  <p><a href="data/">下载完整数据集（JSON / CSV）</a></p>')
     L.append("</section>")
     L.append("")
     return "\n".join(L)
@@ -282,7 +281,7 @@ def build_object_index(data):
     L.append("# 天体库")
     L.append("")
     L.append(f"本站收录的全部 {len(objs)} 个天体。点击名称进入详情页（完整数据 + 科普文章）；"
-             f"数值的含义与单位见[数据集字段说明](../data.md#字段说明)。")
+             f"需要筛选排序？回到<a href=\"../\">天体总览工具页</a>。")
     L.append("")
     L.append("| 天体 | 分类 | 母天体 | 质量 | 平均半径 | 密度 | 均温 | 轨道周期 | 卫星数 |")
     L.append("|---|---|---|---|---|---|---|---|---|")
@@ -301,9 +300,67 @@ def build_object_index(data):
             moons=dash((o.get("moons") or {}).get("count")),
         ))
     L.append("")
+    L.append('<details class="obj-fields">')
+    L.append("<summary>字段说明（质量 kg · 半径 km · 密度 g/cm³ · 温度 °C · 半长轴 km · 周期 天 · 卫星数 颗）</summary>")
+    L.append("")
+    L.append("| 字段 | 含义 | 单位 |")
+    L.append("|---|---|---|")
+    L.append("| mass_kg | 质量 | kg |")
+    L.append("| radius_km | 平均半径 | km |")
+    L.append("| density_g_cm3 | 平均密度 | g/cm³ |")
+    L.append("| mean_temp_c | 平均表面温度 | °C |")
+    L.append("| semimajor_axis_km | 轨道半长轴 | km |")
+    L.append("| orbital_period_days | 轨道周期 | 天 |")
+    L.append("| moons.count | 已确认卫星数 | 颗 |")
+    L.append("")
+    L.append("</details>")
+    L.append("")
     L.append('<p class="obj-nav">需要筛选排序？回到<a href="../">天体总览工具页</a>。</p>')
     L.append("")
     return "\n".join(L)
+
+
+def compare_payload(objs):
+    """详情页内嵌的精简对比数据（全量天体核心数值，供 astro-compare.js 本地渲染，无网络请求）。"""
+    rows = []
+    for o in objs:
+        ph, orb = o.get("physical") or {}, o.get("orbit") or {}
+        rows.append({
+            "id": o["id"], "name": o["name"], "en": o["name_en"],
+            "cat": CAT_ZH[o["category"]], "cat_key": o["category"],
+            "parent": o.get("parent"),
+            "mass": ph.get("mass_kg"), "radius": ph.get("radius_km"),
+            "density": ph.get("density_g_cm3"), "gravity": ph.get("gravity_m_s2"),
+            "escape": ph.get("escape_velocity_km_s"), "temp": ph.get("mean_temp_c"),
+            "pressure": ph.get("surface_pressure_bar"),
+            "rotation": orb.get("rotation_period_hours"),
+            "axis": orb.get("semimajor_axis_km"), "period": orb.get("orbital_period_days"),
+            "velocity": orb.get("orbital_velocity_km_s"),
+            "moons": (o.get("moons") or {}).get("count"),
+        })
+    return json.dumps({"earth_id": "earth", "rows": rows}, ensure_ascii=False)
+
+
+def compare_block(root, o, objs):
+    """详情页的「天体对比」入口：按钮 + 面板容器 + 内嵌对比数据。"""
+    return "\n".join([
+        '<div class="obj-compare-bar">',
+        '  <button type="button" id="astro-compare-toggle" class="cmp-btn" '
+        'aria-expanded="false" aria-controls="astro-compare">⚖ 与其他天体对比</button>',
+        '  <span class="cmp-hint">从数据库中任选天体（可多选）逐参数对比，链接可分享</span>',
+        '</div>',
+        '<section class="obj-compare" id="astro-compare" hidden '
+        f'data-current="{o["id"]}">',
+        '  <div class="cmp-picker">',
+        '    <input type="search" id="cmp-search" placeholder="搜索要对比的天体（中/英文）…" '
+        'aria-label="搜索对比天体">',
+        '    <ul class="cmp-results" id="cmp-results" hidden></ul>',
+        '  </div>',
+        '  <div class="cmp-table-wrap"><table class="cmp-table" id="cmp-table"></table></div>',
+        '  <p class="cmp-note">对比在该页本地完成；点击列标题旁的 × 可移除该天体。</p>',
+        '</section>',
+        f'<script type="application/json" id="astro-compare-data">{compare_payload(objs)}</script>',
+    ])
 
 
 def build_object(root, o, by_id, order):
@@ -339,6 +396,8 @@ def build_object(root, o, by_id, order):
                  f' · 分类：{CAT_ZH[cat]}</p>')
     else:
         L.append(f'<p class="obj-parent">分类：{CAT_ZH[cat]}</p>')
+    L.append("")
+    L.append(compare_block(root, o, list(by_id.values())))
     L.append("")
 
     L.append("## 物理参数")

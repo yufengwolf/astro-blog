@@ -366,6 +366,179 @@
   margin: 0.3rem 0;
 }
 
+/* ---------- 天体对比（详情页） ---------- */
+.obj-compare-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1rem;
+}
+.cmp-btn {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid var(--md-primary-fg-color);
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+.cmp-btn:hover { opacity: 0.88; }
+.cmp-hint {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+.obj-compare {
+  margin: 0 0 1.4rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 22%, transparent);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent);
+}
+.cmp-picker { position: relative; max-width: 26rem; }
+.cmp-picker #cmp-search {
+  width: 100%;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.cmp-picker #cmp-search:focus {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 1px;
+}
+.cmp-results {
+  position: absolute;
+  top: calc(100% + 0.3rem);
+  left: 0;
+  right: 0;
+  z-index: 8;
+  max-height: 16rem;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
+}
+.cmp-results li button {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.42rem 0.7rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: none;
+  color: var(--md-default-fg-color);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+.cmp-results li button:hover {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
+}
+.cmp-results .cmp-en {
+  font-size: 0.76rem;
+  color: var(--md-default-fg-color--light);
+}
+.cmp-results .cmp-none {
+  padding: 0.5rem 0.7rem;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+.cmp-table-wrap {
+  margin-top: 0.9rem;
+  overflow-x: auto;
+  border-radius: 0.7rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  background: var(--md-default-bg-color);
+}
+.cmp-table th, .cmp-table td {
+  padding: 0.42rem 0.8rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  text-align: right;
+  white-space: nowrap;
+}
+.cmp-table thead th {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 7%, var(--md-default-bg-color));
+  font-size: 0.9rem;
+  text-align: right;
+}
+.cmp-table .cmp-param {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-default-bg-color);
+}
+.cmp-table thead .cmp-param { z-index: 2; }
+.cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-table .cmp-current {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 9%, transparent);
+}
+.cmp-table thead .cmp-current {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 14%, var(--md-default-bg-color));
+}
+.cmp-table .cmp-col a { color: var(--md-primary-fg-color); text-decoration: none; }
+.cmp-table .cmp-col .cmp-en {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+}
+.cmp-remove {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0 0.3rem;
+  border: none;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.cmp-remove:hover {
+  background: color-mix(in srgb, #d66 22%, transparent);
+  color: #d33;
+}
+.cmp-note {
+  margin: 0.7rem 0 0;
+  font-size: 0.76rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ---------- 天体库字段说明折叠 ---------- */
+.obj-fields {
+  margin: 1.2rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.85rem;
+}
+.obj-fields summary {
+  cursor: pointer;
+  color: var(--md-default-fg-color--light);
+}
+.obj-fields table { font-size: 0.8rem; }
+
 /* ---------- 数据集页 ---------- */
 .dl-cards {
   display: grid;
@@ -390,4 +563,7 @@
   .astro-toolbar { position: static; }
   .obj-hero { justify-content: center; text-align: center; }
   .obj-keystats { justify-content: center; }
+  .cmp-picker { max-width: none; }
+  .cmp-table { font-size: 0.78rem; }
+  .cmp-table th, .cmp-table td { padding: 0.35rem 0.55rem; }
 }
