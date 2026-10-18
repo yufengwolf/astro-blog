@@ -139,7 +139,13 @@ def parse_tables(html: str) -> list[list[list[str]]]:
 
 
 def parse_pres(html: str) -> list[list[str]]:
-    """HTML → <pre> 块列表，每块 = 清洗后的非空行。"""
+    """HTML → <pre> 块列表，每块 = 清洗后的非空行。
+
+    行内连续空白必须保留：NSSDC 的 <pre> 行靠多空格对齐标签与值
+    （"Mass (10^24 kg)    5.9722"），parse_kv_line 依赖 \\s{2,} 切分。
+    早期版本在此压缩为单空格，导致整节丢弃（earthfact 的 Bulk/Orbital
+    全丢——见 test_fetch_astro.py 的回归用例）。
+    """
     blocks = []
     for m in _PRE_RE.findall(html):
         text = m
@@ -147,7 +153,7 @@ def parse_pres(html: str) -> list[list[str]]:
             text = text.replace(k, v)
         text = re.sub(r"<sup>(.*?)</sup>", r"^\1", text, flags=re.S | re.I)
         text = re.sub(r"<[^>]+>", "", text)
-        lines = [re.sub(r"\s+", " ", ln).strip() for ln in text.splitlines()]
+        lines = [ln.strip() for ln in text.splitlines()]
         blocks.append([ln for ln in lines if ln])
     return blocks
 
@@ -384,13 +390,24 @@ def apply_label(store: dict, label: str, raw: str, where: str) -> None:
 
 
 def parse_kv_line(line: str) -> tuple[str, str] | None:
-    """<pre> 行 → (标签, 值)。支持 'Label   value' 与 'Label: value' 两种形态。"""
+    """<pre> 行 → (标签, 值)。按优先级尝试三种形态：
+
+    1. 'Label: value'            冒号分隔（少数页面用）
+    2. 'Label   value'           多空格对齐（NSSDC <pre> 标准形态）
+    3. 'Label value'             单空格分隔的兜底：从行尾抓最后一个
+                                 token，仅当它是数值（可带 <>~ 前缀）
+                                 或 Yes/No 时才切分
+    """
     m = re.match(r"^([A-Za-z][^:]{1,60}?)\s*:\s*(\S.*)$", line)
     if m:
         return m.group(1).strip(), m.group(2).strip()
     parts = re.split(r"\s{2,}", line.strip())
     if len(parts) >= 2:
         return parts[0].strip(), " ".join(parts[1:]).strip()
+    # 兜底：尾部 token 是数值或 Yes/No 才切（如 "Planetary ring system No"）
+    m = re.match(r"^(.{1,60}?)\s+([+-]?(?:\d{1,3}(?:,\d{3})+|\d+)?(?:\.\d+)?(?:[eE][+-]?\d+)?|[Yy]es|[Nn]o)$", line.strip())
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
     return None
 
 

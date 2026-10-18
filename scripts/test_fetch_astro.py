@@ -10,7 +10,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_astro_data import (  # noqa: E402
-    FIELDS, SPECS, Spec, apply_label, convert, parse_kv_line, parse_value, triaxial_mean,
+    FIELDS, SPECS, Spec, apply_label, convert, extract_planet_page,
+    parse_kv_line, parse_pres, parse_value, triaxial_mean,
 )
 
 
@@ -85,7 +86,7 @@ class TestConvert(unittest.TestCase):
         self.assertAlmostEqual(v, -2.75)
 
     def test_temp_surface_range(self):
-        spec = Spec("mean_temp_c_surf", r"^surface temperature", "tempRange")
+        spec = Spec("mean_temp_c_surface", r"^surface temperature", "tempRange")
         v, note = convert(spec, parse_value("24 - 38 K (-247 - -233 C)"),
                           "Surface temperature")
         self.assertAlmostEqual(v, -242.15)
@@ -171,6 +172,64 @@ class TestApplyLabel(unittest.TestCase):
         v = triaxial_mean("1821.5")
         self.assertEqual(v.value, 1821.5)
         self.assertIsNone(v.flag)
+
+
+class TestNSSDCPreParsing(unittest.TestCase):
+    """NSSDC <pre> 行的空白处理——2026-10-18 修复的整节丢弃 bug 回归锁。
+
+    历史教训：parse_pres 曾把行内连续空白压缩成单空格，而 parse_kv_line
+    依赖 \\s{2,} 切分标签与值，导致 earthfact（唯一纯 pre 格式行星页）的
+    Bulk parameters 23 行 + Orbital parameters 14 行整节丢弃——earth 的
+    质量/半径/反照率等字段从未参与任何一轮源核对。
+    """
+
+    def test_multispace_alignment_preserved(self):
+        # parse_pres 不得压缩行内空白（NSSDC 靠多空格对齐）
+        html = "<pre>Mass (10^24 kg)    5.9722\nGeometric albedo 0.434</pre>"
+        blocks = parse_pres(html)
+        self.assertEqual(len(blocks), 1)
+        self.assertIn("Mass (10^24 kg)    5.9722", blocks[0])
+        self.assertEqual(parse_kv_line(blocks[0][0]), ("Mass (10^24 kg)", "5.9722"))
+
+    def test_kv_line_real_nssdc_rows(self):
+        # earthfact Bulk parameters 真实行
+        self.assertEqual(parse_kv_line("Volumetric mean radius (km) 6371.000"),
+                         ("Volumetric mean radius (km)", "6371.000"))
+        self.assertEqual(parse_kv_line("Bond albedo                 0.294"),
+                         ("Bond albedo", "0.294"))
+        self.assertEqual(parse_kv_line("Number of natural satellites 1"),
+                         ("Number of natural satellites", "1"))
+        self.assertEqual(parse_kv_line("Planetary ring system        No"),
+                         ("Planetary ring system", "No"))
+
+    def test_kv_line_tail_fallback(self):
+        # 单空格分隔的兜底形态：尾部 token 是数值或 Yes/No 才切
+        self.assertEqual(parse_kv_line("Escape velocity (km/s) 11.186"),
+                         ("Escape velocity (km/s)", "11.186"))
+        self.assertEqual(parse_kv_line("GM (x 10^6 km^3/s^2) 0.39860"),
+                         ("GM (x 10^6 km^3/s^2)", "0.39860"))
+
+    def test_prose_lines_not_parsed(self):
+        # 注释/脚注/说明文本不得误切出 kv（尾部无数值）
+        for line in ("Model GSFC-1283",
+                     "Numbers do not add up to exactly 100% due to roundoff",
+                     "Atmospheric composition (by volume, dry air):",
+                     "* These represent mean apogee and perigee for the lunar orbit,"):
+            self.assertIsNone(parse_kv_line(line), line)
+
+    def test_earthfact_bulk_extracted_end_to_end(self):
+        # 端到端：缓存里的 earthfact Bulk 节必须抽出反照率双口径
+        cache = Path(__file__).resolve().parent / ".cache" / "fetch" / "nssdc" / "earthfact.html"
+        if not cache.exists():
+            self.skipTest("无 NSSDC 缓存（先跑一次联网抓取）")
+        html = cache.read_text(encoding="utf-8", errors="replace")
+        store = extract_planet_page(html, "earth")
+        self.assertIn("albedo_bond", store, "earthfact Bond albedo 未抽出（空白 bug 复发？）")
+        self.assertIn("albedo_geometric", store)
+        self.assertAlmostEqual(store["albedo_bond"][0], 0.294)
+        self.assertAlmostEqual(store["albedo_geometric"][0], 0.434)
+        self.assertIn("mass_kg", store)
+        self.assertAlmostEqual(store["mass_kg"][0], 5.9722e24)
 
 
 class TestSchemaConsistency(unittest.TestCase):
