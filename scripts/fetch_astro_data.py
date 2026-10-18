@@ -13,15 +13,21 @@
 - JPL SBDB API（ssd-api.jpl.nasa.gov，免 key）：谷神星等小天体，冥王星交叉校验
 
 用法：
-  python scripts/fetch_astro_data.py                  # 全量拉取 + diff 报告
+  python scripts/fetch_astro_data.py                       # 全量拉取 + diff 报告
+  python scripts/fetch_astro_data.py status                # 零网络本地体检（先看这个）
+  python scripts/fetch_astro_data.py --objects mars,moon   # 针对性拉取（只拉对应源页）
+  python scripts/fetch_astro_data.py --propose eris        # 为库外对象生成候选骨架
   python scripts/fetch_astro_data.py --source nssdc   # 只跑指定源（nssdc / sbdb，可逗号分隔）
   python scripts/fetch_astro_data.py --offline        # 不联网，用缓存原始数据
   python scripts/fetch_astro_data.py --tolerance 1.0  # 显著差异的相对阈值（%）
   python scripts/fetch_astro_data.py --verbose        # 打印每个对象抽取到的原始值
 
+工作节奏建议：status 看清现状 → --objects 针对性拉取 → 审报告 → 手动合库。
+
 产物：
   reports/astro_fetch_<时间戳>.md   变更报告（人读）
   reports/astro_fetch_latest.md     最新报告副本
+  reports/propose_<id>.json         库外对象候选骨架（--propose）
   scripts/.cache/fetch/<源>/...     原始响应缓存
 
 退出码：0 无显著差异；1 有显著差异；2 抓取或解析失败
@@ -36,7 +42,7 @@ import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -272,12 +278,12 @@ SPECS = [
     Spec("inclination_deg", r"inclination.*ecliptic", "raw", prio=10),
     Spec("inclination_deg", r"inclination", "raw"),
     Spec("eccentricity", r"eccentricity", "raw"),
-    Spec("albedo", r"geometric albedo", "raw", note="geometric"),
+    Spec("albedo_geometric", r"geometric albedo", "raw", note="geometric"),
     Spec("albedo_bond", r"bond albedo", "raw", note="bond"),
     Spec("mean_temp_c", r"average temperature", "tempC", note="mean"),
     Spec("mean_temp_c", r"effective temperature", "tempK", note="effective"),
     Spec("mean_temp_c_bb", r"black-?body temperature", "tempK", note="black-body"),
-    Spec("mean_temp_c_surf", r"^surface temperature", "tempRange", note="surface-range"),
+    Spec("mean_temp_c_surface", r"^surface temperature", "tempRange", note="surface-range"),
     Spec("surface_pressure_bar", r"surface pressure", "pressure"),
     Spec("gravity_m_s2", r"gravity", "raw"),
     Spec("gm_km3_s2", r"^gm\b", "gm"),
@@ -430,7 +436,7 @@ SAT_HEADER_SPECS = [  # 卫星表表头关键词 → (字段, 换算)
     (r"mass", "mass_kg", "mass"),
     (r"radius", "radius_km", "radius"),
     (r"mean density", "density_g_cm3", "dens"),
-    (r"albedo", "albedo", "raw"),
+    (r"albedo", "albedo_geometric", "raw"),
     (r"semi-?major axis.*km", "semimajor_axis_km", "axis"),
     (r"orbital\s*period", "orbital_period_days", "days"),
     (r"rotation\s*period", "rotation_period_hours", "rot"),
@@ -518,9 +524,14 @@ def extract_mars_satellites(html: str, objs: dict) -> None:
                         sum(vals) / len(vals), "三轴均值", 0, "Satellites of Mars", "range", "raw")
 
 
-def extract_sat_page(html: str, page: str, objs: dict) -> None:
-    """卫星参数页：表头驱动的 Bulk / Orbital 两张表，行 = 卫星。"""
+def extract_sat_page(html: str, page: str, objs: dict, only: set[str] | None = None) -> None:
+    """卫星参数页：表头驱动的 Bulk / Orbital 两张表，行 = 卫星。
+    only：限定只保留这些本站对象 id（--objects 精准拉取用）。"""
     wanted = SAT_PAGE_MOONS[page]
+    if only:
+        wanted = {k: v for k, v in wanted.items() if v in only}
+        if not wanted:
+            return
     for title, content in split_sections(html):
         for tbl in parse_tables(content):
             if len(tbl) < 2:
@@ -568,11 +579,18 @@ def extract_sat_page(html: str, page: str, objs: dict) -> None:
                     per[0] * 24.0, "同步自转（= 轨道周期）", 0, "sat page", None, "rot")
 
 
-def fetch_nssdc(offline: bool) -> tuple[dict, list[str]]:
-    """抓取并解析全部 NSSDC 页面。返回 (对象→字段store, 页面 Last Updated 列表)。"""
+def fetch_nssdc(offline: bool, only_pages: set[str] | None = None,
+                only_objs: set[str] | None = None) -> tuple[dict, list[str]]:
+    """抓取并解析 NSSDC 页面。返回 (对象→字段store, 页面 Last Updated 列表)。
+    only_pages：限定页面；only_objs：限定对象（卫星页内过滤，火星页过滤火卫）。
+    两者为 None 时全量。缓存命中时不会重新发起网络请求。"""
     objs: dict = {}
     dates = []
     for page, (oid, role) in NSSDC_PAGES.items():
+        if only_pages and page not in only_pages:
+            continue
+        if only_objs and role != "sat" and oid not in only_objs:
+            continue
         url = NSSDC_BASE + page + ".html"
         try:
             html = fetch_cached("nssdc", page + ".html", url, offline)
@@ -588,12 +606,14 @@ def fetch_nssdc(offline: bool) -> tuple[dict, list[str]]:
             if oid and store:
                 objs[oid] = store
         elif role == "mars":
-            store = extract_planet_page(html, role)
-            if store:
-                objs["mars"] = store
-            extract_mars_satellites(html, objs)
+            if not only_objs or "mars" in only_objs:
+                store = extract_planet_page(html, role)
+                if store:
+                    objs["mars"] = store
+            if not only_objs or only_objs & {"phobos", "deimos"}:
+                extract_mars_satellites(html, objs)
         elif role == "sat":
-            extract_sat_page(html, page, objs)
+            extract_sat_page(html, page, objs, only_objs)
         print(f"  NSSDC {page}.html ✓" + (f"（{m.group(1).strip()}）" if m else ""))
     return objs, dates
 
@@ -605,10 +625,12 @@ def fetch_nssdc(offline: bool) -> tuple[dict, list[str]]:
 SBDB_OBJECTS = ["ceres", "pluto", "makemake", "haumea", "eris"]
 
 
-def fetch_sbdb(offline: bool) -> tuple[dict, list[str]]:
+def fetch_sbdb(offline: bool, only_objs: set[str] | None = None) -> tuple[dict, list[str]]:
     objs: dict = {}
     notes = []
     for sstr in SBDB_OBJECTS:
+        if only_objs and sstr not in only_objs:
+            continue
         url = f"{SBDB_URL}?sstr={sstr}&phys-par=1&full-prec=1"
         try:
             text = fetch_cached("sbdb", sstr + ".json", url, offline)
@@ -636,7 +658,7 @@ def fetch_sbdb(offline: bool) -> tuple[dict, list[str]]:
             elif name == "rot_per":
                 store["rotation_period_hours"] = (val.value, "SBDB", 0, "sbdb", None, "raw")
             elif name == "albedo":
-                store["albedo"] = (val.value, "SBDB", 0, "sbdb", None, "raw")
+                store["albedo_geometric"] = (val.value, "SBDB", 0, "sbdb", None, "raw")
         for e in d.get("orbit", {}).get("elements", []):
             name, raw = e.get("name", ""), e.get("value")
             if raw is None:
@@ -671,9 +693,10 @@ FIELDS = [
     ("physical.escape_velocity_km_s", "逃逸速度 (km/s)", "abs"),
     ("physical.albedo", "反照率", "abs"),
     ("physical.albedo_bond", "反照率(Bond)", "abs"),
+    ("physical.albedo_geometric", "反照率(Geometric)", "abs"),
     ("physical.mean_temp_c", "平均温度 (°C)", "abs"),
     ("physical.mean_temp_c_bb", "平均温度 (°C, black-body 口径)", "abs"),
-    ("physical.mean_temp_c_surf", "平均温度 (°C, 表面口径)", "abs"),
+    ("physical.mean_temp_c_surface", "平均温度 (°C, 表面口径)", "abs"),
     ("physical.surface_pressure_bar", "表面气压 (bar)", "rel"),
     ("orbit.semimajor_axis_km", "半长轴 (km)", "abs"),
     ("orbit.orbital_period_days", "轨道周期 (天)", "abs"),
@@ -743,18 +766,8 @@ def compare(astro: dict, fetched: dict, tol_pct: float) -> list[dict]:
                 verdict = "微小差异"
             else:
                 verdict = "显著差异"
-            # 反照率双口径：NSSDC 同时给 Bond 与 Geometric，本站历史上混用。
-            # 若另一口径与现值一致，改判一致并说明本站取的是哪个口径。
-            if path in ("physical.albedo", "physical.albedo_bond") and verdict != "一致":
-                cp_key = "albedo_bond" if path == "physical.albedo" else "albedo"
-                cp = store.get(cp_key)
-                if cp and cp[0] is not None and old_v:
-                    cp_rel = abs(cp[0] - old_v) / abs(old_v) * 100
-                    if cp_rel <= tol_pct:
-                        verdict, rel = "一致", cp_rel
-                        new_v = cp[0]
-                        note = (f"本站取 {'Bond' if cp_key == 'albedo_bond' else 'Geometric'} 口径，"
-                                f"与 NSSDC 同口径值一致")
+            # 反照率双口径：NSSDC/SBDB 同时给 Bond 与 Geometric，本站主字段 albedo 为
+            # 合库时选定的展示主值（不参与对比），两个口径字段各自直接对比即可。
             # 自转周期符号约定：本站负值表逆行，源可能只给幅值
             if (path == "orbit.rotation_period_hours" and verdict != "一致"
                     and old_v and new_v and old_v * new_v < 0):
@@ -887,16 +900,199 @@ def write_report(rows: list[dict], astro: dict, fetched: dict,
     return len(sig)
 
 
+# ---------------------------------------------------------------------------
+# status：零网络本地体检
+# ---------------------------------------------------------------------------
+
+CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星", "moon": "卫星"}
+
+
+def status_report(astro: dict) -> int:
+    """零网络本地体检：数据集全景——对象统计 / 字段填充矩阵 / 核对新鲜度 / 收录边界。
+    随时可跑，不发起任何网络请求，用于"心里有数"后再决定针对性拉取什么。"""
+    objs = list(astro.values())
+    cats: dict[str, int] = {}
+    for o in objs:
+        cats[o["category"]] = cats.get(o["category"], 0) + 1
+    print(f"== 数据集总览（{ASTRO_JSON.relative_to(ROOT)}）==")
+    print(f"对象总数 {len(objs)}：" +
+          " / ".join(f"{CAT_ZH.get(k, k)} {v}" for k, v in sorted(cats.items())))
+
+    # 字段填充矩阵：physical/orbit 下库中出现过的全部标量字段
+    keys: dict[str, set[str]] = {"physical": set(), "orbit": set()}
+    for o in objs:
+        for grp in ("physical", "orbit"):
+            for k in (o.get(grp) or {}):
+                keys[grp].add(k)
+    print("\n== 字段填充矩阵（缺失对象清单）==")
+    for grp in ("physical", "orbit"):
+        print(f"[{grp}]")
+        for k in sorted(keys[grp]):
+            miss = [o["id"] for o in objs if (o.get(grp) or {}).get(k) is None]
+            print(f"  {k:26s} {len(objs) - len(miss):2d}/{len(objs)}  "
+                  f"缺失: {', '.join(miss) if miss else '—'}")
+
+    # 每对象核对日期与源版本日期
+    print("\n== 每对象核对新鲜度（verified / 源页面版本）==")
+    today = date.today()
+    stale = []
+    for o in sorted(objs, key=lambda x: x.get("verified") or "9999"):
+        v = o.get("verified") or "—"
+        try:
+            age = (today - date.fromisoformat(v)).days if v != "—" else None
+        except ValueError:
+            age = None
+        sd = o.get("source_dates") or {}
+        src = "; ".join(f"{k.replace('nssdc_', '').replace('fact', '')} {val}"
+                        for k, val in sorted(sd.items())) or "—"
+        if age is not None and age > 365:
+            stale.append((o["id"], age))
+        print(f"  {o['id']:10s} {CAT_ZH.get(o['category'], o['category']):4s} "
+              f"verified={v:10s} {f'({age}天前)' if age is not None else '':8s} 源版本: {src}")
+    if stale:
+        print(f"  ⚠ 超过一年未核对：{', '.join(f'{i}({a}天)' for i, a in stale)}")
+
+    # 收录边界：源有数据但库未收录
+    print("\n== 收录边界（SBDB 有数据、本站未收录）==")
+    extra = [s for s in SBDB_OBJECTS if s not in astro]
+    if extra:
+        print(f"  {', '.join(extra)}：SBDB 仅覆盖约 5 个轨道字段，缺物理参数/贴图/描述——"
+              f"按既定决策维持精选不入队；如要入队：--propose {','.join(extra)}")
+    else:
+        print("  无")
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# propose：为库外对象生成候选 JSON 骨架
+# ---------------------------------------------------------------------------
+
+# 库外对象的元信息（公开史实，非测量数据；入队前仍应人工复核）
+PROPOSE_META = {
+    "eris":     ("阋神星", "Eris", "dwarf_planet", "迈克尔·布朗等", 2005),
+    "haumea":   ("妊神星", "Haumea", "dwarf_planet", "迈克尔·布朗等", 2004),
+    "makemake": ("鸟神星", "Makemake", "dwarf_planet", "迈克尔·布朗等", 2005),
+}
+
+_PROPOSE_PHYS = ["mass_kg", "radius_km", "density_g_cm3", "gravity_m_s2",
+                 "escape_velocity_km_s", "mean_temp_c", "surface_pressure_bar",
+                 "albedo", "albedo_bond", "albedo_geometric",
+                 "mean_temp_c_bb", "mean_temp_c_surface"]
+_PROPOSE_ORBIT = ["semimajor_axis_km", "orbital_period_days", "orbital_velocity_km_s",
+                  "inclination_deg", "eccentricity", "obliquity_deg", "rotation_period_hours"]
+
+
+def propose_objects(astro: dict, names: list[str], offline: bool) -> int:
+    """为库外对象生成候选 JSON 骨架：源（SBDB）能填的填，填不上一律 null——不编造。
+    产物落 reports/propose_<id>.json，人审后粘贴进 astro.json 的 objects 数组。"""
+    today = date.today().isoformat()
+    rc = 0
+    for sstr in names:
+        if sstr in astro:
+            print(f"[skip] {sstr} 已在库中，无需 propose")
+            continue
+        url = f"{SBDB_URL}?sstr={sstr}&phys-par=1&full-prec=1"
+        try:
+            d = json.loads(fetch_cached("sbdb", sstr + ".json", url, offline))
+        except Exception as e:
+            print(f"[error] SBDB {sstr}: {e}", file=sys.stderr)
+            rc = 2
+            continue
+        if "object" not in d:
+            print(f"[error] SBDB {sstr}: SBDB 无匹配对象", file=sys.stderr)
+            rc = 2
+            continue
+        store, _ = fetch_sbdb(offline, {sstr})
+        st = store.get(sstr, {})
+        zh, en, cat, disc, year = PROPOSE_META.get(
+            sstr, (None, sstr.title(), "dwarf_planet", None, None))
+        obj = {
+            "id": sstr,
+            "name": zh or sstr,
+            "name_en": en,
+            "category": cat,
+            "parent": "sun",
+            "tagline": None,
+            "physical": {k: (st[k][0] if k in st and st[k][0] is not None else None)
+                         for k in _PROPOSE_PHYS},
+            "orbit": {k: (st[k][0] if k in st and st[k][0] is not None else None)
+                      for k in _PROPOSE_ORBIT},
+            "moons": {"count": None, "notable": []},
+            "rings": None,
+            "magnetic_field": None,
+            "atmosphere": None,
+            "discovery": {"known_since": None, "discoverer": disc, "year": year},
+            "sources": ["jpl_sbdb"],
+            "source_dates": {},
+            "verified": today,
+            "image": None,
+        }
+        REPORT_DIR.mkdir(exist_ok=True)
+        path = REPORT_DIR / f"propose_{sstr}.json"
+        path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        filled = [k for grp in ("physical", "orbit")
+                  for k, v in obj[grp].items() if v is not None]
+        missing = [k for grp in ("physical", "orbit")
+                   for k, v in obj[grp].items() if v is None]
+        print(f"\n== {sstr} 候选骨架 → {path.relative_to(ROOT)} ==")
+        print(f"  源可填 {len(filled)} 项：{', '.join(filled) or '—'}")
+        print(f"  留 null {len(missing)} 项（没有的数据不编造，待权威源或人工补充）："
+              f"{', '.join(missing)}")
+        print(f"  入队前还需人工补：tagline、贴图 docs/assets/planets/{en.lower()}.webp、"
+              f"延伸文章（articles/）、sources 交叉校验")
+    return rc
+
+
+def pages_for_objects(oids: set[str]) -> set[str]:
+    """对象 id → 需要拉取的 NSSDC 页名集合（卫星归系统页，火卫归 marsfact）。"""
+    pages = set()
+    for page, (poid, _role) in NSSDC_PAGES.items():
+        if poid in oids:
+            pages.add(page)
+    for page, moons in SAT_PAGE_MOONS.items():
+        if oids & set(moons.values()):
+            pages.add(page)
+    if oids & {"phobos", "deimos"}:
+        pages.add("marsfact")
+    return pages
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="从 NASA 公开源拉取天体数据并生成变更报告（只读 astro.json）")
+    ap.add_argument("command", nargs="?", default=None, choices=["status"],
+                    help="status = 零网络本地体检（对象/字段/新鲜度/收录边界），不拉取")
     ap.add_argument("--source", default="nssdc,sbdb", help="数据源：nssdc / sbdb，逗号分隔")
+    ap.add_argument("--objects", default="",
+                    help="限定对象（逗号分隔）：只拉取这些对象对应的源页，报告只含它们")
+    ap.add_argument("--propose", default="",
+                    help="为库外对象生成候选 JSON 骨架（逗号分隔）：源有的填、没有的留 null，不编造")
     ap.add_argument("--offline", action="store_true", help="不联网，用缓存原始数据")
     ap.add_argument("--tolerance", type=float, default=1.0, help="一致判定阈值（相对%%）")
     ap.add_argument("--verbose", action="store_true", help="打印每个对象抽取到的字段")
     args = ap.parse_args()
 
-    sources = [s.strip() for s in args.source.split(",") if s.strip()]
     astro = {o["id"]: o for o in json.loads(ASTRO_JSON.read_text(encoding="utf-8"))["objects"]}
+
+    if args.command == "status":
+        return status_report(astro)
+
+    if args.propose:
+        names = [s.strip() for s in args.propose.split(",") if s.strip()]
+        return propose_objects(astro, names, args.offline)
+
+    sources = [s.strip() for s in args.source.split(",") if s.strip()]
+    only_objs = {s.strip() for s in args.objects.split(",") if s.strip()} or None
+    only_pages = None
+    if only_objs:
+        only_pages = pages_for_objects(only_objs)
+        known = set(astro) | set(SBDB_OBJECTS)
+        unknown = only_objs - known
+        if unknown:
+            print(f"[warn] 未知对象 id（不在库也不在 SBDB 列表）：{', '.join(sorted(unknown))}"
+                  f"；如需入队请改用 --propose", file=sys.stderr)
+        if not only_pages and not (only_objs & set(SBDB_OBJECTS)):
+            print("[error] 这些对象没有对应的 NSSDC 页面或 SBDB 数据", file=sys.stderr)
+            return 2
 
     fetched: dict = {}
     src_notes: list[str] = []
@@ -904,7 +1100,7 @@ def main() -> int:
     if "nssdc" in sources:
         print("== NSSDC Planetary Fact Sheets ==")
         try:
-            objs, dates = fetch_nssdc(args.offline)
+            objs, dates = fetch_nssdc(args.offline, only_pages, only_objs)
             fetched.update(objs)
             src_notes += [f"NSSDC {d}" for d in dates]
         except Exception as e:
@@ -913,7 +1109,7 @@ def main() -> int:
     if "sbdb" in sources:
         print("== JPL SBDB API ==")
         try:
-            objs, notes = fetch_sbdb(args.offline)
+            objs, notes = fetch_sbdb(args.offline, only_objs)
             for k, v in objs.items():
                 fetched.setdefault(k, {}).update(v)
             src_notes += notes

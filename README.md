@@ -30,8 +30,9 @@
 ### 更新天体数据
 
 ```bash
-# 0.（建议，季度节奏）先从 NASA 源拉数据生成核查报告，确认有没有源更新
-python scripts/fetch_astro_data.py        # 报告落 reports/astro_fetch_latest.md
+# 0.（建议，季度节奏）先本地体检，再有针对性拉取，报告落 reports/astro_fetch_latest.md
+python scripts/fetch_astro_data.py status              # 零网络：对象/字段/新鲜度/缺口
+python scripts/fetch_astro_data.py --objects mars,moon # 只核查关注的对象（不传则全量）
 # 1. 按报告人工更新 docs/data/astro.json（脚本只读不改，详见下节）
 # 2. 数据校验（派生密度/轨道速度/逃逸速度一致性、已知质量顺序等）
 python scripts/lint_data.py
@@ -47,21 +48,30 @@ mkdocs build --strict
 天体物理参数不是行情数据，没有理由无人值守自动合入——脚本永远只产**变更提案**：
 
 ```bash
-python scripts/fetch_astro_data.py                # 全量：NSSDC fact sheets + JPL SBDB
-python scripts/fetch_astro_data.py --source nssdc # 只跑一个源
-python scripts/fetch_astro_data.py --offline      # 用缓存离线重放（调试用）
-python scripts/test_fetch_astro.py                # 解析器回归测试（19 项断言）
+python scripts/fetch_astro_data.py status              # 零网络本地体检（建议先跑这个）
+python scripts/fetch_astro_data.py                     # 全量：NSSDC fact sheets + JPL SBDB
+python scripts/fetch_astro_data.py --objects mars,moon # 针对性拉取（只拉对应源页）
+python scripts/fetch_astro_data.py --propose eris      # 为库外对象生成候选骨架
+python scripts/fetch_astro_data.py --source nssdc      # 只跑一个源
+python scripts/fetch_astro_data.py --offline           # 用缓存离线重放（调试用）
+python scripts/test_fetch_astro.py                     # 解析器回归测试（21 项断言）
 ```
+
+建议工作节奏：**status 看清现状（对象/字段矩阵/新鲜度/缺口）→ --objects 针对性拉取 → 审报告 → 手动合库**。
 
 - **数据源**：NSSDC Planetary Fact Sheets（nssdc.gsfc.nasa.gov，NASA Goddard，
   覆盖太阳/八大行星/月球/冥王星/火卫一二/四大卫星系统，共 15 页，公共领域）
   + JPL SBDB API（ssd-api.jpl.nasa.gov，免 key，谷神星等小天体，公共领域）
 - **产物**：`reports/astro_fetch_<时间戳>.md`（人读；`reports/` 与 `scripts/.cache/`
-  已 gitignore，缓存用于复现与离线重放）
-- **判定**：相对差异 ≤1% 一致、1–5% 微小、>5% 显著；反照率自动甄别 Bond/Geometric
-  双口径，逆行自转自动处理符号约定；退出码 0=无显著差异，1=有，2=抓取失败
-- **礼仪**：单并发、1s 间隔、带 UA、失败退避（遵循 JPL Fair Use Policy）；
-  报告会记录每个源页面的 Last Updated 日期
+  已 gitignore，缓存用于复现与离线重放）；`reports/propose_<id>.json`（候选骨架）
+- **判定**：相对差异 ≤1% 一致、1–5% 微小、>5% 显著；反照率 Bond/Geometric 双口径
+  分别对比，逆行自转自动处理符号约定；退出码 0=无显著差异，1=有，2=抓取失败
+- **礼仪**：单并发、1s 间隔、带 UA、失败退避（遵循 JPL Fair Use Policy）
+- **新增天体**：`--propose <id>` 从 SBDB 生成候选骨架——源有的字段填真实值，
+  **没有的一律留 null（不编造）**，并列出入队前需人工补齐的项（tagline/贴图/文章）；
+  人审后粘贴进 `astro.json` 的 objects 数组即可，lint/gen 自动接管
+- **新鲜度**：`astro.json` 每个对象带 `verified`（本站核对日）与 `source_dates`
+  （NSSDC 源页面 Last Updated），`status` 命令据此输出新鲜度面板
 - 人审报告 → 手动改 `astro.json`（同步 `sources`/`verified`）→ 回到上面的更新流程
 
 ### 发布一篇科普文章
@@ -116,6 +126,9 @@ mkdocs serve -a 127.0.0.1:8001   # 8000 端口被御风 Home 占用时换端口
 
 ## 待补充
 
-- 鸟神星、妊神星、阋神星：SBDB 有轨道要素与自转周期，缺 GM/直径等实测值（2026-10 核查确认）
+- 鸟神星、妊神星、阋神星：SBDB 有轨道要素与自转周期，缺 GM/直径等实测值（2026-10 核查确认）。
+  **既定决策：维持精选 32 个，不扩收**——没有的数据不编造；`--propose` 可随时生成候选骨架备用
+- 反照率 Geometric 口径：当前仅水星/金星/冥王星补齐，其余 27 个对象库中缺失
+  （`status` 字段矩阵可见；NSSDC 均有值，下次核查可一键合入补全）
 - 恒星、系外行星（NASA Exoplanet Archive TAP 已规划）
 - 反照率口径统一：当前地球与气态巨行星取 Bond、月球与卫星取 Geometric（核查报告已自动甄别）

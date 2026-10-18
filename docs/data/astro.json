@@ -61,7 +61,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/sun.webp"
+      "image": "assets/planets/sun.webp",
+      "source_dates": {
+        "nssdc_sunfact": "2024-05-09"
+      }
     },
     {
       "id": "mercury",
@@ -109,7 +112,10 @@
       ],
       "verified": "2026-10-18",
       "article": "mercury",
-      "image": "assets/planets/mercury.webp"
+      "image": "assets/planets/mercury.webp",
+      "source_dates": {
+        "nssdc_mercuryfact": "2024-01-11"
+      }
     },
     {
       "id": "venus",
@@ -157,7 +163,10 @@
       ],
       "verified": "2026-10-18",
       "article": "venus",
-      "image": "assets/planets/venus.webp"
+      "image": "assets/planets/venus.webp",
+      "source_dates": {
+        "nssdc_venusfact": "2024-01-11"
+      }
     },
     {
       "id": "earth",
@@ -205,7 +214,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/earth.webp"
+      "image": "assets/planets/earth.webp",
+      "source_dates": {
+        "nssdc_earthfact": "2024-11-15"
+      }
     },
     {
       "id": "mars",
@@ -255,7 +267,10 @@
       ],
       "verified": "2026-10-18",
       "article": "mars",
-      "image": "assets/planets/mars.webp"
+      "image": "assets/planets/mars.webp",
+      "source_dates": {
+        "nssdc_marsfact": "2025-05-19"
+      }
     },
     {
       "id": "jupiter",
@@ -307,7 +322,10 @@
       ],
       "verified": "2026-10-18",
       "article": "jupiter",
-      "image": "assets/planets/jupiter.webp"
+      "image": "assets/planets/jupiter.webp",
+      "source_dates": {
+        "nssdc_jupiterfact": "2024-10-02"
+      }
     },
     {
       "id": "saturn",
@@ -358,7 +376,10 @@
       ],
       "verified": "2026-10-18",
       "article": "saturn",
-      "image": "assets/planets/saturn.webp"
+      "image": "assets/planets/saturn.webp",
+      "source_dates": {
+        "nssdc_saturnfact": "2025-03-18"
+      }
     },
     {
       "id": "uranus",
@@ -409,7 +430,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/uranus.webp"
+      "image": "assets/planets/uranus.webp",
+      "source_dates": {
+        "nssdc_uranusfact": "2024-10-02"
+      }
     },
     {
       "id": "neptune",
@@ -458,7 +482,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/neptune.webp"
+      "image": "assets/planets/neptune.webp",
+      "source_dates": {
+        "nssdc_neptunefact": "2024-10-03"
+      }
     },
     {
       "id": "pluto",
@@ -509,7 +536,10 @@
       ],
       "verified": "2026-10-18",
       "article": "pluto",
-      "image": "assets/planets/pluto.webp"
+      "image": "assets/planets/pluto.webp",
+      "source_dates": {
+        "nssdc_plutofact": "2024-01-11"
+      }
     },
     {
       "id": "ceres",
@@ -601,7 +631,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/moon.webp"
+      "image": "assets/planets/moon.webp",
+      "source_dates": {
+        "nssdc_moonfact": "2024-01-11"
+      }
     },
     {
       "id": "phobos",
@@ -646,7 +679,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/phobos.webp"
+      "image": "assets/planets/phobos.webp",
+      "source_dates": {
+        "nssdc_marsfact": "2025-05-19"
+      }
     },
     {
       "id": "deimos",
@@ -691,7 +727,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/deimos.webp"
+      "image": "assets/planets/deimos.webp",
+      "source_dates": {
+        "nssdc_marsfact": "2025-05-19"
+      }
     },
     {
       "id": "io",
@@ -736,7 +775,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/io.webp"
+      "image": "assets/planets/io.webp",
+      "source_dates": {
+        "nssdc_joviansatfact": "2023-12-06"
+      }
     },
     {
       "id": "europa",
@@ -781,7 +823,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/europa.webp"
+      "image": "assets/planets/europa.webp",
+      "source_dates": {
+        "nssdc_joviansatfact": "2023-12-06"
+      }
     },
     {
       "id": "ganymede",
@@ -826,7 +871,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/ganymede.webp"
+      "image": "assets/planets/ganymede.webp",
+      "source_dates": {
+        "nssdc_joviansatfact": "2023-12-06"
+      }
     },
     {
       "id": "callisto",
@@ -871,7 +919,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/callisto.webp"
+      "image": "assets/planets/callisto.webp",
+      "source_dates": {
+        "nssdc_joviansatfact": "2023-12-06"
+      }
     },
     {
       "id": "mimas",
@@ -916,7 +967,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/mimas.webp"
+      "image": "assets/planets/mimas.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "enceladus",
@@ -961,7 +1015,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/enceladus.webp"
+      "image": "assets/planets/enceladus.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "tethys",
@@ -1006,7 +1063,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/tethys.webp"
+      "image": "assets/planets/tethys.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "dione",
@@ -1051,7 +1111,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/dione.webp"
+      "image": "assets/planets/dione.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "rhea",
@@ -1096,7 +1159,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/rhea.webp"
+      "image": "assets/planets/rhea.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "titan",
@@ -1141,7 +1207,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/titan.webp"
+      "image": "assets/planets/titan.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "hyperion",
@@ -1186,7 +1255,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/hyperion.webp"
+      "image": "assets/planets/hyperion.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "iapetus",
@@ -1231,7 +1303,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/iapetus.webp"
+      "image": "assets/planets/iapetus.webp",
+      "source_dates": {
+        "nssdc_saturniansatfact": "2025-07-22"
+      }
     },
     {
       "id": "triton",
@@ -1276,7 +1351,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/triton.webp"
+      "image": "assets/planets/triton.webp",
+      "source_dates": {
+        "nssdc_neptuniansatfact": "2024-03-11"
+      }
     },
     {
       "id": "miranda",
@@ -1321,7 +1399,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/miranda.webp"
+      "image": "assets/planets/miranda.webp",
+      "source_dates": {
+        "nssdc_uraniansatfact": "2023-03-11"
+      }
     },
     {
       "id": "ariel",
@@ -1366,7 +1447,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/ariel.webp"
+      "image": "assets/planets/ariel.webp",
+      "source_dates": {
+        "nssdc_uraniansatfact": "2023-03-11"
+      }
     },
     {
       "id": "umbriel",
@@ -1411,7 +1495,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/umbriel.webp"
+      "image": "assets/planets/umbriel.webp",
+      "source_dates": {
+        "nssdc_uraniansatfact": "2023-03-11"
+      }
     },
     {
       "id": "titania",
@@ -1456,7 +1543,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/titania.webp"
+      "image": "assets/planets/titania.webp",
+      "source_dates": {
+        "nssdc_uraniansatfact": "2023-03-11"
+      }
     },
     {
       "id": "oberon",
@@ -1501,7 +1591,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/oberon.webp"
+      "image": "assets/planets/oberon.webp",
+      "source_dates": {
+        "nssdc_uraniansatfact": "2023-03-11"
+      }
     }
   ]
 }

@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fetch_astro_data import (  # noqa: E402
-    Spec, apply_label, convert, parse_kv_line, parse_value, triaxial_mean,
+    FIELDS, SPECS, Spec, apply_label, convert, parse_kv_line, parse_value, triaxial_mean,
 )
 
 
@@ -171,6 +171,37 @@ class TestApplyLabel(unittest.TestCase):
         v = triaxial_mean("1821.5")
         self.assertEqual(v.value, 1821.5)
         self.assertIsNone(v.flag)
+
+
+class TestSchemaConsistency(unittest.TestCase):
+    """FIELDS/SPECS 字段名与 astro.json 实际字段对齐（防漂移）。
+
+    历史教训：SPECS 曾用 mean_temp_c_surf 而库与渲染用 mean_temp_c_surface，
+    导致合入的表面温度下次核查被当"新增"重复报——字段名一处改处处改。
+    """
+
+    def test_fields_exist_in_astro_json(self):
+        import json
+        root = Path(__file__).resolve().parent.parent
+        d = json.loads((root / "docs" / "data" / "astro.json").read_text(encoding="utf-8"))
+        keys = set()
+        for o in d["objects"]:
+            for grp in ("physical", "orbit"):
+                keys |= set((o.get(grp) or {}).keys())
+            keys |= set((o.get("moons") or {}).keys())  # moons.count / notable
+            if "rings" in o:
+                keys.add("rings")  # 顶层布尔字段
+        for path, _label, _kind in FIELDS:
+            key = path.split(".")[-1]
+            self.assertIn(key, keys, f"FIELDS 的 {path} 不在 astro.json 任何对象中（字段漂移）")
+
+    def test_specs_keys_covered_by_fields(self):
+        spec_keys = {s.key for s in SPECS if not s.key.startswith("_")}
+        field_keys = {p.split(".")[-1] for p, _l, _k in FIELDS}
+        # moons_count 在库中是 moons.count；gm_km3_s2 是换算中间量不入库
+        whitelist = {"moons_count", "gm_km3_s2"}
+        missing = (spec_keys - field_keys) - whitelist
+        self.assertEqual(missing, set(), f"SPECS 有字段未被 FIELDS 覆盖：{missing}")
 
 
 if __name__ == "__main__":
