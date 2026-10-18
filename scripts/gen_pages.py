@@ -128,26 +128,51 @@ def load_data(root):
 
 
 def article_body(root, slug):
-    """返回 (文章标题, 正文)；没有则 (None, None)。文章源在仓库根 articles/（docs 外，不单独建页）。"""
+    """返回 (文章标题, 正文)；没有则 (None, None)。文章源在仓库根 articles/（docs 外，不单独建页）。
+    标题优先取正文 H1，其次 frontmatter 的 title 字段。"""
     p = root / "articles" / f"{slug}.md"
     if not p.exists():
         return None, None
-    text = re.sub(r"\A---\n.*?\n---\n", "", p.read_text(encoding="utf-8"), flags=re.S).strip()
+    raw = p.read_text(encoding="utf-8")
+    fm_title = None
+    fm = re.match(r"\A---\n(.*?)\n---\n", raw, flags=re.S)
+    if fm:
+        mt = re.search(r"^title:\s*(.+)$", fm.group(1), flags=re.M)
+        if mt:
+            fm_title = mt.group(1).strip().strip('"').strip("'")
+    text = re.sub(r"\A---\n.*?\n---\n", "", raw, flags=re.S).strip()
     m = re.match(r"#\s+(.+)", text)
-    title = m.group(1).strip() if m else None
+    title = m.group(1).strip() if m else fm_title
     if m:
         text = text[m.end():].strip()
     return title, text
 
 
-def img_block(o):
+def img_block(o, base=""):
+    """天体图片块。base 为图片相对路径前缀：首页 index.md 传 ""，详情页 objects/<id>.md 传 "../"。"""
     cat = o["category"]
     img = o.get("image")
     if img:
         return (f'<div class="astro-img {cat}">'
-                f'<img src="../{img}" alt="{o["name"]}" loading="lazy"></div>')
+                f'<img src="{base}{img}" alt="{o["name"]}" loading="lazy"></div>')
     return (f'<div class="astro-img {cat} astro-img-fallback">'
             f'<span>{o["name"][0]}</span></div>')
+
+
+def article_entries(root, o):
+    """该天体关联的文章 [(slug, title)]。兼容 article（单个 slug）与 articles（数组）两种字段。"""
+    slugs = []
+    if o.get("article"):
+        slugs.append(o["article"])
+    for a in o.get("articles") or []:
+        slug = a["slug"] if isinstance(a, dict) else a
+        if slug not in slugs:
+            slugs.append(slug)
+    entries = []
+    for slug in slugs:
+        title, _ = article_body(root, slug)
+        entries.append((slug, title or slug))
+    return entries
 
 
 def build_index(data):
@@ -158,12 +183,12 @@ def build_index(data):
         cats[o["category"]] = cats.get(o["category"], 0) + 1
     L = []
     L.append("---")
-    L.append('description: "收录 %d 个太阳系天体的结构化数据：质量、半径、密度、表面温度、'
+    L.append('description: "收录 %d 个天体的结构化数据：质量、半径、密度、表面温度、'
              '轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"' % n)
     L.append("---")
     L.append("")
     L.append('<div class="astro-hero">')
-    L.append("  <h1>太阳系天体数据库</h1>")
+    L.append("  <h1>天体数据库</h1>")
     L.append(f'  <p class="astro-hero-sub">{n} 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>')
     L.append('  <p class="astro-hero-stats">')
     for key in ("star", "planet", "dwarf_planet", "moon"):
@@ -251,12 +276,12 @@ def build_object_index(data):
     objs = data["objects"]
     L = []
     L.append("---")
-    L.append('description: "太阳系全部 %d 个收录天体的关键数据总表：质量、半径、密度、温度、轨道周期与卫星数量。"' % len(objs))
+    L.append('description: "本站收录的全部 %d 个天体的关键数据总表：质量、半径、密度、温度、轨道周期与卫星数量。"' % len(objs))
     L.append("---")
     L.append("")
     L.append("# 天体库")
     L.append("")
-    L.append(f"本站收录的全部 {len(objs)} 个太阳系天体。点击名称进入详情页（完整数据 + 科普文章）；"
+    L.append(f"本站收录的全部 {len(objs)} 个天体。点击名称进入详情页（完整数据 + 科普文章）；"
              f"数值的含义与单位见[数据集字段说明](../data.md#字段说明)。")
     L.append("")
     L.append("| 天体 | 分类 | 母天体 | 质量 | 平均半径 | 密度 | 均温 | 轨道周期 | 卫星数 |")
@@ -293,7 +318,7 @@ def build_object(root, o, by_id, order):
     L.append("---")
     L.append("")
     L.append(f'<div class="obj-hero">')
-    L.append(f'  {img_block(o)}')
+    L.append(f'  {img_block(o, "../")}')
     L.append('  <div class="obj-hero-info">')
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')
@@ -390,15 +415,27 @@ def build_object(root, o, by_id, order):
     L.append("</section>")
     L.append("")
 
-    art_title, art_body = article_body(root, o["article"]) if o.get("article") else (None, None)
-    if art_body:
-        L.append('<section class="obj-article">')
-        L.append(f'  <h2>延伸阅读：{art_title or o["name"]}</h2>')
-        L.append("")
-        L.append(art_body)
-        L.append("")
+    entries = article_entries(root, o)
+    if entries:
+        L.append('<section class="obj-articles">')
+        L.append("  <h2>相关文章</h2>")
+        L.append('  <ul class="astro-article-list">')
+        for slug, title in entries:
+            L.append(f'    <li><a href="#article-{slug}">{title}</a></li>')
+        L.append("  </ul>")
         L.append("</section>")
         L.append("")
+        for slug, title in entries:
+            _, art_body = article_body(root, slug)
+            if not art_body:
+                continue
+            L.append(f'<section class="obj-article" id="article-{slug}">')
+            L.append(f'  <h2>延伸阅读：{title}</h2>')
+            L.append("")
+            L.append(art_body)
+            L.append("")
+            L.append("</section>")
+            L.append("")
 
     idx = order.index(oid)
     if idx > 0:
@@ -415,7 +452,7 @@ def build_data_page(data, objs):
     meta = data["meta"]
     L = []
     L.append("---")
-    L.append('description: "下载星野笔记的天体数据集：%d 个太阳系天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"' % len(objs))
+    L.append('description: "下载星野笔记的天体数据集：%d 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"' % len(objs))
     L.append("---")
     L.append("")
     L.append("# 天体数据集")
@@ -520,7 +557,7 @@ def main():
 
     obj_dir = root / "docs" / "objects"
     obj_dir.mkdir(exist_ok=True)
-    live = {f"docs/objects/{o['id']}.md" for o in objs}
+    live = {f"docs/objects/{o['id']}.md" for o in objs} | {"docs/objects/index.md"}
     for p in obj_dir.glob("*.md"):
         rel = f"docs/objects/{p.name}"
         if rel not in live:

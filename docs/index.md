@@ -1,9 +1,9 @@
 ---
-description: "收录 32 个太阳系天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 32 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
-  <h1>太阳系天体数据库</h1>
+  <h1>天体数据库</h1>
   <p class="astro-hero-sub">32 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>
   <p class="astro-hero-stats">
     <span class="astro-stat"><b>1</b> 恒星</span>
@@ -40,7 +40,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
 <div class="astro-grid">
   <article class="astro-card" data-category="star" data-name="太阳 Sun" data-mass="1.9884e+30" data-radius="695700" data-density="1.408" data-temp="5499" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/sun/">
-      <div class="astro-img star"><img src="../assets/planets/太阳.webp" alt="太阳" loading="lazy"></div>
+      <div class="astro-img star"><img src="assets/planets/太阳.webp" alt="太阳" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">太阳<span class="en">Sun</span></div>
         <p class="astro-card-tagline">太阳系的中心恒星，独占太阳系总质量的 99.86%</p>
@@ -51,7 +51,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="planet" data-name="水星 Mercury" data-mass="3.301e+23" data-radius="2439.7" data-density="5.429" data-temp="167" data-period="87.97" data-moons="0">
     <a class="astro-card-link" href="objects/mercury/">
-      <div class="astro-img planet"><img src="../assets/planets/水星.webp" alt="水星" loading="lazy"></div>
+      <div class="astro-img planet"><img src="assets/planets/水星.webp" alt="水星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">水星<span class="en">Mercury</span></div>
         <p class="astro-card-tagline">离太阳最近的行星，一个太阳日比一个水星年还长</p>
@@ -62,7 +62,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="planet" data-name="金星 Venus" data-mass="4.8685e+24" data-radius="6051.8" data-density="5.243" data-temp="464" data-period="224.7" data-moons="0">
     <a class="astro-card-link" href="objects/venus/">
-      <div class="astro-img planet"><img src="../assets/planets/金星.webp" alt="金星" loading="lazy"></div>
+      <div class="astro-img planet"><img src="assets/planets/金星.webp" alt="金星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">金星<span class="en">Venus</span></div>
         <p class="astro-card-tagline">被浓厚二氧化碳大气包裹的炽热世界，太阳系表面最热的行星</p>
@@ -73,7 +73,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="planet" data-name="地球 Earth" data-mass="5.9724e+24" data-radius="6371.0" data-density="5.514" data-temp="15" data-period="365.26" data-moons="1">
     <a class="astro-card-link" href="objects/earth/">
-      <div class="astro-img planet"><img src="../assets/planets/地球.webp" alt="地球" loading="lazy"></div>
+      <div class="astro-img planet"><img src="assets/planets/地球.webp" alt="地球" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">地球<span class="en">Earth</span></div>
         <p class="astro-card-tagline">目前已知唯一存在生命的行星，约 71% 表面被液态水覆盖</p>
@@ -84,7 +84,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="planet" data-name="火星 Mars" data-mass="6.4169e+23" data-radius="3389.5" data-density="3.934" data-temp="-65" data-period="686.98" data-moons="2">
     <a class="astro-card-link" href="objects/mars/">
-      <div class="astro-img planet"><img src="../assets/planets/火星.webp" alt="火星" loading="lazy"></div>
+      <div class="astro-img planet"><img src="assets/planets/火星.webp" alt="火星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">火星<span class="en">Mars</span></div>
         <p class="astro-card-tagline">红色的沙漠行星，拥有太阳系最高的火山与最深的峡谷</p>
@@ -95,7 +95,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="planet" data-name="木星 Jupiter" data-mass="1.89813e+27" data-radius="69911" data-density="1.326" data-temp="-110" data-period="4332.59" data-moons="95">
     <a class="astro-card-link" href="objects/jupiter/">
-      <div class="astro-img planet"><img src="../assets/planets/木星.webp" alt="木星" loading="lazy"></div>
+      <div class="astro-img planet"><img src="assets/planets/木星.webp" alt="木星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">木星<span class="en">Jupiter</span></div>
         <p class="astro-card-tagline">太阳系最大的行星，质量超过其余七颗行星的总和</p>
@@ -139,7 +139,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="dwarf_planet" data-name="冥王星 Pluto" data-mass="1.303e+22" data-radius="1188.3" data-density="1.85" data-temp="-225" data-period="90560" data-moons="5">
     <a class="astro-card-link" href="objects/pluto/">
-      <div class="astro-img dwarf_planet"><img src="../assets/planets/冥王星.webp" alt="冥王星" loading="lazy"></div>
+      <div class="astro-img dwarf_planet"><img src="assets/planets/冥王星.webp" alt="冥王星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">冥王星<span class="en">Pluto</span></div>
         <p class="astro-card-tagline">曾被列为第九大行星，与卫星卡戎构成双天体系统</p>
@@ -161,7 +161,7 @@ description: "收录 32 个太阳系天体的结构化数据：质量、半径�
   </article>
   <article class="astro-card" data-category="moon" data-name="月球 Moon" data-mass="7.346e+22" data-radius="1737.4" data-density="3.344" data-temp="-20" data-period="27.3217" data-moons="0">
     <a class="astro-card-link" href="objects/moon/">
-      <div class="astro-img moon"><img src="../assets/planets/月球.webp" alt="月球" loading="lazy"></div>
+      <div class="astro-img moon"><img src="assets/planets/月球.webp" alt="月球" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">月球<span class="en">Moon</span></div>
         <p class="astro-card-tagline">地球唯一的天然卫星，潮汐锁定使它永远以同一面朝向地球</p>

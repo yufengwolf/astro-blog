@@ -59,8 +59,15 @@ description: "火星（Mars）的天体数据：6.42×10²³ kg、半径 3,390 k
   <p>来源标识：nssdc_marsfact；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<section class="obj-article">
-  <h2>延伸阅读：火星</h2>
+<section class="obj-articles">
+  <h2>相关文章</h2>
+  <ul class="astro-article-list">
+    <li><a href="#article-mars">火星为什么被定为人类星际探索的下一站？</a></li>
+  </ul>
+</section>
+
+<section class="obj-article" id="article-mars">
+  <h2>延伸阅读：火星为什么被定为人类星际探索的下一站？</h2>
 
 火星之所以被视作人类星际探索的下一站，核心不是它最宜居，而是它在太阳系里，拥有最接近地球的基础条件，同时保留着震撼的地质遗迹。它直径约6779公里，大约是地球的一半，地表富含氧化铁，也就是铁锈，所以呈现标志性的橘红色。
 ![火星与地球大小对比示意图，并排球体，直观展示火星直径约地球一半，简洁科学插画风格](../assets/mars-1.jpg)

@@ -1,5 +1,24 @@
 /* 天体数据库工具页样式（适配 Material 明暗双主题，使用 md CSS 变量） */
 
+/* ---------- 全局宽度：内容区占约 90%，超宽屏封顶 ---------- */
+.md-grid {
+  max-width: min(90%, 110rem);
+}
+/* hero / 底部说明区文字限宽，避免拉太宽难读 */
+.astro-hero > * {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+.astro-articles, .astro-note, .obj-articles {
+  max-width: 64rem;
+  margin-inline: auto;
+}
+/* 详情页正文与来源区限宽，长文阅读舒适 */
+.obj-source, .obj-article {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
 /* ---------- 首页 hero ---------- */
 .astro-hero {
   text-align: center;
@@ -242,14 +261,14 @@
 }
 
 /* ---------- 文章区 / 数据说明 ---------- */
-.astro-articles, .astro-note {
+.astro-articles, .astro-note, .obj-articles {
   margin-top: 2rem;
   padding: 1.1rem 1.3rem;
   border-radius: 0.8rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
 }
-.astro-articles h2, .astro-note h2 {
+.astro-articles h2, .astro-note h2, .obj-articles h2 {
   margin-top: 0;
   font-size: 1.1rem;
 }
@@ -268,6 +287,9 @@
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
   text-decoration: none;
+}
+.astro-article-list li a:hover {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
 }
 .astro-note p { font-size: 0.85rem; color: var(--md-default-fg-color--light); }
 

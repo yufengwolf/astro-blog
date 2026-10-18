@@ -59,8 +59,15 @@ description: "冥王星（Pluto）的天体数据：1.3×10²² kg、半径 1,18
   <p>来源标识：nssdc_planetary_factsheet；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<section class="obj-article">
-  <h2>延伸阅读：冥王星</h2>
+<section class="obj-articles">
+  <h2>相关文章</h2>
+  <ul class="astro-article-list">
+    <li><a href="#article-pluto">冥王星比月球还小，当年凭什么是第九大行星？</a></li>
+  </ul>
+</section>
+
+<section class="obj-article" id="article-pluto">
+  <h2>延伸阅读：冥王星比月球还小，当年凭什么是第九大行星？</h2>
 
 冥王星直径仅约2370公里，比月球更小，体积只有地球的约1/150，质量仅地球的0.0022倍。它能维持76年“第九大行星”身份，不是因为个头大，而是当年人类对柯伊伯带一无所知。2006年国际天文联合会投票，把它重新归类为矮行星。
 

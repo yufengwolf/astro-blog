@@ -59,8 +59,15 @@ description: "金星（Venus）的天体数据：4.87×10²⁴ kg、半径 6,052
   <p>来源标识：nssdc_planetary_factsheet；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<section class="obj-article">
-  <h2>延伸阅读：金星</h2>
+<section class="obj-articles">
+  <h2>相关文章</h2>
+  <ul class="astro-article-list">
+    <li><a href="#article-venus">金星：地球姊妹星，为何是西升东落的地狱？</a></li>
+  </ul>
+</section>
+
+<section class="obj-article" id="article-venus">
+  <h2>延伸阅读：金星：地球姊妹星，为何是西升东落的地狱？</h2>
 
 ## 看似是地球姊妹，实则是高温地狱
 金星直径约12104公里，约为地球的0.95倍，体积、质量都和地球最接近，被称作地球的姊妹星。但这只是视觉与尺度上的假象，地表环境完全是生命禁区。

@@ -59,8 +59,15 @@ description: "土星（Saturn）的天体数据：5.68×10²⁶ kg、半径 58,2
   <p>来源标识：nssdc_saturnfact；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<section class="obj-article">
-  <h2>延伸阅读：土星</h2>
+<section class="obj-articles">
+  <h2>相关文章</h2>
+  <ul class="astro-article-list">
+    <li><a href="#article-saturn">土星环宽达28万公里，为什么却只有几十米厚？</a></li>
+  </ul>
+</section>
+
+<section class="obj-article" id="article-saturn">
+  <h2>延伸阅读：土星环宽达28万公里，为什么却只有几十米厚？</h2>
 
 土星环的横向跨度可达282000公里，足以放下22个地球并排，但主环垂直厚度大多仅10到20米。这是太阳系最极致的尺度反差，也是土星最标志性的奇观。它不是固态圆盘，而是无数独立绕转的冰与岩石碎块，每一块碎片都相当于微型卫星。
 

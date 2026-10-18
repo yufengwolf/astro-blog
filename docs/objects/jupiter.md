@@ -59,7 +59,14 @@ description: "木星（Jupiter）的天体数据：1.9×10²⁷ kg、半径 69,9
   <p>来源标识：nssdc_jupiterfact；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<section class="obj-article">
+<section class="obj-articles">
+  <h2>相关文章</h2>
+  <ul class="astro-article-list">
+    <li><a href="#article-jupiter">木星体积能装1300个地球，为何被称作地球守护神？</a></li>
+  </ul>
+</section>
+
+<section class="obj-article" id="article-jupiter">
   <h2>延伸阅读：木星体积能装1300个地球，为何被称作地球守护神？</h2>
 
 木星能容纳约1300个地球，凭借太阳系行星里最强的引力，长期清理太阳系内的彗星、小行星，减少小天体撞击内行星的概率，这就是“地球守护神”说法的来源。但它并非万能盾牌，也会把部分天体甩向内侧轨道。

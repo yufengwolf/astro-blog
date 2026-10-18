@@ -59,8 +59,15 @@ description: "水星（Mercury）的天体数据：3.3×10²³ kg、半径 2,440
   <p>来源标识：nssdc_planetary_factsheet；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<section class="obj-article">
-  <h2>延伸阅读：水星</h2>
+<section class="obj-articles">
+  <h2>相关文章</h2>
+  <ul class="astro-article-list">
+    <li><a href="#article-mercury">水星离太阳最近，为何不是最热行星？</a></li>
+  </ul>
+</section>
+
+<section class="obj-article" id="article-mercury">
+  <h2>延伸阅读：水星离太阳最近，为何不是最热行星？</h2>
 
 水星距离太阳最近，但它并不是太阳系最热行星。它拥有太阳系行星里最悬殊的昼夜温差，迷你体型、极短的公转周期和超长太阳日叠加在一起，造就了这颗冰火并存的奇特星球。
 ![水星与月球大小对比示意图，水星直径4879公里，月球3474公里，白底简约科学示意图](../assets/mercury-1.jpg)
