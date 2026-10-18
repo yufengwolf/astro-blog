@@ -23,6 +23,11 @@ description: "下载星野笔记的天体数据集：32 个天体的质量、半
 | radius_km | 平均半径 | km |
 | density_g_cm3 | 平均密度 | g/cm³ |
 | mean_temp_c | 平均表面温度 | °C |
+| mean_temp_c_bb | 有效温度（black-body 口径） | °C |
+| mean_temp_c_surface | 表面温度 | °C |
+| albedo / albedo_bond / albedo_geometric | 反照率（主值 / Bond 口径 / Geometric 口径） | — |
+| surface_pressure_bar | 表面气压 | bar |
+| inclination_deg / eccentricity | 轨道倾角 / 偏心率 | ° / — |
 | semimajor_axis_km | 轨道半长轴 | km |
 | orbital_period_days | 轨道周期 | 天 |
 | moons.count | 已确认卫星数 | 颗 |

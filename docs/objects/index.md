@@ -12,7 +12,7 @@ description: "本站收录的全部 32 个天体的关键数据总表：质量�
 | [水星](mercury.md) | 行星 | <a href="sun.md">太阳</a> | 3.3×10²³ kg | 2,440 km | 5.429 g/cm³ | 167 °C | 88.0 天 | 0 |
 | [金星](venus.md) | 行星 | <a href="sun.md">太阳</a> | 4.87×10²⁴ kg | 6,052 km | 5.243 g/cm³ | 464 °C | 224.7 天 | 0 |
 | [地球](earth.md) | 行星 | <a href="sun.md">太阳</a> | 5.97×10²⁴ kg | 6,371 km | 5.514 g/cm³ | 15 °C | 365.3 天 | 1 |
-| [火星](mars.md) | 行星 | <a href="sun.md">太阳</a> | 6.42×10²³ kg | 3,390 km | 3.934 g/cm³ | -65 °C | 687.0 天 | 2 |
+| [火星](mars.md) | 行星 | <a href="sun.md">太阳</a> | 6.42×10²³ kg | 3,390 km | 3.934 g/cm³ | -59 °C | 687.0 天 | 2 |
 | [木星](jupiter.md) | 行星 | <a href="sun.md">太阳</a> | 1.9×10²⁷ kg | 69,911 km | 1.326 g/cm³ | -110 °C | 11.9 年（4,333 天） | 95 |
 | [土星](saturn.md) | 行星 | <a href="sun.md">太阳</a> | 5.68×10²⁶ kg | 58,232 km | 0.687 g/cm³ | -140 °C | 29.4 年（10,756 天） | 274 |
 | [天王星](uranus.md) | 行星 | <a href="sun.md">太阳</a> | 8.68×10²⁵ kg | 25,559 km | 1.27 g/cm³ | -195 °C | 83.7 年（30,589 天） | 28 |
@@ -50,6 +50,11 @@ description: "本站收录的全部 32 个天体的关键数据总表：质量�
 | radius_km | 平均半径 | km |
 | density_g_cm3 | 平均密度 | g/cm³ |
 | mean_temp_c | 平均表面温度 | °C |
+| mean_temp_c_bb | 有效温度（black-body 口径） | °C |
+| mean_temp_c_surface | 表面温度 | °C |
+| albedo / albedo_bond / albedo_geometric | 反照率（主值 / Bond 口径 / Geometric 口径） | — |
+| surface_pressure_bar | 表面气压 | bar |
+| inclination_deg / eccentricity | 轨道倾角 / 偏心率 | ° / — |
 | semimajor_axis_km | 轨道半长轴 | km |
 | orbital_period_days | 轨道周期 | 天 |
 | moons.count | 已确认卫星数 | 颗 |

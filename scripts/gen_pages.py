@@ -317,6 +317,11 @@ def build_object_index(data):
     L.append("| radius_km | 平均半径 | km |")
     L.append("| density_g_cm3 | 平均密度 | g/cm³ |")
     L.append("| mean_temp_c | 平均表面温度 | °C |")
+    L.append("| mean_temp_c_bb | 有效温度（black-body 口径） | °C |")
+    L.append("| mean_temp_c_surface | 表面温度 | °C |")
+    L.append("| albedo / albedo_bond / albedo_geometric | 反照率（主值 / Bond 口径 / Geometric 口径） | — |")
+    L.append("| surface_pressure_bar | 表面气压 | bar |")
+    L.append("| inclination_deg / eccentricity | 轨道倾角 / 偏心率 | ° / — |")
     L.append("| semimajor_axis_km | 轨道半长轴 | km |")
     L.append("| orbital_period_days | 轨道周期 | 天 |")
     L.append("| moons.count | 已确认卫星数 | 颗 |")
@@ -412,6 +417,18 @@ def build_object(root, o, by_id, order):
     L.append("")
     L.append("| 参数 | 数值 |")
     L.append("|---|---|")
+    def albedo_text():
+        a = ph.get("albedo")
+        ab, ag = ph.get("albedo_bond"), ph.get("albedo_geometric")
+        base = fmt_albedo(a)
+        if ab is not None and ag is not None:
+            return f"{base}（Bond {ab:g} / Geometric {ag:g}）"
+        if ab is not None and a is not None and abs(a - ab) < 1e-9:
+            return f"{base}（Bond 口径）"
+        if ag is not None and a is not None and abs(a - ag) < 1e-9:
+            return f"{base}（Geometric 口径）"
+        return base
+
     rows = [
         ("质量", fmt_mass(ph.get("mass_kg"))),
         ("平均半径", fmt_radius(ph.get("radius_km"))),
@@ -419,8 +436,12 @@ def build_object(root, o, by_id, order):
         ("表面重力", fmt_gravity(ph.get("gravity_m_s2"))),
         ("逃逸速度", fmt_velocity(ph.get("escape_velocity_km_s"))),
         ("平均表面温度", fmt_temp(ph.get("mean_temp_c"))),
+        *([("有效温度（black-body 口径）", fmt_temp(ph["mean_temp_c_bb"]))]
+          if ph.get("mean_temp_c_bb") is not None else []),
+        *([("表面温度", fmt_temp(ph["mean_temp_c_surface"]))]
+          if ph.get("mean_temp_c_surface") is not None else []),
         ("表面气压", fmt_pressure(ph.get("surface_pressure_bar"))),
-        ("反照率", fmt_albedo(ph.get("albedo"))),
+        ("反照率", albedo_text()),
     ]
     if o.get("spectral_type"):
         rows.append(("光谱型", o["spectral_type"]))
@@ -546,6 +567,11 @@ def build_data_page(data, objs):
     L.append("| radius_km | 平均半径 | km |")
     L.append("| density_g_cm3 | 平均密度 | g/cm³ |")
     L.append("| mean_temp_c | 平均表面温度 | °C |")
+    L.append("| mean_temp_c_bb | 有效温度（black-body 口径） | °C |")
+    L.append("| mean_temp_c_surface | 表面温度 | °C |")
+    L.append("| albedo / albedo_bond / albedo_geometric | 反照率（主值 / Bond 口径 / Geometric 口径） | — |")
+    L.append("| surface_pressure_bar | 表面气压 | bar |")
+    L.append("| inclination_deg / eccentricity | 轨道倾角 / 偏心率 | ° / — |")
     L.append("| semimajor_axis_km | 轨道半长轴 | km |")
     L.append("| orbital_period_days | 轨道周期 | 天 |")
     L.append("| moons.count | 已确认卫星数 | 颗 |")

@@ -82,13 +82,13 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="planet" data-name="火星 Mars" data-mass="6.4169e+23" data-radius="3389.5" data-density="3.934" data-temp="-65" data-period="686.98" data-moons="2">
+  <article class="astro-card" data-category="planet" data-name="火星 Mars" data-mass="6.4169e+23" data-radius="3389.5" data-density="3.934" data-temp="-59" data-period="686.98" data-moons="2">
     <a class="astro-card-link" href="objects/mars/">
       <div class="astro-img planet"><img src="assets/planets/mars.webp" alt="火星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">火星<span class="en">Mars</span></div>
         <p class="astro-card-tagline">红色的沙漠行星，拥有太阳系最高的火山与最深的峡谷</p>
-        <div class="astro-card-stats"><span>6.42×10²³ kg</span><span>3,390 km</span><span>-65 °C</span></div>
+        <div class="astro-card-stats"><span>6.42×10²³ kg</span><span>3,390 km</span><span>-59 °C</span></div>
       </div>
       <span class="astro-badge planet">行星</span>
     </a>

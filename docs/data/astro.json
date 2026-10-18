@@ -78,7 +78,10 @@
         "escape_velocity_km_s": 4.3,
         "mean_temp_c": 167,
         "surface_pressure_bar": null,
-        "albedo": null
+        "albedo": 0.142,
+        "albedo_bond": 0.068,
+        "albedo_geometric": 0.142,
+        "mean_temp_c_bb": 166.45
       },
       "orbit": {
         "semimajor_axis_km": 57910000,
@@ -123,7 +126,10 @@
         "escape_velocity_km_s": 10.36,
         "mean_temp_c": 464,
         "surface_pressure_bar": 92,
-        "albedo": null
+        "albedo": 0.689,
+        "albedo_bond": 0.77,
+        "albedo_geometric": 0.689,
+        "mean_temp_c_bb": -46.55
       },
       "orbit": {
         "semimajor_axis_km": 108210000,
@@ -214,9 +220,11 @@
         "density_g_cm3": 3.934,
         "gravity_m_s2": 3.73,
         "escape_velocity_km_s": 5.03,
-        "mean_temp_c": -65,
+        "mean_temp_c": -59,
         "surface_pressure_bar": 0.00636,
-        "albedo": 0.25
+        "albedo": 0.25,
+        "albedo_bond": 0.25,
+        "mean_temp_c_bb": -63.35
       },
       "orbit": {
         "semimajor_axis_km": 227956000,
@@ -264,7 +272,9 @@
         "escape_velocity_km_s": 59.5,
         "mean_temp_c": -110,
         "surface_pressure_bar": null,
-        "albedo": 0.343
+        "albedo": 0.343,
+        "albedo_bond": 0.343,
+        "mean_temp_c_bb": -163.25
       },
       "orbit": {
         "semimajor_axis_km": 778479000,
@@ -314,7 +324,9 @@
         "escape_velocity_km_s": 35.5,
         "mean_temp_c": -140,
         "surface_pressure_bar": null,
-        "albedo": 0.342
+        "albedo": 0.342,
+        "albedo_bond": 0.342,
+        "mean_temp_c_bb": -192.15
       },
       "orbit": {
         "semimajor_axis_km": 1432041000,
@@ -363,7 +375,9 @@
         "escape_velocity_km_s": 21.3,
         "mean_temp_c": -195,
         "surface_pressure_bar": null,
-        "albedo": 0.3
+        "albedo": 0.3,
+        "albedo_bond": 0.3,
+        "mean_temp_c_bb": -215.05
       },
       "orbit": {
         "semimajor_axis_km": 2867000000,
@@ -412,14 +426,16 @@
         "escape_velocity_km_s": 23.5,
         "mean_temp_c": -200,
         "surface_pressure_bar": null,
-        "albedo": 0.29
+        "albedo": 0.29,
+        "albedo_bond": 0.29,
+        "mean_temp_c_bb": -226.55
       },
       "orbit": {
         "semimajor_axis_km": 4515000000,
         "orbital_period_days": 59800,
         "orbital_velocity_km_s": 5.43,
         "inclination_deg": 1.77,
-        "eccentricity": 0.011,
+        "eccentricity": 0.0097,
         "obliquity_deg": 28.32,
         "rotation_period_hours": 16.11
       },
@@ -458,8 +474,12 @@
         "gravity_m_s2": 0.62,
         "escape_velocity_km_s": 1.21,
         "mean_temp_c": -225,
-        "surface_pressure_bar": 1e-05,
-        "albedo": null
+        "surface_pressure_bar": 1.3e-05,
+        "albedo": 0.52,
+        "albedo_bond": 0.72,
+        "albedo_geometric": 0.52,
+        "mean_temp_c_bb": -235.65,
+        "mean_temp_c_surface": -242.15
       },
       "orbit": {
         "semimajor_axis_km": 5906376272,
@@ -513,7 +533,7 @@
         "orbital_period_days": 1682.0,
         "orbital_velocity_km_s": 17.9,
         "inclination_deg": 10.59,
-        "eccentricity": 0.0758,
+        "eccentricity": 0.0796923,
         "obliquity_deg": 4,
         "rotation_period_hours": 9.074
       },
@@ -550,8 +570,10 @@
         "gravity_m_s2": 1.62,
         "escape_velocity_km_s": 2.38,
         "mean_temp_c": -20,
-        "surface_pressure_bar": null,
-        "albedo": 0.12
+        "surface_pressure_bar": 3e-15,
+        "albedo": 0.12,
+        "albedo_bond": 0.11,
+        "mean_temp_c_bb": -2.75
       },
       "orbit": {
         "semimajor_axis_km": 384400,
@@ -872,8 +894,8 @@
         "semimajor_axis_km": 185520,
         "orbital_period_days": 0.9424218,
         "orbital_velocity_km_s": 14.28,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 1.53,
+        "eccentricity": 0.0202,
         "obliquity_deg": null,
         "rotation_period_hours": 22.618
       },
@@ -917,8 +939,8 @@
         "semimajor_axis_km": 238020,
         "orbital_period_days": 1.370218,
         "orbital_velocity_km_s": 12.62,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 0.0,
+        "eccentricity": 0.0045,
         "obliquity_deg": null,
         "rotation_period_hours": 32.885
       },
@@ -962,8 +984,8 @@
         "semimajor_axis_km": 294660,
         "orbital_period_days": 1.887802,
         "orbital_velocity_km_s": 11.35,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 1.86,
+        "eccentricity": 0.0,
         "obliquity_deg": null,
         "rotation_period_hours": 45.307
       },
@@ -1007,8 +1029,8 @@
         "semimajor_axis_km": 377400,
         "orbital_period_days": 2.736915,
         "orbital_velocity_km_s": 10.03,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 0.02,
+        "eccentricity": 0.0022,
         "obliquity_deg": null,
         "rotation_period_hours": 65.686
       },
@@ -1052,8 +1074,8 @@
         "semimajor_axis_km": 527040,
         "orbital_period_days": 4.5175,
         "orbital_velocity_km_s": 8.48,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 0.35,
+        "eccentricity": 0.001,
         "obliquity_deg": null,
         "rotation_period_hours": 108.42
       },
@@ -1097,8 +1119,8 @@
         "semimajor_axis_km": 1221870,
         "orbital_period_days": 15.945421,
         "orbital_velocity_km_s": 5.58,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 0.33,
+        "eccentricity": 0.0292,
         "obliquity_deg": null,
         "rotation_period_hours": 382.69
       },
@@ -1142,8 +1164,8 @@
         "semimajor_axis_km": 1500930,
         "orbital_period_days": 21.276609,
         "orbital_velocity_km_s": 5.05,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 0.43,
+        "eccentricity": 0.1042,
         "obliquity_deg": null,
         "rotation_period_hours": null
       },
@@ -1181,14 +1203,14 @@
         "escape_velocity_km_s": 0.573,
         "mean_temp_c": null,
         "surface_pressure_bar": null,
-        "albedo": 0.26
+        "albedo": 0.275
       },
       "orbit": {
         "semimajor_axis_km": 3560850,
         "orbital_period_days": 79.330183,
         "orbital_velocity_km_s": 3.26,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 14.72,
+        "eccentricity": 0.0283,
         "obliquity_deg": null,
         "rotation_period_hours": 1903.92
       },
