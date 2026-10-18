@@ -14,3 +14,7 @@ config.json
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# 数据采集缓存与核查报告（本地产物，随时可重新生成，不进仓库）
+scripts/.cache/
+reports/

@@ -30,7 +30,9 @@
 ### 更新天体数据
 
 ```bash
-# 1. 编辑 docs/data/astro.json
+# 0.（建议，季度节奏）先从 NASA 源拉数据生成核查报告，确认有没有源更新
+python scripts/fetch_astro_data.py        # 报告落 reports/astro_fetch_latest.md
+# 1. 按报告人工更新 docs/data/astro.json（脚本只读不改，详见下节）
 # 2. 数据校验（派生密度/轨道速度/逃逸速度一致性、已知质量顺序等）
 python scripts/lint_data.py
 # 3. 重新生成页面
@@ -39,6 +41,28 @@ python scripts/gen_pages.py
 mkdocs build --strict
 # 5. 提交推送（CF Pages 自动上线）
 ```
+
+### 数据源核查（fetch_astro_data.py）
+
+天体物理参数不是行情数据，没有理由无人值守自动合入——脚本永远只产**变更提案**：
+
+```bash
+python scripts/fetch_astro_data.py                # 全量：NSSDC fact sheets + JPL SBDB
+python scripts/fetch_astro_data.py --source nssdc # 只跑一个源
+python scripts/fetch_astro_data.py --offline      # 用缓存离线重放（调试用）
+python scripts/test_fetch_astro.py                # 解析器回归测试（19 项断言）
+```
+
+- **数据源**：NSSDC Planetary Fact Sheets（nssdc.gsfc.nasa.gov，NASA Goddard，
+  覆盖太阳/八大行星/月球/冥王星/火卫一二/四大卫星系统，共 15 页，公共领域）
+  + JPL SBDB API（ssd-api.jpl.nasa.gov，免 key，谷神星等小天体，公共领域）
+- **产物**：`reports/astro_fetch_<时间戳>.md`（人读；`reports/` 与 `scripts/.cache/`
+  已 gitignore，缓存用于复现与离线重放）
+- **判定**：相对差异 ≤1% 一致、1–5% 微小、>5% 显著；反照率自动甄别 Bond/Geometric
+  双口径，逆行自转自动处理符号约定；退出码 0=无显著差异，1=有，2=抓取失败
+- **礼仪**：单并发、1s 间隔、带 UA、失败退避（遵循 JPL Fair Use Policy）；
+  报告会记录每个源页面的 Last Updated 日期
+- 人审报告 → 手动改 `astro.json`（同步 `sources`/`verified`）→ 回到上面的更新流程
 
 ### 发布一篇科普文章
 
@@ -92,6 +116,6 @@ mkdocs serve -a 127.0.0.1:8001   # 8000 端口被御风 Home 占用时换端口
 
 ## 待补充
 
-- 鸟神星、妊神星、阋神星（权威源暂无完整实测值）
+- 鸟神星、妊神星、阋神星：SBDB 有轨道要素与自转周期，缺 GM/直径等实测值（2026-10 核查确认）
 - 恒星、系外行星（NASA Exoplanet Archive TAP 已规划）
-- 其余天体的星球贴图（当前无贴图天体用类别色占位圆）
+- 反照率口径统一：当前地球与气态巨行星取 Bond、月球与卫星取 Geometric（核查报告已自动甄别）
