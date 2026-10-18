@@ -376,7 +376,7 @@ def compare_block(root, o, objs):
     ])
 
 
-def build_object(root, o, by_id, order):
+def build_object(root, o, by_id, order, registry=None):
     oid = o["id"]
     ph, orb = o.get("physical") or {}, o.get("orbit") or {}
     cat = o["category"]
@@ -496,8 +496,16 @@ def build_object(root, o, by_id, order):
 
     L.append('<section class="obj-source">')
     L.append("  <h2>数据来源</h2>")
-    srcs = "、".join(o.get("sources") or [])
-    L.append(f'  <p>来源标识：{srcs or "—"}；核对日期：{o.get("verified") or "—"}。'
+    registry = registry or {}
+    links = []
+    for s in o.get("sources") or []:
+        entry = registry.get(s)
+        if entry:
+            links.append(f'<a href="{entry["url"]}" target="_blank" rel="noopener">{entry["name"]}</a>')
+        else:
+            links.append(s)
+    srcs = "、".join(links) if links else "—"
+    L.append(f'  <p>数据来源：{srcs}；核对日期：{o.get("verified") or "—"}。'
              f'数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。'
              f'发现错误请到 <a href="{REPO_URL}/issues">GitHub Issues</a> 反馈。</p>')
     L.append("</section>")
@@ -630,7 +638,8 @@ def main():
     outputs = {"docs/index.md": build_index(data), "docs/data.md": build_data_page(data, objs),
                "docs/objects/index.md": build_object_index(data)}
     for o in objs:
-        outputs[f"docs/objects/{o['id']}.md"] = build_object(root, o, by_id, order)
+        outputs[f"docs/objects/{o['id']}.md"] = build_object(
+            root, o, by_id, order, data.get("source_registry") or {})
     csv_text = build_csv(objs)
     outputs["docs/data/astro_flat.csv"] = csv_text
 

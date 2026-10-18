@@ -1,10 +1,10 @@
 ---
-description: "下载星野笔记的天体数据集：32 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"
+description: "下载星野笔记的天体数据集：35 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"
 ---
 
 # 天体数据集
 
-本站收录的 32 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-10-18。
+本站收录的 35 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-10-18。
 
 <div class="dl-cards">
   <a class="dl-card" href="../data/astro.json" download>

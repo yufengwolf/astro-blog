@@ -1,14 +1,14 @@
 ---
-description: "收录 32 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 35 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">32 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>
+  <p class="astro-hero-sub">35 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>
   <p class="astro-hero-stats">
     <span class="astro-stat"><b>1</b> 恒星</span>
     <span class="astro-stat"><b>8</b> 行星</span>
-    <span class="astro-stat"><b>2</b> 矮行星</span>
+    <span class="astro-stat"><b>5</b> 矮行星</span>
     <span class="astro-stat"><b>21</b> 卫星</span>
   </p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
@@ -155,6 +155,39 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
         <div class="astro-card-title">谷神星<span class="en">Ceres</span></div>
         <p class="astro-card-tagline">小行星带中最大的天体，唯一位于内太阳系的矮行星</p>
         <div class="astro-card-stats"><span>9.38×10²⁰ kg</span><span>469.7 km</span><span>2.162 g/cm³</span></div>
+      </div>
+      <span class="astro-badge dwarf_planet">矮行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="dwarf_planet" data-name="鸟神星 Makemake" data-mass="" data-radius="" data-density="" data-temp="" data-period="112364.81" data-moons="1">
+    <a class="astro-card-link" href="objects/makemake/">
+      <div class="astro-img dwarf_planet astro-img-fallback"><span>鸟</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">鸟神星<span class="en">Makemake</span></div>
+        <p class="astro-card-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge dwarf_planet">矮行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="dwarf_planet" data-name="妊神星 Haumea" data-mass="" data-radius="" data-density="" data-temp="" data-period="103208.12" data-moons="2">
+    <a class="astro-card-link" href="objects/haumea/">
+      <div class="astro-img dwarf_planet astro-img-fallback"><span>妊</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">妊神星<span class="en">Haumea</span></div>
+        <p class="astro-card-tagline">自转极快的椭球状矮行星，拥有光环</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge dwarf_planet">矮行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="dwarf_planet" data-name="阋神星 Eris" data-mass="" data-radius="" data-density="" data-temp="" data-period="204516.66" data-moons="1">
+    <a class="astro-card-link" href="objects/eris/">
+      <div class="astro-img dwarf_planet astro-img-fallback"><span>阋</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">阋神星<span class="en">Eris</span></div>
+        <p class="astro-card-tagline">质量最大的矮行星，它的发现促使冥王星降级</p>
+        <div class="astro-card-stats"></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
@@ -411,4 +444,4 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   <p>全部数值整理自 NASA 公开资料（公共领域），每个天体页面均标注来源与核对日期（最近核对：2026-10-18）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.2 · 收录 32 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.2 · 收录 35 个天体（全部配图）</p>

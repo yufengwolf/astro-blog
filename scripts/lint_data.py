@@ -59,6 +59,13 @@ def main():
             warn(f"{oid}: tagline 超过 60 字")
         if not o.get("sources"):
             err(f"{oid}: 缺少 sources")
+        registry = data.get("source_registry") or {}
+        for s in o.get("sources") or []:
+            entry = registry.get(s)
+            if not entry:
+                err(f"{oid}: sources 引用未注册的来源 id: {s}")
+            elif not entry.get("name") or not entry.get("url"):
+                err(f"{oid}: 来源 {s} 注册条目缺少 name/url")
         try:
             datetime.strptime(o.get("verified") or "", "%Y-%m-%d")
         except ValueError:

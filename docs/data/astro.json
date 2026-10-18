@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-18",
-    "object_count": 32,
+    "object_count": 35,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -108,7 +108,7 @@
         "year": null
       },
       "sources": [
-        "nssdc_planetary_factsheet"
+        "nssdc_mercuryfact"
       ],
       "verified": "2026-10-18",
       "article": "mercury",
@@ -159,7 +159,7 @@
         "year": null
       },
       "sources": [
-        "nssdc_planetary_factsheet"
+        "nssdc_venusfact"
       ],
       "verified": "2026-10-18",
       "article": "venus",
@@ -212,7 +212,7 @@
         "year": null
       },
       "sources": [
-        "nssdc_planetary_factsheet",
+        "nssdc_earthfact",
         "nssdc_moonfact"
       ],
       "verified": "2026-10-18",
@@ -433,7 +433,7 @@
         "year": 1781
       },
       "sources": [
-        "nssdc_planetary_factsheet"
+        "nssdc_uranusfact"
       ],
       "verified": "2026-10-18",
       "article": null,
@@ -486,7 +486,7 @@
         "year": 1846
       },
       "sources": [
-        "nssdc_planetary_factsheet"
+        "nssdc_neptunefact"
       ],
       "verified": "2026-10-18",
       "article": null,
@@ -540,7 +540,7 @@
         "year": 1930
       },
       "sources": [
-        "nssdc_planetary_factsheet"
+        "nssdc_plutofact"
       ],
       "verified": "2026-10-18",
       "article": "pluto",
@@ -594,6 +594,124 @@
       "verified": "2026-10-18",
       "article": null,
       "image": "assets/planets/ceres.webp"
+    },
+    {
+      "id": "makemake",
+      "name": "鸟神星",
+      "name_en": "Makemake",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "柯伊伯带最大的经典天体之一，表面覆盖甲烷冰",
+      "physical": {},
+      "orbit": {
+        "semimajor_axis_km": 6817314568,
+        "orbital_period_days": 112364.81,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 29.0279,
+        "eccentricity": 0.158889,
+        "obliquity_deg": null,
+        "rotation_period_hours": 22.8266
+      },
+      "moons": {
+        "count": 1,
+        "notable": [
+          "MK2"
+        ]
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": "迈克尔·布朗等",
+        "year": 2005
+      },
+      "sources": [
+        "jpl_sbdb",
+        "iau_wgsbn"
+      ],
+      "source_dates": {},
+      "verified": "2026-10-18",
+      "image": null
+    },
+    {
+      "id": "haumea",
+      "name": "妊神星",
+      "name_en": "Haumea",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "自转极快的椭球状矮行星，拥有光环",
+      "physical": {},
+      "orbit": {
+        "semimajor_axis_km": 6441727731,
+        "orbital_period_days": 103208.12,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 28.2085,
+        "eccentricity": 0.194443,
+        "obliquity_deg": null,
+        "rotation_period_hours": 3.9154
+      },
+      "moons": {
+        "count": 2,
+        "notable": [
+          "妊卫一",
+          "妊卫二"
+        ]
+      },
+      "rings": true,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": "迈克尔·布朗等",
+        "year": 2004
+      },
+      "sources": [
+        "jpl_sbdb",
+        "iau_wgsbn"
+      ],
+      "source_dates": {},
+      "verified": "2026-10-18",
+      "image": null
+    },
+    {
+      "id": "eris",
+      "name": "阋神星",
+      "name_en": "Eris",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "质量最大的矮行星，它的发现促使冥王星降级",
+      "physical": {},
+      "orbit": {
+        "semimajor_axis_km": 10162773801,
+        "orbital_period_days": 204516.66,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 43.9258,
+        "eccentricity": 0.4382385,
+        "obliquity_deg": null,
+        "rotation_period_hours": 25.9
+      },
+      "moons": {
+        "count": 1,
+        "notable": [
+          "阋卫一"
+        ]
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": "迈克尔·布朗等",
+        "year": 2005
+      },
+      "sources": [
+        "jpl_sbdb",
+        "iau_wgsbn"
+      ],
+      "source_dates": {},
+      "verified": "2026-10-18",
+      "image": null
     },
     {
       "id": "moon",
@@ -1626,5 +1744,75 @@
         "nssdc_uraniansatfact": "2023-03-11"
       }
     }
-  ]
+  ],
+  "source_registry": {
+    "nssdc_sunfact": {
+      "name": "NASA NSSDC · Sun Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    "nssdc_mercuryfact": {
+      "name": "NASA NSSDC · Mercury Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html"
+    },
+    "nssdc_venusfact": {
+      "name": "NASA NSSDC · Venus Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html"
+    },
+    "nssdc_earthfact": {
+      "name": "NASA NSSDC · Earth Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    },
+    "nssdc_marsfact": {
+      "name": "NASA NSSDC · Mars Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html"
+    },
+    "nssdc_jupiterfact": {
+      "name": "NASA NSSDC · Jupiter Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"
+    },
+    "nssdc_saturnfact": {
+      "name": "NASA NSSDC · Saturn Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html"
+    },
+    "nssdc_uranusfact": {
+      "name": "NASA NSSDC · Uranus Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html"
+    },
+    "nssdc_neptunefact": {
+      "name": "NASA NSSDC · Neptune Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html"
+    },
+    "nssdc_plutofact": {
+      "name": "NASA NSSDC · Pluto Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html"
+    },
+    "nssdc_moonfact": {
+      "name": "NASA NSSDC · Moon Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+    },
+    "nssdc_joviansatfact": {
+      "name": "NASA NSSDC · Satellites of Jupiter",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html"
+    },
+    "nssdc_saturniansatfact": {
+      "name": "NASA NSSDC · Satellites of Saturn",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html"
+    },
+    "nssdc_uraniansatfact": {
+      "name": "NASA NSSDC · Satellites of Uranus",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/uraniansatfact.html"
+    },
+    "nssdc_neptuniansatfact": {
+      "name": "NASA NSSDC · Satellites of Neptune",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptuniansatfact.html"
+    },
+    "jpl_sbdb": {
+      "name": "JPL Small-Body Database (SBDB)",
+      "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html"
+    },
+    "iau_wgsbn": {
+      "name": "IAU · 行星卫星命名公报（USGS Gazetteer）",
+      "url": "https://planetarynames.wr.usgs.gov/"
+    }
+  }
 }
