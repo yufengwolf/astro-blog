@@ -3,7 +3,7 @@ description: "水星（Mercury）的天体数据：3.3×10²³ kg、半径 2,440
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../assets/planets/mercury.webp" alt="水星" loading="lazy"></div>
+  <div class="astro-img planet"><img src="../../assets/planets/mercury.webp" alt="水星" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>水星 <small>Mercury</small></h1>
@@ -144,4 +144,4 @@ A：外观很像，但水星坑底物质成分、撞击演化历史和月球存�
 <p class="obj-nav">← 上一颗：<a href="../sun/">太阳</a></p>
 <p class="obj-nav">下一颗：<a href="../venus/">金星</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

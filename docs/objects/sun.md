@@ -3,7 +3,7 @@ description: "太阳（Sun）的天体数据：1.99×10³⁰ kg、半径 695,700
 ---
 
 <div class="obj-hero">
-  <div class="astro-img star"><img src="../assets/planets/sun.webp" alt="太阳" loading="lazy"></div>
+  <div class="astro-img star"><img src="../../assets/planets/sun.webp" alt="太阳" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>太阳 <small>Sun</small></h1>
@@ -76,4 +76,4 @@ description: "太阳（Sun）的天体数据：1.99×10³⁰ kg、半径 695,700
 
 <p class="obj-nav">下一颗：<a href="../mercury/">水星</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

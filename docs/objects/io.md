@@ -3,7 +3,7 @@ description: "木卫一（Io）的天体数据：8.93×10²² kg、半径 1,822 
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../assets/planets/io.webp" alt="木卫一" loading="lazy"></div>
+  <div class="astro-img moon"><img src="../../assets/planets/io.webp" alt="木卫一" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫一 <small>Io</small></h1>
@@ -75,4 +75,4 @@ description: "木卫一（Io）的天体数据：8.93×10²² kg、半径 1,822 
 <p class="obj-nav">← 上一颗：<a href="../deimos/">火卫二</a></p>
 <p class="obj-nav">下一颗：<a href="../europa/">木卫二</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

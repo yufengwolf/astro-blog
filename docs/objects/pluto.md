@@ -3,7 +3,7 @@ description: "冥王星（Pluto）的天体数据：1.3×10²² kg、半径 1,18
 ---
 
 <div class="obj-hero">
-  <div class="astro-img dwarf_planet"><img src="../assets/planets/pluto.webp" alt="冥王星" loading="lazy"></div>
+  <div class="astro-img dwarf_planet"><img src="../../assets/planets/pluto.webp" alt="冥王星" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>冥王星 <small>Pluto</small></h1>
@@ -153,4 +153,4 @@ A：表层主要是氮冰、甲烷冰；水冰埋藏在更深处，构成冥王�
 <p class="obj-nav">← 上一颗：<a href="../neptune/">海王星</a></p>
 <p class="obj-nav">下一颗：<a href="../ceres/">谷神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

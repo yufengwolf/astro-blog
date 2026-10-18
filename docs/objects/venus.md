@@ -3,7 +3,7 @@ description: "金星（Venus）的天体数据：4.87×10²⁴ kg、半径 6,052
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../assets/planets/venus.webp" alt="金星" loading="lazy"></div>
+  <div class="astro-img planet"><img src="../../assets/planets/venus.webp" alt="金星" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>金星 <small>Venus</small></h1>
@@ -134,4 +134,4 @@ A：不能，它是地内行星，只能在日出前或日落后短暂出现，�
 <p class="obj-nav">← 上一颗：<a href="../mercury/">水星</a></p>
 <p class="obj-nav">下一颗：<a href="../earth/">地球</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

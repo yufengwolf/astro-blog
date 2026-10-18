@@ -3,7 +3,7 @@ description: "月球（Moon）的天体数据：7.35×10²² kg、半径 1,737 k
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../assets/planets/moon.webp" alt="月球" loading="lazy"></div>
+  <div class="astro-img moon"><img src="../../assets/planets/moon.webp" alt="月球" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>月球 <small>Moon</small></h1>
@@ -76,4 +76,4 @@ description: "月球（Moon）的天体数据：7.35×10²² kg、半径 1,737 k
 <p class="obj-nav">← 上一颗：<a href="../ceres/">谷神星</a></p>
 <p class="obj-nav">下一颗：<a href="../phobos/">火卫一</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

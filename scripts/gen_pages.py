@@ -23,7 +23,7 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.1"
+VERSION = "1.2"
 VERIFIED = "2026-10-18"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
@@ -153,7 +153,9 @@ def article_body(root, slug):
 
 
 def img_block(o, base=""):
-    """天体图片块。base 为图片相对路径前缀：首页 index.md 传 ""，详情页 objects/<id>.md 传 "../"。"""
+    """天体图片块。base 为图片相对路径前缀（相对页面 URL，非源文件路径）：
+    首页 index.md（URL /）传 ""；详情页 objects/<id>.md（URL /objects/<id>/，
+    use_directory_urls 默认开启）需退两级到站根，传 "../../"。"""
     cat = o["category"]
     img = o.get("image")
     if img:
@@ -381,7 +383,7 @@ def build_object(root, o, by_id, order):
     L.append("---")
     L.append("")
     L.append(f'<div class="obj-hero">')
-    L.append(f'  {img_block(o, "../")}')
+    L.append(f'  {img_block(o, "../../")}')
     L.append('  <div class="obj-hero-info">')
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')

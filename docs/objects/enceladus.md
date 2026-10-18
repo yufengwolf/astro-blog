@@ -3,7 +3,7 @@ description: "土卫二（Enceladus）的天体数据：1.08×10²⁰ kg、半�
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div>
+  <div class="astro-img moon"><img src="../../assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫二 <small>Enceladus</small></h1>
@@ -75,4 +75,4 @@ description: "土卫二（Enceladus）的天体数据：1.08×10²⁰ kg、半�
 <p class="obj-nav">← 上一颗：<a href="../mimas/">土卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../tethys/">土卫三</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

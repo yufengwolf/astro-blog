@@ -3,7 +3,7 @@ description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、半径 561.
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../assets/planets/dione.webp" alt="土卫四" loading="lazy"></div>
+  <div class="astro-img moon"><img src="../../assets/planets/dione.webp" alt="土卫四" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫四 <small>Dione</small></h1>
@@ -75,4 +75,4 @@ description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、半径 561.
 <p class="obj-nav">← 上一颗：<a href="../tethys/">土卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../rhea/">土卫五</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

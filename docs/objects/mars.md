@@ -3,7 +3,7 @@ description: "火星（Mars）的天体数据：6.42×10²³ kg、半径 3,390 k
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../assets/planets/mars.webp" alt="火星" loading="lazy"></div>
+  <div class="astro-img planet"><img src="../../assets/planets/mars.webp" alt="火星" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>火星 <small>Mars</small></h1>
@@ -142,4 +142,4 @@ A：不会，火星大气独立，没有物质通道将沙尘输送到地球。
 <p class="obj-nav">← 上一颗：<a href="../earth/">地球</a></p>
 <p class="obj-nav">下一颗：<a href="../jupiter/">木星</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

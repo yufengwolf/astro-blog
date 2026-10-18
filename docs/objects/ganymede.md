@@ -3,7 +3,7 @@ description: "木卫三（Ganymede）的天体数据：1.48×10²³ kg、半径 
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../assets/planets/ganymede.webp" alt="木卫三" loading="lazy"></div>
+  <div class="astro-img moon"><img src="../../assets/planets/ganymede.webp" alt="木卫三" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫三 <small>Ganymede</small></h1>
@@ -75,4 +75,4 @@ description: "木卫三（Ganymede）的天体数据：1.48×10²³ kg、半径 
 <p class="obj-nav">← 上一颗：<a href="../europa/">木卫二</a></p>
 <p class="obj-nav">下一颗：<a href="../callisto/">木卫四</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>

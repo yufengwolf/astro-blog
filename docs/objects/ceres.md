@@ -3,7 +3,7 @@ description: "谷神星（Ceres）的天体数据：9.38×10²⁰ kg、半径 46
 ---
 
 <div class="obj-hero">
-  <div class="astro-img dwarf_planet"><img src="../assets/planets/ceres.webp" alt="谷神星" loading="lazy"></div>
+  <div class="astro-img dwarf_planet"><img src="../../assets/planets/ceres.webp" alt="谷神星" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>谷神星 <small>Ceres</small></h1>
@@ -75,4 +75,4 @@ description: "谷神星（Ceres）的天体数据：9.38×10²⁰ kg、半径 46
 <p class="obj-nav">← 上一颗：<a href="../pluto/">冥王星</a></p>
 <p class="obj-nav">下一颗：<a href="../moon/">月球</a> →</p>
 
-<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>
