@@ -3,7 +3,7 @@ description: "土卫五（Rhea）的天体数据：2.31×10²¹ kg、半径 763.
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/rhea.webp" alt="土卫五" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫五 <small>Rhea</small></h1>

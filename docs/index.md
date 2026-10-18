@@ -106,7 +106,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="planet" data-name="土星 Saturn" data-mass="5.6832e+26" data-radius="58232" data-density="0.687" data-temp="-140" data-period="10755.7" data-moons="274">
     <a class="astro-card-link" href="objects/saturn/">
-      <div class="astro-img planet astro-img-fallback"><span>土</span></div>
+      <div class="astro-img planet"><img src="assets/planets/saturn.webp" alt="土星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土星<span class="en">Saturn</span></div>
         <p class="astro-card-tagline">以壮观环系闻名的气态巨行星，平均密度比水还小</p>
@@ -117,7 +117,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="planet" data-name="天王星 Uranus" data-mass="8.6813e+25" data-radius="25559" data-density="1.27" data-temp="-195" data-period="30589" data-moons="28">
     <a class="astro-card-link" href="objects/uranus/">
-      <div class="astro-img planet astro-img-fallback"><span>天</span></div>
+      <div class="astro-img planet"><img src="assets/planets/uranus.webp" alt="天王星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天王星<span class="en">Uranus</span></div>
         <p class="astro-card-tagline">躺着自转的冰巨星，自转轴倾角约 98 度</p>
@@ -128,7 +128,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="planet" data-name="海王星 Neptune" data-mass="1.0241e+26" data-radius="24764" data-density="1.638" data-temp="-200" data-period="59800" data-moons="16">
     <a class="astro-card-link" href="objects/neptune/">
-      <div class="astro-img planet astro-img-fallback"><span>海</span></div>
+      <div class="astro-img planet"><img src="assets/planets/neptune.webp" alt="海王星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">海王星<span class="en">Neptune</span></div>
         <p class="astro-card-tagline">太阳系最外侧的行星，风速可达每小时 2100 公里</p>
@@ -150,7 +150,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="dwarf_planet" data-name="谷神星 Ceres" data-mass="9.3846e+20" data-radius="469.7" data-density="2.162" data-temp="" data-period="1682.0" data-moons="0">
     <a class="astro-card-link" href="objects/ceres/">
-      <div class="astro-img dwarf_planet astro-img-fallback"><span>谷</span></div>
+      <div class="astro-img dwarf_planet"><img src="assets/planets/ceres.webp" alt="谷神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">谷神星<span class="en">Ceres</span></div>
         <p class="astro-card-tagline">小行星带中最大的天体，唯一位于内太阳系的矮行星</p>
@@ -172,7 +172,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="火卫一 Phobos" data-mass="1.06e+16" data-radius="11.27" data-density="1.9" data-temp="" data-period="0.31891" data-moons="0">
     <a class="astro-card-link" href="objects/phobos/">
-      <div class="astro-img moon astro-img-fallback"><span>火</span></div>
+      <div class="astro-img moon"><img src="assets/planets/phobos.webp" alt="火卫一" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">火卫一<span class="en">Phobos</span></div>
         <p class="astro-card-tagline">火星较大的卫星，正以每百年约 1.8 米的速度靠近火星</p>
@@ -183,7 +183,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="火卫二 Deimos" data-mass="2400000000000000.0" data-radius="6.3" data-density="1.75" data-temp="" data-period="1.26244" data-moons="0">
     <a class="astro-card-link" href="objects/deimos/">
-      <div class="astro-img moon astro-img-fallback"><span>火</span></div>
+      <div class="astro-img moon"><img src="assets/planets/deimos.webp" alt="火卫二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">火卫二<span class="en">Deimos</span></div>
         <p class="astro-card-tagline">火星较小的卫星，形状极不规则，表面覆盖细腻的风化层</p>
@@ -194,7 +194,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="木卫一 Io" data-mass="8.932e+22" data-radius="1821.5" data-density="3.53" data-temp="" data-period="1.769138" data-moons="0">
     <a class="astro-card-link" href="objects/io/">
-      <div class="astro-img moon astro-img-fallback"><span>木</span></div>
+      <div class="astro-img moon"><img src="assets/planets/io.webp" alt="木卫一" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">木卫一<span class="en">Io</span></div>
         <p class="astro-card-tagline">太阳系火山活动最剧烈的天体，表面遍布硫磺沉积物</p>
@@ -205,7 +205,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="木卫二 Europa" data-mass="4.8e+22" data-radius="1560.8" data-density="3.01" data-temp="" data-period="3.551181" data-moons="0">
     <a class="astro-card-link" href="objects/europa/">
-      <div class="astro-img moon astro-img-fallback"><span>木</span></div>
+      <div class="astro-img moon"><img src="assets/planets/europa.webp" alt="木卫二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">木卫二<span class="en">Europa</span></div>
         <p class="astro-card-tagline">冰壳之下藏有全球性液态海洋，搜寻地外生命的热门目标</p>
@@ -216,7 +216,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="木卫三 Ganymede" data-mass="1.4819e+23" data-radius="2631.2" data-density="1.94" data-temp="" data-period="7.154553" data-moons="0">
     <a class="astro-card-link" href="objects/ganymede/">
-      <div class="astro-img moon astro-img-fallback"><span>木</span></div>
+      <div class="astro-img moon"><img src="assets/planets/ganymede.webp" alt="木卫三" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">木卫三<span class="en">Ganymede</span></div>
         <p class="astro-card-tagline">太阳系最大的卫星，比水星还大，且拥有自己的磁场</p>
@@ -227,7 +227,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="木卫四 Callisto" data-mass="1.0759e+23" data-radius="2410.3" data-density="1.83" data-temp="" data-period="16.689017" data-moons="0">
     <a class="astro-card-link" href="objects/callisto/">
-      <div class="astro-img moon astro-img-fallback"><span>木</span></div>
+      <div class="astro-img moon"><img src="assets/planets/callisto.webp" alt="木卫四" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">木卫四<span class="en">Callisto</span></div>
         <p class="astro-card-tagline">太阳系撞击坑最密集的天体之一，表面几乎未被地质活动改造</p>
@@ -238,7 +238,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫一 Mimas" data-mass="3.79e+19" data-radius="198.7" data-density="1.15" data-temp="" data-period="0.9424218" data-moons="0">
     <a class="astro-card-link" href="objects/mimas/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/mimas.webp" alt="土卫一" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫一<span class="en">Mimas</span></div>
         <p class="astro-card-tagline">被称为'死星'的卫星，赫歇尔撞击坑占其表面的三分之一</p>
@@ -249,7 +249,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫二 Enceladus" data-mass="1.08e+20" data-radius="252.1" data-density="1.61" data-temp="" data-period="1.370218" data-moons="0">
     <a class="astro-card-link" href="objects/enceladus/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫二<span class="en">Enceladus</span></div>
         <p class="astro-card-tagline">南极喷泉将地下海洋的物质直接送入太空的冰质小卫星</p>
@@ -260,7 +260,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫三 Tethys" data-mass="6.18e+20" data-radius="530.7" data-density="0.985" data-temp="" data-period="1.887802" data-moons="0">
     <a class="astro-card-link" href="objects/tethys/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/tethys.webp" alt="土卫三" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫三<span class="en">Tethys</span></div>
         <p class="astro-card-tagline">冰质卫星，表面的伊萨卡峡谷绵延约 2000 公里</p>
@@ -271,7 +271,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫四 Dione" data-mass="1.1e+21" data-radius="561.4" data-density="1.478" data-temp="" data-period="2.736915" data-moons="0">
     <a class="astro-card-link" href="objects/dione/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/dione.webp" alt="土卫四" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫四<span class="en">Dione</span></div>
         <p class="astro-card-tagline">冰质卫星，纵横的冰壳悬崖记录着古老的地质活动</p>
@@ -282,7 +282,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫五 Rhea" data-mass="2.31e+21" data-radius="763.8" data-density="1.236" data-temp="" data-period="4.5175" data-moons="0">
     <a class="astro-card-link" href="objects/rhea/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/rhea.webp" alt="土卫五" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫五<span class="en">Rhea</span></div>
         <p class="astro-card-tagline">土星第二大卫星，由约三分之二的冰与三分之一的岩石构成</p>
@@ -293,7 +293,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫六 Titan" data-mass="1.3455e+23" data-radius="2575.5" data-density="1.881" data-temp="-179" data-period="15.945421" data-moons="0">
     <a class="astro-card-link" href="objects/titan/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/titan.webp" alt="土卫六" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫六<span class="en">Titan</span></div>
         <p class="astro-card-tagline">太阳系唯一拥有浓厚大气的卫星，地表有液态甲烷的湖泊与河流</p>
@@ -304,7 +304,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫七 Hyperion" data-mass="5.6e+18" data-radius="138.7" data-density="0.55" data-temp="" data-period="21.276609" data-moons="0">
     <a class="astro-card-link" href="objects/hyperion/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/hyperion.webp" alt="土卫七" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫七<span class="en">Hyperion</span></div>
         <p class="astro-card-tagline">形状极不规则的卫星，混沌自转使它的朝向无法预测</p>
@@ -315,7 +315,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="土卫八 Iapetus" data-mass="1.81e+21" data-radius="734.5" data-density="1.088" data-temp="" data-period="79.330183" data-moons="0">
     <a class="astro-card-link" href="objects/iapetus/">
-      <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+      <div class="astro-img moon"><img src="assets/planets/iapetus.webp" alt="土卫八" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">土卫八<span class="en">Iapetus</span></div>
         <p class="astro-card-tagline">'阴阳脸'卫星，一面亮如雪一面黑如炭，赤道还有一道奇异山脊</p>
@@ -326,7 +326,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="海卫一 Triton" data-mass="2.14e+22" data-radius="1353.4" data-density="2.05" data-temp="-235" data-period="5.876854" data-moons="0">
     <a class="astro-card-link" href="objects/triton/">
-      <div class="astro-img moon astro-img-fallback"><span>海</span></div>
+      <div class="astro-img moon"><img src="assets/planets/triton.webp" alt="海卫一" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">海卫一<span class="en">Triton</span></div>
         <p class="astro-card-tagline">沿逆行轨道运行的卫星，或为被俘获的柯伊伯带天体</p>
@@ -337,7 +337,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="天卫五 Miranda" data-mass="6.6e+19" data-radius="235.8" data-density="1.2" data-temp="" data-period="1.413479" data-moons="0">
     <a class="astro-card-link" href="objects/miranda/">
-      <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+      <div class="astro-img moon"><img src="assets/planets/miranda.webp" alt="天卫五" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天卫五<span class="en">Miranda</span></div>
         <p class="astro-card-tagline">天王星系统中地质最奇特的卫星，断崖与沟槽密布</p>
@@ -348,7 +348,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="天卫一 Ariel" data-mass="1.29e+21" data-radius="578.9" data-density="1.59" data-temp="" data-period="2.520379" data-moons="0">
     <a class="astro-card-link" href="objects/ariel/">
-      <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+      <div class="astro-img moon"><img src="assets/planets/ariel.webp" alt="天卫一" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天卫一<span class="en">Ariel</span></div>
         <p class="astro-card-tagline">天王星系统中最明亮的卫星，表面峡谷纵横</p>
@@ -359,7 +359,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="天卫二 Umbriel" data-mass="1.22e+21" data-radius="584.7" data-density="1.46" data-temp="" data-period="4.144176" data-moons="0">
     <a class="astro-card-link" href="objects/umbriel/">
-      <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+      <div class="astro-img moon"><img src="assets/planets/umbriel.webp" alt="天卫二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天卫二<span class="en">Umbriel</span></div>
         <p class="astro-card-tagline">天王星系统中最暗的卫星，表面古老撞击坑密布</p>
@@ -370,7 +370,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="天卫三 Titania" data-mass="3.42e+21" data-radius="788.9" data-density="1.66" data-temp="" data-period="8.705867" data-moons="0">
     <a class="astro-card-link" href="objects/titania/">
-      <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+      <div class="astro-img moon"><img src="assets/planets/titania.webp" alt="天卫三" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天卫三<span class="en">Titania</span></div>
         <p class="astro-card-tagline">天王星最大的卫星，表面有巨大的地堑系统</p>
@@ -381,7 +381,7 @@ description: "收录 32 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="moon" data-name="天卫四 Oberon" data-mass="2.88e+21" data-radius="761.4" data-density="1.56" data-temp="" data-period="13.463234" data-moons="0">
     <a class="astro-card-link" href="objects/oberon/">
-      <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+      <div class="astro-img moon"><img src="assets/planets/oberon.webp" alt="天卫四" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天卫四<span class="en">Oberon</span></div>
         <p class="astro-card-tagline">天王星最外侧的大卫星，表面遍布撞击坑与深色物质</p>

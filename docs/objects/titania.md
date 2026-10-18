@@ -3,7 +3,7 @@ description: "天卫三（Titania）的天体数据：3.42×10²¹ kg、半径 7
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/titania.webp" alt="天卫三" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫三 <small>Titania</small></h1>

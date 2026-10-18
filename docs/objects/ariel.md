@@ -3,7 +3,7 @@ description: "天卫一（Ariel）的天体数据：1.29×10²¹ kg、半径 578
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/ariel.webp" alt="天卫一" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫一 <small>Ariel</small></h1>

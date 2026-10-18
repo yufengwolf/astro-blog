@@ -3,7 +3,7 @@ description: "天卫二（Umbriel）的天体数据：1.22×10²¹ kg、半径 5
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/umbriel.webp" alt="天卫二" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫二 <small>Umbriel</small></h1>

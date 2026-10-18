@@ -3,7 +3,7 @@ description: "天卫四（Oberon）的天体数据：2.88×10²¹ kg、半径 76
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/oberon.webp" alt="天卫四" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫四 <small>Oberon</small></h1>

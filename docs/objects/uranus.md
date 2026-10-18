@@ -3,7 +3,7 @@ description: "天王星（Uranus）的天体数据：8.68×10²⁵ kg、半径 2
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet astro-img-fallback"><span>天</span></div>
+  <div class="astro-img planet"><img src="../assets/planets/uranus.webp" alt="天王星" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>天王星 <small>Uranus</small></h1>

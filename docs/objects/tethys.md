@@ -3,7 +3,7 @@ description: "土卫三（Tethys）的天体数据：6.18×10²⁰ kg、半径 5
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/tethys.webp" alt="土卫三" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫三 <small>Tethys</small></h1>

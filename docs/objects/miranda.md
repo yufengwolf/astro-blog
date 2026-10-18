@@ -3,7 +3,7 @@ description: "天卫五（Miranda）的天体数据：6.6×10¹⁹ kg、半径 2
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>天</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/miranda.webp" alt="天卫五" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫五 <small>Miranda</small></h1>

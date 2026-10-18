@@ -3,7 +3,7 @@ description: "海卫一（Triton）的天体数据：2.14×10²² kg、半径 1,
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>海</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/triton.webp" alt="海卫一" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>海卫一 <small>Triton</small></h1>

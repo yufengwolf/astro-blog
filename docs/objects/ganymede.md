@@ -3,7 +3,7 @@ description: "木卫三（Ganymede）的天体数据：1.48×10²³ kg、半径 
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>木</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/ganymede.webp" alt="木卫三" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫三 <small>Ganymede</small></h1>

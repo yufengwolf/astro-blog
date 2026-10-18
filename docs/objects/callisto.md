@@ -3,7 +3,7 @@ description: "木卫四（Callisto）的天体数据：1.08×10²³ kg、半径 
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon astro-img-fallback"><span>木</span></div>
+  <div class="astro-img moon"><img src="../assets/planets/callisto.webp" alt="木卫四" loading="lazy"></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫四 <small>Callisto</small></h1>
