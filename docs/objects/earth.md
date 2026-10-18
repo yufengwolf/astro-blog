@@ -3,7 +3,7 @@ description: "地球（Earth）的天体数据：5.97×10²⁴ kg、半径 6,371
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../../assets/planets/earth.webp" alt="地球" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/earth.webp" alt="地球" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA18033" target="_blank" rel="noopener">NASA/GSFC · Blue Marble 2012</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>地球 <small>Earth</small></h1>
@@ -77,4 +77,4 @@ description: "地球（Earth）的天体数据：5.97×10²⁴ kg、半径 6,371
 <p class="obj-nav">← 上一颗：<a href="../venus/">金星</a></p>
 <p class="obj-nav">下一颗：<a href="../mars/">火星</a> →</p>
 
-<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>

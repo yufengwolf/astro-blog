@@ -1,28 +1,35 @@
 # 星野笔记 · 天体数据库
 
-基于 MkDocs + Material for MkDocs 的**静态天体数据工具站**：32 个天体的结构化数据（质量 / 半径 / 密度 / 温度 / 轨道 / 卫星），当前以太阳系为主，后续向恒星与系外行星扩展；首页支持搜索、分类筛选、按任意数值排序；每个天体有独立详情页（完整数据表 + 科普文章）。
+基于 MkDocs + Material for MkDocs 的**静态天体数据工具站**：35 个天体的结构化数据（质量 / 半径 / 密度 / 温度 / 轨道 / 卫星），当前以太阳系为主，后续向恒星与系外行星扩展；首页支持搜索、分类筛选、按任意数值排序；每个天体有独立详情页（完整数据表 + 科普文章）。
+
+> **维护者看这里**：[维护指南.md](维护指南.md) —— 自助维护全流程（查状态 / 拉数据 / 合库 / 补贴图 / 换 NASA 真图），每条都是可直接复制的命令，无隐藏操作。
 
 ## 目录结构
 
 ```text
 .
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
+├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑记录）
 ├─ requirements.txt      # 锁定 mkdocs-material 版本
 ├─ articles/             # 科普文章源（不在 docs/ 内，不单独建页，合成进详情页）
 ├─ scripts/
 │  ├─ lint_data.py       # 数据 lint：结构+派生量+已知事实校验（不过则阻断）
 │  ├─ gen_pages.py       # 页面生成器：astro.json → 首页/详情页/总表/数据集页/CSV
+│  ├─ fetch_astro_data.py# 数据核查：status/--objects/--propose/--apply（唯一写库入口）
+│  ├─ nasa_image.py      # NASA 真实影像：--search 找图 / --set 安装（自动署名+锁定）
+│  ├─ test_fetch_astro.py# 解析器+合库回归测试（30 项断言）
 │  └─ test_compare.js    # 对比功能回归测试（Node + DOM stub，31 项断言）
 └─ docs/
    ├─ index.md           # 【生成】天体总览工具页（勿手改）
-   ├─ objects/           # 【生成】32 个天体详情页 + index.md 总表（勿手改）
+   ├─ objects/           # 【生成】35 个天体详情页 + index.md 总表（勿手改）
    ├─ data.md            # 【生成】数据集下载页（勿手改；不挂导航，仅 URL/sitemap 可达）
-   ├─ data/astro.json    # 天体数据库（唯一事实源，手维护）
+   ├─ data/astro.json    # 天体数据库（唯一事实源，脚本合入/手维护）
+   ├─ data/nasa_images.json # NASA 真实影像登记表
    ├─ data/astro_flat.csv# 【生成】扁平 CSV
    ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）
    ├─ js/astro-compare.js# 详情页多天体对比
    ├─ stylesheets/extra.css
-   └─ assets/            # 图片：文章配图 + assets/planets/*.webp 星球贴图
+   └─ assets/            # 图片：文章配图 + assets/planets/*.webp 星球贴图（35/35）
 ```
 
 ## 日常使用
@@ -45,19 +52,21 @@ mkdocs build --strict
 
 ### 数据源核查（fetch_astro_data.py）
 
-天体物理参数不是行情数据，没有理由无人值守自动合入——脚本永远只产**变更提案**：
+天体物理参数不是行情数据，没有理由无人值守自动合入——自动拉取永远只产**变更提案**，写库只有 `--apply` 一个显式入口：
 
 ```bash
 python scripts/fetch_astro_data.py status              # 零网络本地体检（建议先跑这个）
 python scripts/fetch_astro_data.py                     # 全量：NSSDC fact sheets + JPL SBDB
 python scripts/fetch_astro_data.py --objects mars,moon # 针对性拉取（只拉对应源页）
-python scripts/fetch_astro_data.py --propose eris      # 为库外对象生成候选骨架
+python scripts/fetch_astro_data.py --propose quaoar    # 为库外对象生成候选骨架
+python scripts/fetch_astro_data.py --apply quaoar      # 人审骨架后合入（唯一写库入口）
 python scripts/fetch_astro_data.py --source nssdc      # 只跑一个源
 python scripts/fetch_astro_data.py --offline           # 用缓存离线重放（调试用）
-python scripts/test_fetch_astro.py                     # 解析器回归测试（21 项断言）
+python scripts/test_fetch_astro.py                     # 解析器+合库回归测试（30 项断言）
 ```
 
 建议工作节奏：**status 看清现状（对象/字段矩阵/新鲜度/缺口）→ --objects 针对性拉取 → 审报告 → 手动合库**。
+新增天体：**--propose 生成骨架 → 人工补 tagline（lint 门禁）→ --apply 合入**（详见 [维护指南.md](维护指南.md) 第二节，含实测过的创神星全流程）。
 
 - **数据源**：NSSDC Planetary Fact Sheets（nssdc.gsfc.nasa.gov，NASA Goddard，
   覆盖太阳/八大行星/月球/冥王星/火卫一二/四大卫星系统，共 15 页，公共领域）
@@ -68,11 +77,24 @@ python scripts/test_fetch_astro.py                     # 解析器回归测试�
   分别对比，逆行自转自动处理符号约定；退出码 0=无显著差异，1=有，2=抓取失败
 - **礼仪**：单并发、1s 间隔、带 UA、失败退避（遵循 JPL Fair Use Policy）
 - **新增天体**：`--propose <id>` 从 SBDB 生成候选骨架——源有的字段填真实值，
-  **没有的一律留 null（不编造）**，并列出入队前需人工补齐的项（tagline/贴图/文章）；
-  人审后粘贴进 `astro.json` 的 objects 数组即可，lint/gen 自动接管
+  **没有的一律留 null（不编造）**；人审骨架（至少补 tagline，否则 lint 门禁拦截）后
+  `--apply <id>` 合入——这是全链路唯一写库入口，查重+结构校验，lint/gen 自动接管
 - **新鲜度**：`astro.json` 每个对象带 `verified`（本站核对日）与 `source_dates`
   （NSSDC 源页面 Last Updated），`status` 命令据此输出新鲜度面板
 - 人审报告 → 手动改 `astro.json`（同步 `sources`/`verified`）→ 回到上面的更新流程
+
+### 星球贴图（35/35 已全覆盖）
+
+三条链路，详细命令与踩坑记录见 [维护指南.md](维护指南.md) 第三节：
+
+1. **NASA 真实影像**（首选）：`python scripts/nasa_image.py --search <关键词>` 找图 →
+   `--set <id> <PIA号> "<署名>"` 安装（自动圆盘裁剪/透明化/600px/登记署名/`image_locked` 锁定）。
+   已用真图：冥王星 PIA19857、地球 PIA18033、阋神星 PIA17307
+2. **AI 贴图**（NASA 库无图的天体）：blog-pipeline 仓库
+   `python gen_images.py --texture <中文名>` → `python sync_textures.py`
+   （自动去白边：透明区先 matting 再缩放；`--force` 可全量重制）
+3. **手动放置**：图存 `docs/assets/planets/<id>.webp`，astro.json 填 `image` +
+   `image_credit` + `image_locked: true`
 
 ### 发布一篇科普文章
 
@@ -121,14 +143,16 @@ mkdocs serve -a 127.0.0.1:8001   # 8000 端口被御风 Home 占用时换端口
 ## 数据源与许可
 
 - 数值数据整理自 NASA NSSDC Planetary/Satellite Fact Sheets、NASA/JPL SBDB API（美国政府作品，公共领域）
+- 星球影像：冥王星/地球/阋神星为 NASA 图片库真实影像（公共领域，详情页署名可溯源自 PIA 编号）；
+  其余为本站 AI 生成贴图（表面特征据 NASA 公布的科学结论绘制）
 - 一句话简介为本站原创
 - 每个天体详情页标注来源标识与核对日期；数据错误欢迎到 GitHub Issues 反馈
 
 ## 待补充
 
-- 鸟神星、妊神星、阋神星：SBDB 有轨道要素与自转周期，缺 GM/直径等实测值（2026-10 核查确认）。
-  **既定决策：维持精选 32 个，不扩收**——没有的数据不编造；`--propose` 可随时生成候选骨架备用
-- 反照率 Geometric 口径：当前仅水星/金星/冥王星补齐，其余 27 个对象库中缺失
-  （`status` 字段矩阵可见；NSSDC 均有值，下次核查可一键合入补全）
+- 鸟神星、妊神星、阋神星：SBDB 有轨道要素与自转周期，缺 GM/直径等实测值（2026-10 核查确认，
+  宁缺毋滥保持 null）；贴图已补（鸟神星/妊神星 AI 贴图、阋神星 NASA 概念图）。
+  创神星等更多 TNO：`--propose` 可随时生成候选骨架，维持精选不盲目扩收
+- 反照率 Geometric 口径：已补齐至 31/35（2026-10-19 状态：仅太阳与 TNO 三兄弟缺）
 - 恒星、系外行星（NASA Exoplanet Archive TAP 已规划）
 - 反照率口径统一：当前地球与气态巨行星取 Bond、月球与卫星取 Geometric（核查报告已自动甄别）

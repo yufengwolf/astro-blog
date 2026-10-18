@@ -75,4 +75,4 @@ description: "土卫五（Rhea）的天体数据：2.31×10²¹ kg、半径 763.
 <p class="obj-nav">← 上一颗：<a href="../dione/">土卫四</a></p>
 <p class="obj-nav">下一颗：<a href="../titan/">土卫六</a> →</p>
 
-<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>

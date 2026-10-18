@@ -263,5 +263,83 @@ class TestSchemaConsistency(unittest.TestCase):
         self.assertEqual(missing, set(), f"SPECS 有字段未被 FIELDS 覆盖：{missing}")
 
 
+class TestApplyPropose(unittest.TestCase):
+    """--apply 合库入口：查重 / 结构校验 / 落盘 / meta 同步。
+
+    这是全链路唯一写库的路径，测试用临时目录 + monkeypatch 模块常量，
+    不碰真实 astro.json。
+    """
+
+    def setUp(self):
+        import json
+        import tempfile
+        import fetch_astro_data as fad
+        self.fad = fad
+        self.tmp = Path(tempfile.mkdtemp(prefix="apply_test_"))
+        self.json_p = self.tmp / "astro.json"
+        self.rep_dir = self.tmp / "reports"
+        self.rep_dir.mkdir()
+        self.json_p.write_text(json.dumps(
+            {"objects": [{"id": "pluto", "name": "冥王星"}], "meta": {}},
+            ensure_ascii=False), encoding="utf-8")
+        self._orig_json, self._orig_rep = fad.ASTRO_JSON, fad.REPORT_DIR
+        fad.ASTRO_JSON, fad.REPORT_DIR = self.json_p, self.rep_dir
+
+    def tearDown(self):
+        self.fad.ASTRO_JSON, self.fad.REPORT_DIR = self._orig_json, self._orig_rep
+        import shutil
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def _skeleton(self, oid="quaoar", **over):
+        import json
+        obj = {
+            "id": oid, "name": "创神星", "name_en": "Quaoar",
+            "category": "dwarf_planet", "parent": "sun", "tagline": None,
+            "physical": {"mass_kg": 1.4e21}, "orbit": {"eccentricity": 0.04},
+            "moons": {"count": 1, "notable": []}, "rings": None,
+            "magnetic_field": None, "atmosphere": None,
+            "discovery": {"known_since": None, "discoverer": None, "year": 2002},
+            "sources": ["jpl_sbdb"], "source_dates": {},
+            "verified": "2026-10-19", "image": None,
+        }
+        obj.update(over)
+        (self.rep_dir / f"propose_{oid}.json").write_text(
+            json.dumps(obj, ensure_ascii=False), encoding="utf-8")
+        return obj
+
+    def test_apply_inserts_and_syncs_meta(self):
+        self._skeleton()
+        astro = {"pluto": {"id": "pluto"}}
+        rc = self.fad.apply_propose(astro, ["quaoar"])
+        self.assertEqual(rc, 0)
+        import json
+        d = json.loads(self.json_p.read_text(encoding="utf-8"))
+        self.assertEqual([o["id"] for o in d["objects"]], ["pluto", "quaoar"])
+        self.assertEqual(d["meta"]["object_count"], 2)
+        self.assertTrue(d["meta"]["updated"])
+
+    def test_apply_skips_known(self):
+        self._skeleton()
+        astro = {"quaoar": {"id": "quaoar"}}
+        rc = self.fad.apply_propose(astro, ["quaoar"])
+        self.assertEqual(rc, 0)
+        import json
+        d = json.loads(self.json_p.read_text(encoding="utf-8"))
+        self.assertEqual(len(d["objects"]), 1)  # 未重复插入
+
+    def test_apply_rejects_bad_skeleton(self):
+        import json
+        (self.rep_dir / "propose_bad.json").write_text(json.dumps(
+            {"id": "bad", "name": "", "category": "banana"}), encoding="utf-8")
+        rc = self.fad.apply_propose({"pluto": {}}, ["bad"])
+        self.assertEqual(rc, 2)
+        d = json.loads(self.json_p.read_text(encoding="utf-8"))
+        self.assertEqual(len(d["objects"]), 1)  # 拒绝合入
+
+    def test_apply_missing_skeleton(self):
+        rc = self.fad.apply_propose({"pluto": {}}, ["nope"])
+        self.assertEqual(rc, 2)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

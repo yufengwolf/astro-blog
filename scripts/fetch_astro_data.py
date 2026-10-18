@@ -642,10 +642,13 @@ def fetch_nssdc(offline: bool, only_pages: set[str] | None = None,
 SBDB_OBJECTS = ["ceres", "pluto", "makemake", "haumea", "eris"]
 
 
-def fetch_sbdb(offline: bool, only_objs: set[str] | None = None) -> tuple[dict, list[str]]:
+def fetch_sbdb(offline: bool, only_objs: set[str] | None = None,
+               sstrs: list[str] | None = None) -> tuple[dict, list[str]]:
+    """拉 SBDB。sstrs 给定则只拉这些 id（--propose 库外对象用）；
+    否则遍历 SBDB_OBJECTS 白名单，only_objs 可再收敛。"""
     objs: dict = {}
     notes = []
-    for sstr in SBDB_OBJECTS:
+    for sstr in (sstrs if sstrs is not None else SBDB_OBJECTS):
         if only_objs and sstr not in only_objs:
             continue
         url = f"{SBDB_URL}?sstr={sstr}&phys-par=1&full-prec=1"
@@ -1019,7 +1022,7 @@ def propose_objects(astro: dict, names: list[str], offline: bool) -> int:
             print(f"[error] SBDB {sstr}: SBDB 无匹配对象", file=sys.stderr)
             rc = 2
             continue
-        store, _ = fetch_sbdb(offline, {sstr})
+        store, _ = fetch_sbdb(offline, None, sstrs=[sstr])
         st = store.get(sstr, {})
         zh, en, cat, disc, year = PROPOSE_META.get(
             sstr, (None, sstr.title(), "dwarf_planet", None, None))
@@ -1060,6 +1063,64 @@ def propose_objects(astro: dict, names: list[str], offline: bool) -> int:
     return rc
 
 
+# ---------------------------------------------------------------------------
+# apply：把候选骨架合入 astro.json（全链路唯一写库入口）
+# ---------------------------------------------------------------------------
+
+_APPLY_CATS = {"star", "planet", "dwarf_planet", "moon", "asteroid", "exoplanet"}
+
+
+def apply_propose(astro: dict, names: list[str]) -> int:
+    """把 reports/propose_<id>.json 候选骨架合入 astro.json。
+
+    设计纪律：自动拉取永远只产提案；写库只有这一个入口，且必须人工显式
+    触发——先 --propose 生成骨架、人工审阅（可直接手改骨架 JSON）后再
+    --apply。查重 + 结构校验，不合法拒绝合入。"""
+    data = json.loads(ASTRO_JSON.read_text(encoding="utf-8"))
+    objs = data["objects"]
+    rc = 0
+    for sstr in names:
+        if sstr in astro:
+            print(f"[skip] {sstr} 已在库中，无需 apply")
+            continue
+        path = REPORT_DIR / f"propose_{sstr}.json"
+        if not path.exists():
+            try:
+                shown = path.relative_to(ROOT)
+            except ValueError:
+                shown = path
+            print(f"[error] 缺候选骨架 {shown}；先跑 --propose {sstr}", file=sys.stderr)
+            rc = 2
+            continue
+        obj = json.loads(path.read_text(encoding="utf-8"))
+        errs = []
+        for k in ("id", "name", "name_en", "category", "parent"):
+            if not obj.get(k):
+                errs.append(f"缺字段 {k}")
+        if obj.get("id") != sstr:
+            errs.append(f"骨架 id={obj.get('id')!r} 与申请 {sstr!r} 不一致")
+        if obj.get("category") not in _APPLY_CATS:
+            errs.append(f"category={obj.get('category')!r} 不在 {sorted(_APPLY_CATS)}")
+        for grp in ("physical", "orbit"):
+            if not isinstance(obj.get(grp), dict):
+                errs.append(f"{grp} 应为对象（dict）")
+        if errs:
+            print(f"[error] {sstr} 骨架不合法，拒绝合入：{'；'.join(errs)}",
+                  file=sys.stderr)
+            rc = 2
+            continue
+        objs.append(obj)
+        print(f"[ok] {sstr} 已合入 astro.json（objects {len(objs) - 1} -> {len(objs)}）")
+        print("      接下来：python scripts/lint_data.py && python scripts/gen_pages.py")
+    if rc == 0 and names:
+        meta = data.setdefault("meta", {})
+        meta["object_count"] = len(objs)
+        meta["updated"] = date.today().isoformat()
+        ASTRO_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+                              encoding="utf-8")
+    return rc
+
+
 def pages_for_objects(oids: set[str]) -> set[str]:
     """对象 id → 需要拉取的 NSSDC 页名集合（卫星归系统页，火卫归 marsfact）。"""
     pages = set()
@@ -1083,6 +1144,9 @@ def main() -> int:
                     help="限定对象（逗号分隔）：只拉取这些对象对应的源页，报告只含它们")
     ap.add_argument("--propose", default="",
                     help="为库外对象生成候选 JSON 骨架（逗号分隔）：源有的填、没有的留 null，不编造")
+    ap.add_argument("--apply", default="",
+                    help="把 reports/propose_<id>.json 骨架合入 astro.json（逗号分隔）。"
+                         "全链路唯一写库入口：先 --propose 生成、人工审阅骨架后再显式执行")
     ap.add_argument("--offline", action="store_true", help="不联网，用缓存原始数据")
     ap.add_argument("--tolerance", type=float, default=1.0, help="一致判定阈值（相对%%）")
     ap.add_argument("--verbose", action="store_true", help="打印每个对象抽取到的字段")
@@ -1096,6 +1160,10 @@ def main() -> int:
     if args.propose:
         names = [s.strip() for s in args.propose.split(",") if s.strip()]
         return propose_objects(astro, names, args.offline)
+
+    if args.apply:
+        names = [s.strip() for s in args.apply.split(",") if s.strip()]
+        return apply_propose(astro, names)
 
     sources = [s.strip() for s in args.source.split(",") if s.strip()]
     only_objs = {s.strip() for s in args.objects.split(",") if s.strip()} or None

@@ -161,7 +161,7 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="dwarf_planet" data-name="鸟神星 Makemake" data-mass="" data-radius="" data-density="" data-temp="" data-period="112364.81" data-moons="1">
     <a class="astro-card-link" href="objects/makemake/">
-      <div class="astro-img dwarf_planet astro-img-fallback"><span>鸟</span></div>
+      <div class="astro-img dwarf_planet"><img src="assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">鸟神星<span class="en">Makemake</span></div>
         <p class="astro-card-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
@@ -172,7 +172,7 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="dwarf_planet" data-name="妊神星 Haumea" data-mass="" data-radius="" data-density="" data-temp="" data-period="103208.12" data-moons="2">
     <a class="astro-card-link" href="objects/haumea/">
-      <div class="astro-img dwarf_planet astro-img-fallback"><span>妊</span></div>
+      <div class="astro-img dwarf_planet"><img src="assets/planets/haumea.webp" alt="妊神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">妊神星<span class="en">Haumea</span></div>
         <p class="astro-card-tagline">自转极快的椭球状矮行星，拥有光环</p>
@@ -183,7 +183,7 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
   </article>
   <article class="astro-card" data-category="dwarf_planet" data-name="阋神星 Eris" data-mass="" data-radius="" data-density="" data-temp="" data-period="204516.66" data-moons="1">
     <a class="astro-card-link" href="objects/eris/">
-      <div class="astro-img dwarf_planet astro-img-fallback"><span>阋</span></div>
+      <div class="astro-img dwarf_planet"><img src="assets/planets/eris.webp" alt="阋神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">阋神星<span class="en">Eris</span></div>
         <p class="astro-card-tagline">质量最大的矮行星，它的发现促使冥王星降级</p>
@@ -444,4 +444,4 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
   <p>全部数值整理自 NASA 公开资料（公共领域），每个天体页面均标注来源与核对日期（最近核对：2026-10-18）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.2 · 收录 35 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.3 · 收录 35 个天体（全部配图）</p>

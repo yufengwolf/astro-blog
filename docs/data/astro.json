@@ -13,7 +13,7 @@
       "NASA NSSDC Jovian/Saturnian/Neptunian/Uranian Satellite Fact Sheets https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html",
       "NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api"
     ],
-    "pending": "鸟神星、妊神星、阋神星（权威源暂无完整实测值，待文献核验后补充）；恒星与系外行星为下一批扩展方向"
+    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；恒星与系外行星为下一批扩展方向"
   },
   "objects": [
     {
@@ -220,7 +220,10 @@
       "image": "assets/planets/earth.webp",
       "source_dates": {
         "nssdc_earthfact": "2024-11-15"
-      }
+      },
+      "image_credit": "NASA/GSFC · Blue Marble 2012",
+      "image_url": "https://images.nasa.gov/details/PIA18033",
+      "image_locked": true
     },
     {
       "id": "mars",
@@ -547,7 +550,10 @@
       "image": "assets/planets/pluto.webp",
       "source_dates": {
         "nssdc_plutofact": "2024-01-11"
-      }
+      },
+      "image_credit": "NASA/New Horizons（JHUAPL·SwRI）",
+      "image_url": "https://images.nasa.gov/details/PIA19857",
+      "image_locked": true
     },
     {
       "id": "ceres",
@@ -632,7 +638,7 @@
       ],
       "source_dates": {},
       "verified": "2026-10-18",
-      "image": null
+      "image": "assets/planets/makemake.webp"
     },
     {
       "id": "haumea",
@@ -672,7 +678,7 @@
       ],
       "source_dates": {},
       "verified": "2026-10-18",
-      "image": null
+      "image": "assets/planets/haumea.webp"
     },
     {
       "id": "eris",
@@ -711,7 +717,10 @@
       ],
       "source_dates": {},
       "verified": "2026-10-18",
-      "image": null
+      "image": "assets/planets/eris.webp",
+      "image_credit": "NASA/ESA 艺术概念图",
+      "image_url": "https://images.nasa.gov/details/PIA17307",
+      "image_locked": true
     },
     {
       "id": "moon",

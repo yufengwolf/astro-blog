@@ -77,4 +77,4 @@ description: "海王星（Neptune）的天体数据：1.02×10²⁶ kg、半径 
 <p class="obj-nav">← 上一颗：<a href="../uranus/">天王星</a></p>
 <p class="obj-nav">下一颗：<a href="../pluto/">冥王星</a> →</p>
 
-<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>

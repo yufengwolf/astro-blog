@@ -23,7 +23,7 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.2"
+VERSION = "1.3"
 VERIFIED = "2026-10-18"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
@@ -152,15 +152,25 @@ def article_body(root, slug):
     return title, text
 
 
-def img_block(o, base=""):
+def img_block(o, base="", show_credit=False):
     """天体图片块。base 为图片相对路径前缀（相对页面 URL，非源文件路径）：
     首页 index.md（URL /）传 ""；详情页 objects/<id>.md（URL /objects/<id>/，
-    use_directory_urls 默认开启）需退两级到站根，传 "../../"。"""
+    use_directory_urls 默认开启）需退两级到站根，传 "../../"。
+    show_credit=True 时附带影像署名（仅详情页；image_credit/image_url 字段，
+    由 scripts/nasa_image.py 登记 NASA 真实影像时写入）。"""
     cat = o["category"]
     img = o.get("image")
     if img:
-        return (f'<div class="astro-img {cat}">'
-                f'<img src="{base}{img}" alt="{o["name"]}" loading="lazy"></div>')
+        inner = (f'<div class="astro-img {cat}">'
+                 f'<img src="{base}{img}" alt="{o["name"]}" loading="lazy"></div>')
+        if show_credit and o.get("image_credit"):
+            credit = o["image_credit"]
+            if o.get("image_url"):
+                credit = (f'<a href="{o["image_url"]}" target="_blank" '
+                          f'rel="noopener">{credit}</a>')
+            inner += f'<div class="astro-img-credit">影像：{credit}</div>'
+            return f'<div class="obj-hero-imgwrap">{inner}</div>'
+        return inner
     return (f'<div class="astro-img {cat} astro-img-fallback">'
             f'<span>{o["name"][0]}</span></div>')
 
@@ -388,7 +398,7 @@ def build_object(root, o, by_id, order, registry=None):
     L.append("---")
     L.append("")
     L.append(f'<div class="obj-hero">')
-    L.append(f'  {img_block(o, "../../")}')
+    L.append(f'  {img_block(o, "../../", show_credit=True)}')
     L.append('  <div class="obj-hero-info">')
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')

@@ -3,7 +3,7 @@ description: "阋神星（Eris）的天体数据：—、半径 —、密度 —
 ---
 
 <div class="obj-hero">
-  <div class="astro-img dwarf_planet astro-img-fallback"><span>阋</span></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/eris.webp" alt="阋神星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA17307" target="_blank" rel="noopener">NASA/ESA 艺术概念图</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>阋神星 <small>Eris</small></h1>
@@ -72,4 +72,4 @@ description: "阋神星（Eris）的天体数据：—、半径 —、密度 —
 <p class="obj-nav">← 上一颗：<a href="../haumea/">妊神星</a></p>
 <p class="obj-nav">下一颗：<a href="../moon/">月球</a> →</p>
 
-<p class="obj-version">数据版本 v1.2（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>

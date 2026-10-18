@@ -315,6 +315,22 @@
   background: var(--md-default-bg-color);
 }
 .obj-hero .astro-img img { width: 150px; height: 150px; }
+.obj-hero-imgwrap {
+  width: 170px;
+  flex: 0 0 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.astro-img-credit {
+  margin-top: 0.4rem;
+  font-size: 0.62rem;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+  word-break: break-all;
+}
+.astro-img-credit a { color: inherit; text-decoration: underline; }
 .obj-hero-info { flex: 1 1 16rem; }
 .obj-hero-info h1 {
   margin: 0.4rem 0 0.3rem;
