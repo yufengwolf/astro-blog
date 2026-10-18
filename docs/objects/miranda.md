@@ -74,3 +74,5 @@ description: "天卫五（Miranda）的天体数据：6.6×10¹⁹ kg、半径 2
 
 <p class="obj-nav">← 上一颗：<a href="../triton/">海卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../ariel/">天卫一</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

@@ -74,3 +74,5 @@ description: "木卫四（Callisto）的天体数据：1.08×10²³ kg、半径 
 
 <p class="obj-nav">← 上一颗：<a href="../ganymede/">木卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../mimas/">土卫一</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

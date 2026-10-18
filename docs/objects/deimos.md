@@ -74,3 +74,5 @@ description: "火卫二（Deimos）的天体数据：2.4×10¹⁵ kg、半径 6.
 
 <p class="obj-nav">← 上一颗：<a href="../phobos/">火卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../io/">木卫一</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

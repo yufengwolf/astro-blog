@@ -74,3 +74,5 @@ description: "土卫七（Hyperion）的天体数据：5.6×10¹⁸ kg、半径 
 
 <p class="obj-nav">← 上一颗：<a href="../titan/">土卫六</a></p>
 <p class="obj-nav">下一颗：<a href="../iapetus/">土卫八</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

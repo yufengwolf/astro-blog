@@ -145,3 +145,5 @@ description: "木星（Jupiter）的天体数据：1.9×10²⁷ kg、半径 69,9
 
 <p class="obj-nav">← 上一颗：<a href="../mars/">火星</a></p>
 <p class="obj-nav">下一颗：<a href="../saturn/">土星</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

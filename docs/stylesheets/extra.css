@@ -539,6 +539,15 @@
 }
 .obj-fields table { font-size: 0.8rem; }
 
+/* ---------- 版本戳（判断浏览器缓存） ---------- */
+.obj-version {
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed var(--md-default-fg-color--lightest);
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+}
+
 /* ---------- 数据集页 ---------- */
 .dl-cards {
   display: grid;

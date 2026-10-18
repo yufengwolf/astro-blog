@@ -74,3 +74,5 @@ description: "谷神星（Ceres）的天体数据：9.38×10²⁰ kg、半径 46
 
 <p class="obj-nav">← 上一颗：<a href="../pluto/">冥王星</a></p>
 <p class="obj-nav">下一颗：<a href="../moon/">月球</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

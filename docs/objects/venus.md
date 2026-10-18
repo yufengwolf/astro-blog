@@ -133,3 +133,5 @@ A：不能，它是地内行星，只能在日出前或日落后短暂出现，�
 
 <p class="obj-nav">← 上一颗：<a href="../mercury/">水星</a></p>
 <p class="obj-nav">下一颗：<a href="../earth/">地球</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

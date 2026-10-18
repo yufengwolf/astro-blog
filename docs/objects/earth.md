@@ -75,3 +75,5 @@ description: "地球（Earth）的天体数据：5.97×10²⁴ kg、半径 6,371
 
 <p class="obj-nav">← 上一颗：<a href="../venus/">金星</a></p>
 <p class="obj-nav">下一颗：<a href="../mars/">火星</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

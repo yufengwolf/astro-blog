@@ -74,3 +74,5 @@ description: "土卫一（Mimas）的天体数据：3.79×10¹⁹ kg、半径 19
 
 <p class="obj-nav">← 上一颗：<a href="../callisto/">木卫四</a></p>
 <p class="obj-nav">下一颗：<a href="../enceladus/">土卫二</a> →</p>
+
+<p class="obj-version">数据版本 v1.1（2026-10-18 核对）· 32 个天体已全部配图</p>

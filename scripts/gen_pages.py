@@ -21,6 +21,10 @@ import sys
 from pathlib import Path
 
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
+
+# 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
+VERSION = "1.1"
+VERIFIED = "2026-10-18"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
           "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星"}
@@ -267,6 +271,8 @@ def build_index(data):
              f'发现数据错误？欢迎到 <a href="{REPO_URL}/issues">GitHub Issues</a> 反馈。</p>')
     L.append("</section>")
     L.append("")
+    L.append(f'<p class="obj-version">数据版本 v{VERSION} · 收录 {meta["object_count"]} 个天体（全部配图）</p>')
+    L.append("")
     return "\n".join(L)
 
 
@@ -503,6 +509,8 @@ def build_object(root, o, by_id, order):
     if idx < len(order) - 1:
         nxt = by_id[order[idx + 1]]
         L.append(f'<p class="obj-nav">下一颗：<a href="../{nxt["id"]}/">{nxt["name"]}</a> →</p>')
+    L.append("")
+    L.append(f'<p class="obj-version">数据版本 v{VERSION}（{VERIFIED} 核对）· 32 个天体已全部配图</p>')
     L.append("")
     return "\n".join(L)
 
