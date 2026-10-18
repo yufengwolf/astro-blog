@@ -1,11 +1,12 @@
 # ============================================================
-# MkDocs + Material 博客骨架配置
-# 套用为新站点时：只需修改下方 site_* 四项与 nav 栏目名
+# MkDocs + Material 天体数据库站（星野笔记）
+# 页面由 scripts/gen_pages.py 从 docs/data/astro.json 生成，请勿手改生成产物
+# 数据更新流程见 README.md
 # ============================================================
 
 # ---- 站点基本信息（按需修改） ----
 site_name: 星野笔记
-site_description: 通俗有趣的天文科普，一起仰望星空
+site_description: 太阳系天体数据库：32 个天体的质量、半径、密度、表面温度、轨道与卫星数据，支持筛选排序，附深度科普文章
 site_author: 御风研墨
 site_url: https://astro-blog-eqt.pages.dev/
 
@@ -32,6 +33,7 @@ theme:
   # 侧边栏多级导航 / 站内搜索 / 体验特性
   features:
     - navigation.sections              # 侧边栏按章节分组（多级导航）
+    - navigation.indexes               # 节索引页（天体库/数据集）可点击
     - navigation.top                   # 返回顶部按钮
     - search.suggest                   # 搜索输入建议
     - search.highlight                 # 搜索结果关键词高亮
@@ -53,17 +55,17 @@ markdown_extensions:
 plugins:
   - search
 
-# ---- 导航结构（多级） ----
-# 注意：blog-pipeline 的 publisher.py 会按缩进向本 nav 追加文章条目（幂等，slug 去重）
+# ---- 自定义样式与脚本（天体数据库工具页） ----
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - js/astro-explore.js
+
+# ---- 导航结构 ----
+# 首页 = 天体总览工具页；objects/ 与 data.md 由 scripts/gen_pages.py 自动生成维护
+# 详情页（objects/<天体>.md）经首页卡片、天体库总表与详情页上下导航互相链接，sitemap 全量收录
 nav:
-  - 首页: index.md
-  - 观测指南:
-      - 专栏概述: topic1/index.md
-      - 金星：地球姊妹星，为何是西升东落的地狱？: topic1/venus.md
-      - 水星离太阳最近，为何不是最热行星？: topic1/mercury.md
-      - 火星为什么被定为人类星际探索的下一站？: topic1/mars.md
-  - 宇宙奇观:
-      - 专栏概述: topic2/index.md
-      - 冥王星比月球还小，当年凭什么是第九大行星？: topic2/pluto.md
-      - 木星体积能装1300个地球，为何被称作地球守护神？: topic2/jupiter.md
-      - 土星环宽达28万公里，为什么却只有几十米厚？: topic2/saturn.md
+  - 天体总览: index.md
+  - 天体库: objects/index.md
+  - 数据集: data.md

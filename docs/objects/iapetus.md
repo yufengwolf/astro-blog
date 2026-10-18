@@ -1,0 +1,62 @@
+---
+description: "土卫八（Iapetus）的天体数据：1.81×10²¹ kg、半径 734.5 km、密度 1.088 g/cm³、表面温度 —。数据整理自 NASA 公开资料。"
+---
+
+<div class="obj-hero">
+  <div class="astro-img moon astro-img-fallback"><span>土</span></div>
+  <div class="obj-hero-info">
+    <span class="astro-badge moon">卫星</span>
+    <h1>土卫八 <small>Iapetus</small></h1>
+    <p class="obj-tagline">'阴阳脸'卫星，一面亮如雪一面黑如炭，赤道还有一道奇异山脊</p>
+    <div class="obj-keystats">
+      <span>1.81×10²¹ kg</span>
+      <span>734.5 km</span>
+      <span>1.088 g/cm³</span>
+    </div>
+  </div>
+</div>
+
+<p class="obj-parent">母天体：<a href="../saturn/">土星</a> · 分类：卫星</p>
+
+## 物理参数
+
+| 参数 | 数值 |
+|---|---|
+| 质量 | 1.81×10²¹ kg |
+| 平均半径 | 734.5 km |
+| 平均密度 | 1.088 g/cm³ |
+| 表面重力 | 0.22 m/s² |
+| 逃逸速度 | 0.573 km/s |
+| 平均表面温度 | — |
+| 表面气压 | — |
+| 反照率 | 0.26 |
+
+## 轨道参数
+
+| 参数 | 数值 |
+|---|---|
+| 半长轴 | 3,560,850 km |
+| 轨道周期 | 79.3 天 |
+| 平均轨道速度 | 3.26 km/s |
+| 轨道倾角 | — |
+| 轨道偏心率 | — |
+| 转轴倾角 | — |
+| 自转周期 | 79.33 天 |
+
+## 其他特征
+
+| 项目 | 数值 |
+|---|---|
+| 大气成分 | — |
+| 全球磁场 | 未知 |
+| 环系 | 否 |
+| 已确认卫星 | 0 颗 |
+| 发现 | 乔凡尼·卡西尼，1671 年 |
+
+<section class="obj-source">
+  <h2>数据来源</h2>
+  <p>来源标识：nssdc_saturniansatfact；核对日期：2026-10-18。数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+</section>
+
+<p class="obj-nav">← 上一颗：<a href="../hyperion/">土卫七</a></p>
+<p class="obj-nav">下一颗：<a href="../triton/">海卫一</a> →</p>
