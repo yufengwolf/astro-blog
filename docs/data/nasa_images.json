@@ -32,16 +32,33 @@
     "credit": "NASA/JPL/SSI · 卡西尼"
   },
   "saturn": {
-    "nasa_id": "PIA02225",
-    "credit": "NASA/JPL · 旅行者 1 号"
+    "nasa_id": "PIA03158",
+    "credit": "NASA/ESA/STScI · 哈勃望远镜",
+    "rings": true,
+    "soft": 3.0
   },
   "uranus": {
-    "nasa_id": "PIA00032",
-    "credit": "NASA/JPL · 旅行者 2 号"
+    "nasa_id": "weic2310a",
+    "credit": "NASA/ESA/CSA · 韦布望远镜（STScI）",
+    "rings": true,
+    "src_url": "https://esawebb.org/media/archives/images/large/weic2310a.jpg",
+    "page_url": "https://esawebb.org/images/weic2310a/",
+    "soft": 8.0
   },
   "neptune": {
-    "nasa_id": "PIA01492",
-    "credit": "NASA/JPL · 旅行者 2 号自然色重建"
+    "nasa_id": "weic2214a",
+    "credit": "NASA/ESA/CSA · 韦布望远镜（STScI）",
+    "rings": true,
+    "focus": [
+      0.4,
+      0.5,
+      0.74,
+      0.78
+    ],
+    "src_url": "https://esawebb.org/media/archives/images/large/weic2214a.jpg",
+    "page_url": "https://esawebb.org/images/weic2214a/",
+    "darkthr": 68.0,
+    "soft": 20.0
   },
   "ceres": {
     "nasa_id": "PIA19619",

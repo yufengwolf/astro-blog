@@ -404,8 +404,8 @@
       "source_dates": {
         "nssdc_saturnfact": "2025-03-18"
       },
-      "image_credit": "NASA/JPL · 旅行者 1 号",
-      "image_url": "https://images.nasa.gov/details/PIA02225",
+      "image_credit": "NASA/ESA/STScI · 哈勃望远镜",
+      "image_url": "https://images.nasa.gov/details/PIA03158",
       "image_locked": true
     },
     {
@@ -462,8 +462,8 @@
       "source_dates": {
         "nssdc_uranusfact": "2024-10-02"
       },
-      "image_credit": "NASA/JPL · 旅行者 2 号",
-      "image_url": "https://images.nasa.gov/details/PIA00032",
+      "image_credit": "NASA/ESA/CSA · 韦布望远镜（STScI）",
+      "image_url": "https://esawebb.org/images/weic2310a/",
       "image_locked": true
     },
     {
@@ -518,8 +518,8 @@
       "source_dates": {
         "nssdc_neptunefact": "2024-10-03"
       },
-      "image_credit": "NASA/JPL · 旅行者 2 号自然色重建",
-      "image_url": "https://images.nasa.gov/details/PIA01492",
+      "image_credit": "NASA/ESA/CSA · 韦布望远镜（STScI）",
+      "image_url": "https://esawebb.org/images/weic2214a/",
       "image_locked": true
     },
     {
