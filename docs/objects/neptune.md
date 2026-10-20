@@ -3,7 +3,7 @@ description: "海王星（Neptune）的天体数据：1.02×10²⁶ kg、半径 
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../../assets/planets/neptune.webp" alt="海王星" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/neptune.webp" alt="海王星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA01492" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号自然色重建</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>海王星 <small>Neptune</small></h1>

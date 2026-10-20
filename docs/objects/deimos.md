@@ -3,7 +3,7 @@ description: "火卫二（Deimos）的天体数据：2.4×10¹⁵ kg、半径 6.
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/deimos.webp" alt="火卫二" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/deimos.webp" alt="火卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA11826" target="_blank" rel="noopener">NASA/JPL/UA · HiRISE</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>火卫二 <small>Deimos</small></h1>

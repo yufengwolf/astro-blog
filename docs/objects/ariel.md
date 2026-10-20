@@ -3,7 +3,7 @@ description: "天卫一（Ariel）的天体数据：1.29×10²¹ kg、半径 578
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/ariel.webp" alt="天卫一" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/ariel.webp" alt="天卫一" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00041" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫一 <small>Ariel</small></h1>

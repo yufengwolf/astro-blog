@@ -3,7 +3,7 @@ description: "木星（Jupiter）的天体数据：1.9×10²⁷ kg、半径 69,9
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../../assets/planets/jupiter.webp" alt="木星" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/jupiter.webp" alt="木星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA02873" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>木星 <small>Jupiter</small></h1>

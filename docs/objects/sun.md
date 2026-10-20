@@ -3,7 +3,7 @@ description: "太阳（Sun）的天体数据：1.99×10³⁰ kg、半径 695,700
 ---
 
 <div class="obj-hero">
-  <div class="astro-img star"><img src="../../assets/planets/sun.webp" alt="太阳" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sun.webp" alt="太阳" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e002069" target="_blank" rel="noopener">NASA/SDO · AIA 极紫外成像</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>太阳 <small>Sun</small></h1>

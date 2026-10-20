@@ -59,9 +59,9 @@ def manifest_urls(nasa_id: str) -> list:
 
 
 def download_best(nasa_id: str, dest: Path) -> str:
-    """按 orig → large → medium 优先级下载，返回实际用的档位名。"""
+    """按 orig → large → medium → small 优先级下载，返回实际用的档位名。"""
     urls = manifest_urls(nasa_id)
-    for tier in ("orig", "large", "medium"):
+    for tier in ("orig", "large", "medium", "small"):
         for u in urls:
             if f"~{tier}.jpg" in u:
                 dest.write_bytes(api_get(u))
@@ -70,8 +70,8 @@ def download_best(nasa_id: str, dest: Path) -> str:
 
 
 def detect_disk(arr):
-    """星空照里定位主体圆盘：亮度掩码 + 行列剖面 2% 阈值（抗星点离群）。
-    返回 (cx, cy, r)——已按内切 0.995 收缩的圆。"""
+    """星空照里定位主体：亮度掩码 + 行列剖面 2% 阈值（抗星点离群）。
+    返回 (cx, cy, rx, ry)——主体 bbox 的中心与半宽/半高（已按 0.995 收缩）。"""
     import numpy as np
     h, w, _ = arr.shape
     mask = arr.max(axis=2) > 16          # 太空近黑，主体亮
@@ -82,37 +82,62 @@ def detect_disk(arr):
     ys = np.where(rowc > thr)[0]
     if len(xs) < 2 or len(ys) < 2:
         raise RuntimeError("未检测到主体圆盘")
-    return (xs.min() + xs.max()) / 2, (ys.min() + ys.max()) / 2, \
-        min(xs.max() - xs.min(), ys.max() - ys.min()) / 2 * 0.995
+    cx = (xs.min() + xs.max()) / 2
+    cy = (ys.min() + ys.max()) / 2
+    rx = (xs.max() - xs.min()) / 2 * 0.995
+    ry = (ys.max() - ys.min()) / 2 * 0.995
+    return cx, cy, rx, ry
 
 
-def install(oid: str, nasa_id: str, credit: str) -> bool:
+def install(oid: str, nasa_id: str, credit: str, crop=None,
+            half: str | None = None, ellipse: bool = False) -> bool:
+    """下载并安装一张 NASA 影像。
+    crop=(cx,cy,r)：手动圆盘（占宽/高/短边的比例），用于含环/多面板图；
+    half：先裁半幅再检测（双球拼图取其一）；ellipse：椭圆抠图（土豆形天体）。"""
     import numpy as np
     from PIL import Image
+    Image.MAX_IMAGE_PIXELS = None        # 放行超大图（如 PIA00478 的 10240px）
     tmp = PLANET_DIR / f".{oid}_nasa_raw.jpg"
     PLANET_DIR.mkdir(parents=True, exist_ok=True)
     tier = download_best(nasa_id, tmp)
     im = Image.open(tmp).convert("RGB")
-    arr = np.asarray(im).astype(np.int16)
-    cx, cy, r = detect_disk(arr)
-    # 以圆盘为中心裁正方形（clamp 到画面内）
-    side = int(2 * r)
-    x0 = int(max(0, min(cx - r, im.width - side)))
-    y0 = int(max(0, min(cy - r, im.height - side)))
-    crop = im.crop((x0, y0, x0 + side, y0 + side))
-    # 圆内保留、圆外透明；圆外 RGB 填黑（太空色），边缘插值不掺白
-    yy, xx = np.mgrid[0:side, 0:side]
-    inside = ((xx - side / 2) ** 2 + (yy - side / 2) ** 2) <= (side / 2 * 0.995) ** 2
-    rgba = np.dstack([np.asarray(crop).astype(np.uint8),
+    if half:
+        w, h = im.size
+        box = {"left": (0, 0, w // 2, h), "right": (w // 2, 0, w, h),
+               "top": (0, 0, w, h // 2), "bottom": (0, h // 2, w, h)}[half]
+        im = im.crop(box)
+    arr = np.asarray(im)
+    if crop:  # 手动圆盘
+        cx = crop[0] * im.width
+        cy = crop[1] * im.height
+        rx = ry = crop[2] * min(im.width, im.height)
+    else:
+        cx, cy, rx0, ry0 = detect_disk(arr)
+        if ellipse:
+            rx, ry = rx0, ry0
+        else:
+            rx = ry = min(rx0, ry0)
+    # 裁正方形（包住整个 bbox）→ 先缩放再抠 alpha（大图内存友好）
+    side = int(2 * max(rx, ry))
+    x0 = int(max(0, min(cx - max(rx, ry), im.width - side)))
+    y0 = int(max(0, min(cy - max(rx, ry), im.height - side)))
+    tex = im.crop((x0, y0, x0 + side, y0 + side))
+    target = 600 * 0.70                  # 圆盘长轴缩至 600 画布的 70%，与 AI 贴图一致
+    scale = target / max(tex.width, tex.height)
+    tex = tex.resize((max(1, round(tex.width * scale)),
+                      max(1, round(tex.height * scale))), Image.LANCZOS)
+    w2, h2 = tex.size
+    yy, xx = np.mgrid[0:h2, 0:w2]
+    # 半径换算到缩放后坐标系（掩码在缩放图上计算）
+    nx = (xx - w2 / 2) / (rx * scale)
+    ny = (yy - h2 / 2) / (ry * scale)
+    inside = (nx ** 2 + ny ** 2) <= 0.995 ** 2
+    rgba = np.dstack([np.asarray(tex).astype(np.uint8),
                       np.where(inside, 255, 0).astype(np.uint8)])
     rgba[~inside, :3] = 0
-    tex = Image.fromarray(rgba, "RGBA")
-    # 圆盘直径缩至 600 画布的 70%，与 AI 贴图视觉占比一致
-    scale = (600 * 0.70) / tex.width
-    tex = tex.resize((round(tex.width * scale), round(tex.height * scale)),
-                     Image.LANCZOS)
+    out = Image.fromarray(rgba, "RGBA")
     canvas = Image.new("RGBA", (600, 600), (0, 0, 0, 0))
-    canvas.paste(tex, ((600 - tex.width) // 2, (600 - tex.height) // 2), tex)
+    canvas.paste(out, ((600 - w2) // 2, (600 - h2) // 2), out)
     dst = PLANET_DIR / f"{oid}.webp"
     canvas.save(dst, "WEBP", quality=85)
     tmp.unlink(missing_ok=True)
@@ -157,6 +182,12 @@ def main() -> int:
     ap.add_argument("--search", default="", help="搜 NASA 图片库列候选")
     ap.add_argument("--set", nargs=3, metavar=("ID", "NASA_ID", "CREDIT"),
                     help="登记并安装：--set pluto PIA19857 \"NASA/New Horizons\"")
+    ap.add_argument("--crop", nargs=3, type=float, metavar=("CX", "CY", "R"),
+                    help="手动圆盘（占宽高比例）：--crop 0.5 0.5 0.45（土星等有环天体）")
+    ap.add_argument("--half", choices=["left", "right", "top", "bottom"],
+                    help="先裁半幅再检测（双球/双面板拼图取其一）")
+    ap.add_argument("--ellipse", action="store_true",
+                    help="椭圆抠图（土豆形天体：火卫一/土卫七等）")
     args = ap.parse_args()
 
     if args.search:
@@ -168,7 +199,8 @@ def main() -> int:
         reg[oid] = {"nasa_id": nasa_id, "credit": credit}
         save_reg(reg)
         print(f"登记表更新：{oid} -> {nasa_id}")
-        return 0 if install(oid, nasa_id, credit) else 1
+        return 0 if install(oid, nasa_id, credit, crop=args.crop,
+                            half=args.half, ellipse=args.ellipse) else 1
 
     if not args.ids:
         ap.print_help()

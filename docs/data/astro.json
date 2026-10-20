@@ -64,7 +64,10 @@
       "image": "assets/planets/sun.webp",
       "source_dates": {
         "nssdc_sunfact": "2024-05-09"
-      }
+      },
+      "image_credit": "NASA/SDO · AIA 极紫外成像",
+      "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002069",
+      "image_locked": true
     },
     {
       "id": "mercury",
@@ -115,7 +118,10 @@
       "image": "assets/planets/mercury.webp",
       "source_dates": {
         "nssdc_mercuryfact": "2024-01-11"
-      }
+      },
+      "image_credit": "NASA/MESSENGER · 全球彩色合成（增强色）",
+      "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001545",
+      "image_locked": true
     },
     {
       "id": "venus",
@@ -166,7 +172,10 @@
       "image": "assets/planets/venus.webp",
       "source_dates": {
         "nssdc_venusfact": "2024-01-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 麦哲伦雷达全球视图",
+      "image_url": "https://images.nasa.gov/details/PIA00478",
+      "image_locked": true
     },
     {
       "id": "earth",
@@ -277,7 +286,10 @@
       "image": "assets/planets/mars.webp",
       "source_dates": {
         "nssdc_marsfact": "2025-05-19"
-      }
+      },
+      "image_credit": "NASA/JPL · 海盗号全球彩色视图",
+      "image_url": "https://images.nasa.gov/details/PIA00407",
+      "image_locked": true
     },
     {
       "id": "jupiter",
@@ -333,7 +345,10 @@
       "image": "assets/planets/jupiter.webp",
       "source_dates": {
         "nssdc_jupiterfact": "2024-10-02"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA02873",
+      "image_locked": true
     },
     {
       "id": "saturn",
@@ -388,7 +403,10 @@
       "image": "assets/planets/saturn.webp",
       "source_dates": {
         "nssdc_saturnfact": "2025-03-18"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 1 号",
+      "image_url": "https://images.nasa.gov/details/PIA02225",
+      "image_locked": true
     },
     {
       "id": "uranus",
@@ -443,7 +461,10 @@
       "image": "assets/planets/uranus.webp",
       "source_dates": {
         "nssdc_uranusfact": "2024-10-02"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA00032",
+      "image_locked": true
     },
     {
       "id": "neptune",
@@ -496,7 +517,10 @@
       "image": "assets/planets/neptune.webp",
       "source_dates": {
         "nssdc_neptunefact": "2024-10-03"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号自然色重建",
+      "image_url": "https://images.nasa.gov/details/PIA01492",
+      "image_locked": true
     },
     {
       "id": "pluto",
@@ -599,7 +623,10 @@
       ],
       "verified": "2026-10-18",
       "article": null,
-      "image": "assets/planets/ceres.webp"
+      "image": "assets/planets/ceres.webp",
+      "image_credit": "NASA/JPL-Caltech/UCLA · 黎明号",
+      "image_url": "https://images.nasa.gov/details/PIA19619",
+      "image_locked": true
     },
     {
       "id": "makemake",
@@ -771,7 +798,10 @@
       "image": "assets/planets/moon.webp",
       "source_dates": {
         "nssdc_moonfact": "2024-01-11"
-      }
+      },
+      "image_credit": "NASA/GSFC 满月合成",
+      "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000868",
+      "image_locked": true
     },
     {
       "id": "phobos",
@@ -820,7 +850,10 @@
       "image": "assets/planets/phobos.webp",
       "source_dates": {
         "nssdc_marsfact": "2025-05-19"
-      }
+      },
+      "image_credit": "NASA/JPL/MSSS · 火星全球勘测者",
+      "image_url": "https://images.nasa.gov/details/PIA10368",
+      "image_locked": true
     },
     {
       "id": "deimos",
@@ -869,7 +902,10 @@
       "image": "assets/planets/deimos.webp",
       "source_dates": {
         "nssdc_marsfact": "2025-05-19"
-      }
+      },
+      "image_credit": "NASA/JPL/UA · HiRISE",
+      "image_url": "https://images.nasa.gov/details/PIA11826",
+      "image_locked": true
     },
     {
       "id": "io",
@@ -918,7 +954,10 @@
       "image": "assets/planets/io.webp",
       "source_dates": {
         "nssdc_joviansatfact": "2023-12-06"
-      }
+      },
+      "image_credit": "NASA/JPL · 伽利略",
+      "image_url": "https://images.nasa.gov/details/PIA02308",
+      "image_locked": true
     },
     {
       "id": "europa",
@@ -967,7 +1006,10 @@
       "image": "assets/planets/europa.webp",
       "source_dates": {
         "nssdc_joviansatfact": "2023-12-06"
-      }
+      },
+      "image_credit": "NASA/JPL · 伽利略",
+      "image_url": "https://images.nasa.gov/details/PIA00502",
+      "image_locked": true
     },
     {
       "id": "ganymede",
@@ -1016,7 +1058,10 @@
       "image": "assets/planets/ganymede.webp",
       "source_dates": {
         "nssdc_joviansatfact": "2023-12-06"
-      }
+      },
+      "image_credit": "NASA/JPL · 伽利略",
+      "image_url": "https://images.nasa.gov/details/PIA00353",
+      "image_locked": true
     },
     {
       "id": "callisto",
@@ -1065,7 +1110,10 @@
       "image": "assets/planets/callisto.webp",
       "source_dates": {
         "nssdc_joviansatfact": "2023-12-06"
-      }
+      },
+      "image_credit": "NASA/JPL · 伽利略",
+      "image_url": "https://images.nasa.gov/details/PIA03456",
+      "image_locked": true
     },
     {
       "id": "mimas",
@@ -1114,7 +1162,10 @@
       "image": "assets/planets/mimas.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA06257",
+      "image_locked": true
     },
     {
       "id": "enceladus",
@@ -1163,7 +1214,10 @@
       "image": "assets/planets/enceladus.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA00347",
+      "image_locked": true
     },
     {
       "id": "tethys",
@@ -1212,7 +1266,10 @@
       "image": "assets/planets/tethys.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA20518",
+      "image_locked": true
     },
     {
       "id": "dione",
@@ -1261,7 +1318,10 @@
       "image": "assets/planets/dione.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA14650",
+      "image_locked": true
     },
     {
       "id": "rhea",
@@ -1310,7 +1370,10 @@
       "image": "assets/planets/rhea.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA06578",
+      "image_locked": true
     },
     {
       "id": "titan",
@@ -1359,7 +1422,10 @@
       "image": "assets/planets/titan.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA06230",
+      "image_locked": true
     },
     {
       "id": "hyperion",
@@ -1408,7 +1474,10 @@
       "image": "assets/planets/hyperion.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA17193",
+      "image_locked": true
     },
     {
       "id": "iapetus",
@@ -1457,7 +1526,10 @@
       "image": "assets/planets/iapetus.webp",
       "source_dates": {
         "nssdc_saturniansatfact": "2025-07-22"
-      }
+      },
+      "image_credit": "NASA/JPL/SSI · 卡西尼",
+      "image_url": "https://images.nasa.gov/details/PIA11690",
+      "image_locked": true
     },
     {
       "id": "triton",
@@ -1506,7 +1578,10 @@
       "image": "assets/planets/triton.webp",
       "source_dates": {
         "nssdc_neptuniansatfact": "2024-03-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA02246",
+      "image_locked": true
     },
     {
       "id": "miranda",
@@ -1555,7 +1630,10 @@
       "image": "assets/planets/miranda.webp",
       "source_dates": {
         "nssdc_uraniansatfact": "2023-03-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA01490",
+      "image_locked": true
     },
     {
       "id": "ariel",
@@ -1604,7 +1682,10 @@
       "image": "assets/planets/ariel.webp",
       "source_dates": {
         "nssdc_uraniansatfact": "2023-03-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA00041",
+      "image_locked": true
     },
     {
       "id": "umbriel",
@@ -1653,7 +1734,10 @@
       "image": "assets/planets/umbriel.webp",
       "source_dates": {
         "nssdc_uraniansatfact": "2023-03-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA00040",
+      "image_locked": true
     },
     {
       "id": "titania",
@@ -1702,7 +1786,10 @@
       "image": "assets/planets/titania.webp",
       "source_dates": {
         "nssdc_uraniansatfact": "2023-03-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA01979",
+      "image_locked": true
     },
     {
       "id": "oberon",
@@ -1751,7 +1838,10 @@
       "image": "assets/planets/oberon.webp",
       "source_dates": {
         "nssdc_uraniansatfact": "2023-03-11"
-      }
+      },
+      "image_credit": "NASA/JPL · 旅行者 2 号",
+      "image_url": "https://images.nasa.gov/details/PIA00034",
+      "image_locked": true
     }
   ],
   "source_registry": {

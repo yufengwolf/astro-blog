@@ -3,7 +3,7 @@ description: "土卫六（Titan）的天体数据：1.35×10²³ kg、半径 2,5
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/titan.webp" alt="土卫六" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/titan.webp" alt="土卫六" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA06230" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫六 <small>Titan</small></h1>

@@ -3,7 +3,7 @@ description: "火星（Mars）的天体数据：6.42×10²³ kg、半径 3,390 k
 ---
 
 <div class="obj-hero">
-  <div class="astro-img planet"><img src="../../assets/planets/mars.webp" alt="火星" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/mars.webp" alt="火星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00407" target="_blank" rel="noopener">NASA/JPL · 海盗号全球彩色视图</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>火星 <small>Mars</small></h1>

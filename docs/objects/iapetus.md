@@ -3,7 +3,7 @@ description: "土卫八（Iapetus）的天体数据：1.81×10²¹ kg、半径 7
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/iapetus.webp" alt="土卫八" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/iapetus.webp" alt="土卫八" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA11690" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫八 <small>Iapetus</small></h1>

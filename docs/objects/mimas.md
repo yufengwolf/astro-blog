@@ -3,7 +3,7 @@ description: "土卫一（Mimas）的天体数据：3.79×10¹⁹ kg、半径 19
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/mimas.webp" alt="土卫一" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/mimas.webp" alt="土卫一" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA06257" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫一 <small>Mimas</small></h1>

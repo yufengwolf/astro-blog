@@ -3,7 +3,7 @@ description: "火卫一（Phobos）的天体数据：1.06×10¹⁶ kg、半径 1
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/phobos.webp" alt="火卫一" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/phobos.webp" alt="火卫一" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA10368" target="_blank" rel="noopener">NASA/JPL/MSSS · 火星全球勘测者</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>火卫一 <small>Phobos</small></h1>

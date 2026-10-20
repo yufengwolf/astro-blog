@@ -3,7 +3,7 @@ description: "木卫二（Europa）的天体数据：4.8×10²² kg、半径 1,5
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/europa.webp" alt="木卫二" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/europa.webp" alt="木卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00502" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫二 <small>Europa</small></h1>

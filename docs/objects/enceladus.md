@@ -3,7 +3,7 @@ description: "土卫二（Enceladus）的天体数据：1.08×10²⁰ kg、半�
 ---
 
 <div class="obj-hero">
-  <div class="astro-img moon"><img src="../../assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00347" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫二 <small>Enceladus</small></h1>
