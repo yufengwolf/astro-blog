@@ -84,15 +84,17 @@ def main():
 
         ph, orb = o.get("physical") or {}, o.get("orbit") or {}
         m, r = ph.get("mass_kg"), ph.get("radius_km")
-        if m is not None and not (1e10 <= m <= 1e31):
+        if m is not None and not (1e10 <= m <= 1e35):
             err(f"{oid}: mass_kg 越界: {m}")
-        if r is not None and not (1 <= r <= 1e6):
+        if r is not None and not (1 <= r <= 1e12):
             err(f"{oid}: radius_km 越界: {r}")
         d = ph.get("density_g_cm3")
-        if d is not None and not (0.1 <= d <= 25):
+        # 恒星（红/蓝超巨星）平均密度极低（可达 1e-9 g/cm³），且“平均密度”概念对
+        # 蓬松包层恒星不具参考意义，故密度 0.1~25 的下限对 star 分类豁免
+        if cat != "star" and d is not None and not (0.1 <= d <= 25):
             err(f"{oid}: density_g_cm3 越界: {d}")
         t = ph.get("mean_temp_c")
-        if t is not None and not (-273 <= t <= 10000):
+        if t is not None and not (-273 <= t <= 60000):
             err(f"{oid}: mean_temp_c 越界: {t}")
         p = orb.get("orbital_period_days")
         if p is not None and not (0.01 <= p <= 1e7):

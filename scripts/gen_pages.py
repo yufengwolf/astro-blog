@@ -23,29 +23,45 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.4"
-VERIFIED = "2026-10-18"
+VERSION = "1.5"
+VERIFIED = "2026-10-24"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
           "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星"}
 AU_KM = 1.496e8
+# 恒星单位换算基准（详情页/卡片对恒星用 R☉/M☉/L☉ 展示，底层仍存 km/kg 供大小对比）
+R_SUN_KM = 695700.0
+M_SUN_KG = 1.9884e30
+L_SUN_W = 3.828e26
 
 
 def sup(n):
     return str(n).translate(SUP)
 
 
-def fmt_mass(kg):
+def fmt_mass(kg, cat=None):
     if kg is None:
         return None
+    if cat == "star":
+        return f"{kg / M_SUN_KG:.3g} M☉"
     e = math.floor(math.log10(kg))
     return f"{kg / 10 ** e:.3g}×10{sup(e)} kg"
 
 
-def fmt_radius(r):
+def fmt_radius(r, cat=None):
     if r is None:
         return None
+    if cat == "star":
+        return f"{r / R_SUN_KM:.3g} R☉"
     return f"{r:,.1f} km" if r < 1000 else f"{r:,.0f} km"
+
+
+def fmt_lum(w, cat=None):
+    if w is None:
+        return None
+    if cat == "star":
+        return f"{w / L_SUN_W:.3g} L☉"
+    return f"{w:.3g} W"
 
 
 def fmt_km(a):
@@ -63,8 +79,12 @@ def fmt_axis(a, parent):
     return s
 
 
-def fmt_temp(t):
-    return None if t is None else f"{t} °C"
+def fmt_temp(t, cat=None):
+    if t is None:
+        return None
+    if cat == "star":
+        return f"{t + 273.15:.0f} K"
+    return f"{t} °C"
 
 
 def fmt_period(d):
@@ -241,8 +261,13 @@ def build_index(data):
     for o in objs:
         ph, orb = o.get("physical") or {}, o.get("orbit") or {}
         m, r = ph.get("mass_kg"), ph.get("radius_km")
-        key_stat = fmt_temp(ph.get("mean_temp_c")) or (f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None)
-        stats = [fmt_mass(m), fmt_radius(r), key_stat]
+        cat = o["category"]
+        if cat == "star":
+            key_stat = fmt_lum(o.get("luminosity_w"), cat) or fmt_temp(ph.get("mean_temp_c"), cat)
+        else:
+            key_stat = fmt_temp(ph.get("mean_temp_c"), cat) or (
+                f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None)
+        stats = [fmt_mass(m, cat), fmt_radius(r, cat), key_stat]
         stats_html = "".join(f"<span>{s}</span>" for s in stats if s)
         L.append(f'  <article class="astro-card" data-category="{o["category"]}"'
                  f' data-name="{o["name"]} {o["name_en"]}"'
@@ -279,7 +304,7 @@ def build_index(data):
     meta = data["meta"]
     L.append('<section class="astro-note">')
     L.append("  <h2>数据说明</h2>")
-    L.append(f'  <p>全部数值整理自 NASA 公开资料（公共领域），每个天体页面均标注来源与核对日期（最近核对：{meta["updated"]}）。'
+    L.append(f'  <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：{meta["updated"]}）。'
              f'发现数据错误？欢迎到 <a href="{REPO_URL}/issues">GitHub Issues</a> 反馈。</p>')
     L.append("</section>")
     L.append("")
@@ -310,10 +335,10 @@ def build_object_index(data):
         pname = f'<a href="{parent["id"]}.md">{parent["name"]}</a>' if parent else "—"
         L.append("| [{name}]({id}.md) | {cat} | {parent} | {mass} | {radius} | {dens} | {temp} | {period} | {moons} |".format(
             name=o["name"], id=o["id"], cat=CAT_ZH[o["category"]], parent=pname,
-            mass=dash(fmt_mass(ph.get("mass_kg"))),
-            radius=dash(fmt_radius(ph.get("radius_km"))),
-            dens=dash(f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None),
-            temp=dash(fmt_temp(ph.get("mean_temp_c"))),
+            mass=dash(fmt_mass(ph.get("mass_kg"), o["category"])),
+            radius=dash(fmt_radius(ph.get("radius_km"), o["category"])),
+            dens=dash(f"{ph['density_g_cm3']:g} g/cm³" if (ph.get("density_g_cm3") and o["category"] != "star") else None),
+            temp=dash(fmt_temp(ph.get("mean_temp_c"), o["category"])),
             period=dash(fmt_period(orb.get("orbital_period_days"))),
             moons=dash((o.get("moons") or {}).get("count")),
         ))
@@ -360,6 +385,8 @@ def compare_payload(objs):
             "axis": orb.get("semimajor_axis_km"), "period": orb.get("orbital_period_days"),
             "velocity": orb.get("orbital_velocity_km_s"),
             "moons": (o.get("moons") or {}).get("count"),
+            "lum": o.get("luminosity_w"), "distance": o.get("distance_ly"),
+            "constellation": o.get("constellation"), "spectral": o.get("spectral_type"),
         })
     return json.dumps({"earth_id": "earth", "rows": rows}, ensure_ascii=False)
 
@@ -412,6 +439,12 @@ def build_compare(data):
     L.append("  </div>")
     L.append("</div>")
     L.append("")
+    L.append('<div class="sizecmp-scale" id="sizecmp-scale" hidden>')
+    L.append('  <span class="sizecmp-scale-label">刻度</span>')
+    L.append('  <button type="button" data-mode="linear">线性</button>')
+    L.append('  <button type="button" data-mode="log">对数</button>')
+    L.append("</div>")
+    L.append("")
     L.append('<div class="sizecmp-viz">')
     L.append('  <svg id="sizecmp-svg" viewBox="0 0 1000 760" '
              'preserveAspectRatio="xMidYMid meet" '
@@ -460,9 +493,15 @@ def build_object(root, o, by_id, order, registry=None):
     cat = o["category"]
     L = []
     L.append("---")
-    L.append(f'description: "{o["name"]}（{o["name_en"]}）的天体数据：{dash(fmt_mass(ph.get("mass_kg")))}、'
-             f'半径 {dash(fmt_radius(ph.get("radius_km")))}、密度 {dash(f"{ph["density_g_cm3"]:g} g/cm³" if ph.get("density_g_cm3") else None)}、'
-             f'表面温度 {dash(fmt_temp(ph.get("mean_temp_c")))}。数据整理自 NASA 公开资料。"')
+    desc_mass = dash(fmt_mass(ph.get("mass_kg"), cat))
+    desc_radius = dash(fmt_radius(ph.get("radius_km"), cat))
+    if cat == "star":
+        desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat))}'
+    else:
+        desc_extra = f'密度 {dash(f"{ph["density_g_cm3"]:g} g/cm³" if ph.get("density_g_cm3") else None)}'
+    L.append(f'description: "{o["name"]}（{o["name_en"]}）的天体数据：{desc_mass}、'
+             f'半径 {desc_radius}、{desc_extra}、'
+             f'表面温度 {dash(fmt_temp(ph.get("mean_temp_c"), cat))}。数据整理自公开天文资料。"')
     L.append("---")
     L.append("")
     L.append(f'<div class="obj-hero">')
@@ -471,8 +510,13 @@ def build_object(root, o, by_id, order, registry=None):
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')
     L.append(f'    <p class="obj-tagline">{o["tagline"]}</p>')
-    keys = [fmt_mass(ph.get("mass_kg")), fmt_radius(ph.get("radius_km")),
-            fmt_temp(ph.get("mean_temp_c")), f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None]
+    if cat == "star":
+        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
+                fmt_temp(ph.get("mean_temp_c"), cat), fmt_lum(o.get("luminosity_w"), cat)]
+    else:
+        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
+                fmt_temp(ph.get("mean_temp_c"), cat),
+                f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None]
     L.append('    <div class="obj-keystats">')
     for k in keys:
         if k:
@@ -508,15 +552,16 @@ def build_object(root, o, by_id, order, registry=None):
         return base
 
     rows = [
-        ("质量", fmt_mass(ph.get("mass_kg"))),
-        ("平均半径", fmt_radius(ph.get("radius_km"))),
-        ("平均密度", f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None),
+        ("质量", fmt_mass(ph.get("mass_kg"), cat)),
+        ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
+        *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
+          if ph.get("density_g_cm3") and cat != "star" else []),
         ("表面重力", fmt_gravity(ph.get("gravity_m_s2"))),
         ("逃逸速度", fmt_velocity(ph.get("escape_velocity_km_s"))),
-        ("平均表面温度", fmt_temp(ph.get("mean_temp_c"))),
-        *([("有效温度（black-body 口径）", fmt_temp(ph["mean_temp_c_bb"]))]
+        ("平均表面温度", fmt_temp(ph.get("mean_temp_c"), cat)),
+        *([("有效温度（black-body 口径）", fmt_temp(ph["mean_temp_c_bb"], cat))]
           if ph.get("mean_temp_c_bb") is not None else []),
-        *([("表面温度", fmt_temp(ph["mean_temp_c_surface"]))]
+        *([("表面温度", fmt_temp(ph["mean_temp_c_surface"], cat))]
           if ph.get("mean_temp_c_surface") is not None else []),
         ("表面气压", fmt_pressure(ph.get("surface_pressure_bar"))),
         ("反照率", albedo_text()),
@@ -524,7 +569,12 @@ def build_object(root, o, by_id, order, registry=None):
     if o.get("spectral_type"):
         rows.append(("光谱型", o["spectral_type"]))
     if o.get("luminosity_w"):
-        rows.append(("光度", f"{o['luminosity_w']:.3g} W"))
+        rows.append(("光度", fmt_lum(o["luminosity_w"], cat)))
+    if cat == "star":
+        if o.get("distance_ly") is not None:
+            rows.append(("距离", f"{o['distance_ly']:g} 光年"))
+        if o.get("constellation"):
+            rows.append(("星座", o["constellation"]))
     for k, v in rows:
         L.append(f"| {k} | {dash(v)} |")
     L.append("")
@@ -584,7 +634,7 @@ def build_object(root, o, by_id, order, registry=None):
             links.append(s)
     srcs = "、".join(links) if links else "—"
     L.append(f'  <p>数据来源：{srcs}；核对日期：{o.get("verified") or "—"}。'
-             f'数值整理自 NASA NSSDC / JPL 公开资料（公共领域）。'
+             f'数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。'
              f'发现错误请到 <a href="{REPO_URL}/issues">GitHub Issues</a> 反馈。</p>')
     L.append("</section>")
     L.append("")
@@ -665,7 +715,7 @@ def build_data_page(data, objs):
     L.append("")
     L.append("## 许可与来源")
     L.append("")
-    L.append(f"{meta['license_note']}")
+    L.append(f"数值数据整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料（公共领域或自由许可）；一句话简介为本站原创撰写。")
     L.append("")
     L.append("主要数据源：")
     for s in meta.get("primary_sources", []):

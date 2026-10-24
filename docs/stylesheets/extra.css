@@ -696,6 +696,34 @@
 .sizecmp-table th:first-child, .sizecmp-table td:first-child { text-align: left; color: var(--md-default-fg-color--light); }
 .sizecmp-table tbody tr:last-child th, .sizecmp-table tbody tr:last-child td { border-bottom: none; }
 .sizecmp-share { font-size: 0.76rem; color: var(--md-default-fg-color--light); margin-top: 1rem; }
+/* 悬殊比例（>1000:1）出现的「线性 / 对数」刻度切换按钮 */
+.sizecmp-scale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 0.6rem;
+}
+.sizecmp-scale-label { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
+.sizecmp-scale button {
+  padding: 0.3rem 0.95rem;
+  font-size: 0.84rem;
+  border-radius: 999px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+.sizecmp-scale button:hover {
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+}
+.sizecmp-scale button.active {
+  background: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
 
 /* ---------- 深色星空背景（slate 主题） ---------- */
 /* 天体贴图多取自黑底太空照，圆盘外残留的暗色边在浅色页面上很显眼；

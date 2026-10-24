@@ -2,8 +2,8 @@
   "meta": {
     "name": "星野天体数据库",
     "version": "1.0.0",
-    "updated": "2026-10-18",
-    "object_count": 35,
+    "updated": "2026-10-24",
+    "object_count": 44,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -13,7 +13,7 @@
       "NASA NSSDC Jovian/Saturnian/Neptunian/Uranian Satellite Fact Sheets https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html",
       "NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api"
     ],
-    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；恒星与系外行星为下一批扩展方向"
+    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；系外行星（围绕其他恒星的行星）为后续扩展方向"
   },
   "objects": [
     {
@@ -1844,6 +1844,501 @@
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA00034",
       "image_locked": true
+    },
+    {
+      "id": "pistol_star",
+      "name": "手枪星",
+      "name_en": "Pistol Star",
+      "category": "star",
+      "parent": null,
+      "tagline": "银河系中心附近的蓝色特超巨星，曾抛出手枪星云，是已知最明亮的恒星之一",
+      "physical": {
+        "mass_kg": 5.4681e+31,
+        "radius_km": 214275600.0,
+        "density_g_cm3": 1.3269e-06,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 11526.9,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "LBV（蓝色特超巨星）",
+      "luminosity_w": 6.35448e+32,
+      "distance_ly": 25000,
+      "constellation": "人马座",
+      "discovery": {
+        "known_since": "1990 年代（哈勃发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_pistol"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/pistol_star.webp",
+      "source_dates": {
+        "wiki_pistol": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "stephenson_2_18",
+      "name": "史蒂文森 2-18",
+      "name_en": "Stephenson 2-18",
+      "category": "star",
+      "parent": null,
+      "tagline": "位于盾牌座方向的红超巨星，是目前已知体积最大的恒星之一",
+      "physical": {
+        "mass_kg": 2.38608e+31,
+        "radius_km": 1495755000.0,
+        "density_g_cm3": 1.7e-09,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 2926.8,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M6Ia（红超巨星）",
+      "luminosity_w": 1.672836e+32,
+      "distance_ly": 18900,
+      "constellation": "盾牌座",
+      "discovery": {
+        "known_since": "1990（Stephenson）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_stephenson2-18"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/stephenson_2_18.webp",
+      "source_dates": {
+        "wiki_stephenson2-18": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "arcturus",
+      "name": "大角星",
+      "name_en": "Arcturus",
+      "category": "star",
+      "parent": null,
+      "tagline": "牧夫座的最亮星，一颗橙色的红巨星，是夜空中最亮的恒星之一",
+      "physical": {
+        "mass_kg": 2.1474720000000002e+30,
+        "radius_km": 17670780.0,
+        "density_g_cm3": 9.2912e-05,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 4016.8,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K0III（红巨星）",
+      "luminosity_w": 6.5076e+28,
+      "distance_ly": 36.7,
+      "constellation": "牧夫座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_arcturus"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/arcturus.webp",
+      "source_dates": {
+        "wiki_arcturus": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "antares",
+      "name": "心宿二",
+      "name_en": "Antares",
+      "category": "star",
+      "parent": null,
+      "tagline": "天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）",
+      "physical": {
+        "mass_kg": 3.08202e+31,
+        "radius_km": 473076000.0,
+        "density_g_cm3": 6.95e-08,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 3126.8,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M1.5Iab-Ib（红超巨星）",
+      "luminosity_w": 2.905452e+31,
+      "distance_ly": 550.0,
+      "constellation": "天蝎座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_antares"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/antares.webp",
+      "source_dates": {
+        "wiki_antares": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "rigel",
+      "name": "参宿七",
+      "name_en": "Rigel",
+      "category": "star",
+      "parent": null,
+      "tagline": "猎户座β，全天第七亮星，一颗蓝白色的蓝超巨星",
+      "physical": {
+        "mass_kg": 4.17564e+31,
+        "radius_km": 54264600.0,
+        "density_g_cm3": 6.23856e-05,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 11826.9,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B8Ia（蓝超巨星）",
+      "luminosity_w": 4.5936e+31,
+      "distance_ly": 860.0,
+      "constellation": "猎户座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_rigel"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/rigel.webp",
+      "source_dates": {
+        "wiki_rigel": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "betelgeuse",
+      "name": "参宿四",
+      "name_en": "Betelgeuse",
+      "category": "star",
+      "parent": null,
+      "tagline": "猎户座α，一颗著名的红超巨星，亮度不规则变化，最接近地球的红超巨星之一",
+      "physical": {
+        "mass_kg": 2.78376e+31,
+        "radius_km": 531514800.0,
+        "density_g_cm3": 4.43e-08,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 3326.8,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M1-M2Ia（红超巨星）",
+      "luminosity_w": 3.334188e+31,
+      "distance_ly": 548.0,
+      "constellation": "猎户座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_betelgeuse"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/betelgeuse.webp",
+      "source_dates": {
+        "wiki_betelgeuse": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "vega",
+      "name": "织女星",
+      "name_en": "Vega",
+      "category": "star",
+      "parent": null,
+      "tagline": "天琴座α，夏季大三角的顶点，一颗 A 型主序星，曾是北极星",
+      "physical": {
+        "mass_kg": 4.2551760000000005e+30,
+        "radius_km": 1641852.0,
+        "density_g_cm3": 0.2295233635,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 9326.9,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A0V（主序星）",
+      "luminosity_w": 1.5312e+28,
+      "distance_ly": 25.0,
+      "constellation": "天琴座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_vega"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/vega.webp",
+      "source_dates": {
+        "wiki_vega": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "sirius_a",
+      "name": "天狼星 A",
+      "name_en": "Sirius A",
+      "category": "star",
+      "parent": null,
+      "tagline": "大犬座α的主星，夜空中最亮的恒星，一颗 A 型主序星",
+      "physical": {
+        "mass_kg": 4.096104e+30,
+        "radius_km": 1189647.0,
+        "density_g_cm3": 0.5808018945,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 9666.9,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A1V（主序星）",
+      "luminosity_w": 9.57e+27,
+      "distance_ly": 8.6,
+      "constellation": "大犬座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_sirius"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/sirius_a.webp",
+      "source_dates": {
+        "wiki_sirius": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "proxima_centauri",
+      "name": "比邻星",
+      "name_en": "Proxima Centauri",
+      "category": "star",
+      "parent": null,
+      "tagline": "半人马座α三星系统的成员，距离太阳最近的恒星，一颗暗弱的红矮星",
+      "physical": {
+        "mass_kg": 2.425848e+29,
+        "radius_km": 107137.8,
+        "density_g_cm3": 47.0919639904,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 2766.8,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M5.5Ve（红矮星）",
+      "luminosity_w": 6.5076e+23,
+      "distance_ly": 4.24,
+      "constellation": "半人马座",
+      "discovery": {
+        "known_since": "1915（Innes）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_proxima"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/proxima_centauri.webp",
+      "source_dates": {
+        "wiki_proxima": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
     }
   ],
   "source_registry": {
@@ -1914,6 +2409,42 @@
     "iau_wgsbn": {
       "name": "IAU · 行星卫星命名公报（USGS Gazetteer）",
       "url": "https://planetarynames.wr.usgs.gov/"
+    },
+    "wiki_pistol": {
+      "name": "Wikipedia · Pistol Star",
+      "url": "https://en.wikipedia.org/wiki/Pistol_Star"
+    },
+    "wiki_stephenson2-18": {
+      "name": "Wikipedia · Stephenson 2-18",
+      "url": "https://en.wikipedia.org/wiki/Stephenson_2-18"
+    },
+    "wiki_arcturus": {
+      "name": "Wikipedia · Arcturus",
+      "url": "https://en.wikipedia.org/wiki/Arcturus"
+    },
+    "wiki_antares": {
+      "name": "Wikipedia · Antares",
+      "url": "https://en.wikipedia.org/wiki/Antares"
+    },
+    "wiki_rigel": {
+      "name": "Wikipedia · Rigel",
+      "url": "https://en.wikipedia.org/wiki/Rigel"
+    },
+    "wiki_betelgeuse": {
+      "name": "Wikipedia · Betelgeuse",
+      "url": "https://en.wikipedia.org/wiki/Betelgeuse"
+    },
+    "wiki_vega": {
+      "name": "Wikipedia · Vega",
+      "url": "https://en.wikipedia.org/wiki/Vega"
+    },
+    "wiki_sirius": {
+      "name": "Wikipedia · Sirius A",
+      "url": "https://en.wikipedia.org/wiki/Sirius"
+    },
+    "wiki_proxima": {
+      "name": "Wikipedia · Proxima Centauri",
+      "url": "https://en.wikipedia.org/wiki/Proxima_Centauri"
     }
   }
 }

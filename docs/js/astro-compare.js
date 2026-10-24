@@ -77,6 +77,16 @@
     if (s.indexOf('.') !== -1) s = s.replace(/0+$/, '').replace(/\.$/, '');
     return s;
   }
+  function fmtLum(l) {
+    if (l === null || l === undefined) return '—';
+    return sig3(l / 3.828e26) + ' L☉';
+  }
+  function fmtDist(ly) {
+    if (ly === null || ly === undefined) return '—';
+    if (ly < 10) return ly.toFixed(2) + ' 光年';
+    if (ly < 1000) return ly.toFixed(1) + ' 光年';
+    return Math.round(ly).toLocaleString('en-US') + ' 光年';
+  }
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -102,7 +112,11 @@
     ['轨道半长轴', function (r) { return fmtKm(r.axis); }],
     ['轨道周期', function (r) { return fmtPeriod(r.period); }],
     ['平均轨道速度', function (r) { return fmtVelocity(r.velocity); }],
-    ['已确认卫星数', function (r) { return (r.moons === null || r.moons === undefined) ? '—' : r.moons + ' 颗'; }]
+    ['已确认卫星数', function (r) { return (r.moons === null || r.moons === undefined) ? '—' : r.moons + ' 颗'; }],
+    ['光度（L☉）', function (r) { return fmtLum(r.lum); }],
+    ['距离', function (r) { return fmtDist(r.distance); }],
+    ['星座', function (r) { return (r.constellation === null || r.constellation === undefined) ? '—' : esc(r.constellation); }],
+    ['光谱型', function (r) { return (r.spectral === null || r.spectral === undefined) ? '—' : esc(r.spectral); }]
   ];
 
   function syncHash() {

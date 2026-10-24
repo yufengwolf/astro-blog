@@ -25,6 +25,9 @@
   var detailEl = document.getElementById("sizecmp-detail");
   var noteEl = document.getElementById("sizecmp-viz-note");
   var shareEl = document.getElementById("sizecmp-share");
+  var toggleEl = document.getElementById("sizecmp-scale");
+  var scaleMode = "linear";        // 当前刻度：linear / log
+  var userChoseScale = false;      // 用户是否手动选过刻度
   if (!svg || !selA || !selB) return;
 
   var data;
@@ -175,20 +178,39 @@
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     if (a.radius == null || b.radius == null) {
       noteEl.textContent = "所选天体缺少半径数据，无法绘制大小对比。";
+      if (toggleEl) toggleEl.hidden = true;
       return;
     }
     var VW = 1000, VH = 760, MARGIN = 30, GAP = 90;
     var MAX_PX = 240, MIN_PX = 8;            // 大球半径上限 / 小球半径下限（保可见）
+    var ratio = Math.max(a.radius, b.radius) / Math.min(a.radius, b.radius);
+    var overThreshold = ratio > 1000;
+    if (toggleEl) toggleEl.hidden = !overThreshold;
+    // 悬殊比例（>1000:1）默认对数刻度，让两者都可见；用户可手动切回线性
+    if (overThreshold && !userChoseScale) scaleMode = "log";
+    var useLog = overThreshold && scaleMode === "log";
     function drawn(r, rPx) {
       if (!r.image) return { w: 2 * rPx, h: 2 * rPx };
       var h = rPx / (r._sf || 0.35);
       return { w: h * (r._aspect || 1), h: h };
     }
-    var scale = MAX_PX / Math.max(a.radius, b.radius);
-    var pa = Math.max(a.radius * scale, MIN_PX);
-    var pb = Math.max(b.radius * scale, MIN_PX);
-    var clampedA = a.radius * scale < MIN_PX && a.radius <= b.radius;
-    var clampedB = b.radius * scale < MIN_PX && b.radius < a.radius;
+    var pa, pb;
+    if (useLog) {
+      // 对数刻度：把 log10(半径) 线性映射到 [MIN_PX, MAX_PX]——非真实比例，仅让悬殊尺寸都可见
+      var rMin = Math.min(a.radius, b.radius), rMax = Math.max(a.radius, b.radius);
+      var lMin = Math.log10(rMin), lMax = Math.log10(rMax);
+      function logPx(r) {
+        if (lMax === lMin) return MAX_PX;
+        return MIN_PX + (Math.log10(r) - lMin) / (lMax - lMin) * (MAX_PX - MIN_PX);
+      }
+      pa = logPx(a.radius); pb = logPx(b.radius);
+    } else {
+      var scale = MAX_PX / Math.max(a.radius, b.radius);
+      pa = Math.max(a.radius * scale, MIN_PX);
+      pb = Math.max(b.radius * scale, MIN_PX);
+    }
+    var clampedA = !useLog && a.radius * (MAX_PX / Math.max(a.radius, b.radius)) < MIN_PX && a.radius <= b.radius;
+    var clampedB = !useLog && b.radius * (MAX_PX / Math.max(a.radius, b.radius)) < MIN_PX && b.radius < a.radius;
     // 自适应页面：贴图外沿总宽超出画布时整体等比缩小（真实比例不变），
     // 窄屏下 SVG 随容器宽度等比缩放，同一套比例适配任意屏宽
     var totalW = drawn(a, pa).w + drawn(b, pb).w + GAP;
@@ -210,12 +232,21 @@
       svg.appendChild(t1); svg.appendChild(t2);
     }
     label(cxA, a); label(cxB, b);
-    var ratio = Math.max(a.radius, b.radius) / Math.min(a.radius, b.radius);
     var clamped = clampedA || clampedB;
     noteEl.textContent =
-      "球体按真实直径比例绘制（" + a.name + " " + fmtRadius(a.radius) + " : " +
-      b.name + " " + fmtRadius(b.radius) + " ≈ " + ratio.toFixed(1) + " : 1）" +
-      (clamped ? "；较小的天体已放大到最小可见尺寸以便观察，倍数以数字为准。" : "。");
+      "球体" + (useLog ? "按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）" : "按真实直径比例绘制") +
+      "（" + a.name + " " + fmtRadius(a.radius) + " : " + b.name + " " + fmtRadius(b.radius) +
+      " ≈ " + ratio.toFixed(1) + " : 1）" +
+      (clamped ? "；较小的天体已放大到最小可见尺寸，倍数以数字为准。" : "。");
+    updateToggleUI();
+  }
+
+  function updateToggleUI() {
+    if (!toggleEl) return;
+    var btns = toggleEl.querySelectorAll("button");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle("active", btns[i].getAttribute("data-mode") === scaleMode);
+    }
   }
 
   // ---- 核心倍数卡 ----
@@ -308,5 +339,16 @@
   swapBtn.addEventListener("click", function () {
     var t = selA.value; selA.value = selB.value; selB.value = t; render();
   });
+  if (toggleEl) {
+    toggleEl.querySelectorAll("button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        scaleMode = btn.getAttribute("data-mode");
+        userChoseScale = true;
+        updateToggleUI();
+        var a = byId[selA.value], b = byId[selB.value];
+        if (a && b) render();
+      });
+    });
+  }
   maybeRender();   // 无图片时 pending 已为 0，立即渲染；有图片等 onload
 })();

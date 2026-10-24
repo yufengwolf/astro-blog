@@ -1,12 +1,12 @@
 ---
-description: "收录 35 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 44 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">35 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>
+  <p class="astro-hero-sub">44 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>
   <p class="astro-hero-stats">
-    <span class="astro-stat"><b>1</b> 恒星</span>
+    <span class="astro-stat"><b>10</b> 恒星</span>
     <span class="astro-stat"><b>8</b> 行星</span>
     <span class="astro-stat"><b>5</b> 矮行星</span>
     <span class="astro-stat"><b>21</b> 卫星</span>
@@ -44,7 +44,7 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">太阳<span class="en">Sun</span></div>
         <p class="astro-card-tagline">太阳系的中心恒星，独占太阳系总质量的 99.86%</p>
-        <div class="astro-card-stats"><span>1.99×10³⁰ kg</span><span>695,700 km</span><span>5499 °C</span></div>
+        <div class="astro-card-stats"><span>1 M☉</span><span>1 R☉</span><span>1 L☉</span></div>
       </div>
       <span class="astro-badge star">恒星</span>
     </a>
@@ -423,6 +423,105 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge moon">卫星</span>
     </a>
   </article>
+  <article class="astro-card" data-category="star" data-name="手枪星 Pistol Star" data-mass="5.4681e+31" data-radius="214275600.0" data-density="1.3269e-06" data-temp="11526.9" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/pistol_star/">
+      <div class="astro-img star"><img src="assets/planets/pistol_star.webp" alt="手枪星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">手枪星<span class="en">Pistol Star</span></div>
+        <p class="astro-card-tagline">银河系中心附近的蓝色特超巨星，曾抛出手枪星云，是已知最明亮的恒星之一</p>
+        <div class="astro-card-stats"><span>27.5 M☉</span><span>308 R☉</span><span>1.66e+06 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="史蒂文森 2-18 Stephenson 2-18" data-mass="2.38608e+31" data-radius="1495755000.0" data-density="1.7e-09" data-temp="2926.8" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/stephenson_2_18/">
+      <div class="astro-img star"><img src="assets/planets/stephenson_2_18.webp" alt="史蒂文森 2-18" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">史蒂文森 2-18<span class="en">Stephenson 2-18</span></div>
+        <p class="astro-card-tagline">位于盾牌座方向的红超巨星，是目前已知体积最大的恒星之一</p>
+        <div class="astro-card-stats"><span>12 M☉</span><span>2.15e+03 R☉</span><span>4.37e+05 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="大角星 Arcturus" data-mass="2.1474720000000002e+30" data-radius="17670780.0" data-density="9.2912e-05" data-temp="4016.8" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/arcturus/">
+      <div class="astro-img star"><img src="assets/planets/arcturus.webp" alt="大角星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">大角星<span class="en">Arcturus</span></div>
+        <p class="astro-card-tagline">牧夫座的最亮星，一颗橙色的红巨星，是夜空中最亮的恒星之一</p>
+        <div class="astro-card-stats"><span>1.08 M☉</span><span>25.4 R☉</span><span>170 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="心宿二 Antares" data-mass="3.08202e+31" data-radius="473076000.0" data-density="6.95e-08" data-temp="3126.8" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/antares/">
+      <div class="astro-img star"><img src="assets/planets/antares.webp" alt="心宿二" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">心宿二<span class="en">Antares</span></div>
+        <p class="astro-card-tagline">天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）</p>
+        <div class="astro-card-stats"><span>15.5 M☉</span><span>680 R☉</span><span>7.59e+04 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="参宿七 Rigel" data-mass="4.17564e+31" data-radius="54264600.0" data-density="6.23856e-05" data-temp="11826.9" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/rigel/">
+      <div class="astro-img star"><img src="assets/planets/rigel.webp" alt="参宿七" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">参宿七<span class="en">Rigel</span></div>
+        <p class="astro-card-tagline">猎户座β，全天第七亮星，一颗蓝白色的蓝超巨星</p>
+        <div class="astro-card-stats"><span>21 M☉</span><span>78 R☉</span><span>1.2e+05 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="参宿四 Betelgeuse" data-mass="2.78376e+31" data-radius="531514800.0" data-density="4.43e-08" data-temp="3326.8" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/betelgeuse/">
+      <div class="astro-img star"><img src="assets/planets/betelgeuse.webp" alt="参宿四" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">参宿四<span class="en">Betelgeuse</span></div>
+        <p class="astro-card-tagline">猎户座α，一颗著名的红超巨星，亮度不规则变化，最接近地球的红超巨星之一</p>
+        <div class="astro-card-stats"><span>14 M☉</span><span>764 R☉</span><span>8.71e+04 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="织女星 Vega" data-mass="4.2551760000000005e+30" data-radius="1641852.0" data-density="0.2295233635" data-temp="9326.9" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/vega/">
+      <div class="astro-img star"><img src="assets/planets/vega.webp" alt="织女星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">织女星<span class="en">Vega</span></div>
+        <p class="astro-card-tagline">天琴座α，夏季大三角的顶点，一颗 A 型主序星，曾是北极星</p>
+        <div class="astro-card-stats"><span>2.14 M☉</span><span>2.36 R☉</span><span>40 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="天狼星 A Sirius A" data-mass="4.096104e+30" data-radius="1189647.0" data-density="0.5808018945" data-temp="9666.9" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/sirius_a/">
+      <div class="astro-img star"><img src="assets/planets/sirius_a.webp" alt="天狼星 A" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">天狼星 A<span class="en">Sirius A</span></div>
+        <p class="astro-card-tagline">大犬座α的主星，夜空中最亮的恒星，一颗 A 型主序星</p>
+        <div class="astro-card-stats"><span>2.06 M☉</span><span>1.71 R☉</span><span>25 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="比邻星 Proxima Centauri" data-mass="2.425848e+29" data-radius="107137.8" data-density="47.0919639904" data-temp="2766.8" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/proxima_centauri/">
+      <div class="astro-img star"><img src="assets/planets/proxima_centauri.webp" alt="比邻星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">比邻星<span class="en">Proxima Centauri</span></div>
+        <p class="astro-card-tagline">半人马座α三星系统的成员，距离太阳最近的恒星，一颗暗弱的红矮星</p>
+        <div class="astro-card-stats"><span>0.122 M☉</span><span>0.154 R☉</span><span>0.0017 L☉</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
 </div>
 <p class="astro-empty" id="astro-empty" hidden>没有匹配的天体，换个关键词或分类试试。</p>
 
@@ -441,7 +540,7 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
 
 <section class="astro-note">
   <h2>数据说明</h2>
-  <p>全部数值整理自 NASA 公开资料（公共领域），每个天体页面均标注来源与核对日期（最近核对：2026-10-18）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-10-24）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.4 · 收录 35 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.5 · 收录 44 个天体（全部配图）</p>
