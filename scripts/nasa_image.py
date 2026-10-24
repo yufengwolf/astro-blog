@@ -10,10 +10,12 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
 
 两种抠图模式：
   默认     圆/椭圆盘抠图——适合无环天体（输出 600×600，圆盘占 70%）
-  --rings  含环天体保留行星+环整体：包围盒裁剪 → 去太空背景（洪水填充/
-           亮核+光晕衰减）→ 按行星本体直径统一缩放，球体占画布高 70%
-           （=420/600，与圆盘图一致），画布高 600、宽按环伸展的宽幅透明
-           webp（不裁成圆，环是行星的标志特征，球体跨天体显示等大）
+  --rings  含环天体保留行星+环整体：以行星本体圆为锚裁剪缩放，球体直径
+           统一 420（=600 画布高的 70%，与圆盘图一致、跨天体等大），环
+           随本体等比呈现；画布高 600、宽按环伸展，本体恒居中，环出画布
+           边缘渐隐。本体圆几何优先用登记表 planet=[cx,cy,r]（分数坐标，
+           手动标定；斜环+卫星图自动检测必失准，如土星 PIA00349），无则
+           95 分位亮区自动检测（planet_r 可手动覆盖半径）
 其他可选：
   --crop CX CY R      手动圆盘（自动检测不准时，如土星环与行星交织）
   --half L/R/T/B      双球/双面板拼图先取半幅
@@ -48,7 +50,7 @@ PLANET_DIR = ROOT / "docs" / "assets" / "planets"
 API = "https://images-api.nasa.gov"
 UA = {"User-Agent": "astro-blog-maintainer/1.0 (personal data site)"}
 OPT_KEYS = ("rings", "focus", "src_url", "page_url", "darkthr", "soft",
-            "crop", "half", "ellipse", "planet_r", "gain")
+            "crop", "half", "ellipse", "planet_r", "gain", "planet")
 
 
 def api_get(url: str, timeout: int = 90):
@@ -274,13 +276,16 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
             half: str | None = None, ellipse: bool = False,
             rings: bool = False, focus=None,
             src_url: str | None = None, page_url: str | None = None,
-            darkthr=None, soft=None, planet_r=None, gain=None) -> bool:
+            darkthr=None, soft=None, planet_r=None, gain=None,
+            planet=None) -> bool:
     """下载并安装一张真实影像。
     默认圆/椭圆盘抠图；rings=True 保留行星+环整体（宽幅透明 webp）。
     focus=(x0,y0,x1,y1) 按比例预裁剪；src_url 直连下载（ESA/韦布图）。
     soft<15 仅 alpha 抗锯齿；soft>=15 启用亮核+光晕衰减（韦布辉光场）。
-    planet_r 手动指定行星本体半径 px（裁剪后坐标系，自动检测不准时用，
-    如韦布海王星过曝核比盘面小、T95 低估）。"""
+    planet_r 手动指定行星本体半径 px（裁剪后坐标系，自动检测不准时用）。
+    planet=[cx,cy,r] 手动标定行星本体圆（分数坐标：cx/cy 相对裁剪后图幅
+    宽/高，r 相对高）——斜环+卫星场景自动检测必失准（如 PIA00349 土星），
+    用 limb 扫描+最小二乘圆拟合一次性标定后写入登记表永久复现。"""
     import numpy as np
     from PIL import Image
     Image.MAX_IMAGE_PIXELS = None        # 放行超大图（如 PIA00478 的 10240px）
@@ -310,29 +315,34 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     im = im.crop((b, b, im.width - b, im.height - b))
     arr = np.asarray(im)
     if rings:
-        # 行星+环整体：以「行星本体」为中心裁剪（不再用整帧亮区包围盒——
-        # 如 PIA00349 带卫星/延展亮环，亮区铺满全图会把整帧当主体，导致竖向
-        # 切片、本体被截）。改用 95 分位亮区定位行星中心与半径；环的横向伸展
-        # 用低阈值测量并限制为行星半径的 1.25~3 倍（避免远处卫星/背景撑爆
-        # 画布，纵向同理限 1.6 倍，因环在纵向上很薄）。统一按行星本体直径
-        # 缩放（球体=600 画布高的 70%=420），画布高固定 600、宽按环伸展——
-        # 取消 900 上限，环超出边界可自然完整呈现。
-        lum = arr.max(axis=2)
-        Tc = float(np.percentile(lum, 95))
-        bright = lum > Tc
-        _c = np.where(bright.any(axis=0))[0]
-        _r = np.where(bright.any(axis=1))[0]
-        if len(_c) >= 2 and len(_r) >= 2:
-            pcx = float((_c.min() + _c.max()) / 2)
-            pcy = float((_r.min() + _r.max()) / 2)
-            # 取 X/Y 半宽较小者作行星半径：环横向拉长不会污染行星半径
-            prad = float(min((_c.max() - _c.min()) / 2, (_r.max() - _r.min()) / 2))
+        # 行星+环整体。本体圆来源：登记表 planet=[cx,cy,r]（分数坐标）优先，
+        # 否则 95 分位亮区自动检测（斜环+卫星图会失准，见 install docstring）。
+        # 缩放只以本体为准：球体直径=600 画布高的 70%（=420，与圆盘图一致，
+        # 跨天体等大），环随本体等比呈现；画布高固定 600、宽按环伸展。
+        if planet:
+            pcx = float(planet[0]) * im.width
+            pcy = float(planet[1]) * im.height
+            prad = float(planet[2]) * im.height
+            print(f"  [rings] 手动本体圆 ({pcx:.0f},{pcy:.0f}) r={prad:.0f}px")
         else:
-            pcx, pcy, prad = im.width / 2, im.height / 2, max(im.width, im.height) / 2
-        if planet_r:                       # 手动覆盖（自动检测失准时）
-            prad = float(planet_r)
-        # 环伸展：更低亮阈抓环，但相对行星中心有界增长（防远处卫星/背景）
-        Tring = max(12.0, Tc * 0.35)
+            lum = arr.max(axis=2)
+            Tc = float(np.percentile(lum, 95))
+            bright = lum > Tc
+            _c = np.where(bright.any(axis=0))[0]
+            _r = np.where(bright.any(axis=1))[0]
+            if len(_c) >= 2 and len(_r) >= 2:
+                pcx = float((_c.min() + _c.max()) / 2)
+                pcy = float((_r.min() + _r.max()) / 2)
+                # 取 X/Y 半宽较小者作行星半径：环横向拉长不会污染行星半径
+                prad = float(min((_c.max() - _c.min()) / 2, (_r.max() - _r.min()) / 2))
+            else:
+                pcx, pcy, prad = im.width / 2, im.height / 2, max(im.width, im.height) / 2
+            if planet_r:                       # 手动覆盖半径（自动检测失准时）
+                prad = float(planet_r)
+        # 环伸展：低亮阈抓环，相对本体有界增长（防远处卫星/背景撑爆画布；
+        # 环斜置时纵向伸展大，上限放宽到 2.6 倍半径）
+        lum = arr.max(axis=2)
+        Tring = max(12.0, float(np.percentile(lum, 95)) * 0.35)
         rmask = lum > Tring
         rc = np.where(rmask.any(axis=0))[0]
         rr = np.where(rmask.any(axis=1))[0]
@@ -340,9 +350,13 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
             hw = float((rc.max() - rc.min()) / 2)
             hh = float((rr.max() - rr.min()) / 2)
         else:
-            hw, hh = prad * 2.3, prad * 1.15
-        hw = min(max(hw, prad * 1.25), prad * 3.0)
-        hh = min(max(hh, prad * 1.12), prad * 1.6)
+            hw, hh = prad * 2.3, prad * 1.6
+        hw = min(max(hw, prad * 1.3), prad * 4.0)
+        hh = min(max(hh, prad * 1.1), prad * 2.6)
+        # 低亮阈会漏掉环的最外圈暗部（测出的 bbox 偏紧，环带在画布内被硬切），
+        # 在 clamp 上限内四周加 6% 余量，能用足画幅就用足
+        hw = min(hw + 0.06 * im.width, prad * 4.0)
+        hh = min(hh + 0.06 * im.height, prad * 2.6)
         x0 = int(max(0, round(pcx - hw))); x1 = int(min(im.width, round(pcx + hw)))
         y0 = int(max(0, round(pcy - hh))); y1 = int(min(im.height, round(pcy + hh)))
         tex = im.crop((x0, y0, x1, y1))
@@ -353,17 +367,27 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
         scale = target_d / (2 * prad) if prad > 0 else 420.0 / max(tex.width, tex.height)
         new_w = max(1, round(tex.width * scale))
         new_h = max(1, round(tex.height * scale))
-        print(f"  [rings] 行星中心 ({pcx:.0f},{pcy:.0f}) 半径 {prad:.0f}px"
-              f"{'（手动）' if planet_r else ''}，环伸展 {hw:.0f}×{hh:.0f}px，"
-              f"裁剪 ({x0},{y0})-({x1},{y1})，缩放 {scale:.3f}，thr={thr}"
+        print(f"  [rings] 环伸展 {hw:.0f}×{hh:.0f}px，裁剪 ({x0},{y0})-({x1},{y1})，"
+              f"缩放 {scale:.3f}，thr={thr}"
               + (f"，soft={soft}" if soft else ""))
         tex = out.resize((new_w, new_h), Image.LANCZOS)   # out 已是去背景 RGBA
-        # 画布高固定 600、球体直径固定 420（占 70%，与圆盘图一致）；
-        # 宽按环伸展不设上限（环超出边界自然呈现），所有 rings 图球体跨天体等大。
+        # 画布高固定 600、球体直径固定 420（占 70%，与圆盘图一致）。
+        # 贴图按「本体圆心」对齐画布中心——裁剪框被图像边界截成不对称时，
+        # 按纹理中心贴会让本体偏移甚至出画布（上一版土星本体被截的根因）。
+        # 环超出画布边缘的部分由四边 24px alpha 渐隐平滑淡出（星空底不突兀）。
         canvas_h = 600
-        canvas_w = min(new_w, 2000)
+        canvas_w = min(max(new_w, 600), 2000)
         canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
-        canvas.paste(tex, ((canvas_w - new_w) // 2, (canvas_h - new_h) // 2), tex)
+        paste_x = int(round(canvas_w / 2 - (pcx - x0) * scale))
+        paste_y = int(round(canvas_h / 2 - (pcy - y0) * scale))
+        canvas.paste(tex, (paste_x, paste_y), tex)
+        ca = np.asarray(canvas).astype(np.float32)
+        ch2, cw2 = ca.shape[:2]
+        fade = 36.0
+        yy2, xx2 = np.mgrid[0:ch2, 0:cw2]
+        edge = np.minimum.reduce([xx2, yy2, cw2 - 1 - xx2, ch2 - 1 - yy2]).astype(np.float32)
+        ca[:, :, 3] = ca[:, :, 3] * np.clip(edge / fade, 0, 1)
+        canvas = Image.fromarray(ca.astype(np.uint8), "RGBA")
         dst = PLANET_DIR / f"{oid}.webp"
         canvas.save(dst, "WEBP", quality=85)
     else:

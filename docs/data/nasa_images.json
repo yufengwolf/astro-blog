@@ -35,7 +35,12 @@
     "nasa_id": "PIA00349",
     "credit": "NASA/JPL/USGS",
     "rings": true,
-    "soft": 3.0
+    "soft": 3.0,
+    "planet": [
+      0.5034,
+      0.4781,
+      0.2355
+    ]
   },
   "uranus": {
     "nasa_id": "PIA18182",
