@@ -137,5 +137,71 @@
   "oberon": {
     "nasa_id": "PIA00034",
     "credit": "NASA/JPL · 旅行者 2 号"
+  },
+  "m81": {
+    "nasa_id": "PIA09579",
+    "credit": "NASA/JPL-Caltech/ESA/Harvard-Smithsonian CfA · M81（GALEX+哈勃+斯皮策合成）",
+    "frame": true
+  },
+  "m31": {
+    "nasa_id": "PIA04921",
+    "credit": "NASA/JPL-Caltech · GALEX 紫外线仙女座星系全景",
+    "frame": true
+  },
+  "m51": {
+    "nasa_id": "PIA04230",
+    "credit": "NASA/STScI · 哈勃望远镜涡状星系",
+    "frame": true
+  },
+  "ngc1300": {
+    "nasa_id": "GSFC_20171208_Archive_e002154",
+    "credit": "NASA/ESA/STScI · 哈勃望远镜 NGC 1300",
+    "frame": true
+  },
+  "m33": {
+    "nasa_id": "PIA25165",
+    "credit": "ESA/NASA/JPL-Caltech/GBT/VLA/IRAM · M33 红外多波段合成（Herschel/Planck/IRAS/COBE）",
+    "frame": true
+  },
+  "smc": {
+    "nasa_id": "PIA25164",
+    "credit": "ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · 小麦哲伦云红外合成（Herschel/Planck/IRAS/COBE）",
+    "frame": true
+  },
+  "milky_way": {
+    "nasa_id": "PIA10748",
+    "credit": "NASA/JPL-Caltech · 银河系结构艺术家概念图（非实拍）",
+    "frame": true
+  },
+  "m82": {
+    "nasa_id": "PIA18841",
+    "credit": "NASA/JPL-Caltech/SAO/NOAO · M82 可见光 + NuSTAR X 射线合成",
+    "frame": true
+  },
+  "lmc": {
+    "nasa_id": "PIA15254",
+    "credit": "ESA/NASA/JPL-Caltech · Herschel 红外大麦哲伦云全景",
+    "frame": true
+  },
+  "m104": {
+    "nasa_id": "PIA15426",
+    "credit": "NASA/JPL-Caltech · 斯皮策红外草帽星系",
+    "frame": true
+  },
+  "m87": {
+    "nasa_id": "PIA23122",
+    "credit": "NASA/JPL-Caltech · 斯皮策红外 M87 椭圆星系（首个成像黑洞的宿主星系）",
+    "frame": true
+  },
+  "stephens_quintet": {
+    "nasa_id": "PIA04201",
+    "credit": "NASA/ESA · 哈勃望远镜斯蒂芬五重星系（1999）",
+    "focus": [
+      0.02,
+      0.02,
+      0.98,
+      0.76
+    ],
+    "frame": true
   }
 }

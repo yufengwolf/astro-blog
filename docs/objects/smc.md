@@ -3,7 +3,7 @@ description: "小麦哲伦云（Small Magellanic Cloud）的天体数据：6.5e+
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/smc.webp" alt="小麦哲伦云" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/smc.webp" alt="小麦哲伦云" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA25164" target="_blank" rel="noopener">ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · 小麦哲伦云红外合成（Herschel/Planck/IRAS/COBE）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge galaxy">星系</span>
     <h1>小麦哲伦云 <small>Small Magellanic Cloud</small></h1>

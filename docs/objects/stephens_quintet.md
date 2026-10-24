@@ -3,7 +3,7 @@ description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/stephens_quintet.webp" alt="斯蒂芬五重星系" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/stephens_quintet.webp" alt="斯蒂芬五重星系" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA04201" target="_blank" rel="noopener">NASA/ESA · 哈勃望远镜斯蒂芬五重星系（1999）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge galaxy">星系</span>
     <h1>斯蒂芬五重星系 <small>Stephan's Quintet</small></h1>

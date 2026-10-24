@@ -3565,8 +3565,8 @@
       "source_dates": {
         "wiki_milkyway": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/JPL-Caltech · 银河系结构艺术家概念图（非实拍）",
+      "image_url": "https://images.nasa.gov/details/PIA10748",
       "image_locked": true,
       "srcs": [
         "wiki_milkyway"
@@ -3626,8 +3626,8 @@
       "source_dates": {
         "wiki_m31": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/JPL-Caltech · GALEX 紫外线仙女座星系全景",
+      "image_url": "https://images.nasa.gov/details/PIA04921",
       "image_locked": true,
       "srcs": [
         "wiki_m31"
@@ -3687,8 +3687,8 @@
       "source_dates": {
         "wiki_m33": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "ESA/NASA/JPL-Caltech/GBT/VLA/IRAM · M33 红外多波段合成（Herschel/Planck/IRAS/COBE）",
+      "image_url": "https://images.nasa.gov/details/PIA25165",
       "image_locked": true,
       "srcs": [
         "wiki_m33"
@@ -3748,8 +3748,8 @@
       "source_dates": {
         "wiki_lmc": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "ESA/NASA/JPL-Caltech · Herschel 红外大麦哲伦云全景",
+      "image_url": "https://images.nasa.gov/details/PIA15254",
       "image_locked": true,
       "srcs": [
         "wiki_lmc"
@@ -3809,8 +3809,8 @@
       "source_dates": {
         "wiki_smc": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · 小麦哲伦云红外合成（Herschel/Planck/IRAS/COBE）",
+      "image_url": "https://images.nasa.gov/details/PIA25164",
       "image_locked": true,
       "srcs": [
         "wiki_smc"
@@ -3870,8 +3870,8 @@
       "source_dates": {
         "wiki_m87g": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/JPL-Caltech · 斯皮策红外 M87 椭圆星系（首个成像黑洞的宿主星系）",
+      "image_url": "https://images.nasa.gov/details/PIA23122",
       "image_locked": true,
       "srcs": [
         "wiki_m87g"
@@ -3931,8 +3931,8 @@
       "source_dates": {
         "wiki_m104": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/JPL-Caltech · 斯皮策红外草帽星系",
+      "image_url": "https://images.nasa.gov/details/PIA15426",
       "image_locked": true,
       "srcs": [
         "wiki_m104"
@@ -3992,8 +3992,8 @@
       "source_dates": {
         "wiki_m51": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/STScI · 哈勃望远镜涡状星系",
+      "image_url": "https://images.nasa.gov/details/PIA04230",
       "image_locked": true,
       "srcs": [
         "wiki_m51"
@@ -4053,8 +4053,8 @@
       "source_dates": {
         "wiki_m81": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/JPL-Caltech/ESA/Harvard-Smithsonian CfA · M81（GALEX+哈勃+斯皮策合成）",
+      "image_url": "https://images.nasa.gov/details/PIA09579",
       "image_locked": true,
       "srcs": [
         "wiki_m81"
@@ -4114,8 +4114,8 @@
       "source_dates": {
         "wiki_m82": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/JPL-Caltech/SAO/NOAO · M82 可见光 + NuSTAR X 射线合成",
+      "image_url": "https://images.nasa.gov/details/PIA18841",
       "image_locked": true,
       "srcs": [
         "wiki_m82"
@@ -4175,8 +4175,8 @@
       "source_dates": {
         "wiki_ngc1300": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/ESA/STScI · 哈勃望远镜 NGC 1300",
+      "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002154",
       "image_locked": true,
       "srcs": [
         "wiki_ngc1300"
@@ -4297,8 +4297,8 @@
       "source_dates": {
         "wiki_quintet": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "NASA/ESA · 哈勃望远镜斯蒂芬五重星系（1999）",
+      "image_url": "https://images.nasa.gov/details/PIA04201",
       "image_locked": true,
       "srcs": [
         "wiki_quintet"

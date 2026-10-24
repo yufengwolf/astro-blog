@@ -3,7 +3,7 @@ description: "大麦哲伦云（Large Magellanic Cloud）的天体数据：1e+10
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/lmc.webp" alt="大麦哲伦云" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/lmc.webp" alt="大麦哲伦云" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA15254" target="_blank" rel="noopener">ESA/NASA/JPL-Caltech · Herschel 红外大麦哲伦云全景</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge galaxy">星系</span>
     <h1>大麦哲伦云 <small>Large Magellanic Cloud</small></h1>
