@@ -10,9 +10,10 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
 
 两种抠图模式：
   默认     圆/椭圆盘抠图——适合无环天体（输出 600×600，圆盘占 70%）
-  --rings  含环天体保留行星+环整体：全包围盒矩形裁剪 → Otsu 阈值 +
-           边缘洪水填充去太空背景 + 小连通域过滤（去星点/卫星/亮星芒）
-           → 长边 600 的宽幅透明 webp（不裁成圆，环是行星的标志特征）
+  --rings  含环天体保留行星+环整体：包围盒裁剪 → 去太空背景（洪水填充/
+           亮核+光晕衰减）→ 按行星本体直径统一缩放，球体占画布高 70%
+           （=420/600，与圆盘图一致），画布高 600、宽按环伸展的宽幅透明
+           webp（不裁成圆，环是行星的标志特征，球体跨天体显示等大）
 其他可选：
   --crop CX CY R      手动圆盘（自动检测不准时，如土星环与行星交织）
   --half L/R/T/B      双球/双面板拼图先取半幅
@@ -47,7 +48,7 @@ PLANET_DIR = ROOT / "docs" / "assets" / "planets"
 API = "https://images-api.nasa.gov"
 UA = {"User-Agent": "astro-blog-maintainer/1.0 (personal data site)"}
 OPT_KEYS = ("rings", "focus", "src_url", "page_url", "darkthr", "soft",
-            "crop", "half", "ellipse")
+            "crop", "half", "ellipse", "planet_r", "gain")
 
 
 def api_get(url: str, timeout: int = 90):
@@ -78,14 +79,23 @@ def manifest_urls(nasa_id: str) -> list:
 
 
 def download_best(nasa_id: str, dest: Path) -> str:
-    """按 orig → large → medium → small 优先级下载，返回实际用的档位名。"""
+    """下载所有可用档位，取字节最大者（分辨率最高）。
+    不能只信 orig：部分图的 orig 是几十 KB 的缩略图（如 PIA03158）。"""
     urls = manifest_urls(nasa_id)
+    best_tier, best_data = None, b""
     for tier in ("orig", "large", "medium", "small"):
         for u in urls:
             if f"~{tier}.jpg" in u:
-                dest.write_bytes(api_get(u))
-                return tier
-    raise RuntimeError(f"{nasa_id} 无可下载 jpg（manifest: {urls}）")
+                try:
+                    data = api_get(u)
+                except Exception:
+                    continue
+                if len(data) > len(best_data):
+                    best_tier, best_data = tier, data
+    if best_tier is None:
+        raise RuntimeError(f"{nasa_id} 无可下载 jpg（manifest: {urls}）")
+    dest.write_bytes(best_data)
+    return best_tier
 
 
 def detect_disk(arr):
@@ -154,10 +164,27 @@ def cut_space(tex, darkthr=None, soft=None):
         thr = int(darkthr)
     else:
         thr = max(10, int(otsu_threshold(lum) * 0.75))
+    # 行星本体半径（用于统一各天体显示尺寸）：取最亮 5%（95 分位）像素的
+    # 包围盒半宽/半高较大者。自适应阈值——土星环暗、行星最亮；韦布行星
+    # 过曝，其亮核即行星。比固定 +60 更能避免环亮纹污染行星半径。
+    Tc = float(np.percentile(lum, 95))
+    bright = lum > Tc
+    _cols = np.where(bright.any(axis=0))[0]
+    _rows = np.where(bright.any(axis=1))[0]
+    if len(_cols) >= 2 and len(_rows) >= 2:
+        # 行星近似圆形：环只沿水平拉长，取 X/Y 半宽较小者作行星半径，
+        # 避免把环的横向跨度误算进行星直径（土星环极宽时尤甚）。
+        planet_r = float(min((_cols.max() - _cols.min()) / 2,
+                             (_rows.max() - _rows.min()) / 2))
+    else:
+        planet_r = float(max(h, w))
     if soft and soft >= 15:
         # 亮核+光晕衰减路径（韦布辉光场），不依赖洪水填充
         from PIL import ImageFilter
-        core = ((lum > thr + 30) * 255).astype(np.uint8)
+        # 亮核阈值自适应：取 90 分位——韦布图行星盘常只占画面 ~10%，
+        # 固定 thr+30 会卡在盘面亮度以下、alpha 掉到几十（海王星实测）
+        core_thr = max(float(np.percentile(lum, 90)), thr + 10)
+        core = ((lum > core_thr) * 255).astype(np.uint8)
         halo = np.asarray(Image.fromarray(core, "L").filter(
             ImageFilter.GaussianBlur(float(soft) * 2))).astype(np.float32) / 255.0
         alpha = (np.clip(halo * 1.15, 0, 1) * 255).astype(np.uint8)
@@ -173,8 +200,13 @@ def cut_space(tex, darkthr=None, soft=None):
         alpha = (alpha * np.clip(edge / feather, 0, 1)).astype(np.uint8)
         alpha = np.asarray(Image.fromarray(alpha, "L")
                            .filter(ImageFilter.GaussianBlur(float(soft))))
+        # 归一化：两级高斯模糊会稀释峰值（实测海王星盘面中心 alpha 仅 ~100），
+        # 按最大值归一到 255，保证行星本体完全不透明、光晕按比例渐隐
+        if alpha.max() > 0:
+            alpha = (alpha.astype(np.float32) * (255.0 / float(alpha.max()))
+                     ).clip(0, 255).astype(np.uint8)
         rgba = np.dstack([a, alpha])
-        return Image.fromarray(rgba, "RGBA"), thr
+        return Image.fromarray(rgba, "RGBA"), thr, planet_r
     dark = lum <= thr
     # 从画面四边洪水填充：连通暗区 = 太空背景
     bg = np.zeros((h, w), bool)
@@ -235,18 +267,20 @@ def cut_space(tex, darkthr=None, soft=None):
         alpha = np.asarray(Image.fromarray(alpha, "L")
                            .filter(ImageFilter.GaussianBlur(float(soft))))
     rgba = np.dstack([a, alpha])
-    return Image.fromarray(rgba, "RGBA"), thr
+    return Image.fromarray(rgba, "RGBA"), thr, planet_r
 
 
 def install(oid: str, nasa_id: str, credit: str, crop=None,
             half: str | None = None, ellipse: bool = False,
             rings: bool = False, focus=None,
             src_url: str | None = None, page_url: str | None = None,
-            darkthr=None, soft=None) -> bool:
+            darkthr=None, soft=None, planet_r=None, gain=None) -> bool:
     """下载并安装一张真实影像。
     默认圆/椭圆盘抠图；rings=True 保留行星+环整体（宽幅透明 webp）。
     focus=(x0,y0,x1,y1) 按比例预裁剪；src_url 直连下载（ESA/韦布图）。
-    soft<15 仅 alpha 抗锯齿；soft>=15 启用亮核+光晕衰减（韦布辉光场）。"""
+    soft<15 仅 alpha 抗锯齿；soft>=15 启用亮核+光晕衰减（韦布辉光场）。
+    planet_r 手动指定行星本体半径 px（裁剪后坐标系，自动检测不准时用，
+    如韦布海王星过曝核比盘面小、T95 低估）。"""
     import numpy as np
     from PIL import Image
     Image.MAX_IMAGE_PIXELS = None        # 放行超大图（如 PIA00478 的 10240px）
@@ -258,6 +292,11 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     else:
         tier = download_best(nasa_id, tmp)
     im = Image.open(tmp).convert("RGB")
+    if gain and gain != 1.0:
+        # 亮度增益：提亮暗淡源图（如韦布海王星红外片）。必须在 cut_space
+        # 之前做——亮核 alpha 掩码依赖亮度，后补提亮救不了 alpha。
+        from PIL import ImageEnhance
+        im = ImageEnhance.Brightness(im).enhance(float(gain))
     if half:
         w, h = im.size
         box = {"left": (0, 0, w // 2, h), "right": (w // 2, 0, w, h),
@@ -271,20 +310,39 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     im = im.crop((b, b, im.width - b, im.height - b))
     arr = np.asarray(im)
     if rings:
-        # 行星+环整体：全包围盒矩形裁剪，长边占满 600，不裁成圆
+        # 行星+环整体：包围盒裁剪，按「行星本体直径」统一缩放，
+        # 使所有带环图球体占最终画布高度的 70%（=420px，与圆盘图一致），
+        # 画布高度统一 600、宽按环伸展；球体显示尺寸跨天体一致，环作附加。
         cx, cy, rx0, ry0 = detect_disk(arr)
-        pw, ph = int(rx0 * 1.04), int(ry0 * 1.04)
+        pw, ph = int(rx0 * 1.08), int(ry0 * 1.08)
         x0 = int(max(0, cx - pw)); x1 = int(min(im.width, cx + pw))
         y0 = int(max(0, cy - ph)); y1 = int(min(im.height, cy + ph))
         tex = im.crop((x0, y0, x1, y1))
-        scale = 600.0 / max(tex.width, tex.height)
-        tex = tex.resize((max(1, round(tex.width * scale)),
-                          max(1, round(tex.height * scale))), Image.LANCZOS)
-        out, thr = cut_space(tex, darkthr, soft)
-        print(f"  [rings] 包围盒 ({x0},{y0})-({x1},{y1})，暗色阈值 thr={thr}"
+        if darkthr is not None and gain:
+            darkthr = darkthr * gain    # 阈值坐标系随提亮同步放大
+        out, thr, auto_r = cut_space(tex, darkthr, soft)
+        if planet_r:
+            planet_r = float(planet_r)      # 手动覆盖（自动检测失准时）
+        else:
+            planet_r = auto_r
+        target_d = 420.0                      # 球体直径 = 600 画布的 70%
+        scale = target_d / (2 * planet_r) if planet_r > 0 else 420.0 / max(tex.width, tex.height)
+        new_w = max(1, round(tex.width * scale))
+        new_h = max(1, round(tex.height * scale))
+        print(f"  [rings] 包围盒 ({x0},{y0})-({x1},{y1})，行星半径 {planet_r:.0f}px"
+              f"{'（手动）' if planet_r and planet_r != auto_r else ''}，"
+              f"缩放 {scale:.3f}，暗色阈值 thr={thr}"
               + (f"，软边 soft={soft}" if soft else ""))
+        tex = out.resize((new_w, new_h), Image.LANCZOS)   # out 已是去背景 RGBA
+        # 画布高固定 600、球体直径固定 420（占 70%，与圆盘图一致），
+        # 宽按环伸展但限 900（极宽环如土星左右裁到主环，免卡片溢出）；
+        # 环超出画布的部分由 paste 越界自然裁掉；所有 rings 图球体跨天体等大。
+        canvas_h = 600
+        canvas_w = min(new_w, 900)
+        canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
+        canvas.paste(tex, ((canvas_w - new_w) // 2, (canvas_h - new_h) // 2), tex)
         dst = PLANET_DIR / f"{oid}.webp"
-        out.save(dst, "WEBP", quality=85)
+        canvas.save(dst, "WEBP", quality=85)
     else:
         if crop:  # 手动圆盘
             cx = crop[0] * im.width
@@ -374,6 +432,10 @@ def main() -> int:
     ap.add_argument("--darkthr", type=float, help="手动暗色阈值（跳过 Otsu）")
     ap.add_argument("--soft", type=float, metavar="R",
                     help="软边：<15 仅抗锯齿（如 3）；>=15 亮核+光晕衰减，韦布辉光场用（如 20/25）")
+    ap.add_argument("--planet-r", type=float, metavar="PX",
+                    help="手动行星本体半径 px（裁剪后坐标系；自动检测不准时，如韦布海王星）")
+    ap.add_argument("--gain", type=float, metavar="F",
+                    help="亮度增益（提亮暗淡源图，如韦布海王星 1.35）")
     ap.add_argument("--ellipse", action="store_true",
                     help="椭圆抠图（土豆形天体：火卫一/土卫七等）")
     args = ap.parse_args()
@@ -397,6 +459,10 @@ def main() -> int:
             entry["darkthr"] = args.darkthr
         if args.soft is not None:
             entry["soft"] = args.soft
+        if args.planet_r is not None:
+            entry["planet_r"] = args.planet_r
+        if args.gain is not None:
+            entry["gain"] = args.gain
         reg[oid] = entry
         save_reg(reg)
         print(f"登记表更新：{oid} -> {nasa_id}"

@@ -35,7 +35,8 @@
     "nasa_id": "PIA03158",
     "credit": "NASA/ESA/STScI · 哈勃望远镜",
     "rings": true,
-    "soft": 3.0
+    "soft": 3.0,
+    "planet_r": 400.0
   },
   "uranus": {
     "nasa_id": "weic2310a",
@@ -50,15 +51,17 @@
     "credit": "NASA/ESA/CSA · 韦布望远镜（STScI）",
     "rings": true,
     "focus": [
-      0.4,
-      0.5,
-      0.74,
-      0.78
+      0.33,
+      0.48,
+      0.72,
+      0.81
     ],
     "src_url": "https://esawebb.org/media/archives/images/large/weic2214a.jpg",
     "page_url": "https://esawebb.org/images/weic2214a/",
     "darkthr": 68.0,
-    "soft": 20.0
+    "soft": 20.0,
+    "planet_r": 95.0,
+    "gain": 1.35
   },
   "ceres": {
     "nasa_id": "PIA19619",
