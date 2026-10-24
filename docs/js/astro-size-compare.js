@@ -48,7 +48,8 @@
     nebula: ["#e06ac8", "#8a2f6e"],
     galaxy: ["#f2c94c", "#8a5a00"],
     cluster: ["#d9a5ff", "#6a3a8a"],
-    structure: ["#7fd4ff", "#2a6a8a"]
+    structure: ["#7fd4ff", "#2a6a8a"],
+    comet: ["#7fe0d0", "#1f7a6a"]
   };
   function colorFor(r) { return CAT_COLOR[r.cat_key] || ["#888888", "#555555"]; }
 

@@ -90,3 +90,19 @@ great_attractor,巨引源,Great Attractor,structure,laniakea,1.9884e+46,1.89214e
 hercules_corona_wall,武仙-北冕座长城,Hercules–Corona Borealis Great Wall,structure,,1.9884e+48,4.73035e+22,,,,,,2026-10-24
 cmb,宇宙微波背景,Cosmic Microwave Background,structure,observable_universe,,4.3235399e+23,,-270.425,,,,2026-10-24
 observable_universe,可观测宇宙,Observable Universe,structure,,1.5e+53,4.3992255e+23,,-270.42,,,,2026-10-24
+m17,天鹅星云,Omega Nebula,nebula,milky_way,,189214000000000.0,,,,,,2026-10-24
+m27,哑铃星云,Dumbbell Nebula,nebula,milky_way,,11825875000000.0,,,,,,2026-10-24
+ngc3372,船底座星云,Carina Nebula,nebula,milky_way,,2175961000000000.0,,,,,,2026-10-24
+ngc7000,北美洲星云,North America Nebula,nebula,milky_way,,425731500000000.0,,,,,,2026-10-24
+m101,风车星系,Pinwheel Galaxy,galaxy,,,8.041595e+17,,,,,,2026-10-24
+m64,黑眼星系,Black Eye Galaxy,galaxy,,,2.554389e+17,,,,,,2026-10-24
+m83,南风车星系,Southern Pinwheel Galaxy,galaxy,,,2.6016925e+17,,,,,,2026-10-24
+ngc5128,半人马 A,Centaurus A,galaxy,,,2.83821e+17,,,,,,2026-10-24
+ngc4038,天线星系,Antennae Galaxies,galaxy,,,2.365175e+18,,,,,,2026-10-24
+m11,野鸭星团,Wild Duck Cluster,cluster,milky_way,,236517500000000.0,,,,,,2026-10-24
+m7,托勒密星团,Ptolemy Cluster,cluster,milky_way,,108798050000000.0,,,,,,2026-10-24
+ngc4755,珠宝盒星团,Jewel Box Cluster,cluster,milky_way,,87984510000000.0,,,,,,2026-10-24
+gw150514,GW150914 并合黑洞,GW150914,black_hole,,1.232808e+32,183.10150496,,,,,,2026-10-24
+eta_carinae,海山二,Eta Carinae,star,,,,,,,,,2026-10-24
+vesta,灶神星,4 Vesta,asteroid,sun,2.59076e+20,262.7,3.456,-60,353380000.0,1325.5,,2026-10-24
+halley,哈雷彗星,1P/Halley,comet,sun,220000000000000.0,5.5,0.6,,2667700000.0,27509,,2026-10-24

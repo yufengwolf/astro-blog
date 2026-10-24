@@ -29,7 +29,7 @@ SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
           "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星",
           "black_hole": "黑洞", "nebula": "星云", "galaxy": "星系",
-          "cluster": "星团", "structure": "大尺度结构"}
+          "cluster": "星团", "structure": "大尺度结构", "comet": "彗星"}
 AU_KM = 1.496e8
 # 恒星单位换算基准（详情页/卡片对恒星用 R☉/M☉/L☉ 展示，底层仍存 km/kg 供大小对比）
 R_SUN_KM = 695700.0
@@ -39,10 +39,11 @@ LY_KM = 9.4607e12            # 1 光年（km）——延展天体以光年计径
 # 延展天体：以光年计径、参与对比页时按「全幅=等效球径」绘制（非真实形状，示意）
 EXT_CATS = {"nebula", "galaxy", "cluster", "structure"}
 # 只有实体固态/流体天体展示平均密度（黑洞/星云/星系等无意义）
-DENSITY_CATS = {"planet", "dwarf_planet", "moon"}
+DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
 # 展示顺序（首页 chips / hero 统计 / 总表分类列）
 CAT_ORDER = ("star", "planet", "dwarf_planet", "moon", "galaxy", "nebula",
-             "cluster", "black_hole", "structure", "asteroid", "exoplanet")
+             "cluster", "black_hole", "structure", "asteroid", "comet",
+             "exoplanet")
 
 
 def sup(n):
@@ -614,6 +615,15 @@ def build_object(root, o, by_id, order, registry=None):
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
             ("史瓦西半径", fmt_radius(ph.get("radius_km"), cat)),
             ("距离", fmt_distance(o.get("distance_ly"))),
+        ]
+    elif cat in ("asteroid", "comet"):
+        # 小天体：实心球参数大多不适用（彗星是脏雪球、形状不规则），只列有意义的量
+        rows = [
+            ("质量", fmt_mass(ph.get("mass_kg"), cat)),
+            ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
+            *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
+              if ph.get("density_g_cm3") else []),
+            ("反照率", albedo_text()),
         ]
     elif cat in EXT_CATS:
         rows = [

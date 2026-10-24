@@ -209,6 +209,7 @@
 .astro-img-fallback.galaxy span { background: linear-gradient(135deg, #f2c94c, #8a5a00); }
 .astro-img-fallback.cluster span { background: linear-gradient(135deg, #d9a5ff, #6a3a8a); }
 .astro-img-fallback.structure span { background: linear-gradient(135deg, #7fd4ff, #2a6a8a); }
+.astro-img-fallback.comet span { background: linear-gradient(135deg, #7fe0d0, #1f7a6a); }
 
 .astro-card-body { padding: 0.7rem 0.95rem 0.95rem; }
 .astro-card-title {
@@ -266,6 +267,7 @@
 .astro-badge.galaxy { background: rgba(176, 138, 40, 0.88); }
 .astro-badge.cluster { background: rgba(140, 78, 160, 0.85); }
 .astro-badge.structure { background: rgba(40, 110, 150, 0.88); }
+.astro-badge.comet { background: rgba(31, 122, 106, 0.88); }
 
 .astro-empty {
   padding: 2.5rem 1rem;

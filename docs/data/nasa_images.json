@@ -203,5 +203,177 @@
       0.76
     ],
     "frame": true
+  },
+  "m42": {
+    "nasa_id": "PIA25434",
+    "credit": "NASA/JPL-Caltech · 多望远镜合成猎户座大星云（红外）",
+    "frame": true
+  },
+  "m1": {
+    "nasa_id": "PIA03606",
+    "credit": "NASA/STScI · 哈勃蟹状星云最详细影像",
+    "frame": true
+  },
+  "m16": {
+    "nasa_id": "PIA25433",
+    "credit": "NASA/JPL-Caltech · WISE 红外鹰状星云全景",
+    "frame": true
+  },
+  "m20": {
+    "nasa_id": "PIA04220",
+    "credit": "NASA/STScI · 三叶星云全景（Atlas 马赛克）",
+    "focus": [
+      0.0,
+      0.095,
+      1.0,
+      0.86
+    ],
+    "frame": true
+  },
+  "m8": {
+    "nasa_id": "PIA13453",
+    "credit": "NASA/JPL-Caltech · WISE 礁湖星云马赛克",
+    "frame": true
+  },
+  "horsehead": {
+    "nasa_id": "PIA04215",
+    "credit": "NASA/STScI · 哈勃马头星云（红外）",
+    "frame": true
+  },
+  "m57": {
+    "nasa_id": "GSFC_20171208_Archive_e001464",
+    "credit": "NASA/ESA/STScI · 哈勃环状星云真实形状",
+    "frame": true
+  },
+  "ngc7293": {
+    "nasa_id": "PIA15658",
+    "credit": "NASA/JPL-Caltech · GALEX 紫外上帝之眼全景",
+    "frame": true
+  },
+  "m2_9": {
+    "nasa_id": "GSFC_20171208_Archive_e000637",
+    "credit": "NASA/ESA/STScI · 哈勃双极行星状星云 M2-9",
+    "frame": true
+  },
+  "rosette": {
+    "nasa_id": "PIA09268",
+    "credit": "NASA/JPL-Caltech · 斯皮策红外玫瑰星云",
+    "frame": true
+  },
+  "tarantula": {
+    "nasa_id": "PIA14415",
+    "credit": "NASA/CXC/STScI/JPL-Caltech · 蜘蛛星云多波段合成（Chandra+哈勃+斯皮策）",
+    "frame": true
+  },
+  "m45": {
+    "nasa_id": "PIA09262",
+    "credit": "NASA/JPL-Caltech · 斯皮策红外昴星团（七姐妹+反射星云）",
+    "frame": true
+  },
+  "m44": {
+    "nasa_id": "PIA15801",
+    "credit": "NASA/STScI · 蜂巢星团（Keck/CFHT 观测，标出两颗系外行星）",
+    "frame": true
+  },
+  "omega_cen": {
+    "nasa_id": "PIA13125",
+    "credit": "NASA/JPL-Caltech · WISE 半人马座 ω 球状星团",
+    "frame": true
+  },
+  "r136": {
+    "nasa_id": "PIA04200",
+    "credit": "NASA/STScI · 哈勃剑鱼座星云全景（R136 星团所在星暴区）",
+    "frame": true
+  },
+  "cmb": {
+    "nasa_id": "PIA17449",
+    "credit": "ESA/NASA · Planck 卫星与宇宙微波背景全天图",
+    "frame": true
+  },
+  "virgo_cluster": {
+    "nasa_id": "PIA07906",
+    "credit": "NASA/JPL-Caltech · GALEX 紫外室女座星系团",
+    "frame": true
+  },
+  "m17": {
+    "nasa_id": "PIA12071",
+    "credit": "NASA/JPL-Caltech · 斯皮策红外天鹅星云 M17",
+    "frame": true
+  },
+  "m27": {
+    "nasa_id": "PIA04249",
+    "credit": "NASA/STScI · 哈勃哑铃星云 M27",
+    "frame": true
+  },
+  "ngc3372": {
+    "nasa_id": "carina_nebula",
+    "credit": "NASA/ESA/CSA/STScI · 韦布望远镜船底座星云「宇宙悬崖」",
+    "frame": true
+  },
+  "ngc7000": {
+    "nasa_id": "PIA13845",
+    "credit": "NASA/JPL-Caltech/Caltech/IPAC · 北美洲星云（可见+红外合成）",
+    "frame": true
+  },
+  "m101": {
+    "nasa_id": "PIA15630",
+    "credit": "NASA/STScI/JPL-Caltech/Chandra · 风车星系 M101 多波段合成",
+    "frame": true
+  },
+  "m64": {
+    "nasa_id": "0400392",
+    "credit": "NASA/STScI · 哈勃黑眼星系 M64",
+    "focus": [
+      0.03,
+      0.045,
+      0.97,
+      0.88
+    ],
+    "frame": true
+  },
+  "m83": {
+    "nasa_id": "PIA04629",
+    "credit": "NASA/JPL-Caltech · GALEX 紫外南风车星系 M83",
+    "frame": true
+  },
+  "ngc5128": {
+    "nasa_id": "PIA06007",
+    "credit": "NASA/JPL-Caltech · 斯皮策红外半人马 A",
+    "frame": true
+  },
+  "ngc4038": {
+    "nasa_id": "GSFC_20171208_Archive_e001327",
+    "credit": "NASA/ESA/STScI · 哈勃天线星系（NGC 4038/4039）",
+    "frame": true
+  },
+  "m11": {
+    "nasa_id": "PIA07878",
+    "credit": "NASA/JPL-Caltech/UMD · 深度撞击号拍摄野鸭星团 M11",
+    "frame": true
+  },
+  "gw150514": {
+    "nasa_id": "GSFC_20171208_Archive_e000415",
+    "credit": "NASA/CXC · 双黑洞并合引力波示意图",
+    "frame": true
+  },
+  "eta_carinae": {
+    "nasa_id": "PIA20294",
+    "credit": "NASA/STScI · 哈勃 WFPC2 海山二与 Homunculus 星云",
+    "frame": true
+  },
+  "halley": {
+    "nasa_id": "PIA17485",
+    "credit": "ESA/NASA · 乔托号 1986 年拍摄的哈雷彗星核",
+    "frame": true
+  },
+  "gw190521": {
+    "nasa_id": "PIA24129",
+    "credit": "NASA/JPL-Caltech · GW190521 最大质量黑洞并合（LIGO/Virgo）",
+    "frame": true
+  },
+  "vesta": {
+    "nasa_id": "PIA15141",
+    "credit": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA · 黎明号灶神星彩色影像",
+    "frame": true
   }
 }

@@ -15,10 +15,10 @@ from pathlib import Path
 
 DATA = Path(__file__).resolve().parent.parent / "docs" / "data" / "astro.json"
 CATEGORIES = {"star", "planet", "dwarf_planet", "moon", "asteroid", "exoplanet",
-              "black_hole", "nebula", "galaxy", "cluster", "structure"}
+              "black_hole", "nebula", "galaxy", "cluster", "structure", "comet"}
 # 密度 0.1~25 g/cm³ 只对固态天体有意义；恒星（超巨星极低）与延展天体
 # （星系/星云/星团/大尺度结构/黑洞）不校验密度
-DENSITY_CATS = {"planet", "dwarf_planet", "moon"}
+DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
 # parent 允许的父分类（None 表示必须为空）。校验时比对 parent 对象的分类，
 # 因此父对象可以出现在子对象之后（前向引用，如黑洞→其宿主星系）。
 PARENT_RULES = {
@@ -33,6 +33,7 @@ PARENT_RULES = {
     "galaxy": {None, "galaxy", "structure"},
     "cluster": {None, "galaxy", "nebula"},
     "structure": {None, "structure"},
+    "comet": {"star"},
 }
 KNOWN_ORDER = ["sun", "jupiter", "saturn", "neptune", "uranus", "earth",
                "venus", "mars", "mercury", "pluto"]  # 已知质量顺序（从大到小）
