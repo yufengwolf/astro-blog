@@ -602,6 +602,97 @@
   .cmp-table th, .cmp-table td { padding: 0.35rem 0.55rem; }
 }
 
+/* ---------- 天体对比页（compare.md） ---------- */
+.sizecmp-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.2rem 0 1.4rem;
+}
+.sizecmp-pick { display: flex; flex-direction: column; gap: 0.35rem; }
+.sizecmp-label { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
+.sizecmp-select {
+  min-width: 12rem;
+  max-width: 18rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.95rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.sizecmp-select:focus { outline: 2px solid var(--md-primary-fg-color); outline-offset: 1px; }
+.sizecmp-swap {
+  padding: 0.5rem 0.95rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  border-radius: 0.6rem;
+  border: 1px solid var(--md-primary-fg-color);
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+.sizecmp-swap:hover { opacity: 0.88; }
+.sizecmp-viz { text-align: center; margin: 0 0 1.2rem; }
+#sizecmp-svg {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.sizecmp-viz-note { font-size: 0.78rem; color: var(--md-default-fg-color--light); margin: 0.5rem 0 0; }
+#sizecmp-svg .sizecmp-name { fill: var(--md-default-fg-color); font-size: 18px; font-weight: 700; }
+#sizecmp-svg .sizecmp-sub { fill: var(--md-default-fg-color--light); font-size: 13px; }
+#sizecmp-svg .sizecmp-initial { font-size: 60px; font-weight: 700; }
+#sizecmp-svg .sizecmp-stroke { stroke: color-mix(in srgb, var(--md-default-fg-color) 35%, transparent); stroke-width: 1.5; }
+.sizecmp-ratios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.6rem;
+}
+.sizecmp-ratio-card {
+  padding: 1rem 1.1rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  text-align: center;
+}
+.sizecmp-ratio-title { font-size: 0.84rem; color: var(--md-default-fg-color--light); }
+.sizecmp-ratio-big {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+  line-height: 1.1;
+  margin: 0.2rem 0;
+}
+.sizecmp-ratio-sub { font-size: 0.8rem; color: var(--md-default-fg-color--light); margin-bottom: 0.6rem; }
+.sizecmp-ratio-rows { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.82rem; text-align: left; }
+.sizecmp-ratio-rows .dot { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
+.sizecmp-ratio-rows b { color: var(--md-default-fg-color); }
+.sizecmp-ratio-rows i { color: var(--md-default-fg-color--light); font-style: normal; font-size: 0.74rem; margin-left: 0.3rem; }
+.sizecmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+  background: var(--md-default-bg-color);
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+.sizecmp-table th, .sizecmp-table td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  text-align: right;
+}
+.sizecmp-table thead th { background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent); text-align: right; }
+.sizecmp-table th:first-child, .sizecmp-table td:first-child { text-align: left; color: var(--md-default-fg-color--light); }
+.sizecmp-table tbody tr:last-child th, .sizecmp-table tbody tr:last-child td { border-bottom: none; }
+.sizecmp-share { font-size: 0.76rem; color: var(--md-default-fg-color--light); margin-top: 1rem; }
+
 /* ---------- 深色星空背景（slate 主题） ---------- */
 /* 天体贴图多取自黑底太空照，圆盘外残留的暗色边在浅色页面上很显眼；
    深色主题下整站铺星空底，残边自然融入，也契合天文站气质 */

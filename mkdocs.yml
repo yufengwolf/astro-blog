@@ -62,6 +62,7 @@ extra_css:
 extra_javascript:
   - js/astro-explore.js
   - js/astro-compare.js
+  - js/astro-size-compare.js
 
 # ---- 导航结构 ----
 # 首页 = 天体总览工具页；objects/ 与 data.md 由 scripts/gen_pages.py 自动生成维护
@@ -69,4 +70,5 @@ extra_javascript:
 # 数据集下载页（data.md）不放入导航：仅经 URL 直达 / sitemap 收录，不在界面提供入口
 nav:
   - 天体总览: index.md
+  - 天体对比: compare.md
   - 天体库: objects/index.md

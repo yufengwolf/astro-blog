@@ -364,6 +364,74 @@ def compare_payload(objs):
     return json.dumps({"earth_id": "earth", "rows": rows}, ensure_ascii=False)
 
 
+def sizecompare_payload(objs, img_prefix="../"):
+    """天体对比页内嵌精简数据（含相对图片路径，供前端按真实比例绘制球体）。"""
+    rows = []
+    for o in objs:
+        ph, orb = o.get("physical") or {}, o.get("orbit") or {}
+        img = o.get("image")
+        r = o.get("rings")
+        rows.append({
+            "id": o["id"], "name": o["name"], "en": o["name_en"],
+            "cat": CAT_ZH[o["category"]], "cat_key": o["category"],
+            "mass": ph.get("mass_kg"), "radius": ph.get("radius_km"),
+            "density": ph.get("density_g_cm3"), "gravity": ph.get("gravity_m_s2"),
+            "escape": ph.get("escape_velocity_km_s"), "temp": ph.get("mean_temp_c"),
+            "rotation": orb.get("rotation_period_hours"),
+            "rings": bool(r) if r is not None else False,
+            "image": (img_prefix + img) if img else None,
+        })
+    return json.dumps({"rows": rows}, ensure_ascii=False)
+
+
+def build_compare(data):
+    """docs/compare.md — 天体对比工具页：两个天体选择框 + 按真实直径比例绘制球体 +
+    体积/质量等直观倍数数据。纯前端渲染（内嵌数据），无后台。"""
+    objs = data["objects"]
+    n = len(objs)
+    L = []
+    L.append("---")
+    L.append('description: "选择任意两个天体，按真实直径比例直观对比大小、体积与质量，支持一键交换与分享链接。"')
+    L.append("---")
+    L.append("")
+    L.append("# 天体对比")
+    L.append("")
+    L.append(f"选择任意两个天体，下方会按**真实直径比例**绘制它们的球体，并列出体积、质量等关键数据的直观倍数。"
+             f"本站收录的 {n} 个天体均可参与对比。")
+    L.append("")
+    L.append('<div class="sizecmp-bar">')
+    L.append('  <div class="sizecmp-pick">')
+    L.append('    <span class="sizecmp-label">天体 A</span>')
+    L.append('    <select id="sizecmp-a" class="sizecmp-select" aria-label="选择天体 A"></select>')
+    L.append("  </div>")
+    L.append('  <button type="button" id="sizecmp-swap" class="sizecmp-swap" '
+             'title="交换 A / B" aria-label="交换 A 和 B">⇄</button>')
+    L.append('  <div class="sizecmp-pick">')
+    L.append('    <span class="sizecmp-label">天体 B</span>')
+    L.append('    <select id="sizecmp-b" class="sizecmp-select" aria-label="选择天体 B"></select>')
+    L.append("  </div>")
+    L.append("</div>")
+    L.append("")
+    L.append('<div class="sizecmp-viz">')
+    L.append('  <svg id="sizecmp-svg" viewBox="0 0 800 440" '
+             'preserveAspectRatio="xMidYMid meet" '
+             'role="img" aria-label="两个天体按真实比例绘制的球体对比图"></svg>')
+    L.append('  <p class="sizecmp-viz-note" id="sizecmp-viz-note"></p>')
+    L.append("</div>")
+    L.append("")
+    L.append("<h2>核心倍数</h2>")
+    L.append('<div class="sizecmp-ratios" id="sizecmp-ratios"></div>')
+    L.append("")
+    L.append("<h2>详细数据对比</h2>")
+    L.append('<div class="sizecmp-detail" id="sizecmp-detail"></div>')
+    L.append("")
+    L.append('<p class="sizecmp-share" id="sizecmp-share"></p>')
+    L.append("")
+    L.append(f'<script type="application/json" id="astro-sizecompare-data">{sizecompare_payload(objs)}</script>')
+    L.append("")
+    return "\n".join(L)
+
+
 def compare_block(root, o, objs):
     """详情页的「天体对比」入口：按钮 + 面板容器 + 内嵌对比数据。"""
     return "\n".join([
@@ -646,6 +714,7 @@ def main():
     order = [o["id"] for o in objs]
 
     outputs = {"docs/index.md": build_index(data), "docs/data.md": build_data_page(data, objs),
+               "docs/compare.md": build_compare(data),
                "docs/objects/index.md": build_object_index(data)}
     for o in objs:
         outputs[f"docs/objects/{o['id']}.md"] = build_object(
