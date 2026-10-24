@@ -16,6 +16,8 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
            边缘渐隐。本体圆几何优先用登记表 planet=[cx,cy,r]（分数坐标，
            手动标定；斜环+卫星图自动检测必失准，如土星 PIA00349），无则
            95 分位亮区自动检测（planet_r 可手动覆盖半径）
+  --frame  全幅模式——星系/星云/星团等延展天体：不抠圆，整幅缩至最长边
+           600px，四边约 5% 渐隐；对比页按「全幅=等效球径」绘制（示意）
 其他可选：
   --crop CX CY R      手动圆盘（自动检测不准时，如土星环与行星交织）
   --half L/R/T/B      双球/双面板拼图先取半幅
@@ -50,7 +52,7 @@ PLANET_DIR = ROOT / "docs" / "assets" / "planets"
 API = "https://images-api.nasa.gov"
 UA = {"User-Agent": "astro-blog-maintainer/1.0 (personal data site)"}
 OPT_KEYS = ("rings", "focus", "src_url", "page_url", "darkthr", "soft",
-            "crop", "half", "ellipse", "planet_r", "gain", "planet")
+            "crop", "half", "ellipse", "planet_r", "gain", "planet", "frame")
 
 
 def api_get(url: str, timeout: int = 90):
@@ -277,9 +279,11 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
             rings: bool = False, focus=None,
             src_url: str | None = None, page_url: str | None = None,
             darkthr=None, soft=None, planet_r=None, gain=None,
-            planet=None) -> bool:
+            planet=None, frame: bool = False) -> bool:
     """下载并安装一张真实影像。
     默认圆/椭圆盘抠图；rings=True 保留行星+环整体（宽幅透明 webp）。
+    frame=True 全幅模式（星系/星云/星团等延展天体）：不抠圆形，整幅缩至
+    最长边 600px，四边约 5% 透明渐隐融入星空底；对比页按「全幅=等效球径」绘制。
     focus=(x0,y0,x1,y1) 按比例预裁剪；src_url 直连下载（ESA/韦布图）。
     soft<15 仅 alpha 抗锯齿；soft>=15 启用亮核+光晕衰减（韦布辉光场）。
     planet_r 手动指定行星本体半径 px（裁剪后坐标系，自动检测不准时用）。
@@ -314,7 +318,25 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     b = 3                                # 去边缘装饰白框（如有）
     im = im.crop((b, b, im.width - b, im.height - b))
     arr = np.asarray(im)
-    if rings:
+    if frame:
+        # 全幅模式（延展天体）：整幅缩至最长边 600px，四边约 5% 渐隐融入星空底。
+        # 不做圆形抠图——星系旋臂/星云形态/星团成员都应完整保留。
+        scale = 600.0 / max(im.width, im.height)
+        new_w = max(1, round(im.width * scale))
+        new_h = max(1, round(im.height * scale))
+        tex = im.resize((new_w, new_h), Image.LANCZOS)
+        feather = max(8, int(min(new_w, new_h) * 0.05))
+        yy, xx = np.mgrid[0:new_h, 0:new_w]
+        edge = np.minimum.reduce([xx, yy, new_w - 1 - xx, new_h - 1 - yy]).astype(np.float32)
+        fade = np.clip(edge / feather, 0, 1)
+        rgba = np.dstack([np.asarray(tex).astype(np.uint8),
+                          (fade * 255).astype(np.uint8)])
+        canvas = Image.fromarray(rgba, "RGBA")
+        dst = PLANET_DIR / f"{oid}.webp"
+        canvas.save(dst, "WEBP", quality=85)
+        print(f"  [frame] 全幅 {new_w}×{new_h}px（源 {im.width}×{im.height}），"
+              f"四边渐隐 {feather}px")
+    elif rings:
         # 行星+环整体。本体圆来源：登记表 planet=[cx,cy,r]（分数坐标）优先，
         # 否则 95 分位亮区自动检测（斜环+卫星图会失准，见 install docstring）。
         # 缩放只以本体为准：球体直径=600 画布高的 70%（=420，与圆盘图一致，
@@ -460,6 +482,65 @@ def do_search(q: str, n: int = 8):
     return 0
 
 
+def auto_pick(query: str, title_kw=()):
+    """搜索 NASA 图片库并挑最佳候选：标题命中关键词加分，取分数最高者。
+    返回 (nasa_id, title, credit) 或 None。"""
+    import urllib.parse
+    d = api_json(f"{API}/search?q={urllib.parse.quote(query)}&media_type=image")
+    items = d.get("collection", {}).get("items", [])
+    best = None
+    for it in items[:25]:
+        dd = it["data"][0]
+        nid = dd.get("nasa_id")
+        title = dd.get("title") or ""
+        if not nid:
+            continue
+        tl = title.lower()
+        score = 0
+        for kw in title_kw:
+            if kw.lower() in tl:
+                score += 3
+        for w in query.lower().split():
+            if len(w) > 2 and w in tl:
+                score += 1
+        if best is None or score > best[0]:
+            best = (score, nid, title, dd)
+    if not best:
+        return None
+    _, nid, title, dd = best
+    center = (dd.get("center") or "").strip()
+    credit = f"NASA/{center} · {title[:40]}" if center else f"NASA · {title[:40]}"
+    return nid, title, credit
+
+
+def do_auto_batch(pairs, frame: bool):
+    """pairs: [(oid, query, [title_kw...]), ...] 逐个人搜图→装图（frame 模式）。
+    单个失败只记录不影响其余；返回失败数。"""
+    fails = 0
+    for item in pairs:
+        oid, query = item[0], item[1]
+        kws = item[2] if len(item) > 2 else ()
+        try:
+            pick = auto_pick(query, kws)
+        except Exception as e:
+            print(f"[fail] {oid}：搜索出错 {e}")
+            fails += 1
+            continue
+        if not pick:
+            print(f"[fail] {oid}：NASA 库无「{query}」可用结果（保留程序化贴图）")
+            fails += 1
+            continue
+        nid, title, credit = pick
+        print(f"[auto] {oid} → {nid}《{title[:50]}》")
+        try:
+            if not install(oid, nid, credit, frame=frame):
+                fails += 1
+        except Exception as e:
+            print(f"[fail] {oid}：安装出错 {e}")
+            fails += 1
+    return fails
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="安装真实天体影像（圆盘裁剪或含环宽幅 + 署名 + 锁定）")
     ap.add_argument("ids", nargs="*", help="按登记表安装（对象 id）")
@@ -485,10 +566,26 @@ def main() -> int:
                     help="亮度增益（提亮暗淡源图，如韦布海王星 1.35）")
     ap.add_argument("--ellipse", action="store_true",
                     help="椭圆抠图（土豆形天体：火卫一/土卫七等）")
+    ap.add_argument("--frame", action="store_true",
+                    help="全幅模式（星系/星云/星团等延展天体）：不抠圆，整幅缩放+边缘渐隐")
+    ap.add_argument("--auto-batch", nargs="+", metavar="ID:QUERY",
+                    help="批量自动模式：'对象id:搜索词[:标题关键词]'，自动挑图并安装")
     args = ap.parse_args()
 
     if args.search:
         return do_search(args.search)
+
+    if args.auto_batch:
+        pairs = []
+        for tok in args.auto_batch:
+            parts = tok.split(":")
+            if len(parts) < 2:
+                print(f"[skip] 格式应为 对象id:搜索词[:关键词]，得到 {tok!r}")
+                continue
+            pairs.append((parts[0], parts[1], parts[2:]))
+        fails = do_auto_batch(pairs, frame=args.frame)
+        print(f"批量完成：{len(pairs) - fails}/{len(pairs)} 成功")
+        return 1 if fails else 0
 
     reg = load_reg()
     if args.set:
@@ -510,10 +607,13 @@ def main() -> int:
             entry["planet_r"] = args.planet_r
         if args.gain is not None:
             entry["gain"] = args.gain
+        if args.frame:
+            entry["frame"] = True
         reg[oid] = entry
         save_reg(reg)
         print(f"登记表更新：{oid} -> {nasa_id}"
-              + ("（含环模式）" if args.rings else ""))
+              + ("（含环模式）" if args.rings else "")
+              + ("（全幅模式）" if args.frame else ""))
         opts = {k: entry[k] for k in OPT_KEYS if k in entry}
         return 0 if install(oid, nasa_id, credit, **opts) else 1
 

@@ -202,6 +202,13 @@
 .astro-img-fallback.star span { background: linear-gradient(135deg, #f5a623, #e06c00); }
 .astro-img-fallback.dwarf_planet span { background: linear-gradient(135deg, #9b7fc4, #6a4fa0); }
 .astro-img-fallback.moon span { background: linear-gradient(135deg, #8d99ae, #5c6773); }
+.astro-img-fallback.asteroid span { background: linear-gradient(135deg, #b08a4a, #7a5e2e); }
+.astro-img-fallback.exoplanet span { background: linear-gradient(135deg, #2a8a78, #1c5e52); }
+.astro-img-fallback.black_hole span { background: linear-gradient(135deg, #3c346e, #14142a); }
+.astro-img-fallback.nebula span { background: linear-gradient(135deg, #e06ac8, #8a2f6e); }
+.astro-img-fallback.galaxy span { background: linear-gradient(135deg, #f2c94c, #8a5a00); }
+.astro-img-fallback.cluster span { background: linear-gradient(135deg, #d9a5ff, #6a3a8a); }
+.astro-img-fallback.structure span { background: linear-gradient(135deg, #7fd4ff, #2a6a8a); }
 
 .astro-card-body { padding: 0.7rem 0.95rem 0.95rem; }
 .astro-card-title {
@@ -254,6 +261,11 @@
 .astro-badge.moon { background: rgba(92, 103, 115, 0.85); }
 .astro-badge.asteroid { background: rgba(140, 110, 60, 0.85); }
 .astro-badge.exoplanet { background: rgba(30, 130, 120, 0.85); }
+.astro-badge.black_hole { background: rgba(60, 52, 110, 0.9); }
+.astro-badge.nebula { background: rgba(178, 62, 138, 0.88); }
+.astro-badge.galaxy { background: rgba(176, 138, 40, 0.88); }
+.astro-badge.cluster { background: rgba(140, 78, 160, 0.85); }
+.astro-badge.structure { background: rgba(40, 110, 150, 0.88); }
 
 .astro-empty {
   padding: 2.5rem 1rem;

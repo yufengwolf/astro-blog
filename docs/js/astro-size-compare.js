@@ -43,9 +43,17 @@
     dwarf_planet: ["#9b7fc4", "#6a4fa0"],
     moon: ["#8d99ae", "#5c6773"],
     asteroid: ["#b08a4a", "#7a5e2e"],
-    exoplanet: ["#2a8a78", "#1c5e52"]
+    exoplanet: ["#2a8a78", "#1c5e52"],
+    black_hole: ["#7a7ab8", "#2a2a4a"],
+    nebula: ["#e06ac8", "#8a2f6e"],
+    galaxy: ["#f2c94c", "#8a5a00"],
+    cluster: ["#d9a5ff", "#6a3a8a"],
+    structure: ["#7fd4ff", "#2a6a8a"]
   };
   function colorFor(r) { return CAT_COLOR[r.cat_key] || ["#888888", "#555555"]; }
+
+  var LY_KM = 9.4607e12;
+  var EXT_CATS = { nebula: 1, galaxy: 1, cluster: 1, structure: 1 };
 
   // ---- 格式化 ----
   var SUP = { "0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹","-":"⁻" };
@@ -58,12 +66,30 @@
     if (s.indexOf(".") !== -1) s = s.replace(/0+$/, "").replace(/\.$/, "");
     return s + "×10" + sup(e);
   }
-  function fmtMass(kg) { return (kg == null) ? "—" : sig3(kg) + " kg"; }
-  function fmtRadius(r) {
-    if (r == null) return "—";
-    return (r < 1000 ? r.toFixed(1) : r.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " km";
+  function fmtLum(w) { return (w == null) ? "—" : sig3(w / 3.828e26) + " L☉"; }
+  // 按天体类型格式化半径（入参可以是行对象或纯数值）
+  function fmtRadius(x) {
+    var r = (x && typeof x === "object" && "radius" in x) ? x : null;
+    var v = r ? r.radius : x;
+    if (v == null) return "—";
+    var ck = r ? r.cat_key : null;
+    if (ck === "star") return sig3(v / 695700) + " R☉";
+    if (ck === "black_hole") return v >= 1e8 ? sig3(v / 1.496e8) + " AU" : sig3(v) + " km";
+    if (ck && EXT_CATS[ck]) return sig3(v / LY_KM) + " 光年";
+    return (v < 1000 ? v.toFixed(1) : v.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " km";
   }
-  function fmtKm3(v) { return (v == null) ? "—" : sig3(v) + " km³"; }
+  // 质量：恒星/黑洞/星系/星团/大尺度结构用 M☉，行星用 kg
+  var MASS_SUN_CATS = { star: 1, black_hole: 1, galaxy: 1, cluster: 1, structure: 1, nebula: 1 };
+  function fmtMassCat(x) {
+    var r = (x && typeof x === "object" && "mass" in x) ? x : null;
+    var v = r ? r.mass : x;
+    if (v == null) return "—";
+    return (r && MASS_SUN_CATS[r.cat_key]) ? sig3(v / 1.9884e30) + " M☉" : sig3(v) + " kg";
+  }
+  function fmtKm3(r) {
+    var v = (r && typeof r === "object") ? volume(r) : r;
+    return (v == null) ? "—" : sig3(v) + " km³";
+  }
   function fmtDensity(d) { return (d == null) ? "—" : d + " g/cm³"; }
   function fmtGravity(g) { return (g == null) ? "—" : g.toFixed(2) + " m/s²"; }
   function fmtVelocity(v) { return (v == null) ? "—" : (v < 1 ? v.toFixed(3) : v.toFixed(2)) + " km/s"; }
@@ -147,6 +173,21 @@
 
   function drawBody(g, cx, cy, rPx, r) {
     if (r.image) {
+      if (r.ext) {
+        // 延展天体（星云/星系/星团/大尺度结构）：贴图全幅≈天体本身，
+        // 按「全幅=等效直径（2×rPx）」绘制——较长边映射直径，保留真实宽高比，
+        // 属等效球径示意（非真实形状），具体尺度以数字为准
+        var ar = r._aspect || 1;
+        var W2, H2;
+        if (ar >= 1) { W2 = 2 * rPx; H2 = W2 / ar; } else { H2 = 2 * rPx; W2 = H2 * ar; }
+        var img2 = el("image", {
+          "x": cx - W2 / 2, "y": cy - H2 / 2,
+          "width": W2, "height": H2, "preserveAspectRatio": "xMidYMid meet"
+        });
+        setHref(img2, r.image);
+        g.appendChild(img2);
+        return;
+      }
       // 图内本体球半径映射为 rPx：图高 H = rPx / sf（sf 为测得的本体球半径
       // 占图高比例；测量失败按本站贴图构建约定 0.35 兜底）。含环图环自然
       // 超出球体范围向外伸展，不再叠加描边基准圆。
@@ -190,6 +231,11 @@
     if (overThreshold && !userChoseScale) scaleMode = "log";
     var useLog = overThreshold && scaleMode === "log";
     function drawn(r, rPx) {
+      if (r.ext && r.image) {
+        // 延展天体：全幅=等效直径（与 drawBody 的 ext 分支一致）
+        var ar2 = r._aspect || 1;
+        return ar2 >= 1 ? { w: 2 * rPx, h: 2 * rPx / ar2 } : { w: 2 * rPx * ar2, h: 2 * rPx };
+      }
       if (!r.image) return { w: 2 * rPx, h: 2 * rPx };
       var h = rPx / (r._sf || 0.35);
       return { w: h * (r._aspect || 1), h: h };
@@ -228,15 +274,17 @@
       var t1 = el("text", { "x": cx, "y": baseY + 26, "text-anchor": "middle", "class": "sizecmp-name" });
       t1.textContent = r.name;
       var t2 = el("text", { "x": cx, "y": baseY + 48, "text-anchor": "middle", "class": "sizecmp-sub" });
-      t2.textContent = fmtRadius(r.radius);
+      t2.textContent = fmtRadius(r);
       svg.appendChild(t1); svg.appendChild(t2);
     }
     label(cxA, a); label(cxB, b);
     var clamped = clampedA || clampedB;
+    var extInvolved = a.ext || b.ext;
     noteEl.textContent =
-      "球体" + (useLog ? "按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）" : "按真实直径比例绘制") +
-      "（" + a.name + " " + fmtRadius(a.radius) + " : " + b.name + " " + fmtRadius(b.radius) +
+      (extInvolved ? "天体" : "球体") + (useLog ? "按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）" : "按真实直径比例绘制") +
+      "（" + a.name + " " + fmtRadius(a) + " : " + b.name + " " + fmtRadius(b) +
       " ≈ " + ratio.toFixed(1) + " : 1）" +
+      (extInvolved ? "；星系/星云等延展天体以等效球径示意（非真实形状），具体尺度以数字为准。" : "") +
       (clamped ? "；较小的天体已放大到最小可见尺寸，倍数以数字为准。" : "。");
     updateToggleUI();
   }
@@ -249,7 +297,7 @@
     }
   }
 
-  // ---- 核心倍数卡 ----
+  // ---- 核心倍数卡 ----（fmt 接收行对象，按类型取合适单位）
   function ratioCard(title, va, vb, a, b, fmt) {
     if (va == null || vb == null) return "";
     var big = (va >= vb) ? a : b, small = (va >= vb) ? b : a;
@@ -263,19 +311,20 @@
         " 的 " + mult.toPrecision(3) + " 倍</div>" +
       '<div class="sizecmp-ratio-rows">' +
         '<div><span class="dot" style="background:' + cBig + '"></span>' +
-          esc(big.name) + " <b>1.00×</b> <i>" + (fmt ? fmt(bv) : bv) + "</i></div>" +
+          esc(big.name) + " <b>1.00×</b> <i>" + (fmt ? fmt(big) : bv) + "</i></div>" +
         '<div><span class="dot" style="background:' + cSmall + '"></span>' +
           esc(small.name) + " <b>" + relSmall.toPrecision(3) + "×</b> <i>" +
-          (fmt ? fmt(sv) : sv) + "</i></div>" +
+          (fmt ? fmt(small) : sv) + "</i></div>" +
       "</div></div>";
   }
 
-  // ---- 详细数据表 ----
+  // ---- 详细数据表 ----（fmt 接收行对象）
   function renderDetail(a, b) {
     var defs = [
-      ["平均半径", fmtRadius, function (r) { return r.radius; }],
-      ["体积", fmtKm3, function (r) { return volume(r); }],
-      ["质量", fmtMass, function (r) { return r.mass; }],
+      ["半径 / 大小", fmtRadius, function (r) { return r.radius; }],
+      ["体积（等效球）", fmtKm3, function (r) { return volume(r); }],
+      ["质量", fmtMassCat, function (r) { return r.mass; }],
+      ["光度", fmtLum, function (r) { return r.lum; }],
       ["平均密度", fmtDensity, function (r) { return r.density; }],
       ["表面重力", fmtGravity, function (r) { return r.gravity; }],
       ["逃逸速度", fmtVelocity, function (r) { return r.escape; }],
@@ -288,7 +337,7 @@
     defs.forEach(function (d) {
       var va = d[2](a), vb = d[2](b);
       var ratio = (va != null && vb) ? (va / vb) : null;
-      html += "<tr><th>" + d[0] + "</th><td>" + d[1](va) + "</td><td>" + d[1](vb) +
+      html += "<tr><th>" + d[0] + "</th><td>" + d[1](a) + "</td><td>" + d[1](b) +
         "</td><td>" + (ratio == null ? "—" : ratio.toPrecision(3) + "×") + "</td></tr>";
     });
     html += "</tbody></table>";
@@ -302,7 +351,7 @@
     ratiosEl.innerHTML =
       ratioCard("直径", a.radius, b.radius, a, b, fmtRadius) +
       ratioCard("体积", volume(a), volume(b), a, b, fmtKm3) +
-      ratioCard("质量", a.mass, b.mass, a, b, fmtMass);
+      ratioCard("质量", a.mass, b.mass, a, b, fmtMassCat);
     renderDetail(a, b);
     syncHash(a.id, b.id);
   }

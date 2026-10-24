@@ -23,16 +23,26 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.5"
+VERSION = "1.6"
 VERIFIED = "2026-10-24"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
-          "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星"}
+          "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星",
+          "black_hole": "黑洞", "nebula": "星云", "galaxy": "星系",
+          "cluster": "星团", "structure": "大尺度结构"}
 AU_KM = 1.496e8
 # 恒星单位换算基准（详情页/卡片对恒星用 R☉/M☉/L☉ 展示，底层仍存 km/kg 供大小对比）
 R_SUN_KM = 695700.0
 M_SUN_KG = 1.9884e30
 L_SUN_W = 3.828e26
+LY_KM = 9.4607e12            # 1 光年（km）——延展天体以光年计径，底层换算 km 存储
+# 延展天体：以光年计径、参与对比页时按「全幅=等效球径」绘制（非真实形状，示意）
+EXT_CATS = {"nebula", "galaxy", "cluster", "structure"}
+# 只有实体固态/流体天体展示平均密度（黑洞/星云/星系等无意义）
+DENSITY_CATS = {"planet", "dwarf_planet", "moon"}
+# 展示顺序（首页 chips / hero 统计 / 总表分类列）
+CAT_ORDER = ("star", "planet", "dwarf_planet", "moon", "galaxy", "nebula",
+             "cluster", "black_hole", "structure", "asteroid", "exoplanet")
 
 
 def sup(n):
@@ -42,7 +52,7 @@ def sup(n):
 def fmt_mass(kg, cat=None):
     if kg is None:
         return None
-    if cat == "star":
+    if cat in ("star", "black_hole", "galaxy", "cluster", "structure", "nebula"):
         return f"{kg / M_SUN_KG:.3g} M☉"
     e = math.floor(math.log10(kg))
     return f"{kg / 10 ** e:.3g}×10{sup(e)} kg"
@@ -53,15 +63,33 @@ def fmt_radius(r, cat=None):
         return None
     if cat == "star":
         return f"{r / R_SUN_KM:.3g} R☉"
+    if cat == "black_hole":
+        # 黑洞半径 = 史瓦西半径；小恒星级黑洞用 km，大质量用 AU
+        if r >= 1e8:
+            return f"{r / AU_KM:.3g} AU"
+        return f"{r:,.0f} km"
+    if cat in EXT_CATS:
+        return f"{r / LY_KM:,.0f} 光年"
     return f"{r:,.1f} km" if r < 1000 else f"{r:,.0f} km"
 
 
 def fmt_lum(w, cat=None):
     if w is None:
         return None
-    if cat == "star":
+    if cat in ("star", "galaxy"):
         return f"{w / L_SUN_W:.3g} L☉"
     return f"{w:.3g} W"
+
+
+def fmt_distance(ly):
+    """距离自适应单位：<1 万光年用「光年」，<1 亿用「万光年」，更大用「亿光年」。"""
+    if ly is None:
+        return None
+    if ly < 1e4:
+        return f"{ly:,.0f} 光年"
+    if ly < 1e9:
+        return f"{ly / 1e4:,.0f} 万光年"
+    return f"{ly / 1e8:,.0f} 亿光年"
 
 
 def fmt_km(a):
@@ -82,7 +110,7 @@ def fmt_axis(a, parent):
 def fmt_temp(t, cat=None):
     if t is None:
         return None
-    if cat == "star":
+    if cat in ("star", "nebula", "structure"):
         return f"{t + 273.15:.0f} K"
     return f"{t} °C"
 
@@ -227,7 +255,7 @@ def build_index(data):
     L.append("  <h1>天体数据库</h1>")
     L.append(f'  <p class="astro-hero-sub">{n} 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>')
     L.append('  <p class="astro-hero-stats">')
-    for key in ("star", "planet", "dwarf_planet", "moon"):
+    for key in CAT_ORDER:
         if cats.get(key):
             L.append(f'    <span class="astro-stat"><b>{cats[key]}</b> {CAT_ZH[key]}</span>')
     L.append("  </p>")
@@ -239,7 +267,7 @@ def build_index(data):
     L.append('  <input type="search" id="astro-search" placeholder="搜索天体名称（中/英文）…" aria-label="搜索天体">')
     L.append('  <div class="astro-chips" role="group" aria-label="按分类筛选">')
     L.append('    <button type="button" class="chip active" data-filter="all">全部</button>')
-    for key in ("star", "planet", "dwarf_planet", "moon"):
+    for key in CAT_ORDER:
         if cats.get(key):
             L.append(f'    <button type="button" class="chip" data-filter="{key}">{CAT_ZH[key]}</button>')
     L.append("  </div>")
@@ -264,6 +292,12 @@ def build_index(data):
         cat = o["category"]
         if cat == "star":
             key_stat = fmt_lum(o.get("luminosity_w"), cat) or fmt_temp(ph.get("mean_temp_c"), cat)
+        elif cat == "galaxy":
+            key_stat = fmt_lum(o.get("luminosity_w"), cat) or fmt_radius(r, cat)
+        elif cat == "black_hole":
+            key_stat = fmt_mass(m, cat)
+        elif cat in EXT_CATS:
+            key_stat = fmt_temp(ph.get("mean_temp_c"), cat) or fmt_radius(r, cat)
         else:
             key_stat = fmt_temp(ph.get("mean_temp_c"), cat) or (
                 f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None)
@@ -326,19 +360,20 @@ def build_object_index(data):
     L.append(f"本站收录的全部 {len(objs)} 个天体。点击名称进入详情页（完整数据 + 科普文章）；"
              f"需要筛选排序？回到<a href=\"../\">天体总览工具页</a>。")
     L.append("")
-    L.append("| 天体 | 分类 | 母天体 | 质量 | 平均半径 | 密度 | 均温 | 轨道周期 | 卫星数 |")
-    L.append("|---|---|---|---|---|---|---|---|---|")
+    L.append("| 天体 | 分类 | 母天体 | 质量 | 半径/大小 | 密度 | 均温 | 距离 | 轨道周期 | 卫星数 |")
+    L.append("|---|---|---|---|---|---|---|---|---|---|")
     by_id = {o["id"]: o for o in objs}
     for o in objs:
         ph, orb = o.get("physical") or {}, o.get("orbit") or {}
         parent = by_id.get(o.get("parent"))
         pname = f'<a href="{parent["id"]}.md">{parent["name"]}</a>' if parent else "—"
-        L.append("| [{name}]({id}.md) | {cat} | {parent} | {mass} | {radius} | {dens} | {temp} | {period} | {moons} |".format(
+        L.append("| [{name}]({id}.md) | {cat} | {parent} | {mass} | {radius} | {dens} | {temp} | {dist} | {period} | {moons} |".format(
             name=o["name"], id=o["id"], cat=CAT_ZH[o["category"]], parent=pname,
             mass=dash(fmt_mass(ph.get("mass_kg"), o["category"])),
             radius=dash(fmt_radius(ph.get("radius_km"), o["category"])),
-            dens=dash(f"{ph['density_g_cm3']:g} g/cm³" if (ph.get("density_g_cm3") and o["category"] != "star") else None),
+            dens=dash(f"{ph['density_g_cm3']:g} g/cm³" if (ph.get("density_g_cm3") and o["category"] in DENSITY_CATS) else None),
             temp=dash(fmt_temp(ph.get("mean_temp_c"), o["category"])),
+            dist=dash(fmt_distance(o.get("distance_ly"))),
             period=dash(fmt_period(orb.get("orbital_period_days"))),
             moons=dash((o.get("moons") or {}).get("count")),
         ))
@@ -360,6 +395,8 @@ def build_object_index(data):
     L.append("| semimajor_axis_km | 轨道半长轴 | km |")
     L.append("| orbital_period_days | 轨道周期 | 天 |")
     L.append("| moons.count | 已确认卫星数 | 颗 |")
+    L.append("| distance_ly | 距离（恒星/星云/星系/黑洞为对地距离，单位光年） | 光年 |")
+    L.append("| subtype | 类型细分（如星云：发射/反射/行星状/超新星遗迹；星系：旋涡/椭圆/棒旋/不规则） | — |")
     L.append("")
     L.append("</details>")
     L.append("")
@@ -387,6 +424,7 @@ def compare_payload(objs):
             "moons": (o.get("moons") or {}).get("count"),
             "lum": o.get("luminosity_w"), "distance": o.get("distance_ly"),
             "constellation": o.get("constellation"), "spectral": o.get("spectral_type"),
+            "subtype": o.get("subtype"),
         })
     return json.dumps({"earth_id": "earth", "rows": rows}, ensure_ascii=False)
 
@@ -407,6 +445,9 @@ def sizecompare_payload(objs, img_prefix="../"):
             "rotation": orb.get("rotation_period_hours"),
             "rings": bool(r) if r is not None else False,
             "image": (img_prefix + img) if img else None,
+            # 延展天体（星云/星系/星团/大尺度结构）：贴图全幅≈天体本身，
+            # 对比页按「全幅=等效球径」绘制（非真实形状，示意），跳过球体测量
+            "ext": o["category"] in EXT_CATS,
         })
     return json.dumps({"rows": rows}, ensure_ascii=False)
 
@@ -495,12 +536,20 @@ def build_object(root, o, by_id, order, registry=None):
     L.append("---")
     desc_mass = dash(fmt_mass(ph.get("mass_kg"), cat))
     desc_radius = dash(fmt_radius(ph.get("radius_km"), cat))
+    radius_label = {"black_hole": "史瓦西半径", "star": "半径"}.get(
+        cat, "半径/大小" if cat in EXT_CATS else "平均半径")
     if cat == "star":
         desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat))}'
+    elif cat == "galaxy":
+        desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat))}'
+    elif cat == "black_hole":
+        desc_extra = f'距离 {dash(fmt_distance(o.get("distance_ly")))}'
+    elif cat in EXT_CATS:
+        desc_extra = f'距离 {dash(fmt_distance(o.get("distance_ly")))}'
     else:
         desc_extra = f'密度 {dash(f"{ph["density_g_cm3"]:g} g/cm³" if ph.get("density_g_cm3") else None)}'
     L.append(f'description: "{o["name"]}（{o["name_en"]}）的天体数据：{desc_mass}、'
-             f'半径 {desc_radius}、{desc_extra}、'
+             f'{radius_label} {desc_radius}、{desc_extra}、'
              f'表面温度 {dash(fmt_temp(ph.get("mean_temp_c"), cat))}。数据整理自公开天文资料。"')
     L.append("---")
     L.append("")
@@ -510,9 +559,17 @@ def build_object(root, o, by_id, order, registry=None):
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')
     L.append(f'    <p class="obj-tagline">{o["tagline"]}</p>')
+    dist = fmt_distance(o.get("distance_ly"))
     if cat == "star":
         keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
                 fmt_temp(ph.get("mean_temp_c"), cat), fmt_lum(o.get("luminosity_w"), cat)]
+    elif cat == "black_hole":
+        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat), dist]
+    elif cat == "galaxy":
+        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
+                fmt_lum(o.get("luminosity_w"), cat), dist]
+    elif cat in EXT_CATS:
+        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat), dist]
     else:
         keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
                 fmt_temp(ph.get("mean_temp_c"), cat),
@@ -551,30 +608,47 @@ def build_object(root, o, by_id, order, registry=None):
             return f"{base}（Geometric 口径）"
         return base
 
-    rows = [
-        ("质量", fmt_mass(ph.get("mass_kg"), cat)),
-        ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
-        *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
-          if ph.get("density_g_cm3") and cat != "star" else []),
-        ("表面重力", fmt_gravity(ph.get("gravity_m_s2"))),
-        ("逃逸速度", fmt_velocity(ph.get("escape_velocity_km_s"))),
-        ("平均表面温度", fmt_temp(ph.get("mean_temp_c"), cat)),
-        *([("有效温度（black-body 口径）", fmt_temp(ph["mean_temp_c_bb"], cat))]
-          if ph.get("mean_temp_c_bb") is not None else []),
-        *([("表面温度", fmt_temp(ph["mean_temp_c_surface"], cat))]
-          if ph.get("mean_temp_c_surface") is not None else []),
-        ("表面气压", fmt_pressure(ph.get("surface_pressure_bar"))),
-        ("反照率", albedo_text()),
-    ]
+    if cat == "black_hole":
+        # 黑洞：实心球参数（密度/重力/逃逸/气压/反照率）均无意义，只列口径清晰的量
+        rows = [
+            ("质量", fmt_mass(ph.get("mass_kg"), cat)),
+            ("史瓦西半径", fmt_radius(ph.get("radius_km"), cat)),
+            ("距离", fmt_distance(o.get("distance_ly"))),
+        ]
+    elif cat in EXT_CATS:
+        rows = [
+            ("质量", fmt_mass(ph.get("mass_kg"), cat)),
+            ("半径 / 大小", fmt_radius(ph.get("radius_km"), cat)),
+            *([("光度", fmt_lum(o.get("luminosity_w"), cat))] if o.get("luminosity_w") else []),
+            *([("平均温度", fmt_temp(ph.get("mean_temp_c"), cat))]
+              if ph.get("mean_temp_c") is not None else []),
+            ("距离", fmt_distance(o.get("distance_ly"))),
+            *([("类型", o["subtype"])] if o.get("subtype") else []),
+        ]
+    else:
+        rows = [
+            ("质量", fmt_mass(ph.get("mass_kg"), cat)),
+            ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
+            *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
+              if ph.get("density_g_cm3") and cat in DENSITY_CATS else []),
+            ("表面重力", fmt_gravity(ph.get("gravity_m_s2"))),
+            ("逃逸速度", fmt_velocity(ph.get("escape_velocity_km_s"))),
+            ("平均表面温度", fmt_temp(ph.get("mean_temp_c"), cat)),
+            *([("有效温度（black-body 口径）", fmt_temp(ph["mean_temp_c_bb"], cat))]
+              if ph.get("mean_temp_c_bb") is not None else []),
+            *([("表面温度", fmt_temp(ph["mean_temp_c_surface"], cat))]
+              if ph.get("mean_temp_c_surface") is not None else []),
+            ("表面气压", fmt_pressure(ph.get("surface_pressure_bar"))),
+            ("反照率", albedo_text()),
+        ]
     if o.get("spectral_type"):
         rows.append(("光谱型", o["spectral_type"]))
-    if o.get("luminosity_w"):
+    if cat == "star" and o.get("luminosity_w"):
         rows.append(("光度", fmt_lum(o["luminosity_w"], cat)))
-    if cat == "star":
-        if o.get("distance_ly") is not None:
-            rows.append(("距离", f"{o['distance_ly']:g} 光年"))
-        if o.get("constellation"):
-            rows.append(("星座", o["constellation"]))
+    if o.get("distance_ly") is not None and cat == "star":
+        rows.append(("距离", fmt_distance(o["distance_ly"])))
+    if o.get("constellation"):
+        rows.append(("星座", o["constellation"]))
     for k, v in rows:
         L.append(f"| {k} | {dash(v)} |")
     L.append("")
@@ -603,12 +677,21 @@ def build_object(root, o, by_id, order, registry=None):
     L.append("")
     L.append("| 项目 | 数值 |")
     L.append("|---|---|")
-    if o.get("atmosphere"):
-        L.append(f'| 大气成分 | {o["atmosphere"]} |')
+    if cat in EXT_CATS or cat == "black_hole":
+        # 延展天体/黑洞：无大气/磁场/环系/卫星等固态天体概念，改列类型与备注
+        if o.get("subtype"):
+            L.append(f'| 类型 | {o["subtype"]} |')
+        if o.get("members"):
+            L.append(f'| 已知成员 | {o["members"]} |')
+        if o.get("note"):
+            L.append(f'| 备注 | {o["note"]} |')
     else:
-        L.append("| 大气成分 | — |")
-    L.append(f'| 全球磁场 | {fmt_yn(o.get("magnetic_field"))} |')
-    L.append(f'| 环系 | {fmt_yn(o.get("rings"))} |')
+        if o.get("atmosphere"):
+            L.append(f'| 大气成分 | {o["atmosphere"]} |')
+        else:
+            L.append("| 大气成分 | — |")
+        L.append(f'| 全球磁场 | {fmt_yn(o.get("magnetic_field"))} |')
+        L.append(f'| 环系 | {fmt_yn(o.get("rings"))} |')
     moons = o.get("moons") or {}
     if moons.get("count") is not None:
         notable = "、".join(

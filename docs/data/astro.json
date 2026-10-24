@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-24",
-    "object_count": 44,
+    "object_count": 91,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -11,9 +11,12 @@
       "NASA NSSDC Moon Fact Sheet https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
       "NASA NSSDC Mars Fact Sheet（2025-05-19 更新，含火卫一/二参数）https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html",
       "NASA NSSDC Jovian/Saturnian/Neptunian/Uranian Satellite Fact Sheets https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html",
-      "NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api"
+      "NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api",
+      "Wikipedia 各天体条目（黑洞/星云/星系/星团/大尺度结构，2026-10-24 核对）https://en.wikipedia.org/",
+      "Event Horizon Telescope（M87* / 人马座 A* 黑洞照片）https://eventhorizontelescope.org/",
+      "LIGO/Virgo 合作组 · GW190521 探测论文（2020）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102"
     ],
-    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；系外行星（围绕其他恒星的行星）为后续扩展方向"
+    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；黑洞/星云/星系/星团/大尺度结构 47 个天体的贴图以 NASA 真图优先、程序化兜底；系外行星为后续扩展方向"
   },
   "objects": [
     {
@@ -2339,6 +2342,2882 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true
+    },
+    {
+      "id": "m87_star",
+      "name": "M87*",
+      "name_en": "M87*",
+      "category": "black_hole",
+      "parent": "m87",
+      "tagline": "人类拍下的第一张黑洞照片主角，室女座星系团中心的超大质量黑洞",
+      "physical": {
+        "mass_kg": 1.29246e+40,
+        "radius_km": 19196125520.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 54000000.0,
+      "constellation": "室女座",
+      "subtype": "超大质量黑洞",
+      "members": null,
+      "note": "史瓦西半径约 128 AU，比海王星轨道还大；吸积盘喷流延伸数千光年。",
+      "discovery": {
+        "known_since": "2019 年（EHT 发布首张黑洞照片）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m87bh",
+        "eht"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m87_star.webp",
+      "source_dates": {
+        "wiki_m87bh": "2026-10-24",
+        "eht": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m87bh",
+        "eht"
+      ]
+    },
+    {
+      "id": "sgr_a_star",
+      "name": "人马座 A*",
+      "name_en": "Sagittarius A*",
+      "category": "black_hole",
+      "parent": "milky_way",
+      "tagline": "银河系中心的超大质量黑洞，2022 年人类拍下第二张黑洞照片",
+      "physical": {
+        "mass_kg": 8.5441548e+36,
+        "radius_km": 12690115.59376,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 27000,
+      "constellation": "人马座",
+      "subtype": "超大质量黑洞",
+      "members": null,
+      "note": "史瓦西半径约 0.085 AU（约 1270 万 km）；周围恒星轨道数十年跟踪定轨。",
+      "discovery": {
+        "known_since": "1974 年（射电源发现）；2022 年 EHT 成像",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_sgr_a",
+        "eht"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/sgr_a_star.webp",
+      "source_dates": {
+        "wiki_sgr_a": "2026-10-24",
+        "eht": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_sgr_a",
+        "eht"
+      ]
+    },
+    {
+      "id": "ton618",
+      "name": "TON 618",
+      "name_en": "TON 618",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "已知质量最大的黑洞之一，660 亿倍太阳质量的类星体引擎",
+      "physical": {
+        "mass_kg": 1.312344e+41,
+        "radius_km": 194914505280.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 18200000000.0,
+      "constellation": "猎犬座",
+      "subtype": "类星体（超大质量黑洞）",
+      "members": null,
+      "note": "史瓦西半径约 1300 AU；光度约 4×10⁴⁰ W。2019 年复测给出更低质量（约 407 亿 M☉），此处取经典估值 660 亿 M☉。",
+      "discovery": {
+        "known_since": "1957 年（Tonantzintla 射电源表）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_ton618"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/ton618.webp",
+      "source_dates": {
+        "wiki_ton618": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_ton618"
+      ]
+    },
+    {
+      "id": "ic1101_bh",
+      "name": "IC 1101 中心黑洞",
+      "name_en": "IC 1101 black hole",
+      "category": "black_hole",
+      "parent": "ic1101",
+      "tagline": "IC 1101 星系核心的黑洞，质量估值在天文界争议极大",
+      "physical": {
+        "mass_kg": 9.942e+40,
+        "radius_km": 147662504000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1045000000.0,
+      "constellation": "巨蛇座",
+      "subtype": "超大质量黑洞",
+      "members": null,
+      "note": "文献估值 400~1000 亿 M☉，此处取中值 500 亿 M☉，仅供数量级参考。",
+      "discovery": {
+        "known_since": "随 IC 1101 中心结构估算",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_ic1101"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/ic1101_bh.webp",
+      "source_dates": {
+        "wiki_ic1101": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_ic1101"
+      ]
+    },
+    {
+      "id": "gw190521",
+      "name": "GW190521",
+      "name_en": "GW190521",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "人类确认的第一个中等质量黑洞，双黑洞并合的产物",
+      "physical": {
+        "mass_kg": 2.823528e+32,
+        "radius_km": 419.36151136,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 17000000000.0,
+      "constellation": "半人马座",
+      "subtype": "中等质量黑洞",
+      "members": null,
+      "note": "由 85 M☉ + 66 M☉ 两个黑洞并合而成，约 8 M☉ 以引力波形式辐射；信号仅持续 0.1 秒。距离为光度距离（宇宙膨胀所致，大于共动距离）。",
+      "discovery": {
+        "known_since": "2019-05-21（LIGO/Virgo 探测到并合信号）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_gw190521",
+        "ligo_gw190521"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/gw190521.webp",
+      "source_dates": {
+        "wiki_gw190521": "2026-10-24",
+        "ligo_gw190521": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_gw190521",
+        "ligo_gw190521"
+      ]
+    },
+    {
+      "id": "cyg_x1",
+      "name": "天鹅座 X-1",
+      "name_en": "Cygnus X-1",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "人类确认的第一个恒星级黑洞，霍金打赌输掉的那位",
+      "physical": {
+        "mass_kg": 4.215408e+31,
+        "radius_km": 62.608901696000004,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 7240,
+      "constellation": "天鹅座",
+      "subtype": "恒星级黑洞（X 射线双星）",
+      "members": null,
+      "note": "2021 年 VLBA 精确测量：21.2 M☉、7240 光年；视界面自转速度 ≥95% 光速。",
+      "discovery": {
+        "known_since": "1964 年（探空火箭 X 射线源）；1990 年代确认黑洞",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_cygx1"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/cyg_x1.webp",
+      "source_dates": {
+        "wiki_cygx1": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_cygx1"
+      ]
+    },
+    {
+      "id": "v404_cyg",
+      "name": "V404 天鹅座",
+      "name_en": "V404 Cygni",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "低质量 X 射线双星，2015 年剧烈爆发出名的黑洞",
+      "physical": {
+        "mass_kg": 1.7895599999999999e+31,
+        "radius_km": 26.57925072,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 7800,
+      "constellation": "天鹅座",
+      "subtype": "恒星级黑洞（X 射线双星）",
+      "members": null,
+      "note": "质量估值 9~12 M☉，此处取 9 M☉；2015 年 6 月爆发为当时 50 年来最亮的 X 射线亮斑之一。",
+      "discovery": {
+        "known_since": "1989 年（Ginga X 射线爆发发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_v404"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/v404_cyg.webp",
+      "source_dates": {
+        "wiki_v404": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_v404"
+      ]
+    },
+    {
+      "id": "m42",
+      "name": "猎户座大星云",
+      "name_en": "Orion Nebula (M42)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "冬夜最亮的星云，银河系最近的恒星摇篮之一",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 113528400000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 9727,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1344,
+      "constellation": "猎户座",
+      "subtype": "发射星云（H II 区）",
+      "members": null,
+      "note": "直径约 24 光年；气体云质量约 2000 M☉，内部正在形成上千颗恒星。",
+      "discovery": {
+        "known_since": "1610 年（Peiresc 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m42"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m42.webp",
+      "source_dates": {
+        "wiki_m42": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m42"
+      ]
+    },
+    {
+      "id": "m1",
+      "name": "蟹状星云",
+      "name_en": "Crab Nebula (M1)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "北宋天文学家见证的超新星残骸，宇宙中最著名的遗迹星云",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 52033850000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 6500,
+      "constellation": "金牛座",
+      "subtype": "超新星遗迹",
+      "members": null,
+      "note": "直径约 11 光年；1054 年爆发的超新星残骸，中心有 33 毫秒脉冲星。",
+      "discovery": {
+        "known_since": "1054 年（中国记录超新星）；1731 年 Messier 编目",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m1"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m1.webp",
+      "source_dates": {
+        "wiki_m1": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m1"
+      ]
+    },
+    {
+      "id": "m16",
+      "name": "鹰状星云",
+      "name_en": "Eagle Nebula (M16)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "哈勃「创生之柱」的故乡，巨蛇座里的恒星工厂",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 331124500000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 7000,
+      "constellation": "巨蛇座",
+      "subtype": "发射星云（H II 区）",
+      "members": null,
+      "note": "直径约 70 光年；1995 年哈勃拍摄的「创生之柱」是有史以来最著名的天文照片之一。",
+      "discovery": {
+        "known_since": "1746 年（Chéseaux 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m16"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m16.webp",
+      "source_dates": {
+        "wiki_m16": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m16"
+      ]
+    },
+    {
+      "id": "m20",
+      "name": "三叶星云",
+      "name_en": "Trifid Nebula (M20)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "发射、反射与暗带三合一的彩色星云，人马座里的调色盘",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 189214000000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 5200,
+      "constellation": "人马座",
+      "subtype": "发射 + 反射混合星云",
+      "members": null,
+      "note": "直径约 40 光年；三条尘埃暗带把星云切成三瓣，故得名。",
+      "discovery": {
+        "known_since": "1764 年（Messier 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m20"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m20.webp",
+      "source_dates": {
+        "wiki_m20": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m20"
+      ]
+    },
+    {
+      "id": "m8",
+      "name": "礁湖星云",
+      "name_en": "Lagoon Nebula (M8)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "人马座里的巨大发射星云，肉眼可见的银河宝库",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 425731500000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 4100,
+      "constellation": "人马座",
+      "subtype": "发射星云（H II 区）",
+      "members": null,
+      "note": "视尺寸 110×50 光年（椭圆），等效口径取约 90 光年；内部含疏散星团 NGC 6530。",
+      "discovery": {
+        "known_since": "1654 年（Hodierna 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m8"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m8.webp",
+      "source_dates": {
+        "wiki_m8": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m8"
+      ]
+    },
+    {
+      "id": "horsehead",
+      "name": "马头星云",
+      "name_en": "Horsehead Nebula",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "猎户座腰带旁的暗尘埃剪影，夜空最 recognizable 的剪影",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 16556225000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1375,
+      "constellation": "猎户座",
+      "subtype": "暗星云",
+      "members": null,
+      "note": "直径约 3.5 光年；本身不发光，是背景发射星云 IC 434 前的尘埃暗带。",
+      "discovery": {
+        "known_since": "1888 年（Fleming 在照相底片上发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_horsehead"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/horsehead.webp",
+      "source_dates": {
+        "wiki_horsehead": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_horsehead"
+      ]
+    },
+    {
+      "id": "m57",
+      "name": "环状星云",
+      "name_en": "Ring Nebula (M57)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "天琴座里的太空烟圈，恒星暮年的典型肖像",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 12298910000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 2300,
+      "constellation": "天琴座",
+      "subtype": "行星状星云",
+      "members": null,
+      "note": "直径约 2.6 光年；濒死恒星抛出的气壳，中央可见白矮星。",
+      "discovery": {
+        "known_since": "1779 年（Messier 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m57"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m57.webp",
+      "source_dates": {
+        "wiki_m57": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m57"
+      ]
+    },
+    {
+      "id": "ngc7293",
+      "name": "螺旋星云",
+      "name_en": "Helix Nebula (NGC 7293)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "宝瓶座里的「上帝之眼」，离地球最近的行星状星云",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 27152209000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 680,
+      "constellation": "宝瓶座",
+      "subtype": "行星状星云",
+      "members": null,
+      "note": "直径约 5.7 光年；形似巨眼，又近又大，是行星状星云的代表。",
+      "discovery": {
+        "known_since": "1824 年（Harding 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_ngc7293"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/ngc7293.webp",
+      "source_dates": {
+        "wiki_ngc7293": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_ngc7293"
+      ]
+    },
+    {
+      "id": "m2_9",
+      "name": "双喷射星星云",
+      "name_en": "M2-9 (Twin Jet Nebula)",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "蛇夫座里的蝶翼状星云，双极喷流的活样本",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 6622490000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 2100,
+      "constellation": "蛇夫座",
+      "subtype": "双极行星状星云",
+      "members": null,
+      "note": "直径约 1.4 光年；双星系统相互作用塑造出对称的双翼结构。",
+      "discovery": {
+        "known_since": "1952 年（Minkowski 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m2_9"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m2_9.webp",
+      "source_dates": {
+        "wiki_m2_9": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m2_9"
+      ]
+    },
+    {
+      "id": "rosette",
+      "name": "玫瑰星云",
+      "name_en": "Rosette Nebula",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 614945500000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 5000,
+      "constellation": "麒麟座",
+      "subtype": "发射星云（H II 区）",
+      "members": null,
+      "note": "直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。",
+      "discovery": {
+        "known_since": "1690 年（Flamsteed 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_rosette"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/rosette.webp",
+      "source_dates": {
+        "wiki_rosette": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_rosette"
+      ]
+    },
+    {
+      "id": "barnards_loop",
+      "name": "巴纳德环",
+      "name_en": "Barnard's Loop",
+      "category": "nebula",
+      "parent": null,
+      "tagline": "横跨猎户座大半边的巨大圆弧，可能源于数百万年前的一次超新星",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 1419105000000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1600,
+      "constellation": "猎户座",
+      "subtype": "发射星云（H II 区）",
+      "members": null,
+      "note": "直径约 300 光年；猎户座分子云复合体被电离的边缘。",
+      "discovery": {
+        "known_since": "1895 年（Barnard 拍照发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_barnard"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/barnards_loop.webp",
+      "source_dates": {
+        "wiki_barnard": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_barnard"
+      ]
+    },
+    {
+      "id": "tarantula",
+      "name": "蜘蛛星云",
+      "name_en": "Tarantula Nebula (30 Doradus)",
+      "category": "nebula",
+      "parent": "lmc",
+      "tagline": "大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 4730350000000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 163000,
+      "constellation": "剑鱼座",
+      "subtype": "发射星云（H II 区）",
+      "members": null,
+      "note": "直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。",
+      "discovery": {
+        "known_since": "1751 年（Lacaille 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_tarantula"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/tarantula.webp",
+      "source_dates": {
+        "wiki_tarantula": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_tarantula"
+      ]
+    },
+    {
+      "id": "milky_way",
+      "name": "银河系",
+      "name_en": "Milky Way",
+      "category": "galaxy",
+      "parent": null,
+      "tagline": "我们的家园星系，太阳系所在的棒旋星系",
+      "physical": {
+        "mass_kg": 2.9826e+42,
+        "radius_km": 4.73035e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": 9.57e+36,
+      "distance_ly": null,
+      "constellation": null,
+      "subtype": "棒旋星系（SBbc）",
+      "members": "约 4000 亿颗恒星",
+      "note": "直径约 10 万光年（不同口径 10~20 万光年）；太阳距银心约 2.6 万光年，绕银心一周约 2.3 亿年。",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_milkyway"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/milky_way.webp",
+      "source_dates": {
+        "wiki_milkyway": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_milkyway"
+      ]
+    },
+    {
+      "id": "m31",
+      "name": "仙女座星系",
+      "name_en": "Andromeda Galaxy (M31)",
+      "category": "galaxy",
+      "parent": "local_group",
+      "tagline": "本星系群最大的星系，肉眼可见的银河系近邻",
+      "physical": {
+        "mass_kg": 2.9826e+42,
+        "radius_km": 1.040677e+18,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 2540000.0,
+      "constellation": "仙女座",
+      "subtype": "旋涡星系（SA(s)b）",
+      "members": "约 1 万亿颗恒星",
+      "note": "直径约 22 万光年；约 40 亿年后将与银河系并合。",
+      "discovery": {
+        "known_since": "964 年（Al-Sufi 记录）；1923 年哈勃证明是河外星系",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m31"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m31.webp",
+      "source_dates": {
+        "wiki_m31": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m31"
+      ]
+    },
+    {
+      "id": "m33",
+      "name": "三角座星系",
+      "name_en": "Triangulum Galaxy (M33)",
+      "category": "galaxy",
+      "parent": "local_group",
+      "tagline": "本星系群第三大星系，肉眼极限的松散旋涡",
+      "physical": {
+        "mass_kg": 9.942e+40,
+        "radius_km": 2.89118992e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 2880000.0,
+      "constellation": "三角座",
+      "subtype": "旋涡星系（SA(s)cd）",
+      "members": "约 400 亿颗恒星",
+      "note": "直径约 6.1 万光年（D25 口径）；距离估值 238~307 万光年，取 288 万。",
+      "discovery": {
+        "known_since": "1654 年前（Hodierna 记录）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m33"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m33.webp",
+      "source_dates": {
+        "wiki_m33": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m33"
+      ]
+    },
+    {
+      "id": "lmc",
+      "name": "大麦哲伦云",
+      "name_en": "Large Magellanic Cloud",
+      "category": "galaxy",
+      "parent": "milky_way",
+      "tagline": "银河系最大的卫星星系，南天夜空中挂着的模糊云块",
+      "physical": {
+        "mass_kg": 1.9884e+40,
+        "radius_km": 6.62249e+16,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 160000,
+      "constellation": "剑鱼座 / 山案座",
+      "subtype": "不规则（麦哲伦型）矮星系",
+      "members": "约 100 亿颗恒星",
+      "note": "直径约 1.4 万光年；蜘蛛星云的宿主。",
+      "discovery": {
+        "known_since": "1519 年（麦哲伦环球记录）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_lmc"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/lmc.webp",
+      "source_dates": {
+        "wiki_lmc": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_lmc"
+      ]
+    },
+    {
+      "id": "smc",
+      "name": "小麦哲伦云",
+      "name_en": "Small Magellanic Cloud",
+      "category": "galaxy",
+      "parent": "milky_way",
+      "tagline": "大麦哲伦云的伴侣，南天第二矮星系",
+      "physical": {
+        "mass_kg": 1.29246e+40,
+        "radius_km": 3.311245e+16,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 200000,
+      "constellation": "杜鹃座",
+      "subtype": "不规则矮星系",
+      "members": "数亿颗恒星",
+      "note": "直径约 7000 光年；与大麦哲伦云之间有气体桥相连。",
+      "discovery": {
+        "known_since": "1519 年（麦哲伦环球记录）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_smc"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/smc.webp",
+      "source_dates": {
+        "wiki_smc": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_smc"
+      ]
+    },
+    {
+      "id": "m87",
+      "name": "室女座 A（M87）",
+      "name_en": "Messier 87",
+      "category": "galaxy",
+      "parent": "virgo_cluster",
+      "tagline": "室女座星系团中心的巨型椭圆星系，万亿级恒星都会",
+      "physical": {
+        "mass_kg": 4.77216e+42,
+        "radius_km": 1.135284e+18,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 54000000.0,
+      "constellation": "室女座",
+      "subtype": "巨型椭圆星系（E0）",
+      "members": "数万亿颗恒星 + 著名喷流",
+      "note": "直径口径 12~24 万光年，取 24 万光年；中心黑洞 M87* 另有条目。",
+      "discovery": {
+        "known_since": "1781 年（Messier 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m87g"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m87.webp",
+      "source_dates": {
+        "wiki_m87g": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m87g"
+      ]
+    },
+    {
+      "id": "m104",
+      "name": "草帽星系",
+      "name_en": "Sombrero Galaxy (M104)",
+      "category": "galaxy",
+      "parent": "virgo_cluster",
+      "tagline": "侧视的旋涡星系，草帽外形来自它巨大的核球与尘埃环",
+      "physical": {
+        "mass_kg": 1.59072e+42,
+        "radius_km": 2.365175e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 31000000.0,
+      "constellation": "室女座",
+      "subtype": "旋涡星系（Sa/Sb，侧视）",
+      "members": "约 8000 亿颗恒星",
+      "note": "直径约 5 万光年（D25 口径）；核球与侧视尘埃环构成「草帽」外形。",
+      "discovery": {
+        "known_since": "1781 年（Messier 私人记录，1921 年正式入表）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m104"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m104.webp",
+      "source_dates": {
+        "wiki_m104": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m104"
+      ]
+    },
+    {
+      "id": "m51",
+      "name": "涡状星系",
+      "name_en": "Whirlpool Galaxy (M51)",
+      "category": "galaxy",
+      "parent": null,
+      "tagline": "人类发现旋涡结构的第一个星系，与伴星系共舞的经典标范",
+      "physical": {
+        "mass_kg": 3.18144e+41,
+        "radius_km": 3.63763915e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 28000000.0,
+      "constellation": "猎犬座",
+      "subtype": "旋涡星系（SA(s)bc pec）",
+      "members": "含伴星系 NGC 5195（M51b）",
+      "note": "直径约 7.7 万光年；距离估值 2300~3100 万光年，取 2800 万。",
+      "discovery": {
+        "known_since": "1773 年（Messier）；1845 年 Rosse 发现旋涡结构",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m51"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m51.webp",
+      "source_dates": {
+        "wiki_m51": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m51"
+      ]
+    },
+    {
+      "id": "m81",
+      "name": "波德星系",
+      "name_en": "Messier 81",
+      "category": "galaxy",
+      "parent": null,
+      "tagline": "北斗七星附近的完美旋涡，与 M82 组成经典相互作用对",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 4.446529e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 12000000.0,
+      "constellation": "大熊座",
+      "subtype": "旋涡星系（SA(s)ab）",
+      "members": "与 M82 构成相互作用星系对",
+      "note": "直径约 9.4 万光年（WISE 口径）。",
+      "discovery": {
+        "known_since": "1774 年（Bode 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m81"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m81.webp",
+      "source_dates": {
+        "wiki_m81": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m81"
+      ]
+    },
+    {
+      "id": "m82",
+      "name": "雪茄星系",
+      "name_en": "Messier 82 (Cigar Galaxy)",
+      "category": "galaxy",
+      "parent": "m81",
+      "tagline": "著名的星暴星系，恒星诞生的速度是银河系的十倍",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 1.7502295e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 12000000.0,
+      "constellation": "大熊座",
+      "subtype": "星暴不规则星系",
+      "members": null,
+      "note": "直径约 3.7 万光年；与 M81 的引力相互作用触发剧烈星暴。",
+      "discovery": {
+        "known_since": "1774 年（Bode 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m82"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m82.webp",
+      "source_dates": {
+        "wiki_m82": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m82"
+      ]
+    },
+    {
+      "id": "ngc1300",
+      "name": "NGC 1300",
+      "name_en": "NGC 1300",
+      "category": "galaxy",
+      "parent": null,
+      "tagline": "棒旋星系的教科书标本，波江座里的巨大风车",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 5.203385e+17,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 61000000.0,
+      "constellation": "波江座",
+      "subtype": "棒旋星系（SBbc）",
+      "members": null,
+      "note": "直径约 11 万光年；中央棒结构与两端伸出的旋臂极其规整。",
+      "discovery": {
+        "known_since": "1835 年（Herschel 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_ngc1300"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/ngc1300.webp",
+      "source_dates": {
+        "wiki_ngc1300": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_ngc1300"
+      ]
+    },
+    {
+      "id": "ic1101",
+      "name": "IC 1101",
+      "name_en": "IC 1101",
+      "category": "galaxy",
+      "parent": null,
+      "tagline": "已知直径最大的星系之一，宇宙中的巨型椭圆巨兽",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 8.041595e+18,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1045000000.0,
+      "constellation": "巨蛇座",
+      "subtype": "巨型椭圆星系（cD）",
+      "members": null,
+      "note": "2024 年 A&A 研究测得直径约 170 万光年；不同口径争议极大，星系晕或延展至约 600 万光年。此处取 170 万光年（半径 85 万）。",
+      "discovery": {
+        "known_since": "1793 年（Herschel 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_ic1101"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/ic1101.webp",
+      "source_dates": {
+        "wiki_ic1101": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_ic1101"
+      ]
+    },
+    {
+      "id": "stephens_quintet",
+      "name": "斯蒂芬五重星系",
+      "name_en": "Stephan's Quintet",
+      "category": "galaxy",
+      "parent": null,
+      "tagline": "五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 1.6556225e+18,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 290000000.0,
+      "constellation": "飞马座",
+      "subtype": "致密星系群",
+      "members": "NGC 7317 / 7318A / 7318B / 7319 / 7320",
+      "note": "群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。",
+      "discovery": {
+        "known_since": "1877 年（Stephan 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_quintet"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/stephens_quintet.webp",
+      "source_dates": {
+        "wiki_quintet": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_quintet"
+      ]
+    },
+    {
+      "id": "m45",
+      "name": "昴星团",
+      "name_en": "Pleiades (M45)",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "七姐妹星团，冬夜最易辨认的蓝色小勺",
+      "physical": {
+        "mass_kg": 1.59072e+33,
+        "radius_km": 67170970000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 444,
+      "constellation": "金牛座",
+      "subtype": "疏散星团",
+      "members": "约 1000 颗成员星",
+      "note": "直径约 14 光年；年龄约 1 亿年，蓝色反射星云包裹着年轻恒星。",
+      "discovery": {
+        "known_since": "史前（梅西耶 1769 年编目）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m45"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m45.webp",
+      "source_dates": {
+        "wiki_m45": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m45"
+      ]
+    },
+    {
+      "id": "hyades",
+      "name": "毕星团",
+      "name_en": "Hyades",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "金牛座的 V 形头部，离太阳最近的疏散星团之一",
+      "physical": {
+        "mass_kg": 7.9536e+32,
+        "radius_km": 69536145000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 153,
+      "constellation": "金牛座",
+      "subtype": "疏散星团",
+      "members": "约 300~400 颗成员星",
+      "note": "直径约 15 光年；年龄约 6.25 亿年，构成金牛座头部的 V 字形。",
+      "discovery": {
+        "known_since": "史前（古希腊已有记载）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_hyades"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/hyades.webp",
+      "source_dates": {
+        "wiki_hyades": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_hyades"
+      ]
+    },
+    {
+      "id": "m44",
+      "name": "蜂巢星团",
+      "name_en": "Beehive Cluster (M44)",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "巨蟹座腹中的蜂巢，双筒望远镜里的经典星团",
+      "physical": {
+        "mass_kg": 1.09362e+33,
+        "radius_km": 75685600000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 577,
+      "constellation": "巨蟹座",
+      "subtype": "疏散星团",
+      "members": "约 1000 颗成员星",
+      "note": "直径约 16 光年；年龄约 6~7 亿年，是肉眼勉强可见的疏散星团。",
+      "discovery": {
+        "known_since": "公元前 260 年（Aratus）；1764 年 Messier 编目",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m44"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m44.webp",
+      "source_dates": {
+        "wiki_m44": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m44"
+      ]
+    },
+    {
+      "id": "m67",
+      "name": "梅西耶 67",
+      "name_en": "Messier 67",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "著名的古老疏散星团，曾被猜想为太阳的出生地",
+      "physical": {
+        "mass_kg": 2.18724e+33,
+        "radius_km": 94607000000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 2700,
+      "constellation": "巨蟹座",
+      "subtype": "疏散星团",
+      "members": "500 余颗成员星",
+      "note": "直径约 20 光年；年龄约 40 亿年，超过 100 颗类太阳恒星。",
+      "discovery": {
+        "known_since": "1779 年（Koehler 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m67"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m67.webp",
+      "source_dates": {
+        "wiki_m67": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m67"
+      ]
+    },
+    {
+      "id": "r136",
+      "name": "R136 星团",
+      "name_en": "R136",
+      "category": "cluster",
+      "parent": "tarantula",
+      "tagline": "蜘蛛星云核心的超级星团，已知最亮恒星的故乡",
+      "physical": {
+        "mass_kg": 1.9884e+35,
+        "radius_km": 47303500000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 163000,
+      "constellation": "剑鱼座",
+      "subtype": "大质量星团（OB 星团）",
+      "members": "含已知最亮恒星之一 R136a1（约 215~315 M☉）",
+      "note": "直径约 10 光年；年龄仅 100~200 万年，包含数颗百倍太阳质量的巨星。",
+      "discovery": {
+        "known_since": "1826 年（30 Dor 编目）；R136 于 20 世纪分解",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_r136"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/r136.webp",
+      "source_dates": {
+        "wiki_r136": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_r136"
+      ]
+    },
+    {
+      "id": "m13",
+      "name": "武仙座球状星团",
+      "name_en": "Messier 13",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "北天最壮观的球状星团，武仙座里的 30 万颗恒星球",
+      "physical": {
+        "mass_kg": 1.19304e+36,
+        "radius_km": 685900750000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 22200,
+      "constellation": "武仙座",
+      "subtype": "球状星团",
+      "members": "约 30 万颗成员星",
+      "note": "直径约 145 光年；1974 年阿雷西博曾向它发射过第一条人类电报。",
+      "discovery": {
+        "known_since": "1714 年（Halley 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m13"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m13.webp",
+      "source_dates": {
+        "wiki_m13": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m13"
+      ]
+    },
+    {
+      "id": "m22",
+      "name": "梅西耶 22",
+      "name_en": "Messier 22",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "人马座里的明亮球状星团，肉眼可见的古老恒星城",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 473035000000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 10600,
+      "constellation": "人马座",
+      "subtype": "球状星团",
+      "members": "数十万颗成员星",
+      "note": "直径约 100 光年；最亮的球状星团之一，双筒望远镜即可分辨单颗恒星。",
+      "discovery": {
+        "known_since": "1665 年（Ihle 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_m22"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/m22.webp",
+      "source_dates": {
+        "wiki_m22": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_m22"
+      ]
+    },
+    {
+      "id": "omega_cen",
+      "name": "半人马座 ω",
+      "name_en": "Omega Centauri",
+      "category": "cluster",
+      "parent": "milky_way",
+      "tagline": "银河系最大的球状星团，疑为被吞噬矮星系的残核",
+      "physical": {
+        "mass_kg": 7.9536e+36,
+        "radius_km": 785238100000000.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 15800,
+      "constellation": "半人马座",
+      "subtype": "球状星团",
+      "members": "约 1000 万颗成员星",
+      "note": "直径约 170 光年；质量与星族异常，可能是被银河系吞并的矮星系核心。",
+      "discovery": {
+        "known_since": "公元 150 年（托勒密记为「星」）；1677 年哈雷确认非恒星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_omegacen"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/omega_cen.webp",
+      "source_dates": {
+        "wiki_omegacen": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_omegacen"
+      ]
+    },
+    {
+      "id": "local_group",
+      "name": "本星系群",
+      "name_en": "Local Group",
+      "category": "structure",
+      "parent": null,
+      "tagline": "银河系所属的星系社群，80 多个星系的小团体",
+      "physical": {
+        "mass_kg": 5.9652e+42,
+        "radius_km": 4.73035e+19,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": null,
+      "subtype": "星系群",
+      "members": "80 余个星系（含银河系、仙女座、三角座、大小麦哲伦云等）",
+      "note": "直径约 1000 万光年；总质量估值 2~5×10¹² M☉（银河系 + 仙女座合计已约 3×10¹² M☉）。",
+      "discovery": {
+        "known_since": "1920 年代（哈勃确立河外星系后）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_localgroup"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/local_group.webp",
+      "source_dates": {
+        "wiki_localgroup": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_localgroup"
+      ]
+    },
+    {
+      "id": "virgo_cluster",
+      "name": "室女座星系团",
+      "name_en": "Virgo Cluster",
+      "category": "structure",
+      "parent": "laniakea",
+      "tagline": "离我们最近的大型星系团，上千个星系的引力都会",
+      "physical": {
+        "mass_kg": 2.38608e+45,
+        "radius_km": 7.095525e+19,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 54000000.0,
+      "constellation": "室女座",
+      "subtype": "星系团",
+      "members": "约 1300~2000 个星系",
+      "note": "直径约 1500 万光年；本星系群正被它牵引着下落。",
+      "discovery": {
+        "known_since": "1781 年（Messier 记录成员）；1950 年代确认为星系团",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_virgo"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/virgo_cluster.webp",
+      "source_dates": {
+        "wiki_virgo": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_virgo"
+      ]
+    },
+    {
+      "id": "laniakea",
+      "name": "拉尼亚凯亚超星系团",
+      "name_en": "Laniakea Supercluster",
+      "category": "structure",
+      "parent": null,
+      "tagline": "银河系所在的家园超星系团，十万个星系的洪流盆地",
+      "physical": {
+        "mass_kg": 1.9884e+47,
+        "radius_km": 2.459782e+21,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 250000000.0,
+      "constellation": null,
+      "subtype": "超星系团",
+      "members": "约 10 万个星系",
+      "note": "直径约 5.2 亿光年；2014 年 Tully 等基于星系流场定义，后续研究认为它并非引力束缚结构。",
+      "discovery": {
+        "known_since": "2014 年（Tully 等定义）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_laniakea"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/laniakea.webp",
+      "source_dates": {
+        "wiki_laniakea": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_laniakea"
+      ]
+    },
+    {
+      "id": "great_attractor",
+      "name": "巨引源",
+      "name_en": "Great Attractor",
+      "category": "structure",
+      "parent": "laniakea",
+      "tagline": "隐匿在银河盘面背后的引力深渊，牵引着本超星系团",
+      "physical": {
+        "mass_kg": 1.9884e+46,
+        "radius_km": 1.89214e+21,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 200000000.0,
+      "constellation": "矩尺座 / 南三角座",
+      "subtype": "引力异常区域",
+      "members": null,
+      "note": "区域尺度约 4 亿光年；位于银河隐匿带（Zone of Avoidance）后方，通过星系本动速度发现。中心近矩尺座星系团（ACO 3627）；质量构成仍有争议。",
+      "discovery": {
+        "known_since": "1987 年（Dressler 命名）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_attractor"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/great_attractor.webp",
+      "source_dates": {
+        "wiki_attractor": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_attractor"
+      ]
+    },
+    {
+      "id": "hercules_corona_wall",
+      "name": "武仙-北冕座长城",
+      "name_en": "Hercules–Corona Borealis Great Wall",
+      "category": "structure",
+      "parent": null,
+      "tagline": "已知最大的宇宙结构之一，横跨百亿光年的星系巨墙",
+      "physical": {
+        "mass_kg": 1.9884e+48,
+        "radius_km": 4.73035e+22,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 10000000000.0,
+      "constellation": "武仙座 — 北冕座",
+      "subtype": "宇宙长城（星系丝状结构）",
+      "members": null,
+      "note": "直径约 100 亿光年（共动尺度，口径存在争议）；2013 年基于伽马射线暴分布发现。",
+      "discovery": {
+        "known_since": "2013 年（Horvath 等发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_hcbgw"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/hercules_corona_wall.webp",
+      "source_dates": {
+        "wiki_hcbgw": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_hcbgw"
+      ]
+    },
+    {
+      "id": "cmb",
+      "name": "宇宙微波背景",
+      "name_en": "Cosmic Microwave Background",
+      "category": "structure",
+      "parent": "observable_universe",
+      "tagline": "大爆炸的余晖，宇宙最古老的光（最后散射面）",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 4.3235399e+23,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": -270.425,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 45700000000.0,
+      "constellation": null,
+      "subtype": "宇宙微波背景辐射（最后散射面）",
+      "members": null,
+      "note": "共动距离约 457 亿光年；温度 2.725 K，起伏仅约 10⁻⁵，这些起伏是今天所有星系结构的种子。",
+      "discovery": {
+        "known_since": "1965 年（Penzias & Wilson 发现）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_cmb"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/cmb.webp",
+      "source_dates": {
+        "wiki_cmb": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_cmb"
+      ]
+    },
+    {
+      "id": "observable_universe",
+      "name": "可观测宇宙",
+      "name_en": "Observable Universe",
+      "category": "structure",
+      "parent": null,
+      "tagline": "以地球为球心的粒子视界，人类信息的全部边疆",
+      "physical": {
+        "mass_kg": 1.5e+53,
+        "radius_km": 4.3992255e+23,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": -270.42,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": null,
+      "subtype": "可观测宇宙（粒子视界）",
+      "members": "估计约 2 万亿个星系",
+      "note": "半径约 465 亿光年（共动距离）；年龄约 138 亿年；普通物质 4.9%、暗物质 26.8%、暗能量 68.3%。",
+      "discovery": {
+        "known_since": "现代宇宙学概念（哈勃定律，1929）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_obsuniverse"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/observable_universe.webp",
+      "source_dates": {
+        "wiki_obsuniverse": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true,
+      "srcs": [
+        "wiki_obsuniverse"
+      ]
     }
   ],
   "source_registry": {
@@ -2445,6 +5324,198 @@
     "wiki_proxima": {
       "name": "Wikipedia · Proxima Centauri",
       "url": "https://en.wikipedia.org/wiki/Proxima_Centauri"
+    },
+    "wiki_m87bh": {
+      "name": "Wikipedia · M87*",
+      "url": "https://en.wikipedia.org/wiki/Messier_87#Supermassive_black_hole"
+    },
+    "wiki_sgr_a": {
+      "name": "Wikipedia · Sagittarius A*",
+      "url": "https://en.wikipedia.org/wiki/Sagittarius_A*"
+    },
+    "wiki_ton618": {
+      "name": "Wikipedia · TON 618",
+      "url": "https://en.wikipedia.org/wiki/TON_618"
+    },
+    "wiki_ic1101": {
+      "name": "Wikipedia · IC 1101",
+      "url": "https://en.wikipedia.org/wiki/IC_1101"
+    },
+    "wiki_gw190521": {
+      "name": "Wikipedia · GW190521",
+      "url": "https://en.wikipedia.org/wiki/GW190521"
+    },
+    "wiki_cygx1": {
+      "name": "Wikipedia · Cygnus X-1",
+      "url": "https://en.wikipedia.org/wiki/Cygnus_X-1"
+    },
+    "wiki_v404": {
+      "name": "Wikipedia · V404 Cygni",
+      "url": "https://en.wikipedia.org/wiki/V404_Cygni"
+    },
+    "eht": {
+      "name": "Event Horizon Telescope 合作组",
+      "url": "https://eventhorizontelescope.org/"
+    },
+    "ligo_gw190521": {
+      "name": "LIGO/Virgo 合作组 · GW190521（PhysRevLett 2020）",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102"
+    },
+    "wiki_m42": {
+      "name": "Wikipedia · Orion Nebula",
+      "url": "https://en.wikipedia.org/wiki/Orion_Nebula"
+    },
+    "wiki_m1": {
+      "name": "Wikipedia · Crab Nebula",
+      "url": "https://en.wikipedia.org/wiki/Crab_Nebula"
+    },
+    "wiki_m16": {
+      "name": "Wikipedia · Eagle Nebula",
+      "url": "https://en.wikipedia.org/wiki/Eagle_Nebula"
+    },
+    "wiki_m20": {
+      "name": "Wikipedia · Trifid Nebula",
+      "url": "https://en.wikipedia.org/wiki/Trifid_Nebula"
+    },
+    "wiki_m8": {
+      "name": "Wikipedia · Lagoon Nebula",
+      "url": "https://en.wikipedia.org/wiki/Lagoon_Nebula"
+    },
+    "wiki_horsehead": {
+      "name": "Wikipedia · Horsehead Nebula",
+      "url": "https://en.wikipedia.org/wiki/Horsehead_Nebula"
+    },
+    "wiki_m57": {
+      "name": "Wikipedia · Ring Nebula",
+      "url": "https://en.wikipedia.org/wiki/Ring_Nebula"
+    },
+    "wiki_ngc7293": {
+      "name": "Wikipedia · Helix Nebula",
+      "url": "https://en.wikipedia.org/wiki/Helix_Nebula"
+    },
+    "wiki_m2_9": {
+      "name": "Wikipedia · M2-9",
+      "url": "https://en.wikipedia.org/wiki/M2-9"
+    },
+    "wiki_rosette": {
+      "name": "Wikipedia · Rosette Nebula",
+      "url": "https://en.wikipedia.org/wiki/Rosette_Nebula"
+    },
+    "wiki_barnard": {
+      "name": "Wikipedia · Barnard's Loop",
+      "url": "https://en.wikipedia.org/wiki/Barnard%27s_Loop"
+    },
+    "wiki_tarantula": {
+      "name": "Wikipedia · Tarantula Nebula",
+      "url": "https://en.wikipedia.org/wiki/Tarantula_Nebula"
+    },
+    "wiki_milkyway": {
+      "name": "Wikipedia · Milky Way",
+      "url": "https://en.wikipedia.org/wiki/Milky_Way"
+    },
+    "wiki_m31": {
+      "name": "Wikipedia · Andromeda Galaxy",
+      "url": "https://en.wikipedia.org/wiki/Andromeda_Galaxy"
+    },
+    "wiki_m33": {
+      "name": "Wikipedia · Triangulum Galaxy",
+      "url": "https://en.wikipedia.org/wiki/Triangulum_Galaxy"
+    },
+    "wiki_lmc": {
+      "name": "Wikipedia · Large Magellanic Cloud",
+      "url": "https://en.wikipedia.org/wiki/Large_Magellanic_Cloud"
+    },
+    "wiki_smc": {
+      "name": "Wikipedia · Small Magellanic Cloud",
+      "url": "https://en.wikipedia.org/wiki/Small_Magellanic_Cloud"
+    },
+    "wiki_m87g": {
+      "name": "Wikipedia · Messier 87",
+      "url": "https://en.wikipedia.org/wiki/Messier_87"
+    },
+    "wiki_m104": {
+      "name": "Wikipedia · Sombrero Galaxy",
+      "url": "https://en.wikipedia.org/wiki/Sombrero_Galaxy"
+    },
+    "wiki_m51": {
+      "name": "Wikipedia · Whirlpool Galaxy",
+      "url": "https://en.wikipedia.org/wiki/Whirlpool_Galaxy"
+    },
+    "wiki_m81": {
+      "name": "Wikipedia · Messier 81",
+      "url": "https://en.wikipedia.org/wiki/Messier_81"
+    },
+    "wiki_m82": {
+      "name": "Wikipedia · Messier 82",
+      "url": "https://en.wikipedia.org/wiki/Messier_82"
+    },
+    "wiki_ngc1300": {
+      "name": "Wikipedia · NGC 1300",
+      "url": "https://en.wikipedia.org/wiki/NGC_1300"
+    },
+    "wiki_quintet": {
+      "name": "Wikipedia · Stephan's Quintet",
+      "url": "https://en.wikipedia.org/wiki/Stephan%27s_Quintet"
+    },
+    "wiki_m45": {
+      "name": "Wikipedia · Pleiades",
+      "url": "https://en.wikipedia.org/wiki/Pleiades"
+    },
+    "wiki_hyades": {
+      "name": "Wikipedia · Hyades",
+      "url": "https://en.wikipedia.org/wiki/Hyades"
+    },
+    "wiki_m44": {
+      "name": "Wikipedia · Beehive Cluster",
+      "url": "https://en.wikipedia.org/wiki/Beehive_Cluster"
+    },
+    "wiki_m67": {
+      "name": "Wikipedia · Messier 67",
+      "url": "https://en.wikipedia.org/wiki/Messier_67"
+    },
+    "wiki_r136": {
+      "name": "Wikipedia · R136",
+      "url": "https://en.wikipedia.org/wiki/R136"
+    },
+    "wiki_m13": {
+      "name": "Wikipedia · Messier 13",
+      "url": "https://en.wikipedia.org/wiki/Messier_13"
+    },
+    "wiki_m22": {
+      "name": "Wikipedia · Messier 22",
+      "url": "https://en.wikipedia.org/wiki/Messier_22"
+    },
+    "wiki_omegacen": {
+      "name": "Wikipedia · Omega Centauri",
+      "url": "https://en.wikipedia.org/wiki/Omega_Centauri"
+    },
+    "wiki_localgroup": {
+      "name": "Wikipedia · Local Group",
+      "url": "https://en.wikipedia.org/wiki/Local_Group"
+    },
+    "wiki_virgo": {
+      "name": "Wikipedia · Virgo Cluster",
+      "url": "https://en.wikipedia.org/wiki/Virgo_Cluster"
+    },
+    "wiki_laniakea": {
+      "name": "Wikipedia · Laniakea Supercluster",
+      "url": "https://en.wikipedia.org/wiki/Laniakea_Supercluster"
+    },
+    "wiki_attractor": {
+      "name": "Wikipedia · Great Attractor",
+      "url": "https://en.wikipedia.org/wiki/Great_Attractor"
+    },
+    "wiki_hcbgw": {
+      "name": "Wikipedia · Hercules–Corona Borealis Great Wall",
+      "url": "https://en.wikipedia.org/wiki/Hercules%E2%80%93Corona_Borealis_Great_Wall"
+    },
+    "wiki_cmb": {
+      "name": "Wikipedia · Cosmic microwave background",
+      "url": "https://en.wikipedia.org/wiki/Cosmic_microwave_background"
+    },
+    "wiki_obsuniverse": {
+      "name": "Wikipedia · Observable universe",
+      "url": "https://en.wikipedia.org/wiki/Observable_universe"
     }
   }
 }

@@ -43,3 +43,50 @@ betelgeuse,参宿四,Betelgeuse,star,,2.78376e+31,531514800.0,4.43e-08,3326.8,,,
 vega,织女星,Vega,star,,4.2551760000000005e+30,1641852.0,0.2295233635,9326.9,,,,2026-10-24
 sirius_a,天狼星 A,Sirius A,star,,4.096104e+30,1189647.0,0.5808018945,9666.9,,,,2026-10-24
 proxima_centauri,比邻星,Proxima Centauri,star,,2.425848e+29,107137.8,47.0919639904,2766.8,,,,2026-10-24
+m87_star,M87*,M87*,black_hole,m87,1.29246e+40,19196125520.0,,,,,,2026-10-24
+sgr_a_star,人马座 A*,Sagittarius A*,black_hole,milky_way,8.5441548e+36,12690115.59376,,,,,,2026-10-24
+ton618,TON 618,TON 618,black_hole,,1.312344e+41,194914505280.0,,,,,,2026-10-24
+ic1101_bh,IC 1101 中心黑洞,IC 1101 black hole,black_hole,ic1101,9.942e+40,147662504000.0,,,,,,2026-10-24
+gw190521,GW190521,GW190521,black_hole,,2.823528e+32,419.36151136,,,,,,2026-10-24
+cyg_x1,天鹅座 X-1,Cygnus X-1,black_hole,,4.215408e+31,62.608901696000004,,,,,,2026-10-24
+v404_cyg,V404 天鹅座,V404 Cygni,black_hole,,1.7895599999999999e+31,26.57925072,,,,,,2026-10-24
+m42,猎户座大星云,Orion Nebula (M42),nebula,,,113528400000000.0,,9727,,,,2026-10-24
+m1,蟹状星云,Crab Nebula (M1),nebula,,,52033850000000.0,,,,,,2026-10-24
+m16,鹰状星云,Eagle Nebula (M16),nebula,,,331124500000000.0,,,,,,2026-10-24
+m20,三叶星云,Trifid Nebula (M20),nebula,,,189214000000000.0,,,,,,2026-10-24
+m8,礁湖星云,Lagoon Nebula (M8),nebula,,,425731500000000.0,,,,,,2026-10-24
+horsehead,马头星云,Horsehead Nebula,nebula,,,16556225000000.0,,,,,,2026-10-24
+m57,环状星云,Ring Nebula (M57),nebula,,,12298910000000.0,,,,,,2026-10-24
+ngc7293,螺旋星云,Helix Nebula (NGC 7293),nebula,,,27152209000000.0,,,,,,2026-10-24
+m2_9,双喷射星星云,M2-9 (Twin Jet Nebula),nebula,,,6622490000000.0,,,,,,2026-10-24
+rosette,玫瑰星云,Rosette Nebula,nebula,,,614945500000000.0,,,,,,2026-10-24
+barnards_loop,巴纳德环,Barnard's Loop,nebula,,,1419105000000000.0,,,,,,2026-10-24
+tarantula,蜘蛛星云,Tarantula Nebula (30 Doradus),nebula,lmc,,4730350000000000.0,,,,,,2026-10-24
+milky_way,银河系,Milky Way,galaxy,,2.9826e+42,4.73035e+17,,,,,,2026-10-24
+m31,仙女座星系,Andromeda Galaxy (M31),galaxy,local_group,2.9826e+42,1.040677e+18,,,,,,2026-10-24
+m33,三角座星系,Triangulum Galaxy (M33),galaxy,local_group,9.942e+40,2.89118992e+17,,,,,,2026-10-24
+lmc,大麦哲伦云,Large Magellanic Cloud,galaxy,milky_way,1.9884e+40,6.62249e+16,,,,,,2026-10-24
+smc,小麦哲伦云,Small Magellanic Cloud,galaxy,milky_way,1.29246e+40,3.311245e+16,,,,,,2026-10-24
+m87,室女座 A（M87）,Messier 87,galaxy,virgo_cluster,4.77216e+42,1.135284e+18,,,,,,2026-10-24
+m104,草帽星系,Sombrero Galaxy (M104),galaxy,virgo_cluster,1.59072e+42,2.365175e+17,,,,,,2026-10-24
+m51,涡状星系,Whirlpool Galaxy (M51),galaxy,,3.18144e+41,3.63763915e+17,,,,,,2026-10-24
+m81,波德星系,Messier 81,galaxy,,,4.446529e+17,,,,,,2026-10-24
+m82,雪茄星系,Messier 82 (Cigar Galaxy),galaxy,m81,,1.7502295e+17,,,,,,2026-10-24
+ngc1300,NGC 1300,NGC 1300,galaxy,,,5.203385e+17,,,,,,2026-10-24
+ic1101,IC 1101,IC 1101,galaxy,,,8.041595e+18,,,,,,2026-10-24
+stephens_quintet,斯蒂芬五重星系,Stephan's Quintet,galaxy,,,1.6556225e+18,,,,,,2026-10-24
+m45,昴星团,Pleiades (M45),cluster,milky_way,1.59072e+33,67170970000000.0,,,,,,2026-10-24
+hyades,毕星团,Hyades,cluster,milky_way,7.9536e+32,69536145000000.0,,,,,,2026-10-24
+m44,蜂巢星团,Beehive Cluster (M44),cluster,milky_way,1.09362e+33,75685600000000.0,,,,,,2026-10-24
+m67,梅西耶 67,Messier 67,cluster,milky_way,2.18724e+33,94607000000000.0,,,,,,2026-10-24
+r136,R136 星团,R136,cluster,tarantula,1.9884e+35,47303500000000.0,,,,,,2026-10-24
+m13,武仙座球状星团,Messier 13,cluster,milky_way,1.19304e+36,685900750000000.0,,,,,,2026-10-24
+m22,梅西耶 22,Messier 22,cluster,milky_way,,473035000000000.0,,,,,,2026-10-24
+omega_cen,半人马座 ω,Omega Centauri,cluster,milky_way,7.9536e+36,785238100000000.0,,,,,,2026-10-24
+local_group,本星系群,Local Group,structure,,5.9652e+42,4.73035e+19,,,,,,2026-10-24
+virgo_cluster,室女座星系团,Virgo Cluster,structure,laniakea,2.38608e+45,7.095525e+19,,,,,,2026-10-24
+laniakea,拉尼亚凯亚超星系团,Laniakea Supercluster,structure,,1.9884e+47,2.459782e+21,,,,,,2026-10-24
+great_attractor,巨引源,Great Attractor,structure,laniakea,1.9884e+46,1.89214e+21,,,,,,2026-10-24
+hercules_corona_wall,武仙-北冕座长城,Hercules–Corona Borealis Great Wall,structure,,1.9884e+48,4.73035e+22,,,,,,2026-10-24
+cmb,宇宙微波背景,Cosmic Microwave Background,structure,observable_universe,,4.3235399e+23,,-270.425,,,,2026-10-24
+observable_universe,可观测宇宙,Observable Universe,structure,,1.5e+53,4.3992255e+23,,-270.42,,,,2026-10-24

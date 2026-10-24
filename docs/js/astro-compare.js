@@ -34,13 +34,23 @@
     if (s.indexOf('.') !== -1) s = s.replace(/0+$/, '').replace(/\.$/, '');
     return s + '×10' + sup(e);
   }
-  function fmtMass(kg) {
+  var LY_KM = 9.4607e12;
+  var EXT_CATS = { nebula: 1, galaxy: 1, cluster: 1, structure: 1 };
+  var MASS_SUN_CATS = { star: 1, black_hole: 1, galaxy: 1, cluster: 1, structure: 1, nebula: 1 };
+  function fmtMass(r) {
+    var kg = (r && typeof r === "object" && "mass" in r) ? r.mass : r;
     if (kg === null || kg === undefined) return '—';
+    if (r && typeof r === "object" && MASS_SUN_CATS[r.cat_key]) return sig3(kg / 1.9884e30) + ' M☉';
     return sig3(kg) + ' kg';
   }
   function fmtRadius(r) {
-    if (r === null || r === undefined) return '—';
-    return (r < 1000 ? r.toFixed(1) : r.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' km';
+    var v = (r && typeof r === "object" && "radius" in r) ? r.radius : r;
+    var ck = (r && typeof r === "object") ? r.cat_key : null;
+    if (v === null || v === undefined) return '—';
+    if (ck === "star") return sig3(v / 695700) + ' R☉';
+    if (ck === "black_hole") return (v >= 1e8 ? sig3(v / 1.496e8) + ' AU' : sig3(v) + ' km');
+    if (ck && EXT_CATS[ck]) return sig3(v / LY_KM) + ' 光年';
+    return (v < 1000 ? v.toFixed(1) : v.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' km';
   }
   function fmtTemp(t) { return (t === null || t === undefined) ? '—' : t + ' °C'; }
   function fmtPeriod(d) {
@@ -83,9 +93,9 @@
   }
   function fmtDist(ly) {
     if (ly === null || ly === undefined) return '—';
-    if (ly < 10) return ly.toFixed(2) + ' 光年';
-    if (ly < 1000) return ly.toFixed(1) + ' 光年';
-    return Math.round(ly).toLocaleString('en-US') + ' 光年';
+    if (ly < 1e4) return ly.toFixed(0) + ' 光年';
+    if (ly < 1e9) return (ly / 1e4).toFixed(0) + ' 万光年';
+    return (ly / 1e8).toFixed(0) + ' 亿光年';
   }
 
   function esc(s) {
@@ -98,10 +108,11 @@
   var earthRow = byId[EARTH] || {};
   var PARAM_ROWS = [
     ['分类', function (r) { return esc(r.cat); }],
+    ['类型', function (r) { return (r.subtype === null || r.subtype === undefined) ? '—' : esc(r.subtype); }],
     ['母天体', function (r) { return r.parent && byId[r.parent] ? esc(byId[r.parent].name) : '—'; }],
-    ['质量', function (r) { return fmtMass(r.mass); }],
+    ['质量', function (r) { return fmtMass(r); }],
     ['质量（地球 = 1）', function (r) { return fmtRatio(r.mass, earthRow.mass); }],
-    ['平均半径', function (r) { return fmtRadius(r.radius); }],
+    ['半径 / 大小', function (r) { return fmtRadius(r); }],
     ['半径（地球 = 1）', function (r) { return fmtRatio(r.radius, earthRow.radius); }],
     ['平均密度', function (r) { return (r.density === null || r.density === undefined) ? '—' : r.density + ' g/cm³'; }],
     ['表面重力', function (r) { return fmtGravity(r.gravity); }],
