@@ -34,25 +34,57 @@
     if (s.indexOf('.') !== -1) s = s.replace(/0+$/, '').replace(/\.$/, '');
     return s + '×10' + sup(e);
   }
+  // 中段值（1e-3 ~ 1e3）普通计数法，极端值科学计数法（与 gen_pages.py 的 num3 一致）
+  function num3(x) {
+    if (x === 0) return '0';
+    var a = Math.abs(x);
+    if (a >= 1e-3 && a < 1e3) {
+      var s = x.toPrecision(3);
+      if (s.indexOf('.') !== -1) s = s.replace(/0+$/, '').replace(/\.$/, '');
+      return s;
+    }
+    return sig3(x);
+  }
   var LY_KM = 9.4607e12;
   var EXT_CATS = { nebula: 1, galaxy: 1, cluster: 1, structure: 1 };
   var MASS_SUN_CATS = { star: 1, black_hole: 1, galaxy: 1, cluster: 1, structure: 1, nebula: 1 };
   function fmtMass(r) {
     var kg = (r && typeof r === "object" && "mass" in r) ? r.mass : r;
     if (kg === null || kg === undefined) return '—';
-    if (r && typeof r === "object" && MASS_SUN_CATS[r.cat_key]) return sig3(kg / 1.9884e30) + ' M☉';
+    if (r && typeof r === "object" && MASS_SUN_CATS[r.cat_key]) return num3(kg / 1.9884e30) + ' M☉';
     return sig3(kg) + ' kg';
   }
   function fmtRadius(r) {
     var v = (r && typeof r === "object" && "radius" in r) ? r.radius : r;
     var ck = (r && typeof r === "object") ? r.cat_key : null;
     if (v === null || v === undefined) return '—';
-    if (ck === "star") return sig3(v / 695700) + ' R☉';
+    if (ck === "star") {
+      var rs = v / 695700;
+      if (rs < 0.001) return sig3(rs) + ' R☉';                     // 脉冲星/白矮星
+      if (rs >= 1000) return Math.round(rs).toLocaleString('en-US') + ' R☉';  // 红超巨星
+      return num3(rs) + ' R☉';
+    }
     if (ck === "black_hole") return (v >= 1e8 ? sig3(v / 1.496e8) + ' AU' : sig3(v) + ' km');
-    if (ck && EXT_CATS[ck]) return sig3(v / LY_KM) + ' 光年';
+    if (ck && EXT_CATS[ck]) {
+      var ly = v / LY_KM;
+      if (ly < 0.001) return sig3(ly) + ' 光年';
+      if (ly >= 1000) return Math.round(ly).toLocaleString('en-US') + ' 光年';
+      return num3(ly) + ' 光年';
+    }
     return (v < 1000 ? v.toFixed(1) : v.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' km';
   }
-  function fmtTemp(t) { return (t === null || t === undefined) ? '—' : t + ' °C'; }
+  // 恒星/星云/大尺度结构的 mean_temp_c 为「开尔文-273.15」等效值，展示 K（与详情页一致）
+  function fmtTemp(r) {
+    var t = (r && typeof r === "object" && "temp" in r) ? r.temp : r;
+    if (t === null || t === undefined) return '—';
+    var ck = (r && typeof r === "object") ? r.cat_key : null;
+    if (ck === "star" || ck === "nebula" || ck === "structure") {
+      var k = t + 273.15;
+      if (k >= 1e6) return sig3(k) + ' K';
+      return Math.round(k).toLocaleString('en-US') + ' K';
+    }
+    return t + ' °C';
+  }
   function fmtPeriod(d) {
     if (d === null || d === undefined) return '—';
     if (d < 2) return d.toFixed(2) + ' 天';
@@ -74,9 +106,14 @@
   }
   function fmtVelocity(v) {
     if (v === null || v === undefined) return '—';
+    if (v >= 1e5) return sig3(v) + ' km/s';           // 中子星逃逸速度
     return (v < 1 ? v.toFixed(3) : v.toFixed(2)) + ' km/s';
   }
-  function fmtGravity(g) { return (g === null || g === undefined) ? '—' : g.toFixed(2) + ' m/s²'; }
+  function fmtGravity(g) {
+    if (g === null || g === undefined) return '—';
+    if (g >= 1e4 || (g > 0 && g < 0.01)) return sig3(g) + ' m/s²';  // 白矮星/中子星/超巨星
+    return g.toFixed(2) + ' m/s²';
+  }
   function fmtKm(a) {
     if (a === null || a === undefined) return '—';
     return Math.round(a).toLocaleString('en-US') + ' km';
@@ -89,7 +126,7 @@
   }
   function fmtLum(l) {
     if (l === null || l === undefined) return '—';
-    return sig3(l / 3.828e26) + ' L☉';
+    return num3(l / 3.828e26) + ' L☉';
   }
   function fmtDist(ly) {
     if (ly === null || ly === undefined) return '—';
@@ -114,10 +151,14 @@
     ['质量（地球 = 1）', function (r) { return fmtRatio(r.mass, earthRow.mass); }],
     ['半径 / 大小', function (r) { return fmtRadius(r); }],
     ['半径（地球 = 1）', function (r) { return fmtRatio(r.radius, earthRow.radius); }],
-    ['平均密度', function (r) { return (r.density === null || r.density === undefined) ? '—' : r.density + ' g/cm³'; }],
+    ['平均密度', function (r) {
+      var d = r.density;
+      if (d === null || d === undefined) return '—';
+      return (d >= 1e4 || (d > 0 && d < 0.01) ? sig3(d) : d) + ' g/cm³';
+    }],
     ['表面重力', function (r) { return fmtGravity(r.gravity); }],
     ['逃逸速度', function (r) { return fmtVelocity(r.escape); }],
-    ['平均表面温度', function (r) { return fmtTemp(r.temp); }],
+    ['平均表面温度', function (r) { return fmtTemp(r); }],
     ['表面气压', function (r) { return fmtPressure(r.pressure); }],
     ['自转周期', function (r) { return fmtRotation(r.rotation); }],
     ['轨道半长轴', function (r) { return fmtKm(r.axis); }],

@@ -50,11 +50,31 @@ def sup(n):
     return str(n).translate(SUP)
 
 
+def sci(v, digits=3):
+    """科学计数法（Unicode 上标），用于量级极端的物理量（白矮星表面重力、
+    脉冲星逃逸速度、10⁶ K 级温度、千倍太阳半径等）。"""
+    if v == 0:
+        return "0"
+    e = math.floor(math.log10(abs(v)))
+    m = v / 10 ** e
+    return f"{m:.{digits}g}×10{sup(e)}"
+
+
+def num3(v):
+    """中段值（1e-3 ~ 1e3）用普通计数法，极端值用科学计数法——
+    与 astro-compare.js / astro-size-compare.js 的 num3() 保持一致。"""
+    if v == 0:
+        return "0"
+    if 1e-3 <= abs(v) < 1e3:
+        return f"{v:.3g}"
+    return sci(v)
+
+
 def fmt_mass(kg, cat=None):
     if kg is None:
         return None
     if cat in ("star", "black_hole", "galaxy", "cluster", "structure", "nebula"):
-        return f"{kg / M_SUN_KG:.3g} M☉"
+        return f"{num3(kg / M_SUN_KG)} M☉"
     e = math.floor(math.log10(kg))
     return f"{kg / 10 ** e:.3g}×10{sup(e)} kg"
 
@@ -63,7 +83,12 @@ def fmt_radius(r, cat=None):
     if r is None:
         return None
     if cat == "star":
-        return f"{r / R_SUN_KM:.3g} R☉"
+        rs = r / R_SUN_KM
+        if rs < 0.001:
+            return f"{sci(rs)} R☉"          # 脉冲星/白矮星：1.44×10⁻⁵ R☉
+        if rs >= 1000:
+            return f"{rs:,.0f} R☉"          # 红超巨星：1,260 R☉
+        return f"{rs:.3g} R☉"
     if cat == "black_hole":
         # 黑洞半径 = 史瓦西半径；小恒星级黑洞用 km，大质量用 AU
         if r >= 1e8:
@@ -78,7 +103,7 @@ def fmt_lum(w, cat=None):
     if w is None:
         return None
     if cat in ("star", "galaxy"):
-        return f"{w / L_SUN_W:.3g} L☉"
+        return f"{num3(w / L_SUN_W)} L☉"
     return f"{w:.3g} W"
 
 
@@ -112,7 +137,10 @@ def fmt_temp(t, cat=None):
     if t is None:
         return None
     if cat in ("star", "nebula", "structure"):
-        return f"{t + 273.15:.0f} K"
+        k = t + 273.15
+        if k >= 1e6:
+            return f"{sci(k)} K"            # 中子星表面：1.6×10⁶ K
+        return f"{k:.0f} K"
     return f"{t} °C"
 
 
@@ -138,11 +166,17 @@ def fmt_rotation(h):
 def fmt_velocity(v):
     if v is None:
         return None
+    if v >= 1e5:
+        return f"{sci(v)} km/s"             # 中子星逃逸速度：1.93×10⁵ km/s
     return f"{v:.3f} km/s" if v < 1 else f"{v:.2f} km/s"
 
 
 def fmt_gravity(g):
-    return None if g is None else f"{g:.2f} m/s²"
+    if g is None:
+        return None
+    if g >= 1e4 or g < 0.01:
+        return f"{sci(g)} m/s²"             # 白矮星 4.26×10⁶ / 超巨星 2.82×10⁻³
+    return f"{g:.2f} m/s²"
 
 
 def fmt_pressure(p):
@@ -397,7 +431,7 @@ def build_object_index(data):
     L.append("| orbital_period_days | 轨道周期 | 天 |")
     L.append("| moons.count | 已确认卫星数 | 颗 |")
     L.append("| distance_ly | 距离（恒星/星云/星系/黑洞为对地距离，单位光年） | 光年 |")
-    L.append("| subtype | 类型细分（如星云：发射/反射/行星状/超新星遗迹；星系：旋涡/椭圆/棒旋/不规则） | — |")
+    L.append("| subtype | 类型细分（星云：发射/反射/行星状/超新星遗迹；星系：旋涡/椭圆/棒旋/不规则；恒星：黄矮星/红巨星/白矮星/中子星等） | — |")
     L.append("")
     L.append("</details>")
     L.append("")
@@ -443,7 +477,9 @@ def sizecompare_payload(objs, img_prefix="../"):
             "mass": ph.get("mass_kg"), "radius": ph.get("radius_km"),
             "density": ph.get("density_g_cm3"), "gravity": ph.get("gravity_m_s2"),
             "escape": ph.get("escape_velocity_km_s"), "temp": ph.get("mean_temp_c"),
+            "lum": o.get("luminosity_w"), "distance": o.get("distance_ly"),
             "rotation": orb.get("rotation_period_hours"),
+            "subtype": o.get("subtype"),
             "rings": bool(r) if r is not None else False,
             "image": (img_prefix + img) if img else None,
             # 延展天体（星云/星系/星团/大尺度结构）：贴图全幅≈天体本身，
@@ -653,6 +689,8 @@ def build_object(root, o, by_id, order, registry=None):
         ]
     if o.get("spectral_type"):
         rows.append(("光谱型", o["spectral_type"]))
+    if cat == "star" and o.get("subtype"):
+        rows.append(("恒星类型", o["subtype"]))
     if cat == "star" and o.get("luminosity_w"):
         rows.append(("光度", fmt_lum(o["luminosity_w"], cat)))
     if o.get("distance_ly") is not None and cat == "star":
@@ -702,6 +740,12 @@ def build_object(root, o, by_id, order, registry=None):
             L.append("| 大气成分 | — |")
         L.append(f'| 全球磁场 | {fmt_yn(o.get("magnetic_field"))} |')
         L.append(f'| 环系 | {fmt_yn(o.get("rings"))} |')
+        if cat == "star":
+            # 恒星补充：双星/聚星成员数（members）与备注（note）
+            if o.get("members"):
+                L.append(f'| 已知成员 | {o["members"]} |')
+            if o.get("note"):
+                L.append(f'| 备注 | {o["note"]} |')
     moons = o.get("moons") or {}
     if moons.get("count") is not None:
         notable = "、".join(

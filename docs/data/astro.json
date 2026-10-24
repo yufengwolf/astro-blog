@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-24",
-    "object_count": 107,
+    "object_count": 151,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -16,9 +16,11 @@
       "Event Horizon Telescope（M87* / 人马座 A* 黑洞照片）https://eventhorizontelescope.org/",
       "LIGO/Virgo 合作组 · GW190521 探测论文（2020）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102",
       "Wikipedia 各天体条目（著名星云/星系/星团/小天体，2026-10-24 核对）https://en.wikipedia.org/",
-      "LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102"
+      "LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
+      "Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/",
+      "诺贝尔物理学奖 2019 新闻稿（飞马座 51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/"
     ],
-    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；m7/ngc4755 等 NASA 库无真图的天体保留程序化贴图；系外行星为后续扩展方向"
+    "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；北冕座 R 因无可靠距离数据未收录；m7/ngc4755 等 NASA 库无真图的天体保留程序化贴图"
   },
   "objects": [
     {
@@ -72,7 +74,8 @@
       },
       "image_credit": "NASA/SDO · AIA 极紫外成像",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002069",
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "黄矮星（G2V 主序星）"
     },
     {
       "id": "mercury",
@@ -1903,7 +1906,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "高光度蓝变星（LBV）"
     },
     {
       "id": "stephenson_2_18",
@@ -1958,7 +1962,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "红超巨星（M6Ia）"
     },
     {
       "id": "arcturus",
@@ -2013,7 +2018,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "红巨星（K0III）"
     },
     {
       "id": "antares",
@@ -2068,7 +2074,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "红超巨星（M1.5Iab-Ib）"
     },
     {
       "id": "rigel",
@@ -2123,7 +2130,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "蓝超巨星（B8Ia）"
     },
     {
       "id": "betelgeuse",
@@ -2178,7 +2186,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "红超巨星（M1-M2Ia）"
     },
     {
       "id": "vega",
@@ -2233,7 +2242,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "蓝白主序星（A0V）"
     },
     {
       "id": "sirius_a",
@@ -2288,7 +2298,9 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "蓝白主序星（A1V）",
+      "members": 2
     },
     {
       "id": "proxima_centauri",
@@ -2343,7 +2355,8 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "subtype": "红矮星（M5.5Ve）"
     },
     {
       "id": "m87_star",
@@ -5153,8 +5166,8 @@
       "source_dates": {
         "wiki_cmb": "2026-10-24"
       },
-      "image_credit": "ESA/NASA · Planck 卫星与宇宙微波背景全天图",
-      "image_url": "https://images.nasa.gov/details/PIA17449",
+      "image_credit": "ESA/NASA · Planck 卫星全天图（2013 年发布）",
+      "image_url": "https://images.nasa.gov/details/PIA16873",
       "image_locked": true,
       "srcs": [
         "wiki_cmb"
@@ -5214,8 +5227,8 @@
       "source_dates": {
         "wiki_obsuniverse": "2026-10-24"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
-      "image_url": null,
+      "image_credit": "ESA/NASA · Planck 卫星与宇宙微波背景（艺术概念图）",
+      "image_url": "https://images.nasa.gov/details/PIA17449",
       "image_locked": true,
       "srcs": [
         "wiki_obsuniverse"
@@ -6051,7 +6064,7 @@
       "luminosity_w": 1.914e+33,
       "distance_ly": 7500,
       "constellation": "船底座",
-      "subtype": null,
+      "subtype": "高光度蓝变星（LBV）",
       "members": null,
       "note": "质量（约 100~150 M☉）、半径（约 60~800 R☉）与温度随 1843 年「假超新星」大爆发剧烈变化，无法给出单一数值，故留 null；周身被自己抛出的 Homunculus 星云包裹。",
       "discovery": {
@@ -6196,6 +6209,2560 @@
       "srcs": [
         "wiki_halley"
       ]
+    },
+    {
+      "id": "sirius_b",
+      "name": "天狼 B",
+      "name_en": "Sirius B",
+      "category": "star",
+      "parent": "sirius_a",
+      "tagline": "质量与太阳相当，体积却只有地球大小——最早被发现的白矮星",
+      "physical": {
+        "mass_kg": 2.0241912e+30,
+        "radius_km": 5634.0,
+        "density_g_cm3": 2702168.3024109127,
+        "gravity_m_s2": 4256023.815545582,
+        "escape_velocity_km_s": 6925.090349848702,
+        "mean_temp_c": 24726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "DA2",
+      "subtype": "白矮星（DA2）",
+      "members": null,
+      "note": "质量与太阳相当、半径仅约 5634 km（比地球还小）的致密残骸，表面重力约为地球的 40 万倍；它是天狼星系中率先耗尽燃料、先行演化的一颗，而明亮的伴星天狼 A 仍是主序星。",
+      "luminosity_w": 9.3786e+24,
+      "distance_ly": 8.61,
+      "constellation": "大犬座",
+      "discovery": {
+        "known_since": "1862 年 Alvan Graham Clark 发现",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_sirius_b"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/sirius_b.webp",
+      "source_dates": {
+        "wiki_sirius_b": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "eridani_40a",
+      "name": "波江座 40A",
+      "name_en": "40 Eridani A",
+      "category": "star",
+      "parent": null,
+      "tagline": "《星际迷航》中瓦肯人的太阳，一颗宁静的橙黄矮星",
+      "physical": {
+        "mass_kg": 1.550952e+30,
+        "radius_km": 559342.8,
+        "density_g_cm3": 2.1158047682469387,
+        "gravity_m_s2": 330.84795552418916,
+        "escape_velocity_km_s": 608.3706465916571,
+        "mean_temp_c": 4852.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K1V",
+      "subtype": "橙矮星（K1V 主序星）",
+      "members": 3,
+      "note": "又名 Keid，与白矮星 B、红矮星 C 组成三合系统，B/C 双星绕它一周约需 8000 年；因出现在《星际迷航》设定中（瓦肯人的太阳）而广为人知。",
+      "luminosity_w": 1.5312000000000001e+26,
+      "distance_ly": 16.35,
+      "constellation": "波江座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_40eri"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/eridani_40a.webp",
+      "source_dates": {
+        "wiki_40eri": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "eridani_40b",
+      "name": "波江座 40B",
+      "name_en": "40 Eridani B",
+      "category": "star",
+      "parent": "eridani_40a",
+      "tagline": "肉眼不可见的白矮星，人类最早确认的白矮星之一",
+      "physical": {
+        "mass_kg": 1.1095272000000001e+30,
+        "radius_km": 9099.756,
+        "density_g_cm3": 351528.1447195368,
+        "gravity_m_s2": 894261.7620141526,
+        "escape_velocity_km_s": 4034.2443739711302,
+        "mean_temp_c": 16926.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "DA4",
+      "subtype": "白矮星（DA4）",
+      "members": null,
+      "note": "看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座 40C）结伴绕行。",
+      "luminosity_w": 5.163972e+24,
+      "distance_ly": 16.35,
+      "constellation": "波江座",
+      "discovery": {
+        "known_since": "1783 年 1 月 31 日威廉·赫歇尔发现",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_40eri"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/eridani_40b.webp",
+      "source_dates": {
+        "wiki_40eri": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "crab_pulsar",
+      "name": "蟹云脉冲星",
+      "name_en": "Crab Pulsar",
+      "category": "star",
+      "parent": "m1",
+      "tagline": "蟹状星云中心高速自转的中子星，每 33 毫秒转一圈",
+      "physical": {
+        "mass_kg": 2.78376e+30,
+        "radius_km": 10.0,
+        "density_g_cm3": 664573746572241.9,
+        "gravity_m_s2": 1857881423999.9998,
+        "escape_velocity_km_s": 192763.1408750127,
+        "mean_temp_c": 1599726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "subtype": "中子星（脉冲星）",
+      "members": null,
+      "note": "1054 年超新星爆发留下的中子星，自转周期 33.39 毫秒；直径仅约 20 km，表面温度约 1.6×10⁶ K，是全波段（射电到伽马射线）的明亮同步辐射源。",
+      "luminosity_w": null,
+      "distance_ly": 6524,
+      "constellation": "金牛座",
+      "discovery": {
+        "known_since": "1968 年被确认为脉冲星（对应中国宋代记载的 SN 1054 遗迹）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_crab_pulsar"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/crab_pulsar.webp",
+      "source_dates": {
+        "wiki_crab_pulsar": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "vela_pulsar",
+      "name": "船帆脉冲星",
+      "name_en": "Vela Pulsar",
+      "category": "star",
+      "parent": null,
+      "tagline": "船帆座超新星遗迹中心的中子星，自转突变的经典样本",
+      "physical": {
+        "mass_kg": 2.78376e+30,
+        "radius_km": 10.0,
+        "density_g_cm3": 664573746572241.9,
+        "gravity_m_s2": 1857881423999.9998,
+        "escape_velocity_km_s": 192763.1408750127,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "subtype": "中子星（脉冲星）",
+      "members": null,
+      "note": "位于船帆座超新星遗迹中心，自转周期 89.33 毫秒；以周期性的'跃变'（glitch，自转突然加速）闻名，是探测中子星内部超流结构的天然实验室。",
+      "luminosity_w": null,
+      "distance_ly": 959,
+      "constellation": "船帆座",
+      "discovery": {
+        "known_since": "1968 年发现",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_vela_pulsar"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/vela_pulsar.webp",
+      "source_dates": {
+        "wiki_vela_pulsar": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "sgr_1806_20",
+      "name": "SGR 1806-20",
+      "name_en": "SGR 1806-20",
+      "category": "star",
+      "parent": null,
+      "tagline": "银河系最强的磁星，一次巨耀斑曾照亮半个银河",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 10.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "subtype": "磁星（软伽马重复源）",
+      "members": null,
+      "note": "拥有宇宙最强磁场（约 10¹⁵ 高斯）的磁星，自转周期 7.5 秒；2004 年 12 月 27 日的巨耀斑在 0.1 秒内释放的能量超过太阳 25 万年的总和——若发生在更近处足以致命。质量未直接测定（中子星典型值约 1.4 M☉），故留空。",
+      "luminosity_w": null,
+      "distance_ly": 50000,
+      "constellation": "人马座",
+      "discovery": {
+        "known_since": "1979 年被记录为软伽马重复源；2004-12-27 巨耀斑",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_sgr1806"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/sgr_1806_20.webp",
+      "source_dates": {
+        "wiki_sgr1806": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "alphacen_a",
+      "name": "南门二 A",
+      "name_en": "Alpha Centauri A",
+      "category": "star",
+      "parent": null,
+      "tagline": "距太阳系最近的恒星系统主星，与太阳宛如孪生",
+      "physical": {
+        "mass_kg": 2.18724e+30,
+        "radius_km": 851119.38,
+        "density_g_cm3": 0.8469083051441878,
+        "gravity_m_s2": 201.51235705035663,
+        "escape_velocity_km_s": 585.68092404489,
+        "mean_temp_c": 5516.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "G2V",
+      "subtype": "黄矮星（G2V 主序星）",
+      "members": 3,
+      "note": "光谱、质量与太阳几乎一致的 G2V 恒星；与南门二 B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。",
+      "luminosity_w": 5.814732e+26,
+      "distance_ly": 4.37,
+      "constellation": "半人马座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_alphacen"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/alphacen_a.webp",
+      "source_dates": {
+        "wiki_alphacen": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "alphacen_b",
+      "name": "南门二 B",
+      "name_en": "Alpha Centauri B",
+      "category": "star",
+      "parent": "alphacen_a",
+      "tagline": "南门二系统的橙矮星伴星，肉眼与主星不可分",
+      "physical": {
+        "mass_kg": 1.8034788e+30,
+        "radius_km": 600528.24,
+        "density_g_cm3": 1.9880263075929232,
+        "gravity_m_s2": 333.7569928572101,
+        "escape_velocity_km_s": 633.1358456259335,
+        "mean_temp_c": 4986.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K1V",
+      "subtype": "橙矮星（K1V 主序星）",
+      "members": null,
+      "note": "略小略暗的橙矮星伴星；合起来视星等 -0.27，为全天第三亮（少数资料列第四）的'星'。",
+      "luminosity_w": 1.914e+26,
+      "distance_ly": 4.37,
+      "constellation": "半人马座",
+      "discovery": {
+        "known_since": "自古已知（肉眼与 A 不可分）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_alphacen"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/alphacen_b.webp",
+      "source_dates": {
+        "wiki_alphacen": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "castor",
+      "name": "北河二",
+      "name_en": "Castor",
+      "category": "star",
+      "parent": null,
+      "tagline": "六颗恒星组成的聚星系统，冬季大三角的一角",
+      "physical": {
+        "mass_kg": 4.7144964e+30,
+        "radius_km": 1453317.3,
+        "density_g_cm3": 0.36666154925252775,
+        "gravity_m_s2": 148.9706195987427,
+        "escape_velocity_km_s": 658.0297541214559,
+        "mean_temp_c": 10012.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A1Vm",
+      "subtype": "白主序星（A1Vm 六合星系统）",
+      "members": 6,
+      "note": "冬季大三角的一角。肉眼看似一颗星，实为六颗恒星的聚星系统：A、B 两对各含分光双星，另有一对远距红矮星伴星（YY Geminorum）。",
+      "luminosity_w": 1.1484e+28,
+      "distance_ly": 49.2,
+      "constellation": "双子座",
+      "discovery": {
+        "known_since": "1678 年被发现是双星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_castor"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/castor.webp",
+      "source_dates": {
+        "wiki_castor": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "pollux",
+      "name": "北河三",
+      "name_en": "Pollux",
+      "category": "star",
+      "parent": null,
+      "tagline": "双子座最亮的星，一颗拥有系外行星的橙巨星",
+      "physical": {
+        "mass_kg": 3.7978439999999995e+30,
+        "radius_km": 6122160.000000001,
+        "density_g_cm3": 0.003951249791118462,
+        "gravity_m_s2": 6.762604248692407,
+        "escape_velocity_km_s": 287.75595641854125,
+        "mean_temp_c": 4312.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K0III",
+      "subtype": "橙巨星（K0III）",
+      "members": null,
+      "note": "双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。",
+      "luminosity_w": 1.251756e+28,
+      "distance_ly": 33.78,
+      "constellation": "双子座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_pollux"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/pollux.webp",
+      "source_dates": {
+        "wiki_pollux": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "capella",
+      "name": "五车二",
+      "name_en": "Capella",
+      "category": "star",
+      "parent": null,
+      "tagline": "御夫座最亮的星，四星系统金光耀眼",
+      "physical": {
+        "mass_kg": 5.110187999999999e+30,
+        "radius_km": 8348400.0,
+        "density_g_cm3": 0.002096710742367298,
+        "gravity_m_s2": 4.8934660691468945,
+        "escape_velocity_km_s": 285.8412571049391,
+        "mean_temp_c": 4696.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "G3III",
+      "subtype": "黄巨星（G3III 四星系统）",
+      "members": 4,
+      "note": "北天第五亮星。主星对是两颗黄巨星（互绕一周约 104 天），另有两颗暗红矮星伴星。",
+      "luminosity_w": 3.012636e+28,
+      "distance_ly": 42.9,
+      "constellation": "御夫座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_capella"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/capella.webp",
+      "source_dates": {
+        "wiki_capella": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "aldebaran",
+      "name": "毕宿五",
+      "name_en": "Aldebaran",
+      "category": "star",
+      "parent": null,
+      "tagline": "金牛座的红眼睛，一颗正在充气膨胀的红巨星",
+      "physical": {
+        "mass_kg": 2.3065439999999998e+30,
+        "radius_km": 30701241.0,
+        "density_g_cm3": 1.902853449951671e-05,
+        "gravity_m_s2": 0.16331876395854703,
+        "escape_velocity_km_s": 100.14078821452792,
+        "mean_temp_c": 3636.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K5III",
+      "subtype": "红巨星（K5III）",
+      "members": null,
+      "note": "金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。",
+      "luminosity_w": 1.680492e+29,
+      "distance_ly": 65.3,
+      "constellation": "金牛座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_aldebaran"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/aldebaran.webp",
+      "source_dates": {
+        "wiki_aldebaran": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "spica",
+      "name": "角宿一",
+      "name_en": "Spica",
+      "category": "star",
+      "parent": null,
+      "tagline": "室女座最亮的星，蓝白双星四天互绕一周",
+      "physical": {
+        "mass_kg": 2.2727411999999997e+31,
+        "radius_km": 5196879.0,
+        "density_g_cm3": 0.038657481795493776,
+        "gravity_m_s2": 56.16308778787641,
+        "escape_velocity_km_s": 764.0324227413015,
+        "mean_temp_c": 22126.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B1III-IV",
+      "subtype": "蓝巨星（B1III-IV 双星）",
+      "members": 2,
+      "note": "两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。",
+      "luminosity_w": 4.63188e+30,
+      "distance_ly": 250,
+      "constellation": "室女座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_spica"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/spica.webp",
+      "source_dates": {
+        "wiki_spica": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "regulus",
+      "name": "轩辕十四",
+      "name_en": "Regulus",
+      "category": "star",
+      "parent": null,
+      "tagline": "狮子座的心脏，一颗飞速自转的蓝白恒星",
+      "physical": {
+        "mass_kg": 7.55592e+30,
+        "radius_km": 3026294.9999999995,
+        "density_g_cm3": 0.06508260996577071,
+        "gravity_m_s2": 55.06187964191811,
+        "escape_velocity_km_s": 577.2928044778291,
+        "mean_temp_c": 12186.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B8IVn",
+      "subtype": "蓝白主序星（B8IVn）",
+      "members": null,
+      "note": "几乎正对黄道，是月亮与行星掩星的常客。约 15.9 小时一圈的自转把它甩成明显扁球，两极表面重力比赤道强约一倍。",
+      "luminosity_w": 1.2096480000000001e+29,
+      "distance_ly": 79.3,
+      "constellation": "狮子座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_regulus"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/regulus.webp",
+      "source_dates": {
+        "wiki_regulus": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "formalhaut",
+      "name": "北落师门",
+      "name_en": "Fomalhaut",
+      "category": "star",
+      "parent": null,
+      "tagline": "南天孤独的亮星，拥有著名的尘埃碎屑盘",
+      "physical": {
+        "mass_kg": 3.817728e+30,
+        "radius_km": 1280088.0,
+        "density_g_cm3": 0.43450711740662584,
+        "gravity_m_s2": 155.4932470685795,
+        "escape_velocity_km_s": 630.9438004347516,
+        "mean_temp_c": 8316.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A3V",
+      "subtype": "白主序星（A3V）",
+      "members": null,
+      "note": "南天孤悬的亮星（周围 20° 内没有别的亮星）。其尘埃碎屑盘是第一批被望远镜直接拍到的碎屑盘，盘中候选行星'北落师门 b'的真身至今仍有争议。",
+      "luminosity_w": 6.354480000000001e+27,
+      "distance_ly": 25.1,
+      "constellation": "南鱼座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_fomalhaut"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/formalhaut.webp",
+      "source_dates": {
+        "wiki_fomalhaut": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "altair",
+      "name": "河鼓二",
+      "name_en": "Altair",
+      "category": "star",
+      "parent": null,
+      "tagline": "牛郎星，夏季大三角的一角，扁球状飞速自转",
+      "physical": {
+        "mass_kg": 3.698424e+30,
+        "radius_km": 1391400.0,
+        "density_g_cm3": 0.32777218204415787,
+        "gravity_m_s2": 127.49668793388177,
+        "escape_velocity_km_s": 595.649043634258,
+        "mean_temp_c": 7426.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": 7.77
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A7Vn",
+      "subtype": "白主序星（A7Vn）",
+      "members": null,
+      "note": "夏季大三角的一角。约 7.77 小时一圈的自转把它甩成扁球（赤道半径比极半径大约 25%），干涉测量已直接证实这一形变；与织女星隔银河相望的传说广为流传。",
+      "luminosity_w": 4.05768e+27,
+      "distance_ly": 16.73,
+      "constellation": "天鹰座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_altair"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/altair.webp",
+      "source_dates": {
+        "wiki_altair": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "deneb",
+      "name": "天津四",
+      "name_en": "Deneb",
+      "category": "star",
+      "parent": null,
+      "tagline": "夏季大三角最远的一角，已知最亮的蓝白超巨星之一",
+      "physical": {
+        "mass_kg": 3.77796e+31,
+        "radius_km": 141227100.0,
+        "density_g_cm3": 3.2019505631847814e-06,
+        "gravity_m_s2": 0.12641758081052623,
+        "escape_velocity_km_s": 188.96342676235668,
+        "mean_temp_c": 8251.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A2Iae",
+      "subtype": "蓝白超巨星（A2Iae）",
+      "members": null,
+      "note": "光度约为太阳的 20 万倍，是已知最亮的 A 型超巨星之一；距离估计 1400~2600 光年仍有争议（依测量口径而异），此处取约 2600 光年。",
+      "luminosity_w": 7.50288e+31,
+      "distance_ly": 2615,
+      "constellation": "天鹅座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_deneb"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/deneb.webp",
+      "source_dates": {
+        "wiki_deneb": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "mirfak",
+      "name": "天船三",
+      "name_en": "Mirfak",
+      "category": "star",
+      "parent": null,
+      "tagline": "英仙座最亮的星，年轻星团核心的黄白超巨星",
+      "physical": {
+        "mass_kg": 1.69014e+31,
+        "radius_km": 47307600.0,
+        "density_g_cm3": 3.81102083152135e-05,
+        "gravity_m_s2": 0.5040191648240108,
+        "escape_velocity_km_s": 218.37553453548028,
+        "mean_temp_c": 6076.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "F5Ib",
+      "subtype": "黄白超巨星（F5Ib）",
+      "members": null,
+      "note": "英仙座最亮的星，也是年轻疏散星团 Melotte 20 的核心成员；光度约为太阳的 5000 倍，是肉眼可见的最亮黄白超巨星之一。",
+      "luminosity_w": 1.914e+30,
+      "distance_ly": 510,
+      "constellation": "英仙座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_mirfak"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/mirfak.webp",
+      "source_dates": {
+        "wiki_mirfak": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "hamal",
+      "name": "娄宿三",
+      "name_en": "Hamal",
+      "category": "star",
+      "parent": null,
+      "tagline": "白羊座最亮的星，一颗步入暮年的橙巨星",
+      "physical": {
+        "mass_kg": 2.843412e+30,
+        "radius_km": 10567683.0,
+        "density_g_cm3": 0.0005751906939725946,
+        "gravity_m_s2": 1.6992858451707145,
+        "escape_velocity_km_s": 189.5126071698197,
+        "mean_temp_c": 4279.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K2III",
+      "subtype": "橙巨星（K2III）",
+      "members": null,
+      "note": "白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。",
+      "luminosity_w": 2.916936e+28,
+      "distance_ly": 65.8,
+      "constellation": "白羊座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_hamal"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/hamal.webp",
+      "source_dates": {
+        "wiki_hamal": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "markab",
+      "name": "室宿一",
+      "name_en": "Markab",
+      "category": "star",
+      "parent": null,
+      "tagline": "飞马座四边形的一角，正值暮年的蓝白巨星",
+      "physical": {
+        "mass_kg": 7.9536e+30,
+        "radius_km": 1947959.9999999998,
+        "density_g_cm3": 0.25688280357076865,
+        "gravity_m_s2": 139.89103350217445,
+        "escape_velocity_km_s": 738.2440485651011,
+        "mean_temp_c": 10726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B9III",
+      "subtype": "蓝白巨星（B9III）",
+      "members": null,
+      "note": "飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。",
+      "luminosity_w": 6.1248e+28,
+      "distance_ly": 140,
+      "constellation": "飞马座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_markab"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/markab.webp",
+      "source_dates": {
+        "wiki_markab": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "alpheratz",
+      "name": "壁宿二",
+      "name_en": "Alpheratz",
+      "category": "star",
+      "parent": null,
+      "tagline": "仙女座与飞马座共用的一角，蓝白亚巨星",
+      "physical": {
+        "mass_kg": 7.217892e+30,
+        "radius_km": 2045358.0,
+        "density_g_cm3": 0.2013788094075996,
+        "gravity_m_s2": 115.14840172627963,
+        "escape_velocity_km_s": 686.3231085400809,
+        "mean_temp_c": 11676.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B8IV",
+      "subtype": "蓝白亚巨星（B8IV）",
+      "members": null,
+      "note": "历史上同时被算作仙女座 α 与飞马座 δ，是两座共用的一角；本身还是一对分光双星，主星比伴星亮数百倍。",
+      "luminosity_w": 6.048240000000001e+28,
+      "distance_ly": 97,
+      "constellation": "仙女座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_alpheratz"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/alpheratz.webp",
+      "source_dates": {
+        "wiki_alpheratz": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "mirach",
+      "name": "奎宿九",
+      "name_en": "Mirach",
+      "category": "star",
+      "parent": null,
+      "tagline": "仙女座第二亮的星，通往仙女座大星系的路标",
+      "physical": {
+        "mass_kg": 6.9594e+30,
+        "radius_km": 69570000.0,
+        "density_g_cm3": 4.9342048909873235e-06,
+        "gravity_m_s2": 0.09596524898249166,
+        "escape_velocity_km_s": 115.55347136033555,
+        "mean_temp_c": 3526.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M0III",
+      "subtype": "红巨星（M0III）",
+      "members": null,
+      "note": "从它出发向东北跳两站就能找到仙女座大星系（M31），是深空观测的经典路标；它本身也是一颗光谱双星。",
+      "luminosity_w": 6.8904e+29,
+      "distance_ly": 197,
+      "constellation": "仙女座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_mirach"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/mirach.webp",
+      "source_dates": {
+        "wiki_mirach": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "wezen",
+      "name": "弧矢一",
+      "name_en": "Wezen",
+      "category": "star",
+      "parent": null,
+      "tagline": "大犬座第二亮星，直径约太阳 188 倍的黄白超巨星",
+      "physical": {
+        "mass_kg": 2.962716e+31,
+        "radius_km": 130791600.0,
+        "density_g_cm3": 3.161271934468102e-06,
+        "gravity_m_s2": 0.11558900357620817,
+        "escape_velocity_km_s": 173.88542618711892,
+        "mean_temp_c": 5876.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "F8Ia",
+      "subtype": "黄白超巨星（F8Ia）",
+      "members": null,
+      "note": "天狼星之后大犬座第二亮的星；直径约太阳 188 倍，表面温度却只有太阳的一半多一点，是一颗'虚胖'的超巨星，最终将以超新星收场。",
+      "luminosity_w": 1.68432e+31,
+      "distance_ly": 1600,
+      "constellation": "大犬座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_wezen"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/wezen.webp",
+      "source_dates": {
+        "wiki_wezen": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "adhara",
+      "name": "弧矢七",
+      "name_en": "Adhara",
+      "category": "star",
+      "parent": null,
+      "tagline": "470 万年前它曾是夜空最亮的星，强极紫外光源",
+      "physical": {
+        "mass_kg": 2.505384e+31,
+        "radius_km": 9670230.0,
+        "density_g_cm3": 0.0066141688778469186,
+        "gravity_m_s2": 17.88079790574866,
+        "escape_velocity_km_s": 588.0670511635691,
+        "mean_temp_c": 22626.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B2II",
+      "subtype": "蓝白亮巨星（B2II）",
+      "members": null,
+      "note": "约 470 万年前它距地球更近，曾以 -3.99 等成为全天最亮的星；今天它仍是夜空中最强的极紫外辐射源，其紫外光子主导着本地星际云的电离状态。",
+      "luminosity_w": 1.481436e+31,
+      "distance_ly": 430,
+      "constellation": "大犬座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_adhara"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/adhara.webp",
+      "source_dates": {
+        "wiki_adhara": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "aludra",
+      "name": "弧矢二",
+      "name_en": "Aludra",
+      "category": "star",
+      "parent": null,
+      "tagline": "大犬座的蓝白超巨星，将以超新星结束一生",
+      "physical": {
+        "mass_kg": 3.8157396e+31,
+        "radius_km": 39167910.0,
+        "density_g_cm3": 0.00015159990364814935,
+        "gravity_m_s2": 1.659984890792849,
+        "escape_velocity_km_s": 360.6054320276779,
+        "mean_temp_c": 14726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B5Ia",
+      "subtype": "蓝白超巨星（B5Ia）",
+      "members": null,
+      "note": "与弧矢一、弧矢七同属阿拉伯语'少女'（al-Adhara）星群；质量近 20 倍太阳，光度超过太阳十万倍，已走到生命末期。",
+      "luminosity_w": 4.03631976e+31,
+      "distance_ly": 2000,
+      "constellation": "大犬座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_aludra"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/aludra.webp",
+      "source_dates": {
+        "wiki_aludra": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "mu_cephei",
+      "name": "造父四",
+      "name_en": "Mu Cephei",
+      "category": "star",
+      "parent": null,
+      "tagline": "血红色的特超巨星，肉眼可见的最大恒星之一",
+      "physical": {
+        "mass_kg": 3.817728e+31,
+        "radius_km": 876582000.0,
+        "density_g_cm3": 1.3531275249818263e-08,
+        "gravity_m_s2": 0.0033159356089404305,
+        "escape_velocity_km_s": 76.24551748078335,
+        "mean_temp_c": 3476.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M2Ia",
+      "subtype": "红特超巨星（M2Ia）",
+      "members": null,
+      "note": "又名'石榴星'（Garnet Star），因石榴石般的血红色闻名；半径估计在 972~1650 R☉ 之间依口径而变，此处取 1260 R☉。它的紫外光几乎全被自身大气吸收。",
+      "luminosity_w": 1.18668e+32,
+      "distance_ly": 2840,
+      "constellation": "仙王座",
+      "discovery": {
+        "known_since": "自古已知；1780 年代赫歇尔注意到其红色",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_mucephei"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/mu_cephei.webp",
+      "source_dates": {
+        "wiki_mucephei": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "uy_scuti",
+      "name": "盾牌座 UY",
+      "name_en": "UY Scuti",
+      "category": "star",
+      "parent": null,
+      "tagline": "体积最大的已知恒星之一，盾牌座的红超巨星",
+      "physical": {
+        "mass_kg": 1.69014e+31,
+        "radius_km": 632391300.0,
+        "density_g_cm3": 1.5954250663497506e-08,
+        "gravity_m_s2": 0.0028205714740460277,
+        "escape_velocity_km_s": 59.727796899180596,
+        "mean_temp_c": 3276.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M4Ia",
+      "subtype": "红超巨星（M4Ia）",
+      "members": null,
+      "note": "曾以约 1708 R☉ 的旧估计闻名，最新观测把半径下修至约 909 R☉——仍接近太阳的千倍。半规则变星，约 8.5 个月内光变约 1 个星等。",
+      "luminosity_w": 4.74672e+31,
+      "distance_ly": 5871,
+      "constellation": "盾牌座",
+      "discovery": {
+        "known_since": "1861 年编入波恩星表",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_uysct"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/uy_scuti.webp",
+      "source_dates": {
+        "wiki_uysct": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "rw_cephei",
+      "name": "仙王座 RW",
+      "name_en": "RW Cephei",
+      "category": "star",
+      "parent": null,
+      "tagline": "会不规则变暗的特超巨星，2022 年经历创纪录变暗",
+      "physical": {
+        "mass_kg": 2.763876e+31,
+        "radius_km": 765270000.0,
+        "density_g_cm3": 1.4722646342110935e-08,
+        "gravity_m_s2": 0.0031497448898621817,
+        "escape_velocity_km_s": 69.43205703225033,
+        "mean_temp_c": 3726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "K2 0-Ia",
+      "subtype": "橙黄特超巨星（K2 0-Ia）",
+      "members": null,
+      "note": "半径逾千倍太阳的半规则变星；2022 年它经历了有记录以来最深的一次变暗，可能与一次大规模的尘埃物质抛射有关。",
+      "luminosity_w": 1.3398e+32,
+      "distance_ly": 12790,
+      "constellation": "仙王座",
+      "discovery": {
+        "known_since": "1901 年被确认为变星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_rwcep"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/rw_cephei.webp",
+      "source_dates": {
+        "wiki_rwcep": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "s_persei",
+      "name": "英仙座 S",
+      "name_en": "S Persei",
+      "category": "star",
+      "parent": null,
+      "tagline": "英仙座双星团方向的红超巨星，半规则变星",
+      "physical": {
+        "mass_kg": 3.9768e+31,
+        "radius_km": 834840000.0,
+        "density_g_cm3": 1.6316815115698818e-08,
+        "gravity_m_s2": 0.0038081448008925258,
+        "escape_velocity_km_s": 79.73947084822066,
+        "mean_temp_c": 3226.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M3.5I",
+      "subtype": "红超巨星（M3.5I）",
+      "members": null,
+      "note": "藏在英仙座双星团方向的红超巨星，质量约 20 M☉、半径约 1200 R☉；光变幅度接近 1 个星等，是双星团观测区的'隐藏巨人'。",
+      "luminosity_w": 5.742e+31,
+      "distance_ly": 7900,
+      "constellation": "英仙座",
+      "discovery": {
+        "known_since": "19 世纪被记录为变星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_spersei"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/s_persei.webp",
+      "source_dates": {
+        "wiki_spersei": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "mira",
+      "name": "蒭藁增二",
+      "name_en": "Mira",
+      "category": "star",
+      "parent": null,
+      "tagline": "人类发现的第一颗变星，约 332 天完成一次呼吸",
+      "physical": {
+        "mass_kg": 2.3463119999999997e+30,
+        "radius_km": 255321900.0,
+        "density_g_cm3": 3.365371012591315e-08,
+        "gravity_m_s2": 0.0024021262484971227,
+        "escape_velocity_km_s": 35.02329047380207,
+        "mean_temp_c": 2776.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M7IIIe",
+      "subtype": "红巨星（M7IIIe 变星）",
+      "members": null,
+      "note": "星等以约 332 天为周期在 2 等~10 等之间起伏：亮时肉眼可见，暗时需望远镜。它正剧烈流失质量，在星风中拖着一条约 13 光年长的尾巴。",
+      "luminosity_w": 3.399264e+30,
+      "distance_ly": 300,
+      "constellation": "鲸鱼座",
+      "discovery": {
+        "known_since": "1596 年 Fabricius 发现（第一颗被确认的变星）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_mira"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/mira.webp",
+      "source_dates": {
+        "wiki_mira": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "p_cygni",
+      "name": "天鹅座 P",
+      "name_en": "P Cygni",
+      "category": "star",
+      "parent": null,
+      "tagline": "1600 年无预警增亮的'新星'，至今仍在抛射物质",
+      "physical": {
+        "mass_kg": 7.35708e+31,
+        "radius_km": 52873200.0,
+        "density_g_cm3": 0.00011882561817016417,
+        "gravity_m_s2": 1.7563881145390738,
+        "escape_velocity_km_s": 430.9660312777502,
+        "mean_temp_c": 18426.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "LBV",
+      "subtype": "高光度蓝变星（LBV）",
+      "members": null,
+      "note": "1600 年突然亮如三等星，随后缓慢回落，至今仍在以强劲星风抛射物质；与海山二同类，是'假超新星'现象的鼻祖。",
+      "luminosity_w": 2.33508e+32,
+      "distance_ly": 5300,
+      "constellation": "天鹅座",
+      "discovery": {
+        "known_since": "1600 年 8 月突然增亮为 3 等（被记为'新星'）",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_pcygni"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/p_cygni.webp",
+      "source_dates": {
+        "wiki_pcygni": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "naos",
+      "name": "弧矢增二十二",
+      "name_en": "Zeta Puppis",
+      "category": "star",
+      "parent": null,
+      "tagline": "船尾座最亮的星，肉眼可见最热的恒星之一",
+      "physical": {
+        "mass_kg": 7.9536e+31,
+        "radius_km": 9739800.0,
+        "density_g_cm3": 0.020550624285661484,
+        "gravity_m_s2": 55.956413400869764,
+        "escape_velocity_km_s": 1044.0347458219878,
+        "mean_temp_c": 41726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "O5Ibf",
+      "subtype": "蓝超巨星（O5Ibf）",
+      "members": null,
+      "note": "表面温度约 42000 K，是肉眼可见的最热恒星之一；光度约为太阳的 50 万倍，星风速度高达约 2200 km/s。",
+      "luminosity_w": 1.914e+32,
+      "distance_ly": 1093,
+      "constellation": "船尾座",
+      "discovery": {
+        "known_since": "自古已知",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_naos"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/naos.webp",
+      "source_dates": {
+        "wiki_naos": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "r136a1",
+      "name": "R136a1",
+      "name_en": "R136a1",
+      "category": "star",
+      "parent": "r136",
+      "tagline": "目前已知质量最大的恒星，藏在蜘蛛星云核心",
+      "physical": {
+        "mass_kg": 5.786244e+32,
+        "radius_km": 29706390.000000004,
+        "density_g_cm3": 0.005269367627358669,
+        "gravity_m_s2": 43.76059204421687,
+        "escape_velocity_km_s": 1612.432456815729,
+        "mean_temp_c": 45726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "WN5h",
+      "subtype": "沃尔夫-拉叶星（WN5h）",
+      "members": null,
+      "note": "目前已知质量最大的恒星（约 291 M☉，逼近恒星质量的理论上限），光度约为太阳的 724 万倍；强劲星风每年吹走相当于数个地球的质量。",
+      "luminosity_w": 2.7730032e+33,
+      "distance_ly": 163000,
+      "constellation": "剑鱼座",
+      "discovery": {
+        "known_since": "1985 年在 R136 星团核心被发现",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_r136a1"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/r136a1.webp",
+      "source_dates": {
+        "wiki_r136a1": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "algol",
+      "name": "大陵五",
+      "name_en": "Algol",
+      "category": "star",
+      "parent": null,
+      "tagline": "中国古代记为会变亮的'魔星'，实为相互遮挡的食双星",
+      "physical": {
+        "mass_kg": 6.303228e+30,
+        "radius_km": 1899261.0,
+        "density_g_cm3": 0.21964456240174957,
+        "gravity_m_s2": 116.6218477848502,
+        "escape_velocity_km_s": 665.5754311055996,
+        "mean_temp_c": 12726.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B8V",
+      "subtype": "食双星（三合星系统）",
+      "members": 3,
+      "note": "每 2.87 天，较暗的伴星从亮星前方经过，亮度从 2.1 等骤降到 3.4 等并持续约 10 小时——宇宙级的'眨眼'；中国古代因此称它为'魔星'。",
+      "luminosity_w": 6.96696e+28,
+      "distance_ly": 94,
+      "constellation": "英仙座",
+      "discovery": {
+        "known_since": "自古已知；1669 年亮度变化被首次记录",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_algol"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/algol.webp",
+      "source_dates": {
+        "wiki_algol": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "sheliak",
+      "name": "渐台二",
+      "name_en": "Beta Lyrae",
+      "category": "star",
+      "parent": null,
+      "tagline": "物质正从一颗星流向另一颗的食双星",
+      "physical": {
+        "mass_kg": 5.905548e+30,
+        "radius_km": 10574640.0,
+        "density_g_cm3": 0.001192270560693877,
+        "gravity_m_s2": 3.5246437163385465,
+        "escape_velocity_km_s": 273.02687936737016,
+        "mean_temp_c": 13026.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "B7II",
+      "subtype": "食双星（质量转移系统）",
+      "members": 2,
+      "note": "两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。",
+      "luminosity_w": 2.4882000000000002e+30,
+      "distance_ly": 960,
+      "constellation": "天琴座",
+      "discovery": {
+        "known_since": "1784 年古德里克发现其光变",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_sheliak"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/sheliak.webp",
+      "source_dates": {
+        "wiki_sheliak": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "almaaz",
+      "name": "御夫座 ε",
+      "name_en": "Epsilon Aurigae",
+      "category": "star",
+      "parent": null,
+      "tagline": "每 27 年才发生一次罕见星食的'柱一'",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 99485100.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 7476.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "F0Iab",
+      "subtype": "食变星（F0Iab 主星 + 尘埃盘伴星）",
+      "members": 2,
+      "note": "每 27.1 年发生一次持续约 2 年的罕见星食，遮挡者被认为是一颗被巨大尘埃盘包裹的伴星。主星质量估计分歧极大（约 2.2~15 M☉），暂无共识，故质量诚实留空。",
+      "luminosity_w": 1.449855e+31,
+      "distance_ly": 1350,
+      "constellation": "御夫座",
+      "discovery": {
+        "known_since": "自古已知；1821 年前后开始被系统记录",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_almaaz"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/almaaz.webp",
+      "source_dates": {
+        "wiki_almaaz": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "kepler_452",
+      "name": "开普勒 452",
+      "name_en": "Kepler-452",
+      "category": "star",
+      "parent": null,
+      "tagline": "拥有'地球表哥' Kepler-452b 的类太阳恒星",
+      "physical": {
+        "mass_kg": 2.0619707999999997e+30,
+        "radius_km": 772227.0000000001,
+        "density_g_cm3": 1.0689538483393863,
+        "gravity_m_s2": 230.76968055664267,
+        "escape_velocity_km_s": 597.0034809064592,
+        "mean_temp_c": 5483.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "G2V",
+      "subtype": "黄矮星（G2V）",
+      "members": null,
+      "note": "拥有系外行星 Kepler-452b：第一颗被确认位于类太阳恒星宜居带内、且半径接近地球的行星，公转周期约 385 天，被昵称为'地球表哥'。",
+      "luminosity_w": 4.210800000000001e+26,
+      "distance_ly": 1810,
+      "constellation": "天鹅座",
+      "discovery": {
+        "known_since": "2015 年开普勒望远镜确认其行星系统",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_kepler452"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/kepler_452.webp",
+      "source_dates": {
+        "wiki_kepler452": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "kepler_22",
+      "name": "开普勒 22",
+      "name_en": "Kepler-22",
+      "category": "star",
+      "parent": null,
+      "tagline": "拥有首颗宜居带系外行星的类太阳恒星",
+      "physical": {
+        "mass_kg": 1.7040588e+30,
+        "radius_km": 604563.3,
+        "density_g_cm3": 1.8410713835994599,
+        "gravity_m_s2": 311.1624763385191,
+        "escape_velocity_km_s": 613.3798391394798,
+        "mean_temp_c": 5322.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "G5V",
+      "subtype": "黄矮星（G5V）",
+      "members": null,
+      "note": "拥有 Kepler-22b：第一颗被确认位于类太阳恒星宜居带内的系外行星，半径约 2.4 倍地球，可能是一颗'水世界'。",
+      "luminosity_w": 3.02412e+26,
+      "distance_ly": 644,
+      "constellation": "天鹅座",
+      "discovery": {
+        "known_since": "2011 年开普勒望远镜发现其行星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_kepler22"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/kepler_22.webp",
+      "source_dates": {
+        "wiki_kepler22": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "trappist_1",
+      "name": "特拉比斯特 1",
+      "name_en": "TRAPPIST-1",
+      "category": "star",
+      "parent": null,
+      "tagline": "拥有七颗地球大小行星的红矮星，系外行星研究圣地",
+      "physical": {
+        "mass_kg": 1.7855832000000002e+29,
+        "radius_km": 82927.44,
+        "density_g_cm3": 74.74750579876563,
+        "gravity_m_s2": 1732.88513359834,
+        "escape_velocity_km_s": 536.1039599618125,
+        "mean_temp_c": 2292.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": 79.2
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M8V",
+      "subtype": "红矮星（M8V）",
+      "members": null,
+      "note": "仅比木星大一点的超冷红矮星，却拥有 7 颗地球大小的行星，其中 3~4 颗位于宜居带；所有行星紧密排列，从最内侧看出去会是天空中的'大月亮'。JWST 正在其大气中搜寻生命迹象。",
+      "luminosity_w": 2.166648e+23,
+      "distance_ly": 40.66,
+      "constellation": "宝瓶座",
+      "discovery": {
+        "known_since": "1999 年 2MASS 巡天记录；2016-2017 年确认七行星系统",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_trappist1"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/trappist_1.webp",
+      "source_dates": {
+        "wiki_trappist1": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "gliese_581",
+      "name": "格利泽 581",
+      "name_en": "Gliese 581",
+      "category": "star",
+      "parent": null,
+      "tagline": "拥有多颗系外行星的红矮星，宜居性争论的经典目标",
+      "physical": {
+        "mass_kg": 6.16404e+29,
+        "radius_km": 208710.0,
+        "density_g_cm3": 16.18628059477323,
+        "gravity_m_s2": 944.4199106213465,
+        "escape_velocity_km_s": 627.8692213284247,
+        "mean_temp_c": 3206.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M3V",
+      "subtype": "红矮星（M3V）",
+      "members": null,
+      "note": "距地仅 20.4 光年的红矮星，已确认多颗系外行星；其中 Gliese 581g/c/d 是否宜居曾引发长期争论，是系外行星科学早期最著名的事件之一。",
+      "luminosity_w": 4.9764e+24,
+      "distance_ly": 20.4,
+      "constellation": "天秤座",
+      "discovery": {
+        "known_since": "2005 年发现首颗系外行星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_gj581"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/gliese_581.webp",
+      "source_dates": {
+        "wiki_gj581": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "kepler_186",
+      "name": "开普勒 186",
+      "name_en": "Kepler-186",
+      "category": "star",
+      "parent": null,
+      "tagline": "拥有宜居带'地球大小'行星的红矮星",
+      "physical": {
+        "mass_kg": 1.0816896e+30,
+        "radius_km": 363851.10000000003,
+        "density_g_cm3": 5.36096495458673,
+        "gravity_m_s2": 545.3075014399146,
+        "escape_velocity_km_s": 629.937670308999,
+        "mean_temp_c": 3481.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M1V",
+      "subtype": "红矮星（M1V）",
+      "members": null,
+      "note": "拥有五颗行星，其中最外侧的 Kepler-186f 是首颗被确认位于宜居带内、且半径接近地球的系外行星；不过它的阳光远比地球暗淡，正午可能如同地球的黄昏。",
+      "luminosity_w": 2.1054e+25,
+      "distance_ly": 579,
+      "constellation": "天鹅座",
+      "discovery": {
+        "known_since": "2014 年开普勒望远镜确认五行星系统",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_kepler186"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/kepler_186.webp",
+      "source_dates": {
+        "wiki_kepler186": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "cancri_55",
+      "name": "巨蟹座 55",
+      "name_en": "55 Cancri",
+      "category": "star",
+      "parent": null,
+      "tagline": "已发现五颗行星的双星系统，含一颗'岩浆海'超级地球",
+      "physical": {
+        "mass_kg": 1.88898e+30,
+        "radius_km": 800054.9999999999,
+        "density_g_cm3": 0.8806010912774288,
+        "gravity_m_s2": 196.9581129535341,
+        "escape_velocity_km_s": 561.3863608229891,
+        "mean_temp_c": 5099.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "G8V",
+      "subtype": "黄矮星（G8V 双星）",
+      "members": 2,
+      "note": "已发现 5 颗系外行星的双星系统；其中巨蟹座 55e 是著名的'超级地球'，表面温度足以熔化岩石，可能是一片岩浆海。",
+      "luminosity_w": 2.41164e+26,
+      "distance_ly": 40.9,
+      "constellation": "巨蟹座",
+      "discovery": {
+        "known_since": "1997 年起陆续发现五颗行星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_55cancri"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/cancri_55.webp",
+      "source_dates": {
+        "wiki_55cancri": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "pegasi_51",
+      "name": "飞马座 51",
+      "name_en": "51 Pegasi",
+      "category": "star",
+      "parent": null,
+      "tagline": "人类发现第一颗系外行星的恒星，2019 年诺贝尔物理学奖",
+      "physical": {
+        "mass_kg": 2.207124e+30,
+        "radius_km": 855711.0,
+        "density_g_cm3": 0.8409240622011027,
+        "gravity_m_s2": 201.16791095732086,
+        "escape_velocity_km_s": 586.7564984782017,
+        "mean_temp_c": 5519.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "G2IV",
+      "subtype": "黄次巨星（G2IV）",
+      "members": null,
+      "note": "人类发现的第一颗围绕类太阳恒星的系外行星（飞马座 51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。",
+      "luminosity_w": 5.742e+26,
+      "distance_ly": 47.9,
+      "constellation": "飞马座",
+      "discovery": {
+        "known_since": "1995 年 Mayor & Queloz 发现其行星",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_51peg",
+        "nobel_2019"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/pegasi_51.webp",
+      "source_dates": {
+        "wiki_51peg": "2026-10-24",
+        "nobel_2019": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
+    },
+    {
+      "id": "beta_pictoris",
+      "name": "绘架座 β",
+      "name_en": "Beta Pictoris",
+      "category": "star",
+      "parent": null,
+      "tagline": "第一个被直接拍到碎屑盘的恒星，年轻星群的命名来源",
+      "physical": {
+        "mass_kg": 3.559236e+30,
+        "radius_km": 1064421.0,
+        "density_g_cm3": 0.7045760452821527,
+        "gravity_m_s2": 209.66025970311793,
+        "escape_velocity_km_s": 668.0820058846856,
+        "mean_temp_c": 7780.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A6V",
+      "subtype": "白主序星（A6V）",
+      "members": null,
+      "note": "第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座 βb/c）；它还是'绘架座 β 移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。",
+      "luminosity_w": 3.3303599999999997e+27,
+      "distance_ly": 63.4,
+      "constellation": "绘架座",
+      "discovery": {
+        "known_since": "1984 年 IRAS 卫星发现其碎屑盘",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_betapic"
+      ],
+      "verified": "2026-10-24",
+      "article": null,
+      "image": "assets/planets/beta_pictoris.webp",
+      "source_dates": {
+        "wiki_betapic": "2026-10-24"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": true
     }
   ],
   "source_registry": {
@@ -6562,6 +9129,178 @@
     "wiki_iapetus": {
       "name": "Wikipedia · Iapetus (moon)",
       "url": "https://en.wikipedia.org/wiki/Iapetus_(moon)"
+    },
+    "wiki_sirius_b": {
+      "name": "Wikipedia · Sirius B",
+      "url": "https://en.wikipedia.org/wiki/Sirius_B"
+    },
+    "wiki_40eri": {
+      "name": "Wikipedia · 40 Eridani",
+      "url": "https://en.wikipedia.org/wiki/40_Eridani"
+    },
+    "wiki_crab_pulsar": {
+      "name": "Wikipedia · Crab Pulsar",
+      "url": "https://en.wikipedia.org/wiki/Crab_Pulsar"
+    },
+    "wiki_vela_pulsar": {
+      "name": "Wikipedia · Vela Pulsar",
+      "url": "https://en.wikipedia.org/wiki/Vela_Pulsar"
+    },
+    "wiki_sgr1806": {
+      "name": "Wikipedia · SGR 1806-20",
+      "url": "https://en.wikipedia.org/wiki/SGR_1806-20"
+    },
+    "wiki_alphacen": {
+      "name": "Wikipedia · Alpha Centauri",
+      "url": "https://en.wikipedia.org/wiki/Alpha_Centauri"
+    },
+    "wiki_castor": {
+      "name": "Wikipedia · Castor (star)",
+      "url": "https://en.wikipedia.org/wiki/Castor_(star)"
+    },
+    "wiki_pollux": {
+      "name": "Wikipedia · Pollux (star)",
+      "url": "https://en.wikipedia.org/wiki/Pollux_(star)"
+    },
+    "wiki_capella": {
+      "name": "Wikipedia · Capella",
+      "url": "https://en.wikipedia.org/wiki/Capella"
+    },
+    "wiki_aldebaran": {
+      "name": "Wikipedia · Aldebaran",
+      "url": "https://en.wikipedia.org/wiki/Aldebaran"
+    },
+    "wiki_spica": {
+      "name": "Wikipedia · Spica",
+      "url": "https://en.wikipedia.org/wiki/Spica"
+    },
+    "wiki_regulus": {
+      "name": "Wikipedia · Regulus",
+      "url": "https://en.wikipedia.org/wiki/Regulus"
+    },
+    "wiki_fomalhaut": {
+      "name": "Wikipedia · Fomalhaut",
+      "url": "https://en.wikipedia.org/wiki/Fomalhaut"
+    },
+    "wiki_altair": {
+      "name": "Wikipedia · Altair",
+      "url": "https://en.wikipedia.org/wiki/Altair"
+    },
+    "wiki_deneb": {
+      "name": "Wikipedia · Deneb",
+      "url": "https://en.wikipedia.org/wiki/Deneb"
+    },
+    "wiki_mirfak": {
+      "name": "Wikipedia · Mirfak",
+      "url": "https://en.wikipedia.org/wiki/Mirfak"
+    },
+    "wiki_hamal": {
+      "name": "Wikipedia · Hamal",
+      "url": "https://en.wikipedia.org/wiki/Hamal"
+    },
+    "wiki_markab": {
+      "name": "Wikipedia · Markab",
+      "url": "https://en.wikipedia.org/wiki/Markab"
+    },
+    "wiki_alpheratz": {
+      "name": "Wikipedia · Alpheratz",
+      "url": "https://en.wikipedia.org/wiki/Alpheratz"
+    },
+    "wiki_mirach": {
+      "name": "Wikipedia · Mirach",
+      "url": "https://en.wikipedia.org/wiki/Mirach"
+    },
+    "wiki_wezen": {
+      "name": "Wikipedia · Wezen",
+      "url": "https://en.wikipedia.org/wiki/Wezen"
+    },
+    "wiki_adhara": {
+      "name": "Wikipedia · Epsilon Canis Majoris",
+      "url": "https://en.wikipedia.org/wiki/Epsilon_Canis_Majoris"
+    },
+    "wiki_aludra": {
+      "name": "Wikipedia · Eta Canis Majoris",
+      "url": "https://en.wikipedia.org/wiki/Eta_Canis_Majoris"
+    },
+    "wiki_mucephei": {
+      "name": "Wikipedia · Mu Cephei",
+      "url": "https://en.wikipedia.org/wiki/Mu_Cephei"
+    },
+    "wiki_uysct": {
+      "name": "Wikipedia · UY Scuti",
+      "url": "https://en.wikipedia.org/wiki/UY_Scuti"
+    },
+    "wiki_rwcep": {
+      "name": "Wikipedia · RW Cephei",
+      "url": "https://en.wikipedia.org/wiki/RW_Cephei"
+    },
+    "wiki_spersei": {
+      "name": "Wikipedia · S Persei",
+      "url": "https://en.wikipedia.org/wiki/S_Persei"
+    },
+    "wiki_mira": {
+      "name": "Wikipedia · Mira",
+      "url": "https://en.wikipedia.org/wiki/Mira"
+    },
+    "wiki_pcygni": {
+      "name": "Wikipedia · P Cygni",
+      "url": "https://en.wikipedia.org/wiki/P_Cygni"
+    },
+    "wiki_naos": {
+      "name": "Wikipedia · Zeta Puppis",
+      "url": "https://en.wikipedia.org/wiki/Zeta_Puppis"
+    },
+    "wiki_r136a1": {
+      "name": "Wikipedia · R136a1",
+      "url": "https://en.wikipedia.org/wiki/R136a1"
+    },
+    "wiki_algol": {
+      "name": "Wikipedia · Algol",
+      "url": "https://en.wikipedia.org/wiki/Algol"
+    },
+    "wiki_sheliak": {
+      "name": "Wikipedia · Beta Lyrae",
+      "url": "https://en.wikipedia.org/wiki/Beta_Lyrae"
+    },
+    "wiki_almaaz": {
+      "name": "Wikipedia · Epsilon Aurigae",
+      "url": "https://en.wikipedia.org/wiki/Epsilon_Aurigae"
+    },
+    "wiki_kepler452": {
+      "name": "Wikipedia · Kepler-452",
+      "url": "https://en.wikipedia.org/wiki/Kepler-452"
+    },
+    "wiki_kepler22": {
+      "name": "Wikipedia · Kepler-22",
+      "url": "https://en.wikipedia.org/wiki/Kepler-22"
+    },
+    "wiki_trappist1": {
+      "name": "Wikipedia · TRAPPIST-1",
+      "url": "https://en.wikipedia.org/wiki/TRAPPIST-1"
+    },
+    "wiki_gj581": {
+      "name": "Wikipedia · Gliese 581",
+      "url": "https://en.wikipedia.org/wiki/Gliese_581"
+    },
+    "wiki_kepler186": {
+      "name": "Wikipedia · Kepler-186",
+      "url": "https://en.wikipedia.org/wiki/Kepler-186"
+    },
+    "wiki_55cancri": {
+      "name": "Wikipedia · 55 Cancri",
+      "url": "https://en.wikipedia.org/wiki/55_Cancri"
+    },
+    "wiki_51peg": {
+      "name": "Wikipedia · 51 Pegasi",
+      "url": "https://en.wikipedia.org/wiki/51_Pegasi"
+    },
+    "wiki_betapic": {
+      "name": "Wikipedia · Beta Pictoris",
+      "url": "https://en.wikipedia.org/wiki/Beta_Pictoris"
+    },
+    "nobel_2019": {
+      "name": "诺贝尔物理学奖 2019 新闻稿（系外行星的发现）",
+      "url": "https://www.nobelprize.org/prizes/physics/2019/press-release/"
     }
   }
 }

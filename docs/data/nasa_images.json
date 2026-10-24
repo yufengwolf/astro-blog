@@ -286,8 +286,8 @@
     "frame": true
   },
   "cmb": {
-    "nasa_id": "PIA17449",
-    "credit": "ESA/NASA · Planck 卫星与宇宙微波背景全天图",
+    "nasa_id": "PIA16873",
+    "credit": "ESA/NASA · Planck 卫星全天图（2013 年发布）",
     "frame": true
   },
   "virgo_cluster": {
@@ -374,6 +374,11 @@
   "vesta": {
     "nasa_id": "PIA15141",
     "credit": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA · 黎明号灶神星彩色影像",
+    "frame": true
+  },
+  "observable_universe": {
+    "nasa_id": "PIA17449",
+    "credit": "ESA/NASA · Planck 卫星与宇宙微波背景（艺术概念图）",
     "frame": true
   }
 }

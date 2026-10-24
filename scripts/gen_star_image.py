@@ -8,6 +8,7 @@
   - 球体外缘叠加极淡辉光（alpha 峰值 < 40），在深色主题下可见，但不会被
     对比页的球体测量算法（alpha>=40 才算实心）计入，故不影响比例。
 太阳等有真实 NASA 影像的恒星默认跳过（只补程序化示意图缺失的恒星）。
+温度取值链：mean_temp_c → （subtype 含中子星/磁星的致密残骸按 35000 K 蓝白渲染）→ 5778 K。
 
 用法：python gen_star_image.py [--root DIR] [--force] [--ids a,b,c]
 """
@@ -115,7 +116,12 @@ def main():
         ph = o.get("physical") or {}
         tc = ph.get("mean_temp_c")
         # 恒星的 mean_temp_c 存储为「开尔文减去 273.15」的等效摄氏值
-        kelvin = (tc + 273.15) if tc is not None else 5778.0
+        if tc is not None:
+            kelvin = tc + 273.15
+        else:
+            # 致密残骸（脉冲星/磁星）无标准 catalog 表面温度，按约定以蓝白色渲染
+            sub = o.get("subtype") or ""
+            kelvin = 35000.0 if ("中子星" in sub or "磁星" in sub) else 5778.0
         im = generate(kelvin)
         im.save(out, "WEBP", lossless=True)
         print(f"已生成: {out.name}  (T≈{kelvin:.0f}K, 色 {tuple(blackbody_rgb(kelvin))})")

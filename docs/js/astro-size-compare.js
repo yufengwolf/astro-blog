@@ -67,16 +67,40 @@
     if (s.indexOf(".") !== -1) s = s.replace(/0+$/, "").replace(/\.$/, "");
     return s + "×10" + sup(e);
   }
-  function fmtLum(w) { return (w == null) ? "—" : sig3(w / 3.828e26) + " L☉"; }
+  // 中段值（1e-3 ~ 1e3）普通计数法，极端值科学计数法（与 gen_pages.py 的 num3 一致）
+  function num3(x) {
+    if (x === 0) return "0";
+    var a = Math.abs(x);
+    if (a >= 1e-3 && a < 1e3) {
+      var s = x.toPrecision(3);
+      if (s.indexOf(".") !== -1) s = s.replace(/0+$/, "").replace(/\.$/, "");
+      return s;
+    }
+    return sig3(x);
+  }
+  function fmtLum(x) {
+    var w = (x && typeof x === "object" && "lum" in x) ? x.lum : x;
+    return (w == null) ? "—" : num3(w / 3.828e26) + " L☉";
+  }
   // 按天体类型格式化半径（入参可以是行对象或纯数值）
   function fmtRadius(x) {
     var r = (x && typeof x === "object" && "radius" in x) ? x : null;
     var v = r ? r.radius : x;
     if (v == null) return "—";
     var ck = r ? r.cat_key : null;
-    if (ck === "star") return sig3(v / 695700) + " R☉";
+    if (ck === "star") {
+      var rs = v / 695700;
+      if (rs < 0.001) return sig3(rs) + " R☉";                       // 脉冲星/白矮星
+      if (rs >= 1000) return Math.round(rs).toLocaleString("en-US") + " R☉";  // 红超巨星
+      return num3(rs) + " R☉";
+    }
     if (ck === "black_hole") return v >= 1e8 ? sig3(v / 1.496e8) + " AU" : sig3(v) + " km";
-    if (ck && EXT_CATS[ck]) return sig3(v / LY_KM) + " 光年";
+    if (ck && EXT_CATS[ck]) {
+      var ly = v / LY_KM;
+      if (ly < 0.001) return sig3(ly) + " 光年";
+      if (ly >= 1000) return Math.round(ly).toLocaleString("en-US") + " 光年";
+      return num3(ly) + " 光年";
+    }
     return (v < 1000 ? v.toFixed(1) : v.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " km";
   }
   // 质量：恒星/黑洞/星系/星团/大尺度结构用 M☉，行星用 kg
@@ -85,17 +109,45 @@
     var r = (x && typeof x === "object" && "mass" in x) ? x : null;
     var v = r ? r.mass : x;
     if (v == null) return "—";
-    return (r && MASS_SUN_CATS[r.cat_key]) ? sig3(v / 1.9884e30) + " M☉" : sig3(v) + " kg";
+    return (r && MASS_SUN_CATS[r.cat_key]) ? num3(v / 1.9884e30) + " M☉" : sig3(v) + " kg";
   }
-  function fmtKm3(r) {
-    var v = (r && typeof r === "object") ? volume(r) : r;
+  function fmtKm3(x) {
+    var v = (x && typeof x === "object") ? volume(x) : x;
     return (v == null) ? "—" : sig3(v) + " km³";
   }
-  function fmtDensity(d) { return (d == null) ? "—" : d + " g/cm³"; }
-  function fmtGravity(g) { return (g == null) ? "—" : g.toFixed(2) + " m/s²"; }
-  function fmtVelocity(v) { return (v == null) ? "—" : (v < 1 ? v.toFixed(3) : v.toFixed(2)) + " km/s"; }
-  function fmtTemp(t) { return (t == null) ? "—" : t + " °C"; }
-  function fmtRotation(h) {
+  function fmtDensity(x) {
+    var d = (x && typeof x === "object" && "density" in x) ? x.density : x;
+    if (d == null) return "—";
+    // 中子星密度可达 10¹⁴ g/cm³、红超巨星低至 10⁻⁹，用科学计数法
+    return num3(d) + " g/cm³";
+  }
+  function fmtGravity(x) {
+    var g = (x && typeof x === "object" && "gravity" in x) ? x.gravity : x;
+    if (g == null) return "—";
+    if (g >= 1e4 || (g > 0 && g < 0.01)) return sig3(g) + " m/s²";   // 白矮星/中子星/超巨星
+    return g.toFixed(2) + " m/s²";
+  }
+  function fmtVelocity(x) {
+    var v = (x && typeof x === "object" && "escape" in x) ? x.escape : x;
+    if (v == null) return "—";
+    if (v >= 1e5) return sig3(v) + " km/s";                          // 中子星逃逸速度
+    return (v < 1 ? v.toFixed(3) : v.toFixed(2)) + " km/s";
+  }
+  // 恒星/星云/大尺度结构的 mean_temp_c 为「开尔文-273.15」等效值，展示 K（与详情页一致）
+  function fmtTemp(x) {
+    var r = (x && typeof x === "object" && "temp" in x) ? x : null;
+    var t = r ? r.temp : x;
+    if (t == null) return "—";
+    var ck = r ? r.cat_key : null;
+    if (ck === "star" || ck === "nebula" || ck === "structure") {
+      var k = t + 273.15;
+      if (k >= 1e6) return sig3(k) + " K";
+      return Math.round(k).toLocaleString("en-US") + " K";
+    }
+    return t + " °C";
+  }
+  function fmtRotation(x) {
+    var h = (x && typeof x === "object" && "rotation" in x) ? x.rotation : x;
     if (h == null) return "—";
     var retro = h < 0, s; h = Math.abs(h);
     s = h >= 48 ? (h / 24).toFixed(2) + " 天" : h.toFixed(2) + " 小时";
@@ -330,14 +382,16 @@
       ["表面重力", fmtGravity, function (r) { return r.gravity; }],
       ["逃逸速度", fmtVelocity, function (r) { return r.escape; }],
       ["平均温度", fmtTemp, function (r) { return r.temp; }],
-      ["自转周期", fmtRotation, function (r) { return r.rotation; }]
+      ["自转周期", fmtRotation, function (r) { return r.rotation; }],
+      // 类型细分为字符串（恒星类型/星云类型/星系类型等），无倍数概念，仅展示
+      ["类型", function (r) { return r.subtype || "—"; }, function (r) { return r.subtype; }]
     ];
     var html = '<table class="sizecmp-table"><thead><tr>' +
       "<th>参数</th><th>" + esc(a.name) + "</th><th>" + esc(b.name) +
       "</th><th>A ÷ B</th></tr></thead><tbody>";
     defs.forEach(function (d) {
       var va = d[2](a), vb = d[2](b);
-      var ratio = (va != null && vb) ? (va / vb) : null;
+      var ratio = (typeof va === "number" && typeof vb === "number" && vb) ? (va / vb) : null;
       html += "<tr><th>" + d[0] + "</th><td>" + d[1](a) + "</td><td>" + d[1](b) +
         "</td><td>" + (ratio == null ? "—" : ratio.toPrecision(3) + "×") + "</td></tr>";
     });

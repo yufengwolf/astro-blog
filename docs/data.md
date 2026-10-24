@@ -1,10 +1,10 @@
 ---
-description: "下载星野笔记的天体数据集：107 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"
+description: "下载星野笔记的天体数据集：151 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"
 ---
 
 # 天体数据集
 
-本站收录的 107 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-10-24。
+本站收录的 151 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-10-24。
 
 <div class="dl-cards">
   <a class="dl-card" href="../data/astro.json" download>
@@ -49,7 +49,9 @@ description: "下载星野笔记的天体数据集：107 个天体的质量、�
 - LIGO/Virgo 合作组 · GW190521 探测论文（2020）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102
 - Wikipedia 各天体条目（著名星云/星系/星团/小天体，2026-10-24 核对）https://en.wikipedia.org/
 - LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102
+- Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/
+- 诺贝尔物理学奖 2019 新闻稿（飞马座 51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/
 
 ## 待补充
 
-TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；m7/ngc4755 等 NASA 库无真图的天体保留程序化贴图；系外行星为后续扩展方向
+TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；北冕座 R 因无可靠距离数据未收录；m7/ngc4755 等 NASA 库无真图的天体保留程序化贴图

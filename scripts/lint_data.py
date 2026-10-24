@@ -22,7 +22,9 @@ DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
 # parent 允许的父分类（None 表示必须为空）。校验时比对 parent 对象的分类，
 # 因此父对象可以出现在子对象之后（前向引用，如黑洞→其宿主星系）。
 PARENT_RULES = {
-    "star": {None},
+    # star 允许指向另一颗恒星（双星/聚星系统的伴星）、星云（超新星遗迹内的脉冲星）
+    # 或星团（如 R136a1 属于 R136 星团）
+    "star": {None, "star", "nebula", "cluster"},
     "planet": {"star"},
     "dwarf_planet": {"star"},
     "moon": {"planet", "dwarf_planet"},
@@ -104,7 +106,10 @@ def main():
         if cat in DENSITY_CATS and d is not None and not (0.1 <= d <= 25):
             err(f"{oid}: density_g_cm3 越界: {d}")
         t = ph.get("mean_temp_c")
-        if t is not None and not (-273 <= t <= 60000):
+        # 中子星/磁星表面温度可达 10⁶ K 量级（如蟹云脉冲星约 1.6×10⁶ K），
+        # 恒星类上限放宽到 1e7，其余天体维持 60000 K 防笔误
+        t_max = 1e7 if cat == "star" else 60000
+        if t is not None and not (-273 <= t <= t_max):
             err(f"{oid}: mean_temp_c 越界: {t}")
         p = orb.get("orbital_period_days")
         if p is not None and not (0.01 <= p <= 1e7):
