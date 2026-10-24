@@ -3,7 +3,7 @@ description: "土星（Saturn）的天体数据：5.68×10²⁶ kg、半径 58,2
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/saturn.webp" alt="土星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA03158" target="_blank" rel="noopener">NASA/ESA/STScI · 哈勃望远镜</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/saturn.webp" alt="土星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00349" target="_blank" rel="noopener">NASA/JPL/USGS</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>土星 <small>Saturn</small></h1>

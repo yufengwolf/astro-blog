@@ -15,20 +15,20 @@ theme:
   name: material
   language: zh
 
-  # 浅色 / 深色双主题切换
+  # 深色默认 / 浅色可切换（天体贴图多为黑底太空照，深色页面不显黑色残边）
   palette:
-    - scheme: default                 # 浅色
+    - scheme: slate                   # 深色（默认）
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
-        name: 切换深色模式
-    - scheme: slate                   # 深色
+        name: 切换浅色模式
+    - scheme: default                 # 浅色
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
-        name: 切换浅色模式
+        name: 切换深色模式
 
   # 侧边栏多级导航 / 站内搜索 / 体验特性
   features:
