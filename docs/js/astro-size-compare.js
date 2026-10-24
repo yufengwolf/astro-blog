@@ -2,8 +2,11 @@
  * astro-size-compare.js — 天体对比工具页（原生 JS，无依赖，无后台）
  *
  * 默认两个选择框（A / B，默认 月球 / 地球）。选择后：
- *   1) 按**真实直径比例**用 SVG 绘制两个球体（含真实贴图；小球放大到最小可见尺寸时
- *      在说明里标注真实倍数，以数字为准）——解决「AI 画图把 95% 画成更大」的视觉事实错误；
+ *   1) 按**真实直径比例**用 SVG 绘制两个球体：贴图先经 canvas 测量本体球半径
+ *      占比，把「本体球体」（而非贴图画布）映射到真实比例——含环图环自然外伸，
+ *      不叠加基准圈；小球放大到最小可见尺寸时在说明里标注真实倍数，以数字为准
+ *      （解决「AI 画图把 95% 画成更大」的视觉事实错误）；图幅超宽时整体等比
+ *      缩小自适应页面；
  *   2) 核心倍数卡：直径 / 体积 / 质量的直观倍数（体积 ∝ 半径³）；
  *   3) 详细数据表：半径、体积、质量、密度、表面重力、逃逸速度、温度、自转，逐行 A÷B 倍数。
  * 状态同步到 location.hash（#cmp=a,b），刷新/分享保持对比组合。
@@ -77,14 +80,53 @@
     });
   }
 
-  // ---- 预加载图片尺寸：按真实宽高比缩放贴图（保留含环天体环系）----
+  // ---- 预加载图片：测真实宽高比 + 本体球半径占比 ----
+  // 贴图按「本体居中」构建：圆盘图本体占画布高 70%，含环图环向外伸展。
+  // 对比图需按「本体球体」（而非整个画布）映射真实比例——否则球体比真实
+  // 比例小 30%，且基准圆会悬浮在球体外（用户看到的"外面一圈"）。
+  // 测量方法：在缩小的 canvas 上二分查找「以图中心为圆心、圆内不透明像素
+  // 占比 ≥ 92% 的最大圆」——该圆恰好止步于本体边缘（环/光晕在四周留透明，
+  // 占比下降即被截住），椭球天体（妊神星）止步于赤道半径，形变如实呈现。
   var pending = rows.length;
   function maybeRender() { if (pending === 0) render(); }
+  function measureSphere(im) {
+    try {
+      var S = 128, ar = im.naturalWidth / im.naturalHeight;
+      var w = ar >= 1 ? S : Math.max(8, Math.round(S * ar));
+      var h = ar >= 1 ? Math.max(8, Math.round(S / ar)) : S;
+      var cv = document.createElement("canvas");
+      cv.width = w; cv.height = h;
+      var ctx = cv.getContext("2d");
+      if (!ctx) return null;
+      ctx.drawImage(im, 0, 0, w, h);
+      var d = ctx.getImageData(0, 0, w, h).data;
+      var cx = w / 2, cy = h / 2, hi = Math.min(cx, cy);
+      function cover(R) {
+        var n = 0, op = 0, R2 = R * R;
+        for (var y = 0; y < h; y++) for (var x = 0; x < w; x++) {
+          var dx = x + 0.5 - cx, dy = y + 0.5 - cy;
+          if (dx * dx + dy * dy <= R2) { n++; if (d[(y * w + x) * 4 + 3] >= 40) op++; }
+        }
+        return n ? op / n : 0;
+      }
+      var lo = 0;
+      if (cover(hi) >= 0.92) { lo = hi; }
+      else for (var i = 0; i < 8; i++) {
+        var mid = (lo + hi) / 2;
+        if (cover(mid) >= 0.92) lo = mid; else hi = mid;
+      }
+      return lo > 0 ? lo / h : null;   // 本体球半径 / 图高
+    } catch (e) { return null; }
+  }
   rows.forEach(function (r) {
     if (!r.image) { pending--; return; }
     var im = new Image();
-    im.onload = function () { r._aspect = im.naturalWidth / im.naturalHeight; if (--pending === 0) render(); };
-    im.onerror = function () { r._aspect = 1; if (--pending === 0) render(); };
+    im.onload = function () {
+      r._aspect = im.naturalWidth / im.naturalHeight;
+      r._sf = measureSphere(im);
+      if (--pending === 0) render();
+    };
+    im.onerror = function () { r._aspect = 1; r._sf = null; if (--pending === 0) render(); };
     im.src = r.image;
   });
 
@@ -101,12 +143,15 @@
   }
 
   function drawBody(g, cx, cy, rPx, r) {
-    var aspect = r._aspect || 1.0;
-    var h = 2 * rPx, w = h * aspect;
     if (r.image) {
+      // 图内本体球半径映射为 rPx：图高 H = rPx / sf（sf 为测得的本体球半径
+      // 占图高比例；测量失败按本站贴图构建约定 0.35 兜底）。含环图环自然
+      // 超出球体范围向外伸展，不再叠加描边基准圆。
+      var sf = r._sf || 0.35;
+      var H = rPx / sf, W = H * (r._aspect || 1);
       var img = el("image", {
-        "x": cx - w / 2, "y": cy - h / 2,
-        "width": w, "height": h, "preserveAspectRatio": "xMidYMid meet"
+        "x": cx - W / 2, "y": cy - H / 2,
+        "width": W, "height": H, "preserveAspectRatio": "xMidYMid meet"
       });
       setHref(img, r.image);
       g.appendChild(img);
@@ -119,11 +164,11 @@
       });
       t.textContent = r.name.charAt(0);
       g.appendChild(t);
+      // 仅无贴图的纯色圆保留描边（即球体边界本身，非悬浮基准圈）
+      g.appendChild(el("circle", {
+        "cx": cx, "cy": cy, "r": rPx, "fill": "none", "class": "sizecmp-stroke"
+      }));
     }
-    // 球体描边：圆盘天体正好圆边；含环图环自然露出圆外
-    g.appendChild(el("circle", {
-      "cx": cx, "cy": cy, "r": rPx, "fill": "none", "class": "sizecmp-stroke"
-    }));
   }
 
   function renderViz(a, b) {
@@ -132,28 +177,41 @@
       noteEl.textContent = "所选天体缺少半径数据，无法绘制大小对比。";
       return;
     }
-    var MAX_PX = 150, MIN_PX = 7;            // 大球半径上限 / 小球半径下限（保可见）
+    var VW = 1000, VH = 760, MARGIN = 30, GAP = 90;
+    var MAX_PX = 240, MIN_PX = 8;            // 大球半径上限 / 小球半径下限（保可见）
+    function drawn(r, rPx) {
+      if (!r.image) return { w: 2 * rPx, h: 2 * rPx };
+      var h = rPx / (r._sf || 0.35);
+      return { w: h * (r._aspect || 1), h: h };
+    }
     var scale = MAX_PX / Math.max(a.radius, b.radius);
     var pa = Math.max(a.radius * scale, MIN_PX);
     var pb = Math.max(b.radius * scale, MIN_PX);
-    var baseY = 350, gap = 70;
-    var totalW = 2 * pa + gap + 2 * pb;
-    var startX = (800 - totalW) / 2;
-    var cxA = startX + pa, cxB = startX + 2 * pa + gap + pb;
+    var clampedA = a.radius * scale < MIN_PX && a.radius <= b.radius;
+    var clampedB = b.radius * scale < MIN_PX && b.radius < a.radius;
+    // 自适应页面：贴图外沿总宽超出画布时整体等比缩小（真实比例不变），
+    // 窄屏下 SVG 随容器宽度等比缩放，同一套比例适配任意屏宽
+    var totalW = drawn(a, pa).w + drawn(b, pb).w + GAP;
+    var fit = Math.min(1, (VW - 2 * MARGIN) / totalW);
+    pa *= fit; pb *= fit;
+    var da = drawn(a, pa), db = drawn(b, pb);
+    var baseY = 650;                          // 球体底边基线（下有名称标注）
+    var startX = (VW - (da.w + db.w + GAP)) / 2;
+    var cxA = startX + da.w / 2, cxB = startX + da.w + GAP + db.w / 2;
     var g = el("g", {});
     drawBody(g, cxA, baseY - pa, pa, a);
     drawBody(g, cxB, baseY - pb, pb, b);
     svg.appendChild(g);
     function label(cx, r) {
-      var t1 = el("text", { "x": cx, "y": baseY + 24, "text-anchor": "middle", "class": "sizecmp-name" });
+      var t1 = el("text", { "x": cx, "y": baseY + 26, "text-anchor": "middle", "class": "sizecmp-name" });
       t1.textContent = r.name;
-      var t2 = el("text", { "x": cx, "y": baseY + 46, "text-anchor": "middle", "class": "sizecmp-sub" });
+      var t2 = el("text", { "x": cx, "y": baseY + 48, "text-anchor": "middle", "class": "sizecmp-sub" });
       t2.textContent = fmtRadius(r.radius);
       svg.appendChild(t1); svg.appendChild(t2);
     }
     label(cxA, a); label(cxB, b);
     var ratio = Math.max(a.radius, b.radius) / Math.min(a.radius, b.radius);
-    var clamped = (pa === MIN_PX && a.radius < b.radius) || (pb === MIN_PX && b.radius < a.radius);
+    var clamped = clampedA || clampedB;
     noteEl.textContent =
       "球体按真实直径比例绘制（" + a.name + " " + fmtRadius(a.radius) + " : " +
       b.name + " " + fmtRadius(b.radius) + " ≈ " + ratio.toFixed(1) + " : 1）" +

@@ -77,4 +77,4 @@ description: "天王星（Uranus）的天体数据：8.68×10²⁵ kg、半径 2
 <p class="obj-nav">← 上一颗：<a href="../saturn/">土星</a></p>
 <p class="obj-nav">下一颗：<a href="../neptune/">海王星</a> →</p>
 
-<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.4（2026-10-18 核对）· 35 个天体已全部配图</p>

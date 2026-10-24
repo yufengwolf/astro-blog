@@ -72,4 +72,4 @@ description: "阋神星（Eris）的天体数据：—、半径 —、密度 —
 <p class="obj-nav">← 上一颗：<a href="../haumea/">妊神星</a></p>
 <p class="obj-nav">下一颗：<a href="../moon/">月球</a> →</p>
 
-<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.4（2026-10-18 核对）· 35 个天体已全部配图</p>

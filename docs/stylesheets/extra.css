@@ -311,13 +311,16 @@
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent);
 }
 /* 详情页 hero：信息在左，大图在右（不再圆形头像式小框，可看细节；
-   含环宽幅图完整显示球+环，圆形天体等大呈现） */
+   含环宽幅图完整显示球+环，圆形天体等大呈现）
+   order:2 对裸 .astro-img（无 credit 的 AI 示意图等）同样生效，
+   保证所有天体的大图位置一致——不再有 credit 的在右、没 credit 的在左 */
 .obj-hero .astro-img {
   width: auto;
   height: 360px;
   max-width: 100%;
   flex: 0 0 auto;
   background: transparent;
+  order: 2;
 }
 .obj-hero .astro-img img { width: auto; height: 360px; max-width: 100%; }
 .obj-hero-imgwrap {
@@ -595,6 +598,7 @@
   .astro-toolbar { position: static; }
   .obj-hero { justify-content: center; text-align: center; }
   .obj-hero-imgwrap { order: -1; }   /* 窄屏图片回到顶部 */
+  .obj-hero .astro-img { order: -1; }  /* 裸贴图（无 credit）同样回顶部 */
   .obj-hero .astro-img, .obj-hero .astro-img img { height: 240px; }
   .obj-keystats { justify-content: center; }
   .cmp-picker { max-width: none; }
@@ -639,7 +643,7 @@
 .sizecmp-viz { text-align: center; margin: 0 0 1.2rem; }
 #sizecmp-svg {
   width: 100%;
-  max-width: 760px;
+  max-width: 900px;
   height: auto;
   margin: 0 auto;
   display: block;

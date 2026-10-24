@@ -76,4 +76,4 @@ description: "海卫一（Triton）的天体数据：2.14×10²² kg、半径 1,
 <p class="obj-nav">← 上一颗：<a href="../iapetus/">土卫八</a></p>
 <p class="obj-nav">下一颗：<a href="../miranda/">天卫五</a> →</p>
 
-<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.4（2026-10-18 核对）· 35 个天体已全部配图</p>

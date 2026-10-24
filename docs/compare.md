@@ -19,7 +19,7 @@ description: "选择任意两个天体，按真实直径比例直观对比大小
 </div>
 
 <div class="sizecmp-viz">
-  <svg id="sizecmp-svg" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid meet" role="img" aria-label="两个天体按真实比例绘制的球体对比图"></svg>
+  <svg id="sizecmp-svg" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet" role="img" aria-label="两个天体按真实比例绘制的球体对比图"></svg>
   <p class="sizecmp-viz-note" id="sizecmp-viz-note"></p>
 </div>
 

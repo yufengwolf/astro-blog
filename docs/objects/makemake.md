@@ -3,7 +3,7 @@ description: "鸟神星（Makemake）的天体数据：—、半径 —、密度
 ---
 
 <div class="obj-hero">
-  <div class="astro-img dwarf_planet"><img src="../../assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成示意图（豆包 · 非真实影像）</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>鸟神星 <small>Makemake</small></h1>
@@ -72,4 +72,4 @@ description: "鸟神星（Makemake）的天体数据：—、半径 —、密度
 <p class="obj-nav">← 上一颗：<a href="../ceres/">谷神星</a></p>
 <p class="obj-nav">下一颗：<a href="../haumea/">妊神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.4（2026-10-18 核对）· 35 个天体已全部配图</p>

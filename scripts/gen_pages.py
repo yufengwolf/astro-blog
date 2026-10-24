@@ -23,7 +23,7 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.3"
+VERSION = "1.4"
 VERIFIED = "2026-10-18"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
@@ -413,7 +413,7 @@ def build_compare(data):
     L.append("</div>")
     L.append("")
     L.append('<div class="sizecmp-viz">')
-    L.append('  <svg id="sizecmp-svg" viewBox="0 0 800 440" '
+    L.append('  <svg id="sizecmp-svg" viewBox="0 0 1000 760" '
              'preserveAspectRatio="xMidYMid meet" '
              'role="img" aria-label="两个天体按真实比例绘制的球体对比图"></svg>')
     L.append('  <p class="sizecmp-viz-note" id="sizecmp-viz-note"></p>')
@@ -619,7 +619,7 @@ def build_object(root, o, by_id, order, registry=None):
         nxt = by_id[order[idx + 1]]
         L.append(f'<p class="obj-nav">下一颗：<a href="../{nxt["id"]}/">{nxt["name"]}</a> →</p>')
     L.append("")
-    L.append(f'<p class="obj-version">数据版本 v{VERSION}（{VERIFIED} 核对）· 32 个天体已全部配图</p>')
+    L.append(f'<p class="obj-version">数据版本 v{VERSION}（{VERIFIED} 核对）· {len(order)} 个天体已全部配图</p>')
     L.append("")
     return "\n".join(L)
 

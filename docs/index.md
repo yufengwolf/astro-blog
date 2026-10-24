@@ -444,4 +444,4 @@ description: "收录 35 个天体的结构化数据：质量、半径、密度�
   <p>全部数值整理自 NASA 公开资料（公共领域），每个天体页面均标注来源与核对日期（最近核对：2026-10-18）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.3 · 收录 35 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.4 · 收录 35 个天体（全部配图）</p>

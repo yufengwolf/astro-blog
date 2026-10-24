@@ -665,7 +665,8 @@
       ],
       "source_dates": {},
       "verified": "2026-10-18",
-      "image": "assets/planets/makemake.webp"
+      "image": "assets/planets/makemake.webp",
+      "image_credit": "AI 生成示意图（豆包 · 非真实影像）"
     },
     {
       "id": "haumea",
@@ -705,7 +706,8 @@
       ],
       "source_dates": {},
       "verified": "2026-10-18",
-      "image": "assets/planets/haumea.webp"
+      "image": "assets/planets/haumea.webp",
+      "image_credit": "AI 生成示意图（豆包 · 非真实影像）"
     },
     {
       "id": "eris",

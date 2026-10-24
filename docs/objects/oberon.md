@@ -74,4 +74,4 @@ description: "天卫四（Oberon）的天体数据：2.88×10²¹ kg、半径 76
 
 <p class="obj-nav">← 上一颗：<a href="../titania/">天卫三</a></p>
 
-<p class="obj-version">数据版本 v1.3（2026-10-18 核对）· 32 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.4（2026-10-18 核对）· 35 个天体已全部配图</p>
