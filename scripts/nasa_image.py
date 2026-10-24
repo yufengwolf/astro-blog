@@ -310,35 +310,58 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     im = im.crop((b, b, im.width - b, im.height - b))
     arr = np.asarray(im)
     if rings:
-        # 行星+环整体：包围盒裁剪，按「行星本体直径」统一缩放，
-        # 使所有带环图球体占最终画布高度的 70%（=420px，与圆盘图一致），
-        # 画布高度统一 600、宽按环伸展；球体显示尺寸跨天体一致，环作附加。
-        cx, cy, rx0, ry0 = detect_disk(arr)
-        pw, ph = int(rx0 * 1.08), int(ry0 * 1.08)
-        x0 = int(max(0, cx - pw)); x1 = int(min(im.width, cx + pw))
-        y0 = int(max(0, cy - ph)); y1 = int(min(im.height, cy + ph))
+        # 行星+环整体：以「行星本体」为中心裁剪（不再用整帧亮区包围盒——
+        # 如 PIA00349 带卫星/延展亮环，亮区铺满全图会把整帧当主体，导致竖向
+        # 切片、本体被截）。改用 95 分位亮区定位行星中心与半径；环的横向伸展
+        # 用低阈值测量并限制为行星半径的 1.25~3 倍（避免远处卫星/背景撑爆
+        # 画布，纵向同理限 1.6 倍，因环在纵向上很薄）。统一按行星本体直径
+        # 缩放（球体=600 画布高的 70%=420），画布高固定 600、宽按环伸展——
+        # 取消 900 上限，环超出边界可自然完整呈现。
+        lum = arr.max(axis=2)
+        Tc = float(np.percentile(lum, 95))
+        bright = lum > Tc
+        _c = np.where(bright.any(axis=0))[0]
+        _r = np.where(bright.any(axis=1))[0]
+        if len(_c) >= 2 and len(_r) >= 2:
+            pcx = float((_c.min() + _c.max()) / 2)
+            pcy = float((_r.min() + _r.max()) / 2)
+            # 取 X/Y 半宽较小者作行星半径：环横向拉长不会污染行星半径
+            prad = float(min((_c.max() - _c.min()) / 2, (_r.max() - _r.min()) / 2))
+        else:
+            pcx, pcy, prad = im.width / 2, im.height / 2, max(im.width, im.height) / 2
+        if planet_r:                       # 手动覆盖（自动检测失准时）
+            prad = float(planet_r)
+        # 环伸展：更低亮阈抓环，但相对行星中心有界增长（防远处卫星/背景）
+        Tring = max(12.0, Tc * 0.35)
+        rmask = lum > Tring
+        rc = np.where(rmask.any(axis=0))[0]
+        rr = np.where(rmask.any(axis=1))[0]
+        if len(rc) >= 2 and len(rr) >= 2:
+            hw = float((rc.max() - rc.min()) / 2)
+            hh = float((rr.max() - rr.min()) / 2)
+        else:
+            hw, hh = prad * 2.3, prad * 1.15
+        hw = min(max(hw, prad * 1.25), prad * 3.0)
+        hh = min(max(hh, prad * 1.12), prad * 1.6)
+        x0 = int(max(0, round(pcx - hw))); x1 = int(min(im.width, round(pcx + hw)))
+        y0 = int(max(0, round(pcy - hh))); y1 = int(min(im.height, round(pcy + hh)))
         tex = im.crop((x0, y0, x1, y1))
         if darkthr is not None and gain:
             darkthr = darkthr * gain    # 阈值坐标系随提亮同步放大
         out, thr, auto_r = cut_space(tex, darkthr, soft)
-        if planet_r:
-            planet_r = float(planet_r)      # 手动覆盖（自动检测失准时）
-        else:
-            planet_r = auto_r
-        target_d = 420.0                      # 球体直径 = 600 画布的 70%
-        scale = target_d / (2 * planet_r) if planet_r > 0 else 420.0 / max(tex.width, tex.height)
+        target_d = 420.0                      # 球体直径 = 600 画布高的 70%
+        scale = target_d / (2 * prad) if prad > 0 else 420.0 / max(tex.width, tex.height)
         new_w = max(1, round(tex.width * scale))
         new_h = max(1, round(tex.height * scale))
-        print(f"  [rings] 包围盒 ({x0},{y0})-({x1},{y1})，行星半径 {planet_r:.0f}px"
-              f"{'（手动）' if planet_r and planet_r != auto_r else ''}，"
-              f"缩放 {scale:.3f}，暗色阈值 thr={thr}"
-              + (f"，软边 soft={soft}" if soft else ""))
+        print(f"  [rings] 行星中心 ({pcx:.0f},{pcy:.0f}) 半径 {prad:.0f}px"
+              f"{'（手动）' if planet_r else ''}，环伸展 {hw:.0f}×{hh:.0f}px，"
+              f"裁剪 ({x0},{y0})-({x1},{y1})，缩放 {scale:.3f}，thr={thr}"
+              + (f"，soft={soft}" if soft else ""))
         tex = out.resize((new_w, new_h), Image.LANCZOS)   # out 已是去背景 RGBA
-        # 画布高固定 600、球体直径固定 420（占 70%，与圆盘图一致），
-        # 宽按环伸展但限 900（极宽环如土星左右裁到主环，免卡片溢出）；
-        # 环超出画布的部分由 paste 越界自然裁掉；所有 rings 图球体跨天体等大。
+        # 画布高固定 600、球体直径固定 420（占 70%，与圆盘图一致）；
+        # 宽按环伸展不设上限（环超出边界自然呈现），所有 rings 图球体跨天体等大。
         canvas_h = 600
-        canvas_w = min(new_w, 900)
+        canvas_w = min(new_w, 2000)
         canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
         canvas.paste(tex, ((canvas_w - new_w) // 2, (canvas_h - new_h) // 2), tex)
         dst = PLANET_DIR / f"{oid}.webp"
