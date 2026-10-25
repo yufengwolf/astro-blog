@@ -4,16 +4,18 @@ description: "选择任意两个天体，按真实直径比例直观对比大小
 
 # 天体对比
 
-选择任意两个天体，下方会按**真实直径比例**绘制它们的球体，并列出体积、质量等关键数据的直观倍数。本站收录的 151 个天体均可参与对比。
+选择任意两个天体（可按类型筛选），下方会按**真实直径比例**绘制它们的球体，并列出体积、质量等关键数据的直观倍数。尺寸悬殊时较小的一方会按比例缩为**一个点**（附实际倍数说明），不再失真放大；本站收录的 151 个天体均可参与对比。
 
 <div class="sizecmp-bar">
   <div class="sizecmp-pick">
     <span class="sizecmp-label">天体 A</span>
+    <select id="sizecmp-cat-a" class="sizecmp-select sizecmp-cat" aria-label="筛选天体 A 的类型"></select>
     <select id="sizecmp-a" class="sizecmp-select" aria-label="选择天体 A"></select>
   </div>
   <button type="button" id="sizecmp-swap" class="sizecmp-swap" title="交换 A / B" aria-label="交换 A 和 B">⇄</button>
   <div class="sizecmp-pick">
     <span class="sizecmp-label">天体 B</span>
+    <select id="sizecmp-cat-b" class="sizecmp-select sizecmp-cat" aria-label="筛选天体 B 的类型"></select>
     <select id="sizecmp-b" class="sizecmp-select" aria-label="选择天体 B"></select>
   </div>
 </div>

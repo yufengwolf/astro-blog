@@ -501,18 +501,20 @@ def build_compare(data):
     L.append("")
     L.append("# 天体对比")
     L.append("")
-    L.append(f"选择任意两个天体，下方会按**真实直径比例**绘制它们的球体，并列出体积、质量等关键数据的直观倍数。"
-             f"本站收录的 {n} 个天体均可参与对比。")
+    L.append(f"选择任意两个天体（可按类型筛选），下方会按**真实直径比例**绘制它们的球体，并列出体积、质量等关键数据的直观倍数。"
+             f"尺寸悬殊时较小的一方会按比例缩为**一个点**（附实际倍数说明），不再失真放大；本站收录的 {n} 个天体均可参与对比。")
     L.append("")
     L.append('<div class="sizecmp-bar">')
     L.append('  <div class="sizecmp-pick">')
     L.append('    <span class="sizecmp-label">天体 A</span>')
+    L.append('    <select id="sizecmp-cat-a" class="sizecmp-select sizecmp-cat" aria-label="筛选天体 A 的类型"></select>')
     L.append('    <select id="sizecmp-a" class="sizecmp-select" aria-label="选择天体 A"></select>')
     L.append("  </div>")
     L.append('  <button type="button" id="sizecmp-swap" class="sizecmp-swap" '
              'title="交换 A / B" aria-label="交换 A 和 B">⇄</button>')
     L.append('  <div class="sizecmp-pick">')
     L.append('    <span class="sizecmp-label">天体 B</span>')
+    L.append('    <select id="sizecmp-cat-b" class="sizecmp-select sizecmp-cat" aria-label="筛选天体 B 的类型"></select>')
     L.append('    <select id="sizecmp-b" class="sizecmp-select" aria-label="选择天体 B"></select>')
     L.append("  </div>")
     L.append("</div>")

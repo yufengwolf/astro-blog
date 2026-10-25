@@ -664,9 +664,14 @@
 }
 .sizecmp-viz-note { font-size: 0.78rem; color: var(--md-default-fg-color--light); margin: 0.5rem 0 0; }
 #sizecmp-svg .sizecmp-name { fill: var(--md-default-fg-color); font-size: 18px; font-weight: 700; }
+/* 真实比例下缩为点的天体：名称加大加粗，视觉权重补偿物理尺寸的渺小 */
+#sizecmp-svg .sizecmp-name-dot { fill: var(--md-primary-fg-color); font-size: 25px; font-weight: 800; }
+#sizecmp-svg .sizecmp-dot-note { fill: var(--md-default-fg-color--light); font-size: 13.5px; }
 #sizecmp-svg .sizecmp-sub { fill: var(--md-default-fg-color--light); font-size: 13px; }
 #sizecmp-svg .sizecmp-initial { font-size: 60px; font-weight: 700; }
 #sizecmp-svg .sizecmp-stroke { stroke: color-mix(in srgb, var(--md-default-fg-color) 35%, transparent); stroke-width: 1.5; }
+/* 类型筛选下拉：比天体下拉小一号，形成层级 */
+.sizecmp-select.sizecmp-cat { font-size: 0.85rem; padding: 0.35rem 0.6rem; min-width: 10rem; }
 .sizecmp-ratios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
