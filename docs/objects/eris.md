@@ -1,5 +1,5 @@
 ---
-description: "阋神星（Eris）的天体数据：—、平均半径 —、密度 —、表面温度 —。数据整理自公开天文资料。"
+description: "阋神星（Eris）的天体数据：1.6×10²² kg、平均半径 1,163 km、密度 —、表面温度 —。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -9,6 +9,8 @@ description: "阋神星（Eris）的天体数据：—、平均半径 —、密�
     <h1>阋神星 <small>Eris</small></h1>
     <p class="obj-tagline">质量最大的矮行星，它的发现促使冥王星降级</p>
     <div class="obj-keystats">
+      <span>1.6×10²² kg</span>
+      <span>1,163 km</span>
     </div>
   </div>
 </div>
@@ -18,8 +20,8 @@ description: "阋神星（Eris）的天体数据：—、平均半径 —、密�
 
 | 参数 | 数值 |
 |---|---|
-| 质量 | — |
-| 平均半径 | — |
+| 质量 | 1.6×10²² kg |
+| 平均半径 | 1,163 km |
 | 表面重力 | — |
 | 逃逸速度 | — |
 | 平均表面温度 | — |

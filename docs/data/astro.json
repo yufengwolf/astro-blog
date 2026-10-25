@@ -182,7 +182,7 @@
         "nssdc_venusfact": "2024-01-11"
       },
       "image_credit": "NASA/JPL · 麦哲伦雷达全球视图",
-      "image_url": "https://images.nasa.gov/details/PIA00478",
+      "image_url": "https://images.nasa.gov/details/S91-50688",
       "image_locked": true
     },
     {
@@ -643,7 +643,10 @@
       "category": "dwarf_planet",
       "parent": "sun",
       "tagline": "柯伊伯带最大的经典天体之一，表面覆盖甲烷冰",
-      "physical": {},
+      "physical": {
+        "radius_km": 715.9,
+        "mass_kg": 3e+21
+      },
       "orbit": {
         "semimajor_axis_km": 6817314568,
         "orbital_period_days": 112364.81,
@@ -683,7 +686,10 @@
       "category": "dwarf_planet",
       "parent": "sun",
       "tagline": "自转极快的椭球状矮行星，拥有光环",
-      "physical": {},
+      "physical": {
+        "radius_km": 780.0,
+        "mass_kg": 4e+21
+      },
       "orbit": {
         "semimajor_axis_km": 6441727731,
         "orbital_period_days": 103208.12,
@@ -724,7 +730,10 @@
       "category": "dwarf_planet",
       "parent": "sun",
       "tagline": "质量最大的矮行星，它的发现促使冥王星降级",
-      "physical": {},
+      "physical": {
+        "radius_km": 1163.0,
+        "mass_kg": 1.6e+22
+      },
       "orbit": {
         "semimajor_axis_km": 10162773801,
         "orbital_period_days": 204516.66,
@@ -6036,7 +6045,7 @@
       "tagline": "银河系内最亮的高光度蓝变星，随时可能爆发为超新星",
       "physical": {
         "mass_kg": null,
-        "radius_km": null,
+        "radius_km": 41742000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
         "escape_velocity_km_s": null,

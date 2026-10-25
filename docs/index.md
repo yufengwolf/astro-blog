@@ -160,35 +160,35 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="dwarf_planet" data-name="鸟神星 Makemake" data-mass="" data-radius="" data-density="" data-temp="" data-period="112364.81" data-moons="1">
+  <article class="astro-card" data-category="dwarf_planet" data-name="鸟神星 Makemake" data-mass="3e+21" data-radius="715.9" data-density="" data-temp="" data-period="112364.81" data-moons="1">
     <a class="astro-card-link" href="objects/makemake/">
       <div class="astro-img dwarf_planet"><img src="assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">鸟神星<span class="en">Makemake</span></div>
         <p class="astro-card-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
-        <div class="astro-card-stats"></div>
+        <div class="astro-card-stats"><span>3×10²¹ kg</span><span>715.9 km</span></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="dwarf_planet" data-name="妊神星 Haumea" data-mass="" data-radius="" data-density="" data-temp="" data-period="103208.12" data-moons="2">
+  <article class="astro-card" data-category="dwarf_planet" data-name="妊神星 Haumea" data-mass="4e+21" data-radius="780.0" data-density="" data-temp="" data-period="103208.12" data-moons="2">
     <a class="astro-card-link" href="objects/haumea/">
       <div class="astro-img dwarf_planet"><img src="assets/planets/haumea.webp" alt="妊神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">妊神星<span class="en">Haumea</span></div>
         <p class="astro-card-tagline">自转极快的椭球状矮行星，拥有光环</p>
-        <div class="astro-card-stats"></div>
+        <div class="astro-card-stats"><span>4×10²¹ kg</span><span>780.0 km</span></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="dwarf_planet" data-name="阋神星 Eris" data-mass="" data-radius="" data-density="" data-temp="" data-period="204516.66" data-moons="1">
+  <article class="astro-card" data-category="dwarf_planet" data-name="阋神星 Eris" data-mass="1.6e+22" data-radius="1163.0" data-density="" data-temp="" data-period="204516.66" data-moons="1">
     <a class="astro-card-link" href="objects/eris/">
       <div class="astro-img dwarf_planet"><img src="assets/planets/eris.webp" alt="阋神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">阋神星<span class="en">Eris</span></div>
         <p class="astro-card-tagline">质量最大的矮行星，它的发现促使冥王星降级</p>
-        <div class="astro-card-stats"></div>
+        <div class="astro-card-stats"><span>1.6×10²² kg</span><span>1,163 km</span></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
@@ -1183,13 +1183,13 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge black_hole">黑洞</span>
     </a>
   </article>
-  <article class="astro-card" data-category="star" data-name="海山二 Eta Carinae" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="star" data-name="海山二 Eta Carinae" data-mass="" data-radius="41742000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/eta_carinae/">
       <div class="astro-img star"><img src="assets/planets/eta_carinae.webp" alt="海山二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">海山二<span class="en">Eta Carinae</span></div>
         <p class="astro-card-tagline">银河系内最亮的高光度蓝变星，随时可能爆发为超新星</p>
-        <div class="astro-card-stats"><span>5×10⁶ L☉</span></div>
+        <div class="astro-card-stats"><span>60 R☉</span><span>5×10⁶ L☉</span></div>
       </div>
       <span class="astro-badge star">恒星</span>
     </a>

@@ -10,9 +10,9 @@ uranus,天王星,Uranus,planet,sun,8.6813e+25,25559,1.27,-195,2867000000,30589,2
 neptune,海王星,Neptune,planet,sun,1.0241e+26,24764,1.638,-200,4515000000,59800,16,2026-10-18
 pluto,冥王星,Pluto,dwarf_planet,sun,1.303e+22,1188.3,1.85,-225,5906376272,90560,5,2026-10-18
 ceres,谷神星,Ceres,dwarf_planet,sun,9.3846e+20,469.7,2.162,,413700000,1682.0,0,2026-10-18
-makemake,鸟神星,Makemake,dwarf_planet,sun,,,,,6817314568,112364.81,1,2026-10-18
-haumea,妊神星,Haumea,dwarf_planet,sun,,,,,6441727731,103208.12,2,2026-10-18
-eris,阋神星,Eris,dwarf_planet,sun,,,,,10162773801,204516.66,1,2026-10-18
+makemake,鸟神星,Makemake,dwarf_planet,sun,3e+21,715.9,,,6817314568,112364.81,1,2026-10-18
+haumea,妊神星,Haumea,dwarf_planet,sun,4e+21,780.0,,,6441727731,103208.12,2,2026-10-18
+eris,阋神星,Eris,dwarf_planet,sun,1.6e+22,1163.0,,,10162773801,204516.66,1,2026-10-18
 moon,月球,Moon,moon,earth,7.346e+22,1737.4,3.344,-20,384400,27.3217,0,2026-10-18
 phobos,火卫一,Phobos,moon,mars,1.06e+16,11.27,1.9,,9378,0.31891,0,2026-10-18
 deimos,火卫二,Deimos,moon,mars,2400000000000000.0,6.3,1.75,,23459,1.26244,0,2026-10-18
@@ -103,7 +103,7 @@ m11,野鸭星团,Wild Duck Cluster,cluster,milky_way,,236517500000000.0,,,,,,202
 m7,托勒密星团,Ptolemy Cluster,cluster,milky_way,,108798050000000.0,,,,,,2026-10-24
 ngc4755,珠宝盒星团,Jewel Box Cluster,cluster,milky_way,,87984510000000.0,,,,,,2026-10-24
 gw150514,GW150914 并合黑洞,GW150914,black_hole,,1.232808e+32,183.10150496,,,,,,2026-10-24
-eta_carinae,海山二,Eta Carinae,star,,,,,,,,,2026-10-24
+eta_carinae,海山二,Eta Carinae,star,,,41742000.0,,,,,,2026-10-24
 vesta,灶神星,4 Vesta,asteroid,sun,2.59076e+20,262.7,3.456,-60,353380000.0,1325.5,,2026-10-24
 halley,哈雷彗星,1P/Halley,comet,sun,220000000000000.0,5.5,0.6,,2667700000.0,27509,,2026-10-24
 sirius_b,天狼 B,Sirius B,star,sirius_a,2.0241912e+30,5634.0,2702168.3024109127,24726.85,,,,2026-10-24

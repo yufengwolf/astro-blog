@@ -1,5 +1,5 @@
 ---
-description: "鸟神星（Makemake）的天体数据：—、平均半径 —、密度 —、表面温度 —。数据整理自公开天文资料。"
+description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半径 715.9 km、密度 —、表面温度 —。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -9,6 +9,8 @@ description: "鸟神星（Makemake）的天体数据：—、平均半径 —、
     <h1>鸟神星 <small>Makemake</small></h1>
     <p class="obj-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
     <div class="obj-keystats">
+      <span>3×10²¹ kg</span>
+      <span>715.9 km</span>
     </div>
   </div>
 </div>
@@ -18,8 +20,8 @@ description: "鸟神星（Makemake）的天体数据：—、平均半径 —、
 
 | 参数 | 数值 |
 |---|---|
-| 质量 | — |
-| 平均半径 | — |
+| 质量 | 3×10²¹ kg |
+| 平均半径 | 715.9 km |
 | 表面重力 | — |
 | 逃逸速度 | — |
 | 平均表面温度 | — |

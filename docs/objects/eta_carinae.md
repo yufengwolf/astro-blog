@@ -1,5 +1,5 @@
 ---
-description: "海山二（Eta Carinae）的天体数据：—、半径 —、光度 5×10⁶ L☉、表面温度 —。数据整理自公开天文资料。"
+description: "海山二（Eta Carinae）的天体数据：—、半径 60 R☉、光度 5×10⁶ L☉、表面温度 —。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -9,6 +9,7 @@ description: "海山二（Eta Carinae）的天体数据：—、半径 —、光
     <h1>海山二 <small>Eta Carinae</small></h1>
     <p class="obj-tagline">银河系内最亮的高光度蓝变星，随时可能爆发为超新星</p>
     <div class="obj-keystats">
+      <span>60 R☉</span>
       <span>5×10⁶ L☉</span>
     </div>
   </div>
@@ -20,7 +21,7 @@ description: "海山二（Eta Carinae）的天体数据：—、半径 —、光
 | 参数 | 数值 |
 |---|---|
 | 质量 | — |
-| 平均半径 | — |
+| 平均半径 | 60 R☉ |
 | 表面重力 | — |
 | 逃逸速度 | — |
 | 平均表面温度 | — |

@@ -1,5 +1,5 @@
 ---
-description: "妊神星（Haumea）的天体数据：—、平均半径 —、密度 —、表面温度 —。数据整理自公开天文资料。"
+description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均半径 780.0 km、密度 —、表面温度 —。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -9,6 +9,8 @@ description: "妊神星（Haumea）的天体数据：—、平均半径 —、�
     <h1>妊神星 <small>Haumea</small></h1>
     <p class="obj-tagline">自转极快的椭球状矮行星，拥有光环</p>
     <div class="obj-keystats">
+      <span>4×10²¹ kg</span>
+      <span>780.0 km</span>
     </div>
   </div>
 </div>
@@ -18,8 +20,8 @@ description: "妊神星（Haumea）的天体数据：—、平均半径 —、�
 
 | 参数 | 数值 |
 |---|---|
-| 质量 | — |
-| 平均半径 | — |
+| 质量 | 4×10²¹ kg |
+| 平均半径 | 780.0 km |
 | 表面重力 | — |
 | 逃逸速度 | — |
 | 平均表面温度 | — |

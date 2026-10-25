@@ -3,7 +3,7 @@ description: "金星（Venus）的天体数据：4.87×10²⁴ kg、平均半径
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/venus.webp" alt="金星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00478" target="_blank" rel="noopener">NASA/JPL · 麦哲伦雷达全球视图</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/venus.webp" alt="金星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/S91-50688" target="_blank" rel="noopener">NASA/JPL · 麦哲伦雷达全球视图</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>金星 <small>Venus</small></h1>
