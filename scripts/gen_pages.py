@@ -62,7 +62,7 @@ def sci(v, digits=3):
 
 def num3(v):
     """中段值（1e-3 ~ 1e3）用普通计数法，极端值用科学计数法——
-    与 astro-compare.js / astro-size-compare.js 的 num3() 保持一致。"""
+    与 astro-compare.js / compare.js 的 num3() 保持一致。"""
     if v == 0:
         return "0"
     if 1e-3 <= abs(v) < 1e3:

@@ -607,6 +607,7 @@
   display: block;
   flex: 0 0 auto;            /* 禁止 flex 容器在窄屏把图压窄（否则宽被缩、高不变 → 椭圆畸变） */
   /* 尺寸由 JS 按真实宽高比 + 统一缩放推导，禁止任何 width/height 兜底钳制以免变形 */
+  object-fit: contain;       /* 双保险：即便盒子比例异常也只留透明边距，绝不拉伸贴图 */
   filter: drop-shadow(0 2px 8px color-mix(in srgb, var(--md-default-fg-color) 18%, transparent));
 }
 .sizecmp-solid {

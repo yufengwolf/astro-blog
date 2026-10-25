@@ -57,11 +57,11 @@ plugins:
 
 # ---- 自定义样式与脚本（天体数据库工具页） ----
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/site.css
 
 extra_javascript:
   - js/astro-explore.js
-  - js/astro-size-compare.js
+  - js/compare.js
 
 # ---- 导航结构 ----
 # 首页 = 天体总览工具页；objects/ 与 data.md 由 scripts/gen_pages.py 自动生成维护
