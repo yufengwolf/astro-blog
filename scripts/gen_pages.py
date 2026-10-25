@@ -288,23 +288,18 @@ def build_index(data):
     L.append("")
     L.append('<div class="astro-hero">')
     L.append("  <h1>天体数据库</h1>")
-    L.append(f'  <p class="astro-hero-sub">{n} 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>')
-    L.append('  <p class="astro-hero-stats">')
-    for key in CAT_ORDER:
-        if cats.get(key):
-            L.append(f'    <span class="astro-stat"><b>{cats[key]}</b> {CAT_ZH[key]}</span>')
-    L.append("  </p>")
+    L.append(f'  <p class="astro-hero-sub">{n} 个天体的质量、半径、密度、温度</p>')
     L.append(f'  <p class="astro-hero-links"><a href="#articles">科普文章</a>'
              f'<span class="sep">·</span><a href="objects/">天体库总表</a></p>')
     L.append("</div>")
     L.append("")
     L.append('<div class="astro-toolbar">')
-    L.append('  <input type="search" id="astro-search" placeholder="搜索天体名称（中/英文）…" aria-label="搜索天体">')
+    L.append('  <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">')
     L.append('  <div class="astro-chips" role="group" aria-label="按分类筛选">')
-    L.append('    <button type="button" class="chip active" data-filter="all">全部</button>')
+    L.append(f'    <button type="button" class="chip active" data-filter="all">全部 {n}</button>')
     for key in CAT_ORDER:
         if cats.get(key):
-            L.append(f'    <button type="button" class="chip" data-filter="{key}">{CAT_ZH[key]}</button>')
+            L.append(f'    <button type="button" class="chip" data-filter="{key}">{CAT_ZH[key]} {cats[key]}</button>')
     L.append("  </div>")
     L.append('  <label class="astro-sort-label">排序')
     L.append('    <select id="astro-sort" aria-label="排序方式">')
@@ -336,8 +331,12 @@ def build_index(data):
         else:
             key_stat = fmt_temp(ph.get("mean_temp_c"), cat) or (
                 f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None)
-        stats = [fmt_mass(m, cat), fmt_radius(r, cat), key_stat]
-        stats_html = "".join(f"<span>{s}</span>" for s in stats if s)
+        # stats 去重：key_stat 回退到 fmt_radius 时会与半径重复（如星云"150 光年"×2）
+        stats = []
+        for s in (fmt_mass(m, cat), fmt_radius(r, cat), key_stat):
+            if s and s not in stats:
+                stats.append(s)
+        stats_html = "".join(f"<span>{s}</span>" for s in stats)
         L.append(f'  <article class="astro-card" data-category="{o["category"]}"'
                  f' data-name="{o["name"]} {o["name_en"]}"'
                  f' data-mass="{m if m is not None else ""}"'

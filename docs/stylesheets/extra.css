@@ -1,10 +1,14 @@
 /* 天体数据库工具页样式（适配 Material 明暗双主题，使用 md CSS 变量）
  *
  * 响应式策略：mobile-first + 渐进增强
- *   基线（< 600px）：移动布局（单列、横滑 chips、紧凑横卡、表格横滚、对比图纵排）
- *   ≥ 600px：平板过渡（两列卡片、工具栏回绕、对比图横排）
+ *   基线（< 600px）：移动布局——「紧凑列表行」取代卡片网格（去卡片外壳、
+ *     52px 缩略图 + 两行文字 + 1px 分隔线，一屏 6+ 行，信息密度优先）、
+ *     hero 统计拍平为一行小字、详情页 hero 无壳平铺、表格横滚、对比图纵排
+ *   ≥ 600px：平板过渡（恢复卡片网格视觉、工具栏回绕、对比图横排）
  *   ≥ 1024px：桌面视觉（恢复历史桌面样式）
  * 断点对齐 Material 主题体系；hover 效果仅 @media (hover: hover) 生效（触屏不粘滞）
+ * 设计依据：移动端数据工具的主流形态是原生列表（App Store / 知乎 / NASA App），
+ *   卡片在窄屏下"不大不小"——边框、圆角、留白吃掉的空间远大于其信息增量。
  */
 
 /* ============================================================
@@ -71,71 +75,46 @@
 }
 
 /* ============================================================
- * 首页 hero（基线：移动）
+ * 首页 hero（基线：移动——原生 App 式纯文本头，无卡片外壳；
+ * 分类统计已并入筛选 chips（"恒星 55"），此处不再重复展示）
  * ============================================================ */
 .astro-hero {
-  text-align: center;
-  padding: 1.3rem 0.9rem 1.1rem;
-  margin-bottom: 0.9rem;
-  border-radius: 1rem;
-  background: linear-gradient(135deg,
-    color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent),
-    color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent));
-  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 18%, transparent);
+  text-align: left;
+  padding: 0.2rem 0 0;
+  margin-bottom: 0.6rem;
 }
 .astro-hero h1 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
+  margin: 0 0 0.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--md-default-fg-color);
 }
 .astro-hero-sub {
-  margin: 0 0 0.9rem;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  margin: 0 0 0.15rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
   color: var(--md-default-fg-color--light);
   text-wrap: pretty;            /* 渐进增强：避免孤字断行 */
 }
-.astro-hero-stats {
-  margin: 0 0 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-}
-.astro-stat {
-  display: inline-block;
-  padding: 0.26rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  background: var(--md-default-bg-color);
-  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent);
-  color: var(--md-default-fg-color--light);
-}
-.astro-stat b {
-  color: var(--md-primary-fg-color);
-  font-size: 0.9rem;
-  margin-right: 0.15rem;
-}
 .astro-hero-links {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 0.75rem;
   color: var(--md-default-fg-color--light);
 }
 .astro-hero-links .sep {
-  margin: 0 0.5rem;
+  margin: 0 0.4rem;
   opacity: 0.5;
 }
 
 /* ============================================================
- * 工具栏（基线：移动——sticky 保留，chips 横滑，搜索全宽）
+ * 工具栏（基线：移动——搜索与排序同行、chips 整行横滑，压缩垂直占用）
  * ============================================================ */
 .astro-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.7rem 0.8rem;
+  gap: 0.5rem;
+  padding: 0.6rem 0.7rem;
   margin: 0 0 0.4rem;
   border-radius: 0.8rem;
   background: var(--md-default-bg-color);
@@ -147,9 +126,9 @@
   box-shadow: 0 1px 0 color-mix(in srgb, var(--md-default-fg-color) 5%, transparent);
 }
 .astro-toolbar #astro-search {
-  flex: 1 1 100%;
+  flex: 1 1 4rem;               /* 小基准 + shrink：与排序同行不换行（根字号 20px，4rem=80px） */
   min-width: 0;
-  padding: 0.55rem 0.9rem;
+  padding: 0.5rem 0.9rem;
   font-size: 16px;              /* ≥16px：防 iOS 聚焦自动放大页面 */
   border-radius: 999px;
   border: 1px solid var(--md-default-fg-color--lightest);
@@ -159,6 +138,27 @@
 .astro-toolbar #astro-search:focus {
   outline: 2px solid var(--md-primary-fg-color);
   outline-offset: 1px;
+}
+/* 排序与搜索同行（推到行右），chips 独占第二行横滑。
+   注意：chips 的 flex-basis:100% 会强制换行，故用 order:-1 把排序提到
+   chips 之前（否则排序会掉到第三行）——HTML 顺序不变，仅视觉顺序 */
+.astro-sort-label {
+  order: -1;
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 0.76rem;
+  color: var(--md-default-fg-color--light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.astro-sort-label select {
+  padding: 0.38rem 0.45rem;
+  font-size: 16px;              /* ≥16px：防 iOS 聚焦自动放大页面 */
+  border-radius: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
 }
 /* chips 横滑：12 个分类不换行占屏，像 App Store 一样横扫 */
 .astro-chips {
@@ -187,81 +187,79 @@
   border-color: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
 }
-.astro-sort-label {
-  flex: 0 0 auto;
-  font-size: 0.84rem;
-  color: var(--md-default-fg-color--light);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.astro-sort-label select {
-  padding: 0.45rem 0.5rem;
-  font-size: 16px;              /* ≥16px：防 iOS 聚焦自动放大页面 */
-  border-radius: 0.5rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
-}
 .astro-count {
-  margin: 0.3rem 0 0.8rem;
-  font-size: 0.8rem;
+  margin: 0.25rem 0 0.6rem;
+  font-size: 0.76rem;
   color: var(--md-default-fg-color--light);
 }
 
 /* ============================================================
- * 卡片网格（基线：移动——单列横向紧凑卡，图左文右）
+ * 天体列表（基线：移动——去卡片化的紧凑列表行）
+ * 移动端数据工具的主流形态是原生列表（App Store / 知乎 / NASA App）：
+ * 无卡片外壳，52px 缩略图 + 两行文字 + 1px 分隔线，一屏 6+ 行。
+ * ≥600px 恢复卡片网格视觉。
  * ============================================================ */
 .astro-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
+  display: block;
 }
 .astro-card {
   position: relative;
-  display: flex;
-  border-radius: 0.9rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  background: var(--md-default-bg-color);
-  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
 }
 .astro-card[hidden] { display: none; }
+/* 行间发丝线：通栏分隔，无卡片缝隙 */
+.astro-card + .astro-card {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
 .astro-card-link {
   display: flex;
   flex: 1;
   min-width: 0;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.15rem;
+  min-height: 60px;                /* 触摸目标下限 */
   text-decoration: none;
   color: inherit;
+  border-radius: 0.5rem;
+  transition: background-color 0.08s ease;
 }
-/* 移动端图片区：固定宽度竖条，球体居中 */
+/* 行按压反馈：触屏点击高亮整行，原生列表感 */
+.astro-card-link:active {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
+}
+/* 缩略图：44px 球体装进 52px 圆角框。含环宽幅图（900×600）按高度缩放后
+   宽 66px，由 overflow 裁两侧——球体完整且跨天体视觉等大（圆盘图 44×44 恰好） */
 .astro-img {
-  flex: 0 0 104px;
-  width: 104px;
-  height: auto;
-  min-height: 112px;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  min-height: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0.5rem;
+  border-radius: 0.55rem;
+  background: color-mix(in srgb, var(--md-default-fg-color) 5%, transparent);
 }
 .astro-img img {
-  /* 统一显示高度：圆盘图（600×600）与含环宽幅图（球体同占画布高 70%）
-     在同一显示高度下球体视觉直径一致，环向两侧伸展（width 自适应） */
-  height: 84px;
+  height: 44px;
   width: auto;
-  max-width: 100%;
+  max-width: none;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--md-default-fg-color) 18%, transparent));
 }
 .astro-img-fallback span {
-  width: 72px;
-  height: 72px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
@@ -280,53 +278,60 @@
 .astro-img-fallback.comet span { background: linear-gradient(135deg, #7fe0d0, #1f7a6a); }
 
 .astro-card-body {
-  flex: 1;
+  /* 不用 flex:1——grow 会先吃光剩余空间，行尾徽章的 margin-left:auto 将失效
+     （徽章被挤出右缘）。内容基准 + shrink:1：窄时收缩，宽时把空间让给徽章 */
+  flex: 0 1 auto;
   min-width: 0;
-  padding: 0.7rem 0.85rem 0.8rem;
+  padding: 0;
 }
 .astro-card-title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
+  line-height: 1.3;
   color: var(--md-default-fg-color);
 }
+/* 移动端列表行隐藏英文名：窄行宽下英文名换行会撑高标题行，
+   中文名 + tagline + 数据已足够识别；英文名保留在详情页与搜索匹配中（≥600px 恢复） */
 .astro-card-title .en {
-  margin-left: 0.35rem;
-  font-size: 0.74rem;
-  font-weight: 400;
-  color: var(--md-default-fg-color--light);
+  display: none;
 }
 .astro-card-tagline {
-  margin: 0.25rem 0 0.45rem;
+  margin: 0.08rem 0 0.16rem;
   font-size: 0.78rem;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--md-default-fg-color--light);
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;           /* 单行：列表行高优先，摘要交给详情页 */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 .astro-card-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.28rem 0.45rem;
-  font-size: 0.72rem;
+  gap: 0.1rem 0.25rem;
+  font-size: 0.65rem;
+  line-height: 1.5;
   color: var(--md-default-fg-color--light);
 }
 .astro-card-stats span {
-  padding: 0.1rem 0.42rem;
-  border-radius: 0.35rem;
+  padding: 0.02rem 0.34rem;
+  border-radius: 0.3rem;
   background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
   white-space: nowrap;
 }
+/* 类型徽章：从绝对定位（卡角）改为行尾 accessory，像 iOS 列表右侧的信息标。
+   flex:0 0 auto 保证不被收缩；margin-left:auto 把徽章推到行尾 */
 .astro-badge {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  padding: 0.12rem 0.5rem;
-  font-size: 0.68rem;
+  position: static;
+  align-self: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0.12rem 0.42rem;
+  font-size: 0.62rem;
+  line-height: 1.4;
   border-radius: 999px;
   color: #fff;
-  backdrop-filter: blur(2px);
+  backdrop-filter: none;
 }
 .astro-badge.planet { background: rgba(43, 95, 158, 0.85); }
 .astro-badge.star { background: rgba(224, 108, 0, 0.88); }
@@ -350,18 +355,21 @@
 }
 
 /* ============================================================
- * 文章区 / 数据说明
+ * 文章区 / 数据说明（基线：移动——去壳，发丝线分隔，与列表同语言）
  * ============================================================ */
-.astro-articles, .astro-note, .obj-articles {
-  margin-top: 1.4rem;
-  padding: 0.9rem 1rem;
-  border-radius: 0.8rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  background: var(--md-default-bg-color);
+.astro-articles, .astro-note, .obj-articles,
+.obj-source, .obj-article {
+  margin-top: 1rem;
+  padding: 0.85rem 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
 }
-.astro-articles h2, .astro-note h2, .obj-articles h2 {
+.astro-articles h2, .astro-note h2, .obj-articles h2,
+.obj-source h2, .obj-article h2 {
   margin-top: 0;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 .astro-article-list {
   list-style: none;
@@ -373,7 +381,7 @@
 }
 .astro-article-list li a {
   display: inline-block;
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.8rem;        /* 触摸友好 */
   font-size: 0.82rem;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
@@ -382,35 +390,34 @@
 .astro-note p { font-size: 0.84rem; color: var(--md-default-fg-color--light); }
 
 /* ============================================================
- * 详情页（基线：移动）
+ * 详情页（基线：移动——hero 无壳平铺，像原生 App 的详情头图区）
  * ============================================================ */
 .obj-hero {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.7rem;
   align-items: center;
   text-align: center;
-  padding: 1.1rem;
-  margin: 0.5rem 0 1rem;
-  border-radius: 1rem;
-  background: linear-gradient(135deg,
-    color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent),
-    color-mix(in srgb, var(--md-primary-fg-color) 3%, transparent));
-  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent);
+  padding: 0 0 0.9rem;
+  margin: 0.3rem 0 0.9rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
-/* 移动端大图置顶（order -1 覆盖桌面 order:2 的图在右） */
+/* 移动端大图置顶 */
 .obj-hero .astro-img,
 .obj-hero-imgwrap {
   order: -1;
 }
 .obj-hero .astro-img {
   width: auto;
-  height: 220px;
+  height: 170px;
   max-width: 100%;
   flex: 0 0 auto;
   background: transparent;
 }
-.obj-hero .astro-img img { width: auto; height: 220px; max-width: 100%; }
+.obj-hero .astro-img img { width: auto; height: 170px; max-width: 100%; }
 .obj-hero-imgwrap {
   width: auto;
   max-width: 100%;
@@ -420,6 +427,15 @@
   align-items: center;
 }
 .obj-hero-info { flex: 1 1 auto; min-width: 0; order: 1; }
+/* 详情页徽章：行内显示在标题上方 */
+.obj-hero-info .astro-badge {
+  position: static;
+  display: inline-block;
+  margin: 0 0 0.25rem;
+  padding: 0.14rem 0.55rem;
+  font-size: 0.7rem;
+  backdrop-filter: none;
+}
 .astro-img-credit {
   margin-top: 0.4rem;
   font-size: 0.62rem;
@@ -430,19 +446,19 @@
 }
 .astro-img-credit a { color: inherit; text-decoration: underline; }
 .obj-hero-info h1 {
-  margin: 0.4rem 0 0.3rem;
-  font-size: 1.45rem;
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.3rem;
   border: none;
 }
 .obj-hero-info h1 small {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: var(--md-default-fg-color--light);
   margin-left: 0.4rem;
 }
 .obj-tagline {
-  margin: 0 0 0.8rem;
-  font-size: 0.92rem;
+  margin: 0 0 0.6rem;
+  font-size: 0.88rem;
   color: var(--md-default-fg-color--light);
   text-wrap: pretty;
 }
@@ -450,31 +466,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
 }
 .obj-keystats span {
-  padding: 0.3rem 0.7rem;
-  font-size: 0.8rem;
-  border-radius: 0.5rem;
-  background: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
+  padding: 0.22rem 0.6rem;
+  font-size: 0.76rem;
+  border-radius: 0.45rem;
+  border: none;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
 }
 .obj-parent {
   font-size: 0.84rem;
   color: var(--md-default-fg-color--light);
   margin: 0 0 0.9rem;
 }
-.obj-source, .obj-article {
-  margin-top: 1.3rem;
-  padding: 0.9rem 1rem;
-  border-radius: 0.8rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-}
-.obj-source h2, .obj-article h2 {
-  margin-top: 0;
-  font-size: 1rem;
-}
-.obj-source p { font-size: 0.8rem; color: var(--md-default-fg-color--light); }
 .obj-nav {
   font-size: 0.86rem;
   color: var(--md-default-fg-color--light);
@@ -661,23 +666,31 @@
 }
 
 /* ============================================================
- * 数据集页（基线：移动）
+ * 数据集页（基线：移动——下载项改列表行，去卡壳）
  * ============================================================ */
 .dl-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.8rem;
-  margin: 0.9rem 0;
+  display: block;
+  margin: 0.7rem 0;
 }
 .dl-card {
-  display: block;
-  padding: 0.9rem 1rem;
-  border-radius: 0.8rem;
-  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.6rem 0.15rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
   text-decoration: none;
-  transition: transform 0.12s ease;
 }
-.dl-card b { display: block; font-size: 0.98rem; color: var(--md-primary-fg-color); }
+.dl-card + .dl-card {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+.dl-card b {
+  font-size: 0.92rem;
+  color: var(--md-primary-fg-color);
+  white-space: nowrap;
+}
+.dl-card b::after { content: " ↓"; opacity: 0.55; font-weight: 400; }
 .dl-card span { font-size: 0.8rem; color: var(--md-default-fg-color--light); }
 
 /* ============================================================
@@ -852,41 +865,162 @@ html[data-md-color-scheme="slate"] .md-header {
 }
 
 /* ============================================================
- * 平板增强（≥ 600px）：双列卡片、工具栏回绕、chips 换行
+ * 平板增强（≥ 600px）：恢复卡片网格视觉（基线为列表行，此处显式还原）
  * ============================================================ */
 @media (min-width: 600px) {
-  .astro-hero { padding: 2rem 1.2rem 1.5rem; }
+  /* 恢复 hero 渐变卡片（桌面/平板视觉） */
+  .astro-hero {
+    text-align: center;
+    padding: 2rem 1.2rem 1.5rem;
+    margin-bottom: 0.9rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent),
+      color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent));
+    border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 18%, transparent);
+  }
   .astro-hero h1 { font-size: 1.8rem; }
   .astro-hero-sub { font-size: 1rem; }
+  .astro-hero-links { font-size: 0.84rem; }
   .astro-toolbar { padding: 0.85rem 1rem; gap: 0.7rem; }
   .astro-toolbar #astro-search { flex: 1 1 12rem; font-size: 0.92rem; }
   .astro-chips { flex: 0 1 auto; flex-wrap: wrap; overflow: visible; }
+  .astro-sort-label { order: 0; margin-left: 0; font-size: 0.84rem; }
   .astro-sort-label select { font-size: 0.84rem; }
-  .astro-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .astro-img { flex: 0 0 118px; width: 118px; min-height: 128px; }
-  .astro-img img { height: 96px; }
+  /* 恢复双列横卡（图左文右）：完整还原历史平板视觉 */
+  .astro-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .astro-card {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background: var(--md-default-bg-color);
+    border-radius: 0.9rem;
+    overflow: hidden;
+  }
+  .astro-card + .astro-card { border-top: 1px solid var(--md-default-fg-color--lightest); }
+  .astro-card-link {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    min-height: 0;
+    border-radius: 0;
+  }
+  .astro-card-link:active { background: transparent; }
+  .astro-img {
+    flex: 0 0 118px;
+    width: 118px;
+    height: auto;
+    min-height: 128px;
+    padding: 0.5rem;
+    border-radius: 0;
+    background: transparent;
+  }
+  .astro-img img {
+    height: 96px;
+    max-width: 100%;
+    /* 恢复卡片图的投影（桌面/平板原有视觉） */
+    filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--md-default-fg-color) 18%, transparent));
+  }
   .astro-img-fallback span { width: 84px; height: 84px; font-size: 1.8rem; }
-  .astro-articles, .astro-note, .obj-articles { margin-top: 2rem; padding: 1.1rem 1.3rem; }
+  .astro-card-body { flex: 1; min-width: 0; padding: 0.7rem 0.85rem 0.8rem; }
+  .astro-card-title { font-size: 1rem; }
+  /* 恢复英文名显示（平板卡片够宽） */
+  .astro-card-title .en {
+    display: inline;
+    margin-left: 0.35rem;
+    font-size: 0.74rem;
+    font-weight: 400;
+    color: var(--md-default-fg-color--light);
+  }
+  .astro-card-tagline { font-size: 0.78rem; -webkit-line-clamp: 2; margin: 0.25rem 0 0.45rem; }
+  .astro-card-stats { font-size: 0.72rem; gap: 0.28rem 0.45rem; }
+  .astro-card-stats span { padding: 0.1rem 0.42rem; }
+  /* 徽章恢复卡角绝对定位 */
+  .astro-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    margin-left: 0;
+    padding: 0.12rem 0.5rem;
+    font-size: 0.68rem;
+    backdrop-filter: blur(2px);
+  }
+  /* 文章/说明区恢复卡片 */
+  .astro-articles, .astro-note, .obj-articles,
+  .obj-source, .obj-article {
+    margin-top: 2rem;
+    padding: 1.1rem 1.3rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.8rem;
+    background: var(--md-default-bg-color);
+  }
+  .astro-articles h2, .astro-note h2, .obj-articles h2,
+  .obj-source h2, .obj-article h2 { font-size: 1.05rem; }
+  /* 详情页 hero 恢复渐变卡 */
   .obj-hero {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     text-align: left;
     padding: 1.4rem;
+    margin: 0.5rem 0 1rem;
+    gap: 1rem;
+    border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent);
+    border-radius: 1rem;
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent),
+      color-mix(in srgb, var(--md-primary-fg-color) 3%, transparent));
   }
   .obj-hero .astro-img,
   .obj-hero-imgwrap { order: 2; }        /* 恢复桌面：图在右 */
-  .obj-hero .astro-img { height: 300px; }
+  .obj-hero .astro-img { height: 300px; background: transparent; }
   .obj-hero .astro-img img { height: 300px; }
   .obj-hero-info { flex: 1 1 16rem; }
+  /* 详情页徽章恢复绝对定位于 hero 右上（hero 需 relative） */
+  .obj-hero { position: relative; }
+  .obj-hero-info .astro-badge {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    display: inline-block;
+    margin: 0;
+    padding: 0.14rem 0.55rem;
+    font-size: 0.7rem;
+    backdrop-filter: blur(2px);
+  }
   .obj-hero-info h1 { font-size: 1.7rem; }
   .obj-keystats { justify-content: flex-start; }
+  .obj-keystats span {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background: var(--md-default-bg-color);
+  }
+  .obj-tagline { font-size: 0.98rem; }
+  .obj-parent { font-size: 0.84rem; margin: 0 0 0.9rem; }
+  .obj-source p { font-size: 0.82rem; }
   .cmp-picker { max-width: 26rem; }
   .cmp-picker #cmp-search { font-size: 0.9rem; }
   .cmp-results li button { padding: 0.45rem 0.7rem; font-size: 0.9rem; }
   .cmp-table { font-size: 0.84rem; }
   .cmp-table th, .cmp-table td { padding: 0.42rem 0.8rem; }
-  .dl-cards { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; }
+  /* 数据集页恢复下载卡网格 */
+  .dl-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; margin: 1rem 0; }
+  .dl-card {
+    display: block;
+    padding: 0.9rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent);
+    border-radius: 0.8rem;
+    background: var(--md-default-bg-color);
+  }
+  .dl-card + .dl-card { border-top: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent); }
+  .dl-card b { display: block; font-size: 0.98rem; }
+  .dl-card b::after { content: none; }
+  .dl-card span { font-size: 0.8rem; }
   /* 对比页恢复横排：A ⇄ B 一行 */
   .sizecmp-bar { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: center; }
   .sizecmp-pick { flex: 1 1 14rem; max-width: 18rem; }
@@ -905,8 +1039,6 @@ html[data-md-color-scheme="slate"] .md-header {
   .astro-hero { padding: 2.2rem 1rem 1.6rem; margin-bottom: 1.2rem; }
   .astro-hero h1 { font-size: 2em; }
   .astro-hero-sub { font-size: 1.02rem; }
-  .astro-stat { padding: 0.28rem 0.8rem; font-size: 0.82rem; }
-  .astro-stat b { font-size: 0.95rem; }
   .astro-hero-links { font-size: 0.88rem; }
   .astro-toolbar { padding: 0.85rem 1rem; }
   .astro-toolbar #astro-search { padding: 0.45rem 0.8rem; font-size: 0.92rem; }

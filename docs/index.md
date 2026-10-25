@@ -4,38 +4,25 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">151 个天体的质量 · 半径 · 密度 · 温度 · 轨道 · 卫星数据，一键筛选，按数值排序</p>
-  <p class="astro-hero-stats">
-    <span class="astro-stat"><b>55</b> 恒星</span>
-    <span class="astro-stat"><b>8</b> 行星</span>
-    <span class="astro-stat"><b>5</b> 矮行星</span>
-    <span class="astro-stat"><b>21</b> 卫星</span>
-    <span class="astro-stat"><b>18</b> 星系</span>
-    <span class="astro-stat"><b>16</b> 星云</span>
-    <span class="astro-stat"><b>11</b> 星团</span>
-    <span class="astro-stat"><b>8</b> 黑洞</span>
-    <span class="astro-stat"><b>7</b> 大尺度结构</span>
-    <span class="astro-stat"><b>1</b> 小行星</span>
-    <span class="astro-stat"><b>1</b> 彗星</span>
-  </p>
+  <p class="astro-hero-sub">151 个天体的质量、半径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
-  <input type="search" id="astro-search" placeholder="搜索天体名称（中/英文）…" aria-label="搜索天体">
+  <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部</button>
-    <button type="button" class="chip" data-filter="star">恒星</button>
-    <button type="button" class="chip" data-filter="planet">行星</button>
-    <button type="button" class="chip" data-filter="dwarf_planet">矮行星</button>
-    <button type="button" class="chip" data-filter="moon">卫星</button>
-    <button type="button" class="chip" data-filter="galaxy">星系</button>
-    <button type="button" class="chip" data-filter="nebula">星云</button>
-    <button type="button" class="chip" data-filter="cluster">星团</button>
-    <button type="button" class="chip" data-filter="black_hole">黑洞</button>
-    <button type="button" class="chip" data-filter="structure">大尺度结构</button>
-    <button type="button" class="chip" data-filter="asteroid">小行星</button>
-    <button type="button" class="chip" data-filter="comet">彗星</button>
+    <button type="button" class="chip active" data-filter="all">全部 151</button>
+    <button type="button" class="chip" data-filter="star">恒星 55</button>
+    <button type="button" class="chip" data-filter="planet">行星 8</button>
+    <button type="button" class="chip" data-filter="dwarf_planet">矮行星 5</button>
+    <button type="button" class="chip" data-filter="moon">卫星 21</button>
+    <button type="button" class="chip" data-filter="galaxy">星系 18</button>
+    <button type="button" class="chip" data-filter="nebula">星云 16</button>
+    <button type="button" class="chip" data-filter="cluster">星团 11</button>
+    <button type="button" class="chip" data-filter="black_hole">黑洞 8</button>
+    <button type="button" class="chip" data-filter="structure">大尺度结构 7</button>
+    <button type="button" class="chip" data-filter="asteroid">小行星 1</button>
+    <button type="button" class="chip" data-filter="comet">彗星 1</button>
   </div>
   <label class="astro-sort-label">排序
     <select id="astro-sort" aria-label="排序方式">
@@ -542,7 +529,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">M87*<span class="en">M87*</span></div>
         <p class="astro-card-tagline">人类拍下的第一张黑洞照片主角，室女座星系团中心的超大质量黑洞</p>
-        <div class="astro-card-stats"><span>6.5×10⁹ M☉</span><span>128 AU</span><span>6.5×10⁹ M☉</span></div>
+        <div class="astro-card-stats"><span>6.5×10⁹ M☉</span><span>128 AU</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -553,7 +540,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">人马座 A*<span class="en">Sagittarius A*</span></div>
         <p class="astro-card-tagline">银河系中心的超大质量黑洞，2022 年人类拍下第二张黑洞照片</p>
-        <div class="astro-card-stats"><span>4.3×10⁶ M☉</span><span>12,690,116 km</span><span>4.3×10⁶ M☉</span></div>
+        <div class="astro-card-stats"><span>4.3×10⁶ M☉</span><span>12,690,116 km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -564,7 +551,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">TON 618<span class="en">TON 618</span></div>
         <p class="astro-card-tagline">已知质量最大的黑洞之一，660 亿倍太阳质量的类星体引擎</p>
-        <div class="astro-card-stats"><span>6.6×10¹⁰ M☉</span><span>1.3e+03 AU</span><span>6.6×10¹⁰ M☉</span></div>
+        <div class="astro-card-stats"><span>6.6×10¹⁰ M☉</span><span>1.3e+03 AU</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -575,7 +562,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">IC 1101 中心黑洞<span class="en">IC 1101 black hole</span></div>
         <p class="astro-card-tagline">IC 1101 星系核心的黑洞，质量估值在天文界争议极大</p>
-        <div class="astro-card-stats"><span>5×10¹⁰ M☉</span><span>987 AU</span><span>5×10¹⁰ M☉</span></div>
+        <div class="astro-card-stats"><span>5×10¹⁰ M☉</span><span>987 AU</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -586,7 +573,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">GW190521<span class="en">GW190521</span></div>
         <p class="astro-card-tagline">人类确认的第一个中等质量黑洞，双黑洞并合的产物</p>
-        <div class="astro-card-stats"><span>142 M☉</span><span>419 km</span><span>142 M☉</span></div>
+        <div class="astro-card-stats"><span>142 M☉</span><span>419 km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -597,7 +584,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">天鹅座 X-1<span class="en">Cygnus X-1</span></div>
         <p class="astro-card-tagline">人类确认的第一个恒星级黑洞，霍金打赌输掉的那位</p>
-        <div class="astro-card-stats"><span>21.2 M☉</span><span>63 km</span><span>21.2 M☉</span></div>
+        <div class="astro-card-stats"><span>21.2 M☉</span><span>63 km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -608,7 +595,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">V404 天鹅座<span class="en">V404 Cygni</span></div>
         <p class="astro-card-tagline">低质量 X 射线双星，2015 年剧烈爆发出名的黑洞</p>
-        <div class="astro-card-stats"><span>9 M☉</span><span>27 km</span><span>9 M☉</span></div>
+        <div class="astro-card-stats"><span>9 M☉</span><span>27 km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -630,7 +617,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">蟹状星云<span class="en">Crab Nebula (M1)</span></div>
         <p class="astro-card-tagline">北宋天文学家见证的超新星残骸，宇宙中最著名的遗迹星云</p>
-        <div class="astro-card-stats"><span>6 光年</span><span>6 光年</span></div>
+        <div class="astro-card-stats"><span>6 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -641,7 +628,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">鹰状星云<span class="en">Eagle Nebula (M16)</span></div>
         <p class="astro-card-tagline">哈勃「创生之柱」的故乡，巨蛇座里的恒星工厂</p>
-        <div class="astro-card-stats"><span>35 光年</span><span>35 光年</span></div>
+        <div class="astro-card-stats"><span>35 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -652,7 +639,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">三叶星云<span class="en">Trifid Nebula (M20)</span></div>
         <p class="astro-card-tagline">发射、反射与暗带三合一的彩色星云，人马座里的调色盘</p>
-        <div class="astro-card-stats"><span>20 光年</span><span>20 光年</span></div>
+        <div class="astro-card-stats"><span>20 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -663,7 +650,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">礁湖星云<span class="en">Lagoon Nebula (M8)</span></div>
         <p class="astro-card-tagline">人马座里的巨大发射星云，肉眼可见的银河宝库</p>
-        <div class="astro-card-stats"><span>45 光年</span><span>45 光年</span></div>
+        <div class="astro-card-stats"><span>45 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -674,7 +661,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">马头星云<span class="en">Horsehead Nebula</span></div>
         <p class="astro-card-tagline">猎户座腰带旁的暗尘埃剪影，夜空最 recognizable 的剪影</p>
-        <div class="astro-card-stats"><span>2 光年</span><span>2 光年</span></div>
+        <div class="astro-card-stats"><span>2 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -685,7 +672,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">环状星云<span class="en">Ring Nebula (M57)</span></div>
         <p class="astro-card-tagline">天琴座里的太空烟圈，恒星暮年的典型肖像</p>
-        <div class="astro-card-stats"><span>1 光年</span><span>1 光年</span></div>
+        <div class="astro-card-stats"><span>1 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -696,7 +683,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">螺旋星云<span class="en">Helix Nebula (NGC 7293)</span></div>
         <p class="astro-card-tagline">宝瓶座里的「上帝之眼」，离地球最近的行星状星云</p>
-        <div class="astro-card-stats"><span>3 光年</span><span>3 光年</span></div>
+        <div class="astro-card-stats"><span>3 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -707,7 +694,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">双喷射星星云<span class="en">M2-9 (Twin Jet Nebula)</span></div>
         <p class="astro-card-tagline">蛇夫座里的蝶翼状星云，双极喷流的活样本</p>
-        <div class="astro-card-stats"><span>1 光年</span><span>1 光年</span></div>
+        <div class="astro-card-stats"><span>1 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -718,7 +705,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">玫瑰星云<span class="en">Rosette Nebula</span></div>
         <p class="astro-card-tagline">麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云</p>
-        <div class="astro-card-stats"><span>65 光年</span><span>65 光年</span></div>
+        <div class="astro-card-stats"><span>65 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -729,7 +716,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">巴纳德环<span class="en">Barnard's Loop</span></div>
         <p class="astro-card-tagline">横跨猎户座大半边的巨大圆弧，可能源于数百万年前的一次超新星</p>
-        <div class="astro-card-stats"><span>150 光年</span><span>150 光年</span></div>
+        <div class="astro-card-stats"><span>150 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -740,7 +727,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">蜘蛛星云<span class="en">Tarantula Nebula (30 Doradus)</span></div>
         <p class="astro-card-tagline">大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云</p>
-        <div class="astro-card-stats"><span>500 光年</span><span>500 光年</span></div>
+        <div class="astro-card-stats"><span>500 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -762,7 +749,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">仙女座星系<span class="en">Andromeda Galaxy (M31)</span></div>
         <p class="astro-card-tagline">本星系群最大的星系，肉眼可见的银河系近邻</p>
-        <div class="astro-card-stats"><span>1.5×10¹² M☉</span><span>110,000 光年</span><span>110,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.5×10¹² M☉</span><span>110,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -773,7 +760,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">三角座星系<span class="en">Triangulum Galaxy (M33)</span></div>
         <p class="astro-card-tagline">本星系群第三大星系，肉眼极限的松散旋涡</p>
-        <div class="astro-card-stats"><span>5×10¹⁰ M☉</span><span>30,560 光年</span><span>30,560 光年</span></div>
+        <div class="astro-card-stats"><span>5×10¹⁰ M☉</span><span>30,560 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -784,7 +771,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">大麦哲伦云<span class="en">Large Magellanic Cloud</span></div>
         <p class="astro-card-tagline">银河系最大的卫星星系，南天夜空中挂着的模糊云块</p>
-        <div class="astro-card-stats"><span>1×10¹⁰ M☉</span><span>7,000 光年</span><span>7,000 光年</span></div>
+        <div class="astro-card-stats"><span>1×10¹⁰ M☉</span><span>7,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -795,7 +782,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">小麦哲伦云<span class="en">Small Magellanic Cloud</span></div>
         <p class="astro-card-tagline">大麦哲伦云的伴侣，南天第二矮星系</p>
-        <div class="astro-card-stats"><span>6.5×10⁹ M☉</span><span>3,500 光年</span><span>3,500 光年</span></div>
+        <div class="astro-card-stats"><span>6.5×10⁹ M☉</span><span>3,500 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -806,7 +793,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">室女座 A（M87）<span class="en">Messier 87</span></div>
         <p class="astro-card-tagline">室女座星系团中心的巨型椭圆星系，万亿级恒星都会</p>
-        <div class="astro-card-stats"><span>2.4×10¹² M☉</span><span>120,000 光年</span><span>120,000 光年</span></div>
+        <div class="astro-card-stats"><span>2.4×10¹² M☉</span><span>120,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -817,7 +804,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">草帽星系<span class="en">Sombrero Galaxy (M104)</span></div>
         <p class="astro-card-tagline">侧视的旋涡星系，草帽外形来自它巨大的核球与尘埃环</p>
-        <div class="astro-card-stats"><span>8×10¹¹ M☉</span><span>25,000 光年</span><span>25,000 光年</span></div>
+        <div class="astro-card-stats"><span>8×10¹¹ M☉</span><span>25,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -828,7 +815,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">涡状星系<span class="en">Whirlpool Galaxy (M51)</span></div>
         <p class="astro-card-tagline">人类发现旋涡结构的第一个星系，与伴星系共舞的经典标范</p>
-        <div class="astro-card-stats"><span>1.6×10¹¹ M☉</span><span>38,450 光年</span><span>38,450 光年</span></div>
+        <div class="astro-card-stats"><span>1.6×10¹¹ M☉</span><span>38,450 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -839,7 +826,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">波德星系<span class="en">Messier 81</span></div>
         <p class="astro-card-tagline">北斗七星附近的完美旋涡，与 M82 组成经典相互作用对</p>
-        <div class="astro-card-stats"><span>47,000 光年</span><span>47,000 光年</span></div>
+        <div class="astro-card-stats"><span>47,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -850,7 +837,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">雪茄星系<span class="en">Messier 82 (Cigar Galaxy)</span></div>
         <p class="astro-card-tagline">著名的星暴星系，恒星诞生的速度是银河系的十倍</p>
-        <div class="astro-card-stats"><span>18,500 光年</span><span>18,500 光年</span></div>
+        <div class="astro-card-stats"><span>18,500 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -861,7 +848,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">NGC 1300<span class="en">NGC 1300</span></div>
         <p class="astro-card-tagline">棒旋星系的教科书标本，波江座里的巨大风车</p>
-        <div class="astro-card-stats"><span>55,000 光年</span><span>55,000 光年</span></div>
+        <div class="astro-card-stats"><span>55,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -872,7 +859,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">IC 1101<span class="en">IC 1101</span></div>
         <p class="astro-card-tagline">已知直径最大的星系之一，宇宙中的巨型椭圆巨兽</p>
-        <div class="astro-card-stats"><span>850,000 光年</span><span>850,000 光年</span></div>
+        <div class="astro-card-stats"><span>850,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -883,7 +870,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">斯蒂芬五重星系<span class="en">Stephan's Quintet</span></div>
         <p class="astro-card-tagline">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
-        <div class="astro-card-stats"><span>175,000 光年</span><span>175,000 光年</span></div>
+        <div class="astro-card-stats"><span>175,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -894,7 +881,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">昴星团<span class="en">Pleiades (M45)</span></div>
         <p class="astro-card-tagline">七姐妹星团，冬夜最易辨认的蓝色小勺</p>
-        <div class="astro-card-stats"><span>800 M☉</span><span>7 光年</span><span>7 光年</span></div>
+        <div class="astro-card-stats"><span>800 M☉</span><span>7 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -905,7 +892,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">毕星团<span class="en">Hyades</span></div>
         <p class="astro-card-tagline">金牛座的 V 形头部，离太阳最近的疏散星团之一</p>
-        <div class="astro-card-stats"><span>400 M☉</span><span>7 光年</span><span>7 光年</span></div>
+        <div class="astro-card-stats"><span>400 M☉</span><span>7 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -916,7 +903,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">蜂巢星团<span class="en">Beehive Cluster (M44)</span></div>
         <p class="astro-card-tagline">巨蟹座腹中的蜂巢，双筒望远镜里的经典星团</p>
-        <div class="astro-card-stats"><span>550 M☉</span><span>8 光年</span><span>8 光年</span></div>
+        <div class="astro-card-stats"><span>550 M☉</span><span>8 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -927,7 +914,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">梅西耶 67<span class="en">Messier 67</span></div>
         <p class="astro-card-tagline">著名的古老疏散星团，曾被猜想为太阳的出生地</p>
-        <div class="astro-card-stats"><span>1.1×10³ M☉</span><span>10 光年</span><span>10 光年</span></div>
+        <div class="astro-card-stats"><span>1.1×10³ M☉</span><span>10 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -938,7 +925,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">R136 星团<span class="en">R136</span></div>
         <p class="astro-card-tagline">蜘蛛星云核心的超级星团，已知最亮恒星的故乡</p>
-        <div class="astro-card-stats"><span>1×10⁵ M☉</span><span>5 光年</span><span>5 光年</span></div>
+        <div class="astro-card-stats"><span>1×10⁵ M☉</span><span>5 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -949,7 +936,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">武仙座球状星团<span class="en">Messier 13</span></div>
         <p class="astro-card-tagline">北天最壮观的球状星团，武仙座里的 30 万颗恒星球</p>
-        <div class="astro-card-stats"><span>6×10⁵ M☉</span><span>72 光年</span><span>72 光年</span></div>
+        <div class="astro-card-stats"><span>6×10⁵ M☉</span><span>72 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -960,7 +947,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">梅西耶 22<span class="en">Messier 22</span></div>
         <p class="astro-card-tagline">人马座里的明亮球状星团，肉眼可见的古老恒星城</p>
-        <div class="astro-card-stats"><span>50 光年</span><span>50 光年</span></div>
+        <div class="astro-card-stats"><span>50 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -971,7 +958,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">半人马座 ω<span class="en">Omega Centauri</span></div>
         <p class="astro-card-tagline">银河系最大的球状星团，疑为被吞噬矮星系的残核</p>
-        <div class="astro-card-stats"><span>4×10⁶ M☉</span><span>83 光年</span><span>83 光年</span></div>
+        <div class="astro-card-stats"><span>4×10⁶ M☉</span><span>83 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -982,7 +969,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">本星系群<span class="en">Local Group</span></div>
         <p class="astro-card-tagline">银河系所属的星系社群，80 多个星系的小团体</p>
-        <div class="astro-card-stats"><span>3×10¹² M☉</span><span>5,000,000 光年</span><span>5,000,000 光年</span></div>
+        <div class="astro-card-stats"><span>3×10¹² M☉</span><span>5,000,000 光年</span></div>
       </div>
       <span class="astro-badge structure">大尺度结构</span>
     </a>
@@ -993,7 +980,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">室女座星系团<span class="en">Virgo Cluster</span></div>
         <p class="astro-card-tagline">离我们最近的大型星系团，上千个星系的引力都会</p>
-        <div class="astro-card-stats"><span>1.2×10¹⁵ M☉</span><span>7,500,000 光年</span><span>7,500,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.2×10¹⁵ M☉</span><span>7,500,000 光年</span></div>
       </div>
       <span class="astro-badge structure">大尺度结构</span>
     </a>
@@ -1004,7 +991,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">拉尼亚凯亚超星系团<span class="en">Laniakea Supercluster</span></div>
         <p class="astro-card-tagline">银河系所在的家园超星系团，十万个星系的洪流盆地</p>
-        <div class="astro-card-stats"><span>1×10¹⁷ M☉</span><span>260,000,000 光年</span><span>260,000,000 光年</span></div>
+        <div class="astro-card-stats"><span>1×10¹⁷ M☉</span><span>260,000,000 光年</span></div>
       </div>
       <span class="astro-badge structure">大尺度结构</span>
     </a>
@@ -1015,7 +1002,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">巨引源<span class="en">Great Attractor</span></div>
         <p class="astro-card-tagline">隐匿在银河盘面背后的引力深渊，牵引着本超星系团</p>
-        <div class="astro-card-stats"><span>1×10¹⁶ M☉</span><span>200,000,000 光年</span><span>200,000,000 光年</span></div>
+        <div class="astro-card-stats"><span>1×10¹⁶ M☉</span><span>200,000,000 光年</span></div>
       </div>
       <span class="astro-badge structure">大尺度结构</span>
     </a>
@@ -1026,7 +1013,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">武仙-北冕座长城<span class="en">Hercules–Corona Borealis Great Wall</span></div>
         <p class="astro-card-tagline">已知最大的宇宙结构之一，横跨百亿光年的星系巨墙</p>
-        <div class="astro-card-stats"><span>1×10¹⁸ M☉</span><span>5,000,000,000 光年</span><span>5,000,000,000 光年</span></div>
+        <div class="astro-card-stats"><span>1×10¹⁸ M☉</span><span>5,000,000,000 光年</span></div>
       </div>
       <span class="astro-badge structure">大尺度结构</span>
     </a>
@@ -1059,7 +1046,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">天鹅星云<span class="en">Omega Nebula</span></div>
         <p class="astro-card-tagline">银河系中最亮的发射星云之一，形似一只展翅的天鹅</p>
-        <div class="astro-card-stats"><span>20 光年</span><span>20 光年</span></div>
+        <div class="astro-card-stats"><span>20 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -1070,7 +1057,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">哑铃星云<span class="en">Dumbbell Nebula</span></div>
         <p class="astro-card-tagline">人类发现的第一个行星状星云，形似一只哑铃</p>
-        <div class="astro-card-stats"><span>1 光年</span><span>1 光年</span></div>
+        <div class="astro-card-stats"><span>1 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -1081,7 +1068,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">船底座星云<span class="en">Carina Nebula</span></div>
         <p class="astro-card-tagline">全天最大最亮的星云之一，藏着最不稳定的巨星海山二</p>
-        <div class="astro-card-stats"><span>230 光年</span><span>230 光年</span></div>
+        <div class="astro-card-stats"><span>230 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -1092,7 +1079,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">北美洲星云<span class="en">North America Nebula</span></div>
         <p class="astro-card-tagline">形状酷似北美洲大陆的发射星云</p>
-        <div class="astro-card-stats"><span>45 光年</span><span>45 光年</span></div>
+        <div class="astro-card-stats"><span>45 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -1114,7 +1101,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">黑眼星系<span class="en">Black Eye Galaxy</span></div>
         <p class="astro-card-tagline">壮丽旋臂前横着一条暗尘埃带，像一只乌黑的眼睛</p>
-        <div class="astro-card-stats"><span>27,000 光年</span><span>27,000 光年</span></div>
+        <div class="astro-card-stats"><span>27,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -1125,7 +1112,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">南风车星系<span class="en">Southern Pinwheel Galaxy</span></div>
         <p class="astro-card-tagline">南天最亮的旋涡星系之一，恒星爆发此起彼伏</p>
-        <div class="astro-card-stats"><span>27,500 光年</span><span>27,500 光年</span></div>
+        <div class="astro-card-stats"><span>27,500 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -1136,7 +1123,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">半人马 A<span class="en">Centaurus A</span></div>
         <p class="astro-card-tagline">被一条厚重尘埃带拦腰横穿的并合遗迹星系</p>
-        <div class="astro-card-stats"><span>30,000 光年</span><span>30,000 光年</span></div>
+        <div class="astro-card-stats"><span>30,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -1147,7 +1134,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">天线星系<span class="en">Antennae Galaxies</span></div>
         <p class="astro-card-tagline">两个正在撕扯合并的旋涡星系，甩出两条长长的潮汐尾</p>
-        <div class="astro-card-stats"><span>250,000 光年</span><span>250,000 光年</span></div>
+        <div class="astro-card-stats"><span>250,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -1158,7 +1145,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">野鸭星团<span class="en">Wild Duck Cluster</span></div>
         <p class="astro-card-tagline">数千颗恒星挤成三角阵，像一群列队飞翔的野鸭</p>
-        <div class="astro-card-stats"><span>25 光年</span><span>25 光年</span></div>
+        <div class="astro-card-stats"><span>25 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -1169,7 +1156,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">托勒密星团<span class="en">Ptolemy Cluster</span></div>
         <p class="astro-card-tagline">两千年前就被古人记进星表的疏散星团</p>
-        <div class="astro-card-stats"><span>12 光年</span><span>12 光年</span></div>
+        <div class="astro-card-stats"><span>12 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -1180,7 +1167,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">珠宝盒星团<span class="en">Jewel Box Cluster</span></div>
         <p class="astro-card-tagline">蓝超巨星与红超巨星挤在一起，像一匣彩色宝石</p>
-        <div class="astro-card-stats"><span>9 光年</span><span>9 光年</span></div>
+        <div class="astro-card-stats"><span>9 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
     </a>
@@ -1191,7 +1178,7 @@ description: "收录 151 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">GW150914 并合黑洞<span class="en">GW150914</span></div>
         <p class="astro-card-tagline">人类第一个直接探测到的引力波事件：双黑洞并合</p>
-        <div class="astro-card-stats"><span>62 M☉</span><span>183 km</span><span>62 M☉</span></div>
+        <div class="astro-card-stats"><span>62 M☉</span><span>183 km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
