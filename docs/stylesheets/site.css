@@ -15,7 +15,8 @@
  * 全局
  * ============================================================ */
 .md-grid {
-  max-width: min(90%, 110rem);
+  /* 移动端（<600px）满宽：手机屏本就不大，90% 留白纯属浪费；平板及以上在 ≥600 媒体查询里恢复 90% 上限 */
+  max-width: 100%;
 }
 /* hero / 底部说明区文字限宽，避免拉太宽难读 */
 .astro-hero > * {
@@ -542,10 +543,10 @@
 /* ============================================================
  * 天体对比页 compare.md（基线：移动）
  * ============================================================ */
-/* 选择器：移动端也与桌面一致，A / 交换 / B 横排（不纵向堆叠）；两端均衡分配、不无限拉伸 */
+/* 选择器：移动端也与桌面一致，A / B 横排（不纵向堆叠）；两端均衡分配、不无限拉伸 */
 .sizecmp-bar {
   display: flex;
-  flex-direction: row;          /* 始终横排：A 左 ⇄ B 右，与桌面端布局一致 */
+  flex-direction: row;          /* 始终横排：A 左 B 右，与桌面端布局一致 */
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
@@ -567,20 +568,6 @@
 .sizecmp-select:focus { outline: 2px solid var(--md-primary-fg-color); outline-offset: 1px; }
 /* 类型筛选下拉：比天体下拉小一号，形成层级 */
 .sizecmp-select.sizecmp-cat { font-size: 0.9rem; padding: 0.5rem 0.7rem; }
-.sizecmp-swap {
-  align-self: center;
-  min-width: 48px;               /* 触摸目标 */
-  min-height: 44px;
-  padding: 0.5rem 1.4rem;
-  font-size: 1.15rem;
-  line-height: 1;
-  border-radius: 0.6rem;
-  border: 1px solid var(--md-primary-fg-color);
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
-  cursor: pointer;
-  transition: opacity 0.12s ease;
-}
 /* ---- 天体对比可视化（HTML 双列；移动端横排 A 左 B 右；字体不随缩放变小）---- */
 .sizecmp-viz { margin: 0 0 1rem; }
 .sizecmp-viz-canvas { display: block; max-width: 900px; margin: 0 auto; }
@@ -916,7 +903,9 @@ html[data-md-color-scheme="slate"] .md-header {
   .dl-card b { display: block; font-size: 0.98rem; }
   .dl-card b::after { content: none; }
   .dl-card span { font-size: 0.8rem; }
-  /* 对比页恢复横排：A ⇄ B 一行 */
+  /* 平板及以上：内容容器恢复 90% 上限（移动端已改为满宽） */
+  .md-grid { max-width: min(90%, 110rem); }
+  /* 对比页恢复横排：A 左 B 右一行 */
   .sizecmp-bar { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: center; }
   .sizecmp-pick { flex: 1 1 14rem; max-width: 18rem; }
   .sizecmp-select { font-size: 0.95rem; padding: 0.5rem 0.8rem; }
@@ -971,7 +960,6 @@ html[data-md-color-scheme="slate"] .md-header {
   .obj-source p { font-size: 0.82rem; }
   .sizecmp-pick { flex: 0 1 auto; }
   .sizecmp-select { min-width: 12rem; max-width: 18rem; font-size: 0.95rem; }
-  .sizecmp-swap { min-width: 0; min-height: 0; padding: 0.5rem 0.95rem; }
   .sizecmp-ratio-big { font-size: 2.4rem; }
   .sizecmp-table { font-size: 1rem; }
   .sizecmp-table th, .sizecmp-table td { padding: 0.5rem 0.8rem; }
@@ -997,7 +985,6 @@ html[data-md-color-scheme="slate"] .md-header {
     color: var(--md-primary-fg-color);
   }
   .dl-card:hover { transform: translateY(-2px); }
-  .sizecmp-swap:hover { opacity: 0.88; }
   .astro-article-list li a:hover {
     background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
   }

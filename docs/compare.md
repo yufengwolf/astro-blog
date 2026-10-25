@@ -12,7 +12,6 @@ description: "选择任意两个天体，按真实直径比例直观对比大小
     <select id="sizecmp-cat-a" class="sizecmp-select sizecmp-cat" aria-label="筛选天体 A 的类型"></select>
     <select id="sizecmp-a" class="sizecmp-select" aria-label="选择天体 A"></select>
   </div>
-  <button type="button" id="sizecmp-swap" class="sizecmp-swap" title="交换 A / B" aria-label="交换 A 和 B">⇄</button>
   <div class="sizecmp-pick">
     <span class="sizecmp-label">天体 B</span>
     <select id="sizecmp-cat-b" class="sizecmp-select sizecmp-cat" aria-label="筛选天体 B 的类型"></select>

@@ -21,7 +21,6 @@
   var selB = document.getElementById("sizecmp-b");
   var catSelA = document.getElementById("sizecmp-cat-a");
   var catSelB = document.getElementById("sizecmp-cat-b");
-  var swapBtn = document.getElementById("sizecmp-swap");
   var ratiosEl = document.getElementById("sizecmp-ratios");
   var detailEl = document.getElementById("sizecmp-detail");
   var noteEl = document.getElementById("sizecmp-viz-note");
@@ -442,12 +441,6 @@
   selB.addEventListener("change", render);
   catSelA.addEventListener("change", function () { fillSelects(selA.value, selB.value); render(); });
   catSelB.addEventListener("change", function () { fillSelects(selA.value, selB.value); render(); });
-  swapBtn.addEventListener("click", function () {
-    // 分类随天体一起交换，保证两侧 option 必然存在
-    var t = catSelA.value; catSelA.value = catSelB.value; catSelB.value = t;
-    fillSelects(selB.value, selA.value);
-    render();
-  });
   if (toggleEl) {
     toggleEl.querySelectorAll("button").forEach(function (btn) {
       btn.addEventListener("click", function () {
