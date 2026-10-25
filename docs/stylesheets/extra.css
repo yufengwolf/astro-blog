@@ -603,11 +603,13 @@
 }
 .sizecmp-img {
   display: block;
-  max-width: 44vw;             /* 含环图横向伸展时限制，避免压到对侧 */
+  flex: 0 0 auto;            /* 禁止 flex 容器在窄屏把图压窄（否则宽被缩、高不变 → 椭圆畸变） */
+  /* 尺寸由 JS 按真实宽高比 + 统一缩放推导，禁止任何 width/height 兜底钳制以免变形 */
   filter: drop-shadow(0 2px 8px color-mix(in srgb, var(--md-default-fg-color) 18%, transparent));
 }
 .sizecmp-solid {
   display: flex;
+  flex: 0 0 auto;            /* 同 img，禁止被 flex 容器压窄 */
   align-items: center;
   justify-content: center;
   border-radius: 50%;

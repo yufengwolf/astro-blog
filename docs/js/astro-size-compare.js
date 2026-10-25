@@ -250,6 +250,25 @@
     var pa = pxOf(a), pb = pxOf(b);
     // 真实比例下本体直径小于阈值的：不放大、不贴图，绘为点（配实际倍数文字）
     var dotA = !useLog && (2 * pa) < DOT, dotB = !useLog && (2 * pb) < DOT;
+
+    // 每侧贴图按「本体球直径 = 2*px」定高；再由 总宽/总高 共同约束取统一缩放 S，
+    // 保证两图都装得下、严格保持宽高比（不变形）、且真实比例不变（两侧同一 S 缩放）
+    var availH = Math.min(maxCss * 3.2, (window.innerHeight || 700) * 0.72);
+    var gap = 24;  // .sizecmp-viz-inner 的 gap 估算
+    function target(r, px) {
+      if (r.image) {
+        var sf = r._sf || 0.5, ar = r._aspect || 1;
+        var h = px / sf;            // 本体球直径 = 2*px（sf=本体球半径/图高）
+        return { w: h * ar, h: h }; // 按真实宽高比推导宽度，杜绝变形
+      }
+      var d = 2 * px;               // 纯色实心球：直径 = 2*px
+      return { w: d, h: d };
+    }
+    var tA = target(a, pa), tB = target(b, pb);
+    var sW = (vizEl.clientWidth - gap) / (tA.w + tB.w);   // 两图并排不超出容器
+    var sH = Math.min(availH / tA.h, availH / tB.h);       // 任一侧不超出可用高
+    var S = Math.max(0.01, Math.min(sW, sH, 1));           // 同一缩放 → 真实比例不变
+
     function side(r, px, isDot) {
       var col = colorFor(r)[0];
       if (isDot) {
@@ -265,13 +284,13 @@
       }
       var ball;
       if (r.image) {
-        // 贴图：让「本体球直径」= 2*px（sf 为运行时测量的本体球半径/图高）
-        var sf = r._sf || 0.5;
-        var dispH = Math.min(px / sf, px * 3);
+        // width/height 同时按 _aspect 推导并统一缩放 S，严格保持宽高比（不变形）
+        var t = (r === a) ? tA : tB;
+        var dw = (t.w * S).toFixed(1), dh = (t.h * S).toFixed(1);
         ball = '<img class="sizecmp-img" src="' + esc(r.image) + '" alt="' + esc(r.name) +
-          '" style="height:' + dispH.toFixed(1) + 'px;width:auto">';
+          '" style="width:' + dw + 'px;height:' + dh + 'px">';
       } else {
-        var d = (2 * px).toFixed(1);
+        var d = (2 * px * S).toFixed(1);   // 纯色实心球同样按 S 缩放，保持真实比例
         ball = '<span class="sizecmp-solid" style="width:' + d + 'px;height:' + d +
           'px;background:' + col + '">' + esc((r.name || '?').charAt(0)) + '</span>';
       }
