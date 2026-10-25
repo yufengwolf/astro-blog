@@ -233,9 +233,10 @@
   function drawBody(g, cx, cy, rPx, r, asDot) {
     if (asDot) {
       // 真实比例下本体半径已不足挂载贴图：绘为分类色「点」，边界即球体本身，
-      // 名称下方附实际比例说明——宁可小而真实，不放大到与更大天体视觉混淆
+      // 名称下方附实际比例说明——宁可小而真实，不放大到与更大天体视觉混淆。
+      // 2px 保底：亚像素级的小点（如 1:10⁵）在手机上也可见，真实倍数以文字为准
       var c = colorFor(r);
-      var rr = Math.max(1.2, rPx);
+      var rr = Math.max(2, rPx);
       g.appendChild(el("circle", { "cx": cx, "cy": cy, "r": rr, "fill": c[0] }));
       g.appendChild(el("circle", {
         "cx": cx, "cy": cy, "r": rr, "fill": "none", "class": "sizecmp-stroke"
@@ -294,6 +295,11 @@
     }
     var VW = 1000, VH = 760, MARGIN = 30, GAP = 90;
     var MAX_PX = 240, DOT_PX = 4;            // 大球半径上限 / 绘为「点」的本体半径阈值
+    // 窄容器（手机）切换纵向堆叠布局：viewBox 收窄、两球上下排列、球体放大、
+    // 文字加大——横排 viewBox 整体缩放会让球体和文字一起缩到不可读
+    var narrow = svg.clientWidth > 0 && svg.clientWidth < 600;
+    if (narrow) { VW = 375; VH = 1160; MAX_PX = 130; GAP = 40; }
+    svg.setAttribute("viewBox", "0 0 " + VW + " " + VH);
     var ratio = Math.max(a.radius, b.radius) / Math.min(a.radius, b.radius);
     var overThreshold = ratio > 1000;
     if (toggleEl) toggleEl.hidden = !overThreshold;
@@ -333,18 +339,33 @@
     }
     // 自适应页面：贴图外沿总宽超出画布时整体等比缩小（真实比例不变），
     // 窄屏下 SVG 随容器宽度等比缩放，同一套比例适配任意屏宽
-    var totalW = layout(a, pa, dotA).w + layout(b, pb, dotB).w + GAP;
+    var totalW = narrow
+      ? Math.max(layout(a, pa, dotA).w, layout(b, pb, dotB).w) + 2 * MARGIN
+      : layout(a, pa, dotA).w + layout(b, pb, dotB).w + GAP;
     var fit = Math.min(1, (VW - 2 * MARGIN) / totalW);
     pa *= fit; pb *= fit;
     var da = layout(a, pa, dotA), db = layout(b, pb, dotB);
-    var baseY = 650;                          // 球体底边基线（下有名称标注）
-    var startX = (VW - (da.w + db.w + GAP)) / 2;
-    var cxA = startX + da.w / 2, cxB = startX + da.w + GAP + db.w / 2;
+    var cxA, cxB, baseYA, baseYB;
+    if (narrow) {
+      // 纵向：A 上 B 下，各自水平居中；baseY 为该球底边 y（下有名称标注）
+      cxA = cxB = VW / 2;
+      baseYA = 30 + da.h;
+      baseYB = baseYA + 130 + db.h;
+      VH = baseYB + 110;
+      svg.setAttribute("viewBox", "0 0 " + VW + " " + VH);
+    } else {
+      var baseY = 650;                       // 球体底边基线（下有名称标注）
+      var startX = (VW - (da.w + db.w + GAP)) / 2;
+      cxA = startX + da.w / 2; cxB = startX + da.w + GAP + db.w / 2;
+      baseYA = baseYB = baseY;
+    }
     var g = el("g", {});
-    drawBody(g, cxA, baseY - (dotA ? DOT_PX * fit : pa), dotA ? DOT_PX * fit : pa, a, dotA);
-    drawBody(g, cxB, baseY - (dotB ? DOT_PX * fit : pb), dotB ? DOT_PX * fit : pb, b, dotB);
+    // 点模式传真实比例半径（drawBody 内部保底 2px 可见），cy 用点半径贴基线
+    var pAx = dotA ? Math.max(2, pa) : pa, pBx = dotB ? Math.max(2, pb) : pb;
+    drawBody(g, cxA, baseYA - pAx, pAx, a, dotA);
+    drawBody(g, cxB, baseYB - pBx, pBx, b, dotB);
     svg.appendChild(g);
-    function label(cx, r, isDot, realPx) {
+    function label(cx, baseY, r, isDot, realPx) {
       var t1 = el("text", {
         "x": cx, "y": baseY + 26, "text-anchor": "middle",
         "class": "sizecmp-name" + (isDot ? " sizecmp-name-dot" : "")
@@ -364,8 +385,8 @@
         svg.appendChild(t3);
       }
     }
-    label(cxA, a, dotA, dotA ? a.radius * (MAX_PX / Math.max(a.radius, b.radius)) : pa);
-    label(cxB, b, dotB, dotB ? b.radius * (MAX_PX / Math.max(a.radius, b.radius)) : pb);
+    label(cxA, baseYA, a, dotA, dotA ? a.radius * (MAX_PX / Math.max(a.radius, b.radius)) : pa);
+    label(cxB, baseYB, b, dotB, dotB ? b.radius * (MAX_PX / Math.max(a.radius, b.radius)) : pb);
     var extInvolved = a.ext || b.ext;
     var dotNames = [];
     if (dotA) dotNames.push(a.name);
@@ -436,7 +457,8 @@
         "</td><td>" + (ratio == null ? "—" : ratio.toPrecision(3) + "×") + "</td></tr>";
     });
     html += "</tbody></table>";
-    detailEl.innerHTML = html;
+    // 移动端 4 列数值易折行：包一层横向滚动（≥600px 时 CSS 取消 min-width 不滚动）
+    detailEl.innerHTML = '<div class="sizecmp-detail-scroll">' + html + "</div>";
   }
 
   function render() {
@@ -521,5 +543,14 @@
       });
     });
   }
+  // 窗口缩放 / 旋屏：容器宽度跨越 600px 断点时重排（横排 ↔ 纵堆叠）
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      var a = byId[selA.value], b = byId[selB.value];
+      if (a && b) render();
+    }, 150);
+  });
   maybeRender();   // 无图片时 pending 已为 0，立即渲染；有图片等 onload
 })();

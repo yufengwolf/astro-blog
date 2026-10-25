@@ -1,6 +1,15 @@
-/* 天体数据库工具页样式（适配 Material 明暗双主题，使用 md CSS 变量） */
+/* 天体数据库工具页样式（适配 Material 明暗双主题，使用 md CSS 变量）
+ *
+ * 响应式策略：mobile-first + 渐进增强
+ *   基线（< 600px）：移动布局（单列、横滑 chips、紧凑横卡、表格横滚、对比图纵排）
+ *   ≥ 600px：平板过渡（两列卡片、工具栏回绕、对比图横排）
+ *   ≥ 1024px：桌面视觉（恢复历史桌面样式）
+ * 断点对齐 Material 主题体系；hover 效果仅 @media (hover: hover) 生效（触屏不粘滞）
+ */
 
-/* ---------- 全局宽度：内容区占约 90%，超宽屏封顶 ---------- */
+/* ============================================================
+ * 全局
+ * ============================================================ */
 .md-grid {
   max-width: min(90%, 110rem);
 }
@@ -19,11 +28,55 @@
   margin-inline: auto;
 }
 
-/* ---------- 首页 hero ---------- */
+/* ============================================================
+ * 表格横向滚动（移动端多列表格必需，JS 把 .md-typeset table 包进来）
+ * ============================================================ */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.7rem;
+  position: relative;
+}
+/* 右缘渐隐：提示"右边还有列"。background-attachment:local 让渐变随内容
+   滚动——滚到边缘自然消失，不遮内容；仅可横滚时由 JS 加 .is-scrollable 启用 */
+.table-scroll.is-scrollable {
+  background-image: linear-gradient(to left, var(--md-default-bg-color), transparent);
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: 2.2em 100%;
+  background-attachment: local;
+}
+.md-typeset .table-scroll table {
+  margin: 0;
+  /* 多列表格（天体库总表 10 列）的最小可读宽度：窄容器下保持列宽、
+     容器横向滚动，而不是把每列压扁；桌面/平板容器宽于此时不触发滚动 */
+  min-width: 40rem;
+}
+/* 横滚容器内数值不折行：列按内容撑宽（总宽超容器时横向滚动查看），
+   避免 "3.3×10²³ kg" 被折成 "3.3" + "kg" 两行。
+   加 .md-typeset 前缀提特异性，压过 Material 主题自带的表格规则 */
+.md-typeset .table-scroll th,
+.md-typeset .table-scroll td { white-space: nowrap; }
+/* 字段说明表的「含义」列是长文本，允许折行 */
+.md-typeset .obj-fields .table-scroll td:nth-child(2),
+.md-typeset .obj-fields .table-scroll th:nth-child(2) { white-space: normal; }
+/* 首列固定：横滚时天体名称不丢（实底色遮住滚过的列）。
+   斑马纹/表头底色都压在 td 自身背景之下，实底即可遮住滚过的列 */
+.md-typeset .table-scroll th:first-child,
+.md-typeset .table-scroll td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--md-default-bg-color);
+}
+
+/* ============================================================
+ * 首页 hero（基线：移动）
+ * ============================================================ */
 .astro-hero {
   text-align: center;
-  padding: 2.2rem 1rem 1.6rem;
-  margin-bottom: 1.2rem;
+  padding: 1.3rem 0.9rem 1.1rem;
+  margin-bottom: 0.9rem;
   border-radius: 1rem;
   background: linear-gradient(135deg,
     color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent),
@@ -32,66 +85,72 @@
 }
 .astro-hero h1 {
   margin: 0 0 0.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--md-default-fg-color);
 }
 .astro-hero-sub {
-  margin: 0 0 1rem;
-  font-size: 1.02rem;
+  margin: 0 0 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--md-default-fg-color--light);
+  text-wrap: pretty;            /* 渐进增强：避免孤字断行 */
 }
 .astro-hero-stats {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 .astro-stat {
   display: inline-block;
-  padding: 0.28rem 0.8rem;
+  padding: 0.26rem 0.75rem;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   background: var(--md-default-bg-color);
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent);
   color: var(--md-default-fg-color--light);
 }
 .astro-stat b {
   color: var(--md-primary-fg-color);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-right: 0.15rem;
 }
 .astro-hero-links {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--md-default-fg-color--light);
 }
 .astro-hero-links .sep {
-  margin: 0 0.55rem;
+  margin: 0 0.5rem;
   opacity: 0.5;
 }
 
-/* ---------- 工具栏 ---------- */
+/* ============================================================
+ * 工具栏（基线：移动——sticky 保留，chips 横滑，搜索全宽）
+ * ============================================================ */
 .astro-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.85rem 1rem;
+  gap: 0.6rem;
+  padding: 0.7rem 0.8rem;
   margin: 0 0 0.4rem;
   border-radius: 0.8rem;
   background: var(--md-default-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
   position: sticky;
-  top: 0;
+  /* top 由 JS 按 .md-header 实际高度写入 --astro-sticky-top，避免被吸顶 header 遮住 */
+  top: var(--astro-sticky-top, 0px);
   z-index: 5;
   box-shadow: 0 1px 0 color-mix(in srgb, var(--md-default-fg-color) 5%, transparent);
 }
 .astro-toolbar #astro-search {
-  flex: 1 1 12rem;
-  min-width: 10rem;
-  padding: 0.45rem 0.8rem;
-  font-size: 0.92rem;
+  flex: 1 1 100%;
+  min-width: 0;
+  padding: 0.55rem 0.9rem;
+  font-size: 16px;              /* ≥16px：防 iOS 聚焦自动放大页面 */
   border-radius: 999px;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
@@ -101,24 +160,27 @@
   outline: 2px solid var(--md-primary-fg-color);
   outline-offset: 1px;
 }
+/* chips 横滑：12 个分类不换行占屏，像 App Store 一样横扫 */
 .astro-chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;         /* Firefox 隐藏滚动条 */
   gap: 0.4rem;
+  flex: 1 1 100%;
+  -webkit-overflow-scrolling: touch;
 }
+.astro-chips::-webkit-scrollbar { display: none; }
 .chip {
-  padding: 0.32rem 0.85rem;
+  flex: 0 0 auto;
+  padding: 0.45rem 0.85rem;      /* 触摸友好高度 */
   font-size: 0.84rem;
   border-radius: 999px;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color--light);
   cursor: pointer;
-  transition: all 0.12s ease;
-}
-.chip:hover {
-  border-color: var(--md-primary-fg-color);
-  color: var(--md-primary-fg-color);
+  transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
 }
 .chip.active {
   background: var(--md-primary-fg-color);
@@ -126,6 +188,7 @@
   color: var(--md-primary-bg-color);
 }
 .astro-sort-label {
+  flex: 0 0 auto;
   font-size: 0.84rem;
   color: var(--md-default-fg-color--light);
   display: inline-flex;
@@ -133,67 +196,72 @@
   gap: 0.4rem;
 }
 .astro-sort-label select {
-  padding: 0.32rem 0.5rem;
-  font-size: 0.84rem;
+  padding: 0.45rem 0.5rem;
+  font-size: 16px;              /* ≥16px：防 iOS 聚焦自动放大页面 */
   border-radius: 0.5rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
 }
 .astro-count {
-  margin: 0.3rem 0 1rem;
+  margin: 0.3rem 0 0.8rem;
   font-size: 0.8rem;
   color: var(--md-default-fg-color--light);
 }
 
-/* ---------- 卡片网格 ---------- */
+/* ============================================================
+ * 卡片网格（基线：移动——单列横向紧凑卡，图左文右）
+ * ============================================================ */
 .astro-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
 }
 .astro-card {
   position: relative;
+  display: flex;
   border-radius: 0.9rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
   overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.astro-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
 }
 .astro-card[hidden] { display: none; }
 .astro-card-link {
-  display: block;
+  display: flex;
+  flex: 1;
+  min-width: 0;
   text-decoration: none;
   color: inherit;
 }
+/* 移动端图片区：固定宽度竖条，球体居中 */
 .astro-img {
-  height: 150px;
+  flex: 0 0 104px;
+  width: 104px;
+  height: auto;
+  min-height: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 0.5rem;
 }
 .astro-img img {
   /* 统一显示高度：圆盘图（600×600）与含环宽幅图（球体同占画布高 70%）
      在同一显示高度下球体视觉直径一致，环向两侧伸展（width 自适应） */
-  height: 108px;
+  height: 84px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--md-default-fg-color) 18%, transparent));
 }
 .astro-img-fallback span {
-  width: 92px;
-  height: 92px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
@@ -211,21 +279,25 @@
 .astro-img-fallback.structure span { background: linear-gradient(135deg, #7fd4ff, #2a6a8a); }
 .astro-img-fallback.comet span { background: linear-gradient(135deg, #7fe0d0, #1f7a6a); }
 
-.astro-card-body { padding: 0.7rem 0.95rem 0.95rem; }
+.astro-card-body {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 0.85rem 0.8rem;
+}
 .astro-card-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--md-default-fg-color);
 }
 .astro-card-title .en {
-  margin-left: 0.4rem;
-  font-size: 0.78rem;
+  margin-left: 0.35rem;
+  font-size: 0.74rem;
   font-weight: 400;
   color: var(--md-default-fg-color--light);
 }
 .astro-card-tagline {
-  margin: 0.3rem 0 0.55rem;
-  font-size: 0.8rem;
+  margin: 0.25rem 0 0.45rem;
+  font-size: 0.78rem;
   line-height: 1.5;
   color: var(--md-default-fg-color--light);
   display: -webkit-box;
@@ -236,22 +308,22 @@
 .astro-card-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem 0.6rem;
-  font-size: 0.74rem;
+  gap: 0.28rem 0.45rem;
+  font-size: 0.72rem;
   color: var(--md-default-fg-color--light);
 }
 .astro-card-stats span {
-  padding: 0.12rem 0.45rem;
+  padding: 0.1rem 0.42rem;
   border-radius: 0.35rem;
   background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
   white-space: nowrap;
 }
 .astro-badge {
   position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
-  padding: 0.14rem 0.55rem;
-  font-size: 0.7rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.12rem 0.5rem;
+  font-size: 0.68rem;
   border-radius: 999px;
   color: #fff;
   backdrop-filter: blur(2px);
@@ -277,17 +349,19 @@
   border-radius: 0.8rem;
 }
 
-/* ---------- 文章区 / 数据说明 ---------- */
+/* ============================================================
+ * 文章区 / 数据说明
+ * ============================================================ */
 .astro-articles, .astro-note, .obj-articles {
-  margin-top: 2rem;
-  padding: 1.1rem 1.3rem;
+  margin-top: 1.4rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.8rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
 }
 .astro-articles h2, .astro-note h2, .obj-articles h2 {
   margin-top: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 .astro-article-list {
   list-style: none;
@@ -295,28 +369,28 @@
   margin: 0.5rem 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.4rem;
 }
 .astro-article-list li a {
   display: inline-block;
-  padding: 0.3rem 0.75rem;
-  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 30%, transparent);
   text-decoration: none;
 }
-.astro-article-list li a:hover {
-  background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
-}
-.astro-note p { font-size: 0.85rem; color: var(--md-default-fg-color--light); }
+.astro-note p { font-size: 0.84rem; color: var(--md-default-fg-color--light); }
 
-/* ---------- 详情页 ---------- */
+/* ============================================================
+ * 详情页（基线：移动）
+ * ============================================================ */
 .obj-hero {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.4rem;
+  flex-direction: column;
+  gap: 1rem;
   align-items: center;
-  padding: 1.4rem;
+  text-align: center;
+  padding: 1.1rem;
   margin: 0.5rem 0 1rem;
   border-radius: 1rem;
   background: linear-gradient(135deg,
@@ -324,29 +398,28 @@
     color-mix(in srgb, var(--md-primary-fg-color) 3%, transparent));
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 15%, transparent);
 }
-/* 详情页 hero：信息在左，大图在右（不再圆形头像式小框，可看细节；
-   含环宽幅图完整显示球+环，圆形天体等大呈现）
-   order:2 对裸 .astro-img（无 credit 的 AI 示意图等）同样生效，
-   保证所有天体的大图位置一致——不再有 credit 的在右、没 credit 的在左 */
+/* 移动端大图置顶（order -1 覆盖桌面 order:2 的图在右） */
+.obj-hero .astro-img,
+.obj-hero-imgwrap {
+  order: -1;
+}
 .obj-hero .astro-img {
   width: auto;
-  height: 360px;
+  height: 220px;
   max-width: 100%;
   flex: 0 0 auto;
   background: transparent;
-  order: 2;
 }
-.obj-hero .astro-img img { width: auto; height: 360px; max-width: 100%; }
+.obj-hero .astro-img img { width: auto; height: 220px; max-width: 100%; }
 .obj-hero-imgwrap {
   width: auto;
   max-width: 100%;
   flex: 0 1 auto;
-  order: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.obj-hero-info { flex: 1 1 16rem; order: 1; }
+.obj-hero-info { flex: 1 1 auto; min-width: 0; order: 1; }
 .astro-img-credit {
   margin-top: 0.4rem;
   font-size: 0.62rem;
@@ -358,64 +431,68 @@
 .astro-img-credit a { color: inherit; text-decoration: underline; }
 .obj-hero-info h1 {
   margin: 0.4rem 0 0.3rem;
-  font-size: 1.7rem;
+  font-size: 1.45rem;
   border: none;
 }
 .obj-hero-info h1 small {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: var(--md-default-fg-color--light);
   margin-left: 0.4rem;
 }
 .obj-tagline {
   margin: 0 0 0.8rem;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   color: var(--md-default-fg-color--light);
+  text-wrap: pretty;
 }
 .obj-keystats {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.4rem;
 }
 .obj-keystats span {
-  padding: 0.28rem 0.7rem;
-  font-size: 0.82rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
   border-radius: 0.5rem;
   background: var(--md-default-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 .obj-parent {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--md-default-fg-color--light);
-  margin: 0 0 1rem;
+  margin: 0 0 0.9rem;
 }
 .obj-source, .obj-article {
-  margin-top: 1.6rem;
-  padding: 1rem 1.2rem;
+  margin-top: 1.3rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.8rem;
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 .obj-source h2, .obj-article h2 {
   margin-top: 0;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
-.obj-source p { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
+.obj-source p { font-size: 0.8rem; color: var(--md-default-fg-color--light); }
 .obj-nav {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--md-default-fg-color--light);
   margin: 0.3rem 0;
 }
 
-/* ---------- 天体对比（详情页） ---------- */
+/* ============================================================
+ * 天体对比（详情页内嵌，基线：移动）
+ * ============================================================ */
 .obj-compare-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.7rem;
-  margin: 0 0 1rem;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
 }
 .cmp-btn {
-  padding: 0.5rem 1.1rem;
+  padding: 0.65rem 1.2rem;       /* 触摸友好 */
   font-size: 0.92rem;
   font-weight: 600;
   border-radius: 999px;
@@ -425,23 +502,22 @@
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
-.cmp-btn:hover { opacity: 0.88; }
 .cmp-hint {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--md-default-fg-color--light);
 }
 .obj-compare {
-  margin: 0 0 1.4rem;
-  padding: 1.1rem 1.2rem;
+  margin: 0 0 1.2rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.9rem;
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 22%, transparent);
   background: color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent);
 }
-.cmp-picker { position: relative; max-width: 26rem; }
+.cmp-picker { position: relative; max-width: none; }
 .cmp-picker #cmp-search {
   width: 100%;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+  font-size: 16px;              /* 防 iOS 聚焦放大 */
   border-radius: 999px;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
@@ -459,6 +535,7 @@
   z-index: 8;
   max-height: 16rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   list-style: none;
   margin: 0;
   padding: 0.3rem;
@@ -472,17 +549,14 @@
   width: 100%;
   align-items: baseline;
   gap: 0.5rem;
-  padding: 0.42rem 0.7rem;
+  padding: 0.6rem 0.7rem;        /* 触摸友好 */
   border: none;
   border-radius: 0.5rem;
   background: none;
   color: var(--md-default-fg-color);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   text-align: left;
   cursor: pointer;
-}
-.cmp-results li button:hover {
-  background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
 }
 .cmp-results .cmp-en {
   font-size: 0.76rem;
@@ -496,17 +570,18 @@
 .cmp-table-wrap {
   margin-top: 0.9rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-radius: 0.7rem;
   border: 1px solid var(--md-default-fg-color--lightest);
 }
 .cmp-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   background: var(--md-default-bg-color);
 }
 .cmp-table th, .cmp-table td {
-  padding: 0.42rem 0.8rem;
+  padding: 0.45rem 0.6rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   text-align: right;
   white-space: nowrap;
@@ -515,7 +590,7 @@
   position: sticky;
   top: 0;
   background: color-mix(in srgb, var(--md-primary-fg-color) 7%, var(--md-default-bg-color));
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   text-align: right;
 }
 .cmp-table .cmp-param {
@@ -545,7 +620,7 @@
 .cmp-remove {
   display: inline-block;
   margin-left: 0.45rem;
-  padding: 0 0.3rem;
+  padding: 0.15rem 0.45rem;      /* 触摸友好 */
   border: none;
   border-radius: 0.35rem;
   background: color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
@@ -555,10 +630,6 @@
   cursor: pointer;
   vertical-align: middle;
 }
-.cmp-remove:hover {
-  background: color-mix(in srgb, #d66 22%, transparent);
-  color: #d33;
-}
 .cmp-note {
   margin: 0.7rem 0 0;
   font-size: 0.76rem;
@@ -567,83 +638,79 @@
 
 /* ---------- 天体库字段说明折叠 ---------- */
 .obj-fields {
-  margin: 1.2rem 0;
-  padding: 0.7rem 1rem;
+  margin: 1rem 0;
+  padding: 0.7rem 0.9rem;
   border-radius: 0.7rem;
   border: 1px solid var(--md-default-fg-color--lightest);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
 }
 .obj-fields summary {
   cursor: pointer;
   color: var(--md-default-fg-color--light);
+  padding: 0.3rem 0;
 }
-.obj-fields table { font-size: 0.8rem; }
+.obj-fields table { font-size: 0.78rem; }
 
 /* ---------- 版本戳（判断浏览器缓存） ---------- */
 .obj-version {
-  margin-top: 1.5rem;
+  margin-top: 1.3rem;
   padding-top: 0.8rem;
   border-top: 1px dashed var(--md-default-fg-color--lightest);
   font-size: 0.72rem;
   color: var(--md-default-fg-color--light);
 }
 
-/* ---------- 数据集页 ---------- */
+/* ============================================================
+ * 数据集页（基线：移动）
+ * ============================================================ */
 .dl-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.9rem;
-  margin: 1rem 0;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  margin: 0.9rem 0;
 }
 .dl-card {
   display: block;
-  padding: 1rem 1.1rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.8rem;
   border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 25%, transparent);
   text-decoration: none;
   transition: transform 0.12s ease;
 }
-.dl-card:hover { transform: translateY(-2px); }
-.dl-card b { display: block; font-size: 1rem; color: var(--md-primary-fg-color); }
+.dl-card b { display: block; font-size: 0.98rem; color: var(--md-primary-fg-color); }
 .dl-card span { font-size: 0.8rem; color: var(--md-default-fg-color--light); }
 
-/* ---------- 窄屏 ---------- */
-@media (max-width: 600px) {
-  .astro-toolbar { position: static; }
-  .obj-hero { justify-content: center; text-align: center; }
-  .obj-hero-imgwrap { order: -1; }   /* 窄屏图片回到顶部 */
-  .obj-hero .astro-img { order: -1; }  /* 裸贴图（无 credit）同样回顶部 */
-  .obj-hero .astro-img, .obj-hero .astro-img img { height: 240px; }
-  .obj-keystats { justify-content: center; }
-  .cmp-picker { max-width: none; }
-  .cmp-table { font-size: 0.78rem; }
-  .cmp-table th, .cmp-table td { padding: 0.35rem 0.55rem; }
-}
-
-/* ---------- 天体对比页（compare.md） ---------- */
+/* ============================================================
+ * 天体对比页 compare.md（基线：移动）
+ * ============================================================ */
+/* 选择器竖排全宽：A / 交换 / B 纵向堆叠，避免 375px 下横排挤压 */
 .sizecmp-bar {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.2rem 0 1.4rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin: 1rem 0 1.2rem;
 }
 .sizecmp-pick { display: flex; flex-direction: column; gap: 0.35rem; }
-.sizecmp-label { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
+.sizecmp-label { font-size: 0.8rem; color: var(--md-default-fg-color--light); }
 .sizecmp-select {
-  min-width: 12rem;
-  max-width: 18rem;
-  padding: 0.5rem 0.8rem;
-  font-size: 0.95rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.65rem 0.8rem;       /* 触摸友好 */
+  font-size: 16px;               /* ≥16px：防 iOS 聚焦自动放大页面 */
   border-radius: 0.6rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
 }
 .sizecmp-select:focus { outline: 2px solid var(--md-primary-fg-color); outline-offset: 1px; }
+/* 类型筛选下拉：比天体下拉小一号，形成层级 */
+.sizecmp-select.sizecmp-cat { font-size: 0.9rem; padding: 0.5rem 0.7rem; }
 .sizecmp-swap {
-  padding: 0.5rem 0.95rem;
+  align-self: center;
+  min-width: 48px;               /* 触摸目标 */
+  min-height: 44px;
+  padding: 0.5rem 1.4rem;
   font-size: 1.15rem;
   line-height: 1;
   border-radius: 0.6rem;
@@ -653,8 +720,7 @@
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
-.sizecmp-swap:hover { opacity: 0.88; }
-.sizecmp-viz { text-align: center; margin: 0 0 1.2rem; }
+.sizecmp-viz { text-align: center; margin: 0 0 1rem; }
 #sizecmp-svg {
   width: 100%;
   max-width: 900px;
@@ -662,59 +728,70 @@
   margin: 0 auto;
   display: block;
 }
-.sizecmp-viz-note { font-size: 0.78rem; color: var(--md-default-fg-color--light); margin: 0.5rem 0 0; }
-#sizecmp-svg .sizecmp-name { fill: var(--md-default-fg-color); font-size: 18px; font-weight: 700; }
+.sizecmp-viz-note {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  margin: 0.5rem 0 0;
+  text-wrap: pretty;
+}
+#sizecmp-svg .sizecmp-name { fill: var(--md-default-fg-color); font-size: 22px; font-weight: 700; }
 /* 真实比例下缩为点的天体：名称加大加粗，视觉权重补偿物理尺寸的渺小 */
-#sizecmp-svg .sizecmp-name-dot { fill: var(--md-primary-fg-color); font-size: 25px; font-weight: 800; }
-#sizecmp-svg .sizecmp-dot-note { fill: var(--md-default-fg-color--light); font-size: 13.5px; }
-#sizecmp-svg .sizecmp-sub { fill: var(--md-default-fg-color--light); font-size: 13px; }
+#sizecmp-svg .sizecmp-name-dot { fill: var(--md-primary-fg-color); font-size: 28px; font-weight: 800; }
+#sizecmp-svg .sizecmp-dot-note { fill: var(--md-default-fg-color--light); font-size: 15px; }
+#sizecmp-svg .sizecmp-sub { fill: var(--md-default-fg-color--light); font-size: 15px; }
 #sizecmp-svg .sizecmp-initial { font-size: 60px; font-weight: 700; }
 #sizecmp-svg .sizecmp-stroke { stroke: color-mix(in srgb, var(--md-default-fg-color) 35%, transparent); stroke-width: 1.5; }
-/* 类型筛选下拉：比天体下拉小一号，形成层级 */
-.sizecmp-select.sizecmp-cat { font-size: 0.85rem; padding: 0.35rem 0.6rem; min-width: 10rem; }
 .sizecmp-ratios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin: 0 0 1.6rem;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  margin: 0 0 1.4rem;
 }
 .sizecmp-ratio-card {
-  padding: 1rem 1.1rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.8rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
   text-align: center;
 }
-.sizecmp-ratio-title { font-size: 0.84rem; color: var(--md-default-fg-color--light); }
+.sizecmp-ratio-title { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
 .sizecmp-ratio-big {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: var(--md-primary-fg-color);
   line-height: 1.1;
   margin: 0.2rem 0;
 }
-.sizecmp-ratio-sub { font-size: 0.8rem; color: var(--md-default-fg-color--light); margin-bottom: 0.6rem; }
-.sizecmp-ratio-rows { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.82rem; text-align: left; }
+.sizecmp-ratio-sub { font-size: 0.78rem; color: var(--md-default-fg-color--light); margin-bottom: 0.5rem; }
+.sizecmp-ratio-rows { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; text-align: left; }
 .sizecmp-ratio-rows .dot { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
 .sizecmp-ratio-rows b { color: var(--md-default-fg-color); }
 .sizecmp-ratio-rows i { color: var(--md-default-fg-color--light); font-style: normal; font-size: 0.74rem; margin-left: 0.3rem; }
 .sizecmp-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   background: var(--md-default-bg-color);
   border-radius: 0.7rem;
   overflow: hidden;
 }
 .sizecmp-table th, .sizecmp-table td {
-  padding: 0.5rem 0.8rem;
+  padding: 0.45rem 0.55rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   text-align: right;
 }
 .sizecmp-table thead th { background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent); text-align: right; }
 .sizecmp-table th:first-child, .sizecmp-table td:first-child { text-align: left; color: var(--md-default-fg-color--light); }
 .sizecmp-table tbody tr:last-child th, .sizecmp-table tbody tr:last-child td { border-bottom: none; }
-.sizecmp-share { font-size: 0.76rem; color: var(--md-default-fg-color--light); margin-top: 1rem; }
+/* 移动端详细数据表包横滚（JS 生成时加 .sizecmp-detail-scroll） */
+.sizecmp-detail-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.7rem;
+}
+.sizecmp-detail-scroll .sizecmp-table { min-width: 34rem; }
+.sizecmp-share { font-size: 0.76rem; color: var(--md-default-fg-color--light); margin-top: 0.9rem; }
 /* 悬殊比例（>1000:1）出现的「线性 / 对数」刻度切换按钮 */
 .sizecmp-scale {
   display: flex;
@@ -725,18 +802,15 @@
 }
 .sizecmp-scale-label { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
 .sizecmp-scale button {
-  padding: 0.3rem 0.95rem;
+  min-height: 40px;              /* 触摸友好 */
+  padding: 0.4rem 1.1rem;
   font-size: 0.84rem;
   border-radius: 999px;
   border: 1px solid var(--md-default-fg-color--lightest);
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color--light);
   cursor: pointer;
-  transition: all 0.12s ease;
-}
-.sizecmp-scale button:hover {
-  border-color: var(--md-primary-fg-color);
-  color: var(--md-primary-fg-color);
+  transition: border-color 0.12s ease, color 0.12s ease;
 }
 .sizecmp-scale button.active {
   background: var(--md-primary-fg-color);
@@ -744,7 +818,9 @@
   color: var(--md-primary-bg-color);
 }
 
-/* ---------- 深色星空背景（slate 主题） ---------- */
+/* ============================================================
+ * 深色星空背景（slate 主题）
+ * ============================================================ */
 /* 天体贴图多取自黑底太空照，圆盘外残留的暗色边在浅色页面上很显眼；
    深色主题下整站铺星空底，残边自然融入，也契合天文站气质 */
 html[data-md-color-scheme="slate"] body {
@@ -773,4 +849,151 @@ html[data-md-color-scheme="slate"] .md-footer-meta {
 html[data-md-color-scheme="slate"] .md-header {
   background-color: color-mix(in srgb, var(--md-default-bg-color) 82%, transparent);
   backdrop-filter: blur(2px);
+}
+
+/* ============================================================
+ * 平板增强（≥ 600px）：双列卡片、工具栏回绕、chips 换行
+ * ============================================================ */
+@media (min-width: 600px) {
+  .astro-hero { padding: 2rem 1.2rem 1.5rem; }
+  .astro-hero h1 { font-size: 1.8rem; }
+  .astro-hero-sub { font-size: 1rem; }
+  .astro-toolbar { padding: 0.85rem 1rem; gap: 0.7rem; }
+  .astro-toolbar #astro-search { flex: 1 1 12rem; font-size: 0.92rem; }
+  .astro-chips { flex: 0 1 auto; flex-wrap: wrap; overflow: visible; }
+  .astro-sort-label select { font-size: 0.84rem; }
+  .astro-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .astro-img { flex: 0 0 118px; width: 118px; min-height: 128px; }
+  .astro-img img { height: 96px; }
+  .astro-img-fallback span { width: 84px; height: 84px; font-size: 1.8rem; }
+  .astro-articles, .astro-note, .obj-articles { margin-top: 2rem; padding: 1.1rem 1.3rem; }
+  .obj-hero {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1.4rem;
+  }
+  .obj-hero .astro-img,
+  .obj-hero-imgwrap { order: 2; }        /* 恢复桌面：图在右 */
+  .obj-hero .astro-img { height: 300px; }
+  .obj-hero .astro-img img { height: 300px; }
+  .obj-hero-info { flex: 1 1 16rem; }
+  .obj-hero-info h1 { font-size: 1.7rem; }
+  .obj-keystats { justify-content: flex-start; }
+  .cmp-picker { max-width: 26rem; }
+  .cmp-picker #cmp-search { font-size: 0.9rem; }
+  .cmp-results li button { padding: 0.45rem 0.7rem; font-size: 0.9rem; }
+  .cmp-table { font-size: 0.84rem; }
+  .cmp-table th, .cmp-table td { padding: 0.42rem 0.8rem; }
+  .dl-cards { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; }
+  /* 对比页恢复横排：A ⇄ B 一行 */
+  .sizecmp-bar { flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: center; }
+  .sizecmp-pick { flex: 1 1 14rem; max-width: 18rem; }
+  .sizecmp-select { font-size: 0.95rem; padding: 0.5rem 0.8rem; }
+  .sizecmp-select.sizecmp-cat { font-size: 0.85rem; padding: 0.35rem 0.6rem; }
+  .sizecmp-ratios { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .sizecmp-table { font-size: 0.86rem; }
+  .sizecmp-table th, .sizecmp-table td { padding: 0.5rem 0.8rem; }
+  .sizecmp-detail-scroll .sizecmp-table { min-width: 0; }
+}
+
+/* ============================================================
+ * 桌面视觉（≥ 1024px）：恢复历史桌面样式
+ * ============================================================ */
+@media (min-width: 1024px) {
+  .astro-hero { padding: 2.2rem 1rem 1.6rem; margin-bottom: 1.2rem; }
+  .astro-hero h1 { font-size: 2em; }
+  .astro-hero-sub { font-size: 1.02rem; }
+  .astro-stat { padding: 0.28rem 0.8rem; font-size: 0.82rem; }
+  .astro-stat b { font-size: 0.95rem; }
+  .astro-hero-links { font-size: 0.88rem; }
+  .astro-toolbar { padding: 0.85rem 1rem; }
+  .astro-toolbar #astro-search { padding: 0.45rem 0.8rem; font-size: 0.92rem; }
+  .chip { padding: 0.32rem 0.85rem; font-size: 0.84rem; }
+  .astro-count { margin: 0.3rem 0 1rem; }
+  .astro-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1rem; }
+  /* 桌面竖卡：图上文下 */
+  .astro-card { display: block; }
+  .astro-card-link { display: block; }
+  .astro-img {
+    display: flex;
+    width: auto;
+    flex: none;
+    height: 150px;
+    min-height: 0;
+    padding: 0;
+  }
+  .astro-img img { height: 108px; }
+  .astro-img-fallback span { width: 92px; height: 92px; font-size: 2rem; }
+  .astro-card-body { padding: 0.7rem 0.95rem 0.95rem; }
+  .astro-card-title { font-size: 1.05rem; }
+  .astro-card-title .en { font-size: 0.78rem; }
+  .astro-card-tagline { font-size: 0.8rem; margin: 0.3rem 0 0.55rem; }
+  .astro-card-stats { font-size: 0.74rem; gap: 0.3rem 0.6rem; }
+  .astro-card-stats span { padding: 0.12rem 0.45rem; }
+  .astro-badge { top: 0.6rem; right: 0.6rem; font-size: 0.7rem; padding: 0.14rem 0.55rem; }
+  .obj-hero { padding: 1.4rem; gap: 1.4rem; }
+  .obj-hero .astro-img,
+  .obj-hero .astro-img img { height: 360px; }
+  .obj-hero-info h1 { font-size: 1.7rem; }
+  .obj-tagline { font-size: 0.98rem; }
+  .obj-keystats span { font-size: 0.82rem; padding: 0.28rem 0.7rem; }
+  .obj-source, .obj-article { margin-top: 1.6rem; padding: 1rem 1.2rem; }
+  .obj-source h2, .obj-article h2 { font-size: 1.05rem; }
+  .obj-source p { font-size: 0.82rem; }
+  .cmp-btn { padding: 0.5rem 1.1rem; font-size: 0.92rem; }
+  .obj-compare { padding: 1.1rem 1.2rem; }
+  .cmp-picker #cmp-search { padding: 0.45rem 0.9rem; font-size: 0.9rem; }
+  .cmp-results li button { padding: 0.42rem 0.7rem; font-size: 0.9rem; }
+  .cmp-table { font-size: 0.84rem; }
+  .cmp-table th, .cmp-table td { padding: 0.42rem 0.8rem; }
+  .sizecmp-pick { flex: 0 1 auto; }
+  .sizecmp-select { min-width: 12rem; max-width: 18rem; font-size: 0.95rem; }
+  .sizecmp-swap { min-width: 0; min-height: 0; padding: 0.5rem 0.95rem; }
+  #sizecmp-svg .sizecmp-name { font-size: 18px; }
+  #sizecmp-svg .sizecmp-name-dot { font-size: 25px; }
+  #sizecmp-svg .sizecmp-dot-note { font-size: 13.5px; }
+  #sizecmp-svg .sizecmp-sub { font-size: 13px; }
+  .sizecmp-ratio-big { font-size: 2.1rem; }
+  .sizecmp-table { font-size: 0.86rem; }
+  .sizecmp-table th, .sizecmp-table td { padding: 0.5rem 0.8rem; }
+  .sizecmp-scale button { min-height: 0; padding: 0.3rem 0.95rem; font-size: 0.84rem; }
+  .dl-cards { margin: 1rem 0; }
+  .dl-card { padding: 1rem 1.1rem; }
+  .dl-card b { font-size: 1rem; }
+  .obj-fields { margin: 1.2rem 0; padding: 0.7rem 1rem; font-size: 0.85rem; }
+  .obj-fields table { font-size: 0.8rem; }
+  .obj-version { margin-top: 1.5rem; }
+}
+
+/* ============================================================
+ * hover 效果仅限可悬停设备（触屏不粘滞）
+ * ============================================================ */
+@media (hover: hover) {
+  .astro-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+  }
+  .chip:hover {
+    border-color: var(--md-primary-fg-color);
+    color: var(--md-primary-fg-color);
+  }
+  .dl-card:hover { transform: translateY(-2px); }
+  .cmp-btn:hover { opacity: 0.88; }
+  .sizecmp-swap:hover { opacity: 0.88; }
+  .cmp-remove:hover {
+    background: color-mix(in srgb, #d66 22%, transparent);
+    color: #d33;
+  }
+  .cmp-results li button:hover {
+    background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
+  }
+  .astro-article-list li a:hover {
+    background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
+  }
+  .sizecmp-scale button:hover {
+    border-color: var(--md-primary-fg-color);
+    color: var(--md-primary-fg-color);
+  }
 }
