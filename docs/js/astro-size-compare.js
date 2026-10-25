@@ -284,7 +284,8 @@
       }
       var ball;
       if (r.image) {
-        // width/height 同时按 _aspect 推导并统一缩放 S，严格保持宽高比（不变形）
+        // width/height 同时按 _aspect（图片真实宽高比，onload 时测得）推导并统一缩放 S，
+        // dw/dh = _aspect，严格保持宽高比（不变形）；S 两侧同一值 → 真实比例不变
         var t = (r === a) ? tA : tB;
         var dw = (t.w * S).toFixed(1), dh = (t.h * S).toFixed(1);
         ball = '<img class="sizecmp-img" src="' + esc(r.image) + '" alt="' + esc(r.name) +
@@ -394,9 +395,11 @@
   }
 
   // ---- 选择框填充（支持按类型筛选）----
+  // 选项标签仅显示中文名（去掉「（英文名）」，避免移动端过长）；
+  // 数据侧仍保留 r.en，后续可加「中/英一键切换」功能复用
   function optionHTML(r, sel) {
     return '<option value="' + r.id + '"' + (sel ? " selected" : "") + ">" +
-      esc(r.name) + "（" + esc(r.en) + "）</option>";
+      esc(r.name) + "</option>";
   }
   // 分类集合：按 rows 出现顺序去重（数据侧已按分类排序，天然稳定）
   var catOrder = [], catSeen = {};
