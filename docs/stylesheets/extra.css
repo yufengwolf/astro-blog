@@ -486,160 +486,6 @@
   margin: 0.3rem 0;
 }
 
-/* ============================================================
- * 天体对比（详情页内嵌，基线：移动）
- * ============================================================ */
-.obj-compare-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 0.9rem;
-}
-.cmp-btn {
-  padding: 0.65rem 1.2rem;       /* 触摸友好 */
-  font-size: 0.92rem;
-  font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid var(--md-primary-fg-color);
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
-  cursor: pointer;
-  transition: opacity 0.12s ease;
-}
-.cmp-hint {
-  font-size: 0.76rem;
-  color: var(--md-default-fg-color--light);
-}
-.obj-compare {
-  margin: 0 0 1.2rem;
-  padding: 0.9rem 1rem;
-  border-radius: 0.9rem;
-  border: 1px solid color-mix(in srgb, var(--md-primary-fg-color) 22%, transparent);
-  background: color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent);
-}
-.cmp-picker { position: relative; max-width: none; }
-.cmp-picker #cmp-search {
-  width: 100%;
-  padding: 0.55rem 0.9rem;
-  font-size: 16px;              /* 防 iOS 聚焦放大 */
-  border-radius: 999px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
-}
-.cmp-picker #cmp-search:focus {
-  outline: 2px solid var(--md-primary-fg-color);
-  outline-offset: 1px;
-}
-.cmp-results {
-  position: absolute;
-  top: calc(100% + 0.3rem);
-  left: 0;
-  right: 0;
-  z-index: 8;
-  max-height: 16rem;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  list-style: none;
-  margin: 0;
-  padding: 0.3rem;
-  border-radius: 0.7rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  background: var(--md-default-bg-color);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
-}
-.cmp-results li button {
-  display: flex;
-  width: 100%;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding: 0.6rem 0.7rem;        /* 触摸友好 */
-  border: none;
-  border-radius: 0.5rem;
-  background: none;
-  color: var(--md-default-fg-color);
-  font-size: 0.92rem;
-  text-align: left;
-  cursor: pointer;
-}
-.cmp-results .cmp-en {
-  font-size: 0.76rem;
-  color: var(--md-default-fg-color--light);
-}
-.cmp-results .cmp-none {
-  padding: 0.5rem 0.7rem;
-  font-size: 0.85rem;
-  color: var(--md-default-fg-color--light);
-}
-.cmp-table-wrap {
-  margin-top: 0.9rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 0.7rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
-}
-.cmp-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.8rem;
-  background: var(--md-default-bg-color);
-}
-.cmp-table th, .cmp-table td {
-  padding: 0.45rem 0.6rem;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
-  text-align: right;
-  white-space: nowrap;
-}
-.cmp-table thead th {
-  position: sticky;
-  top: 0;
-  background: color-mix(in srgb, var(--md-primary-fg-color) 7%, var(--md-default-bg-color));
-  font-size: 0.88rem;
-  text-align: right;
-}
-.cmp-table .cmp-param {
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  text-align: left;
-  font-weight: 600;
-  color: var(--md-default-fg-color--light);
-  background: var(--md-default-bg-color);
-}
-.cmp-table thead .cmp-param { z-index: 2; }
-.cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: none; }
-.cmp-table .cmp-current {
-  background: color-mix(in srgb, var(--md-primary-fg-color) 9%, transparent);
-}
-.cmp-table thead .cmp-current {
-  background: color-mix(in srgb, var(--md-primary-fg-color) 14%, var(--md-default-bg-color));
-}
-.cmp-table .cmp-col a { color: var(--md-primary-fg-color); text-decoration: none; }
-.cmp-table .cmp-col .cmp-en {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 400;
-  color: var(--md-default-fg-color--light);
-}
-.cmp-remove {
-  display: inline-block;
-  margin-left: 0.45rem;
-  padding: 0.15rem 0.45rem;      /* 触摸友好 */
-  border: none;
-  border-radius: 0.35rem;
-  background: color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
-  color: var(--md-default-fg-color--light);
-  font-size: 0.85rem;
-  line-height: 1.3;
-  cursor: pointer;
-  vertical-align: middle;
-}
-.cmp-note {
-  margin: 0.7rem 0 0;
-  font-size: 0.76rem;
-  color: var(--md-default-fg-color--light);
-}
 
 /* ---------- 天体库字段说明折叠 ---------- */
 .obj-fields {
@@ -733,28 +579,77 @@
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
-.sizecmp-viz { text-align: center; margin: 0 0 1rem; }
-#sizecmp-svg {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  margin: 0 auto;
+/* ---- 天体对比可视化（HTML 双列；移动端横排 A 左 B 右；字体不随缩放变小）---- */
+.sizecmp-viz { margin: 0 0 1rem; }
+.sizecmp-viz-canvas { display: block; max-width: 900px; margin: 0 auto; }
+.sizecmp-viz-inner {
+  display: flex;
+  flex-direction: row;          /* 始终横排：A 左 B 右，方便并排对比 */
+  align-items: flex-end;        /* 两球底对齐，真实比例一眼可辨 */
+  justify-content: center;
+  gap: 1.4rem;
+}
+.sizecmp-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+.sizecmp-ball-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.sizecmp-img {
   display: block;
+  max-width: 44vw;             /* 含环图横向伸展时限制，避免压到对侧 */
+  filter: drop-shadow(0 2px 8px color-mix(in srgb, var(--md-default-fg-color) 18%, transparent));
+}
+.sizecmp-solid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+.sizecmp-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid color-mix(in srgb, var(--md-default-fg-color) 35%, transparent);
+}
+.sizecmp-name {
+  margin-top: 0.55rem;
+  font-size: 1.05rem;          /* 天体名（月球 / 地球） */
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  line-height: 1.3;
+}
+.sizecmp-name-dot { color: var(--md-primary-fg-color); }
+.sizecmp-sub {
+  font-size: 0.95rem;          /* 半径等数值（1737 km）明显加大 */
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.1rem;
+}
+.sizecmp-dot-note {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.3rem;
+  max-width: 15rem;
 }
 .sizecmp-viz-note {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   line-height: 1.6;
   color: var(--md-default-fg-color--light);
-  margin: 0.5rem 0 0;
+  margin: 0.9rem auto 0;
+  max-width: 52rem;
   text-wrap: pretty;
 }
-#sizecmp-svg .sizecmp-name { fill: var(--md-default-fg-color); font-size: 22px; font-weight: 700; }
-/* 真实比例下缩为点的天体：名称加大加粗，视觉权重补偿物理尺寸的渺小 */
-#sizecmp-svg .sizecmp-name-dot { fill: var(--md-primary-fg-color); font-size: 28px; font-weight: 800; }
-#sizecmp-svg .sizecmp-dot-note { fill: var(--md-default-fg-color--light); font-size: 15px; }
-#sizecmp-svg .sizecmp-sub { fill: var(--md-default-fg-color--light); font-size: 15px; }
-#sizecmp-svg .sizecmp-initial { font-size: 60px; font-weight: 700; }
-#sizecmp-svg .sizecmp-stroke { stroke: color-mix(in srgb, var(--md-default-fg-color) 35%, transparent); stroke-width: 1.5; }
+/* 核心倍数卡 */
 .sizecmp-ratios {
   display: grid;
   grid-template-columns: 1fr;
@@ -768,36 +663,36 @@
   background: var(--md-default-bg-color);
   text-align: center;
 }
-.sizecmp-ratio-title { font-size: 0.82rem; color: var(--md-default-fg-color--light); }
+.sizecmp-ratio-title { font-size: 0.85rem; color: var(--md-default-fg-color--light); }
 .sizecmp-ratio-big {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--md-primary-fg-color);
   line-height: 1.1;
   margin: 0.2rem 0;
 }
-.sizecmp-ratio-sub { font-size: 0.78rem; color: var(--md-default-fg-color--light); margin-bottom: 0.5rem; }
-.sizecmp-ratio-rows { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.8rem; text-align: left; }
+.sizecmp-ratio-sub { font-size: 0.8rem; color: var(--md-default-fg-color--light); margin-bottom: 0.5rem; }
+.sizecmp-ratio-rows { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; text-align: left; }
 .sizecmp-ratio-rows .dot { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
 .sizecmp-ratio-rows b { color: var(--md-default-fg-color); }
-.sizecmp-ratio-rows i { color: var(--md-default-fg-color--light); font-style: normal; font-size: 0.74rem; margin-left: 0.3rem; }
+.sizecmp-ratio-rows i { color: var(--md-default-fg-color--light); font-style: normal; font-size: 0.76rem; margin-left: 0.3rem; }
+/* 详细数据表（加大字号，移动端更清晰） */
 .sizecmp-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   background: var(--md-default-bg-color);
   border-radius: 0.7rem;
   overflow: hidden;
 }
 .sizecmp-table th, .sizecmp-table td {
-  padding: 0.45rem 0.55rem;
+  padding: 0.5rem 0.6rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   text-align: right;
 }
 .sizecmp-table thead th { background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent); text-align: right; }
 .sizecmp-table th:first-child, .sizecmp-table td:first-child { text-align: left; color: var(--md-default-fg-color--light); }
 .sizecmp-table tbody tr:last-child th, .sizecmp-table tbody tr:last-child td { border-bottom: none; }
-/* 移动端详细数据表包横滚（JS 生成时加 .sizecmp-detail-scroll） */
 .sizecmp-detail-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -1003,11 +898,6 @@ html[data-md-color-scheme="slate"] .md-header {
   .obj-tagline { font-size: 0.98rem; }
   .obj-parent { font-size: 0.84rem; margin: 0 0 0.9rem; }
   .obj-source p { font-size: 0.82rem; }
-  .cmp-picker { max-width: 26rem; }
-  .cmp-picker #cmp-search { font-size: 0.9rem; }
-  .cmp-results li button { padding: 0.45rem 0.7rem; font-size: 0.9rem; }
-  .cmp-table { font-size: 0.84rem; }
-  .cmp-table th, .cmp-table td { padding: 0.42rem 0.8rem; }
   /* 数据集页恢复下载卡网格 */
   .dl-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; margin: 1rem 0; }
   .dl-card {
@@ -1027,7 +917,7 @@ html[data-md-color-scheme="slate"] .md-header {
   .sizecmp-select { font-size: 0.95rem; padding: 0.5rem 0.8rem; }
   .sizecmp-select.sizecmp-cat { font-size: 0.85rem; padding: 0.35rem 0.6rem; }
   .sizecmp-ratios { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-  .sizecmp-table { font-size: 0.86rem; }
+  .sizecmp-table { font-size: 1rem; }
   .sizecmp-table th, .sizecmp-table td { padding: 0.5rem 0.8rem; }
   .sizecmp-detail-scroll .sizecmp-table { min-width: 0; }
 }
@@ -1074,21 +964,11 @@ html[data-md-color-scheme="slate"] .md-header {
   .obj-source, .obj-article { margin-top: 1.6rem; padding: 1rem 1.2rem; }
   .obj-source h2, .obj-article h2 { font-size: 1.05rem; }
   .obj-source p { font-size: 0.82rem; }
-  .cmp-btn { padding: 0.5rem 1.1rem; font-size: 0.92rem; }
-  .obj-compare { padding: 1.1rem 1.2rem; }
-  .cmp-picker #cmp-search { padding: 0.45rem 0.9rem; font-size: 0.9rem; }
-  .cmp-results li button { padding: 0.42rem 0.7rem; font-size: 0.9rem; }
-  .cmp-table { font-size: 0.84rem; }
-  .cmp-table th, .cmp-table td { padding: 0.42rem 0.8rem; }
   .sizecmp-pick { flex: 0 1 auto; }
   .sizecmp-select { min-width: 12rem; max-width: 18rem; font-size: 0.95rem; }
   .sizecmp-swap { min-width: 0; min-height: 0; padding: 0.5rem 0.95rem; }
-  #sizecmp-svg .sizecmp-name { font-size: 18px; }
-  #sizecmp-svg .sizecmp-name-dot { font-size: 25px; }
-  #sizecmp-svg .sizecmp-dot-note { font-size: 13.5px; }
-  #sizecmp-svg .sizecmp-sub { font-size: 13px; }
-  .sizecmp-ratio-big { font-size: 2.1rem; }
-  .sizecmp-table { font-size: 0.86rem; }
+  .sizecmp-ratio-big { font-size: 2.4rem; }
+  .sizecmp-table { font-size: 1rem; }
   .sizecmp-table th, .sizecmp-table td { padding: 0.5rem 0.8rem; }
   .sizecmp-scale button { min-height: 0; padding: 0.3rem 0.95rem; font-size: 0.84rem; }
   .dl-cards { margin: 1rem 0; }
@@ -1112,15 +992,7 @@ html[data-md-color-scheme="slate"] .md-header {
     color: var(--md-primary-fg-color);
   }
   .dl-card:hover { transform: translateY(-2px); }
-  .cmp-btn:hover { opacity: 0.88; }
   .sizecmp-swap:hover { opacity: 0.88; }
-  .cmp-remove:hover {
-    background: color-mix(in srgb, #d66 22%, transparent);
-    color: #d33;
-  }
-  .cmp-results li button:hover {
-    background: color-mix(in srgb, var(--md-primary-fg-color) 12%, transparent);
-  }
   .astro-article-list li a:hover {
     background: color-mix(in srgb, var(--md-primary-fg-color) 10%, transparent);
   }

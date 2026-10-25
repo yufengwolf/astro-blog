@@ -27,15 +27,15 @@ description: "选择任意两个天体，按真实直径比例直观对比大小
 </div>
 
 <div class="sizecmp-viz">
-  <svg id="sizecmp-svg" viewBox="0 0 1000 760" preserveAspectRatio="xMidYMid meet" role="img" aria-label="两个天体按真实比例绘制的球体对比图"></svg>
+  <div id="sizecmp-viz-canvas" class="sizecmp-viz-canvas"></div>
   <p class="sizecmp-viz-note" id="sizecmp-viz-note"></p>
 </div>
 
-<h2>核心倍数</h2>
-<div class="sizecmp-ratios" id="sizecmp-ratios"></div>
-
 <h2>详细数据对比</h2>
 <div class="sizecmp-detail" id="sizecmp-detail"></div>
+
+<h2>核心倍数</h2>
+<div class="sizecmp-ratios" id="sizecmp-ratios"></div>
 
 <p class="sizecmp-share" id="sizecmp-share"></p>
 

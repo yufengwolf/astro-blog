@@ -2,10 +2,10 @@
  * astro-size-compare.js — 天体对比工具页（原生 JS，无依赖，无后台）
  *
  * 默认两个选择框（A / B，可先按类型筛选，默认 月球 / 地球）。选择后：
- *   1) 按**真实直径比例**用 SVG 绘制两个球体：贴图先经 canvas 测量本体球半径
- *      占比，把「本体球体」（而非贴图画布）映射到真实比例——含环图环自然外伸，
- *      不叠加基准圈；悬殊比例下较小的一方如实缩为一个「点」（配实际倍数文字），
- *      不做放大处理，图幅超宽时整体等比缩小自适应页面；
+ *   1) 按**真实直径比例**用 HTML 双列（始终横排，移动端亦然）绘制两个天体：贴图
+ *      先经 canvas 测量本体球半径占比，把「本体球体」（而非贴图画布）映射到真实
+ *      比例——含环图环自然外伸，不叠加基准圈；悬殊比例下较小的一方如实缩为一个
+ *      「点」（配实际倍数文字），不做放大处理，大球 CSS 尺寸依容器宽自适应不溢出；
  *   2) 核心倍数卡：直径 / 体积 / 质量的直观倍数（体积 ∝ 半径³）；
  *   3) 详细数据表：半径、体积、质量、密度、表面重力、逃逸速度、温度、自转、类型，逐行 A÷B 倍数。
  * 状态同步到 location.hash（#cmp=a,b），刷新/分享保持对比组合。
@@ -16,7 +16,7 @@
   "use strict";
   var dataEl = document.getElementById("astro-sizecompare-data");
   if (!dataEl) return;
-  var svg = document.getElementById("sizecmp-svg");
+  var vizEl = document.getElementById("sizecmp-viz-canvas");
   var selA = document.getElementById("sizecmp-a");
   var selB = document.getElementById("sizecmp-b");
   var catSelA = document.getElementById("sizecmp-cat-a");
@@ -29,7 +29,7 @@
   var toggleEl = document.getElementById("sizecmp-scale");
   var scaleMode = "linear";        // 当前刻度：linear / log
   var userChoseScale = false;      // 用户是否手动选过刻度
-  if (!svg || !selA || !selB || !catSelA || !catSelB) return;
+  if (!vizEl || !selA || !selB || !catSelA || !catSelB) return;
   var data;
   try { data = JSON.parse(dataEl.textContent); } catch (e) { return; }
   var rows = data.rows || [];
@@ -218,88 +218,14 @@
     im.src = r.image;
   });
 
-  // ---- SVG 工具 ----
-  var SVGNS = "http://www.w3.org/2000/svg";
-  function el(name, attrs) {
-    var e = document.createElementNS(SVGNS, name);
-    for (var k in attrs) e.setAttribute(k, attrs[k]);
-    return e;
-  }
-  function setHref(e, val) {
-    e.setAttribute("href", val);
-    e.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", val);
-  }
-
-  function drawBody(g, cx, cy, rPx, r, asDot) {
-    if (asDot) {
-      // 真实比例下本体半径已不足挂载贴图：绘为分类色「点」，边界即球体本身，
-      // 名称下方附实际比例说明——宁可小而真实，不放大到与更大天体视觉混淆。
-      // 2px 保底：亚像素级的小点（如 1:10⁵）在手机上也可见，真实倍数以文字为准
-      var c = colorFor(r);
-      var rr = Math.max(2, rPx);
-      g.appendChild(el("circle", { "cx": cx, "cy": cy, "r": rr, "fill": c[0] }));
-      g.appendChild(el("circle", {
-        "cx": cx, "cy": cy, "r": rr, "fill": "none", "class": "sizecmp-stroke"
-      }));
-      return;
-    }
-    if (r.image) {
-      if (r.ext) {
-        // 延展天体（星云/星系/星团/大尺度结构）：贴图全幅≈天体本身，
-        // 按「全幅=等效直径（2×rPx）」绘制——较长边映射直径，保留真实宽高比，
-        // 属等效球径示意（非真实形状），具体尺度以数字为准
-        var ar = r._aspect || 1;
-        var W2, H2;
-        if (ar >= 1) { W2 = 2 * rPx; H2 = W2 / ar; } else { H2 = 2 * rPx; W2 = H2 * ar; }
-        var img2 = el("image", {
-          "x": cx - W2 / 2, "y": cy - H2 / 2,
-          "width": W2, "height": H2, "preserveAspectRatio": "xMidYMid meet"
-        });
-        setHref(img2, r.image);
-        g.appendChild(img2);
-        return;
-      }
-      // 图内本体球半径映射为 rPx：图高 H = rPx / sf（sf 为测得的本体球半径
-      // 占图高比例；测量失败按本站贴图构建约定 0.35 兜底）。含环图环自然
-      // 超出球体范围向外伸展，不再叠加描边基准圆。
-      var sf = r._sf || 0.35;
-      var H = rPx / sf, W = H * (r._aspect || 1);
-      var img = el("image", {
-        "x": cx - W / 2, "y": cy - H / 2,
-        "width": W, "height": H, "preserveAspectRatio": "xMidYMid meet"
-      });
-      setHref(img, r.image);
-      g.appendChild(img);
-    } else {
-      var c = colorFor(r);
-      g.appendChild(el("circle", { "cx": cx, "cy": cy, "r": rPx, "fill": c[0] }));
-      var t = el("text", {
-        "x": cx, "y": cy, "text-anchor": "middle", "dominant-baseline": "central",
-        "class": "sizecmp-initial", "fill": "#fff"
-      });
-      t.textContent = r.name.charAt(0);
-      g.appendChild(t);
-      // 仅无贴图的纯色圆保留描边（即球体边界本身，非悬浮基准圈）
-      g.appendChild(el("circle", {
-        "cx": cx, "cy": cy, "r": rPx, "fill": "none", "class": "sizecmp-stroke"
-      }));
-    }
-  }
 
   function renderViz(a, b) {
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    vizEl.innerHTML = "";
     if (a.radius == null || b.radius == null) {
       noteEl.textContent = "所选天体缺少半径数据，无法绘制大小对比。";
       if (toggleEl) toggleEl.hidden = true;
       return;
     }
-    var VW = 1000, VH = 760, MARGIN = 30, GAP = 90;
-    var MAX_PX = 240, DOT_PX = 4;            // 大球半径上限 / 绘为「点」的本体半径阈值
-    // 窄容器（手机）切换纵向堆叠布局：viewBox 收窄、两球上下排列、球体放大、
-    // 文字加大——横排 viewBox 整体缩放会让球体和文字一起缩到不可读
-    var narrow = svg.clientWidth > 0 && svg.clientWidth < 600;
-    if (narrow) { VW = 375; VH = 1160; MAX_PX = 130; GAP = 40; }
-    svg.setAttribute("viewBox", "0 0 " + VW + " " + VH);
     var ratio = Math.max(a.radius, b.radius) / Math.min(a.radius, b.radius);
     var overThreshold = ratio > 1000;
     if (toggleEl) toggleEl.hidden = !overThreshold;
@@ -307,94 +233,62 @@
     // 不偷换对数刻度造成「看起来差不多大」的错觉；对数刻度仅作可选项保留
     if (!userChoseScale) scaleMode = "linear";
     var useLog = overThreshold && scaleMode === "log";
-    function drawn(r, rPx) {
-      if (r.ext && r.image) {
-        // 延展天体：全幅=等效直径（与 drawBody 的 ext 分支一致）
-        var ar2 = r._aspect || 1;
-        return ar2 >= 1 ? { w: 2 * rPx, h: 2 * rPx / ar2 } : { w: 2 * rPx * ar2, h: 2 * rPx };
+    // 大球 CSS 半径基准：依容器宽度自适应（手机更小、桌面更大），两球横排不溢出
+    var maxCss = 240;
+    if (vizEl.clientWidth) maxCss = Math.max(120, Math.min(240, vizEl.clientWidth * 0.42));
+    var DOT = Math.max(3, maxCss * 0.02);   // 绘为「点」的本体直径阈值（px）
+    function pxOf(r) {
+      if (useLog) {
+        // 对数刻度：log10(半径) 线性映射到 [DOT, maxCss]——非真实比例，仅让悬殊尺寸都可见
+        var rMin = Math.min(a.radius, b.radius), rMax = Math.max(a.radius, b.radius);
+        if (rMax === rMin) return maxCss;
+        var lMin = Math.log10(rMin), lMax = Math.log10(rMax);
+        return DOT + (Math.log10(r.radius) - lMin) / (lMax - lMin) * (maxCss - DOT);
       }
-      if (!r.image) return { w: 2 * rPx, h: 2 * rPx };
-      var h = rPx / (r._sf || 0.35);
-      return { w: h * (r._aspect || 1), h: h };
+      return r.radius / Math.max(a.radius, b.radius) * maxCss;
     }
-    var pa, pb;
-    if (useLog) {
-      // 对数刻度：把 log10(半径) 线性映射到 [MIN_PX, MAX_PX]——非真实比例，仅让悬殊尺寸都可见
-      var rMin = Math.min(a.radius, b.radius), rMax = Math.max(a.radius, b.radius);
-      var lMin = Math.log10(rMin), lMax = Math.log10(rMax);
-      function logPx(r) {
-        if (lMax === lMin) return MAX_PX;
-        return DOT_PX + (Math.log10(r) - lMin) / (lMax - lMin) * (MAX_PX - DOT_PX);
-      }
-      pa = logPx(a.radius); pb = logPx(b.radius);
-    } else {
-      var scale = MAX_PX / Math.max(a.radius, b.radius);
-      pa = a.radius * scale;
-      pb = b.radius * scale;
-    }
-    // 真实比例下本体半径小于阈值的：不放大、不贴图，绘为点（布局占位同点尺寸）
-    var dotA = !useLog && pa < DOT_PX, dotB = !useLog && pb < DOT_PX;
-    function layout(r, rPx, isDot) {
-      return isDot ? { w: 2 * DOT_PX, h: 2 * DOT_PX } : drawn(r, rPx);
-    }
-    // 自适应页面：贴图外沿总宽超出画布时整体等比缩小（真实比例不变），
-    // 窄屏下 SVG 随容器宽度等比缩放，同一套比例适配任意屏宽
-    var totalW = narrow
-      ? Math.max(layout(a, pa, dotA).w, layout(b, pb, dotB).w) + 2 * MARGIN
-      : layout(a, pa, dotA).w + layout(b, pb, dotB).w + GAP;
-    var fit = Math.min(1, (VW - 2 * MARGIN) / totalW);
-    pa *= fit; pb *= fit;
-    var da = layout(a, pa, dotA), db = layout(b, pb, dotB);
-    var cxA, cxB, baseYA, baseYB;
-    if (narrow) {
-      // 纵向：A 上 B 下，各自水平居中；baseY 为该球底边 y（下有名称标注）
-      cxA = cxB = VW / 2;
-      baseYA = 30 + da.h;
-      baseYB = baseYA + 130 + db.h;
-      VH = baseYB + 110;
-      svg.setAttribute("viewBox", "0 0 " + VW + " " + VH);
-    } else {
-      var baseY = 650;                       // 球体底边基线（下有名称标注）
-      var startX = (VW - (da.w + db.w + GAP)) / 2;
-      cxA = startX + da.w / 2; cxB = startX + da.w + GAP + db.w / 2;
-      baseYA = baseYB = baseY;
-    }
-    var g = el("g", {});
-    // 点模式传真实比例半径（drawBody 内部保底 2px 可见），cy 用点半径贴基线
-    var pAx = dotA ? Math.max(2, pa) : pa, pBx = dotB ? Math.max(2, pb) : pb;
-    drawBody(g, cxA, baseYA - pAx, pAx, a, dotA);
-    drawBody(g, cxB, baseYB - pBx, pBx, b, dotB);
-    svg.appendChild(g);
-    function label(cx, baseY, r, isDot, realPx) {
-      var t1 = el("text", {
-        "x": cx, "y": baseY + 26, "text-anchor": "middle",
-        "class": "sizecmp-name" + (isDot ? " sizecmp-name-dot" : "")
-      });
-      t1.textContent = r.name;
-      var t2 = el("text", { "x": cx, "y": baseY + 48, "text-anchor": "middle", "class": "sizecmp-sub" });
-      t2.textContent = fmtRadius(r);
-      svg.appendChild(t1); svg.appendChild(t2);
+    var pa = pxOf(a), pb = pxOf(b);
+    // 真实比例下本体直径小于阈值的：不放大、不贴图，绘为点（配实际倍数文字）
+    var dotA = !useLog && (2 * pa) < DOT, dotB = !useLog && (2 * pb) < DOT;
+    function side(r, px, isDot) {
+      var col = colorFor(r)[0];
       if (isDot) {
-        // 点模式：加一行醒目的实际比例说明（大字名称 + 小字倍数，数字为准）
         var big = (r === a) ? b : a;
-        var t3 = el("text", {
-          "x": cx, "y": baseY + 70, "text-anchor": "middle", "class": "sizecmp-dot-note"
-        });
-        t3.textContent = "按真实比例仅 " + (realPx < 0.1 ? "不足 0.1" : realPx.toFixed(1)) +
-          " 像素：仅为" + big.name + "的 1/" + fmtRatio(ratio);
-        svg.appendChild(t3);
+        return '<div class="sizecmp-side">' +
+          '<div class="sizecmp-ball-wrap"><span class="sizecmp-dot" style="background:' + col + '"></span></div>' +
+          '<div class="sizecmp-name sizecmp-name-dot">' + esc(r.name) + '</div>' +
+          '<div class="sizecmp-sub">' + fmtRadius(r) + '</div>' +
+          '<div class="sizecmp-dot-note">按真实比例仅 ' +
+            (px < 0.1 ? '不足 0.1' : px.toFixed(1)) + ' 像素：仅为' + esc(big.name) +
+            ' 的 1/' + fmtRatio(ratio) + '</div>' +
+          '</div>';
       }
+      var ball;
+      if (r.image) {
+        // 贴图：让「本体球直径」= 2*px（sf 为运行时测量的本体球半径/图高）
+        var sf = r._sf || 0.5;
+        var dispH = Math.min(px / sf, px * 3);
+        ball = '<img class="sizecmp-img" src="' + esc(r.image) + '" alt="' + esc(r.name) +
+          '" style="height:' + dispH.toFixed(1) + 'px;width:auto">';
+      } else {
+        var d = (2 * px).toFixed(1);
+        ball = '<span class="sizecmp-solid" style="width:' + d + 'px;height:' + d +
+          'px;background:' + col + '">' + esc((r.name || '?').charAt(0)) + '</span>';
+      }
+      return '<div class="sizecmp-side">' +
+        '<div class="sizecmp-ball-wrap">' + ball + '</div>' +
+        '<div class="sizecmp-name">' + esc(r.name) + '</div>' +
+        '<div class="sizecmp-sub">' + fmtRadius(r) + '</div>' +
+        '</div>';
     }
-    label(cxA, baseYA, a, dotA, dotA ? a.radius * (MAX_PX / Math.max(a.radius, b.radius)) : pa);
-    label(cxB, baseYB, b, dotB, dotB ? b.radius * (MAX_PX / Math.max(a.radius, b.radius)) : pb);
+    vizEl.innerHTML = '<div class="sizecmp-viz-inner">' + side(a, pa, dotA) + side(b, pb, dotB) + '</div>';
     var extInvolved = a.ext || b.ext;
     var dotNames = [];
     if (dotA) dotNames.push(a.name);
     if (dotB) dotNames.push(b.name);
-    // 补充说明句：延展天体口径 + 点模式说明，按有无拼接到基数句之后
     var parts = [];
     if (extInvolved) parts.push("星系/星云等延展天体以等效球径示意（非真实形状），具体尺度以数字为准");
-    if (dotNames.length) parts.push(dotNames.join("、") + " 在真实比例下已缩为一个点（旁边标注实际倍数），未作放大处理");
+    if (dotNames.length) parts.push(dotNames.join("、") + " 在真实比例下已缩为一个点（旁标实际倍数），未作放大");
     var tail = parts.length ? "；" + parts.join("；") + "。" : "。";
     noteEl.textContent =
       (extInvolved ? "天体" : "球体") + (useLog ? "按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）" : "按真实直径比例绘制") +

@@ -439,30 +439,6 @@ def build_object_index(data):
     return "\n".join(L)
 
 
-def compare_payload(objs):
-    """详情页内嵌的精简对比数据（全量天体核心数值，供 astro-compare.js 本地渲染，无网络请求）。"""
-    rows = []
-    for o in objs:
-        ph, orb = o.get("physical") or {}, o.get("orbit") or {}
-        rows.append({
-            "id": o["id"], "name": o["name"], "en": o["name_en"],
-            "cat": CAT_ZH[o["category"]], "cat_key": o["category"],
-            "parent": o.get("parent"),
-            "mass": ph.get("mass_kg"), "radius": ph.get("radius_km"),
-            "density": ph.get("density_g_cm3"), "gravity": ph.get("gravity_m_s2"),
-            "escape": ph.get("escape_velocity_km_s"), "temp": ph.get("mean_temp_c"),
-            "pressure": ph.get("surface_pressure_bar"),
-            "rotation": orb.get("rotation_period_hours"),
-            "axis": orb.get("semimajor_axis_km"), "period": orb.get("orbital_period_days"),
-            "velocity": orb.get("orbital_velocity_km_s"),
-            "moons": (o.get("moons") or {}).get("count"),
-            "lum": o.get("luminosity_w"), "distance": o.get("distance_ly"),
-            "constellation": o.get("constellation"), "spectral": o.get("spectral_type"),
-            "subtype": o.get("subtype"),
-        })
-    return json.dumps({"earth_id": "earth", "rows": rows}, ensure_ascii=False)
-
-
 def sizecompare_payload(objs, img_prefix="../"):
     """天体对比页内嵌精简数据（含相对图片路径，供前端按真实比例绘制球体）。"""
     rows = []
@@ -525,45 +501,21 @@ def build_compare(data):
     L.append("</div>")
     L.append("")
     L.append('<div class="sizecmp-viz">')
-    L.append('  <svg id="sizecmp-svg" viewBox="0 0 1000 760" '
-             'preserveAspectRatio="xMidYMid meet" '
-             'role="img" aria-label="两个天体按真实比例绘制的球体对比图"></svg>')
+    L.append('  <div id="sizecmp-viz-canvas" class="sizecmp-viz-canvas"></div>')
     L.append('  <p class="sizecmp-viz-note" id="sizecmp-viz-note"></p>')
     L.append("</div>")
     L.append("")
-    L.append("<h2>核心倍数</h2>")
-    L.append('<div class="sizecmp-ratios" id="sizecmp-ratios"></div>')
-    L.append("")
     L.append("<h2>详细数据对比</h2>")
     L.append('<div class="sizecmp-detail" id="sizecmp-detail"></div>')
+    L.append("")
+    L.append("<h2>核心倍数</h2>")
+    L.append('<div class="sizecmp-ratios" id="sizecmp-ratios"></div>')
     L.append("")
     L.append('<p class="sizecmp-share" id="sizecmp-share"></p>')
     L.append("")
     L.append(f'<script type="application/json" id="astro-sizecompare-data">{sizecompare_payload(objs)}</script>')
     L.append("")
     return "\n".join(L)
-
-
-def compare_block(root, o, objs):
-    """详情页的「天体对比」入口：按钮 + 面板容器 + 内嵌对比数据。"""
-    return "\n".join([
-        '<div class="obj-compare-bar">',
-        '  <button type="button" id="astro-compare-toggle" class="cmp-btn" '
-        'aria-expanded="false" aria-controls="astro-compare">⚖ 与其他天体对比</button>',
-        '  <span class="cmp-hint">从数据库中任选天体（可多选）逐参数对比，链接可分享</span>',
-        '</div>',
-        '<section class="obj-compare" id="astro-compare" hidden '
-        f'data-current="{o["id"]}">',
-        '  <div class="cmp-picker">',
-        '    <input type="search" id="cmp-search" placeholder="搜索要对比的天体（中/英文）…" '
-        'aria-label="搜索对比天体">',
-        '    <ul class="cmp-results" id="cmp-results" hidden></ul>',
-        '  </div>',
-        '  <div class="cmp-table-wrap"><table class="cmp-table" id="cmp-table"></table></div>',
-        '  <p class="cmp-note">对比在该页本地完成；点击列标题旁的 × 可移除该天体。</p>',
-        '</section>',
-        f'<script type="application/json" id="astro-compare-data">{compare_payload(objs)}</script>',
-    ])
 
 
 def build_object(root, o, by_id, order, registry=None):
@@ -626,9 +578,6 @@ def build_object(root, o, by_id, order, registry=None):
                  f' · 分类：{CAT_ZH[cat]}</p>')
     else:
         L.append(f'<p class="obj-parent">分类：{CAT_ZH[cat]}</p>')
-    L.append("")
-    L.append(compare_block(root, o, list(by_id.values())))
-    L.append("")
 
     L.append("## 物理参数")
     L.append("")
