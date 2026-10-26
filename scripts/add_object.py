@@ -51,16 +51,12 @@ DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
 
 # ---------------------------------------------------------------- LLM 客户端
 def llm_chat(system, user, model_pref=None):
-    """OpenAI 兼容：本地 llama-server(:8080) 优先，豆包(:9090) 兜底。返回助手文本。"""
+    """OpenAI 兼容：豆包(:9090) 默认优先，本地 llama-server(:8080) 兜底。返回助手文本。"""
     messages = [{"role": "system", "content": system},
                 {"role": "user", "content": user}]
-    # 本地优先；若显式指定了豆包/OpenAI 系列模型则先用豆包
-    if model_pref and any(k in model_pref for k in ("doubao", "gpt", "claude", "deepseek")):
-        endpoints = [("http://127.0.0.1:9090/v1", model_pref),
-                     ("http://127.0.0.1:8080/v1", None)]
-    else:
-        endpoints = [("http://127.0.0.1:8080/v1", model_pref),
-                     ("http://127.0.0.1:9090/v1", model_pref or "doubao-2.1")]
+    # 豆包优先（默认 doubao-2.1）；本地 8080 作为兜底
+    endpoints = [("http://127.0.0.1:9090/v1", model_pref or "doubao-2.1"),
+                 ("http://127.0.0.1:8080/v1", model_pref)]
     last_err = None
     for base, model in endpoints:
         try:
@@ -268,11 +264,29 @@ def main():
     ap.add_argument("--json", help="直接结构化 JSON 录入（绕过 LLM）")
     ap.add_argument("--src", help="参考链接（配合 --json/--name 手动指定来源）")
     ap.add_argument("--dry-run", action="store_true", help="只打印，不落盘")
+    ap.add_argument("--force", action="store_true", help="已收录的对象也强制覆盖更新（默认跳过）")
     args = ap.parse_args()
 
     if not (args.name or args.json):
         ap.print_help()
         return 1
+
+    # 预检：已收录则直接跳过（避免无谓调用 LLM）
+    _data = json.loads(ASTRO.read_text(encoding="utf-8"))
+    _existing = _data["objects"]
+    if args.json:
+        j = json.loads(args.json)
+        gid = j.get("id") or slugify(j.get("name_en") or j.get("name") or "")
+        if gid in {x["id"] for x in _existing} and not args.force:
+            print(f"已收录，跳过：{gid}；如需覆盖更新请加 --force")
+            return 0
+    elif args.name:
+        q = args.name.strip().lower().replace(" ", "")
+        for x in _existing:
+            for n in (str(x.get("name", "")), str(x.get("name_en", ""))):
+                if q and q == n.lower().replace(" ", ""):
+                    print(f"已收录，跳过：{x['id']}（{x.get('name')}）；如需覆盖更新请加 --force")
+                    return 0
 
     if args.json:
         obj_in = json.loads(args.json)
@@ -307,6 +321,10 @@ def main():
             reg[sid] = {"name": sname, "url": surl}
 
     if o["id"] in by_id:
+        if not args.force:
+            print(f"已收录，跳过：{o['id']}（{by_id[o['id']].get('name')}）；"
+                  f"如需覆盖更新请加 --force")
+            return 0
         old = by_id[o["id"]]
         for k, v in o.items():
             if v is not None or k not in old:
