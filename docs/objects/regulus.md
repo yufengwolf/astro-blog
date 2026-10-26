@@ -53,4 +53,4 @@ description: "轩辕十四（Regulus）的天体数据：3.8 M☉、半径 4.35 
 <p class="obj-nav">← 上一颗：<a href="../spica/">角宿一</a></p>
 <p class="obj-nav">下一颗：<a href="../formalhaut/">北落师门</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

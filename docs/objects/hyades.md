@@ -44,4 +44,4 @@ description: "毕星团（Hyades）的天体数据：400 M☉、半径/大小 7 
 <p class="obj-nav">← 上一颗：<a href="../m45/">昴星团</a></p>
 <p class="obj-nav">下一颗：<a href="../m44/">蜂巢星团</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

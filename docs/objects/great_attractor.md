@@ -43,4 +43,4 @@ description: "巨引源（Great Attractor）的天体数据：1×10¹⁶ M☉、
 <p class="obj-nav">← 上一颗：<a href="../laniakea/">拉尼亚凯亚超星系团</a></p>
 <p class="obj-nav">下一颗：<a href="../hercules_corona_wall/">武仙-北冕座长城</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

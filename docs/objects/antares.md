@@ -52,4 +52,4 @@ description: "心宿二（Antares）的天体数据：15.5 M☉、半径 680 R�
 <p class="obj-nav">← 上一颗：<a href="../arcturus/">大角星</a></p>
 <p class="obj-nav">下一颗：<a href="../rigel/">参宿七</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

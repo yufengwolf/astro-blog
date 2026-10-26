@@ -130,4 +130,4 @@ A：外观很像，但水星坑底物质成分、撞击演化历史和月球存�
 <p class="obj-nav">← 上一颗：<a href="../sun/">太阳</a></p>
 <p class="obj-nav">下一颗：<a href="../venus/">金星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

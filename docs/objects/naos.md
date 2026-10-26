@@ -53,4 +53,4 @@ description: "弧矢增二十二（Zeta Puppis）的天体数据：40 M☉、半
 <p class="obj-nav">← 上一颗：<a href="../p_cygni/">天鹅座 P</a></p>
 <p class="obj-nav">下一颗：<a href="../r136a1/">R136a1</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

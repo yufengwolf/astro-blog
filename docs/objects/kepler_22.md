@@ -53,4 +53,4 @@ description: "开普勒 22（Kepler-22）的天体数据：0.857 M☉、半径 0
 <p class="obj-nav">← 上一颗：<a href="../kepler_452/">开普勒 452</a></p>
 <p class="obj-nav">下一颗：<a href="../trappist_1/">特拉比斯特 1</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

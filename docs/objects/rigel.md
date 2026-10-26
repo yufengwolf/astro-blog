@@ -52,4 +52,4 @@ description: "参宿七（Rigel）的天体数据：21 M☉、半径 78 R☉、�
 <p class="obj-nav">← 上一颗：<a href="../antares/">心宿二</a></p>
 <p class="obj-nav">下一颗：<a href="../betelgeuse/">参宿四</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>

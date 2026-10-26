@@ -60,4 +60,4 @@ description: "天卫一（Ariel）的天体数据：1.29×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../miranda/">天卫五</a></p>
 <p class="obj-nav">下一颗：<a href="../umbriel/">天卫二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
