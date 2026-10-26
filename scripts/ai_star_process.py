@@ -1,5 +1,8 @@
-# AI 恒星图后处理 v2：光球边缘检测(径向剖面最陡下降) → 质心居中裁方(本体直径=画布70%)
-#   → 水印涂黑 → 亮度alpha+标准光晕 → 600 webp，保证 measureSphere sf=0.5
+# AI 恒星图后处理 v3（2026-10-26 无光晕版）：光球边缘检测(径向剖面最陡下降) → 质心
+#   居中裁方(本体直径=画布70%) → 水印涂黑 → 圆外涂黑 → **行星式 alpha**（盘内不透明、
+#   边缘平滑、圆外全透明）→ 600 webp，保证 measureSphere sf=0.35
+# 与程序化恒星/行星图语义一致：视觉球=本体，跨类对比比例精确；无光晕（用户否决：
+# 光晕在浅色背景显方形边界，且会把 measureSphere 度量撑大）。
 import numpy as np
 from PIL import Image
 
@@ -14,11 +17,6 @@ TARGET_FRAC = 2 * R_BODY / SIZE  # 本体直径占画布 70%
 
 yy, xx = np.mgrid[0:SIZE, 0:SIZE].astype(np.float32)
 r = np.sqrt((xx - SIZE / 2 + 0.5) ** 2 + (yy - SIZE / 2 + 0.5) ** 2)
-# 标准光晕 alpha（与程序化版一致，保证 measureSphere sf=0.5）
-t_aura = np.clip((r - 200.0) / 100.0, 0.0, 1.2)
-aura = 45.0 + 210.0 * np.clip(1.0 - t_aura, 0, 1) ** 1.8
-aura = np.minimum(aura, 255.0)
-aura[r > 300] *= np.clip((345.0 - r[r > 300]) / 45.0, 0, 1)
 
 
 def smoothstep(x, lo, hi):
@@ -87,7 +85,7 @@ def detect_body(a0):
 
 
 def blackout_watermark(a0, W):
-    # 右下角 15%×16% 方块涂黑（角部为暗太空，无缝；后续 alpha 处理使其透明）
+    # 右下角 16%×16% 方块涂黑（角部为暗太空，无缝；后续 alpha 处理使其透明）
     a0[int(W * 0.84):, int(W * 0.85):] = 0
     return a0
 
@@ -98,10 +96,10 @@ for sid, path in SRC.items():
     a0 = np.asarray(im).astype(np.float32)
     a0 = blackout_watermark(a0, W)  # 先去水印再检测/裁切
     cx, cy, body_r, thr, bg = detect_body(a0)
-    # 圆外清理：1.08R 以外全部涂黑（用户要求只要圆形，辉光统一交给标准 aura）
+    # 圆外清理：1.05R 以外全部涂黑（用户要求只要圆形，圆外不留任何东西）
     yy0, xx0 = np.mgrid[0:a0.shape[0], 0:a0.shape[1]].astype(np.float32)
     cen0 = np.sqrt((xx0 - cx) ** 2 + (yy0 - cy) ** 2)
-    a0[cen0 > body_r * 1.08] = 0
+    a0[cen0 > body_r * 1.05] = 0
     side = int(round(2 * body_r / TARGET_FRAC))
     # 目标裁窗可能超出原图 → 用黑边 padding 容纳，保证本体精确占 70%
     pad = side // 2 + 4
@@ -114,21 +112,15 @@ for sid, path in SRC.items():
     crop = Image.fromarray(canvas[y0:y0 + side, x0:x0 + side].astype(np.uint8)).resize((SIZE, SIZE), Image.LANCZOS)
     clamped = side > W
     ph = np.asarray(crop).astype(np.float32)
-    lum = ph.mean(axis=2)
 
-    # 亮度 alpha：本体不透明、辉光按亮度渐变（保留 AI 图的自然辉光层次）
-    lum_alpha = smoothstep(lum, 12.0, 48.0) * 255.0
-    alpha = np.maximum(lum_alpha, aura)
-    # 被抬升区域（自然辉光不足处）用恒星自身边缘色补 RGB
-    limb_r = R_BODY * 0.96
-    edge_mask = (r > limb_r) & (r < limb_r + 60) & (lum_alpha > 60)
-    glow_color = ph[edge_mask].mean(axis=0) if edge_mask.any() else np.array([200, 200, 230], dtype=np.float32)
-    fall = 0.5 + 0.5 * np.clip(1.0 - (r - R_BODY) / 110.0, 0, 1)
-    fill_rgb = np.clip(glow_color[None, None, :] * (0.6 + 0.4 * fall[..., None]), 0, 255)
-    raised = (aura > lum_alpha + 1) & (lum < 60)
-    rgb = np.where(raised[..., None], fill_rgb, ph)
+    # 行星式 alpha（无光晕）：盘内不透明，边缘平滑过渡到 0，圆外全透明。
+    # 过渡带与 gen_star_images.py 的 body_alpha 完全一致（smoothstep 216-r, -2, 6）。
+    # AI 图圆内暗斑保留为纹理（不做亮度 alpha——那会把暗斑挖透明）。
+    t = np.clip((216.0 - r + 2.0) / 8.0, 0.0, 1.0)
+    disk_alpha = 255.0 * t * t * (3 - 2 * t)
+    rgb = np.where((disk_alpha > 0)[..., None], ph, 0)
 
-    out = np.dstack([rgb.astype(np.uint8), np.clip(alpha, 0, 255).astype(np.uint8)])
+    out = np.dstack([rgb.astype(np.uint8), np.clip(disk_alpha, 0, 255).astype(np.uint8)])
     im_out = Image.fromarray(out, "RGBA")
     im_out.save(OUT + sid + ".webp", "WEBP", quality=88)
     print("%s | bg=%.0f thr=%.0f c=(%.0f,%.0f) body_r=%.0f side=%d%s | sf=%.4f" % (

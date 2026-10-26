@@ -1,6 +1,9 @@
 # 恒星图批量生成器：按 subtype 光谱型着色，600x600 RGBA 透明底
-# 设计约束：本体盘 r=210（直径 70%，与行星图一致）；光晕 alpha>=40 延伸到 r=300（内切圆）
-#   → measureSphere 实测 sf 恒=0.5，与行星/黑洞等不透明图语义一致，对比比例精确
+# 设计约束（2026-10-26 用户反馈修正）：本体盘 r=210（直径 70%，与行星图一致），
+#   **无外部光晕**——光晕 alpha>=40 曾延伸到 r=300，导致 measureSphere 把光晕当成
+#   球体（sf=0.5 → 视觉球被撑大 43%），且浅色背景下可见方形光晕边界（用户否决）。
+#   现与行星标准流程（blog-pipeline cutout：内切圆、直径七成、圆外全透明）一致：
+#   sf=0.35，视觉球=本体，跨类对比比例精确。
 import json
 import hashlib
 import numpy as np
@@ -68,13 +71,7 @@ def smoothstep(x, lo, hi):
 yy, xx = np.mgrid[0:SIZE, 0:SIZE].astype(np.float32)
 r = np.sqrt((xx - SIZE / 2 + 0.5) ** 2 + (yy - SIZE / 2 + 0.5) ** 2)
 
-# 光晕 alpha：r=200 处 255 → r=298 处 ~47（全程 >=40，保证 sf=0.5），r>300 羽化到 0
-t_aura = np.clip((r - 200.0) / 100.0, 0.0, 1.2)
-aura_alpha = 45.0 + 210.0 * np.clip((1.0 - t_aura), 0, 1) ** 1.8
-aura_alpha = np.minimum(aura_alpha, 255.0)
-aura_alpha[r > 300] *= np.clip((345.0 - r[r > 300]) / 45.0, 0, 1)
-
-# 本体 alpha：r<208 全不透明，208-216 过渡
+# 本体 alpha：r<208 全不透明，208-216 平滑过渡到 0（圆外全透明，无光晕）
 body_alpha = 255.0 * smoothstep(216.0 - r, -2.0, 6.0)
 
 with open("docs/data/astro.json", encoding="utf-8") as f:
@@ -106,36 +103,27 @@ for o in stars:
     core = 0.35 * (1.0 - np.clip(r / R_BODY, 0, 1) ** 2)
     disk_rgb = np.clip(base[None, None, :] * (bright * limb)[..., None]
                        + 255.0 * core[..., None] * 0.55, 0, 255)
-    # 光晕颜色：基色提亮，随半径衰减
-    fall = 0.45 + 0.55 * np.clip(1.0 - (r - R_BODY) / 110.0, 0, 1)
-    glow_rgb = np.clip(base[None, None, :] * 1.12 * fall[..., None], 0, 255)
 
-    use_body = (body_alpha >= aura_alpha)
-    alpha = np.where(use_body, body_alpha, aura_alpha)
-    rgb = np.where(use_body[..., None], disk_rgb, glow_rgb)
-    # 光晕强度整体缩放（NS/WR/LBV 更亮）
-    a_scale = min(1.0, spec["aura"])
-    alpha = np.where(use_body, body_alpha, aura_alpha * a_scale)
+    # 圆外全透明（无光晕）：alpha 由本体盘决定，rgb 仅在圆内置值
+    alpha = body_alpha
+    rgb = np.where((body_alpha > 0)[..., None], disk_rgb, 0)
 
     out = np.dstack([rgb.astype(np.uint8), np.clip(alpha, 0, 255).astype(np.uint8)])
     Image.fromarray(out, "RGBA").save(OUT + o["id"] + ".webp", "WEBP", quality=88)
     made += 1
 print("generated", made, "star images")
 
-# ---------- 太阳：保留真实纹理，仅补光晕使实测 sf=0.5 ----------
+# ---------- 太阳：保留真实日面纹理，去掉光晕/日珥，圆盘截断到 70% ----------
 p = OUT + "sun.webp"
 sun = Image.open(p).convert("RGBA")
 a = np.asarray(sun).astype(np.float32)
 rgb_old, al_old = a[:, :, :3], a[:, :, 3]
-sun_glow = np.array([255.0, 130.0, 60.0], dtype=np.float32)
-new_alpha = np.maximum(al_old, aura_alpha)
-raised = aura_alpha > al_old + 1
-fall = 0.5 + 0.5 * np.clip(1.0 - (r - R_BODY) / 110.0, 0, 1)
-glow_rgb = np.clip(sun_glow[None, None, :] * fall[..., None], 0, 255)
-rgb_new = np.where(raised[..., None], glow_rgb, rgb_old)
+# 日面半径恰为 210（70% 直径）：把旧 alpha（含上轮光晕/日珥）截断到本体圆内
+new_alpha = np.minimum(al_old, body_alpha)
+rgb_new = np.where((new_alpha > 0)[..., None], rgb_old, 0)
 out = np.dstack([rgb_new.astype(np.uint8), np.clip(new_alpha, 0, 255).astype(np.uint8)])
 Image.fromarray(out, "RGBA").save(p, "WEBP", quality=90)
-print("sun.webp aura-tuned")
+print("sun.webp aura-removed")
 
 # ---------- 验证：离线复刻 measureSphere（alpha>=40, 92% 覆盖, 二分） ----------
 def measure_sf(path):
@@ -153,7 +141,7 @@ def measure_sf(path):
     return lo / SIZE
 
 for sid in ["sun", "vega", "betelgeuse", "uy_scuti", "sirius_b", "crab_pulsar", "proxima_centauri"]:
-    print("sf(%s) = %.4f (期望 0.5)" % (sid, measure_sf(OUT + sid + ".webp")))
+    print("sf(%s) = %.4f (期望 0.35)" % (sid, measure_sf(OUT + sid + ".webp")))
 
 # ---------- 视觉检查样张 ----------
 for sid, bgcolor, name in [("vega", (255, 255, 255, 255), "_star_vega_w.png"),

@@ -18,3 +18,6 @@ desktop.ini
 # 数据采集缓存与核查报告（本地产物，随时可重新生成，不进仓库）
 scripts/.cache/
 reports/
+
+# 行星/恒星切圆脚本的源图下载缓存（venus_circle.py 自动重新下载）
+_venus_src.jpg

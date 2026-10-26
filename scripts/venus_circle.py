@@ -1,4 +1,12 @@
-# 金星切圆：NASA S91-50688 全盘雷达图 → 圆盘检测 → 70%裁方(padding) → 盘内不透明+标准光晕 → 600 webp sf=0.5
+# 金星切圆（行星式，2026-10-26 重写）：NASA S91-50688 全盘雷达图 → 圆盘检测
+# → 70% 裁方(padding) → 盘内不透明、边缘平滑 → 圆外全透明（无光晕）→ 600 webp
+# 与 blog-pipeline cutout() 行星标准流程一致（内切圆、直径七成、sf=0.35）：
+# 行星不发光，不要光晕；浅色背景下光晕会显方形边界（用户否决）。
+# _venus_src.jpg 不存在时自动从 images-api.nasa.gov 下载（1920x1920 large.jpg）。
+import json
+import os
+import urllib.request
+
 import numpy as np
 from PIL import Image
 
@@ -7,12 +15,25 @@ OUT = "docs/assets/planets/venus.webp"
 SIZE, R_BODY = 600, 210.0
 TARGET_FRAC = 2 * R_BODY / SIZE
 
+if not os.path.exists(SRC):
+    req = urllib.request.Request("https://images-api.nasa.gov/asset/S91-50688",
+                                 headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        items = json.loads(resp.read().decode())["collection"]["items"]
+    url = next((it["href"] for it in items if "large.jpg" in it["href"]), None)
+    if not url:
+        raise SystemExit("S91-50688 large.jpg not found in NASA asset API")
+    req2 = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req2, timeout=120) as resp, open(SRC, "wb") as f:
+        f.write(resp.read())
+    print("downloaded", url, "->", SRC)
+
 im = Image.open(SRC).convert("RGB")
 W = im.size[0]
 a0 = np.asarray(im).astype(np.float32)
 mx = a0.max(axis=2)
 
-# 圆盘检测：径向剖面最陡下降（与 AI 星同一逻辑）
+# 圆盘检测：径向剖面最陡下降
 mask = mx >= 60
 ys, xs = np.nonzero(mask)
 cx, cy = float(xs.mean()), float(ys.mean())
@@ -44,25 +65,21 @@ y0 = max(0, min(int(round(cy - side / 2)), canvas.shape[0] - side))
 crop = Image.fromarray(canvas[y0:y0 + side, x0:x0 + side].astype(np.uint8)).resize((SIZE, SIZE), Image.LANCZOS)
 ph = np.asarray(crop).astype(np.float32)
 
-# 标准光晕（与恒星一致 → sf=0.5）
+# 行星式 alpha：盘内不透明，边缘 4px 平滑过渡到 0（防锯齿），圆外全透明
+# 过渡带与 gen_star_images.py 的 body_alpha 完全一致（smoothstep 216-r, -2, 6）
 yy2, xx2 = np.mgrid[0:SIZE, 0:SIZE].astype(np.float32)
 r = np.sqrt((xx2 - SIZE / 2 + 0.5) ** 2 + (yy2 - SIZE / 2 + 0.5) ** 2)
-t_aura = np.clip((r - 200.0) / 100.0, 0.0, 1.2)
-aura = 45.0 + 210.0 * np.clip(1.0 - t_aura, 0, 1) ** 1.8
-aura = np.minimum(aura, 255.0)
-aura[r > 300] *= np.clip((345.0 - r[r > 300]) / 45.0, 0, 1)
+t = np.clip((216.0 - r + 2.0) / 8.0, 0.0, 1.0)
+disk_alpha = 255.0 * t * t * (3 - 2 * t)
+rgb = np.where((disk_alpha > 0)[..., None], ph, 0)
 
-# 盘内不透明（边缘 3px 平滑防锯齿）+ 光晕
-disk_alpha = np.clip((R_BODY + 3 - r) * 85.0, 0, 255)  # r<=207 → 255
-alpha = np.maximum(disk_alpha, aura)
-
-out = np.dstack([ph.astype(np.uint8), alpha.astype(np.uint8)])
+out = np.dstack([rgb.astype(np.uint8), disk_alpha.astype(np.uint8)])
 Image.fromarray(out, "RGBA").save(OUT, "WEBP", quality=88)
 
-# 校验 sf（复刻 measureSphere）
+# 校验 sf（复刻 measureSphere，期望 0.35）
 def cover(R):
     m = (xx2 - SIZE / 2 + 0.5) ** 2 + (yy2 - SIZE / 2 + 0.5) ** 2 <= R * R
-    return (alpha[m] >= 40).mean() if m.any() else 0
+    return (disk_alpha[m] >= 40).mean() if m.any() else 0
 lo, hi = 0.0, SIZE / 2
 for _ in range(10):
     mid = (lo + hi) / 2
@@ -70,7 +87,7 @@ for _ in range(10):
     else: hi = mid
 print("venus side=%d body_frac=%.4f sf=%.4f" % (side, body_r / side, lo / SIZE))
 
-# 样张
+# 样张（白底+深底合成验证无方形边界、无光晕）
 s = Image.open(OUT).convert("RGBA")
 for bgc, suf in [((255, 255, 255, 255), "w"), ((30, 30, 40, 255), "d")]:
     bgp = Image.new("RGBA", s.size, bgc); bgp.alpha_composite(s)
