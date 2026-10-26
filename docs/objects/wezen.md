@@ -53,4 +53,4 @@ description: "弧矢一（Wezen）的天体数据：14.9 M☉、半径 188 R☉�
 <p class="obj-nav">← 上一颗：<a href="../mirach/">奎宿九</a></p>
 <p class="obj-nav">下一颗：<a href="../adhara/">弧矢七</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

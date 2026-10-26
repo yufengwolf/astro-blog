@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-26",
-    "object_count": 154,
+    "object_count": 156,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -9408,6 +9408,128 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false
+    },
+    {
+      "id": "gonggong_225088",
+      "name": "共工星",
+      "name_en": "225088 Gonggong",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "柯伊伯带离散盘冰质矮行星，以中国水神共工命名",
+      "physical": {
+        "mass_kg": 1.75e+21,
+        "radius_km": 615,
+        "density_g_cm3": 1.74,
+        "gravity_m_s2": 0.30879767334258706,
+        "escape_velocity_km_s": 0.6162963071537765,
+        "mean_temp_c": -243.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": 0.14
+      },
+      "orbit": {
+        "semimajor_axis_km": 10095612304.189499,
+        "orbital_period_days": 202483.6425,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 30.627,
+        "eccentricity": 0.49943,
+        "obliquity_deg": null,
+        "rotation_period_hours": 22.4
+      },
+      "moons": {
+        "count": 1,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 0.00107,
+      "constellation": "双子座",
+      "subtype": "离散盘矮行星（冰质天体）",
+      "members": "拥有1颗已知卫星：相柳（Xiangliu，直径约100 km）",
+      "note": "直径约1230 km（半径615 km）；质量取1.75×10^21 kg，不同观测给出1.75~2.25×10^21 kg范围；自转周期早期测为22.4h，后续HST观测修正为约22.4h或44.8h（疑似双峰反照率导致），此处取22.4h；表面温度约30 K，反照率约0.1~0.15；距离按半长轴67.5 AU折算。",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_225088_gonggong"
+      ],
+      "verified": "2026-10-26",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/gonggong_225088.webp",
+      "source_dates": {
+        "src_225088_gonggong": "2026-10-26"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "pallas",
+      "name": "智神星",
+      "name_en": "Pallas",
+      "category": "asteroid",
+      "parent": "sun",
+      "tagline": "小行星带第二大天体，形状极不规则，轨道倾角极大。",
+      "physical": {
+        "mass_kg": 2.11e+20,
+        "radius_km": 256,
+        "density_g_cm3": 2.7,
+        "gravity_m_s2": 0.215,
+        "escape_velocity_km_s": 0.332,
+        "mean_temp_c": -103.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": 0.159
+      },
+      "orbit": {
+        "semimajor_axis_km": 414834895.4511,
+        "orbital_period_days": 1687.455,
+        "orbital_velocity_km_s": 17.88,
+        "inclination_deg": 34.8,
+        "eccentricity": 0.232,
+        "obliquity_deg": 17.1,
+        "rotation_period_hours": 11.3
+      },
+      "moons": {
+        "count": 0,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": "双鱼座",
+      "subtype": "主带小行星",
+      "members": null,
+      "note": "智神星是太阳系第二大小行星（按体积和质量仅次于谷神星），但因其极不规则的形状（类似压扁的土豆），其等效半径约为512公里。其轨道倾角高达34.8度，远大于其他大型小行星。",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_pallas"
+      ],
+      "verified": "2026-10-26",
+      "data_verified": false,
+      "data_source": "llm_local",
+      "article": null,
+      "image": "assets/planets/pallas.webp",
+      "source_dates": {
+        "src_pallas": "2026-10-26"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
     }
   ],
   "source_registry": {
@@ -9962,6 +10084,14 @@
     "src_vanth": {
       "name": "Wikipedia · Vanth (moon)",
       "url": "https://en.wikipedia.org/wiki/Vanth_(moon)"
+    },
+    "src_225088_gonggong": {
+      "name": "Wikipedia · 225088 Gonggong",
+      "url": "https://en.wikipedia.org/wiki/225088_Gonggong"
+    },
+    "src_pallas": {
+      "name": "Wikipedia · 2 Pallas",
+      "url": "https://en.wikipedia.org/wiki/2_Pallas"
     }
   }
 }

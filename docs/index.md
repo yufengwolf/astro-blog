@@ -1,27 +1,27 @@
 ---
-description: "收录 154 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 156 个天体的结构化数据：质量、半径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">154 个天体的质量、半径、密度、温度</p>
+  <p class="astro-hero-sub">156 个天体的质量、半径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部 154</button>
+    <button type="button" class="chip active" data-filter="all">全部 156</button>
     <button type="button" class="chip" data-filter="star">恒星 56</button>
     <button type="button" class="chip" data-filter="planet">行星 8</button>
-    <button type="button" class="chip" data-filter="dwarf_planet">矮行星 6</button>
+    <button type="button" class="chip" data-filter="dwarf_planet">矮行星 7</button>
     <button type="button" class="chip" data-filter="moon">卫星 22</button>
     <button type="button" class="chip" data-filter="galaxy">星系 18</button>
     <button type="button" class="chip" data-filter="nebula">星云 16</button>
     <button type="button" class="chip" data-filter="cluster">星团 11</button>
     <button type="button" class="chip" data-filter="black_hole">黑洞 8</button>
     <button type="button" class="chip" data-filter="structure">大尺度结构 7</button>
-    <button type="button" class="chip" data-filter="asteroid">小行星 1</button>
+    <button type="button" class="chip" data-filter="asteroid">小行星 2</button>
     <button type="button" class="chip" data-filter="comet">彗星 1</button>
   </div>
   <label class="astro-sort-label">排序
@@ -1733,6 +1733,28 @@ description: "收录 154 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge moon">卫星</span>
     </a>
   </article>
+  <article class="astro-card" data-category="dwarf_planet" data-name="共工星 225088 Gonggong" data-mass="1.75e+21" data-radius="615" data-density="1.74" data-temp="-243.14999999999998" data-period="202483.6425" data-moons="1">
+    <a class="astro-card-link" href="objects/gonggong_225088/">
+      <div class="astro-img dwarf_planet"><img src="assets/planets/gonggong_225088.webp" alt="共工星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">共工星<span class="en">225088 Gonggong</span></div>
+        <p class="astro-card-tagline">柯伊伯带离散盘冰质矮行星，以中国水神共工命名</p>
+        <div class="astro-card-stats"><span>1.75×10²¹ kg</span><span>615.0 km</span><span>-243.14999999999998 °C</span></div>
+      </div>
+      <span class="astro-badge dwarf_planet">矮行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="asteroid" data-name="智神星 Pallas" data-mass="2.11e+20" data-radius="256" data-density="2.7" data-temp="-103.14999999999998" data-period="1687.455" data-moons="0">
+    <a class="astro-card-link" href="objects/pallas/">
+      <div class="astro-img asteroid"><img src="assets/planets/pallas.webp" alt="智神星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">智神星<span class="en">Pallas</span></div>
+        <p class="astro-card-tagline">小行星带第二大天体，形状极不规则，轨道倾角极大。</p>
+        <div class="astro-card-stats"><span>2.11×10²⁰ kg</span><span>256.0 km</span><span>-103.14999999999998 °C</span></div>
+      </div>
+      <span class="astro-badge asteroid">小行星</span>
+    </a>
+  </article>
 </div>
 <p class="astro-empty" id="astro-empty" hidden>没有匹配的天体，换个关键词或分类试试。</p>
 
@@ -1754,4 +1776,4 @@ description: "收录 154 个天体的结构化数据：质量、半径、密度�
   <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-10-26）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.6 · 收录 154 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.6 · 收录 156 个天体（全部配图）</p>

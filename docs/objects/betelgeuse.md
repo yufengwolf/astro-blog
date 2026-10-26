@@ -52,4 +52,4 @@ description: "参宿四（Betelgeuse）的天体数据：14 M☉、半径 764 R�
 <p class="obj-nav">← 上一颗：<a href="../rigel/">参宿七</a></p>
 <p class="obj-nav">下一颗：<a href="../vega/">织女星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

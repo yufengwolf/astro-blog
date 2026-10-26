@@ -53,4 +53,4 @@ description: "毕宿五（Aldebaran）的天体数据：1.16 M☉、半径 44.1 
 <p class="obj-nav">← 上一颗：<a href="../capella/">五车二</a></p>
 <p class="obj-nav">下一颗：<a href="../spica/">角宿一</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

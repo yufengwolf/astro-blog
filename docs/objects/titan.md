@@ -61,4 +61,4 @@ description: "土卫六（Titan）的天体数据：1.35×10²³ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../rhea/">土卫五</a></p>
 <p class="obj-nav">下一颗：<a href="../hyperion/">土卫七</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

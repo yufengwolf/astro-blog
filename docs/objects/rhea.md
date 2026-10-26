@@ -60,4 +60,4 @@ description: "土卫五（Rhea）的天体数据：2.31×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../dione/">土卫四</a></p>
 <p class="obj-nav">下一颗：<a href="../titan/">土卫六</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

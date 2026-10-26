@@ -61,4 +61,4 @@ description: "太阳（Sun）的天体数据：1 M☉、半径 1 R☉、光度 1
 
 <p class="obj-nav">下一颗：<a href="../mercury/">水星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

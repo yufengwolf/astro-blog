@@ -42,4 +42,4 @@ description: "本星系群（Local Group）的天体数据：3×10¹² M☉、�
 <p class="obj-nav">← 上一颗：<a href="../omega_cen/">半人马座 ω</a></p>
 <p class="obj-nav">下一颗：<a href="../virgo_cluster/">室女座星系团</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

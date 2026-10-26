@@ -60,4 +60,4 @@ description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../tethys/">土卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../rhea/">土卫五</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

@@ -54,4 +54,4 @@ description: "北河二（Castor）的天体数据：2.37 M☉、半径 2.09 R�
 <p class="obj-nav">← 上一颗：<a href="../alphacen_b/">南门二 B</a></p>
 <p class="obj-nav">下一颗：<a href="../pollux/">北河三</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

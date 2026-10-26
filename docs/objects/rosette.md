@@ -42,4 +42,4 @@ description: "玫瑰星云（Rosette Nebula）的天体数据：—、半径/大
 <p class="obj-nav">← 上一颗：<a href="../m2_9/">双喷射星星云</a></p>
 <p class="obj-nav">下一颗：<a href="../barnards_loop/">巴纳德环</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

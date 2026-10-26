@@ -87,6 +87,8 @@ python scripts/add_object.py --name "参宿四" --dry-run  # 先看草稿不落�
 
 ```bash
 python scripts/nasa_image.py <id> <NASA图片URL>   # 你给地址 → 下载+校验标题+自适应裁图+锁定
+python scripts/nasa_image.py 智神星 ai             # 豆包图不满意/失败时，按名重试豆包出图(默认重试3次)
+python scripts/nasa_image.py 共工星 ai --retries 5  # 改重试次数；--no-pages 可不自动重建站点
 ```
 
 收尾校验与构建（每次维护必跑）：

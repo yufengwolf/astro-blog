@@ -54,4 +54,4 @@ description: "大陵五（Algol）的天体数据：3.17 M☉、半径 2.73 R☉
 <p class="obj-nav">← 上一颗：<a href="../r136a1/">R136a1</a></p>
 <p class="obj-nav">下一颗：<a href="../sheliak/">渐台二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

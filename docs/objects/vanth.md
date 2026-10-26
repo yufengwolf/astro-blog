@@ -60,5 +60,6 @@ description: "范斯（亡卫一）（Vanth）的天体数据：3×10¹⁹ kg、
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../orcus/">亡神星</a></p>
+<p class="obj-nav">下一颗：<a href="../gonggong_225088/">共工星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

@@ -53,4 +53,4 @@ description: "南门二 B（Alpha Centauri B）的天体数据：0.907 M☉、�
 <p class="obj-nav">← 上一颗：<a href="../alphacen_a/">南门二 A</a></p>
 <p class="obj-nav">下一颗：<a href="../castor/">北河二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

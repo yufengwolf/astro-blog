@@ -356,26 +356,65 @@ def gen_bigscale_doubao(oid, cat, obj):
 
 
 # ---------------------------------------------------------------- 路由
-def gen_solid(oid, cat, obj):
-    """优先豆包（不合格自动重试 1 次），仍失败回退程序化；返回来源标签。"""
-    for attempt in range(2):
+def gen_solid(oid, cat, obj, max_attempts=2):
+    """优先豆包（不合格最多重试 max_attempts-1 次），仍失败回退程序化；返回来源标签。
+    max_attempts=2 =「初始 1 次 + 重试 1 次」（默认，与原行为一致）；
+    AI 重生成命令可传更大值（如 4 = 重试 3 次）。"""
+    for attempt in range(max_attempts):
         if gen_solid_doubao(oid, cat, obj):
             return "doubao"
-        if attempt == 0:
-            print("    [doubao] 第 1 次出图不合格，再试一次（豆包随机波动较大）")
+        if attempt < max_attempts - 1:
+            print(f"    [doubao] 第 {attempt+1} 次出图不合格/失败，再试一次"
+                  f"（豆包随机波动较大 / 网络问题）")
     gen_solid_body(oid, cat)
     set_image_meta(oid, "programmatic", "程序化示意图")
     return "programmatic"
 
 
-def gen_bigscale(oid, cat, obj, force):
-    """优先豆包占位，失败回退程序化（gen_bigscale_image.py）。黑洞恒程序化（无需 AI）。"""
-    if cat != "black_hole" and gen_bigscale_doubao(oid, cat, obj):
-        return "doubao"
+def gen_bigscale(oid, cat, obj, force, max_attempts=2):
+    """优先豆包占位，失败最多重试 max_attempts-1 次，仍失败回退程序化。黑洞恒程序化。"""
+    if cat != "black_hole":
+        for attempt in range(max_attempts):
+            if gen_bigscale_doubao(oid, cat, obj):
+                return "doubao"
+            if attempt < max_attempts - 1:
+                print(f"    [doubao] 大尺度第 {attempt+1} 次出图失败，再试一次"
+                      f"（网络问题 / 豆包随机波动）")
     cmd = [PY, "scripts/gen_bigscale_image.py"] + (["--force"] if force else []) + ["--ids", oid]
     subprocess.run(cmd, cwd=str(ROOT), check=False)
     set_image_meta(oid, "programmatic", "程序化示意图")
     return "programmatic"
+
+
+# ---------------------------------------------------------------- AI 重生成入口
+def regenerate_ai(oid, max_attempts=4, force=True):
+    """重新生成某对象的 AI 图（手动重试入口，供 nasa_image.py ai 子命令调用）。
+
+    豆包优先，最多 max_attempts 次尝试（含重试）；全失败回退程序化。
+      - image_locked 的 NASA 真图：不覆盖，返回 ("locked", 说明)
+      - 恒星 / sun：走 build_star_images 模板重建（不走豆包单张）
+      - 大尺度 / 固态：分别走 gen_bigscale / gen_solid（带重试）
+    返回 (source_label, note)。
+    """
+    data = json.loads(ASTRO.read_text(encoding="utf-8"))
+    hit = [o for o in data["objects"] if o["id"] == oid]
+    if not hit:
+        return None, "未收录"
+    o = hit[0]
+    if o.get("image_locked") and o.get("image_source") == "nasa":
+        return "locked", "NASA 真图已锁定，不覆盖（如需替换请先改 image_locked=false）"
+    cat = o["category"]
+    if cat in ("star", "sun"):
+        subprocess.run([PY, "scripts/build_star_images.py"], cwd=str(ROOT), check=False)
+        set_image_meta(oid, "doubao_template", "AI 生成")
+        return "doubao_template", "恒星模板重建"
+    if cat in BIGSCALE_CATS:
+        lbl = gen_bigscale(oid, cat, o, force, max_attempts=max_attempts)
+        return lbl, "大尺度 AI/程序化"
+    if cat in SOLID_CATS:
+        lbl = gen_solid(oid, cat, o, max_attempts=max_attempts)
+        return lbl, "固态 AI/程序化"
+    return None, f"类别 {cat} 无生成器"
 
 
 def main():

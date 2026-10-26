@@ -44,4 +44,4 @@ description: "银河系（Milky Way）的天体数据：1.5×10¹² M☉、半�
 <p class="obj-nav">← 上一颗：<a href="../tarantula/">蜘蛛星云</a></p>
 <p class="obj-nav">下一颗：<a href="../m31/">仙女座星系</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>

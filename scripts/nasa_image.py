@@ -42,6 +42,9 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
   python scripts/nasa_image.py pluto https://images.nasa.gov/details/PIA19708
                                                        # 【手动保底】你直接给 NASA 图片地址，
                                                        # 脚本下载→校验标题→自适应抠图→入库锁定
+  python scripts/nasa_image.py 智神星 ai          # 【AI 重生成】按名重试豆包出图(默认重试3次)
+  python scripts/nasa_image.py gonggong_225088 ai --retries 5
+                                                       # 按 id 重试(可改重试次数);NASA 锁定图不覆盖
 
 登记表 docs/data/nasa_images.json 可手改，形如：
   {"saturn": {"nasa_id": "PIA02225", "credit": "…", "rings": true,
@@ -50,7 +53,9 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
 """
 import argparse
 import json
+import os
 import re
+import subprocess
 import sys
 import urllib.request
 from collections import deque
@@ -815,6 +820,81 @@ def do_auto_batch(pairs, frame: bool):
     return fails
 
 
+def resolve_oid(name: str):
+    """按 id / 中文名 / 英文名（精确或包含）解析对象 id；找不到返回 None。"""
+    data = json.loads(ASTRO.read_text(encoding="utf-8"))
+    q = name.strip().lower()
+    for o in data["objects"]:                 # 精确匹配 id
+        if o["id"] == q:
+            return o["id"]
+    for o in data["objects"]:                 # 精确匹配中/英文名
+        if o.get("name", "").lower() == q or o.get("name_en", "").lower() == q:
+            return o["id"]
+    for o in data["objects"]:                 # 包含匹配（容错别名片段）
+        if q in o.get("name", "").lower() or q in o.get("name_en", "").lower():
+            return o["id"]
+    return None
+
+
+def do_ai_regen(names, retries=3, no_pages=False):
+    """AI 重新生成：按名/ID 重跑豆包出图，网络/自检不过时自动重试。
+
+    - 复用 sync_images.regenerate_ai（豆包优先，全失败回退程序化）
+    - NASA 锁定真图不覆盖（安全）
+    - 默认跑完重新 gen_pages + mkdocs build，避免网页不更新（--no-pages 跳过）
+    """
+    sys_path0 = str(ROOT / "scripts")
+    if sys_path0 not in sys.path:
+        sys.path.insert(0, sys_path0)
+    import sync_images  # 复用出图逻辑
+
+    max_attempts = retries + 1     # 初始 1 次 + 重试 retries 次
+    print(f"== AI 重新生成模式（最多 1+{retries} 次尝试，豆包优先 / 程序化兜底）==")
+    results = []
+    for name in names:
+        oid = resolve_oid(name)
+        if not oid:
+            print(f"[skip] 未找到对象「{name}」（请用 id 或中/英文名）")
+            results.append((name, None, "未找到"))
+            continue
+        lbl, note = sync_images.regenerate_ai(oid, max_attempts=max_attempts)
+        tagmap = {"doubao": "豆包AI", "programmatic": "程序化兜底",
+                  "doubao_template": "AI模板", "locked": "已锁定(跳过)"}
+        print(f"  {oid}（{name}）：{tagmap.get(lbl, str(lbl))} — {note}")
+        results.append((oid, lbl, note))
+
+    ok = [r for r in results if r[1] in ("doubao", "doubao_template")]
+    prog = [r for r in results if r[1] == "programmatic"]
+    locked = [r for r in results if r[1] == "locked"]
+    miss = [r for r in results if r[1] is None]
+    print("---")
+    print(f"豆包/AI 成功：{len(ok)}　程序化兜底：{len(prog)}　"
+          f"已锁定跳过：{len(locked)}　未找到：{len(miss)}")
+
+    if not no_pages:
+        print("  重新生成页面并构建站点…")
+        try:
+            subprocess.run([sys.executable, "scripts/gen_pages.py"],
+                           cwd=str(ROOT), check=False)
+            env = dict(os.environ)
+            env["CODEBUDDY_SAFE_DELETE_ENABLED"] = "0"
+            mkdocs = "C:/Users/99432/.venv/Scripts/mkdocs.exe"
+            rc = subprocess.run([mkdocs, "build", "--strict"], cwd=str(ROOT),
+                                 check=False, env=env)
+            if rc.returncode == 0:
+                print("  页面已更新（mkdocs build 完成）")
+            else:
+                print("  [warn] mkdocs build 失败，请手动运行 "
+                      "python scripts/gen_pages.py && mkdocs build")
+        except Exception as e:
+            print(f"  [warn] 自动构建失败：{e}；请手动运行 "
+                  "python scripts/gen_pages.py && mkdocs build")
+    else:
+        print("  （--no-pages：未重新生成页面/构建；如需上线请手动 "
+              "python scripts/gen_pages.py && mkdocs build）")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="安装真实天体影像（圆盘裁剪或含环宽幅 + 署名 + 锁定）")
     ap.add_argument("ids", nargs="*", help="按登记表安装（对象 id）")
@@ -848,10 +928,25 @@ def main() -> int:
                     help="批量自动模式：'对象id:搜索词[:标题关键词]'，自动挑图并安装")
     ap.add_argument("--credit", default=None,
                     help="手动模式下的署名（不填则从 NASA 详情页自动取标题）")
+    ap.add_argument("--retries", type=int, default=3, metavar="N",
+                    help="ai 模式的豆包重试次数（默认 3，即最多 1+3 次尝试）；"
+                         "网络错误/轮廓自检不过时自动重试")
+    ap.add_argument("--no-pages", action="store_true",
+                    help="ai 模式不自动重新生成页面并构建站点（默认会，避免网页不更新）")
     args = ap.parse_args()
 
     if args.search:
         return do_search(args.search)
+
+    # AI 重新生成模式：nasa_image.py <name-or-id> ai [--retries 3]
+    # 按 id / 中英文名解析对象，重试豆包出图（豆包随机波动/网络问题时的补救入口）
+    if "ai" in args.ids:
+        ai_names = [x for x in args.ids if x != "ai"]
+        if not ai_names:
+            print("[error] ai 模式需要至少一个对象名或 id，例如："
+                  "python scripts/nasa_image.py 智神星 ai")
+            return 1
+        return do_ai_regen(ai_names, args.retries, args.no_pages)
 
     # 手动保底模式：nasa_image.py <id> <url>
     # 第二个位置参数是 URL（details 页或直链）时进入，避免与登记表批量安装冲突

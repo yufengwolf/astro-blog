@@ -65,4 +65,4 @@ description: "河鼓二（Altair）的天体数据：1.86 M☉、半径 2 R☉�
 <p class="obj-nav">← 上一颗：<a href="../formalhaut/">北落师门</a></p>
 <p class="obj-nav">下一颗：<a href="../deneb/">天津四</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
