@@ -3,7 +3,7 @@ description: "共工星（225088 Gonggong）的天体数据：1.75×10²¹ kg、
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/gonggong_225088.webp" alt="共工星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/gonggong_225088.webp" alt="共工星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>共工星 <small>225088 Gonggong</small></h1>

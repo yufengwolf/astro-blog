@@ -7,9 +7,9 @@
   1) image_locked=True 的（NASA 真图手动锁定）→ 不动，绝不覆盖
   2) 否则优先用【豆包 AI 生成】（127.0.0.1:9090, model=doubao-image）
        - 豆包实测只输出 RGB（background:"transparent" 也不支持），无透明通道 → 固态球类抠圆不可省
-       - 固态球类(planet/dwarf_planet/moon/asteroid/comet)：生成「干净黑底正圆球」→ 裁圆规整为 r=210
-         （2026-10-26 v2 算法：迭代 trim 圆心/半径 + 盘自身 mask 羽化作轮廓，
-          杜绝旧版硬几何圆蒙版的「切盘/露缝」瑕疵；出图后自检轮廓，不合格自动回退程序化）
+       - 固态球类(planet/dwarf_planet/moon/asteroid/comet)：生成「干净黑底居中正圆球」→ 以球体中心切几何正圆规整为 r=210
+         （2026-10-26 默认裁法：提示词已约束正方形+球体居中，故默认中心切、不做迭代 trim/椭圆归一；
+          出图后自检轮廓，不合格自动回退程序化）；不规则真实天体走 nasa_image 的 irregular 轮廓模式
        - 大尺度(nebula/galaxy/cluster/structure)：生成「深空占位图」→ 全幅缩放+边缘渐隐
   3) 豆包不可用/失败 → 回退【程序化兜底】（gen_solid_body / gen_bigscale_image.py）
   4) 恒星：复用 build_star_images.py（按 subtype→9 类套 AI 模板，不走豆包单张生成）
@@ -102,7 +102,7 @@ def set_image_meta(oid, source, credit):
 
 
 # ---------------------------------------------------------------- 豆包生图
-def doubao_generate_image(prompt, timeout=180):
+def doubao_generate_image(prompt, timeout=300):
     """调豆包 doubao-image 生成一张图，返回下载到本地的临时路径；任何失败返回 None。"""
     body = {"model": "doubao-image", "prompt": prompt, "size": "1024x1024",
             "n": 1, "response_format": "url"}
@@ -132,120 +132,127 @@ def doubao_generate_image(prompt, timeout=180):
 
 
 # ---------------------------------------------------------------- 裁剪：固态圆
-def _otsu(lum):
-    """对 luminance 数组做 Otsu 二值化，返回分割阈值（把「亮盘」与「暗背景」分开）。"""
-    hist, _ = np.histogram(lum, bins=256, range=(0, 256))
-    total = lum.size
-    sum_total = np.dot(np.arange(256), hist)
-    sum_bg = 0.0
-    w_bg = 0.0
-    maxvar = 0.0
-    thr = 127
-    for t in range(256):
-        w_bg += hist[t]
-        if w_bg == 0:
-            continue
-        w_fg = total - w_bg
-        if w_fg == 0:
-            break
-        sum_bg += t * hist[t]
-        m_bg = sum_bg / w_bg
-        m_fg = (sum_total - sum_bg) / w_fg
-        var = w_bg * w_fg * (m_bg - m_fg) ** 2
-        if var > maxvar:
-            maxvar = var
-            thr = t
-    return thr
+def _bg_level(lum):
+    """背景亮度估计：四角 10% 区域中位数（豆包水印固定在右下一角，中位数稳健）。"""
+    H, W = lum.shape
+    k = max(8, min(H, W) // 10)
+    corners = np.concatenate([lum[:k, :k].ravel(), lum[:k, -k:].ravel(),
+                              lum[-k:, :k].ravel(), lum[-k:, -k:].ravel()])
+    return float(np.median(corners))
 
 
-def _disk_estimate(xs, ys):
-    """迭代 trim 估计圆盘的圆心与两轴半径（抗星点/辉光离群污染）。
+def _ray_circle_fit(lum, n_rays=360, r_min_frac=0.12, r_max_frac=0.46):
+    """从图心向外射 n_rays 条射线，沿每条找【最外侧陡峭负梯度】作为球缘点，
+    以边缘点到图心的距离的稳健统计给出球半径 R，返回 (R, n_used)。
 
-    每轮：剔除距当前圆心 >1.15r 的离群亮像素 → 用剩余像素的
-    bbox 中心作圆心（圆盘的 bbox 中心=圆心，比质心抗明暗偏斜）、
-    面积法半径 sqrt(area/π) 与 bbox 平均半径取均值作新半径。
-    收敛或 3 轮后，再按 trim 后像素的 bbox 给出两轴半径 (rx, ry)。
-    返回 (cx, cy, rx, ry)；像素太少/盘不规整（椭圆度>15%）返回 None。
+    【圆心 = 图心】是设计决策而非偷懒：提示词合同保证「球体居中」，豆包实测
+    也确实基本居中（智神星图真球心距图心仅 ~2%）；而暗面与背景亮度无法区分
+    （智神星实测：背景 4~7、球暗面 12~27），边缘点只能覆盖亮侧约半圈弧段，
+    对这段弧做自由圆拟合存在经典的部分圆弧退化（半径换圆心沿弧平分线滑动，
+    实测拟出 R=602/球心偏 8% 的错误圆），不可用。故圆心信图心，射线只用于：
+      a) 估计半径 R（边缘点到图心距离的中位数，对弧段覆盖不全稳健）；
+      b) 验证图上确实存在一个边缘一致的球（点数/离散度门槛），否则回退。
+
+    为什么用「陡峭负梯度」而非「亮过再落入背景」：亮侧球缘外常有【辉光】
+    （缓变、可延伸数十~上百 px），「落入背景」会落到辉光尽头，把边缘点推到
+    球外。真实临边是【锐利过渡】，故以「8px 窗口负梯度超过陡降阈值 + 内侧
+    显著亮于外侧」判定球缘；从外向内取第一条陡降，球内纹理在其内侧不会被
+    误取。暗面缓变无陡降 → 该侧无边缘点、被自然跳过。
+    边缘点太少 / 离散度过大（不是居中球）返回 None。
     """
-    if len(xs) < 200:
+    H, W = lum.shape
+    bg = _bg_level(lum)
+    hi = float(np.percentile(lum, 99.5))
+    g_thresh = -max(8.0, 0.10 * (hi - bg))          # 陡降阈值（8px 窗口）
+    d_thresh = max(10.0, 0.15 * (hi - bg))          # 内侧须比外侧亮至少这么多
+    r_min, r_max = r_min_frac * min(W, H), r_max_frac * min(W, H)
+    half = 4                                        # 梯度半窗
+    ds = []                                         # 边缘点到图心的距离
+    for th in np.linspace(0, 2 * np.pi, n_rays, endpoint=False):
+        ux, uy = float(np.cos(th)), float(np.sin(th))
+        rs = np.arange(r_min, r_max, 1.0)
+        xs = np.clip(np.round(W / 2 - 0.5 + rs * ux).astype(int), 0, W - 1)
+        ys = np.clip(np.round(H / 2 - 0.5 + rs * uy).astype(int), 0, H - 1)
+        vals = lum[ys, xs]
+        if len(vals) < 4 * half + 2:
+            continue
+        edge = None
+        # 从外向内扫：第一条满足「陡降 + 内亮外暗」的位置即球缘
+        for i in range(len(vals) - 1, 2 * half, -1):
+            g = vals[i] - vals[i - 2 * half]
+            if g > g_thresh:
+                continue
+            inner = vals[max(0, i - 2 * half):i - half].mean()
+            outer = vals[i + half:i + 2 * half].mean()
+            if inner - outer > d_thresh:
+                edge = i - half
+                break
+        if edge is not None:
+            ds.append(float(rs[edge]))
+    if len(ds) < 50:                                # 边缘点太少（球太暗/太怪）
         return None
-    cx, cy = float(xs.mean()), float(ys.mean())
-    r = float(np.percentile(np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2), 97)) or 1.0
-    for _ in range(3):
-        d = np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2)
-        keep = d <= 1.15 * r
-        if int(keep.sum()) < 200:
-            return None
-        xk, yk = xs[keep], ys[keep]
-        cx_n = (xk.min() + xk.max()) / 2.0
-        cy_n = (yk.min() + yk.max()) / 2.0
-        r_n = (float(np.sqrt(len(xk) / np.pi)) +
-               float((xk.max() - xk.min() + yk.max() - yk.min() + 2) / 4.0)) / 2.0
-        done = (abs(r_n - r) < 0.01 * r and
-                abs(cx_n - cx) < 1.0 and abs(cy_n - cy) < 1.0)
-        cx, cy, r = cx_n, cy_n, r_n
-        if done:
-            break
-    d = np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2)
-    keep = d <= 1.15 * r
-    if int(keep.sum()) < 200:
+    d = np.asarray(ds)
+    med = float(np.median(d))
+    # 一轮离群剔除（水印残边/偶发噪点），再检验离散度：真实居中球的
+    # 边缘距离应集中在 ±6% 内（覆盖弧段上 c·u 投影的变化远小于此）
+    keep = np.abs(d - med) <= 0.06 * med
+    if int(keep.sum()) < 50:
         return None
-    xk, yk = xs[keep], ys[keep]
-    rx = (xk.max() - xk.min() + 1) / 2.0
-    ry = (yk.max() - yk.min() + 1) / 2.0
-    if rx < 30 or ry < 30:
+    d = d[keep]
+    med = float(np.median(d))
+    if float(np.abs(d - med).max()) > 0.10 * med:   # 离散度过大：非居中规整球
         return None
-    if max(rx, ry) / min(rx, ry) > 1.15:      # 不是规整圆盘（污染/严重椭圆），交给兜底
-        return None
-    return cx, cy, rx, ry
+    return med, int(len(d))
 
 
 def crop_to_circle(src_path, out_path, target_r=R_BODY):
-    """把豆包生成的「行星图」规整为 600×600、盘半径≈210、圆外透明。
+    """AI 球体默认裁圆：图心为球心（提示词合同）+ 射线陡降临边估半径，切几何正圆。
 
-    豆包实测只输出 RGB（background:"transparent" 也不支持），抠圆不可省：
-      1) Otsu 自适应分离亮盘与暗背景；
-      2) 迭代 trim 估计圆心/半径（面积法+bbox，抗星点污染）；
-      3) 各向微缩放归一：盘的 x/y 直径分别映射为 420（r=210）并居中
-         （消除豆包「正圆」实测 ±6% 的椭圆度，形变不可见）；
-      4) 轮廓 alpha 用【盘自身 mask 高斯羽化】——贴合内容边缘，
-         机制上杜绝旧版硬几何圆蒙版的「切盘/露缝」瑕疵；
-         另乘 r=216 渐隐几何圆兜底（guard），防极端溢出/远处星点。
-    失败（检测不到规整圆盘）返回 False，由调用方回退程序化兜底。
+    这是固态球类（planet/dwarf_planet/moon/asteroid/comet）豆包图的【默认】裁法。
+    提示词已约束「正方形 + 球体居中」，圆心直接取图心；半径用 _ray_circle_fit
+    （陡降临边点到图心距离的中位数，对强明暗/辉光/水印免疫，智神星实例）：
+      1) 抑噪平滑；置零右下角固定水印区（「豆包AI生成」，位置固定）；
+      2) 从图心射 360 条射线找陡降边缘点 → 中位数距离为半径 R；
+      3) 裁以图心为中心的 2R 方块 → 缩放到 420（r=210）→ 贴入 600 画布中心；
+      4) 几何正圆 alpha（抗锯齿）输出，盘内纹理保留，圆外全透明，必过自检。
+    失败（无边缘点/边缘离散度过大/半径越界）返回 False，由调用方回退
+    程序化兜底。不规则真实天体（小行星/彗星土豆形）不走此函数，
+    走 nasa_image 的 irregular 轮廓模式。
     """
     im = Image.open(src_path).convert("RGBA")
-    a = np.asarray(im).astype(np.float32)
-    lum = a[..., 0] * 0.299 + a[..., 1] * 0.587 + a[..., 2] * 0.114
-    mask = lum > _otsu(lum)
-    ys, xs = np.where(mask)
-    frac = len(xs) / (a.shape[0] * a.shape[1])
-    if len(xs) < 200 or frac > 0.7:          # 阈值失效（整幅都亮）或没有盘
+    W, H = im.size
+    m = min(W, H)
+    # 轻度平滑抑 JPEG 噪声，让背景噪声梯度远低于陡降阈值
+    blur_r = max(2.0, m / 400.0)
+    g_im = im.convert("L").filter(ImageFilter.GaussianBlur(blur_r))
+    lum_s = np.asarray(g_im).astype(np.float32)
+    # 豆包水印固定在右下角：预先置零，防止其锐利文字边缘被当成球缘
+    wm = lum_s[int(H * 0.92):, int(W * 0.70):]
+    wm[:] = 0.0
+    fit = _ray_circle_fit(lum_s)
+    if fit is None:
         return False
-    est = _disk_estimate(xs, ys)
-    if est is None:
+    R, n_used = fit
+    if not (0.15 * m <= R <= 0.42 * m):             # 盘太小/太大都异常（太大可能伸入水印区）
         return False
-    cx, cy, rx, ry = est
-    if max(rx, ry) > 0.49 * min(a.shape[0], a.shape[1]):
-        return False
-    # 各向微缩放归一：盘的 x/y 直径分别映射为 420（r=210）。
-    # 豆包「正圆」实测有 ±6% 左右椭圆度/不规则，旧版硬几何圆蒙版因此切盘/露缝；
-    # 直接把两轴归一到标准圆（形变仅几个百分点，肉眼不可见），换取完美圆形轮廓。
-    hx = rx * SIZE / (2 * target_r)
-    hy = ry * SIZE / (2 * target_r)
-    left, top = int(round(cx - hx)), int(round(cy - hy))
-    sq = im.crop((left, top, left + int(round(2 * hx)), top + int(round(2 * hy))))
-    sq = sq.resize((SIZE, SIZE), Image.LANCZOS)
-    arr = np.asarray(sq).astype(np.float32)
-    lum2 = arr[..., 0] * 0.299 + arr[..., 1] * 0.587 + arr[..., 2] * 0.114
-    body = (lum2 > _otsu(lum2)).astype(np.uint8) * 255
-    body = np.asarray(Image.fromarray(body, "L")
-                      .filter(ImageFilter.GaussianBlur(1.6))).astype(np.float32)
+    # 以图心为球心裁 2R 方块 → 缩放到 420（r=210）→ 贴上 600 画布中心
+    cx, cy = W / 2.0, H / 2.0
+    left = int(round(cx - R))
+    top = int(round(cy - R))
+    side = int(round(2 * R))
+    sq = im.crop((left, top, left + side, top + side)).resize(
+        (int(2 * target_r), int(2 * target_r)), Image.LANCZOS)
+    canvas = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    canvas.paste(sq, (int(SIZE / 2 - target_r), int(SIZE / 2 - target_r)))
+    arr = np.asarray(canvas).astype(np.float32)
+    # 几何正圆 alpha（抗锯齿边 ~4px），强制干净圆形轮廓，必过自检
     yy, xx = np.mgrid[0:SIZE, 0:SIZE].astype(np.float32)
-    rr = np.sqrt((xx - SIZE / 2 + 0.5) ** 2 + (yy - SIZE / 2 + 0.5) ** 2)
-    guard = 255.0 * smoothstep(216.0 - rr, -2.0, 6.0)   # r=222 外归零，兜底防溢出
-    out = arr.copy()
-    out[..., 3] = np.clip(body, 0, 255) * (guard / 255.0) * (arr[..., 3] / 255.0)
-    out = np.clip(out, 0, 255).astype(np.uint8)
+    r2 = np.sqrt((xx - SIZE / 2 + 0.5) ** 2 + (yy - SIZE / 2 + 0.5) ** 2)
+    alpha = 255.0 * smoothstep(target_r + 2.0 - r2, -2.0, 4.0)
+    out = np.zeros((SIZE, SIZE, 4), dtype=np.uint8)
+    out[..., :3] = np.clip(arr[..., :3], 0, 255).astype(np.uint8)
+    out[..., 3] = np.clip(alpha, 0, 255).astype(np.uint8)
+    out[alpha < 1, :3] = 0
     Image.fromarray(out, "RGBA").save(out_path, "WEBP", quality=90)
     return True
 
