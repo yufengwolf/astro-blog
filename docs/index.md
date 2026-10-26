@@ -1711,13 +1711,13 @@ description: "收录 153 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="dwarf_planet" data-name="亡神星 Orcus" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="1">
+  <article class="astro-card" data-category="dwarf_planet" data-name="亡神星 Orcus" data-mass="6.34e+20" data-radius="455" data-density="1.4" data-temp="-228.14999999999998" data-period="89559.3" data-moons="1">
     <a class="astro-card-link" href="objects/orcus/">
       <div class="astro-img dwarf_planet"><img src="assets/planets/orcus.webp" alt="亡神星" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">亡神星<span class="en">Orcus</span></div>
-        <p class="astro-card-tagline">海王星外的类冥矮行星，拥有卫星万斯</p>
-        <div class="astro-card-stats"></div>
+        <p class="astro-card-tagline">柯伊伯带 plutino 矮行星，与海王星3:2共振，拥有卫星范斯。</p>
+        <div class="astro-card-stats"><span>6.34×10²⁰ kg</span><span>455.0 km</span><span>-228.14999999999998 °C</span></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>

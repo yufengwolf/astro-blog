@@ -8,7 +8,7 @@ add_object 写入 astro.json 成功后，**末尾会自动调用 sync_images.py 
 为新对象出图（可用 --no-sync 关闭）。
 
 三种录入模式：
-  --name  "天狼星"               AI 从自身知识起草（LLM 分类 + 抽取，null 不编造）
+  --name  "天狼星"               AI 从自身知识起草（LLM 分类 + 抽取；知名天体给最佳近似值，仅真未知才 null）
   --facts "天狼星是大犬座主星…"  AI 从你提供的文本抽取（配合 agent 的 WebSearch 使用）
   --json  '{...}'               直接结构化录入（绕过 LLM，最可控）
 
@@ -123,14 +123,27 @@ def extract_with_llm(name, category_hint, facts_text):
         '     "albedo": 或 null,\n'
         '     "surface_pressure_bar": 或 null\n'
         "  },\n"
+        '  "orbit": {\n'
+        '     "semimajor_axis_au": 轨道半长轴(天文单位 AU) 或 null,\n'
+        '     "orbital_period_years": 公转周期(年) 或 null,\n'
+        '     "orbital_velocity_km_s": 轨道速度(km/s) 或 null,\n'
+        '     "inclination_deg": 轨道倾角(度) 或 null,\n'
+        '     "eccentricity": 偏心率(0~1) 或 null,\n'
+        '     "obliquity_deg": 自转轴倾角(度) 或 null,\n'
+        '     "rotation_period_hours": 自转周期(小时，逆向自转填负值) 或 null\n'
+        '  },\n'
         '  "moons_count": 数字或 null,\n'
         '  "members": "已知成员描述（可选）",\n'
         '  "note": "补充说明（口径不确定时在此注明）",\n'
         '  "source_url": "最佳参考链接（优先 Wikipedia）",\n'
         '  "source_name": "来源名（如 Wikipedia · Sirius）"\n'
         "}\n"
-        "规则：只输出 JSON，不要解释；拿不准的数值一律 null，绝不编造；"
-        "类别必须从给定枚举中选；恒星的 subtype 必须含光谱字母（O/B/A/F/G/K/M）以便套用贴图模板。"
+        "规则：只输出 JSON，不要解释；类别必须从给定枚举中选；恒星的 subtype 必须含光谱字母（O/B/A/F/G/K/M）以便套用贴图模板。\n"
+        "【数据填写原则（重要）】对知名/有文献记录的天体，务必给出训练知识中可知的【最佳近似值】"
+        "（半径、质量、轨道半长轴/周期/偏心率等），允许近似，但量级与单位须合理；"
+        "仅在【完全无法估计】时才填 null。不要把已知对象的关键物理/轨道字段置空——"
+        "宁可给近似真值并在 note 注明不确定性，也不要留 null（留 null 等于没录入任何数据）。"
+        "绝不编造明显荒谬的值（如把矮行星质量写成恒星量级）。"
     )
     if facts_text:
         user_p = (
@@ -142,7 +155,8 @@ def extract_with_llm(name, category_hint, facts_text):
     else:
         user_p = (
             f"天体名称：{name}\n"
-            "（无额外文本，请仅凭你的天文知识填写；不确定项填 null。）"
+            "（无额外文本，请凭借天文知识尽量给出真实参数（半径/质量/轨道等），允许近似；"
+            "仅在完全无法估计时填 null，勿把已知字段置空。）"
             + (f"（类别提示：{category_hint}）" if category_hint else "")
         )
     raw, src = llm_chat(sys_p, user_p)
@@ -212,9 +226,14 @@ def compose(obj_in, data_source="manual"):
         lum = p["lum_sun"] * L_SUN
 
     orbit = obj_in.get("orbit") or {}
+    # LLM 合同用 AU/年更自然 → 折算成站点 schema 的 km/天（无则沿用既有字段名）
+    _a_au = orbit.get("semimajor_axis_au")
+    _p_yr = orbit.get("orbital_period_years")
     orbit_out = {
-        "semimajor_axis_km": orbit.get("semimajor_axis_km"),
-        "orbital_period_days": orbit.get("orbital_period_days"),
+        "semimajor_axis_km": (_a_au * 149597870.7) if _a_au is not None
+                            else orbit.get("semimajor_axis_km"),
+        "orbital_period_days": (_p_yr * 365.25) if _p_yr is not None
+                              else orbit.get("orbital_period_days"),
         "orbital_velocity_km_s": orbit.get("orbital_velocity_km_s"),
         "inclination_deg": orbit.get("inclination_deg"),
         "eccentricity": orbit.get("eccentricity"),
@@ -289,6 +308,35 @@ def image_plan(o):
     return ("review", "优先豆包 AI 占位（失败回退程序化兜底）；建议后续换 NASA 真图；图片需人工审核")
 
 
+# ---------------------------------------------------------------- 数据质量告警
+def data_quality_report(o):
+    """检查关键物理/轨道参数是否缺失，返回 (是否严重缺失, 警告行列表)。
+
+    目的：--name 模式走 AI 抽取，若模型又把知名天体的参数置空，这里亮红灯提示
+    用户补录（--facts 或 --json --force），避免产生"有名无参数"的占位记录。
+    """
+    cat = o["category"]
+    ph = o.get("physical") or {}
+    orb = o.get("orbit") or {}
+    warns, severe = [], False
+    solid = cat in ("planet", "dwarf_planet", "moon", "asteroid", "comet")
+    if solid:
+        if ph.get("radius_km") is None and ph.get("mass_kg") is None:
+            warns.append("  ⚠ 物理参数缺失：质量与半径均为空（详情页将缺核心尺寸/质量数据）")
+            severe = True
+        if orb.get("semimajor_axis_km") is None and orb.get("orbital_period_days") is None:
+            warns.append("  ⚠ 轨道参数缺失：半长轴与周期均为空")
+            severe = True
+    if cat == "star" and ph.get("radius_km") is None and ph.get("luminosity_w") is None \
+            and ph.get("lum_sun") is None:
+        warns.append("  ⚠ 恒星参数缺失：半径与光度均为空")
+        severe = True
+    if cat in EXT_CATS and ph.get("radius_km") is None:
+        warns.append("  ⚠ 延展天体尺寸缺失：radius_km（或 radius_ly）为空")
+        severe = True
+    return severe, warns
+
+
 # ---------------------------------------------------------------- 主流程
 def main():
     ap = argparse.ArgumentParser(description="通用天体录入引擎（AI 编排层数据入口）")
@@ -322,8 +370,10 @@ def main():
         for x in _existing:
             for n in (str(x.get("name", "")), str(x.get("name_en", ""))):
                 if q and q == n.lower().replace(" ", ""):
-                    print(f"已收录，跳过：{x['id']}（{x.get('name')}）；如需覆盖更新请加 --force")
-                    return 0
+                    if not args.force:
+                        print(f"已收录，跳过：{x['id']}（{x.get('name')}）；如需覆盖更新请加 --force")
+                        return 0
+                    # --force：继续走抽取→覆盖流程（不在此提前 return）
 
     if args.json:
         obj_in = json.loads(args.json)
@@ -337,6 +387,14 @@ def main():
     if not obj_in.get("category") and args.category:
         obj_in["category"] = args.category
     o = compose(obj_in, data_source=src)
+    # 数据质量告警：知名天体若关键参数仍被模型置空，亮红灯提示补录
+    _severe, _warns = data_quality_report(o)
+    for _w in _warns:
+        print(_w)
+    if _severe:
+        print("  ⚠ 数据严重不足：当前记录近乎占位。建议补录方式：")
+        print("    · --facts \"<从 Wikipedia 等复制的真值文本>\" 重新抽取，或")
+        print("    · --json '{...}' 直接录入已知参数（加 --force 覆盖本记录）")
     plan_kind, plan_msg = image_plan(o)
 
     if args.dry_run:
@@ -364,9 +422,17 @@ def main():
                   f"如需覆盖更新请加 --force")
             return 0
         old = by_id[o["id"]]
+        # 保留既有影像来源：重抽取数据不应把已生成/锁定的图片标记回退成占位
+        _old_img = {ik: old.get(ik) for ik in
+                    ("image_source", "image_credit", "image_url", "image_locked")}
         for k, v in o.items():
             if v is not None or k not in old:
                 old[k] = v
+        if _old_img.get("image_source") in ("doubao", "doubao_template", "nasa") \
+                and o.get("image_source") == "programmatic":
+            for ik in ("image_source", "image_credit", "image_url", "image_locked"):
+                if ik in _old_img:
+                    old[ik] = _old_img[ik]
         print(f"更新已存在对象：{o['id']}")
     else:
         objs.append(o)

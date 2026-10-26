@@ -9293,25 +9293,25 @@
       "name_en": "Orcus",
       "category": "dwarf_planet",
       "parent": "sun",
-      "tagline": "海王星外的类冥矮行星，拥有卫星万斯",
+      "tagline": "柯伊伯带 plutino 矮行星，与海王星3:2共振，拥有卫星范斯。",
       "physical": {
-        "mass_kg": null,
-        "radius_km": null,
-        "density_g_cm3": null,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
-        "mean_temp_c": null,
+        "mass_kg": 6.34e+20,
+        "radius_km": 455,
+        "density_g_cm3": 1.4,
+        "gravity_m_s2": 0.20438671658012314,
+        "escape_velocity_km_s": 0.43126779625646994,
+        "mean_temp_c": -228.14999999999998,
         "surface_pressure_bar": null,
-        "albedo": null
+        "albedo": 0.28
       },
       "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
-        "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "semimajor_axis_km": 5860346986.8018,
+        "orbital_period_days": 89559.3,
+        "orbital_velocity_km_s": 4.68,
+        "inclination_deg": 20.59,
+        "eccentricity": 0.227,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 13.188
       },
       "moons": {
         "count": 1,
@@ -9322,11 +9322,11 @@
       "atmosphere": null,
       "spectral_type": null,
       "luminosity_w": null,
-      "distance_ly": null,
+      "distance_ly": 0.00062,
       "constellation": "双鱼座",
-      "subtype": null,
-      "members": null,
-      "note": "轨道参数、质量、半径等参数存在测量不确定性",
+      "subtype": "海王星外天体（plutino，类冥矮行星）",
+      "members": "卫星：范斯（Vanth，直径约222 km）",
+      "note": "直径约910 km（870–960 km区间）；质量为Orcus+Vanth双星系统总质量，Orcus本体约占90%；与海王星3:2轨道共振，属plutino群。",
       "discovery": {
         "known_since": null,
         "discoverer": null,
@@ -9893,6 +9893,10 @@
     "src_orcus": {
       "name": "Wikipedia · 亡神星",
       "url": "https://zh.wikipedia.org/wiki/亡神星"
+    },
+    "src_orcus__90482_": {
+      "name": "Wikipedia · 90482 Orcus",
+      "url": "https://en.wikipedia.org/wiki/90482_Orcus"
     }
   }
 }
