@@ -3,7 +3,7 @@ description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均半径
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/haumea.webp" alt="妊神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成示意图（豆包 · 非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/haumea.webp" alt="妊神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>妊神星 <small>Haumea</small></h1>

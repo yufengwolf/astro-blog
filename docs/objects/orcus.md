@@ -3,7 +3,7 @@ description: "亡神星（Orcus）的天体数据：—、平均半径 —、密
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/orcus.webp" alt="亡神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成（豆包 doubao-image）占位图，待人工审核/可替换 NASA 真图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/orcus.webp" alt="亡神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>亡神星 <small>Orcus</small></h1>

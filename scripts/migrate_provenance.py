@@ -70,7 +70,7 @@ def backfill(o: dict) -> dict:
 
     # ---- 修正 procyon_a 的 credit（之前误标"程序化"，实为恒星豆包模板复用）----
     if oid == "procyon_a":
-        o["image_credit"] = "AI 生成模板（豆包 9 光谱型代表图复用，非真实影像）"
+        o["image_credit"] = "AI 生成"
     return o
 
 

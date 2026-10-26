@@ -3,7 +3,7 @@ description: "武仙-北冕座长城（Hercules–Corona Borealis Great Wall）�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/hercules_corona_wall.webp" alt="武仙-北冕座长城" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/hercules_corona_wall.webp" alt="武仙-北冕座长城" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>武仙-北冕座长城 <small>Hercules–Corona Borealis Great Wall</small></h1>

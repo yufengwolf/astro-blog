@@ -6,7 +6,10 @@
 出图优先级（2026-10-26 用户拍板）：
   1) image_locked=True 的（NASA 真图手动锁定）→ 不动，绝不覆盖
   2) 否则优先用【豆包 AI 生成】（127.0.0.1:9090, model=doubao-image）
-       - 固态球类(planet/dwarf_planet/moon/asteroid/comet)：生成「干净黑底正圆球」→ 裁圆(r=210)
+       - 豆包实测只输出 RGB（background:"transparent" 也不支持），无透明通道 → 固态球类抠圆不可省
+       - 固态球类(planet/dwarf_planet/moon/asteroid/comet)：生成「干净黑底正圆球」→ 裁圆规整为 r=210
+         （2026-10-26 v2 算法：迭代 trim 圆心/半径 + 盘自身 mask 羽化作轮廓，
+          杜绝旧版硬几何圆蒙版的「切盘/露缝」瑕疵；出图后自检轮廓，不合格自动回退程序化）
        - 大尺度(nebula/galaxy/cluster/structure)：生成「深空占位图」→ 全幅缩放+边缘渐隐
   3) 豆包不可用/失败 → 回退【程序化兜底】（gen_solid_body / gen_bigscale_image.py）
   4) 恒星：复用 build_star_images.py（按 subtype→9 类套 AI 模板，不走豆包单张生成）
@@ -29,7 +32,7 @@ import urllib.request
 from pathlib import Path
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 ASTRO = ROOT / "docs" / "data" / "astro.json"
@@ -155,40 +158,113 @@ def _otsu(lum):
     return thr
 
 
-def crop_to_circle(src_path, out_path, target_r=R_BODY):
-    """把豆包生成的「行星图」裁成 600×600、圆盘 r=210、圆外透明。
+def _disk_estimate(xs, ys):
+    """迭代 trim 估计圆盘的圆心与两轴半径（抗星点/辉光离群污染）。
 
-    不依赖背景是否为纯黑：用 Otsu 把「亮盘」与任意暗背景分离，key 出圆盘。
-    失败（检测不到紧凑圆盘）返回 False，由调用方回退程序化兜底。
+    每轮：剔除距当前圆心 >1.15r 的离群亮像素 → 用剩余像素的
+    bbox 中心作圆心（圆盘的 bbox 中心=圆心，比质心抗明暗偏斜）、
+    面积法半径 sqrt(area/π) 与 bbox 平均半径取均值作新半径。
+    收敛或 3 轮后，再按 trim 后像素的 bbox 给出两轴半径 (rx, ry)。
+    返回 (cx, cy, rx, ry)；像素太少/盘不规整（椭圆度>15%）返回 None。
+    """
+    if len(xs) < 200:
+        return None
+    cx, cy = float(xs.mean()), float(ys.mean())
+    r = float(np.percentile(np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2), 97)) or 1.0
+    for _ in range(3):
+        d = np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2)
+        keep = d <= 1.15 * r
+        if int(keep.sum()) < 200:
+            return None
+        xk, yk = xs[keep], ys[keep]
+        cx_n = (xk.min() + xk.max()) / 2.0
+        cy_n = (yk.min() + yk.max()) / 2.0
+        r_n = (float(np.sqrt(len(xk) / np.pi)) +
+               float((xk.max() - xk.min() + yk.max() - yk.min() + 2) / 4.0)) / 2.0
+        done = (abs(r_n - r) < 0.01 * r and
+                abs(cx_n - cx) < 1.0 and abs(cy_n - cy) < 1.0)
+        cx, cy, r = cx_n, cy_n, r_n
+        if done:
+            break
+    d = np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2)
+    keep = d <= 1.15 * r
+    if int(keep.sum()) < 200:
+        return None
+    xk, yk = xs[keep], ys[keep]
+    rx = (xk.max() - xk.min() + 1) / 2.0
+    ry = (yk.max() - yk.min() + 1) / 2.0
+    if rx < 30 or ry < 30:
+        return None
+    if max(rx, ry) / min(rx, ry) > 1.15:      # 不是规整圆盘（污染/严重椭圆），交给兜底
+        return None
+    return cx, cy, rx, ry
+
+
+def crop_to_circle(src_path, out_path, target_r=R_BODY):
+    """把豆包生成的「行星图」规整为 600×600、盘半径≈210、圆外透明。
+
+    豆包实测只输出 RGB（background:"transparent" 也不支持），抠圆不可省：
+      1) Otsu 自适应分离亮盘与暗背景；
+      2) 迭代 trim 估计圆心/半径（面积法+bbox，抗星点污染）；
+      3) 各向微缩放归一：盘的 x/y 直径分别映射为 420（r=210）并居中
+         （消除豆包「正圆」实测 ±6% 的椭圆度，形变不可见）；
+      4) 轮廓 alpha 用【盘自身 mask 高斯羽化】——贴合内容边缘，
+         机制上杜绝旧版硬几何圆蒙版的「切盘/露缝」瑕疵；
+         另乘 r=216 渐隐几何圆兜底（guard），防极端溢出/远处星点。
+    失败（检测不到规整圆盘）返回 False，由调用方回退程序化兜底。
     """
     im = Image.open(src_path).convert("RGBA")
     a = np.asarray(im).astype(np.float32)
     lum = a[..., 0] * 0.299 + a[..., 1] * 0.587 + a[..., 2] * 0.114
-    mask = lum > _otsu(lum)                 # 自适应：亮盘 vs 暗背景
+    mask = lum > _otsu(lum)
     ys, xs = np.where(mask)
     frac = len(xs) / (a.shape[0] * a.shape[1])
-    if len(xs) < 200 or frac > 0.7:         # 像素太少或阈值失效（整幅都亮）
+    if len(xs) < 200 or frac > 0.7:          # 阈值失效（整幅都亮）或没有盘
         return False
-    cx, cy = xs.mean(), ys.mean()
-    dist = np.sqrt((xs - cx) ** 2 + (ys - cy) ** 2)
-    # 用 97 分位半径忽略星点/辉光等离群亮斑，稳健估计圆盘半径
-    maxr = float(np.percentile(dist, 97))
-    if maxr < 30 or maxr > 0.49 * min(a.shape[0], a.shape[1]):
+    est = _disk_estimate(xs, ys)
+    if est is None:
         return False
-    S = maxr * (SIZE / target_r)            # 取方形使圆盘半径映射为 target_r
-    half = S / 2.0
-    left, top = int(round(cx - half)), int(round(cy - half))
-    sq = im.crop((left, top, left + int(round(S)), top + int(round(S))))
+    cx, cy, rx, ry = est
+    if max(rx, ry) > 0.49 * min(a.shape[0], a.shape[1]):
+        return False
+    # 各向微缩放归一：盘的 x/y 直径分别映射为 420（r=210）。
+    # 豆包「正圆」实测有 ±6% 左右椭圆度/不规则，旧版硬几何圆蒙版因此切盘/露缝；
+    # 直接把两轴归一到标准圆（形变仅几个百分点，肉眼不可见），换取完美圆形轮廓。
+    hx = rx * SIZE / (2 * target_r)
+    hy = ry * SIZE / (2 * target_r)
+    left, top = int(round(cx - hx)), int(round(cy - hy))
+    sq = im.crop((left, top, left + int(round(2 * hx)), top + int(round(2 * hy))))
     sq = sq.resize((SIZE, SIZE), Image.LANCZOS)
     arr = np.asarray(sq).astype(np.float32)
+    lum2 = arr[..., 0] * 0.299 + arr[..., 1] * 0.587 + arr[..., 2] * 0.114
+    body = (lum2 > _otsu(lum2)).astype(np.uint8) * 255
+    body = np.asarray(Image.fromarray(body, "L")
+                      .filter(ImageFilter.GaussianBlur(1.6))).astype(np.float32)
     yy, xx = np.mgrid[0:SIZE, 0:SIZE].astype(np.float32)
     rr = np.sqrt((xx - SIZE / 2 + 0.5) ** 2 + (yy - SIZE / 2 + 0.5) ** 2)
-    alpha = 255.0 * smoothstep(216.0 - rr, -2.0, 6.0)
+    guard = 255.0 * smoothstep(216.0 - rr, -2.0, 6.0)   # r=222 外归零，兜底防溢出
     out = arr.copy()
-    out[..., 3] = alpha * (arr[..., 3] / 255.0)
+    out[..., 3] = np.clip(body, 0, 255) * (guard / 255.0) * (arr[..., 3] / 255.0)
     out = np.clip(out, 0, 255).astype(np.uint8)
     Image.fromarray(out, "RGBA").save(out_path, "WEBP", quality=90)
     return True
+
+
+def _silhouette_check(path, target_r=R_BODY):
+    """自检：按角度扫描 alpha 轮廓半径，盘应规整地贴近 target_r。
+    不合格（碎盘/污染/缩放异常）返回 False，调用方回退程序化。"""
+    a = np.asarray(Image.open(path).convert("RGBA"))[..., 3].astype(np.float32)
+    H, W = a.shape
+    rs = np.zeros(360)
+    for i, th in enumerate(np.linspace(0, 2 * np.pi, 360, endpoint=False)):
+        rads = np.arange(0, int(SIZE * 0.55), 1.0)
+        xs = np.clip((W / 2 - 0.5 + rads * np.cos(th)).astype(int), 0, W - 1)
+        ys = np.clip((H / 2 - 0.5 + rads * np.sin(th)).astype(int), 0, H - 1)
+        solid = np.where(a[ys, xs] > 128)[0]
+        rs[i] = solid.max() if len(solid) else 0
+    med = float(np.median(rs))
+    return bool(rs.min() >= target_r - 20 and rs.max() <= target_r + 12
+                and 200 <= med <= target_r + 8)
 
 
 # ---------------------------------------------------------------- 裁剪：大尺度全幅
@@ -253,8 +329,11 @@ def gen_solid_doubao(oid, cat, obj):
     if not ok:
         print("    [doubao] 裁圆检测失败（背景/圆盘不符），回退程序化")
         return False
-    set_image_meta(oid, "doubao",
-                  f"AI 生成（豆包 doubao-image）占位图，待人工审核/可替换 NASA 真图")
+    if not _silhouette_check(dst):
+        dst.unlink(missing_ok=True)
+        print("    [doubao] 轮廓自检不合格（盘不规整），回退程序化")
+        return False
+    set_image_meta(oid, "doubao", "AI 生成")
     return True
 
 
@@ -272,18 +351,20 @@ def gen_bigscale_doubao(oid, cat, obj):
     Path(tmp).unlink(missing_ok=True)
     if not ok:
         return False
-    set_image_meta(oid, "doubao",
-                  f"AI 生成（豆包 doubao-image）占位图，待人工审核/可替换 NASA 真图")
+    set_image_meta(oid, "doubao", "AI 生成")
     return True
 
 
 # ---------------------------------------------------------------- 路由
 def gen_solid(oid, cat, obj):
-    """优先豆包，失败回退程序化；返回来源标签 'doubao' / 'programmatic'。"""
-    if gen_solid_doubao(oid, cat, obj):
-        return "doubao"
+    """优先豆包（不合格自动重试 1 次），仍失败回退程序化；返回来源标签。"""
+    for attempt in range(2):
+        if gen_solid_doubao(oid, cat, obj):
+            return "doubao"
+        if attempt == 0:
+            print("    [doubao] 第 1 次出图不合格，再试一次（豆包随机波动较大）")
     gen_solid_body(oid, cat)
-    set_image_meta(oid, "programmatic", "程序化生成示意图（非真实影像）")
+    set_image_meta(oid, "programmatic", "程序化示意图")
     return "programmatic"
 
 
@@ -293,7 +374,7 @@ def gen_bigscale(oid, cat, obj, force):
         return "doubao"
     cmd = [PY, "scripts/gen_bigscale_image.py"] + (["--force"] if force else []) + ["--ids", oid]
     subprocess.run(cmd, cwd=str(ROOT), check=False)
-    set_image_meta(oid, "programmatic", "程序化生成示意图（非真实影像）")
+    set_image_meta(oid, "programmatic", "程序化示意图")
     return "programmatic"
 
 

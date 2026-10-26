@@ -3,7 +3,7 @@ description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成示意图（豆包 · 非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>鸟神星 <small>Makemake</small></h1>

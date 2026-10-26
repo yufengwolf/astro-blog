@@ -3,7 +3,7 @@ description: "人马座 A*（Sagittarius A*）的天体数据：4.3×10⁶ M☉�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/sgr_a_star.webp" alt="人马座 A*" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/sgr_a_star.webp" alt="人马座 A*" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>人马座 A* <small>Sagittarius A*</small></h1>

@@ -3,7 +3,7 @@ description: "巨引源（Great Attractor）的天体数据：1×10¹⁶ M☉、
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/great_attractor.webp" alt="巨引源" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/great_attractor.webp" alt="巨引源" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>巨引源 <small>Great Attractor</small></h1>

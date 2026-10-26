@@ -3,7 +3,7 @@ description: "天狼星 A（Sirius A）的天体数据：2.06 M☉、半径 1.71
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_a.webp" alt="天狼星 A" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_a.webp" alt="天狼星 A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>天狼星 A <small>Sirius A</small></h1>

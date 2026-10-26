@@ -3,7 +3,7 @@ description: "M87*（M87*）的天体数据：6.5×10⁹ M☉、史瓦西半径 
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/m87_star.webp" alt="M87*" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/m87_star.webp" alt="M87*" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>M87* <small>M87*</small></h1>

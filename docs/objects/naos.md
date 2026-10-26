@@ -3,7 +3,7 @@ description: "弧矢增二十二（Zeta Puppis）的天体数据：40 M☉、半
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/naos.webp" alt="弧矢增二十二" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/naos.webp" alt="弧矢增二十二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>弧矢增二十二 <small>Zeta Puppis</small></h1>

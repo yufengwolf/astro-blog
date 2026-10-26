@@ -3,7 +3,7 @@ description: "巴纳德环（Barnard's Loop）的天体数据：—、半径/大
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img nebula"><img src="../../assets/planets/barnards_loop.webp" alt="巴纳德环" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img nebula"><img src="../../assets/planets/barnards_loop.webp" alt="巴纳德环" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge nebula">星云</span>
     <h1>巴纳德环 <small>Barnard's Loop</small></h1>

@@ -3,7 +3,7 @@ description: "毕星团（Hyades）的天体数据：400 M☉、半径/大小 7 
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/hyades.webp" alt="毕星团" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/hyades.webp" alt="毕星团" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge cluster">星团</span>
     <h1>毕星团 <small>Hyades</small></h1>

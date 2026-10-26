@@ -3,7 +3,7 @@ description: "V404 天鹅座（V404 Cygni）的天体数据：9 M☉、史瓦西
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/v404_cyg.webp" alt="V404 天鹅座" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/v404_cyg.webp" alt="V404 天鹅座" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>V404 天鹅座 <small>V404 Cygni</small></h1>

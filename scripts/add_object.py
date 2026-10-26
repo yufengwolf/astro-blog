@@ -256,7 +256,7 @@ def compose(obj_in, data_source="manual"):
         "article": None,
         "image": f"assets/planets/{oid}.webp",
         "source_dates": {},
-        "image_credit": "程序化生成示意图（非真实影像）",
+        "image_credit": "程序化示意图",
         "image_url": None,
         "image_source": IMG_SRC_INIT.get(cat, "programmatic"),  # 供 query.py --image-source 筛选
         "image_locked": False,   # 交给 sync_images 生成；NASA 真图会改为 True 锁定

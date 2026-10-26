@@ -3,7 +3,7 @@ description: "参宿四（Betelgeuse）的天体数据：14 M☉、半径 764 R�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/betelgeuse.webp" alt="参宿四" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/betelgeuse.webp" alt="参宿四" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>参宿四 <small>Betelgeuse</small></h1>

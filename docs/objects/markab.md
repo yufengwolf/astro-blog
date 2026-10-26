@@ -3,7 +3,7 @@ description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/markab.webp" alt="室宿一" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/markab.webp" alt="室宿一" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>室宿一 <small>Markab</small></h1>

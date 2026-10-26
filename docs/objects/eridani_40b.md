@@ -3,7 +3,7 @@ description: "波江座 40B（40 Eridani B）的天体数据：0.558 M☉、半�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40b.webp" alt="波江座 40B" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40b.webp" alt="波江座 40B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>波江座 40B <small>40 Eridani B</small></h1>

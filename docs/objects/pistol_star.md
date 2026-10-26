@@ -3,7 +3,7 @@ description: "手枪星（Pistol Star）的天体数据：27.5 M☉、半径 308
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pistol_star.webp" alt="手枪星" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pistol_star.webp" alt="手枪星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>手枪星 <small>Pistol Star</small></h1>

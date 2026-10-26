@@ -111,7 +111,7 @@ mkdocs serve -a 127.0.0.1:8001              # 8000 端口被御风 Home 占用�
 ## 五、数据源与许可
 
 - **数值数据**：太阳系天体整理自 NASA NSSDC Planetary/Satellite Fact Sheets、NASA/JPL SBDB API（美国政府作品，公共领域）；恒星/星系/星云/黑洞等经 `add_object.py` 检索 SIMBAD、NASA Exoplanet Archive 及各权威文献后录入（`llm_doubao` 来源，**未经权威源对拍，建议人工校验**）。
-- **星球影像**：行星/卫星多为 NASA 真实影像（公共领域，详情页署名可溯源 PIA 编号，`image_source=nasa`）；恒星为豆包 AI 模板（`doubao_template`）；黑洞为程序化示意图（`programmatic`）；星云/星系/星团/结构及行星/矮行星/卫星/小行星/彗星默认由**豆包 AI 生成**（`doubao`，失败回退程序化 `programmatic`）。
+- **星球影像**：行星/卫星多为 NASA 真实影像（公共领域，详情页署名可溯源 PIA 编号，`image_source=nasa`）；恒星为豆包 AI 模板（`doubao_template`）；黑洞为程序化示意图（`programmatic`）；星云/星系/星团/结构及行星/矮行星/卫星/小行星/彗星默认由**豆包 AI 生成**（`doubao`，失败回退程序化 `programmatic`）。网页署名面向访客只显示短文案：「AI 生成」/「程序化示意图」。
 - **一句话简介**为本站原创。
 - 每个天体详情页标注来源标识与核对日期；数据错误欢迎到 GitHub Issues 反馈。
 

@@ -3,7 +3,7 @@ description: "格利泽 581（Gliese 581）的天体数据：0.31 M☉、半径 
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/gliese_581.webp" alt="格利泽 581" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/gliese_581.webp" alt="格利泽 581" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>格利泽 581 <small>Gliese 581</small></h1>

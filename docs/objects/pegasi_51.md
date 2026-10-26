@@ -3,7 +3,7 @@ description: "飞马座 51（51 Pegasi）的天体数据：1.11 M☉、半径 1.
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pegasi_51.webp" alt="飞马座 51" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pegasi_51.webp" alt="飞马座 51" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>飞马座 51 <small>51 Pegasi</small></h1>

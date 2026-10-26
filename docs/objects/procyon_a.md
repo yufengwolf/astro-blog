@@ -3,7 +3,7 @@ description: "南河三（Procyon）的天体数据：1.49 M☉、半径 1.42 R�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成模板（豆包 9 光谱型代表图复用，非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>南河三 <small>Procyon</small></h1>

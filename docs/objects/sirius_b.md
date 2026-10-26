@@ -3,7 +3,7 @@ description: "天狼 B（Sirius B）的天体数据：1.02 M☉、半径 0.0081 
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_b.webp" alt="天狼 B" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_b.webp" alt="天狼 B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>天狼 B <small>Sirius B</small></h1>

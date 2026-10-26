@@ -3,7 +3,7 @@ description: "角宿一（Spica）的天体数据：11.4 M☉、半径 7.47 R☉
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/spica.webp" alt="角宿一" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/spica.webp" alt="角宿一" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>角宿一 <small>Spica</small></h1>

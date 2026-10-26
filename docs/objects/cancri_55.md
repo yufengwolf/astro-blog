@@ -3,7 +3,7 @@ description: "巨蟹座 55（55 Cancri）的天体数据：0.95 M☉、半径 1.
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/cancri_55.webp" alt="巨蟹座 55" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/cancri_55.webp" alt="巨蟹座 55" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>巨蟹座 55 <small>55 Cancri</small></h1>

@@ -3,7 +3,7 @@ description: "绘架座 β（Beta Pictoris）的天体数据：1.79 M☉、半�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/beta_pictoris.webp" alt="绘架座 β" loading="lazy"></div><div class="astro-img-credit">影像：程序化生成示意图（非真实影像）</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/beta_pictoris.webp" alt="绘架座 β" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>绘架座 β <small>Beta Pictoris</small></h1>
