@@ -4,6 +4,8 @@
 设计目标（2026-10-26 用户拍板）：用户只给一个名字（甚至不知道类型），AI 负责
 定位类别、拉取数据特征、录入 astro.json；图片交给 sync_images.py 按类别路由
 （恒星/黑洞套模板；行星/星云/星系等可能需人工审核）。
+add_object 写入 astro.json 成功后，**末尾会自动调用 sync_images.py --ids <新id>**
+为新对象出图（可用 --no-sync 关闭）。
 
 三种录入模式：
   --name  "天狼星"               AI 从自身知识起草（LLM 分类 + 抽取，null 不编造）
@@ -15,7 +17,8 @@
   - 有 M、R 即派生 重力/逃逸速度/密度（保证 lint 派生量校验自洽）
   - 自动登记 source_registry、填 image 占位（image_locked=False → sync_images 生成）
   - 幂等：id 已存在则原地更新（不重复追加），并打印摘要
-  - --dry-run 只打印将写入的对象 + 图片计划 + 人工审核标记，不落盘
+  - --dry-run 只打印将写入的对象 + 图片计划 + 人工审核标记，不落盘、不调 sync_images
+  - 写入成功后自动调用 sync_images.py 为新对象出图（--no-sync 可关闭）
 
 图片计划（仅打印/标记，真正出图在 sync_images.py）：
   star/sun        → 模板（build_star_images 按 subtype→9 类套用，无需新图，不需审核）
@@ -26,6 +29,7 @@ import argparse
 import json
 import math
 import re
+import subprocess
 import sys
 import urllib.request
 from datetime import date
@@ -285,6 +289,7 @@ def main():
     ap.add_argument("--src", help="参考链接（配合 --json/--name 手动指定来源）")
     ap.add_argument("--dry-run", action="store_true", help="只打印，不落盘")
     ap.add_argument("--force", action="store_true", help="已收录的对象也强制覆盖更新（默认跳过）")
+    ap.add_argument("--no-sync", action="store_true", help="写入后不自动调用 sync_images 出图")
     args = ap.parse_args()
 
     if not (args.name or args.json):
@@ -359,6 +364,15 @@ def main():
     data["meta"]["updated"] = TODAY
     ASTRO.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"astro.json 已更新（总数 {len(objs)}）；图片计划：[{plan_kind}] {plan_msg}")
+
+    # 自动出图：刚写入的对象交给 sync_images 按类别路由生成/补全贴图
+    if not args.no_sync:
+        try:
+            print("\n=== 自动调用 sync_images 出图 ===")
+            subprocess.run([sys.executable, "scripts/sync_images.py", "--ids", o["id"]],
+                           cwd=str(ROOT), check=False)
+        except Exception as e:
+            print(f"[warn] sync_images 调用失败（数据已写入，可手动补图）：{e}")
     return 0
 
 
