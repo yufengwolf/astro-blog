@@ -8,8 +8,10 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
   → astro.json 登记 image / image_credit / image_url
   → 打 image_locked=true（此后 sync_textures.py 不会用 AI 贴图覆盖它）
 
-两种抠图模式：
-  默认     圆/椭圆盘抠图——适合无环天体（输出 600×600，圆盘占 70%）
+两种抠图模式（默认【自适应】，无需手动选择）：
+  自适应   未显式指定 --rings/--frame 时，按对象类别+图像内容自动判定：
+           延展天体(nebula/galaxy/cluster/structure) -> frame；紧凑天体检测到
+           明显横向环结构 -> rings；其余 -> 默认圆/椭圆盘抠图。
   --rings  含环天体保留行星+环整体：以行星本体圆为锚裁剪缩放，球体直径
            统一 420（=600 画布高的 70%，与圆盘图一致、跨天体等大），环
            随本体等比呈现；画布高 600、宽按环伸展，本体恒居中，环出画布
@@ -27,10 +29,13 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
   --darkthr N         跳过 Otsu 手动定暗色阈值（背景有星云辉光时用）
 
 用法：
-  python scripts/nasa_image.py --search pluto          # 搜 NASA 图片库，列候选
+  python scripts/nasa_image.py --search pluto          # 搜 NASA 图片库，列候选（一次性试搜，结果需人工挑）
   python scripts/nasa_image.py --set pluto PIA19857 "NASA/New Horizons（JHUAPL·SwRI）"
   python scripts/nasa_image.py pluto                    # 按登记表安装
   python scripts/nasa_image.py pluto earth eris         # 一次装多个
+  python scripts/nasa_image.py pluto https://images.nasa.gov/details/PIA19708
+                                                       # 【手动保底】你直接给 NASA 图片地址，
+                                                       # 脚本下载→校验标题→自适应抠图→入库锁定
 
 登记表 docs/data/nasa_images.json 可手改，形如：
   {"saturn": {"nasa_id": "PIA02225", "credit": "…", "rings": true,
@@ -39,11 +44,14 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
 """
 import argparse
 import json
+import re
 import sys
 import urllib.request
 from collections import deque
 from datetime import date
 from pathlib import Path
+
+import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 REG_PATH = ROOT / "docs" / "data" / "nasa_images.json"
@@ -100,6 +108,152 @@ def download_best(nasa_id: str, dest: Path) -> str:
         raise RuntimeError(f"{nasa_id} 无可下载 jpg（manifest: {urls}）")
     dest.write_bytes(best_data)
     return best_tier
+
+
+def nasa_metadata(nasa_id: str) -> dict:
+    """从 images-api 取一条记录的标题/中心/描述，用于人工校验图是否正确。"""
+    try:
+        d = api_json(f"{API}/search?nasa_id={urllib.parse.quote(nasa_id)}")
+        items = d.get("collection", {}).get("items", [])
+        if not items:
+            return {}
+        dd = items[0]["data"][0]
+        return {"title": dd.get("title", ""),
+                "center": (dd.get("center") or "").strip(),
+                "description": (dd.get("description") or "")}
+    except Exception:
+        return {}
+
+
+def parse_input(url: str):
+    """解析用户给的地址，返回 (nasa_id, src_url, page_url)。
+    - images.nasa.gov/details/<ID>  -> 解析出 nasa_id，page_url=原链接
+    - 直链 .jpg/.png/.webp         -> src_url=原链接，page_url=原链接
+    - 其它 http(s) 链接             -> 视作直链 src_url
+    - 不含协议的字符串               -> 当作裸 nasa_id，page_url 补默认详情页
+    """
+    url = url.strip()
+    if re.search(r"images\.nasa\.gov/details/([^/?#]+)", url):
+        m = re.search(r"images\.nasa\.gov/details/([^/?#]+)", url)
+        return m.group(1), None, url
+    if url.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
+        return None, url, url
+    if "://" in url:
+        return None, url, url
+    return url, None, f"https://images.nasa.gov/details/{url}"
+
+
+def looks_like_url(s: str) -> bool:
+    s = s.strip()
+    return bool(re.match(r"^https?://", s)) or s.lower().endswith(
+        (".jpg", ".jpeg", ".png", ".webp"))
+
+
+def category_of(oid: str):
+    data = json.loads(ASTRO.read_text(encoding="utf-8"))
+    hit = [o for o in data["objects"] if o["id"] == oid]
+    return hit[0]["category"] if hit else None
+
+
+def name_of(oid: str):
+    data = json.loads(ASTRO.read_text(encoding="utf-8"))
+    hit = [o for o in data["objects"] if o["id"] == oid]
+    if not hit:
+        return None, None
+    return hit[0].get("name", ""), hit[0].get("name_en", "")
+
+
+def auto_mode(arr, category: str):
+    """自适应选择抠图模式，免去人工指定 --rings/--frame。
+    规则（确定性 + 图像内容，不依赖不稳定的视觉 API）：
+      - 延展天体(nebula/galaxy/cluster/structure) -> frame（不规则/铺满画幅，全幅最佳）
+      - 紧凑天体(planet/dwarf_planet/moon/asteroid/comet/black_hole)：
+          若检测到明显横向延展的"环"结构 -> rings
+          否则 -> circle
+    可用 --rings/--frame 显式覆盖。"""
+    if category in ("nebula", "galaxy", "cluster", "structure"):
+        return "frame"
+    if category in ("planet", "dwarf_planet", "moon"):
+        try:
+            cx, cy, rx, ry = detect_disk(arr)
+        except Exception:
+            return "circle"
+        h, w, _ = arr.shape
+        lum = arr.max(axis=2)
+        # 行星本体盘亮度基准
+        y0, y1 = int(max(0, cy - ry)), int(min(h, cy + ry))
+        x_in0, x_in1 = int(cx - rx), int(cx + rx)
+        if x_in1 <= x_in0 or y1 <= y0:
+            return "circle"
+        disk_mean = lum[y0:y1, x_in0:x_in1].mean()
+        # 环带区：横向延展到 2.2 倍半径外、纵向仍在盘范围内
+        x_out0, x_out1 = int(max(0, cx - rx * 2.2)), int(min(w, cx + rx * 2.2))
+        if x_out1 <= x_out0:
+            return "circle"
+        ring_zone = lum[y0:y1, x_out0:x_out1]
+        ring_mean = ring_zone.mean() if ring_zone.size else 0
+        if disk_mean > 0 and ring_mean > disk_mean * 0.35:
+            return "rings"
+    return "circle"
+
+
+def install_from_url(oid: str, url: str, credit=None):
+    """手动提供 NASA 图片地址的场景（保底路径）：
+    解析地址 -> 下载 -> 校验(标题比对) -> 自适应抠图 -> 入库并锁定。
+    返回 True/False。"""
+    nasa_id, src_url, page_url = parse_input(url)
+    tmp = PLANET_DIR / f".{oid}_nasa_raw.jpg"
+    PLANET_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        if src_url:
+            tmp.write_bytes(api_get(src_url))
+            tier = "direct"
+        else:
+            tier = download_best(nasa_id, tmp)
+    except Exception as e:
+        print(f"[error] 下载失败：{e}")
+        tmp.unlink(missing_ok=True)
+        return False
+    try:
+        from PIL import Image
+        im = Image.open(tmp).convert("RGB")
+    except Exception as e:
+        print(f"[error] 非有效图片：{e}")
+        tmp.unlink(missing_ok=True)
+        return False
+    arr = np.asarray(im)
+    print(f"  已下载源图 {im.width}×{im.height}px（{tier}），校验中…")
+
+    # 校验：NASA details 可拿到标题，比对对象名，提示用户确认图是否正确
+    title = None
+    if nasa_id and nasa_id != "direct":
+        md = nasa_metadata(nasa_id)
+        title = md.get("title", "")
+        center = md.get("center", "")
+        if not credit:
+            credit = (f"NASA/{center} · {title[:50]}" if center
+                      else f"NASA · {title[:50]}")
+        nm, nm_en = name_of(oid)
+        if title and nm:
+            hay = title.lower()
+            if not (nm.lower() in hay or (nm_en and nm_en.lower() in hay)):
+                print(f"[warn] NASA 标题《{title}》未包含对象名「{nm}」"
+                      f"（英文名 {nm_en}），请确认图是否正确后再继续")
+    if not credit:
+        credit = "NASA"
+
+    mode = auto_mode(arr, category_of(oid) or "")
+    print(f"  自适应抠图模式：{mode}")
+    opts = {}
+    if mode == "frame":
+        opts["frame"] = True
+    elif mode == "rings":
+        opts["rings"] = True
+    ok = install(oid, nasa_id or "direct", credit,
+                 src_url=(src_url if src_url else None),
+                 page_url=page_url, raw_path=str(tmp), **opts)
+    tmp.unlink(missing_ok=True)
+    return ok
 
 
 def detect_disk(arr):
@@ -279,7 +433,8 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
             rings: bool = False, focus=None,
             src_url: str | None = None, page_url: str | None = None,
             darkthr=None, soft=None, planet_r=None, gain=None,
-            planet=None, frame: bool = False) -> bool:
+            planet=None, frame: bool = False,
+            raw_path: str | None = None) -> bool:
     """下载并安装一张真实影像。
     默认圆/椭圆盘抠图；rings=True 保留行星+环整体（宽幅透明 webp）。
     frame=True 全幅模式（星系/星云/星团等延展天体）：不抠圆形，整幅缩至
@@ -293,13 +448,17 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     import numpy as np
     from PIL import Image
     Image.MAX_IMAGE_PIXELS = None        # 放行超大图（如 PIA00478 的 10240px）
-    tmp = PLANET_DIR / f".{oid}_nasa_raw.jpg"
     PLANET_DIR.mkdir(parents=True, exist_ok=True)
-    if src_url:
-        tmp.write_bytes(api_get(src_url))
-        tier = "direct"
+    if raw_path:                          # 由 install_from_url 预下载，免重复拉取
+        tmp = Path(raw_path)
+        tier = "provided"
     else:
-        tier = download_best(nasa_id, tmp)
+        tmp = PLANET_DIR / f".{oid}_nasa_raw.jpg"
+        if src_url:
+            tmp.write_bytes(api_get(src_url))
+            tier = "direct"
+        else:
+            tier = download_best(nasa_id, tmp)
     im = Image.open(tmp).convert("RGB")
     if gain and gain != 1.0:
         # 亮度增益：提亮暗淡源图（如韦布海王星红外片）。必须在 cut_space
@@ -446,7 +605,8 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
         canvas.paste(out, ((600 - w2) // 2, (600 - h2) // 2), out)
         dst = PLANET_DIR / f"{oid}.webp"
         canvas.save(dst, "WEBP", quality=85)
-    tmp.unlink(missing_ok=True)
+    if not raw_path:
+        tmp.unlink(missing_ok=True)
 
     # 登记进 astro.json：影像路径 + 署名 + 锁定
     data = json.loads(ASTRO.read_text(encoding="utf-8"))
@@ -459,6 +619,7 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
     o["image_credit"] = credit
     o["image_url"] = page_url or f"https://images.nasa.gov/details/{nasa_id}"
     o["image_locked"] = True
+    o["image_source"] = "nasa"          # 真实 NASA/ESA 照片
     ASTRO.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n",
                      encoding="utf-8")
     print(f"  {oid}: {nasa_id}（{tier}，{dst.stat().st_size // 1024}KB）"
@@ -570,10 +731,20 @@ def main() -> int:
                     help="全幅模式（星系/星云/星团等延展天体）：不抠圆，整幅缩放+边缘渐隐")
     ap.add_argument("--auto-batch", nargs="+", metavar="ID:QUERY",
                     help="批量自动模式：'对象id:搜索词[:标题关键词]'，自动挑图并安装")
+    ap.add_argument("--credit", default=None,
+                    help="手动模式下的署名（不填则从 NASA 详情页自动取标题）")
     args = ap.parse_args()
 
     if args.search:
         return do_search(args.search)
+
+    # 手动保底模式：nasa_image.py <id> <url>
+    # 第二个位置参数是 URL（details 页或直链）时进入，避免与登记表批量安装冲突
+    if len(args.ids) >= 2 and looks_like_url(args.ids[1]):
+        oid = args.ids[0]
+        url = args.ids[1]
+        print(f"== 手动安装模式：{oid} <- {url} ==")
+        return 0 if install_from_url(oid, url, args.credit) else 1
 
     if args.auto_batch:
         pairs = []

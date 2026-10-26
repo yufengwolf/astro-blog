@@ -48,10 +48,21 @@ CATEGORIES = {"star", "planet", "dwarf_planet", "moon", "asteroid", "exoplanet",
 EXT_CATS = {"nebula", "galaxy", "cluster", "structure"}
 DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
 
+# 新录入对象的初始 image_source（供 query.py --image-source 筛选）。
+# 恒星套豆包模板；黑洞/大尺度/固态体先用程序化占位，后续可换 NASA 真图。
+IMG_SRC_INIT = {
+    "star": "doubao_template",
+    "black_hole": "programmatic",
+}
+
 
 # ---------------------------------------------------------------- LLM 客户端
 def llm_chat(system, user, model_pref=None):
-    """OpenAI 兼容：豆包(:9090) 默认优先，本地 llama-server(:8080) 兜底。返回助手文本。"""
+    """OpenAI 兼容：豆包(:9090) 默认优先，本地 llama-server(:8080) 兜底。
+
+    返回 (助手文本, 来源标签) 元组；来源标签为 'llm_doubao' 或 'llm_local'，
+    用于回填 astro.json 的 data_source，让用户能筛出"哪些数据是 AI 吐的、靠哪个模型"。
+    """
     messages = [{"role": "system", "content": system},
                 {"role": "user", "content": user}]
     # 豆包优先（默认 doubao-2.1）；本地 8080 作为兜底
@@ -69,7 +80,9 @@ def llm_chat(system, user, model_pref=None):
                 headers={"Content-Type": "application/json"})
             with urllib.request.urlopen(req, timeout=90) as r:
                 d = json.loads(r.read().decode())
-            return d["choices"][0]["message"]["content"]
+            text = d["choices"][0]["message"]["content"]
+            src = "llm_doubao" if "9090" in base else "llm_local"
+            return text, src
         except Exception as e:
             last_err = e
             continue
@@ -77,7 +90,7 @@ def llm_chat(system, user, model_pref=None):
 
 
 def extract_with_llm(name, category_hint, facts_text):
-    """返回结构化 dict（见模块 docstring 的 JSON 契约）。"""
+    """返回 (结构化 dict, 来源标签) 元组（见模块 docstring 的 JSON 契约）。"""
     sys_p = (
         "你是天文数据库录入助手。根据用户提供的天体名称（及可选文本），"
         "输出严格 JSON，字段契约：\n"
@@ -126,11 +139,11 @@ def extract_with_llm(name, category_hint, facts_text):
             "（无额外文本，请仅凭你的天文知识填写；不确定项填 null。）"
             + (f"（类别提示：{category_hint}）" if category_hint else "")
         )
-    raw = llm_chat(sys_p, user_p)
+    raw, src = llm_chat(sys_p, user_p)
     m = re.search(r"\{.*\}", raw, re.S)
     if not m:
         raise RuntimeError(f"LLM 未返回可用 JSON：{raw[:300]}")
-    return json.loads(m.group(0))
+    return json.loads(m.group(0)), src
 
 
 # ---------------------------------------------------------------- 归一化 + 合成
@@ -170,8 +183,12 @@ def normalize(cat, p):
     return ph
 
 
-def compose(obj_in):
-    """obj_in: 来自 LLM/JSON 的结构化 dict → 完整 astro.json 对象（含派生）。"""
+def compose(obj_in, data_source="manual"):
+    """obj_in: 来自 LLM/JSON 的结构化 dict → 完整 astro.json 对象（含派生）。
+
+    data_source: 数据来源标签，回填 astro.json 供 query.py 筛选：
+      'manual'（--json 直写）| 'llm_doubao'（豆包抽取）| 'llm_local'（本地模型抽取）
+    """
     cat = obj_in["category"]
     if cat not in CATEGORIES:
         raise ValueError(f"非法 category: {cat}")
@@ -224,11 +241,14 @@ def compose(obj_in):
         "discovery": obj_in.get("discovery") or {"known_since": None, "discoverer": None, "year": None},
         "sources": [],
         "verified": TODAY,
+        "data_verified": False,   # 数据未经人工校验（区别于 verified=录入日期）
+        "data_source": data_source,   # 来源标签，供 query.py --data-source 筛选
         "article": None,
         "image": f"assets/planets/{oid}.webp",
         "source_dates": {},
         "image_credit": "程序化生成示意图（非真实影像）",
         "image_url": None,
+        "image_source": IMG_SRC_INIT.get(cat, "programmatic"),  # 供 query.py --image-source 筛选
         "image_locked": False,   # 交给 sync_images 生成；NASA 真图会改为 True 锁定
     }
     src_url = obj_in.get("source_url")
@@ -290,15 +310,16 @@ def main():
 
     if args.json:
         obj_in = json.loads(args.json)
+        src = "manual"
     else:
         facts = args.facts or ""
         if args.src:
             facts += f"\n参考链接：{args.src}"
-        obj_in = extract_with_llm(args.name, args.category, facts)
+        obj_in, src = extract_with_llm(args.name, args.category, facts)
 
     if not obj_in.get("category") and args.category:
         obj_in["category"] = args.category
-    o = compose(obj_in)
+    o = compose(obj_in, data_source=src)
     plan_kind, plan_msg = image_plan(o)
 
     if args.dry_run:

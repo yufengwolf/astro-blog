@@ -75,7 +75,10 @@
       "image_credit": "NASA/SDO · AIA 极紫外成像",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002069",
       "image_locked": true,
-      "subtype": "黄矮星（G2V 主序星）"
+      "subtype": "黄矮星（G2V 主序星）",
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "mercury",
@@ -129,7 +132,10 @@
       },
       "image_credit": "NASA/MESSENGER · 全球彩色合成（增强色）",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001545",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "venus",
@@ -183,7 +189,10 @@
       },
       "image_credit": "NASA/JPL · 麦哲伦雷达全球视图",
       "image_url": "https://images.nasa.gov/details/S91-50688",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "earth",
@@ -240,7 +249,10 @@
       },
       "image_credit": "NASA/GSFC · Blue Marble 2012",
       "image_url": "https://images.nasa.gov/details/PIA18033",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "mars",
@@ -297,7 +309,10 @@
       },
       "image_credit": "NASA/JPL · 海盗号全球彩色视图",
       "image_url": "https://images.nasa.gov/details/PIA00407",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "jupiter",
@@ -356,7 +371,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA02873",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "saturn",
@@ -414,7 +432,10 @@
       },
       "image_credit": "NASA/JPL/USGS",
       "image_url": "https://images.nasa.gov/details/PIA00349",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "uranus",
@@ -472,7 +493,10 @@
       },
       "image_credit": "NASA/JPL-Caltech",
       "image_url": "https://images.nasa.gov/details/PIA18182",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "neptune",
@@ -528,7 +552,10 @@
       },
       "image_credit": "NASA/JPL",
       "image_url": "https://images.nasa.gov/details/PIA01492",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "pluto",
@@ -585,7 +612,10 @@
       },
       "image_credit": "NASA/New Horizons（JHUAPL·SwRI）",
       "image_url": "https://images.nasa.gov/details/PIA19857",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "ceres",
@@ -634,7 +664,10 @@
       "image": "assets/planets/ceres.webp",
       "image_credit": "NASA/JPL-Caltech/UCLA · 黎明号",
       "image_url": "https://images.nasa.gov/details/PIA19619",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "makemake",
@@ -677,7 +710,10 @@
       "source_dates": {},
       "verified": "2026-10-18",
       "image": "assets/planets/makemake.webp",
-      "image_credit": "AI 生成示意图（豆包 · 非真实影像）"
+      "image_credit": "AI 生成示意图（豆包 · 非真实影像）",
+      "image_source": "programmatic",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "haumea",
@@ -721,7 +757,10 @@
       "source_dates": {},
       "verified": "2026-10-18",
       "image": "assets/planets/haumea.webp",
-      "image_credit": "AI 生成示意图（豆包 · 非真实影像）"
+      "image_credit": "AI 生成示意图（豆包 · 非真实影像）",
+      "image_source": "programmatic",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "eris",
@@ -766,7 +805,10 @@
       "image": "assets/planets/eris.webp",
       "image_credit": "NASA/ESA 艺术概念图",
       "image_url": "https://images.nasa.gov/details/PIA17307",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "moon",
@@ -820,7 +862,10 @@
       },
       "image_credit": "NASA/GSFC 满月合成",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000868",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "phobos",
@@ -872,7 +917,10 @@
       },
       "image_credit": "NASA/JPL/MSSS · 火星全球勘测者",
       "image_url": "https://images.nasa.gov/details/PIA10368",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "deimos",
@@ -924,7 +972,10 @@
       },
       "image_credit": "NASA/JPL/UA · HiRISE",
       "image_url": "https://images.nasa.gov/details/PIA11826",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "io",
@@ -976,7 +1027,10 @@
       },
       "image_credit": "NASA/JPL · 伽利略",
       "image_url": "https://images.nasa.gov/details/PIA02308",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "europa",
@@ -1028,7 +1082,10 @@
       },
       "image_credit": "NASA/JPL · 伽利略",
       "image_url": "https://images.nasa.gov/details/PIA00502",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "ganymede",
@@ -1080,7 +1137,10 @@
       },
       "image_credit": "NASA/JPL · 伽利略",
       "image_url": "https://images.nasa.gov/details/PIA00353",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "callisto",
@@ -1132,7 +1192,10 @@
       },
       "image_credit": "NASA/JPL · 伽利略",
       "image_url": "https://images.nasa.gov/details/PIA03456",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "mimas",
@@ -1184,7 +1247,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA06257",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "enceladus",
@@ -1236,7 +1302,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA00347",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "tethys",
@@ -1288,7 +1357,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA20518",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "dione",
@@ -1340,7 +1412,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA14650",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "rhea",
@@ -1392,7 +1467,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA06578",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "titan",
@@ -1444,7 +1522,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA06230",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "hyperion",
@@ -1496,7 +1577,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA17193",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "iapetus",
@@ -1548,7 +1632,10 @@
       },
       "image_credit": "NASA/JPL/SSI · 卡西尼",
       "image_url": "https://images.nasa.gov/details/PIA11690",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "triton",
@@ -1600,7 +1687,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA02246",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "miranda",
@@ -1652,7 +1742,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA01490",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "ariel",
@@ -1704,7 +1797,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA00041",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "umbriel",
@@ -1756,7 +1852,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA00040",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "titania",
@@ -1808,7 +1907,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA01979",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "oberon",
@@ -1860,7 +1962,10 @@
       },
       "image_credit": "NASA/JPL · 旅行者 2 号",
       "image_url": "https://images.nasa.gov/details/PIA00034",
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "pistol_star",
@@ -1916,7 +2021,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "高光度蓝变星（LBV）"
+      "subtype": "高光度蓝变星（LBV）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "stephenson_2_18",
@@ -1972,7 +2080,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "红超巨星（M6Ia）"
+      "subtype": "红超巨星（M6Ia）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "arcturus",
@@ -2028,7 +2139,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "红巨星（K0III）"
+      "subtype": "红巨星（K0III）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "antares",
@@ -2084,7 +2198,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "红超巨星（M1.5Iab-Ib）"
+      "subtype": "红超巨星（M1.5Iab-Ib）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "rigel",
@@ -2140,7 +2257,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "蓝超巨星（B8Ia）"
+      "subtype": "蓝超巨星（B8Ia）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "betelgeuse",
@@ -2196,7 +2316,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "红超巨星（M1-M2Ia）"
+      "subtype": "红超巨星（M1-M2Ia）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "vega",
@@ -2252,7 +2375,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "蓝白主序星（A0V）"
+      "subtype": "蓝白主序星（A0V）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "sirius_a",
@@ -2309,7 +2435,10 @@
       "image_url": null,
       "image_locked": true,
       "subtype": "蓝白主序星（A1V）",
-      "members": 2
+      "members": 2,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "proxima_centauri",
@@ -2365,7 +2494,10 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true,
-      "subtype": "红矮星（M5.5Ve）"
+      "subtype": "红矮星（M5.5Ve）",
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m87_star",
@@ -2429,7 +2561,10 @@
       "srcs": [
         "wiki_m87bh",
         "eht"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "sgr_a_star",
@@ -2493,7 +2628,10 @@
       "srcs": [
         "wiki_sgr_a",
         "eht"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ton618",
@@ -2554,7 +2692,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ton618"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ic1101_bh",
@@ -2615,7 +2756,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ic1101"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "gw190521",
@@ -2679,7 +2823,10 @@
       "srcs": [
         "wiki_gw190521",
         "ligo_gw190521"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "cyg_x1",
@@ -2740,7 +2887,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_cygx1"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "v404_cyg",
@@ -2801,7 +2951,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_v404"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m42",
@@ -2862,7 +3015,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m42"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m1",
@@ -2923,7 +3079,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m1"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m16",
@@ -2984,7 +3143,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m16"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m20",
@@ -3045,7 +3207,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m20"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m8",
@@ -3106,7 +3271,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m8"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "horsehead",
@@ -3167,7 +3335,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_horsehead"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m57",
@@ -3228,7 +3399,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m57"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc7293",
@@ -3289,7 +3463,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc7293"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m2_9",
@@ -3350,7 +3527,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m2_9"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "rosette",
@@ -3411,7 +3591,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_rosette"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "barnards_loop",
@@ -3472,7 +3655,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_barnard"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "tarantula",
@@ -3533,7 +3719,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_tarantula"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "milky_way",
@@ -3594,7 +3783,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_milkyway"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m31",
@@ -3655,7 +3847,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m31"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m33",
@@ -3716,7 +3911,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m33"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "lmc",
@@ -3777,7 +3975,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_lmc"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "smc",
@@ -3838,7 +4039,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_smc"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m87",
@@ -3899,7 +4103,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m87g"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m104",
@@ -3960,7 +4167,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m104"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m51",
@@ -4021,7 +4231,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m51"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m81",
@@ -4082,7 +4295,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m81"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m82",
@@ -4143,7 +4359,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m82"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc1300",
@@ -4204,7 +4423,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc1300"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ic1101",
@@ -4265,7 +4487,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ic1101"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "stephens_quintet",
@@ -4326,7 +4551,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_quintet"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m45",
@@ -4387,7 +4615,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m45"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "hyades",
@@ -4448,7 +4679,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_hyades"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m44",
@@ -4509,7 +4743,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m44"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m67",
@@ -4570,7 +4807,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m67"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "r136",
@@ -4631,7 +4871,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_r136"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m13",
@@ -4692,7 +4935,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m13"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m22",
@@ -4753,7 +4999,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m22"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "omega_cen",
@@ -4814,7 +5063,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_omegacen"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "local_group",
@@ -4875,7 +5127,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_localgroup"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "virgo_cluster",
@@ -4936,7 +5191,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_virgo"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "laniakea",
@@ -4997,7 +5255,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_laniakea"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "great_attractor",
@@ -5058,7 +5319,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_attractor"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "hercules_corona_wall",
@@ -5119,7 +5383,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_hcbgw"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "cmb",
@@ -5180,7 +5447,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_cmb"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "observable_universe",
@@ -5241,7 +5511,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_obsuniverse"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m17",
@@ -5302,7 +5575,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m17"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m27",
@@ -5363,7 +5639,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m27"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc3372",
@@ -5424,7 +5703,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc3372"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc7000",
@@ -5485,7 +5767,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc7000"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m101",
@@ -5546,7 +5831,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m101"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m64",
@@ -5607,7 +5895,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m64"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m83",
@@ -5668,7 +5959,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m83"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc5128",
@@ -5729,7 +6023,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc5128"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc4038",
@@ -5790,7 +6087,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc4038"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m11",
@@ -5851,7 +6151,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m11"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "m7",
@@ -5912,7 +6215,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_m7"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "ngc4755",
@@ -5973,7 +6279,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_ngc4755"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "gw150514",
@@ -6034,7 +6343,10 @@
       "image_locked": true,
       "srcs": [
         "ligo_gw150914"
-      ]
+      ],
+      "image_source": "programmatic",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "eta_carinae",
@@ -6095,7 +6407,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_etacarinae"
-      ]
+      ],
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "vesta",
@@ -6156,7 +6471,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_vesta"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "halley",
@@ -6217,7 +6535,10 @@
       "image_locked": true,
       "srcs": [
         "wiki_halley"
-      ]
+      ],
+      "image_source": "nasa",
+      "data_source": "authority",
+      "data_verified": true
     },
     {
       "id": "sirius_b",
@@ -6275,7 +6596,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "eridani_40a",
@@ -6333,7 +6657,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "eridani_40b",
@@ -6391,7 +6718,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "crab_pulsar",
@@ -6449,7 +6779,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "vela_pulsar",
@@ -6507,7 +6840,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "sgr_1806_20",
@@ -6565,7 +6901,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "alphacen_a",
@@ -6623,7 +6962,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "alphacen_b",
@@ -6681,7 +7023,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "castor",
@@ -6739,7 +7084,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "pollux",
@@ -6797,7 +7145,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "capella",
@@ -6855,7 +7206,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "aldebaran",
@@ -6913,7 +7267,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "spica",
@@ -6971,7 +7328,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "regulus",
@@ -7029,7 +7389,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "formalhaut",
@@ -7087,7 +7450,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "altair",
@@ -7145,7 +7511,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "deneb",
@@ -7203,7 +7572,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "mirfak",
@@ -7261,7 +7633,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "hamal",
@@ -7319,7 +7694,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "markab",
@@ -7377,7 +7755,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "alpheratz",
@@ -7435,7 +7816,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "mirach",
@@ -7493,7 +7877,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "wezen",
@@ -7551,7 +7938,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "adhara",
@@ -7609,7 +7999,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "aludra",
@@ -7667,7 +8060,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "mu_cephei",
@@ -7725,7 +8121,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "uy_scuti",
@@ -7783,7 +8182,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "rw_cephei",
@@ -7841,7 +8243,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "s_persei",
@@ -7899,7 +8304,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "mira",
@@ -7957,7 +8365,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "p_cygni",
@@ -8015,7 +8426,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "naos",
@@ -8073,7 +8487,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "r136a1",
@@ -8131,7 +8548,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "algol",
@@ -8189,7 +8609,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "sheliak",
@@ -8247,7 +8670,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "almaaz",
@@ -8305,7 +8731,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "kepler_452",
@@ -8363,7 +8792,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "kepler_22",
@@ -8421,7 +8853,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "trappist_1",
@@ -8479,7 +8914,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "gliese_581",
@@ -8537,7 +8975,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "kepler_186",
@@ -8595,7 +9036,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "cancri_55",
@@ -8653,7 +9097,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "pegasi_51",
@@ -8713,7 +9160,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "beta_pictoris",
@@ -8771,7 +9221,10 @@
       },
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
-      "image_locked": true
+      "image_locked": true,
+      "image_source": "doubao_template",
+      "data_source": "manual",
+      "data_verified": false
     },
     {
       "id": "procyon_a",
@@ -8827,9 +9280,12 @@
       "source_dates": {
         "src_procyon": "2026-10-26"
       },
-      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_credit": "AI 生成模板（豆包 9 光谱型代表图复用，非真实影像）",
       "image_url": null,
-      "image_locked": false
+      "image_locked": false,
+      "image_source": "doubao_template",
+      "data_source": "llm_doubao",
+      "data_verified": false
     }
   ],
   "source_registry": {

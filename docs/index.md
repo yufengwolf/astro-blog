@@ -1700,13 +1700,13 @@ description: "收录 152 个天体的结构化数据：质量、半径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="star" data-name="南河三 Procyon" data-mass="2.98e+30" data-radius="990000" data-density="0.73319934950028" data-temp="6256.85" data-period="" data-moons="">
+  <article class="astro-card" data-category="star" data-name="南河三 Procyon" data-mass="2.97e+30" data-radius="990000" data-density="0.7307389489986013" data-temp="6256.85" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/procyon_a/">
       <div class="astro-img star"><img src="assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">南河三<span class="en">Procyon</span></div>
-        <p class="astro-card-tagline">夜空中第八亮的恒星，距离太阳系最近的恒星系统之一</p>
-        <div class="astro-card-stats"><span>1.5 M☉</span><span>1.42 R☉</span><span>6.93 L☉</span></div>
+        <p class="astro-card-tagline">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
+        <div class="astro-card-stats"><span>1.49 M☉</span><span>1.42 R☉</span><span>6.9 L☉</span></div>
       </div>
       <span class="astro-badge star">恒星</span>
     </a>
