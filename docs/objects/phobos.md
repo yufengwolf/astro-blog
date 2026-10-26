@@ -60,4 +60,4 @@ description: "火卫一（Phobos）的天体数据：1.06×10¹⁶ kg、平均�
 <p class="obj-nav">← 上一颗：<a href="../moon/">月球</a></p>
 <p class="obj-nav">下一颗：<a href="../deimos/">火卫二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

@@ -53,4 +53,4 @@ description: "仙王座 RW（RW Cephei）的天体数据：13.9 M☉、半径 1,
 <p class="obj-nav">← 上一颗：<a href="../uy_scuti/">盾牌座 UY</a></p>
 <p class="obj-nav">下一颗：<a href="../s_persei/">英仙座 S</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

@@ -60,4 +60,4 @@ description: "木卫三（Ganymede）的天体数据：1.48×10²³ kg、平均�
 <p class="obj-nav">← 上一颗：<a href="../europa/">木卫二</a></p>
 <p class="obj-nav">下一颗：<a href="../callisto/">木卫四</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

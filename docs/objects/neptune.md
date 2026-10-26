@@ -62,4 +62,4 @@ description: "海王星（Neptune）的天体数据：1.02×10²⁶ kg、平均�
 <p class="obj-nav">← 上一颗：<a href="../uranus/">天王星</a></p>
 <p class="obj-nav">下一颗：<a href="../pluto/">冥王星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

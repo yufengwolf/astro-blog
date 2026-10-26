@@ -53,4 +53,4 @@ description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、
 <p class="obj-nav">← 上一颗：<a href="../hamal/">娄宿三</a></p>
 <p class="obj-nav">下一颗：<a href="../alpheratz/">壁宿二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

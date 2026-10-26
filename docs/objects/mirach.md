@@ -53,4 +53,4 @@ description: "奎宿九（Mirach）的天体数据：3.5 M☉、半径 100 R☉�
 <p class="obj-nav">← 上一颗：<a href="../alpheratz/">壁宿二</a></p>
 <p class="obj-nav">下一颗：<a href="../wezen/">弧矢一</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

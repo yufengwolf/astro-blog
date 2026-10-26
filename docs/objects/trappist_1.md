@@ -65,4 +65,4 @@ description: "特拉比斯特 1（TRAPPIST-1）的天体数据：0.0898 M☉、�
 <p class="obj-nav">← 上一颗：<a href="../kepler_22/">开普勒 22</a></p>
 <p class="obj-nav">下一颗：<a href="../gliese_581/">格利泽 581</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

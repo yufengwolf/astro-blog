@@ -52,4 +52,4 @@ description: "织女星（Vega）的天体数据：2.14 M☉、半径 2.36 R☉�
 <p class="obj-nav">← 上一颗：<a href="../betelgeuse/">参宿四</a></p>
 <p class="obj-nav">下一颗：<a href="../sirius_a/">天狼星 A</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

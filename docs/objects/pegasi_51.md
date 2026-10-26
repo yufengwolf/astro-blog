@@ -53,4 +53,4 @@ description: "飞马座 51（51 Pegasi）的天体数据：1.11 M☉、半径 1.
 <p class="obj-nav">← 上一颗：<a href="../cancri_55/">巨蟹座 55</a></p>
 <p class="obj-nav">下一颗：<a href="../beta_pictoris/">绘架座 β</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

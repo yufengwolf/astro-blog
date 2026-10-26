@@ -2,8 +2,8 @@
   "meta": {
     "name": "星野天体数据库",
     "version": "1.0.0",
-    "updated": "2026-10-24",
-    "object_count": 151,
+    "updated": "2026-10-26",
+    "object_count": 152,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -8772,6 +8772,64 @@
       "image_credit": "程序化生成示意图（非真实影像）",
       "image_url": null,
       "image_locked": true
+    },
+    {
+      "id": "procyon_a",
+      "name": "南河三",
+      "name_en": "Procyon",
+      "category": "star",
+      "parent": null,
+      "tagline": "小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。",
+      "physical": {
+        "mass_kg": 2.97e+30,
+        "radius_km": 990000,
+        "density_g_cm3": 0.7307389489986013,
+        "gravity_m_s2": 202.24242424242425,
+        "escape_velocity_km_s": 632.8032869699714,
+        "mean_temp_c": 6256.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "F5IV-V",
+      "luminosity_w": 2.64132e+27,
+      "distance_ly": 11.46,
+      "constellation": "小犬座",
+      "subtype": "主序星（F5V-IV）",
+      "members": "南河三A（主星）与南河三B（白矮星伴星）组成的双星系统",
+      "note": "南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_procyon"
+      ],
+      "verified": "2026-10-26",
+      "article": null,
+      "image": "assets/planets/procyon_a.webp",
+      "source_dates": {
+        "src_procyon": "2026-10-26"
+      },
+      "image_credit": "程序化生成示意图（非真实影像）",
+      "image_url": null,
+      "image_locked": false
     }
   ],
   "source_registry": {
@@ -9310,6 +9368,10 @@
     "nobel_2019": {
       "name": "诺贝尔物理学奖 2019 新闻稿（系外行星的发现）",
       "url": "https://www.nobelprize.org/prizes/physics/2019/press-release/"
+    },
+    "src_procyon": {
+      "name": "Wikipedia · Procyon",
+      "url": "https://en.wikipedia.org/wiki/Procyon"
     }
   }
 }

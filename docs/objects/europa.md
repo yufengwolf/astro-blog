@@ -60,4 +60,4 @@ description: "木卫二（Europa）的天体数据：4.8×10²² kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../io/">木卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../ganymede/">木卫三</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>

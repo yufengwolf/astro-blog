@@ -58,4 +58,4 @@ description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../ceres/">谷神星</a></p>
 <p class="obj-nav">下一颗：<a href="../haumea/">妊神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 151 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 152 个天体已全部配图</p>
