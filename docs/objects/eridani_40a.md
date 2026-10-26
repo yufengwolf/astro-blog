@@ -54,4 +54,4 @@ description: "波江座 40A（40 Eridani A）的天体数据：0.78 M☉、半�
 <p class="obj-nav">← 上一颗：<a href="../sirius_b/">天狼 B</a></p>
 <p class="obj-nav">下一颗：<a href="../eridani_40b/">波江座 40B</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>

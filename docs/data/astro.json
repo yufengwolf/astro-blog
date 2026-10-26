@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-26",
-    "object_count": 153,
+    "object_count": 154,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -6466,8 +6466,8 @@
       "source_dates": {
         "wiki_vesta": "2026-10-24"
       },
-      "image_credit": "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA · 黎明号灶神星彩色影像",
-      "image_url": "https://images.nasa.gov/details/PIA15141",
+      "image_credit": "NASA/JPL · Vesta Coat of Many Colors",
+      "image_url": "https://images.nasa.gov/details/PIA15506",
       "image_locked": true,
       "srcs": [
         "wiki_vesta"
@@ -9347,6 +9347,67 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false
+    },
+    {
+      "id": "vanth",
+      "name": "范斯（亡卫一）",
+      "name_en": "Vanth",
+      "category": "moon",
+      "parent": "orcus",
+      "tagline": "柯伊伯带矮行星亡神星（Orcus）的唯一已知卫星",
+      "physical": {
+        "mass_kg": 3e+19,
+        "radius_km": 220,
+        "density_g_cm3": 0.67,
+        "gravity_m_s2": 0.041367768595041314,
+        "escape_velocity_km_s": 0.13491411409418283,
+        "mean_temp_c": -229.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": 0.08
+      },
+      "orbit": {
+        "semimajor_axis_km": 9035.71139028,
+        "orbital_period_days": 9.533025,
+        "orbital_velocity_km_s": 0.07,
+        "inclination_deg": 0.7,
+        "eccentricity": 0.007,
+        "obliquity_deg": null,
+        "rotation_period_hours": 229
+      },
+      "moons": {
+        "count": 0,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 0.00062,
+      "constellation": "蛇夫座",
+      "subtype": "冰质卫星（ plutino 伴星）",
+      "members": null,
+      "note": "直径约440km；质量约为亡神星的1/20，密度与反照率为近似估计。二者近圆轨道互绕并相互潮汐锁定，属2:3海王星共振 plutino 双天体系统。",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_vanth"
+      ],
+      "verified": "2026-10-26",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/vanth.webp",
+      "source_dates": {
+        "src_vanth": "2026-10-26"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
     }
   ],
   "source_registry": {
@@ -9897,6 +9958,10 @@
     "src_orcus__90482_": {
       "name": "Wikipedia · 90482 Orcus",
       "url": "https://en.wikipedia.org/wiki/90482_Orcus"
+    },
+    "src_vanth": {
+      "name": "Wikipedia · Vanth (moon)",
+      "url": "https://en.wikipedia.org/wiki/Vanth_(moon)"
     }
   }
 }

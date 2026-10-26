@@ -3,7 +3,7 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/vesta.webp" alt="灶神星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA15141" target="_blank" rel="noopener">NASA/JPL-Caltech/UCLA/MPS/DLR/IDA · 黎明号灶神星彩色影像</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/vesta.webp" alt="灶神星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA15506" target="_blank" rel="noopener">NASA/JPL · Vesta Coat of Many Colors</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge asteroid">小行星</span>
     <h1>灶神星 <small>4 Vesta</small></h1>
@@ -56,4 +56,4 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
 <p class="obj-nav">← 上一颗：<a href="../eta_carinae/">海山二</a></p>
 <p class="obj-nav">下一颗：<a href="../halley/">哈雷彗星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>

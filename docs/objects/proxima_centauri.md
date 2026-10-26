@@ -52,4 +52,4 @@ description: "比邻星（Proxima Centauri）的天体数据：0.122 M☉、半�
 <p class="obj-nav">← 上一颗：<a href="../sirius_a/">天狼星 A</a></p>
 <p class="obj-nav">下一颗：<a href="../m87_star/">M87*</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>

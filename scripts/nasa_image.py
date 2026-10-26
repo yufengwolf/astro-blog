@@ -8,10 +8,13 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
   → astro.json 登记 image / image_credit / image_url
   → 打 image_locked=true（此后 sync_textures.py 不会用 AI 贴图覆盖它）
 
-两种抠图模式（默认【自适应】，无需手动选择）：
-  自适应   未显式指定 --rings/--frame 时，按对象类别+图像内容自动判定：
-           延展天体(nebula/galaxy/cluster/structure) -> frame；紧凑天体检测到
-           明显横向环结构 -> rings；其余 -> 默认圆/椭圆盘抠图。
+抠图模式（默认【自适应】，无需手动选择；也可用 --rings/--frame/--ellipse/
+--irregular/--crop 显式覆盖）：
+  自适应   未显式指定时，按对象类别+图像内容自动判定：
+           延展天体(nebula/galaxy/cluster/structure) -> frame；
+           小天体(asteroid/comet) -> irregular（土豆形，亮盘 alpha 贴合真实轮廓，
+           不硬切长边）；紧凑天体(planet/dwarf_planet/moon) 检测到明显横向环
+           结构 -> rings；本体扁/长(rx/ry>1.12) -> ellipse；其余 -> 圆/椭圆盘抠图
   --rings  含环天体保留行星+环整体：以行星本体圆为锚裁剪缩放，球体直径
            统一 420（=600 画布高的 70%，与圆盘图一致、跨天体等大），环
            随本体等比呈现；画布高 600、宽按环伸展，本体恒居中，环出画布
@@ -20,6 +23,9 @@ NASA 库无图）才用 blog-pipeline 的 AI 贴图。脚本只做四件事：
            95 分位亮区自动检测（planet_r 可手动覆盖半径）
   --frame  全幅模式——星系/星云/星团等延展天体：不抠圆，整幅缩至最长边
            600px，四边约 5% 渐隐；对比页按「全幅=等效球径」绘制（示意）
+  --ellipse 椭圆盘抠图（扁/长天体：椭球、橄榄形，贴合 bbox 不圆切）
+  --irregular 不规则轮廓抠图（小行星/彗星：Otsu 亮盘 alpha 贴合真实形状，
+           8 连通域过滤星点、高斯羽化，绝不硬切长边）
 其他可选：
   --crop CX CY R      手动圆盘（自动检测不准时，如土星环与行星交织）
   --half L/R/T/B      双球/双面板拼图先取半幅
@@ -60,7 +66,8 @@ PLANET_DIR = ROOT / "docs" / "assets" / "planets"
 API = "https://images-api.nasa.gov"
 UA = {"User-Agent": "astro-blog-maintainer/1.0 (personal data site)"}
 OPT_KEYS = ("rings", "focus", "src_url", "page_url", "darkthr", "soft",
-            "crop", "half", "ellipse", "planet_r", "gain", "planet", "frame")
+            "crop", "half", "ellipse", "planet_r", "gain", "planet", "frame",
+            "irregular")
 
 
 def api_get(url: str, timeout: int = 90):
@@ -163,16 +170,48 @@ def name_of(oid: str):
     return hit[0].get("name", ""), hit[0].get("name_en", "")
 
 
+def _name_tokens(name: str):
+    """从对象名提取标题校验用的核心 token（去编号/标点/前缀，容忍大小写）。
+    例：'4 Vesta' -> {'vesta'}；'灶神星' -> {'灶神星'}；'1P/Halley' -> {'halley'}。"""
+    if not name:
+        return set()
+    toks = set()
+    for part in re.split(r"[\s\-_/]+", name.lower()):
+        # 去掉前导的数字/标点（小行星编号、彗星周期编号等），保留字母/汉字实词
+        part = re.sub(r"^[^a-z\u4e00-\u9fff]+", "", part)
+        part = re.sub(r"[^a-z0-9\u4e00-\u9fff]+$", "", part)
+        if part and not part.isdigit() and len(part) >= 2:
+            toks.add(part)
+    return toks
+
+
+def _title_matches(nm, nm_en, title="", description=""):
+    """标题或描述是否含对象名核心词。核心词命中即视为匹配（容忍编号前缀、大小写）。
+    避免『4 Vesta』整串比对失败导致的误报警（标题只写『Vesta』时也算匹配）。"""
+    hay = f"{title} {description}".lower()
+    for nm_ in (nm, nm_en):
+        for tok in _name_tokens(nm_):
+            if tok in hay:
+                return True
+    return False
+
+
 def auto_mode(arr, category: str):
-    """自适应选择抠图模式，免去人工指定 --rings/--frame。
+    """自适应选择抠图模式，免去人工指定 --rings/--frame/--ellipse/--irregular。
     规则（确定性 + 图像内容，不依赖不稳定的视觉 API）：
       - 延展天体(nebula/galaxy/cluster/structure) -> frame（不规则/铺满画幅，全幅最佳）
-      - 紧凑天体(planet/dwarf_planet/moon/asteroid/comet/black_hole)：
+      - 小天体(asteroid/comet) -> irregular（土豆形不规则体，用亮盘真实轮廓贴合，
+        避免圆/椭圆硬切掉长边）
+      - 紧凑天体(planet/dwarf_planet/moon)：
           若检测到明显横向延展的"环"结构 -> rings
+          否则若本体扁/长（rx/ry 比 >1.12，如椭球/橄榄形）-> ellipse
           否则 -> circle
-    可用 --rings/--frame 显式覆盖。"""
+    可用 --rings/--frame/--ellipse/--irregular 显式覆盖。"""
     if category in ("nebula", "galaxy", "cluster", "structure"):
         return "frame"
+    if category in ("asteroid", "comet"):
+        # 小天体多为不规则（土豆形），贴合真实亮盘轮廓，避免圆/椭圆硬切长边
+        return "irregular"
     if category in ("planet", "dwarf_planet", "moon"):
         try:
             cx, cy, rx, ry = detect_disk(arr)
@@ -194,6 +233,9 @@ def auto_mode(arr, category: str):
         ring_mean = ring_zone.mean() if ring_zone.size else 0
         if disk_mean > 0 and ring_mean > disk_mean * 0.35:
             return "rings"
+        # 扁/长天体（如椭球、橄榄形）用椭圆贴合 bbox，避免圆切掉长边
+        if rx and ry and max(rx, ry) / min(rx, ry) > 1.12:
+            return "ellipse"
     return "circle"
 
 
@@ -235,8 +277,8 @@ def install_from_url(oid: str, url: str, credit=None):
                       else f"NASA · {title[:50]}")
         nm, nm_en = name_of(oid)
         if title and nm:
-            hay = title.lower()
-            if not (nm.lower() in hay or (nm_en and nm_en.lower() in hay)):
+            desc = md.get("description", "")
+            if not _title_matches(nm, nm_en, title, desc):
                 print(f"[warn] NASA 标题《{title}》未包含对象名「{nm}」"
                       f"（英文名 {nm_en}），请确认图是否正确后再继续")
     if not credit:
@@ -249,6 +291,10 @@ def install_from_url(oid: str, url: str, credit=None):
         opts["frame"] = True
     elif mode == "rings":
         opts["rings"] = True
+    elif mode == "irregular":
+        opts["irregular"] = True
+    elif mode == "ellipse":
+        opts["ellipse"] = True
     ok = install(oid, nasa_id or "direct", credit,
                  src_url=(src_url if src_url else None),
                  page_url=page_url, raw_path=str(tmp), **opts)
@@ -428,12 +474,50 @@ def cut_space(tex, darkthr=None, soft=None):
     return Image.fromarray(rgba, "RGBA"), thr, planet_r
 
 
+def _irregular_alpha(lum, soft=2):
+    """不规则天体轮廓：亮盘（Otsu 阈值）作主体 alpha，8 连通域过滤星点/噪点，
+    高斯羽化抗锯齿。返回 0-255 alpha 数组（与 lum 同尺寸）。
+    用于小行星/彗星等不规则体——贴合真实亮盘形状，避免几何圆/椭圆硬切长边。"""
+    import numpy as np
+    from PIL import Image, ImageFilter
+    thr = max(10, int(otsu_threshold(lum) * 0.8))
+    mask = lum > thr
+    h, w = lum.shape
+    min_area = max(40, h * w // 600)
+    keep = np.zeros((h, w), bool)
+    seen = np.zeros((h, w), bool)
+    for yy in range(h):
+        for xx in range(w):
+            if not mask[yy, xx] or seen[yy, xx]:
+                continue
+            comp = [(yy, xx)]
+            seen[yy, xx] = True
+            dq = deque([(yy, xx)])
+            while dq:
+                cy_, cx_ = dq.popleft()
+                for dy in (-1, 0, 1):
+                    for dx in (-1, 0, 1):
+                        ny, nx = cy_ + dy, cx_ + dx
+                        if 0 <= ny < h and 0 <= nx < w and mask[ny, nx] and not seen[ny, nx]:
+                            seen[ny, nx] = True
+                            comp.append((ny, nx))
+                            dq.append((ny, nx))
+            if len(comp) >= min_area:
+                for py, px in comp:
+                    keep[py, px] = True
+    alpha = np.where(keep, 255, 0).astype(np.uint8)
+    if soft:
+        alpha = np.asarray(Image.fromarray(alpha, "L")
+                           .filter(ImageFilter.GaussianBlur(float(soft))))
+    return alpha
+
+
 def install(oid: str, nasa_id: str, credit: str, crop=None,
             half: str | None = None, ellipse: bool = False,
             rings: bool = False, focus=None,
             src_url: str | None = None, page_url: str | None = None,
             darkthr=None, soft=None, planet_r=None, gain=None,
-            planet=None, frame: bool = False,
+            planet=None, frame: bool = False, irregular: bool = False,
             raw_path: str | None = None) -> bool:
     """下载并安装一张真实影像。
     默认圆/椭圆盘抠图；rings=True 保留行星+环整体（宽幅透明 webp）。
@@ -571,6 +655,35 @@ def install(oid: str, nasa_id: str, credit: str, crop=None,
         canvas = Image.fromarray(ca.astype(np.uint8), "RGBA")
         dst = PLANET_DIR / f"{oid}.webp"
         canvas.save(dst, "WEBP", quality=85)
+    elif irregular:
+        # 不规则小天体（小行星/彗星）：贴合真实亮盘轮廓，避免圆/椭圆硬切长边。
+        # 主体长轴缩至 600 画布的 70%（=420，与圆盘/椭圆图一致、跨天体等大），
+        # 居中贴到 600×600 透明画布，圆外透明。
+        try:
+            cx, cy, rx0, ry0 = detect_disk(arr)
+        except Exception:
+            cx, cy = im.width / 2, im.height / 2
+            rx0 = ry0 = min(im.width, im.height) / 2
+        side = max(2, int(2 * max(rx0, ry0)))
+        side = min(side, im.width, im.height)
+        x0 = max(0, int(round(cx - side / 2)))
+        y0 = max(0, int(round(cy - side / 2)))
+        tex = im.crop((x0, y0, x0 + side, y0 + side))
+        target = 600 * 0.70               # 主体长轴 = 600 画布的 70%，与圆盘/椭圆图一致
+        scale = target / max(tex.width, tex.height)
+        tex = tex.resize((max(1, round(tex.width * scale)),
+                          max(1, round(tex.height * scale))), Image.LANCZOS)
+        lum = np.asarray(tex).max(axis=2)
+        alpha = _irregular_alpha(lum)
+        rgba = np.dstack([np.asarray(tex).astype(np.uint8), alpha])
+        canvas = Image.new("RGBA", (600, 600), (0, 0, 0, 0))
+        canvas.paste(Image.fromarray(rgba, "RGBA"),
+                     ((600 - tex.width) // 2, (600 - tex.height) // 2),
+                     Image.fromarray(rgba, "RGBA"))
+        dst = PLANET_DIR / f"{oid}.webp"
+        canvas.save(dst, "WEBP", quality=85)
+        print(f"  [irregular] 不规则轮廓 {tex.width}×{tex.height}px"
+              f"（源 {im.width}×{im.height}），亮盘 alpha 贴合真实形状")
     else:
         if crop:  # 手动圆盘
             cx = crop[0] * im.width
@@ -726,7 +839,9 @@ def main() -> int:
     ap.add_argument("--gain", type=float, metavar="F",
                     help="亮度增益（提亮暗淡源图，如韦布海王星 1.35）")
     ap.add_argument("--ellipse", action="store_true",
-                    help="椭圆抠图（土豆形天体：火卫一/土卫七等）")
+                    help="椭圆抠图（扁/长天体：椭球、橄榄形等，贴合 bbox）")
+    ap.add_argument("--irregular", action="store_true",
+                    help="不规则轮廓抠图（小行星/彗星：亮盘 alpha 贴合真实形状，不硬切）")
     ap.add_argument("--frame", action="store_true",
                     help="全幅模式（星系/星云/星团等延展天体）：不抠圆，整幅缩放+边缘渐隐")
     ap.add_argument("--auto-batch", nargs="+", metavar="ID:QUERY",
@@ -780,11 +895,15 @@ def main() -> int:
             entry["gain"] = args.gain
         if args.frame:
             entry["frame"] = True
+        if args.irregular:
+            entry["irregular"] = True
         reg[oid] = entry
         save_reg(reg)
         print(f"登记表更新：{oid} -> {nasa_id}"
               + ("（含环模式）" if args.rings else "")
-              + ("（全幅模式）" if args.frame else ""))
+              + ("（全幅模式）" if args.frame else "")
+              + ("（椭圆模式）" if args.ellipse else "")
+              + ("（不规则轮廓模式）" if args.irregular else ""))
         opts = {k: entry[k] for k in OPT_KEYS if k in entry}
         return 0 if install(oid, nasa_id, credit, **opts) else 1
 

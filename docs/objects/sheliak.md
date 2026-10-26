@@ -54,4 +54,4 @@ description: "渐台二（Beta Lyrae）的天体数据：2.97 M☉、半径 15.2
 <p class="obj-nav">← 上一颗：<a href="../algol/">大陵五</a></p>
 <p class="obj-nav">下一颗：<a href="../almaaz/">御夫座 ε</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>

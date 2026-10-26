@@ -43,4 +43,4 @@ description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—�
 <p class="obj-nav">← 上一颗：<a href="../ic1101/">IC 1101</a></p>
 <p class="obj-nav">下一颗：<a href="../m45/">昴星团</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>

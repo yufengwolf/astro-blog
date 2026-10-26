@@ -53,4 +53,4 @@ description: "天狼星 A（Sirius A）的天体数据：2.06 M☉、半径 1.71
 <p class="obj-nav">← 上一颗：<a href="../vega/">织女星</a></p>
 <p class="obj-nav">下一颗：<a href="../proxima_centauri/">比邻星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 153 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 154 个天体已全部配图</p>
