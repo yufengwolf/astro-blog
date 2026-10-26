@@ -1717,7 +1717,7 @@ description: "收录 156 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">亡神星<span class="en">Orcus</span></div>
         <p class="astro-card-tagline">柯伊伯带 plutino 矮行星，与海王星3:2共振，拥有卫星范斯。</p>
-        <div class="astro-card-stats"><span>6.34×10²⁰ kg</span><span>455.0 km</span><span>-228.14999999999998 °C</span></div>
+        <div class="astro-card-stats"><span>6.34×10²⁰ kg</span><span>455.0 km</span><span>-228.1 °C</span></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
@@ -1728,7 +1728,7 @@ description: "收录 156 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">范斯（亡卫一）<span class="en">Vanth</span></div>
         <p class="astro-card-tagline">柯伊伯带矮行星亡神星（Orcus）的唯一已知卫星</p>
-        <div class="astro-card-stats"><span>3×10¹⁹ kg</span><span>220.0 km</span><span>-229.14999999999998 °C</span></div>
+        <div class="astro-card-stats"><span>3×10¹⁹ kg</span><span>220.0 km</span><span>-229.1 °C</span></div>
       </div>
       <span class="astro-badge moon">卫星</span>
     </a>
@@ -1739,7 +1739,7 @@ description: "收录 156 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">共工星<span class="en">225088 Gonggong</span></div>
         <p class="astro-card-tagline">柯伊伯带离散盘冰质矮行星，以中国水神共工命名</p>
-        <div class="astro-card-stats"><span>1.75×10²¹ kg</span><span>615.0 km</span><span>-243.14999999999998 °C</span></div>
+        <div class="astro-card-stats"><span>1.75×10²¹ kg</span><span>615.0 km</span><span>-243.1 °C</span></div>
       </div>
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
@@ -1750,7 +1750,7 @@ description: "收录 156 个天体的结构化数据：质量、半径、密度�
       <div class="astro-card-body">
         <div class="astro-card-title">智神星<span class="en">Pallas</span></div>
         <p class="astro-card-tagline">小行星带第二大天体，形状极不规则，轨道倾角极大。</p>
-        <div class="astro-card-stats"><span>2.11×10²⁰ kg</span><span>256.0 km</span><span>-103.14999999999998 °C</span></div>
+        <div class="astro-card-stats"><span>2.11×10²⁰ kg</span><span>256.0 km</span><span>-103.1 °C</span></div>
       </div>
       <span class="astro-badge asteroid">小行星</span>
     </a>

@@ -141,7 +141,10 @@ def fmt_temp(t, cat=None):
         if k >= 1e6:
             return f"{sci(k)} K"            # 中子星表面：1.6×10⁶ K
         return f"{k:.0f} K"
-    return f"{t} °C"
+    # 非恒星按摄氏度展示：统一保留 1 位小数（:g 去掉多余尾零），
+    # 避免 K→℃ 换算带来的浮点噪声直接裸露（如 -103.14999999999998 ℃）
+    v = round(float(t), 1)
+    return f"{v:g} °C"
 
 
 def fmt_period(d):

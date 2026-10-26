@@ -1,5 +1,5 @@
 ---
-description: "智神星（Pallas）的天体数据：2.11×10²⁰ kg、平均半径 256.0 km、密度 2.7 g/cm³、表面温度 -103.14999999999998 °C。数据整理自公开天文资料。"
+description: "智神星（Pallas）的天体数据：2.11×10²⁰ kg、平均半径 256.0 km、密度 2.7 g/cm³、表面温度 -103.1 °C。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -11,7 +11,7 @@ description: "智神星（Pallas）的天体数据：2.11×10²⁰ kg、平均�
     <div class="obj-keystats">
       <span>2.11×10²⁰ kg</span>
       <span>256.0 km</span>
-      <span>-103.14999999999998 °C</span>
+      <span>-103.1 °C</span>
       <span>2.7 g/cm³</span>
     </div>
   </div>
