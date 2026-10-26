@@ -19,6 +19,8 @@ add_object 写入 astro.json 成功后，**末尾会自动调用 sync_images.py 
   - 幂等：id 已存在则原地更新（不重复追加），并打印摘要
   - --dry-run 只打印将写入的对象 + 图片计划 + 人工审核标记，不落盘、不调 sync_images
   - 写入成功后自动调用 sync_images.py 为新对象出图（--no-sync 可关闭）
+  - 出图后自动重新生成站点页面并构建（gen_pages + mkdocs build --strict），
+    --no-pages 可关闭（关闭后需手动 gen_pages + mkdocs build 才能在网页看到）
 
 图片计划（仅打印/标记，真正出图在 sync_images.py）：
   star/sun        → 模板（build_star_images 按 subtype→9 类套用，无需新图，不需审核）
@@ -221,12 +223,16 @@ def compose(obj_in, data_source="manual"):
     }
 
     oid = obj_in.get("id") or slugify(obj_in.get("name_en") or obj_in.get("name") or cat)
+    parent = obj_in.get("parent")
+    # 行星/矮行星默认绕太阳（太阳系语境）；卫星需用户/LLM 显式指定母行星，否则 lint 会提示
+    if parent is None and cat in ("planet", "dwarf_planet"):
+        parent = "sun"
     o = {
         "id": oid,
         "name": obj_in.get("name") or obj_in.get("name_en"),
         "name_en": obj_in.get("name_en") or obj_in.get("name"),
         "category": cat,
-        "parent": obj_in.get("parent"),
+        "parent": parent,
         "tagline": (obj_in.get("tagline") or "")[:60],
         "physical": ph,
         "orbit": orbit_out,
@@ -274,9 +280,13 @@ def slugify(s):
 # ---------------------------------------------------------------- 图片计划
 def image_plan(o):
     cat = o["category"]
-    if cat in ("star", "black_hole"):
-        return ("template", "套用现有模板（恒星按 subtype→类型、黑洞程序化），无需新图、不需人工审核")
-    return ("review", "程序化兜底 + 可选 NASA 真图；图片需人工审核（见 sync_images）")
+    if cat == "star":
+        return ("template", "套用现有豆包模板（恒星按 subtype→9 类），无需新图、不需人工审核")
+    if cat == "black_hole":
+        return ("template", "程序化生成（黑洞几何模板），无需新图、不需人工审核")
+    if cat in ("planet", "dwarf_planet", "moon", "asteroid", "comet"):
+        return ("review", "优先豆包 AI 生成（失败回退程序化兜底）；可后续换 NASA 真图；图片需人工审核")
+    return ("review", "优先豆包 AI 占位（失败回退程序化兜底）；建议后续换 NASA 真图；图片需人工审核")
 
 
 # ---------------------------------------------------------------- 主流程
@@ -290,6 +300,8 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="只打印，不落盘")
     ap.add_argument("--force", action="store_true", help="已收录的对象也强制覆盖更新（默认跳过）")
     ap.add_argument("--no-sync", action="store_true", help="写入后不自动调用 sync_images 出图")
+    ap.add_argument("--no-pages", action="store_true",
+                    help="写入+出图后不自动重新生成页面/构建（仍可用 gen_pages + mkdocs build 手动）")
     args = ap.parse_args()
 
     if not (args.name or args.json):
@@ -363,16 +375,61 @@ def main():
     data["meta"]["object_count"] = len(objs)
     data["meta"]["updated"] = TODAY
     ASTRO.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"astro.json 已更新（总数 {len(objs)}）；图片计划：[{plan_kind}] {plan_msg}")
 
     # 自动出图：刚写入的对象交给 sync_images 按类别路由生成/补全贴图
     if not args.no_sync:
         try:
-            print("\n=== 自动调用 sync_images 出图 ===")
             subprocess.run([sys.executable, "scripts/sync_images.py", "--ids", o["id"]],
                            cwd=str(ROOT), check=False)
         except Exception as e:
             print(f"[warn] sync_images 调用失败（数据已写入，可手动补图）：{e}")
+
+    # 自动重新生成站点页面 + 构建，否则网页上不会显示新对象
+    if not args.no_pages:
+        try:
+            subprocess.run([sys.executable, "scripts/gen_pages.py"], cwd=str(ROOT), check=False)
+            build = subprocess.run([sys.executable, "-m", "mkdocs", "build", "--strict"],
+                                   cwd=str(ROOT), check=False)
+            if build.returncode != 0:
+                print("[warn] mkdocs build 失败（数据/图片已写入，可手动 `mkdocs build` 排查）")
+        except Exception as e:
+            print(f"[warn] 页面生成/构建失败（数据已写入，可手动 gen_pages + mkdocs build）：{e}")
+
+    # ----------------------------- 清晰总结块 -----------------------------
+    ph = o.get("physical") or {}
+    src_tag = {"llm_doubao": "豆包抽取", "llm_local": "本地模型抽取", "manual": "手动录入"}.get(
+        o.get("data_source"), o.get("data_source"))
+    r = ph.get("radius_km")
+    m = ph.get("mass_kg")
+    d = o.get("distance_ly")
+    lines = []
+    lines.append("=" * 60)
+    lines.append(f"【数据】{'新增' if o['id'] not in by_id or not args.force else '更新'}"
+                 f"：{o['id']}（{o.get('name')} / {o.get('name_en')}）")
+    lines.append(f"  类别：{o['category']}  |  数据来源：{src_tag}"
+                 f"（data_verified={o.get('data_verified')}，待人工校验）")
+    lines.append("  关键字段：")
+    lines.append(f"    半径：{r:.0f} km" if r else "    半径：未提供")
+    lines.append(f"    质量：{m:.3e} kg" if m else "    质量：未提供")
+    lines.append(f"    距离：{d:.1f} ly" if d else "    距离：未提供")
+    if o.get("spectral_type"):
+        lines.append(f"    光谱型：{o.get('spectral_type')}")
+    if o.get("subtype"):
+        lines.append(f"    细分类型：{o.get('subtype')}")
+    srcs = o.get("sources") or []
+    if srcs:
+        lines.append(f"  参考来源：{', '.join(srcs)}")
+    lines.append(f"【图片】计划：[{plan_kind}] {plan_msg}")
+    final_o = next((x for x in json.loads(ASTRO.read_text(encoding="utf-8"))["objects"]
+                    if x["id"] == o["id"]), o)
+    lines.append(f"  当前图片来源：{final_o.get('image_source')}"
+                 f"（恒星/黑洞=模板，固态/大尺度=豆包优先+程序化兜底，NASA 真图需你手动锁定）")
+    lines.append("【页面】已自动重新生成站点页面并构建；刷新网页即可看到。")
+    if args.no_pages:
+        lines.append("  ⚠ 本次跳过了页面生成（--no-pages）；需手动：")
+        lines.append("    python scripts/gen_pages.py && mkdocs build --strict")
+    lines.append("=" * 60)
+    print("\n".join(lines))
     return 0
 
 

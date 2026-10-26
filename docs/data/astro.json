@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-26",
-    "object_count": 152,
+    "object_count": 153,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -9286,6 +9286,67 @@
       "image_source": "doubao_template",
       "data_source": "llm_doubao",
       "data_verified": false
+    },
+    {
+      "id": "orcus",
+      "name": "亡神星",
+      "name_en": "Orcus",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "海王星外的类冥矮行星，拥有卫星万斯",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": 1,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": "双鱼座",
+      "subtype": null,
+      "members": null,
+      "note": "轨道参数、质量、半径等参数存在测量不确定性",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_orcus"
+      ],
+      "verified": "2026-10-26",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/orcus.webp",
+      "source_dates": {
+        "src_orcus": "2026-10-26"
+      },
+      "image_credit": "AI 生成（豆包 doubao-image）占位图，待人工审核/可替换 NASA 真图",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
     }
   ],
   "source_registry": {
@@ -9828,6 +9889,10 @@
     "src_procyon": {
       "name": "Wikipedia · Procyon",
       "url": "https://en.wikipedia.org/wiki/Procyon"
+    },
+    "src_orcus": {
+      "name": "Wikipedia · 亡神星",
+      "url": "https://zh.wikipedia.org/wiki/亡神星"
     }
   }
 }
