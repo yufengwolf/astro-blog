@@ -21,3 +21,7 @@ reports/
 
 # 行星/恒星切圆脚本的源图下载缓存（venus_circle.py 自动重新下载）
 _venus_src.jpg
+
+# 根目录视觉检查样张（build_star_images.py 等生成，本地查看用，不进仓库）
+/_*.png
+/_*.jpg
