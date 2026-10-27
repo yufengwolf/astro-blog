@@ -80,8 +80,10 @@ flowchart TD
 ```bash
 python scripts/add_object.py --name "南河三"     # 只给名字，自动分类/抽数据/写库/出图/生成页面/构建
 python scripts/add_object.py --name "参宿四" --dry-run  # 先看草稿不落盘、不出图
+python scripts/add_object.py --batch names.txt  # 批量录入：names.txt 每行一个名字，豆包两发一致性对拍
+python scripts/add_object.py --batch names.txt --dry-run  # 先预览将写入的对象，不落盘
 ```
-> 默认一条命令搞定「数据→出图→页面→构建」；`--no-sync` 关闭出图、`--no-pages` 关闭页面/构建（关闭后需手动 `gen_pages + mkdocs build` 才能在网页看到）。
+> 默认一条命令搞定「数据→出图→页面→构建」；`--no-sync` 关闭出图、`--no-pages` 关闭页面/构建（关闭后需手动 `gen_pages + mkdocs build` 才能在网页看到）。批量模式三阶段解耦（并发抽数→写盘一次→统一出图+build），豆包 `:9090` 两发对拍筛掉随机幻觉，整批可反复重跑（幂等）。
 
 写入后如需把程序化占位换成 NASA 真图（尤其行星/卫星）：
 
