@@ -49,7 +49,12 @@
    ├─ data/astro_flat.csv# 【生成】扁平 CSV
    ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）
    ├─ js/compare.js      # 独立对比页 /compare/ 逻辑
-   ├─ stylesheets/site.css
+   ├─ js/solar-embed.js  # 3D 嵌入页：全屏切换 + 移动端横屏提示
+   ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式
+   ├─ solar-demo.md      # 【手写】太阳系总览嵌入页
+   ├─ earth-moon.md      # 【手写】地月系统嵌入页
+   ├─ mars-system.md / jupiter-system.md / saturn-system.md  # 【手写】各子系统嵌入页
+   ├─ uranus-system.md / neptune-system.md / pluto-system.md # 【手写】各子系统嵌入页
    └─ assets/planets/*.webp  # 星球贴图（152/152，透明背景 600px）
 ```
 
@@ -82,8 +87,11 @@ python scripts/add_object.py --name "南河三"     # 只给名字，自动分�
 python scripts/add_object.py --name "参宿四" --dry-run  # 先看草稿不落盘、不出图
 python scripts/add_object.py --batch names.txt  # 批量录入：names.txt 每行一个名字，豆包两发一致性对拍
 python scripts/add_object.py --batch names.txt --dry-run  # 先预览将写入的对象，不落盘
+python scripts/add_object.py --recheck --category all    # AI 复校：全量重新抽数，争议字段置空、空缺补填
+python scripts/add_object.py --recheck --category star   # 只复校恒星（也支持 planet / 具体名 --name / 名单 --batch）
+python scripts/add_object.py --recheck --dry-run         # 先预览将置空/填充的字段，不落盘
 ```
-> 默认一条命令搞定「数据→出图→页面→构建」；`--no-sync` 关闭出图、`--no-pages` 关闭页面/构建（关闭后需手动 `gen_pages + mkdocs build` 才能在网页看到）。批量模式三阶段解耦（并发抽数→写盘一次→统一出图+build），豆包 `:9090` 两发对拍筛掉随机幻觉，整批可反复重跑（幂等）。
+> 默认一条命令搞定「数据→出图→页面→构建」；`--no-sync` 关闭出图、`--no-pages` 关闭页面/构建（关闭后需手动 `gen_pages + mkdocs build` 才能在网页看到）。批量模式三阶段解耦（并发抽数→写盘一次→统一出图+build），豆包 `:9090` 两发对拍筛掉随机幻觉；**两发不一致时逐字段合并——一致字段保留、争议字段置 null 不误填**。复校模式（`--recheck`）对已有对象重新抽数做数据清洗：相同字段级规则（争议置空、空缺补填），可按 `--category/--name/--batch` 筛选，官方 API 来源（`data_source=official_api`）默认跳过、`--force` 强制，整批可反复重跑（幂等）。
 
 写入后如需把程序化占位换成 NASA 真图（尤其行星/卫星）：
 
@@ -131,8 +139,49 @@ mkdocs serve -a 127.0.0.1:8001              # 8000 端口被御风 Home 占用�
 > 页面是构建前生成并提交的，CF 端只跑 `mkdocs build`。如需 CF 构建时生成，把 build command 换成
 > `pip install -r requirements.txt && python scripts/gen_pages.py --check && mkdocs build`（`--check` 会校验产物与 JSON 同步）。
 
+> **太阳系 3D 页面不在本仓库**：它们是另一个 Cloudflare Pages 站点，以 iframe 形式嵌进来，详见下一章。
+
 ---
 
-## 七、文档维护约定
+## 七、太阳系 3D 子系统（外站 iframe）
+
+本站有 8 个 3D 页面，但**3D 工程本身不在本仓库**——它是独立仓库 + 独立 Cloudflare Pages 站点，
+这里只保留「嵌入壳」。
+
+| 项 | 值 |
+|---|---|
+| 3D 工程仓库 | https://github.com/yufengwolf/astro-solar-3d |
+| 线上地址 | https://astro-solar-3d.pages.dev |
+| 部署方式 | CF Pages 连 GitHub；`npm ci && npm run build`，输出 `dist`，环境变量 `NODE_VERSION=20` |
+
+**URL 映射**（CF Pages 会把 `/xxx.html` 308 重定向到 `/xxx`，所以统一用无扩展名写法）：
+
+| 本站页面 | iframe 源 |
+|---|---|
+| `/solar-demo/` | `https://astro-solar-3d.pages.dev/` |
+| `/earth-moon/` | `https://astro-solar-3d.pages.dev/earth-moon` |
+| `/mars-system/` | `https://astro-solar-3d.pages.dev/mars` |
+| `/jupiter-system/` | `https://astro-solar-3d.pages.dev/jupiter` |
+| `/saturn-system/` | `https://astro-solar-3d.pages.dev/saturn` |
+| `/uranus-system/` | `https://astro-solar-3d.pages.dev/uranus` |
+| `/neptune-system/` | `https://astro-solar-3d.pages.dev/neptune` |
+| `/pluto-system/` | `https://astro-solar-3d.pages.dev/pluto` |
+
+**改哪里**：
+
+- 改 3D 内容（天体、轨道、贴图）→ 去 3D 仓库改并 push，CF 自动部署，**本站无需任何改动**
+- 改嵌入样式 / 全屏 / 横屏提示 → 本仓库的 `docs/js/solar-embed.js` 与 `site.css` 的 `.solar-embed`
+- 改页面上下说明文字 → 本仓库对应的 md
+
+**为什么不放本站目录**：产物约 20MB / 57 个文件。塞进本仓库会让每次 push 都带上这些静态文件，
+并连带触发 mkdocs 全量重建。拆开后两边构建彻底解耦，各自独立缓存。
+
+**全屏实现**：按钮在本站页面上，调的是本站元素的 `requestFullscreen()`（同源，无需授权）；
+iframe 上的 `allow="fullscreen"` 只是兜底。移动端全屏会尝试锁定横屏，仍竖屏则显示旋转提示；
+iOS Safari 不支持元素全屏时回退为新标签打开独立页。
+
+---
+
+## 八、文档维护约定
 
 **硬规则**：本站任何脚本或工作流变更（新增/修改/删除脚本、增删命令参数、改图片路由、改数据字段、改 LLM 路由），都**必须在同一轮改动中同步更新 [维护指南.md](维护指南.md) 与本文档**（对应章节 + 流程图），并随代码一起提交。**不依赖任何人提醒。** 详细清单见维护指南第十一章。

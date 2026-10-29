@@ -62,6 +62,7 @@ extra_css:
 extra_javascript:
   - js/astro-explore.js
   - js/compare.js
+  - js/solar-embed.js
 
 # ---- 导航结构 ----
 # 首页 = 天体总览工具页；objects/ 与 data.md 由 scripts/gen_pages.py 自动生成维护
@@ -71,3 +72,11 @@ nav:
   - 天体总览: index.md
   - 天体对比: compare.md
   - 天体库: objects/index.md
+  - 太阳系 3D: solar-demo.md
+  - 地月系统: earth-moon.md
+  - 火星系统: mars-system.md
+  - 木星系统: jupiter-system.md
+  - 土星系统: saturn-system.md
+  - 天王星系统: uranus-system.md
+  - 海王星系统: neptune-system.md
+  - 冥王星系统: pluto-system.md
