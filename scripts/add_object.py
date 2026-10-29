@@ -28,6 +28,7 @@ add_object 写入 astro.json 成功后，**末尾会自动调用 sync_images.py 
   其余类别        → 程序化兜底 + 可选 NASA 真图，打印「需人工审核」标记
 """
 import argparse
+import copy
 import json
 import math
 import re
@@ -200,10 +201,12 @@ def extract_shot_doubao(name, category_hint, facts_text):
 
 
 # ---------------------------------------------------------------- 批量：两发一致性
-# 用于「两发都打豆包」后比对的关键数值字段（路径相对于抽取 dict）
+# 用于「两发都打豆包」后比对的关键数值字段（路径相对于抽取 dict）。
+# 顶层字段用单元素元组（如 ("distance_ly",)）；注意不可写成 ("distance_ly", None)，
+# 否则 _get_path/_set_path 会把 None 当成子键，导致该字段从未被真正比对/置空。
 _COMPARE_FIELDS = [
-    ("category", None),
-    ("distance_ly", None),
+    ("category",),
+    ("distance_ly",),
     ("physical", "mass_sun"),
     ("physical", "mass_kg"),
     ("physical", "radius_sun"),
@@ -231,19 +234,28 @@ def _get_path(d, *path):
 
 
 def compare_two(a, b, tol=0.15):
-    """比对两发抽取结果，返回 (是否一致, 不一致字段描述列表)。
+    """比对两发抽取结果，返回 (是否一致, 争议字段路径元组列表, 人读描述列表)。
 
     一致 = category 完全相同，且所有【两边都给了值】的关键字段相对差 < tol。
     单边缺失（一侧有值、一侧 null）不计入不一致——那只是第 2 发漏填，并非
     给出矛盾值；真正的不一致信号是「两边都给了值却相差大」。
 
+    返回的三要素：
+      consistent   : 是否完全一致
+      mism_paths   : 争议字段的「路径元组」(如 ("orbit","rotation_period_hours"))，
+                     供 merge_two 精确定位并置空，绝不再误填第 1 发值
+      mism_desc     : 人读字符串 (如 "orbit/rotation_period_hours(13.83 vs 27.6)")，
+                     供报告/备注展示
+
     注意：一致性≠准确——模型若系统性编造同一错值，两发也会一致。仅能过滤
     随机幻觉/格式错乱，最终核定仍靠人工（data_verified 保持 False）。
     """
-    mism = []
+    mism_paths = []
+    mism_desc = []
     # category 必须一致（critical）
     if (a.get("category") or "") != (b.get("category") or ""):
-        mism.append(f"category({a.get('category')}!={b.get('category')})")
+        mism_paths.append(("category",))
+        mism_desc.append(f"category({a.get('category')}!={b.get('category')})")
     for path in _COMPARE_FIELDS[1:]:   # 跳过 index 0 的 category（已单独处理）
         va, vb = _get_path(a, *path), _get_path(b, *path)
         if va is None or vb is None:
@@ -252,13 +264,91 @@ def compare_two(a, b, tol=0.15):
             fa, fb = float(va), float(vb)
         except (TypeError, ValueError):
             if str(va) != str(vb):
-                mism.append("/".join(path) + "(文本不一致)")
+                mism_paths.append(path)
+                mism_desc.append("/".join(path) + "(文本不一致)")
             continue
         if abs(fa) < 1e-9 and abs(fb) < 1e-9:
             continue
         if abs(fa - fb) / max(abs(fa), abs(fb)) > tol:
-            mism.append("/".join(path) + f"({va} vs {vb})")
-    return (len(mism) == 0), mism
+            mism_paths.append(path)
+            mism_desc.append("/".join(path) + f"({va} vs {vb})")
+    return (len(mism_paths) == 0), mism_paths, mism_desc
+
+
+def _set_path(d, value, *path):
+    """按路径写值，中间层缺失则补建 dict。"""
+    cur = d
+    for p in path[:-1]:
+        nxt = cur.get(p)
+        if not isinstance(nxt, dict):
+            nxt = {}
+            cur[p] = nxt
+        cur = nxt
+    cur[path[-1]] = value
+
+
+def _num(v):
+    """尽力把值转成 float；None / 空 / 非数字 → None。
+
+    LLM 偶尔把数字以字符串形式返回（如 "215"、"2.0e26"），这里在算术前统一归一成
+    float，避免 normalize/compose 里 `G * m_kg` 之类运算撞 TypeError。
+    无法解析的字符串（如带单位的 "2.0e26 kg"）退回 None，绝不抛错中断整批。
+    """
+    if v is None or v == "":
+        return None
+    if isinstance(v, bool):
+        return None
+    if isinstance(v, (int, float)):
+        return float(v)
+    try:
+        return float(str(v).strip())
+    except (TypeError, ValueError):
+        return None
+
+
+# 物理量 / 轨道量中的数值字段（用于 _num 批量归一）
+_NUM_FIELDS_PHYS = ("mass_kg", "mass_sun", "radius_km", "radius_sun", "radius_ly",
+                    "temp_k", "density_g_cm3", "albedo", "surface_pressure_bar",
+                    "lum_w", "lum_sun")
+_NUM_FIELDS_ORBIT = ("semimajor_axis_au", "orbital_period_years", "orbital_velocity_km_s",
+                     "inclination_deg", "eccentricity", "obliquity_deg",
+                     "rotation_period_hours", "semimajor_axis_km", "orbital_period_days")
+
+
+def _coerce_numeric(d, fields):
+    """原地：把 dict 中指定数值字段的值统一成 float（None 安全）。"""
+    if not isinstance(d, dict):
+        return d
+    for k in fields:
+        if k in d:
+            d[k] = _num(d[k])
+    return d
+
+
+def merge_two(a, b, mism_paths):
+    """逐字段合并两发抽取：只保留一致数据，争议字段置空。
+
+    规则：
+      - 以第 1 发 a 为基底（深拷贝），描述性字段(name/tagline/subtype 等)直接沿用；
+      - 对 _COMPARE_FIELDS 中的字段：
+          * 在 mism_paths（两发都给值却相差大）→ 置 null，绝不误填任一方；
+          * 不在 mism_paths（一致，或单边缺失）→ 若 a 缺失而 b 有值则补 b，否则沿用 a；
+      - category 即便争议也保留第 1 发（compose 必须有 category，且单独进红灯待审）。
+
+    这样「有争议的数据不填入，只填其他一致的数据」——用户 2026-10-27 明确要求。
+    """
+    merged = copy.deepcopy(a)
+    for path in _COMPARE_FIELDS:
+        if path == ("category",):
+            continue   # category 必保留（分类所需），争议时靠 needs_review 红灯提示
+        if path in mism_paths:
+            _set_path(merged, None, *path)   # 争议字段 → 置空，不瞎选
+            continue
+        va = _get_path(a, *path)
+        vb = _get_path(b, *path)
+        if va is None and vb is not None:
+            _set_path(merged, vb, *path)     # 单边缺失：补第 2 发的非空值
+    return merged
 
 
 def batch_build_object(name, category_hint=None, facts=""):
@@ -285,14 +375,18 @@ def batch_build_object(name, category_hint=None, facts=""):
         return _attach_quality(o, [f"  ⚠ {name}: 第2发失败，采用第1发（待审）"], True)
     if not a.get("category") and category_hint:
         a["category"] = category_hint
-    consistent, mism = compare_two(a, b)
+    consistent, mism_paths, mism_desc = compare_two(a, b)
     if consistent:
         a["note"] = (a.get("note") or "") + " 【2发一致】"
         o = compose(a, data_source="llm_doubao")
         return _attach_quality(o, [f"  ✓ {name}: 2发一致"], False)
-    a["note"] = (a.get("note") or "") + " 【2发不一致:" + ";".join(mism) + "，待人工核定】"
-    o = compose(a, data_source="llm_doubao")
-    return _attach_quality(o, [f"  ⚠ {name}: 2发不一致 → {mism}（待审）"], True)
+    # 不一致：逐字段合并，仅保留一致数据；争议字段置 null，不误填任一方
+    merged = merge_two(a, b, mism_paths)
+    merged["note"] = (merged.get("note") or "") + \
+        " 【2发不一致，争议字段已置空待补:" + ";".join(mism_desc) + "】"
+    o = compose(merged, data_source="llm_doubao")
+    return _attach_quality(
+        o, [f"  ⚠ {name}: 2发不一致 → {mism_desc}（争议字段已置空，待人工补录）"], True)
 
 
 def _attach_quality(o, report, needs_review):
@@ -305,9 +399,237 @@ def _attach_quality(o, report, needs_review):
     return o, ("ok_needs_review" if needs_review else "ok"), report, needs_review
 
 
+# ---------------------------------------------------------------- AI 复校（recheck）
+# 对库里已有对象重新抽数：争议字段置空、空缺字段2发一致则填充。
+# 来源受保护（官方API）的对象默认跳过；按 --category/--name/--batch 筛选。
+SKIP_RECHECK_SOURCES = {"official_api"}   # data_source 在此集合 → 跳过复校（--force 可强制）
+
+
+def db_to_llm_style(db_obj):
+    """把库中归一化对象反向还原为 LLM 自然单位 schema，便于逐字段对拍。"""
+    ph = db_obj.get("physical") or {}
+    orb = db_obj.get("orbit") or {}
+    m_kg = ph.get("mass_kg")
+    r_km = ph.get("radius_km")
+    lum_w = db_obj.get("luminosity_w")
+    cat = db_obj.get("category")
+    style = {
+        "category": cat,
+        "distance_ly": db_obj.get("distance_ly"),
+        "physical": {
+            "mass_sun": (m_kg / M_SUN) if m_kg is not None else None,
+            "mass_kg": m_kg,
+            "radius_sun": (r_km / R_SUN_KM) if r_km is not None else None,
+            "radius_km": r_km,
+            "radius_ly": (r_km / LY_KM) if (r_km is not None and cat in EXT_CATS) else None,
+            "temp_k": (ph.get("mean_temp_c") + 273.15) if ph.get("mean_temp_c") is not None else None,
+            "lum_sun": (lum_w / L_SUN) if lum_w is not None else None,
+        },
+        "orbit": {
+            "semimajor_axis_au": (orb.get("semimajor_axis_km") / 149597870.7)
+                                if orb.get("semimajor_axis_km") is not None else None,
+            "orbital_period_years": (orb.get("orbital_period_days") / 365.25)
+                                   if orb.get("orbital_period_days") is not None else None,
+            "orbital_velocity_km_s": orb.get("orbital_velocity_km_s"),
+            "inclination_deg": orb.get("inclination_deg"),
+            "eccentricity": orb.get("eccentricity"),
+            "obliquity_deg": orb.get("obliquity_deg"),
+            "rotation_period_hours": orb.get("rotation_period_hours"),
+        },
+    }
+    return style
+
+
+def recheck_merge(db_obj, cand, tol=0.15):
+    """把 2发合并后的候选 cand 与现有库对象 db_obj 逐字段合并，返回 (merged_llm, nulled, filled)。
+
+    规则（用户 2026-10-27 要求）：
+      - 现有非空 + 候选非空 + 相差>tol（争议）→ 置空（不盲信任一方）；
+      - 现有为空 + 候选非空（候选已是2发一致/单边）→ 填充；
+      - 其余（都空 / 现有非空候选空 / 都非空且一致）→ 维持现有值。
+    merged_llm 是喂给 compose 的输入，由其统一重算归一化量与派生量，保证删字段后
+    gravity/escape/density 等派生量随之归零而非残留旧值。
+    """
+    base = db_to_llm_style(db_obj)
+    merged = {
+        "id": db_obj.get("id"),
+        "name": db_obj.get("name"),
+        "name_en": db_obj.get("name_en"),
+        "category": db_obj.get("category"),
+        "parent": db_obj.get("parent"),
+        "subtype": db_obj.get("subtype"),
+        "spectral_type": db_obj.get("spectral_type"),
+        "tagline": db_obj.get("tagline"),
+        "constellation": db_obj.get("constellation"),
+        "distance_ly": base.get("distance_ly"),
+        "physical": copy.deepcopy(base["physical"]),
+        "orbit": copy.deepcopy(base["orbit"]),
+    }
+    nulled, filled = [], []
+    for path in _COMPARE_FIELDS:
+        if path == ("category",):
+            continue   # 复校不改分类
+        db_v = _get_path(base, *path)
+        c_v = _get_path(cand, *path)
+        if db_v is not None and c_v is not None:
+            try:
+                fdb, fc = float(db_v), float(c_v)
+                denom = max(abs(fdb), abs(fc))
+                if denom < 1e-9:
+                    # 两者都是 0 / 近零 → 视为一致，维持现状（避免除零）
+                    pass
+                elif abs(fdb - fc) / denom > tol:
+                    _set_path(merged, None, *path)
+                    nulled.append("/".join(path))
+                    continue
+            except (TypeError, ValueError):
+                if str(db_v) != str(c_v):
+                    _set_path(merged, None, *path)
+                    nulled.append("/".join(path) + "(文本不一致)")
+                    continue
+            # 一致 → 维持现有（merged 已是 base 副本，无需改）
+        elif db_v is None and c_v is not None:
+            _set_path(merged, c_v, *path)   # 空缺补填（候选已是2发一致）
+            filled.append("/".join(path))
+        # 其余情况：保持现有
+    return merged, nulled, filled
+
+
+def _recheck_worker(db_obj, force, lock, out):
+    """复校单对象：2发抽数 → merge_two → recheck_merge → compose 回写。"""
+    name = db_obj.get("name") or db_obj.get("name_en")
+    src = db_obj.get("data_source")
+    if src in SKIP_RECHECK_SOURCES and not force:
+        with lock:
+            out[db_obj["id"]] = ("skip_src",
+                                 [f"  ⊘ 跳过（来源受保护 {src}）：{name}"], [], [])
+        return
+    # 第 1 发
+    try:
+        a = extract_shot_doubao(name, db_obj.get("category"), "")
+    except Exception as e:
+        with lock:
+            out[db_obj["id"]] = ("failed",
+                                 [f"  ✗ {name}: 复校第1发失败 {type(e).__name__}: {e}"], [], [])
+        return
+    # 第 2 发 + 合并
+    only_one = False
+    try:
+        b = extract_shot_doubao(name, db_obj.get("category"), "")
+        _, mpaths, _ = compare_two(a, b)
+        cand = merge_two(a, b, mpaths)
+    except Exception:
+        cand = a
+        only_one = True
+    merged, nulled, filled = recheck_merge(db_obj, cand)
+    o = compose(merged, data_source=db_obj.get("data_source") or "llm_doubao")
+    # 原地回写（仅物理/轨道/光度/距离，其余身份/影像字段保留）
+    db_obj["physical"] = o["physical"]
+    db_obj["orbit"] = o["orbit"]
+    db_obj["luminosity_w"] = o["luminosity_w"]
+    db_obj["distance_ly"] = o["distance_ly"]
+    parts = []
+    if nulled:
+        parts.append("置空:" + ",".join(nulled))
+    if filled:
+        parts.append("填充:" + ",".join(filled))
+    tag = "（仅1发成功）" if only_one else ""
+    if parts:
+        db_obj["note"] = ((db_obj.get("note") or "") +
+                          f" 【AI复校 {TODAY}{tag}：" + "; ".join(parts) + "】").strip()
+    with lock:
+        out[db_obj["id"]] = ("ok",
+                             [f"  ✓ {name}: 复校完成" + (f"{tag}" if only_one else "") +
+                              (f" | 置空[{','.join(nulled)}]" if nulled else "") +
+                              (f" | 填充[{','.join(filled)}]" if filled else "") +
+                              ("（无变更）" if not parts else "")], nulled, filled)
+
+
+def recheck_mode(args):
+    """AI 复校：选对象 → 并发2发抽数 → merge → recheck_merge → 写盘一次 → 重建页面。"""
+    data = json.loads(ASTRO.read_text(encoding="utf-8"))
+    objs = data["objects"]
+    cat = (args.category or "all").strip().lower()
+
+    # ---- 选择目标（existing only，不新增）----
+    selected = []
+    if args.name:
+        q = args.name.strip().lower().replace(" ", "")
+        for x in objs:
+            if q in (str(x.get("name", "")).lower().replace(" ", ""),
+                     str(x.get("name_en", "")).lower().replace(" ", ""),
+                     str(x.get("id", "")).lower()):
+                selected = [x]
+                break
+        if not selected:
+            print(f"复校目标不存在：{args.name}")
+            return 1
+    elif args.batch:
+        names = read_names(args.batch)
+        for n in names:
+            q = n.strip().lower().replace(" ", "")
+            if not q:
+                continue
+            for x in objs:
+                if q in (str(x.get("name", "")).lower().replace(" ", ""),
+                         str(x.get("name_en", "")).lower().replace(" ", ""),
+                         str(x.get("id", "")).lower()):
+                    selected.append(x)
+                    break
+    else:
+        selected = list(objs) if cat == "all" else \
+            [x for x in objs if (x.get("category") or "").lower() == cat]
+    if not selected:
+        print("复校：无匹配对象。")
+        return 0
+
+    print(f"AI 复校：选中 {len(selected)} 个对象（豆包2发一致性），"
+          f"来源受保护 {sorted(SKIP_RECHECK_SOURCES)} 跳过（--force 可强制）...")
+    lock = threading.Lock()
+    out = {}
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        futs = [ex.submit(_recheck_worker, o, args.force, lock, out) for o in selected]
+        for f in as_completed(futs):
+            f.result()
+
+    # 按选中顺序打印
+    for o in selected:
+        r = out.get(o["id"])
+        if r:
+            for line in r[1]:
+                print(line)
+    n_ok = len([r for r in out.values() if r[0] == "ok"])
+    n_skip = len([r for r in out.values() if r[0] == "skip_src"])
+    n_fail = len([r for r in out.values() if r[0] == "failed"])
+    n_change = len([r for r in out.values() if r[0] == "ok" and (r[2] or r[3])])
+
+    if args.dry_run:
+        print("=" * 60)
+        print(f"DRY-RUN：未落盘。以上为将应用的置空/填充（复校 {n_ok} 个，含变更 {n_change} 个）。")
+        return 0
+
+    # 写盘一次
+    data["meta"]["updated"] = TODAY
+    ASTRO.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("=" * 60)
+    print(f"已写入 astro.json（复校 {n_ok} 个 / 跳过来源 {n_skip} / 失败 {n_fail}；"
+          f"其中含置空或填充变更 {n_change} 个；data_verified 均保持 False 待人工核定）。")
+
+    if not args.no_pages:
+        print("重新生成页面并构建（一次性）...")
+        subprocess.run([sys.executable, "scripts/gen_pages.py"], cwd=str(ROOT), check=False)
+        build = subprocess.run([sys.executable, "-m", "mkdocs", "build", "--strict"],
+                               cwd=str(ROOT), check=False)
+        if build.returncode != 0:
+            print("[warn] mkdocs build 失败（数据已写入，可手动 `mkdocs build` 排查）")
+    print("=" * 60)
+    return 0
+
+
 # ---------------------------------------------------------------- 归一化 + 合成
 def normalize(cat, p):
     """p: physical 便捷字段 dict → 统一物理 dict（SI + 派生）。"""
+    _coerce_numeric(p, _NUM_FIELDS_PHYS)   # LLM 可能返回字符串数字，算术前先转 float
     ph = {"mass_kg": None, "radius_km": None, "density_g_cm3": None,
           "gravity_m_s2": None, "escape_velocity_km_s": None,
           "mean_temp_c": None, "surface_pressure_bar": None, "albedo": None}
@@ -365,6 +687,7 @@ def compose(obj_in, data_source="manual"):
         lum = p["lum_sun"] * L_SUN
 
     orbit = obj_in.get("orbit") or {}
+    _coerce_numeric(orbit, _NUM_FIELDS_ORBIT)   # 同上：轨道数值也先转 float
     # LLM 合同用 AU/年更自然 → 折算成站点 schema 的 km/天（无则沿用既有字段名）
     _a_au = orbit.get("semimajor_axis_au")
     _p_yr = orbit.get("orbital_period_years")
@@ -401,7 +724,7 @@ def compose(obj_in, data_source="manual"):
         "atmosphere": obj_in.get("atmosphere"),
         "spectral_type": obj_in.get("spectral_type"),
         "luminosity_w": lum,
-        "distance_ly": obj_in.get("distance_ly"),
+        "distance_ly": _num(obj_in.get("distance_ly")),
         "constellation": obj_in.get("constellation"),
         "subtype": obj_in.get("subtype"),
         "members": obj_in.get("members"),
@@ -629,18 +952,24 @@ def batch_mode(args):
 # ---------------------------------------------------------------- 主流程
 def main():
     ap = argparse.ArgumentParser(description="通用天体录入引擎（AI 编排层数据入口）")
-    ap.add_argument("--name", help="只给名字 → LLM 起草（分类+抽取）")
-    ap.add_argument("--category", help="类别提示（star/planet/...），可选")
+    ap.add_argument("--name", help="只给名字 → LLM 起草（分类+抽取）；复校模式下用作指定单个对象")
+    ap.add_argument("--category", help="类别提示（add 模式）；复校模式下作筛选（star/planet/...，默认 all）")
     ap.add_argument("--facts", help="提供给 LLM 抽取的检索文本")
     ap.add_argument("--json", help="直接结构化 JSON 录入（绕过 LLM）")
     ap.add_argument("--src", help="参考链接（配合 --json/--name 手动指定来源）")
-    ap.add_argument("--batch", help="批量录入：从文件读取天体名（每行一个，# 开头为注释）")
+    ap.add_argument("--batch", help="批量录入：从文件读取天体名（每行一个，# 开头为注释）；复校模式下作指定名单")
+    ap.add_argument("--recheck", action="store_true",
+                    help="AI 复校模式：对已有对象重新抽数，争议字段置空、空缺字段2发一致则填充（按 --category/--name/--batch 筛选）")
     ap.add_argument("--dry-run", action="store_true", help="只打印，不落盘")
-    ap.add_argument("--force", action="store_true", help="已收录的对象也强制覆盖更新（默认跳过）")
+    ap.add_argument("--force", action="store_true",
+                    help="已收录的对象也强制覆盖更新（默认跳过）；复校模式下忽略来源保护强制复校")
     ap.add_argument("--no-sync", action="store_true", help="写入后不自动调用 sync_images 出图")
     ap.add_argument("--no-pages", action="store_true",
                     help="写入+出图后不自动重新生成页面/构建（仍可用 gen_pages + mkdocs build 手动）")
     args = ap.parse_args()
+
+    if args.recheck:
+        return recheck_mode(args)
 
     if args.batch:
         return batch_mode(args)
