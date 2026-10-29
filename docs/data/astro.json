@@ -2,8 +2,8 @@
   "meta": {
     "name": "星野天体数据库",
     "version": "1.0.0",
-    "updated": "2026-10-26",
-    "object_count": 156,
+    "updated": "2026-10-27",
+    "object_count": 178,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -33,11 +33,11 @@
       "physical": {
         "mass_kg": 1.9884e+30,
         "radius_km": 695700,
-        "density_g_cm3": 1.408,
-        "gravity_m_s2": 274.0,
-        "escape_velocity_km_s": 617.6,
-        "mean_temp_c": 5499,
-        "surface_pressure_bar": 0.000868,
+        "density_g_cm3": 1.409772825996378,
+        "gravity_m_s2": 274.18642566426183,
+        "escape_velocity_km_s": 617.6592852611009,
+        "mean_temp_c": 5499.0,
+        "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
@@ -78,7 +78,9 @@
       "subtype": "黄矮星（G2V 主序星）",
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "distance_ly": 1.58e-05,
+      "note": "【AI复校 2026-10-27：填充:distance_ly】"
     },
     {
       "id": "mercury",
@@ -1975,9 +1977,9 @@
       "parent": null,
       "tagline": "银河系中心附近的蓝色特超巨星，曾抛出手枪星云，是已知最明亮的恒星之一",
       "physical": {
-        "mass_kg": 5.4681e+31,
+        "mass_kg": null,
         "radius_km": 214275600.0,
-        "density_g_cm3": 1.3269e-06,
+        "density_g_cm3": null,
         "gravity_m_s2": null,
         "escape_velocity_km_s": null,
         "mean_temp_c": 11526.9,
@@ -2024,7 +2026,8 @@
       "subtype": "高光度蓝变星（LBV）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "note": "【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】"
     },
     {
       "id": "stephenson_2_18",
@@ -2095,10 +2098,10 @@
       "physical": {
         "mass_kg": 2.1474720000000002e+30,
         "radius_km": 17670780.0,
-        "density_g_cm3": 9.2912e-05,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
-        "mean_temp_c": 4016.8,
+        "density_g_cm3": 9.291198545853535e-05,
+        "gravity_m_s2": 0.4589889945399635,
+        "escape_velocity_km_s": 127.36320932621709,
+        "mean_temp_c": 4016.7999999999997,
         "surface_pressure_bar": null,
         "albedo": null
       },
@@ -2152,9 +2155,9 @@
       "parent": null,
       "tagline": "天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）",
       "physical": {
-        "mass_kg": 3.08202e+31,
+        "mass_kg": null,
         "radius_km": 473076000.0,
-        "density_g_cm3": 6.95e-08,
+        "density_g_cm3": null,
         "gravity_m_s2": null,
         "escape_velocity_km_s": null,
         "mean_temp_c": 3126.8,
@@ -2201,7 +2204,8 @@
       "subtype": "红超巨星（M1.5Iab-Ib）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "note": "【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】"
     },
     {
       "id": "rigel",
@@ -2213,9 +2217,9 @@
       "physical": {
         "mass_kg": 4.17564e+31,
         "radius_km": 54264600.0,
-        "density_g_cm3": 6.23856e-05,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
+        "density_g_cm3": 6.238563813011839e-05,
+        "gravity_m_s2": 0.9464028499259532,
+        "escape_velocity_km_s": 320.4876661904226,
         "mean_temp_c": 11826.9,
         "surface_pressure_bar": null,
         "albedo": null
@@ -2260,7 +2264,8 @@
       "subtype": "蓝超巨星（B8Ia）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "note": "【AI复校 2026-10-27：置空:physical/radius_km】"
     },
     {
       "id": "betelgeuse",
@@ -2331,9 +2336,9 @@
       "physical": {
         "mass_kg": 4.2551760000000005e+30,
         "radius_km": 1641852.0,
-        "density_g_cm3": 0.2295233635,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
+        "density_g_cm3": 0.22952336348533148,
+        "gravity_m_s2": 105.35028564376624,
+        "escape_velocity_km_s": 588.165924182605,
         "mean_temp_c": 9326.9,
         "surface_pressure_bar": null,
         "albedo": null
@@ -2345,7 +2350,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 12.5
       },
       "moons": {
         "count": null,
@@ -2378,7 +2383,8 @@
       "subtype": "蓝白主序星（A0V）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "note": "【AI复校 2026-10-27：填充:orbit/rotation_period_hours】"
     },
     {
       "id": "sirius_a",
@@ -2390,9 +2396,9 @@
       "physical": {
         "mass_kg": 4.096104e+30,
         "radius_km": 1189647.0,
-        "density_g_cm3": 0.5808018945,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
+        "density_g_cm3": 0.5808018944705612,
+        "gravity_m_s2": 193.1616691865461,
+        "escape_velocity_km_s": 677.9294952467653,
         "mean_temp_c": 9666.9,
         "surface_pressure_bar": null,
         "albedo": null
@@ -2450,19 +2456,19 @@
       "physical": {
         "mass_kg": 2.425848e+29,
         "radius_km": 107137.8,
-        "density_g_cm3": 47.0919639904,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
+        "density_g_cm3": 47.091963990433904,
+        "gravity_m_s2": 1410.4715774599404,
+        "escape_velocity_km_s": 549.7541664627701,
         "mean_temp_c": 2766.8,
         "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
-        "orbital_velocity_km_s": null,
+        "semimajor_axis_km": 1944772319099.9998,
+        "orbital_period_days": 199791750.0,
+        "orbital_velocity_km_s": 0.5,
         "inclination_deg": null,
-        "eccentricity": null,
+        "eccentricity": 0.5,
         "obliquity_deg": null,
         "rotation_period_hours": null
       },
@@ -2497,7 +2503,8 @@
       "subtype": "红矮星（M5.5Ve）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "note": "【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】"
     },
     {
       "id": "m87_star",
@@ -6422,12 +6429,12 @@
       "physical": {
         "mass_kg": 2.59076e+20,
         "radius_km": 262.7,
-        "density_g_cm3": 3.456,
-        "gravity_m_s2": 0.25,
-        "escape_velocity_km_s": 0.36,
-        "mean_temp_c": -60,
+        "density_g_cm3": 3.4116019619256095,
+        "gravity_m_s2": 0.25054932663916296,
+        "escape_velocity_km_s": 0.3628203635633152,
+        "mean_temp_c": null,
         "surface_pressure_bar": null,
-        "albedo": 0.42
+        "albedo": null
       },
       "orbit": {
         "semimajor_axis_km": 353380000.0,
@@ -6435,7 +6442,7 @@
         "orbital_velocity_km_s": 19.34,
         "inclination_deg": 7.14,
         "eccentricity": 0.0887,
-        "obliquity_deg": null,
+        "obliquity_deg": 29,
         "rotation_period_hours": 5.342
       },
       "moons": {
@@ -6447,11 +6454,11 @@
       "atmosphere": null,
       "spectral_type": null,
       "luminosity_w": null,
-      "distance_ly": null,
+      "distance_ly": 0.00016,
       "constellation": null,
       "subtype": null,
       "members": null,
-      "note": "小行星带第二大天体、已分异的原行星（铁核+岩幔+壳）；HED 陨石的母体；南极 Rheasilvia 撞击坑直径约 500 km、坑底中央峰高约 20 km。",
+      "note": "小行星带第二大天体、已分异的原行星（铁核+岩幔+壳）；HED 陨石的母体；南极 Rheasilvia 撞击坑直径约 500 km、坑底中央峰高约 20 km。 【AI复校 2026-10-27：置空:physical/temp_k; 填充:distance_ly,orbit/obliquity_deg】",
       "discovery": {
         "known_since": "1807 年 3 月 29 日",
         "discoverer": "Heinrich Olbers",
@@ -6558,11 +6565,11 @@
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
+        "semimajor_axis_km": 2962037839.8599997,
+        "orbital_period_days": 18299.025,
         "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 136.5,
+        "eccentricity": 0.592,
         "obliquity_deg": null,
         "rotation_period_hours": null
       },
@@ -6576,7 +6583,7 @@
       "spectral_type": "DA2",
       "subtype": "白矮星（DA2）",
       "members": null,
-      "note": "质量与太阳相当、半径仅约 5634 km（比地球还小）的致密残骸，表面重力约为地球的 40 万倍；它是天狼星系中率先耗尽燃料、先行演化的一颗，而明亮的伴星天狼 A 仍是主序星。",
+      "note": "质量与太阳相当、半径仅约 5634 km（比地球还小）的致密残骸，表面重力约为地球的 40 万倍；它是天狼星系中率先耗尽燃料、先行演化的一颗，而明亮的伴星天狼 A 仍是主序星。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】",
       "luminosity_w": 9.3786e+24,
       "distance_ly": 8.61,
       "constellation": "大犬座",
@@ -6625,7 +6632,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 408
       },
       "moons": {
         "count": null,
@@ -6637,7 +6644,7 @@
       "spectral_type": "K1V",
       "subtype": "橙矮星（K1V 主序星）",
       "members": 3,
-      "note": "又名 Keid，与白矮星 B、红矮星 C 组成三合系统，B/C 双星绕它一周约需 8000 年；因出现在《星际迷航》设定中（瓦肯人的太阳）而广为人知。",
+      "note": "又名 Keid，与白矮星 B、红矮星 C 组成三合系统，B/C 双星绕它一周约需 8000 年；因出现在《星际迷航》设定中（瓦肯人的太阳）而广为人知。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
       "luminosity_w": 1.5312000000000001e+26,
       "distance_ly": 16.35,
       "constellation": "波江座",
@@ -6680,11 +6687,11 @@
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": null,
+        "semimajor_axis_km": 61335126986.99999,
         "orbital_period_days": null,
         "orbital_velocity_km_s": null,
         "inclination_deg": null,
-        "eccentricity": null,
+        "eccentricity": 0.41,
         "obliquity_deg": null,
         "rotation_period_hours": null
       },
@@ -6698,7 +6705,7 @@
       "spectral_type": "DA4",
       "subtype": "白矮星（DA4）",
       "members": null,
-      "note": "看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座 40C）结伴绕行。",
+      "note": "看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座 40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】",
       "luminosity_w": 5.163972e+24,
       "distance_ly": 16.35,
       "constellation": "波江座",
@@ -6736,7 +6743,7 @@
         "density_g_cm3": 664573746572241.9,
         "gravity_m_s2": 1857881423999.9998,
         "escape_velocity_km_s": 192763.1408750127,
-        "mean_temp_c": 1599726.85,
+        "mean_temp_c": null,
         "surface_pressure_bar": null,
         "albedo": null
       },
@@ -6747,7 +6754,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 0.033
       },
       "moons": {
         "count": null,
@@ -6759,8 +6766,8 @@
       "spectral_type": null,
       "subtype": "中子星（脉冲星）",
       "members": null,
-      "note": "1054 年超新星爆发留下的中子星，自转周期 33.39 毫秒；直径仅约 20 km，表面温度约 1.6×10⁶ K，是全波段（射电到伽马射线）的明亮同步辐射源。",
-      "luminosity_w": null,
+      "note": "1054 年超新星爆发留下的中子星，自转周期 33.39 毫秒；直径仅约 20 km，表面温度约 1.6×10⁶ K，是全波段（射电到伽马射线）的明亮同步辐射源。 【AI复校 2026-10-27（仅1发成功）：置空:physical/temp_k; 填充:physical/lum_sun,orbit/rotation_period_hours】",
+      "luminosity_w": 2.871e+31,
       "distance_ly": 6524,
       "constellation": "金牛座",
       "discovery": {
@@ -6793,11 +6800,11 @@
       "tagline": "船帆座超新星遗迹中心的中子星，自转突变的经典样本",
       "physical": {
         "mass_kg": 2.78376e+30,
-        "radius_km": 10.0,
-        "density_g_cm3": 664573746572241.9,
-        "gravity_m_s2": 1857881423999.9998,
-        "escape_velocity_km_s": 192763.1408750127,
-        "mean_temp_c": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 1199726.85,
         "surface_pressure_bar": null,
         "albedo": null
       },
@@ -6808,7 +6815,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 0.0893
       },
       "moons": {
         "count": null,
@@ -6820,8 +6827,8 @@
       "spectral_type": null,
       "subtype": "中子星（脉冲星）",
       "members": null,
-      "note": "位于船帆座超新星遗迹中心，自转周期 89.33 毫秒；以周期性的'跃变'（glitch，自转突然加速）闻名，是探测中子星内部超流结构的天然实验室。",
-      "luminosity_w": null,
+      "note": "位于船帆座超新星遗迹中心，自转周期 89.33 毫秒；以周期性的'跃变'（glitch，自转突然加速）闻名，是探测中子星内部超流结构的天然实验室。 【AI复校 2026-10-27（仅1发成功）：置空:physical/radius_sun,physical/radius_km; 填充:physical/temp_k,physical/lum_sun,orbit/rotation_period_hours】",
+      "luminosity_w": 7.656e+30,
       "distance_ly": 959,
       "constellation": "船帆座",
       "discovery": {
@@ -7125,8 +7132,8 @@
       "spectral_type": "K0III",
       "subtype": "橙巨星（K0III）",
       "members": null,
-      "note": "双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。",
-      "luminosity_w": 1.251756e+28,
+      "note": "双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。 【AI复校 2026-10-27：置空:physical/lum_sun】",
+      "luminosity_w": null,
       "distance_ly": 33.78,
       "constellation": "双子座",
       "discovery": {
@@ -7235,7 +7242,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 1800
       },
       "moons": {
         "count": null,
@@ -7247,7 +7254,7 @@
       "spectral_type": "K5III",
       "subtype": "红巨星（K5III）",
       "members": null,
-      "note": "金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。",
+      "note": "金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
       "luminosity_w": 1.680492e+29,
       "distance_ly": 65.3,
       "constellation": "金牛座",
@@ -7290,11 +7297,11 @@
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
+        "semimajor_axis_km": 17951744.483999997,
+        "orbital_period_days": 5.2596,
         "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 63,
+        "eccentricity": 0.13,
         "obliquity_deg": null,
         "rotation_period_hours": null
       },
@@ -7308,7 +7315,7 @@
       "spectral_type": "B1III-IV",
       "subtype": "蓝巨星（B1III-IV 双星）",
       "members": 2,
-      "note": "两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。",
+      "note": "两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】",
       "luminosity_w": 4.63188e+30,
       "distance_ly": 250,
       "constellation": "室女座",
@@ -7464,10 +7471,10 @@
       "tagline": "牛郎星，夏季大三角的一角，扁球状飞速自转",
       "physical": {
         "mass_kg": 3.698424e+30,
-        "radius_km": 1391400.0,
-        "density_g_cm3": 0.32777218204415787,
-        "gravity_m_s2": 127.49668793388177,
-        "escape_velocity_km_s": 595.649043634258,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
         "mean_temp_c": 7426.85,
         "surface_pressure_bar": null,
         "albedo": null
@@ -7491,7 +7498,7 @@
       "spectral_type": "A7Vn",
       "subtype": "白主序星（A7Vn）",
       "members": null,
-      "note": "夏季大三角的一角。约 7.77 小时一圈的自转把它甩成扁球（赤道半径比极半径大约 25%），干涉测量已直接证实这一形变；与织女星隔银河相望的传说广为流传。",
+      "note": "夏季大三角的一角。约 7.77 小时一圈的自转把它甩成扁球（赤道半径比极半径大约 25%），干涉测量已直接证实这一形变；与织女星隔银河相望的传说广为流传。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】",
       "luminosity_w": 4.05768e+27,
       "distance_ly": 16.73,
       "constellation": "天鹰座",
@@ -7662,7 +7669,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 4400
       },
       "moons": {
         "count": null,
@@ -7674,8 +7681,8 @@
       "spectral_type": "K2III",
       "subtype": "橙巨星（K2III）",
       "members": null,
-      "note": "白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。",
-      "luminosity_w": 2.916936e+28,
+      "note": "白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。 【AI复校 2026-10-27：置空:physical/lum_sun; 填充:orbit/rotation_period_hours】",
+      "luminosity_w": null,
       "distance_ly": 65.8,
       "constellation": "白羊座",
       "discovery": {
@@ -7708,10 +7715,10 @@
       "tagline": "飞马座四边形的一角，正值暮年的蓝白巨星",
       "physical": {
         "mass_kg": 7.9536e+30,
-        "radius_km": 1947959.9999999998,
-        "density_g_cm3": 0.25688280357076865,
-        "gravity_m_s2": 139.89103350217445,
-        "escape_velocity_km_s": 738.2440485651011,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
         "mean_temp_c": 10726.85,
         "surface_pressure_bar": null,
         "albedo": null
@@ -7735,7 +7742,7 @@
       "spectral_type": "B9III",
       "subtype": "蓝白巨星（B9III）",
       "members": null,
-      "note": "飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。",
+      "note": "飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】",
       "luminosity_w": 6.1248e+28,
       "distance_ly": 140,
       "constellation": "飞马座",
@@ -7778,8 +7785,8 @@
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
+        "semimajor_axis_km": 5086327.6038,
+        "orbital_period_days": 4.74825,
         "orbital_velocity_km_s": null,
         "inclination_deg": null,
         "eccentricity": null,
@@ -7796,7 +7803,7 @@
       "spectral_type": "B8IV",
       "subtype": "蓝白亚巨星（B8IV）",
       "members": null,
-      "note": "历史上同时被算作仙女座 α 与飞马座 δ，是两座共用的一角；本身还是一对分光双星，主星比伴星亮数百倍。",
+      "note": "历史上同时被算作仙女座 α 与飞马座 δ，是两座共用的一角；本身还是一对分光双星，主星比伴星亮数百倍。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years】",
       "luminosity_w": 6.048240000000001e+28,
       "distance_ly": 97,
       "constellation": "仙女座",
@@ -7979,8 +7986,8 @@
       "spectral_type": "B2II",
       "subtype": "蓝白亮巨星（B2II）",
       "members": null,
-      "note": "约 470 万年前它距地球更近，曾以 -3.99 等成为全天最亮的星；今天它仍是夜空中最强的极紫外辐射源，其紫外光子主导着本地星际云的电离状态。",
-      "luminosity_w": 1.481436e+31,
+      "note": "约 470 万年前它距地球更近，曾以 -3.99 等成为全天最亮的星；今天它仍是夜空中最强的极紫外辐射源，其紫外光子主导着本地星际云的电离状态。 【AI复校 2026-10-27（仅1发成功）：置空:physical/lum_sun】",
+      "luminosity_w": null,
       "distance_ly": 430,
       "constellation": "大犬座",
       "discovery": {
@@ -8439,11 +8446,11 @@
       "parent": null,
       "tagline": "船尾座最亮的星，肉眼可见最热的恒星之一",
       "physical": {
-        "mass_kg": 7.9536e+31,
+        "mass_kg": null,
         "radius_km": 9739800.0,
-        "density_g_cm3": 0.020550624285661484,
-        "gravity_m_s2": 55.956413400869764,
-        "escape_velocity_km_s": 1044.0347458219878,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
         "mean_temp_c": 41726.85,
         "surface_pressure_bar": null,
         "albedo": null
@@ -8455,7 +8462,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 1.78
       },
       "moons": {
         "count": null,
@@ -8467,8 +8474,8 @@
       "spectral_type": "O5Ibf",
       "subtype": "蓝超巨星（O5Ibf）",
       "members": null,
-      "note": "表面温度约 42000 K，是肉眼可见的最热恒星之一；光度约为太阳的 50 万倍，星风速度高达约 2200 km/s。",
-      "luminosity_w": 1.914e+32,
+      "note": "表面温度约 42000 K，是肉眼可见的最热恒星之一；光度约为太阳的 50 万倍，星风速度高达约 2200 km/s。 【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg,physical/lum_sun; 填充:orbit/rotation_period_hours】",
+      "luminosity_w": null,
       "distance_ly": 1093,
       "constellation": "船尾座",
       "discovery": {
@@ -8528,8 +8535,8 @@
       "spectral_type": "WN5h",
       "subtype": "沃尔夫-拉叶星（WN5h）",
       "members": null,
-      "note": "目前已知质量最大的恒星（约 291 M☉，逼近恒星质量的理论上限），光度约为太阳的 724 万倍；强劲星风每年吹走相当于数个地球的质量。",
-      "luminosity_w": 2.7730032e+33,
+      "note": "目前已知质量最大的恒星（约 291 M☉，逼近恒星质量的理论上限），光度约为太阳的 724 万倍；强劲星风每年吹走相当于数个地球的质量。 【AI复校 2026-10-27：置空:physical/lum_sun】",
+      "luminosity_w": null,
       "distance_ly": 163000,
       "constellation": "剑鱼座",
       "discovery": {
@@ -8571,10 +8578,10 @@
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
+        "semimajor_axis_km": 9275067.983399998,
+        "orbital_period_days": 10.227,
         "orbital_velocity_km_s": null,
-        "inclination_deg": null,
+        "inclination_deg": 98.7,
         "eccentricity": null,
         "obliquity_deg": null,
         "rotation_period_hours": null
@@ -8589,8 +8596,8 @@
       "spectral_type": "B8V",
       "subtype": "食双星（三合星系统）",
       "members": 3,
-      "note": "每 2.87 天，较暗的伴星从亮星前方经过，亮度从 2.1 等骤降到 3.4 等并持续约 10 小时——宇宙级的'眨眼'；中国古代因此称它为'魔星'。",
-      "luminosity_w": 6.96696e+28,
+      "note": "每 2.87 天，较暗的伴星从亮星前方经过，亮度从 2.1 等骤降到 3.4 等并持续约 10 小时——宇宙级的'眨眼'；中国古代因此称它为'魔星'。 【AI复校 2026-10-27：置空:physical/lum_sun; 填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg】",
+      "luminosity_w": null,
       "distance_ly": 94,
       "constellation": "英仙座",
       "discovery": {
@@ -8633,12 +8640,12 @@
       },
       "orbit": {
         "semimajor_axis_km": null,
-        "orbital_period_days": null,
+        "orbital_period_days": 7.1589,
         "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 89,
+        "eccentricity": 0,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 12.9
       },
       "moons": {
         "count": null,
@@ -8650,7 +8657,7 @@
       "spectral_type": "B7II",
       "subtype": "食双星（质量转移系统）",
       "members": 2,
-      "note": "两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。",
+      "note": "两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。 【AI复校 2026-10-27：置空:physical/mass_sun; 填充:orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity,orbit/rotation_period_hours】",
       "luminosity_w": 2.4882000000000002e+30,
       "distance_ly": 960,
       "constellation": "天琴座",
@@ -8683,21 +8690,21 @@
       "parent": null,
       "tagline": "每 27 年才发生一次罕见星食的'柱一'",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 2.985e+31,
         "radius_km": 99485100.0,
-        "density_g_cm3": null,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
+        "density_g_cm3": 7.237383795491711e-06,
+        "gravity_m_s2": 0.20128641091380564,
+        "escape_velocity_km_s": 200.1249545579014,
         "mean_temp_c": 7476.85,
         "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
         "semimajor_axis_km": null,
-        "orbital_period_days": null,
+        "orbital_period_days": 9898.275,
         "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
+        "inclination_deg": 89,
+        "eccentricity": 0.22,
         "obliquity_deg": null,
         "rotation_period_hours": null
       },
@@ -8711,9 +8718,9 @@
       "spectral_type": "F0Iab",
       "subtype": "食变星（F0Iab 主星 + 尘埃盘伴星）",
       "members": 2,
-      "note": "每 27.1 年发生一次持续约 2 年的罕见星食，遮挡者被认为是一颗被巨大尘埃盘包裹的伴星。主星质量估计分歧极大（约 2.2~15 M☉），暂无共识，故质量诚实留空。",
+      "note": "每 27.1 年发生一次持续约 2 年的罕见星食，遮挡者被认为是一颗被巨大尘埃盘包裹的伴星。主星质量估计分歧极大（约 2.2~15 M☉），暂无共识，故质量诚实留空。 【AI复校 2026-10-27：置空:distance_ly; 填充:physical/mass_sun,physical/mass_kg,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】",
       "luminosity_w": 1.449855e+31,
-      "distance_ly": 1350,
+      "distance_ly": null,
       "constellation": "御夫座",
       "discovery": {
         "known_since": "自古已知；1821 年前后开始被系统记录",
@@ -8772,9 +8779,9 @@
       "spectral_type": "G2V",
       "subtype": "黄矮星（G2V）",
       "members": null,
-      "note": "拥有系外行星 Kepler-452b：第一颗被确认位于类太阳恒星宜居带内、且半径接近地球的行星，公转周期约 385 天，被昵称为'地球表哥'。",
+      "note": "拥有系外行星 Kepler-452b：第一颗被确认位于类太阳恒星宜居带内、且半径接近地球的行星，公转周期约 385 天，被昵称为'地球表哥'。 【AI复校 2026-10-27：置空:distance_ly】",
       "luminosity_w": 4.210800000000001e+26,
-      "distance_ly": 1810,
+      "distance_ly": null,
       "constellation": "天鹅座",
       "discovery": {
         "known_since": "2015 年开普勒望远镜确认其行星系统",
@@ -8821,7 +8828,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 540
       },
       "moons": {
         "count": null,
@@ -8833,7 +8840,7 @@
       "spectral_type": "G5V",
       "subtype": "黄矮星（G5V）",
       "members": null,
-      "note": "拥有 Kepler-22b：第一颗被确认位于类太阳恒星宜居带内的系外行星，半径约 2.4 倍地球，可能是一颗'水世界'。",
+      "note": "拥有 Kepler-22b：第一颗被确认位于类太阳恒星宜居带内的系外行星，半径约 2.4 倍地球，可能是一颗'水世界'。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
       "luminosity_w": 3.02412e+26,
       "distance_ly": 644,
       "constellation": "天鹅座",
@@ -8943,7 +8950,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 132
       },
       "moons": {
         "count": null,
@@ -8955,7 +8962,7 @@
       "spectral_type": "M3V",
       "subtype": "红矮星（M3V）",
       "members": null,
-      "note": "距地仅 20.4 光年的红矮星，已确认多颗系外行星；其中 Gliese 581g/c/d 是否宜居曾引发长期争论，是系外行星科学早期最著名的事件之一。",
+      "note": "距地仅 20.4 光年的红矮星，已确认多颗系外行星；其中 Gliese 581g/c/d 是否宜居曾引发长期争论，是系外行星科学早期最著名的事件之一。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
       "luminosity_w": 4.9764e+24,
       "distance_ly": 20.4,
       "constellation": "天秤座",
@@ -9189,7 +9196,7 @@
         "inclination_deg": null,
         "eccentricity": null,
         "obliquity_deg": null,
-        "rotation_period_hours": null
+        "rotation_period_hours": 16.1
       },
       "moons": {
         "count": null,
@@ -9201,7 +9208,7 @@
       "spectral_type": "A6V",
       "subtype": "白主序星（A6V）",
       "members": null,
-      "note": "第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座 βb/c）；它还是'绘架座 β 移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。",
+      "note": "第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座 βb/c）；它还是'绘架座 β 移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
       "luminosity_w": 3.3303599999999997e+27,
       "distance_ly": 63.4,
       "constellation": "绘架座",
@@ -9235,10 +9242,10 @@
       "tagline": "小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。",
       "physical": {
         "mass_kg": 2.97e+30,
-        "radius_km": 990000,
-        "density_g_cm3": 0.7307389489986013,
-        "gravity_m_s2": 202.24242424242425,
-        "escape_velocity_km_s": 632.8032869699714,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
         "mean_temp_c": 6256.85,
         "surface_pressure_bar": null,
         "albedo": null
@@ -9265,7 +9272,7 @@
       "constellation": "小犬座",
       "subtype": "主序星（F5V-IV）",
       "members": "南河三A（主星）与南河三B（白矮星伴星）组成的双星系统",
-      "note": "南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。",
+      "note": "南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
@@ -9297,12 +9304,12 @@
       "physical": {
         "mass_kg": 6.34e+20,
         "radius_km": 455,
-        "density_g_cm3": 1.4,
+        "density_g_cm3": 1.6068171506641575,
         "gravity_m_s2": 0.20438671658012314,
         "escape_velocity_km_s": 0.43126779625646994,
         "mean_temp_c": -228.14999999999998,
         "surface_pressure_bar": null,
-        "albedo": 0.28
+        "albedo": null
       },
       "orbit": {
         "semimajor_axis_km": 5860346986.8018,
@@ -9311,7 +9318,7 @@
         "inclination_deg": 20.59,
         "eccentricity": 0.227,
         "obliquity_deg": null,
-        "rotation_period_hours": 13.188
+        "rotation_period_hours": null
       },
       "moons": {
         "count": 1,
@@ -9326,7 +9333,7 @@
       "constellation": "双鱼座",
       "subtype": "海王星外天体（plutino，类冥矮行星）",
       "members": "卫星：范斯（Vanth，直径约222 km）",
-      "note": "直径约910 km（870–960 km区间）；质量为Orcus+Vanth双星系统总质量，Orcus本体约占90%；与海王星3:2轨道共振，属plutino群。",
+      "note": "直径约910 km（870–960 km区间）；质量为Orcus+Vanth双星系统总质量，Orcus本体约占90%；与海王星3:2轨道共振，属plutino群。 【AI复校 2026-10-27：置空:physical/mass_sun,orbit/rotation_period_hours】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
@@ -9417,19 +9424,19 @@
       "parent": "sun",
       "tagline": "柯伊伯带离散盘冰质矮行星，以中国水神共工命名",
       "physical": {
-        "mass_kg": 1.75e+21,
+        "mass_kg": null,
         "radius_km": 615,
-        "density_g_cm3": 1.74,
-        "gravity_m_s2": 0.30879767334258706,
-        "escape_velocity_km_s": 0.6162963071537765,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
         "mean_temp_c": -243.14999999999998,
         "surface_pressure_bar": null,
-        "albedo": 0.14
+        "albedo": null
       },
       "orbit": {
         "semimajor_axis_km": 10095612304.189499,
         "orbital_period_days": 202483.6425,
-        "orbital_velocity_km_s": null,
+        "orbital_velocity_km_s": 3.7,
         "inclination_deg": 30.627,
         "eccentricity": 0.49943,
         "obliquity_deg": null,
@@ -9444,11 +9451,11 @@
       "atmosphere": null,
       "spectral_type": null,
       "luminosity_w": null,
-      "distance_ly": 0.00107,
+      "distance_ly": null,
       "constellation": "双子座",
       "subtype": "离散盘矮行星（冰质天体）",
       "members": "拥有1颗已知卫星：相柳（Xiangliu，直径约100 km）",
-      "note": "直径约1230 km（半径615 km）；质量取1.75×10^21 kg，不同观测给出1.75~2.25×10^21 kg范围；自转周期早期测为22.4h，后续HST观测修正为约22.4h或44.8h（疑似双峰反照率导致），此处取22.4h；表面温度约30 K，反照率约0.1~0.15；距离按半长轴67.5 AU折算。",
+      "note": "直径约1230 km（半径615 km）；质量取1.75×10^21 kg，不同观测给出1.75~2.25×10^21 kg范围；自转周期早期测为22.4h，后续HST观测修正为约22.4h或44.8h（疑似双峰反照率导致），此处取22.4h；表面温度约30 K，反照率约0.1~0.15；距离按半长轴67.5 AU折算。 【AI复校 2026-10-27（仅1发成功）：置空:distance_ly,physical/mass_sun,physical/mass_kg; 填充:orbit/orbital_velocity_km_s】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
@@ -9480,12 +9487,12 @@
       "physical": {
         "mass_kg": 2.11e+20,
         "radius_km": 256,
-        "density_g_cm3": 2.7,
-        "gravity_m_s2": 0.215,
-        "escape_velocity_km_s": 0.332,
+        "density_g_cm3": 3.002437322651439,
+        "gravity_m_s2": 0.2148764038085937,
+        "escape_velocity_km_s": 0.33168768254187553,
         "mean_temp_c": -103.14999999999998,
         "surface_pressure_bar": null,
-        "albedo": 0.159
+        "albedo": null
       },
       "orbit": {
         "semimajor_axis_km": 414834895.4511,
@@ -9493,8 +9500,8 @@
         "orbital_velocity_km_s": 17.88,
         "inclination_deg": 34.8,
         "eccentricity": 0.232,
-        "obliquity_deg": 17.1,
-        "rotation_period_hours": 11.3
+        "obliquity_deg": null,
+        "rotation_period_hours": null
       },
       "moons": {
         "count": 0,
@@ -9509,7 +9516,7 @@
       "constellation": "双鱼座",
       "subtype": "主带小行星",
       "members": null,
-      "note": "智神星是太阳系第二大小行星（按体积和质量仅次于谷神星），但因其极不规则的形状（类似压扁的土豆），其等效半径约为512公里。其轨道倾角高达34.8度，远大于其他大型小行星。",
+      "note": "智神星是太阳系第二大小行星（按体积和质量仅次于谷神星），但因其极不规则的形状（类似压扁的土豆），其等效半径约为512公里。其轨道倾角高达34.8度，远大于其他大型小行星。 【AI复校 2026-10-27：置空:orbit/obliquity_deg,orbit/rotation_period_hours】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
@@ -9525,6 +9532,1348 @@
       "image": "assets/planets/pallas.webp",
       "source_dates": {
         "src_pallas": "2026-10-26"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "juno",
+      "name": "婚神星",
+      "name_en": "Juno",
+      "category": "asteroid",
+      "parent": null,
+      "tagline": "第3号小行星，主带大型石质小行星，最早发现的小行星之一",
+      "physical": {
+        "mass_kg": 2.67e+19,
+        "radius_km": 136,
+        "density_g_cm3": 2.5339960113913382,
+        "gravity_m_s2": 0.09634288494809687,
+        "escape_velocity_km_s": 0.16188040247627983,
+        "mean_temp_c": -110.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 399426314.76899993,
+        "orbital_period_days": 1592.49,
+        "orbital_velocity_km_s": 17.9,
+        "inclination_deg": 13.0,
+        "eccentricity": 0.256,
+        "obliquity_deg": 98,
+        "rotation_period_hours": 7.21
+      },
+      "moons": {
+        "count": 0,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": "室女座",
+      "subtype": "S型小行星",
+      "members": null,
+      "note": "参数为近似观测值，尺寸、质量存在一定测量误差 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_juno"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/juno.webp",
+      "source_dates": {
+        "src_juno": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "hygiea",
+      "name": "健神星",
+      "name_en": "Hygiea",
+      "category": "asteroid",
+      "parent": null,
+      "tagline": "主小行星带大型小行星，曾被认定为矮行星候选天体",
+      "physical": {
+        "mass_kg": 8.3e+19,
+        "radius_km": 217,
+        "density_g_cm3": 1.9391449855706093,
+        "gravity_m_s2": 0.11763724011977318,
+        "escape_velocity_km_s": 0.2259525662876648,
+        "mean_temp_c": -113.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 469737313.99799997,
+        "orbital_period_days": 2030.79,
+        "orbital_velocity_km_s": 16.8,
+        "inclination_deg": 3.84,
+        "eccentricity": 0.12,
+        "obliquity_deg": 127,
+        "rotation_period_hours": 13.83
+      },
+      "moons": {
+        "count": 0,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": "室女座",
+      "subtype": "C型小行星",
+      "members": null,
+      "note": "质量、半径为观测近似值，是否为矮行星仍存在争议 【2发不一致:orbit/rotation_period_hours(13.83 vs 27.6)，待人工核定】 【AI复校 2026-10-27：填充:orbit/obliquity_deg】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_hygiea"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/hygiea.webp",
+      "source_dates": {
+        "src_hygiea": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "sedna",
+      "name": "赛德娜",
+      "name_en": "Sedna",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "外海王星矮行星，轨道极扁，远日点极其遥远",
+      "physical": {
+        "mass_kg": 1e+21,
+        "radius_km": 995,
+        "density_g_cm3": 0.24234951138901298,
+        "gravity_m_s2": 0.06741243907982121,
+        "escape_velocity_km_s": 0.36626596042881765,
+        "mean_temp_c": -261.15,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 75696522574.2,
+        "orbital_period_days": 4163850.0,
+        "orbital_velocity_km_s": 1.04,
+        "inclination_deg": 11.93,
+        "eccentricity": 0.849,
+        "obliquity_deg": null,
+        "rotation_period_hours": 10.3
+      },
+      "moons": {
+        "count": 0,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 0.00084,
+      "constellation": "鲸鱼座",
+      "subtype": "外海王星矮行星",
+      "members": "",
+      "note": "质量、半径为近似估计值，存在较大观测不确定性 【2发不一致:physical/mass_sun(1.3e-08 vs 1.04e-08)，待人工核定】 【AI复校 2026-10-27（仅1发成功）：置空:physical/mass_sun; 填充:orbit/orbital_velocity_km_s】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_sedna"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/sedna.webp",
+      "source_dates": {
+        "src_sedna": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "disnomia",
+      "name": "阋卫一",
+      "name_en": "Dysnomia",
+      "category": "moon",
+      "parent": "eris",
+      "tagline": "阋神星唯一已知卫星，2005年被发现",
+      "physical": {
+        "mass_kg": 8.2e+19,
+        "radius_km": 350,
+        "density_g_cm3": 1.4,
+        "gravity_m_s2": 0.044674938775510195,
+        "escape_velocity_km_s": 0.17684020228120398,
+        "mean_temp_c": -243.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": 0.04
+      },
+      "orbit": {
+        "semimajor_axis_km": 5535121.215899999,
+        "orbital_period_days": 13.8795,
+        "orbital_velocity_km_s": 0.14,
+        "inclination_deg": 0.78,
+        "eccentricity": 0.006,
+        "obliquity_deg": null,
+        "rotation_period_hours": 137.16
+      },
+      "moons": {
+        "count": 0,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 96.2,
+      "constellation": "杜鹃座",
+      "subtype": "天然卫星",
+      "members": null,
+      "note": "质量、半径、密度为近似估算值；轨道参数存在观测误差 【2发不一致:orbit/orbital_period_years(0.038 vs 0.0136)，待人工核定】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_dysnomia"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/disnomia.webp",
+      "source_dates": {
+        "src_dysnomia": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "quaoar",
+      "name": "创神星",
+      "name_en": "Quaoar",
+      "category": "dwarf_planet",
+      "parent": "sun",
+      "tagline": "柯伊伯带矮行星，拥有行星环，位于海王星轨道外侧",
+      "physical": {
+        "mass_kg": 1.2e+21,
+        "radius_km": 555,
+        "density_g_cm3": 1.6757672065954143,
+        "gravity_m_s2": 0.26000486973459946,
+        "escape_velocity_km_s": 0.5372200716702658,
+        "mean_temp_c": -231.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 6522467162.5199995,
+        "orbital_period_days": 105009.375,
+        "orbital_velocity_km_s": 4.5,
+        "inclination_deg": 7.99,
+        "eccentricity": 0.038,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": 1,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 43.7,
+      "constellation": "蛇夫座",
+      "subtype": "柯伊伯带矮行星",
+      "members": "卫星：创卫一（Weywot）",
+      "note": "半径、质量为近似测量值；发现存在行星环 【2发仅1发成功，待人工核定】 【AI复校 2026-10-27：置空:orbit/rotation_period_hours】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_quaoar"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/quaoar.webp",
+      "source_dates": {
+        "src_quaoar": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "chiron",
+      "name": "凯龙星",
+      "name_en": "Chiron",
+      "category": "asteroid",
+      "parent": null,
+      "tagline": "半人马型小天体，位于土星与天王星之间，兼具彗星特征",
+      "physical": {
+        "mass_kg": 3.7e+18,
+        "radius_km": 106,
+        "density_g_cm3": 0.7416440536147451,
+        "gravity_m_s2": 0.021977394090423635,
+        "escape_velocity_km_s": 0.06825838810849412,
+        "mean_temp_c": -183.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 2047994849.8829997,
+        "orbital_period_days": 18415.905,
+        "orbital_velocity_km_s": 6.6,
+        "inclination_deg": 6.92,
+        "eccentricity": 0.38,
+        "obliquity_deg": null,
+        "rotation_period_hours": 5.92
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 0.00051,
+      "constellation": "人马座",
+      "subtype": "半人马天体",
+      "members": "",
+      "note": "参数为近似值，凯龙星归类存在争议，也被编号为95P/凯龙彗星 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_chiron"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/chiron.webp",
+      "source_dates": {
+        "src_chiron": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "oj_287",
+      "name": "OJ 287",
+      "name_en": "OJ 287",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "巨蟹座耀变体，由一对超大质量双黑洞构成，约12年周期性爆发",
+      "physical": {
+        "mass_kg": 3.65e+41,
+        "radius_km": 542112391470.5291,
+        "density_g_cm3": null,
+        "gravity_m_s2": 83539437.58573388,
+        "escape_velocity_km_s": 9498557.395341285,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 3365952090749.9995,
+        "orbital_period_days": 4353.78,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": 0.67,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 4000000000,
+      "constellation": "巨蟹座",
+      "subtype": "超大质量黑洞系统（活动星系核/耀变体BL Lac型）",
+      "members": "主黑洞183.5亿倍太阳质量；次黑洞约1.46亿倍太阳质量，环绕主黑洞运动",
+      "note": "主黑洞质量存在新旧模型差异；爆发由次黑洞撞击主黑洞吸积盘产生 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_oj_287"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/oj_287.webp",
+      "source_dates": {
+        "src_oj_287": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "j2157-3602",
+      "name": "J2157-3602",
+      "name_en": "J2157-3602",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "已知增长最快的超大质量黑洞，位于遥远类星体核心",
+      "physical": {
+        "mass_kg": 6.76e+40,
+        "radius_km": 100402185379.19936,
+        "density_g_cm3": null,
+        "gravity_m_s2": 442.272718360945,
+        "escape_velocity_km_s": 298896.45215176255,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": 2.6796000000000002e+41,
+      "distance_ly": 12400000000,
+      "constellation": "显微镜座",
+      "subtype": "超大质量黑洞",
+      "members": "宿主类星体 J2157-3602",
+      "note": "质量与光度为测量近似值，黑洞视界半径由史瓦西公式估算 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_j2157_3602"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/j2157-3602.webp",
+      "source_dates": {
+        "src_j2157_3602": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "phoenix_a",
+      "name": "凤凰座A",
+      "name_en": "Phoenix A",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "凤凰座A是凤凰座星系团中心的超大质量黑洞",
+      "physical": {
+        "mass_kg": 1.989e+41,
+        "radius_km": 295414122365.7212,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 5700000000,
+      "constellation": "凤凰座",
+      "subtype": "超大质量黑洞",
+      "members": null,
+      "note": "质量约1000亿倍太阳质量，为已知质量最大黑洞之一，事件视界半径为近似值 【2发不一致，争议字段已置空待补:physical/radius_km(296000000.0 vs 295250000000)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_phoenix_a"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/phoenix_a.webp",
+      "source_dates": {
+        "src_phoenix_a": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "gaia_bh1",
+      "name": "盖亚BH1",
+      "name_en": "Gaia BH1",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "距离地球约1560光年的休眠恒星级黑洞，拥有一颗G型伴星",
+      "physical": {
+        "mass_kg": 1.95e+31,
+        "radius_km": 28.962168859384434,
+        "density_g_cm3": null,
+        "gravity_m_s2": 1547479191438.7632,
+        "escape_velocity_km_s": 299589.3741497656,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 149597870.7,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 127,
+        "eccentricity": 0.45,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1560,
+      "constellation": "蛇夫座",
+      "subtype": "恒星级黑洞",
+      "members": "黑洞+G型主序伴星",
+      "note": "黑洞参数为观测拟合近似值，伴星轨道参数存在一定测量误差 【2发不一致，争议字段已置空待补:orbit/orbital_period_years(0.33 vs 0.508)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_gaia_bh1"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/gaia_bh1.webp",
+      "source_dates": {
+        "src_gaia_bh1": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "v404_cygni",
+      "name": "天鹅座V404",
+      "name_en": "V404 Cygni",
+      "category": "black_hole",
+      "parent": null,
+      "tagline": "天鹅座恒星级黑洞，低质量X射线双星（三体系统），存在间歇性爆发",
+      "physical": {
+        "mass_kg": 1.791e+31,
+        "radius_km": 26.600638167773084,
+        "density_g_cm3": null,
+        "gravity_m_s2": 1689345638532.421,
+        "escape_velocity_km_s": 299788.5721136228,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 20943701.898000002,
+        "orbital_period_days": 6.464925,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": 0,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 7800,
+      "constellation": "天鹅座",
+      "subtype": "恒星级黑洞（黑洞无光谱，伴星K0IV）",
+      "members": "黑洞+K0IV型供体恒星+遥远第三颗伴星，内层双星公转约6.47天",
+      "note": "黑洞质量约9倍太阳质量，史瓦西半径约26.6km；内层双星轨道偏心率近似为0，2015年发生大规模X射线爆发 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_v404_cygni"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/v404_cygni.webp",
+      "source_dates": {
+        "src_v404_cygni": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "51_pegasi_b",
+      "name": "飞马座51b",
+      "name_en": "51 Pegasi b",
+      "category": "planet",
+      "parent": "51_pegasi",
+      "tagline": "首颗被发现围绕类太阳恒星运转的热木星",
+      "physical": {
+        "mass_kg": 6.75e+26,
+        "radius_km": null,
+        "density_g_cm3": 0.37,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 926.85,
+        "surface_pressure_bar": null,
+        "albedo": 0.05
+      },
+      "orbit": {
+        "semimajor_axis_km": 7883807.785889999,
+        "orbital_period_days": 4.16385,
+        "orbital_velocity_km_s": 136.0,
+        "inclination_deg": 80.0,
+        "eccentricity": 0.006,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 50.6,
+      "constellation": "飞马座",
+      "subtype": "热木星",
+      "members": null,
+      "note": "参数为近似测量值，质量下限约0.46木星质量 【2发不一致，争议字段已置空待补:physical/radius_km(714920 vs 71492)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_51_pegasi_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/51_pegasi_b.webp",
+      "source_dates": {
+        "src_51_pegasi_b": "2026-10-27"
+      },
+      "image_credit": "程序化示意图",
+      "image_url": null,
+      "image_source": "programmatic",
+      "image_locked": false
+    },
+    {
+      "id": "proxima_centauri_b",
+      "name": "比邻星b",
+      "name_en": "Proxima Centauri b",
+      "category": "planet",
+      "parent": "proxima_centauri",
+      "tagline": "比邻星的类地系外行星，位于宜居带内",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 7070.0,
+        "density_g_cm3": 5.1,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": -39.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": 0.3
+      },
+      "orbit": {
+        "semimajor_axis_km": 7255496.728949999,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": 47.4,
+        "inclination_deg": null,
+        "eccentricity": 0.11,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 4.24,
+      "constellation": "半人马座",
+      "subtype": "岩石行星",
+      "members": null,
+      "note": "参数为观测近似值，质量约1.17地球质量，半径约1.08地球半径，潮汐锁定，是否存在大气未知 【2发不一致，争议字段已置空待补:physical/mass_kg(2.4e+24 vs 1.27e+24);orbit/orbital_period_years(0.0765 vs 0.065);orbit/inclination_deg(88.0 vs 133)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_proxima_centauri_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/proxima_centauri_b.webp",
+      "source_dates": {
+        "src_proxima_centauri_b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "kepler_452b",
+      "name": "开普勒452b",
+      "name_en": "Kepler-452b",
+      "category": "planet",
+      "parent": "kepler_452",
+      "tagline": "位于天鹅座的系外类地行星，常被称为地球2.0",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 12600.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": -8.149999999999977,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 156479372.7522,
+        "orbital_period_days": 151.21349999999998,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 89.8,
+        "eccentricity": 0.03,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1402.0,
+      "constellation": "天鹅座",
+      "subtype": "超级地球",
+      "members": null,
+      "note": "质量、密度等参数尚未精确测定；半径约为地球1.6倍 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_kepler_452b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/kepler_452b.webp",
+      "source_dates": {
+        "src_kepler_452b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "kepler_22b",
+      "name": "开普勒22b",
+      "name_en": "Kepler-22b",
+      "category": "planet",
+      "parent": "kepler_22",
+      "tagline": "位于宜居带的系外行星，环绕恒星开普勒22运行",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": 15200.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": -11.149999999999977,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 127158190.09499998,
+        "orbital_period_days": 233.76,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 89.76,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 620.0,
+      "constellation": "天鹅座",
+      "subtype": "超级地球",
+      "members": "",
+      "note": "质量尚未精确测定，半径约为地球2.4倍，温度为平衡温度 【2发不一致，争议字段已置空待补:orbit/eccentricity(0.06 vs 0)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_kepler_22b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/kepler_22b.webp",
+      "source_dates": {
+        "src_kepler_22b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "k2-18_b",
+      "name": "K2-18 b",
+      "name_en": "K2-18 b",
+      "category": "planet",
+      "parent": "k2-18",
+      "tagline": "位于狮子座的系外行星，被认为是氢海行星，大气中检测到二甲硫醚",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": 2.6,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": -3.1499999999999773,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 21392495.510099996,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 89.5,
+        "eccentricity": 0.08,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 124.0,
+      "constellation": "狮子座",
+      "subtype": "亚海王星",
+      "members": null,
+      "note": "质量、半径、温度为近似值；存在氢大气层，有研究推测存在液态水海洋 【2发不一致，争议字段已置空待补:physical/mass_kg(1.9e+25 vs 8.1e+25);physical/radius_km(15600 vs 26000);orbit/orbital_period_years(0.055 vs 0.0238)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_k2_18_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/k2-18_b.webp",
+      "source_dates": {
+        "src_k2_18_b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "lhs_1140_b",
+      "name": "LHS 1140 b",
+      "name_en": "LHS 1140 b",
+      "category": "planet",
+      "parent": "lhs_1140",
+      "tagline": "位于宜居带的岩石超级地球，环绕红矮星LHS 1140",
+      "physical": {
+        "mass_kg": 3.340512e+25,
+        "radius_km": 10922.49,
+        "density_g_cm3": 7.8,
+        "gravity_m_s2": 18.687703156962144,
+        "escape_velocity_km_s": 20.204764331953363,
+        "mean_temp_c": -47.14999999999998,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 13089813.686249997,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": 37.0,
+        "inclination_deg": 89.9,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": 306.7
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": null,
+      "constellation": "鲸鱼座",
+      "subtype": "超级地球（岩石行星）",
+      "members": "",
+      "note": "参数存在版本差异，近年测量质量约5.6倍地球质量，半径约1.73倍地球半径，潮汐锁定可能性高 【2发不一致，争议字段已置空待补:distance_ly(48.9 vs 41);physical/mass_kg(3.34e+25 vs 6.63e+24);physical/radius_km(11030 vs 8750);orbit/orbital_period_years(0.0677 vs 0.035);orbit/eccentricity(0.04 vs 0.06)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_lhs_1140_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/lhs_1140_b.webp",
+      "source_dates": {
+        "src_lhs_1140_b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "wasp-12_b",
+      "name": "WASP-12 b",
+      "name_en": "WASP-12 b",
+      "category": "planet",
+      "parent": "wasp-12",
+      "tagline": "一颗距离母星极近的热木星，正在被恒星潮汐吞噬",
+      "physical": {
+        "mass_kg": 1.51e+27,
+        "radius_km": 148000.0,
+        "density_g_cm3": 0.24,
+        "gravity_m_s2": 4.600867421475529,
+        "escape_velocity_km_s": 36.90334343601887,
+        "mean_temp_c": 2326.85,
+        "surface_pressure_bar": null,
+        "albedo": 0.06
+      },
+      "orbit": {
+        "semimajor_axis_km": 3500590.1743799997,
+        "orbital_period_days": 3.5063999999999997,
+        "orbital_velocity_km_s": 230.0,
+        "inclination_deg": 86.0,
+        "eccentricity": 0.049,
+        "obliquity_deg": null,
+        "rotation_period_hours": 2.08
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 1410.0,
+      "constellation": "御夫座",
+      "subtype": "热木星",
+      "members": null,
+      "note": "参数为文献近似值，行星存在大气流失，半径存在测量分歧 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_wasp_12_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/wasp-12_b.webp",
+      "source_dates": {
+        "src_wasp_12_b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "55_cancri_e",
+      "name": "巨蟹座55e",
+      "name_en": "55 Cancri e",
+      "category": "planet",
+      "parent": "55_cancri_a",
+      "tagline": "巨蟹座55A周围的超级地球，极热碳行星，被称为钻石行星",
+      "physical": {
+        "mass_kg": 4.02e+25,
+        "radius_km": 12500.0,
+        "density_g_cm3": 5.9,
+        "gravity_m_s2": 17.1708672,
+        "escape_velocity_km_s": 20.718872556198612,
+        "mean_temp_c": 2126.85,
+        "surface_pressure_bar": null,
+        "albedo": 0.4
+      },
+      "orbit": {
+        "semimajor_axis_km": 2303807.20878,
+        "orbital_period_days": 3.3603,
+        "orbital_velocity_km_s": 75.0,
+        "inclination_deg": 83.5,
+        "eccentricity": 0.05,
+        "obliquity_deg": null,
+        "rotation_period_hours": 0.078
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 40.0,
+      "constellation": "巨蟹座",
+      "subtype": "超级地球",
+      "members": null,
+      "note": "参数为近似值，该行星潮汐锁定，是一颗碳富集的超级地球 【2发仅1发成功，待人工核定】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_55_cancri_e"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/55_cancri_e.webp",
+      "source_dates": {
+        "src_55_cancri_e": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "hd_189733_b",
+      "name": "HD 189733 b",
+      "name_en": "HD 189733 b",
+      "category": "planet",
+      "parent": "hd_189733",
+      "tagline": "位于狐狸座的热木星，呈深蓝色，存在硅酸盐雨",
+      "physical": {
+        "mass_kg": 1.13e+27,
+        "radius_km": 76400.0,
+        "density_g_cm3": 0.95,
+        "gravity_m_s2": 12.920458594885005,
+        "escape_velocity_km_s": 44.43248893882076,
+        "mean_temp_c": 926.85,
+        "surface_pressure_bar": null,
+        "albedo": 0.4
+      },
+      "orbit": {
+        "semimajor_axis_km": 4637533.991699999,
+        "orbital_period_days": 11.32275,
+        "orbital_velocity_km_s": 152.0,
+        "inclination_deg": 85.7,
+        "eccentricity": 0.004,
+        "obliquity_deg": null,
+        "rotation_period_hours": 2.72
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 64.5,
+      "constellation": "狐狸座",
+      "subtype": "热木星",
+      "members": null,
+      "note": "参数为文献近似值，该行星是首颗测得颜色的系外行星，存在熔融硅酸盐雨 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_hd_189733_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/hd_189733_b.webp",
+      "source_dates": {
+        "src_hd_189733_b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "wasp_107_b",
+      "name": "WASP-107 b",
+      "name_en": "WASP-107 b",
+      "category": "planet",
+      "parent": "wasp_107",
+      "tagline": "一颗低密度热木星，大气富含甲烷与水蒸气",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": 0.12,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 456.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 8227882.888499999,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": 85.0,
+        "inclination_deg": 89.7,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 200.0,
+      "constellation": "六分仪座",
+      "subtype": "气态巨行星",
+      "members": null,
+      "note": "参数为近似值，是极蓬松气态巨行星，质量约木星0.12倍，半径接近木星 【2发不一致，争议字段已置空待补:physical/mass_kg(1.02e+26 vs 2.44e+26);physical/radius_km(105000 vs 79200);orbit/orbital_period_years(0.027 vs 0.094);orbit/eccentricity(0.0 vs 0.06)】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_wasp_107_b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/wasp_107_b.webp",
+      "source_dates": {
+        "src_wasp_107_b": "2026-10-27"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_source": "doubao",
+      "image_locked": false
+    },
+    {
+      "id": "kepler_16b",
+      "name": "开普勒16b",
+      "name_en": "Kepler-16b",
+      "category": "planet",
+      "parent": "kepler_16",
+      "tagline": "环绕双星系统开普勒16的系外行星，是首个被证实的环双星行星",
+      "physical": {
+        "mass_kg": 1.04e+27,
+        "radius_km": 60300.0,
+        "density_g_cm3": 0.964,
+        "gravity_m_s2": 19.089076453003088,
+        "escape_velocity_km_s": 47.98064839320298,
+        "mean_temp_c": 14.850000000000023,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": 105436579.26935999,
+        "orbital_period_days": 230.838,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": 90.032,
+        "eccentricity": 0.0069,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 245.0,
+      "constellation": "天鹅座",
+      "subtype": "气态巨行星",
+      "members": null,
+      "note": "参数为观测近似值，该行星环绕两颗恒星运转 【2发一致】",
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "src_kepler_16b"
+      ],
+      "verified": "2026-10-27",
+      "data_verified": false,
+      "data_source": "llm_doubao",
+      "article": null,
+      "image": "assets/planets/kepler_16b.webp",
+      "source_dates": {
+        "src_kepler_16b": "2026-10-27"
       },
       "image_credit": "AI 生成",
       "image_url": null,
@@ -10092,6 +11441,94 @@
     "src_pallas": {
       "name": "Wikipedia · 2 Pallas",
       "url": "https://en.wikipedia.org/wiki/2_Pallas"
+    },
+    "src_juno": {
+      "name": "Wikipedia · 3 Juno",
+      "url": "https://en.wikipedia.org/wiki/3_Juno"
+    },
+    "src_hygiea": {
+      "name": "Wikipedia · 健神星",
+      "url": "https://zh.wikipedia.org/wiki/健神星"
+    },
+    "src_sedna": {
+      "name": "Wikipedia · Sedna",
+      "url": "https://en.wikipedia.org/wiki/Sedna"
+    },
+    "src_dysnomia": {
+      "name": "Wikipedia · Dysnomia",
+      "url": "https://en.wikipedia.org/wiki/Dysnomia"
+    },
+    "src_quaoar": {
+      "name": "Wikipedia · Quaoar",
+      "url": "https://en.wikipedia.org/wiki/Quaoar"
+    },
+    "src_chiron": {
+      "name": "Wikipedia · 2060 Chiron",
+      "url": "https://en.wikipedia.org/wiki/2060_Chiron"
+    },
+    "src_oj_287": {
+      "name": "Wikipedia · OJ 287",
+      "url": "https://en.wikipedia.org/wiki/OJ_287"
+    },
+    "src_j2157_3602": {
+      "name": "Wikipedia · J2157-3602",
+      "url": "https://en.wikipedia.org/wiki/J2157-3602"
+    },
+    "src_phoenix_a": {
+      "name": "Wikipedia · Phoenix A",
+      "url": "https://en.wikipedia.org/wiki/Phoenix_A"
+    },
+    "src_gaia_bh1": {
+      "name": "Wikipedia · Gaia BH1",
+      "url": "https://en.wikipedia.org/wiki/Gaia_BH1"
+    },
+    "src_v404_cygni": {
+      "name": "Wikipedia · V404 Cygni",
+      "url": "https://en.wikipedia.org/wiki/V404_Cygni"
+    },
+    "src_51_pegasi_b": {
+      "name": "Wikipedia · 51 Pegasi b",
+      "url": "https://en.wikipedia.org/wiki/51_Pegasi_b"
+    },
+    "src_proxima_centauri_b": {
+      "name": "Wikipedia · Proxima Centauri b",
+      "url": "https://en.wikipedia.org/wiki/Proxima_Centauri_b"
+    },
+    "src_kepler_452b": {
+      "name": "Wikipedia · Kepler-452b",
+      "url": "https://en.wikipedia.org/wiki/Kepler-452b"
+    },
+    "src_kepler_22b": {
+      "name": "Wikipedia · Kepler-22b",
+      "url": "https://en.wikipedia.org/wiki/Kepler-22b"
+    },
+    "src_k2_18_b": {
+      "name": "Wikipedia · K2-18 b",
+      "url": "https://en.wikipedia.org/wiki/K2-18_b"
+    },
+    "src_lhs_1140_b": {
+      "name": "Wikipedia · LHS 1140 b",
+      "url": "https://en.wikipedia.org/wiki/LHS_1140_b"
+    },
+    "src_wasp_12_b": {
+      "name": "Wikipedia · WASP-12b",
+      "url": "https://en.wikipedia.org/wiki/WASP-12b"
+    },
+    "src_55_cancri_e": {
+      "name": "Wikipedia · 55 Cancri e",
+      "url": "https://en.wikipedia.org/wiki/55_Cancri_e"
+    },
+    "src_hd_189733_b": {
+      "name": "Wikipedia · HD 189733 b",
+      "url": "https://en.wikipedia.org/wiki/HD_189733_b"
+    },
+    "src_wasp_107_b": {
+      "name": "Wikipedia · WASP-107b",
+      "url": "https://en.wikipedia.org/wiki/WASP-107b"
+    },
+    "src_kepler_16b": {
+      "name": "Wikipedia · Kepler-16b",
+      "url": "https://en.wikipedia.org/wiki/Kepler-16b"
     }
   }
 }

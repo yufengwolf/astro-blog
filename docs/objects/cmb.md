@@ -42,4 +42,4 @@ description: "宇宙微波背景（Cosmic Microwave Background）的天体数据
 <p class="obj-nav">← 上一颗：<a href="../hercules_corona_wall/">武仙-北冕座长城</a></p>
 <p class="obj-nav">下一颗：<a href="../observable_universe/">可观测宇宙</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

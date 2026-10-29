@@ -1,5 +1,5 @@
 ---
-description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均半径 262.7 km、密度 3.456 g/cm³、表面温度 -60 °C。数据整理自公开天文资料。"
+description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均半径 262.7 km、密度 3.4116 g/cm³、表面温度 —。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -11,8 +11,7 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
     <div class="obj-keystats">
       <span>2.59×10²⁰ kg</span>
       <span>262.7 km</span>
-      <span>-60 °C</span>
-      <span>3.456 g/cm³</span>
+      <span>3.4116 g/cm³</span>
     </div>
   </div>
 </div>
@@ -24,8 +23,8 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
 |---|---|
 | 质量 | 2.59×10²⁰ kg |
 | 平均半径 | 262.7 km |
-| 平均密度 | 3.456 g/cm³ |
-| 反照率 | 0.42 |
+| 平均密度 | 3.4116 g/cm³ |
+| 反照率 | — |
 
 ## 轨道参数
 
@@ -36,7 +35,7 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
 | 平均轨道速度 | 19.34 km/s |
 | 轨道倾角 | 7.14° |
 | 轨道偏心率 | 0.0887 |
-| 转轴倾角 | — |
+| 转轴倾角 | 29° |
 | 自转周期 | 5.34 小时 |
 
 ## 其他特征
@@ -56,4 +55,4 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
 <p class="obj-nav">← 上一颗：<a href="../eta_carinae/">海山二</a></p>
 <p class="obj-nav">下一颗：<a href="../halley/">哈雷彗星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

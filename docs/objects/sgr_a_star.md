@@ -42,4 +42,4 @@ description: "人马座 A*（Sagittarius A*）的天体数据：4.3×10⁶ M☉�
 <p class="obj-nav">← 上一颗：<a href="../m87_star/">M87*</a></p>
 <p class="obj-nav">下一颗：<a href="../ton618/">TON 618</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

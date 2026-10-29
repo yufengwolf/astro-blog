@@ -24,8 +24,8 @@ description: "参宿七（Rigel）的天体数据：21 M☉、半径 78 R☉、�
 |---|---|
 | 质量 | 21 M☉ |
 | 平均半径 | 78 R☉ |
-| 表面重力 | — |
-| 逃逸速度 | — |
+| 表面重力 | 0.95 m/s² |
+| 逃逸速度 | 320.49 km/s |
 | 平均表面温度 | 12100 K |
 | 表面气压 | — |
 | 反照率 | — |
@@ -42,6 +42,7 @@ description: "参宿七（Rigel）的天体数据：21 M☉、半径 78 R☉、�
 | 大气成分 | — |
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
+| 备注 | 【AI复校 2026-10-27：置空:physical/radius_km】 |
 | 发现 | 史前 |
 
 <section class="obj-source">
@@ -52,4 +53,4 @@ description: "参宿七（Rigel）的天体数据：21 M☉、半径 78 R☉、�
 <p class="obj-nav">← 上一颗：<a href="../antares/">心宿二</a></p>
 <p class="obj-nav">下一颗：<a href="../betelgeuse/">参宿四</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

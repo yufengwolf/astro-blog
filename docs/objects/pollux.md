@@ -1,5 +1,5 @@
 ---
-description: "北河三（Pollux）的天体数据：1.91 M☉、半径 8.8 R☉、光度 32.7 L☉、表面温度 4586 K。数据整理自公开天文资料。"
+description: "北河三（Pollux）的天体数据：1.91 M☉、半径 8.8 R☉、光度 —、表面温度 4586 K。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -12,7 +12,6 @@ description: "北河三（Pollux）的天体数据：1.91 M☉、半径 8.8 R☉
       <span>1.91 M☉</span>
       <span>8.8 R☉</span>
       <span>4586 K</span>
-      <span>32.7 L☉</span>
     </div>
   </div>
 </div>
@@ -31,7 +30,6 @@ description: "北河三（Pollux）的天体数据：1.91 M☉、半径 8.8 R☉
 | 反照率 | — |
 | 光谱型 | K0III |
 | 恒星类型 | 橙巨星（K0III） |
-| 光度 | 32.7 L☉ |
 | 距离 | 34 光年 |
 | 星座 | 双子座 |
 
@@ -42,7 +40,7 @@ description: "北河三（Pollux）的天体数据：1.91 M☉、半径 8.8 R☉
 | 大气成分 | — |
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
-| 备注 | 双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。 |
+| 备注 | 双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。 【AI复校 2026-10-27：置空:physical/lum_sun】 |
 | 发现 | 自古已知 |
 
 <section class="obj-source">
@@ -53,4 +51,4 @@ description: "北河三（Pollux）的天体数据：1.91 M☉、半径 8.8 R☉
 <p class="obj-nav">← 上一颗：<a href="../castor/">北河二</a></p>
 <p class="obj-nav">下一颗：<a href="../capella/">五车二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

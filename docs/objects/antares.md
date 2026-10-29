@@ -1,5 +1,5 @@
 ---
-description: "心宿二（Antares）的天体数据：15.5 M☉、半径 680 R☉、光度 7.59×10⁴ L☉、表面温度 3400 K。数据整理自公开天文资料。"
+description: "心宿二（Antares）的天体数据：—、半径 680 R☉、光度 7.59×10⁴ L☉、表面温度 3400 K。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -9,7 +9,6 @@ description: "心宿二（Antares）的天体数据：15.5 M☉、半径 680 R�
     <h1>心宿二 <small>Antares</small></h1>
     <p class="obj-tagline">天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）</p>
     <div class="obj-keystats">
-      <span>15.5 M☉</span>
       <span>680 R☉</span>
       <span>3400 K</span>
       <span>7.59×10⁴ L☉</span>
@@ -22,7 +21,7 @@ description: "心宿二（Antares）的天体数据：15.5 M☉、半径 680 R�
 
 | 参数 | 数值 |
 |---|---|
-| 质量 | 15.5 M☉ |
+| 质量 | — |
 | 平均半径 | 680 R☉ |
 | 表面重力 | — |
 | 逃逸速度 | — |
@@ -42,6 +41,7 @@ description: "心宿二（Antares）的天体数据：15.5 M☉、半径 680 R�
 | 大气成分 | — |
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
+| 备注 | 【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】 |
 | 发现 | 史前 |
 
 <section class="obj-source">
@@ -52,4 +52,4 @@ description: "心宿二（Antares）的天体数据：15.5 M☉、半径 680 R�
 <p class="obj-nav">← 上一颗：<a href="../arcturus/">大角星</a></p>
 <p class="obj-nav">下一颗：<a href="../rigel/">参宿七</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -44,4 +44,4 @@ description: "半人马座 ω（Omega Centauri）的天体数据：4×10⁶ M☉
 <p class="obj-nav">← 上一颗：<a href="../m22/">梅西耶 22</a></p>
 <p class="obj-nav">下一颗：<a href="../local_group/">本星系群</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

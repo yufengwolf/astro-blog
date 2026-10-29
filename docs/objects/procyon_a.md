@@ -1,5 +1,5 @@
 ---
-description: "南河三（Procyon）的天体数据：1.49 M☉、半径 1.42 R☉、光度 6.9 L☉、表面温度 6530 K。数据整理自公开天文资料。"
+description: "南河三（Procyon）的天体数据：1.49 M☉、半径 —、光度 6.9 L☉、表面温度 6530 K。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -10,7 +10,6 @@ description: "南河三（Procyon）的天体数据：1.49 M☉、半径 1.42 R�
     <p class="obj-tagline">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
     <div class="obj-keystats">
       <span>1.49 M☉</span>
-      <span>1.42 R☉</span>
       <span>6530 K</span>
       <span>6.9 L☉</span>
     </div>
@@ -23,9 +22,9 @@ description: "南河三（Procyon）的天体数据：1.49 M☉、半径 1.42 R�
 | 参数 | 数值 |
 |---|---|
 | 质量 | 1.49 M☉ |
-| 平均半径 | 1.42 R☉ |
-| 表面重力 | 202.24 m/s² |
-| 逃逸速度 | 632.80 km/s |
+| 平均半径 | — |
+| 表面重力 | — |
+| 逃逸速度 | — |
 | 平均表面温度 | 6530 K |
 | 表面气压 | — |
 | 反照率 | — |
@@ -43,7 +42,7 @@ description: "南河三（Procyon）的天体数据：1.49 M☉、半径 1.42 R�
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
 | 已知成员 | 南河三A（主星）与南河三B（白矮星伴星）组成的双星系统 |
-| 备注 | 南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。 |
+| 备注 | 南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】 |
 | 发现 | — |
 
 <section class="obj-source">
@@ -54,4 +53,4 @@ description: "南河三（Procyon）的天体数据：1.49 M☉、半径 1.42 R�
 <p class="obj-nav">← 上一颗：<a href="../beta_pictoris/">绘架座 β</a></p>
 <p class="obj-nav">下一颗：<a href="../orcus/">亡神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、光度 160 L☉、表面温度 11000 K。数据整理自公开天文资料。"
+description: "室宿一（Markab）的天体数据：4 M☉、半径 —、光度 160 L☉、表面温度 11000 K。数据整理自公开天文资料。"
 ---
 
 <div class="obj-hero">
@@ -10,7 +10,6 @@ description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、
     <p class="obj-tagline">飞马座四边形的一角，正值暮年的蓝白巨星</p>
     <div class="obj-keystats">
       <span>4 M☉</span>
-      <span>2.8 R☉</span>
       <span>11000 K</span>
       <span>160 L☉</span>
     </div>
@@ -23,9 +22,9 @@ description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、
 | 参数 | 数值 |
 |---|---|
 | 质量 | 4 M☉ |
-| 平均半径 | 2.8 R☉ |
-| 表面重力 | 139.89 m/s² |
-| 逃逸速度 | 738.24 km/s |
+| 平均半径 | — |
+| 表面重力 | — |
+| 逃逸速度 | — |
 | 平均表面温度 | 11000 K |
 | 表面气压 | — |
 | 反照率 | — |
@@ -42,7 +41,7 @@ description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、
 | 大气成分 | — |
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
-| 备注 | 飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。 |
+| 备注 | 飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】 |
 | 发现 | 自古已知 |
 
 <section class="obj-source">
@@ -53,4 +52,4 @@ description: "室宿一（Markab）的天体数据：4 M☉、半径 2.8 R☉、
 <p class="obj-nav">← 上一颗：<a href="../hamal/">娄宿三</a></p>
 <p class="obj-nav">下一颗：<a href="../alpheratz/">壁宿二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

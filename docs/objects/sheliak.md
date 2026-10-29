@@ -35,6 +35,18 @@ description: "渐台二（Beta Lyrae）的天体数据：2.97 M☉、半径 15.2
 | 距离 | 960 光年 |
 | 星座 | 天琴座 |
 
+## 轨道参数
+
+| 参数 | 数值 |
+|---|---|
+| 半长轴 | — |
+| 轨道周期 | 7.2 天 |
+| 平均轨道速度 | — |
+| 轨道倾角 | 89° |
+| 轨道偏心率 | 0 |
+| 转轴倾角 | — |
+| 自转周期 | 12.90 小时 |
+
 ## 其他特征
 
 | 项目 | 数值 |
@@ -43,7 +55,7 @@ description: "渐台二（Beta Lyrae）的天体数据：2.97 M☉、半径 15.2
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
 | 已知成员 | 2 |
-| 备注 | 两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。 |
+| 备注 | 两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。 【AI复校 2026-10-27：置空:physical/mass_sun; 填充:orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity,orbit/rotation_period_hours】 |
 | 发现 | 1784 年古德里克发现其光变 |
 
 <section class="obj-source">
@@ -54,4 +66,4 @@ description: "渐台二（Beta Lyrae）的天体数据：2.97 M☉、半径 15.2
 <p class="obj-nav">← 上一颗：<a href="../algol/">大陵五</a></p>
 <p class="obj-nav">下一颗：<a href="../almaaz/">御夫座 ε</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

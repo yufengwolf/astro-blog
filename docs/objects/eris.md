@@ -47,7 +47,7 @@ description: "阋神星（Eris）的天体数据：1.6×10²² kg、平均半径
 | 大气成分 | — |
 | 全球磁场 | 未知 |
 | 环系 | 未知 |
-| 已确认卫星 | 1 颗（ notable：阋卫一） |
+| 已确认卫星 | 1 颗（ notable：<a href="../disnomia/">阋卫一</a>） |
 | 发现 | 迈克尔·布朗等，2005 年 |
 
 <section class="obj-source">
@@ -58,4 +58,4 @@ description: "阋神星（Eris）的天体数据：1.6×10²² kg、平均半径
 <p class="obj-nav">← 上一颗：<a href="../haumea/">妊神星</a></p>
 <p class="obj-nav">下一颗：<a href="../moon/">月球</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>

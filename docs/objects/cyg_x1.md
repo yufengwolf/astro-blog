@@ -42,4 +42,4 @@ description: "天鹅座 X-1（Cygnus X-1）的天体数据：21.2 M☉、史瓦�
 <p class="obj-nav">← 上一颗：<a href="../gw190521/">GW190521</a></p>
 <p class="obj-nav">下一颗：<a href="../v404_cyg/">V404 天鹅座</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 156 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
