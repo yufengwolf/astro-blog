@@ -1054,7 +1054,7 @@ html[data-md-color-scheme="slate"] .md-header {
 .solar-embed .solar-frame {
   position: relative;
   width: 100%;
-  height: clamp(420px, 70vh, 720px);   /* 桌面：随列宽与视口自适应 */
+  height: clamp(480px, 78vh, 900px);    /* 默认：比原先更高一些 */
   background: #000;
 }
 .solar-embed iframe {
@@ -1065,9 +1065,20 @@ html[data-md-color-scheme="slate"] .md-header {
   background: #000;
 }
 
+/* 桌面端：宽度由 solar-embed.js 按「视口右缘 - 嵌入块左缘」精确铺满（保留左侧导航、不溢出）；
+   此处只负责去掉圆角 + 抬高高度，高度随视口增大更沉浸。 */
+@media (min-width: 1024px) {
+  .solar-embed {
+    border-radius: 0;          /* 全宽时去掉圆角更大气 */
+  }
+  .solar-embed .solar-frame {
+    height: clamp(560px, 86vh, 1050px);
+  }
+}
+
 /* 移动端：高度更克制；进入全屏后靠横屏填满 */
 @media (max-width: 768px) {
-  .solar-embed .solar-frame { height: 58vh; }
+  .solar-embed .solar-frame { height: 62vh; }
   .solar-embed .solar-bar { font-size: 0.8rem; }
 }
 

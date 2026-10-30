@@ -30,6 +30,25 @@
     var btn = embed.querySelector('.solar-fs-btn');
     if (!btn) return;
 
+    // 桌面端：把嵌入块右缘铺到视口右缘（左缘保留对齐正文列，不压左侧导航，不溢出）。
+    // 纯 CSS 拿不到正文列的左偏移，故用 JS 按 clientWidth - embed.left 精确计算，并在
+    // 窗口缩放 / 全屏切换后重算。全屏态交给 CSS（:fullscreen）处理，这里跳过。
+    function fitWidth() {
+      if (document.fullscreenElement === embed ||
+          (document.webkitFullscreenElement && document.webkitFullscreenElement === embed)) {
+        embed.style.width = '';
+        return;
+      }
+      if (window.innerWidth < 1024) {
+        embed.style.width = '';
+        return;
+      }
+      var left = embed.getBoundingClientRect().left;
+      embed.style.width = (document.documentElement.clientWidth - left) + 'px';
+    }
+    fitWidth();
+    window.addEventListener('resize', fitWidth);
+
     var frame = embed.querySelector('iframe');
     var homeSrc = embed.getAttribute('data-home-src') || (frame ? frame.getAttribute('src') : '');
 
@@ -77,8 +96,8 @@
       });
     });
 
-    document.addEventListener('fullscreenchange', update);
-    document.addEventListener('webkitfullscreenchange', update);
+    document.addEventListener('fullscreenchange', function () { update(); fitWidth(); });
+    document.addEventListener('webkitfullscreenchange', function () { update(); fitWidth(); });
     window.addEventListener('orientationchange', function () {
       if (fsElement() === embed) update();
     });
