@@ -1019,6 +1019,24 @@ html[data-md-color-scheme="slate"] .md-header {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
+.solar-embed .solar-bar-btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.solar-embed .solar-home-btn {
+  appearance: none;
+  border: 1px solid #38414f;
+  background: #1b2230;
+  color: #cfe0ff;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.solar-embed .solar-home-btn:hover { background: #273144; }
+.solar-embed .solar-home-btn:active { transform: translateY(1px); }
 .solar-embed .solar-fs-btn {
   appearance: none;
   border: 1px solid #38414f;

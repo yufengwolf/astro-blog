@@ -72,11 +72,4 @@ nav:
   - 天体总览: index.md
   - 天体对比: compare.md
   - 天体库: objects/index.md
-  - 太阳系 3D: solar-demo.md
-  - 地月系统: earth-moon.md
-  - 火星系统: mars-system.md
-  - 木星系统: jupiter-system.md
-  - 土星系统: saturn-system.md
-  - 天王星系统: uranus-system.md
-  - 海王星系统: neptune-system.md
-  - 冥王星系统: pluto-system.md
+  - 太阳系3D模型: solar-demo.md

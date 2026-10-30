@@ -51,10 +51,7 @@
    ├─ js/compare.js      # 独立对比页 /compare/ 逻辑
    ├─ js/solar-embed.js  # 3D 嵌入页：全屏切换 + 移动端横屏提示
    ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式
-   ├─ solar-demo.md      # 【手写】太阳系总览嵌入页
-   ├─ earth-moon.md      # 【手写】地月系统嵌入页
-   ├─ mars-system.md / jupiter-system.md / saturn-system.md  # 【手写】各子系统嵌入页
-   ├─ uranus-system.md / neptune-system.md / pluto-system.md # 【手写】各子系统嵌入页
+   ├─ solar-demo.md      # 【手写】太阳系 3D 交互站主页（导航卡片 iframe）
    └─ assets/planets/*.webp  # 星球贴图（152/152，透明背景 600px）
 ```
 
@@ -143,35 +140,28 @@ mkdocs serve -a 127.0.0.1:8001              # 8000 端口被御风 Home 占用�
 
 ---
 
-## 七、太阳系 3D 子系统（外站 iframe）
+## 七、太阳系 3D 交互站（外站 iframe）
 
-本站有 8 个 3D 页面，但**3D 工程本身不在本仓库**——它是独立仓库 + 独立 Cloudflare Pages 站点，
-这里只保留「嵌入壳」。
+本站只有 **1 个** 3D 导航页（`/solar-demo/`，左侧导航叫「太阳系3D模型」），但**3D 工程本身不在本仓库**——它是独立仓库 + 独立 Cloudflare Pages 站点。
+该页用 `iframe` 嵌入 3D 站点的**导航主页**（卡片式，列出全部 8 个系统），在 iframe 内点任意卡片即可直接打开对应系统；顶部「↺ 重新选择」按钮可一键退回主页换看别的系统。
 
 | 项 | 值 |
 |---|---|
 | 3D 工程仓库 | https://github.com/yufengwolf/astro-solar-3d |
-| 线上地址 | https://astro-solar-3d.pages.dev |
+| 3D 导航主页（iframe 源） | https://astro-solar-3d.pages.dev |
 | 部署方式 | CF Pages 连 GitHub；`npm ci && npm run build`，输出 `dist`，环境变量 `NODE_VERSION=20` |
 
-**URL 映射**（CF Pages 会把 `/xxx.html` 308 重定向到 `/xxx`，所以统一用无扩展名写法）：
+**URL 说明**（CF Pages 会把 `/xxx.html` 308 重定向到 `/xxx`，所以统一用无扩展名写法）：
 
-| 本站页面 | iframe 源 |
-|---|---|
-| `/solar-demo/` | `https://astro-solar-3d.pages.dev/` |
-| `/earth-moon/` | `https://astro-solar-3d.pages.dev/earth-moon` |
-| `/mars-system/` | `https://astro-solar-3d.pages.dev/mars` |
-| `/jupiter-system/` | `https://astro-solar-3d.pages.dev/jupiter` |
-| `/saturn-system/` | `https://astro-solar-3d.pages.dev/saturn` |
-| `/uranus-system/` | `https://astro-solar-3d.pages.dev/uranus` |
-| `/neptune-system/` | `https://astro-solar-3d.pages.dev/neptune` |
-| `/pluto-system/` | `https://astro-solar-3d.pages.dev/pluto` |
+- 3D 站根路径 `https://astro-solar-3d.pages.dev/` 是导航主页（卡片，列出全部系统）
+- 各系统：`/overview`（太阳系总览）、`/earth-moon`、`/mars`、`/jupiter`、`/saturn`、`/uranus`、`/neptune`、`/pluto`
 
 **改哪里**：
 
 - 改 3D 内容（天体、轨道、贴图）→ 去 3D 仓库改并 push，CF 自动部署，**本站无需任何改动**
-- 改嵌入样式 / 全屏 / 横屏提示 → 本仓库的 `docs/js/solar-embed.js` 与 `site.css` 的 `.solar-embed`
-- 改页面上下说明文字 → 本仓库对应的 md
+- 改嵌入样式 / 全屏 / 横屏提示 / 重新选择按钮 → 本仓库的 `docs/js/solar-embed.js` 与 `site.css` 的 `.solar-embed`
+- 改页面上下说明文字 → 本仓库 `docs/solar-demo.md`
+- 改导航显示名 → 本仓库 `mkdocs.yml` 的 `nav`
 
 **为什么不放本站目录**：产物约 20MB / 57 个文件。塞进本仓库会让每次 push 都带上这些静态文件，
 并连带触发 mkdocs 全量重建。拆开后两边构建彻底解耦，各自独立缓存。

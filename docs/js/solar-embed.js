@@ -30,6 +30,17 @@
     var btn = embed.querySelector('.solar-fs-btn');
     if (!btn) return;
 
+    var frame = embed.querySelector('iframe');
+    var homeSrc = embed.getAttribute('data-home-src') || (frame ? frame.getAttribute('src') : '');
+
+    // 「↺ 重新选择」：把 iframe 复位回导航主页，方便在系统内换看其它系统
+    var homeBtn = embed.querySelector('.solar-home-btn');
+    if (homeBtn && frame && homeSrc) {
+      homeBtn.addEventListener('click', function () {
+        frame.setAttribute('src', homeSrc);
+      });
+    }
+
     var showRotate = function (show) {
       embed.classList.toggle('solar-show-rotate', !!show);
     };
