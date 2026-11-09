@@ -1,5 +1,5 @@
 ---
-description: "婚神星（Juno）的天体数据：2.67×10¹⁹ kg、平均半径 136.0 km、密度 2.534 g/cm³、表面温度 -110.1 °C。数据整理自公开天文资料。"
+description: "婚神星（Juno）的天体数据：2.67×10¹⁹ kg、平均直径 272.0 km、密度 2.534 g/cm³、温度 163 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge asteroid">小行星</span>
     <h1>婚神星 <small>Juno</small></h1>
     <p class="obj-tagline">第3号小行星，主带大型石质小行星，最早发现的小行星之一</p>
-    <p class="obj-summary">平均半径 136.0 km · 质量 2.67×10¹⁹ kg</p>
+    <p class="obj-summary">平均直径 272.0 km · 质量 2.67×10¹⁹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.67×10¹⁹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>136.0 km</td></tr>
+<tr><th scope="row">质量</th><td>2.67×10¹⁹ kg（4.47×10⁻⁶ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>272.0 km（0.0213 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>2.534 g/cm³</td></tr>
 <tr><th scope="row">星座</th><td>室女座</td></tr>
 </tbody>
@@ -63,4 +63,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../pallas/">智神星</a></p>
 <p class="obj-nav">下一颗：<a href="../hygiea/">健神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

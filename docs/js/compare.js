@@ -7,10 +7,12 @@
  *      比例——含环图环自然外伸，不叠加基准圈；悬殊比例下较小的一方如实缩为一个
  *      「点」（配实际倍数文字），不做放大处理，大球 CSS 尺寸依容器宽自适应不溢出；
  *   2) 核心倍数卡：直径 / 体积 / 质量的直观倍数（体积 ∝ 半径³）；
- *   3) 详细数据表：半径、体积、质量、密度、表面重力、逃逸速度、温度、自转、类型，逐行 A÷B 倍数。
+ *   3) 详细数据表：直径、体积、质量、密度、表面重力、逃逸速度、温度、自转、类型，逐行 A÷B 倍数。
  * 状态同步到 location.hash（#cmp=a,b），刷新/分享保持对比组合。
  *
  * 数据来自页面内嵌的 #astro-sizecompare-data（gen_pages 注入，含相对图片路径）。
+ * v1.8 起直径/质量/光度/温度的单位字符串也在 payload 里预生成（*_text），
+ * 本文件不再自带第二套单位实现，改单位规则只需改 gen_pages.py 的 fmt_*。
  */
 (function () {
   "use strict";
@@ -52,10 +54,8 @@
   };
   function colorFor(r) { return CAT_COLOR[r.cat_key] || ["#888888", "#555555"]; }
 
-  var LY_KM = 9.4607e12;
-  var EXT_CATS = { nebula: 1, galaxy: 1, cluster: 1, structure: 1 };
-
   // ---- 格式化 ----
+  // num3 / sig3 只服务前端实时计算的量（体积、倍数、密度、重力、速度）。
   var SUP = { "0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹","-":"⁻" };
   function sup(s) { return String(s).replace(/[0-9-]/g, function (c) { return SUP[c]; }); }
   function sig3(x) {
@@ -77,39 +77,16 @@
     }
     return sig3(x);
   }
-  function fmtLum(x) {
-    var w = (x && typeof x === "object" && "lum" in x) ? x.lum : x;
-    return (w == null) ? "—" : num3(w / 3.828e26) + " L☉";
+  // ---- 单位字符串：统一读 payload 的预生成字段 ----
+  // v1.8 起 gen_pages.py 是唯一实现（fmt_diameter / fmt_mass / fmt_lum / fmt_temp），
+  // 这里只做读取，避免详情页与对比页出现两套单位口径。入参一律是行对象。
+  function textOf(field) {
+    return function (r) { return (r && r[field]) || "—"; };
   }
-  // 按天体类型格式化半径（入参可以是行对象或纯数值）
-  function fmtRadius(x) {
-    var r = (x && typeof x === "object" && "radius" in x) ? x : null;
-    var v = r ? r.radius : x;
-    if (v == null) return "—";
-    var ck = r ? r.cat_key : null;
-    if (ck === "star") {
-      var rs = v / 695700;
-      if (rs < 0.001) return sig3(rs) + " R☉";                       // 脉冲星/白矮星
-      if (rs >= 1000) return Math.round(rs).toLocaleString("en-US") + " R☉";  // 红超巨星
-      return num3(rs) + " R☉";
-    }
-    if (ck === "black_hole") return v >= 1e8 ? sig3(v / 1.496e8) + " AU" : sig3(v) + " km";
-    if (ck && EXT_CATS[ck]) {
-      var ly = v / LY_KM;
-      if (ly < 0.001) return sig3(ly) + " 光年";
-      if (ly >= 1000) return Math.round(ly).toLocaleString("en-US") + " 光年";
-      return num3(ly) + " 光年";
-    }
-    return (v < 1000 ? v.toFixed(1) : v.toFixed(0)).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " km";
-  }
-  // 质量：恒星/黑洞/星系/星团/大尺度结构用 M☉，行星用 kg
-  var MASS_SUN_CATS = { star: 1, black_hole: 1, galaxy: 1, cluster: 1, structure: 1, nebula: 1 };
-  function fmtMassCat(x) {
-    var r = (x && typeof x === "object" && "mass" in x) ? x : null;
-    var v = r ? r.mass : x;
-    if (v == null) return "—";
-    return (r && MASS_SUN_CATS[r.cat_key]) ? num3(v / 1.9884e30) + " M☉" : sig3(v) + " kg";
-  }
+  var fmtDiameter = textOf("diameter_text");
+  var fmtMass = textOf("mass_text");
+  var fmtLum = textOf("lum_text");
+  var fmtTemp = textOf("temp_text");
   function fmtKm3(x) {
     var v = (x && typeof x === "object") ? volume(x) : x;
     return (v == null) ? "—" : sig3(v) + " km³";
@@ -131,19 +108,6 @@
     if (v == null) return "—";
     if (v >= 1e5) return sig3(v) + " km/s";                          // 中子星逃逸速度
     return (v < 1 ? v.toFixed(3) : v.toFixed(2)) + " km/s";
-  }
-  // 恒星/星云/大尺度结构的 mean_temp_c 为「开尔文-273.15」等效值，展示 K（与详情页一致）
-  function fmtTemp(x) {
-    var r = (x && typeof x === "object" && "temp" in x) ? x : null;
-    var t = r ? r.temp : x;
-    if (t == null) return "—";
-    var ck = r ? r.cat_key : null;
-    if (ck === "star" || ck === "nebula" || ck === "structure") {
-      var k = t + 273.15;
-      if (k >= 1e6) return sig3(k) + " K";
-      return Math.round(k).toLocaleString("en-US") + " K";
-    }
-    return t + " °C";
   }
   function fmtRotation(x) {
     var h = (x && typeof x === "object" && "rotation" in x) ? x.rotation : x;
@@ -275,7 +239,7 @@
         return '<div class="sizecmp-side">' +
           '<div class="sizecmp-ball-wrap"><span class="sizecmp-dot" style="background:' + col + '"></span></div>' +
           '<div class="sizecmp-name sizecmp-name-dot">' + esc(r.name) + '</div>' +
-          '<div class="sizecmp-sub">' + fmtRadius(r) + '</div>' +
+          '<div class="sizecmp-sub">' + fmtDiameter(r) + '</div>' +
           '<div class="sizecmp-dot-note">按真实比例仅 ' +
             (px < 0.1 ? '不足 0.1' : px.toFixed(1)) + ' 像素：仅为' + esc(big.name) +
             ' 的 1/' + fmtRatio(ratio) + '</div>' +
@@ -297,7 +261,7 @@
       return '<div class="sizecmp-side">' +
         '<div class="sizecmp-ball-wrap">' + ball + '</div>' +
         '<div class="sizecmp-name">' + esc(r.name) + '</div>' +
-        '<div class="sizecmp-sub">' + fmtRadius(r) + '</div>' +
+        '<div class="sizecmp-sub">' + fmtDiameter(r) + '</div>' +
         '</div>';
     }
     vizEl.innerHTML = '<div class="sizecmp-viz-inner">' + side(a, pa, dotA) + side(b, pb, dotB) + '</div>';
@@ -311,7 +275,7 @@
     var tail = parts.length ? "；" + parts.join("；") + "。" : "。";
     noteEl.textContent =
       (extInvolved ? "天体" : "球体") + (useLog ? "按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）" : "按真实直径比例绘制") +
-      "（" + a.name + " " + fmtRadius(a) + " : " + b.name + " " + fmtRadius(b) +
+      "（" + a.name + " " + fmtDiameter(a) + " : " + b.name + " " + fmtDiameter(b) +
       " ≈ " + fmtRatio(ratio) + " : 1）" + tail;
     updateToggleUI();
   }
@@ -348,9 +312,9 @@
   // ---- 详细数据表 ----（fmt 接收行对象）
   function renderDetail(a, b) {
     var defs = [
-      ["半径 / 大小", fmtRadius, function (r) { return r.radius; }],
+      ["直径", fmtDiameter, function (r) { return r.radius; }],
       ["体积（等效球）", fmtKm3, function (r) { return volume(r); }],
-      ["质量", fmtMassCat, function (r) { return r.mass; }],
+      ["质量", fmtMass, function (r) { return r.mass; }],
       ["光度", fmtLum, function (r) { return r.lum; }],
       ["平均密度", fmtDensity, function (r) { return r.density; }],
       ["表面重力", fmtGravity, function (r) { return r.gravity; }],
@@ -378,10 +342,12 @@
     var a = byId[selA.value], b = byId[selB.value];
     if (!a || !b) return;
     renderViz(a, b);
+    // 倍数一律用底层 radius/mass 原始数值算：半径比 === 直径比，缩放与口径都不受影响；
+    // 展示文本则由 fmtDiameter/fmtMass 读 payload 的预生成字符串（v1.8 起统一）。
     ratiosEl.innerHTML =
-      ratioCard("直径", a.radius, b.radius, a, b, fmtRadius) +
+      ratioCard("直径", a.radius, b.radius, a, b, fmtDiameter) +
       ratioCard("体积", volume(a), volume(b), a, b, fmtKm3) +
-      ratioCard("质量", a.mass, b.mass, a, b, fmtMassCat);
+      ratioCard("质量", a.mass, b.mass, a, b, fmtMass);
     renderDetail(a, b);
     syncHash(a.id, b.id);
   }

@@ -1,5 +1,5 @@
 ---
-description: "蟹云脉冲星（Crab Pulsar）的天体数据：1.4 M☉、半径 1.44×10⁻⁵ R☉、光度 7.5×10⁴ L☉、表面温度 —。数据整理自公开天文资料。"
+description: "蟹云脉冲星（Crab Pulsar）的天体数据：2.78×10³⁰ kg、直径 20.0 km、光度 2.87×10³¹ W、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>蟹云脉冲星 <small>Crab Pulsar</small></h1>
     <p class="obj-tagline">蟹状星云中心高速自转的中子星，每 33 毫秒转一圈</p>
-    <p class="obj-summary">半径 1.44×10⁻⁵ R☉ · 质量 1.4 M☉</p>
+    <p class="obj-summary">直径 20.0 km · 质量 2.78×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.4 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>1.44×10⁻⁵ R☉</td></tr>
+<tr><th scope="row">质量</th><td>2.78×10³⁰ kg（1.4 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>20.0 km（0.00157 × 地球直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>1.86×10¹² m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>1.93×10⁵ km/s</td></tr>
 <tr><th scope="row">恒星类型</th><td>中子星（脉冲星）</td></tr>
-<tr><th scope="row">光度</th><td>7.5×10⁴ L☉</td></tr>
+<tr><th scope="row">光度</th><td>2.87×10³¹ W（7.5×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>6,524 光年</td></tr>
 <tr><th scope="row">星座</th><td>金牛座</td></tr>
 </tbody>
@@ -62,4 +62,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../eridani_40b/">波江座 40B</a></p>
 <p class="obj-nav">下一颗：<a href="../vela_pulsar/">船帆脉冲星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

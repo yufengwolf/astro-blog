@@ -1,5 +1,5 @@
 ---
-description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—、半径/大小 175,000 光年、光度 —、表面温度 —。数据整理自公开天文资料。"
+description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—、直径（等效球径） 350,000 光年、光度 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge galaxy">星系</span>
     <h1>斯蒂芬五重星系 <small>Stephan's Quintet</small></h1>
     <p class="obj-tagline">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
-    <p class="obj-summary">半径/大小 175,000 光年</p>
+    <p class="obj-summary">直径（等效球径） 350,000 光年</p>
   </div>
 </div>
 
@@ -22,7 +22,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">半径 / 大小</th><td>175,000 光年</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>350,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>29,000 万光年</td></tr>
 <tr><th scope="row">类型</th><td>致密星系群</td></tr>
 <tr><th scope="row">星座</th><td>飞马座</td></tr>
@@ -51,4 +51,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../ic1101/">IC 1101</a></p>
 <p class="obj-nav">下一颗：<a href="../m45/">昴星团</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

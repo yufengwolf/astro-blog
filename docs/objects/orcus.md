@@ -1,5 +1,5 @@
 ---
-description: "亡神星（Orcus）的天体数据：6.34×10²⁰ kg、平均半径 455.0 km、密度 1.60682 g/cm³、表面温度 -228.1 °C。数据整理自公开天文资料。"
+description: "亡神星（Orcus）的天体数据：6.34×10²⁰ kg、平均直径 910.0 km、密度 1.60682 g/cm³、温度 45 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>亡神星 <small>Orcus</small></h1>
     <p class="obj-tagline">柯伊伯带 plutino 矮行星，与海王星3:2共振，拥有卫星范斯。</p>
-    <p class="obj-summary">平均半径 455.0 km · 质量 6.34×10²⁰ kg</p>
+    <p class="obj-summary">平均直径 910.0 km · 质量 6.34×10²⁰ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>6.34×10²⁰ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>455.0 km</td></tr>
+<tr><th scope="row">质量</th><td>6.34×10²⁰ kg（1.06×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>910.0 km（0.0714 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.60682 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.20 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.431 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-228.1 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>45 K（-228.1 °C）</td></tr>
 <tr><th scope="row">星座</th><td>双鱼座</td></tr>
 </tbody>
 </table>
@@ -64,4 +64,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../procyon_a/">南河三</a></p>
 <p class="obj-nav">下一颗：<a href="../vanth/">范斯（亡卫一）</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

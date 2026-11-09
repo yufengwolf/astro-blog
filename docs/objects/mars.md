@@ -1,5 +1,5 @@
 ---
-description: "火星（Mars）的天体数据：6.42×10²³ kg、平均半径 3,390 km、密度 3.934 g/cm³、表面温度 -59 °C。数据整理自公开天文资料。"
+description: "火星（Mars）的天体数据：6.42×10²³ kg、平均直径 6,779 km、密度 3.934 g/cm³、温度 214 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>火星 <small>Mars</small></h1>
     <p class="obj-tagline">红色的沙漠行星，拥有太阳系最高的火山与最深的峡谷</p>
-    <p class="obj-summary">平均半径 3,390 km · 质量 6.42×10²³ kg</p>
+    <p class="obj-summary">平均直径 6,779 km · 质量 6.42×10²³ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>6.42×10²³ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>3,390 km</td></tr>
+<tr><th scope="row">质量</th><td>6.42×10²³ kg（0.107 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>6,779 km（0.532 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>3.934 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>3.73 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>5.03 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-59 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-63.4 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>214 K（-59 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>210 K（-63.4 °C）</td></tr>
 <tr><th scope="row">表面气压</th><td>0.00636 bar</td></tr>
 <tr><th scope="row">反照率</th><td>0.25（Bond 0.25 / Geometric 0.17）</td></tr>
 </tbody>
@@ -138,4 +138,4 @@ A：不会，火星大气独立，没有物质通道将沙尘输送到地球。
 <p class="obj-nav">← 上一颗：<a href="../earth/">地球</a></p>
 <p class="obj-nav">下一颗：<a href="../jupiter/">木星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

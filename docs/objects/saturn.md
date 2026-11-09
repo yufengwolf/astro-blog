@@ -1,5 +1,5 @@
 ---
-description: "土星（Saturn）的天体数据：5.68×10²⁶ kg、平均半径 58,232 km、密度 0.687 g/cm³、表面温度 -140 °C。数据整理自公开天文资料。"
+description: "土星（Saturn）的天体数据：5.68×10²⁶ kg、平均直径 116,464 km、密度 0.687 g/cm³、温度 133 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>土星 <small>Saturn</small></h1>
     <p class="obj-tagline">以壮观环系闻名的气态巨行星，平均密度比水还小</p>
-    <p class="obj-summary">平均半径 58,232 km · 质量 5.68×10²⁶ kg</p>
+    <p class="obj-summary">平均直径 116,464 km · 质量 5.68×10²⁶ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>5.68×10²⁶ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>58,232 km</td></tr>
+<tr><th scope="row">质量</th><td>5.68×10²⁶ kg（95.2 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>116,464 km（9.14 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>0.687 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>11.19 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>35.50 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-140 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-192.2 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>133 K（-140 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>81 K（-192.2 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.34（Bond 0.342 / Geometric 0.499）</td></tr>
 </tbody>
 </table>
@@ -144,4 +144,4 @@ A：高速自转产生离心力，赤道区域物质向外凸起，两极方向�
 <p class="obj-nav">← 上一颗：<a href="../jupiter/">木星</a></p>
 <p class="obj-nav">下一颗：<a href="../uranus/">天王星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

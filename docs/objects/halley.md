@@ -1,5 +1,5 @@
 ---
-description: "哈雷彗星（1P/Halley）的天体数据：2.2×10¹⁴ kg、平均半径 5.5 km、密度 0.6 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "哈雷彗星（1P/Halley）的天体数据：2.2×10¹⁴ kg、平均直径 11.0 km、密度 0.6 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge comet">彗星</span>
     <h1>哈雷彗星 <small>1P/Halley</small></h1>
     <p class="obj-tagline">每 76 年回归一次的著名周期彗星，肉眼可见的脏雪球</p>
-    <p class="obj-summary">平均半径 5.5 km · 质量 2.2×10¹⁴ kg</p>
+    <p class="obj-summary">平均直径 11.0 km · 质量 2.2×10¹⁴ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.2×10¹⁴ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>5.5 km</td></tr>
+<tr><th scope="row">质量</th><td>2.2×10¹⁴ kg（3.68×10⁻¹¹ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>11.0 km（8.63×10⁻⁴ × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>0.6 g/cm³</td></tr>
 <tr><th scope="row">反照率</th><td>0.04</td></tr>
 </tbody>
@@ -62,4 +62,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../vesta/">灶神星</a></p>
 <p class="obj-nav">下一颗：<a href="../sirius_b/">天狼 B</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

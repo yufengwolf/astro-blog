@@ -1,5 +1,5 @@
 ---
-description: "巨引源（Great Attractor）的天体数据：1×10¹⁶ M☉、半径/大小 200,000,000 光年、距离 20,000 万光年、表面温度 —。数据整理自公开天文资料。"
+description: "巨引源（Great Attractor）的天体数据：1.99×10⁴⁶ kg、直径（等效球径） 400,000,000 光年、距离 20,000 万光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge structure">大尺度结构</span>
     <h1>巨引源 <small>Great Attractor</small></h1>
     <p class="obj-tagline">隐匿在银河盘面背后的引力深渊，牵引着本超星系团</p>
-    <p class="obj-summary">半径/大小 200,000,000 光年 · 质量 1×10¹⁶ M☉</p>
+    <p class="obj-summary">直径（等效球径） 400,000,000 光年 · 质量 1.99×10⁴⁶ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1×10¹⁶ M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>200,000,000 光年</td></tr>
+<tr><th scope="row">质量</th><td>1.99×10⁴⁶ kg（1×10¹⁶ M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>400,000,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>20,000 万光年</td></tr>
 <tr><th scope="row">类型</th><td>引力异常区域</td></tr>
 <tr><th scope="row">星座</th><td>矩尺座 / 南三角座</td></tr>
@@ -51,4 +51,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../laniakea/">拉尼亚凯亚超星系团</a></p>
 <p class="obj-nav">下一颗：<a href="../hercules_corona_wall/">武仙-北冕座长城</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

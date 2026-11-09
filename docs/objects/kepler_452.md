@@ -1,5 +1,5 @@
 ---
-description: "开普勒 452（Kepler-452）的天体数据：1.04 M☉、半径 1.11 R☉、光度 1.1 L☉、表面温度 5757 K。数据整理自公开天文资料。"
+description: "开普勒 452（Kepler-452）的天体数据：2.06×10³⁰ kg、直径 1,544,454 km、光度 4.21×10²⁶ W、温度 5,757 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>开普勒 452 <small>Kepler-452</small></h1>
     <p class="obj-tagline">拥有'地球表哥' Kepler-452b 的类太阳恒星</p>
-    <p class="obj-summary">半径 1.11 R☉ · 质量 1.04 M☉</p>
+    <p class="obj-summary">直径 1,544,454 km · 质量 2.06×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.04 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>1.11 R☉</td></tr>
+<tr><th scope="row">质量</th><td>2.06×10³⁰ kg（1.04 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,544,454 km（1.11 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>230.77 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>597.00 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>5757 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5,757 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G2V</td></tr>
 <tr><th scope="row">恒星类型</th><td>黄矮星（G2V）</td></tr>
-<tr><th scope="row">光度</th><td>1.1 L☉</td></tr>
+<tr><th scope="row">光度</th><td>4.21×10²⁶ W（1.1 L☉）</td></tr>
 <tr><th scope="row">星座</th><td>天鹅座</td></tr>
 </tbody>
 </table>
@@ -54,4 +54,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../almaaz/">御夫座 ε</a></p>
 <p class="obj-nav">下一颗：<a href="../kepler_22/">开普勒 22</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

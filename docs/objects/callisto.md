@@ -1,5 +1,5 @@
 ---
-description: "木卫四（Callisto）的天体数据：1.08×10²³ kg、平均半径 2,410 km、密度 1.83 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "木卫四（Callisto）的天体数据：1.08×10²³ kg、平均直径 4,821 km、密度 1.83 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>木卫四 <small>Callisto</small></h1>
     <p class="obj-tagline">太阳系撞击坑最密集的天体之一，表面几乎未被地质活动改造</p>
-    <p class="obj-summary">平均半径 2,410 km · 质量 1.08×10²³ kg</p>
+    <p class="obj-summary">平均直径 4,821 km · 质量 1.08×10²³ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.08×10²³ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>2,410 km</td></tr>
+<tr><th scope="row">质量</th><td>1.08×10²³ kg（0.018 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>4,821 km（0.378 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.83 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>1.24 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>2.44 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../ganymede/">木卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../mimas/">土卫一</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "波江座 40B（40 Eridani B）的天体数据：0.558 M☉、半径 0.0131 R☉、光度 0.0135 L☉、表面温度 17200 K。数据整理自公开天文资料。"
+description: "波江座 40B（40 Eridani B）的天体数据：1.11×10³⁰ kg、直径 18,200 km、光度 5.16×10²⁴ W、温度 17,200 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>波江座 40B <small>40 Eridani B</small></h1>
     <p class="obj-tagline">肉眼不可见的白矮星，人类最早确认的白矮星之一</p>
-    <p class="obj-summary">半径 0.0131 R☉ · 质量 0.558 M☉</p>
+    <p class="obj-summary">直径 18,200 km · 质量 1.11×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>0.558 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>0.0131 R☉</td></tr>
+<tr><th scope="row">质量</th><td>1.11×10³⁰ kg（0.558 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>18,200 km（1.43 × 地球直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>8.94×10⁵ m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>4034.24 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>17200 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>17,200 K</td></tr>
 <tr><th scope="row">光谱型</th><td>DA4</td></tr>
 <tr><th scope="row">恒星类型</th><td>白矮星（DA4）</td></tr>
-<tr><th scope="row">光度</th><td>0.0135 L☉</td></tr>
+<tr><th scope="row">光度</th><td>5.16×10²⁴ W（0.0135 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>16 光年</td></tr>
 <tr><th scope="row">星座</th><td>波江座</td></tr>
 </tbody>
@@ -65,4 +65,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../eridani_40a/">波江座 40A</a></p>
 <p class="obj-nav">下一颗：<a href="../crab_pulsar/">蟹云脉冲星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

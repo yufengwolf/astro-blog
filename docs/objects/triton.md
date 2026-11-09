@@ -1,5 +1,5 @@
 ---
-description: "海卫一（Triton）的天体数据：2.14×10²² kg、平均半径 1,353 km、密度 2.05 g/cm³、表面温度 -235 °C。数据整理自公开天文资料。"
+description: "海卫一（Triton）的天体数据：2.14×10²² kg、平均直径 2,707 km、密度 2.05 g/cm³、温度 38 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>海卫一 <small>Triton</small></h1>
     <p class="obj-tagline">沿逆行轨道运行的卫星，或为被俘获的柯伊伯带天体</p>
-    <p class="obj-summary">平均半径 1,353 km · 质量 2.14×10²² kg</p>
+    <p class="obj-summary">平均直径 2,707 km · 质量 2.14×10²² kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.14×10²² kg</td></tr>
-<tr><th scope="row">平均半径</th><td>1,353 km</td></tr>
+<tr><th scope="row">质量</th><td>2.14×10²² kg（0.00358 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>2,707 km（0.212 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>2.05 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.78 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>1.45 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-235 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>38 K（-235 °C）</td></tr>
 <tr><th scope="row">表面气压</th><td>1.4×10⁻⁵ bar</td></tr>
 <tr><th scope="row">反照率</th><td>0.72（Geometric 口径）</td></tr>
 </tbody>
@@ -68,4 +68,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../iapetus/">土卫八</a></p>
 <p class="obj-nav">下一颗：<a href="../miranda/">天卫五</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

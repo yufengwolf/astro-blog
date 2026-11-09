@@ -1,5 +1,5 @@
 ---
-description: "参宿四（Betelgeuse）的天体数据：14 M☉、半径 764 R☉、光度 8.71×10⁴ L☉、表面温度 3600 K。数据整理自公开天文资料。"
+description: "参宿四（Betelgeuse）的天体数据：2.78×10³¹ kg、直径 1.06×10⁹ km、光度 3.33×10³¹ W、温度 3,600 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>参宿四 <small>Betelgeuse</small></h1>
     <p class="obj-tagline">猎户座α，一颗著名的红超巨星，亮度不规则变化，最接近地球的红超巨星之一</p>
-    <p class="obj-summary">半径 764 R☉ · 质量 14 M☉</p>
+    <p class="obj-summary">直径 1.06×10⁹ km · 质量 2.78×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>14 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>764 R☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>3600 K</td></tr>
+<tr><th scope="row">质量</th><td>2.78×10³¹ kg（14 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>1.06×10⁹ km（764 × 太阳直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3,600 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M1-M2Ia（红超巨星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>红超巨星（M1-M2Ia）</td></tr>
-<tr><th scope="row">光度</th><td>8.71×10⁴ L☉</td></tr>
+<tr><th scope="row">光度</th><td>3.33×10³¹ W（8.71×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>548 光年</td></tr>
 <tr><th scope="row">星座</th><td>猎户座</td></tr>
 </tbody>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../rigel/">参宿七</a></p>
 <p class="obj-nav">下一颗：<a href="../vega/">织女星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

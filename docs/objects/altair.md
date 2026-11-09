@@ -1,5 +1,5 @@
 ---
-description: "河鼓二（Altair）的天体数据：1.86 M☉、半径 —、光度 10.6 L☉、表面温度 7700 K。数据整理自公开天文资料。"
+description: "河鼓二（Altair）的天体数据：3.7×10³⁰ kg、直径 —、光度 4.06×10²⁷ W、温度 7,700 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>河鼓二 <small>Altair</small></h1>
     <p class="obj-tagline">牛郎星，夏季大三角的一角，扁球状飞速自转</p>
-    <p class="obj-summary">质量 1.86 M☉</p>
+    <p class="obj-summary">质量 3.7×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.86 M☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>7700 K</td></tr>
+<tr><th scope="row">质量</th><td>3.7×10³⁰ kg（1.86 M☉）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>7,700 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A7Vn</td></tr>
 <tr><th scope="row">恒星类型</th><td>白主序星（A7Vn）</td></tr>
-<tr><th scope="row">光度</th><td>10.6 L☉</td></tr>
+<tr><th scope="row">光度</th><td>4.06×10²⁷ W（10.6 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>17 光年</td></tr>
 <tr><th scope="row">星座</th><td>天鹰座</td></tr>
 </tbody>
@@ -61,4 +61,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../formalhaut/">北落师门</a></p>
 <p class="obj-nav">下一颗：<a href="../deneb/">天津四</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "五车二（Capella）的天体数据：2.57 M☉、半径 12 R☉、光度 78.7 L☉、表面温度 4970 K。数据整理自公开天文资料。"
+description: "五车二（Capella）的天体数据：5.11×10³⁰ kg、直径 16,696,800 km、光度 3.01×10²⁸ W、温度 4,970 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>五车二 <small>Capella</small></h1>
     <p class="obj-tagline">御夫座最亮的星，四星系统金光耀眼</p>
-    <p class="obj-summary">半径 12 R☉ · 质量 2.57 M☉</p>
+    <p class="obj-summary">直径 16,696,800 km · 质量 5.11×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.57 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>12 R☉</td></tr>
+<tr><th scope="row">质量</th><td>5.11×10³⁰ kg（2.57 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>16,696,800 km（12 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>4.89 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>285.84 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>4970 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>4,970 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G3III</td></tr>
 <tr><th scope="row">恒星类型</th><td>黄巨星（G3III 四星系统）</td></tr>
-<tr><th scope="row">光度</th><td>78.7 L☉</td></tr>
+<tr><th scope="row">光度</th><td>3.01×10²⁸ W（78.7 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>43 光年</td></tr>
 <tr><th scope="row">星座</th><td>御夫座</td></tr>
 </tbody>
@@ -56,4 +56,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../pollux/">北河三</a></p>
 <p class="obj-nav">下一颗：<a href="../aldebaran/">毕宿五</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "WASP-107 b（WASP-107 b）的天体数据：—、平均半径 —、密度 0.12 g/cm³、表面温度 456.9 °C。数据整理自公开天文资料。"
+description: "WASP-107 b（WASP-107 b）的天体数据：—、平均直径 —、密度 0.12 g/cm³、温度 730 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -22,7 +22,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">平均密度</th><td>0.12 g/cm³</td></tr>
-<tr><th scope="row">平均表面温度</th><td>456.9 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>730 K（456.9 °C）</td></tr>
 <tr><th scope="row">星座</th><td>六分仪座</td></tr>
 </tbody>
 </table>
@@ -48,4 +48,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../hd_189733_b/">HD 189733 b</a></p>
 <p class="obj-nav">下一颗：<a href="../kepler_16b/">开普勒16b</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

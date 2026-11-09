@@ -1,5 +1,5 @@
 ---
-description: "特拉比斯特 1（TRAPPIST-1）的天体数据：0.0898 M☉、半径 0.119 R☉、光度 5.66×10⁻⁴ L☉、表面温度 2566 K。数据整理自公开天文资料。"
+description: "特拉比斯特 1（TRAPPIST-1）的天体数据：1.79×10²⁹ kg、直径 165,855 km、光度 2.17×10²³ W、温度 2,566 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>特拉比斯特 1 <small>TRAPPIST-1</small></h1>
     <p class="obj-tagline">拥有七颗地球大小行星的红矮星，系外行星研究圣地</p>
-    <p class="obj-summary">半径 0.119 R☉ · 质量 0.0898 M☉</p>
+    <p class="obj-summary">直径 165,855 km · 质量 1.79×10²⁹ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>0.0898 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>0.119 R☉</td></tr>
+<tr><th scope="row">质量</th><td>1.79×10²⁹ kg（0.0898 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>165,855 km（13 × 地球直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>1732.89 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>536.10 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>2566 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>2,566 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M8V</td></tr>
 <tr><th scope="row">恒星类型</th><td>红矮星（M8V）</td></tr>
-<tr><th scope="row">光度</th><td>5.66×10⁻⁴ L☉</td></tr>
+<tr><th scope="row">光度</th><td>2.17×10²³ W（5.66×10⁻⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>41 光年</td></tr>
 <tr><th scope="row">星座</th><td>宝瓶座</td></tr>
 </tbody>
@@ -64,4 +64,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../kepler_22/">开普勒 22</a></p>
 <p class="obj-nav">下一颗：<a href="../gliese_581/">格利泽 581</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

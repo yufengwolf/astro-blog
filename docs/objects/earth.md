@@ -1,5 +1,5 @@
 ---
-description: "地球（Earth）的天体数据：5.97×10²⁴ kg、平均半径 6,371 km、密度 5.514 g/cm³、表面温度 15 °C。数据整理自公开天文资料。"
+description: "地球（Earth）的天体数据：5.97×10²⁴ kg、平均直径 12,742 km、密度 5.514 g/cm³、温度 288 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>地球 <small>Earth</small></h1>
     <p class="obj-tagline">目前已知唯一存在生命的行星，约 71% 表面被液态水覆盖</p>
-    <p class="obj-summary">平均半径 6,371 km · 质量 5.97×10²⁴ kg</p>
+    <p class="obj-summary">平均直径 12,742 km · 质量 5.97×10²⁴ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>5.97×10²⁴ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>6,371 km</td></tr>
+<tr><th scope="row">质量</th><td>5.97×10²⁴ kg（1 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>12,742 km（1 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>5.514 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>9.82 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>11.19 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>15 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-19.1 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>288 K（15 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>254 K（-19.1 °C）</td></tr>
 <tr><th scope="row">表面气压</th><td>1 bar</td></tr>
 <tr><th scope="row">反照率</th><td>0.29（Bond 0.294 / Geometric 0.434）</td></tr>
 </tbody>
@@ -72,4 +72,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../venus/">金星</a></p>
 <p class="obj-nav">下一颗：<a href="../mars/">火星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

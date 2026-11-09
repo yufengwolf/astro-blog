@@ -1,5 +1,5 @@
 ---
-description: "天鹅座 X-1（Cygnus X-1）的天体数据：21.2 M☉、史瓦西半径 63 km、距离 7,240 光年、表面温度 —。数据整理自公开天文资料。"
+description: "天鹅座 X-1（Cygnus X-1）的天体数据：4.22×10³¹ kg、事件视界直径 125.2 km、距离 7,240 光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge black_hole">黑洞</span>
     <h1>天鹅座 X-1 <small>Cygnus X-1</small></h1>
     <p class="obj-tagline">人类确认的第一个恒星级黑洞，霍金打赌输掉的那位</p>
-    <p class="obj-summary">史瓦西半径 63 km · 质量 21.2 M☉</p>
+    <p class="obj-summary">事件视界直径 125.2 km · 质量 4.22×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>21.2 M☉</td></tr>
-<tr><th scope="row">史瓦西半径</th><td>63 km</td></tr>
+<tr><th scope="row">质量</th><td>4.22×10³¹ kg（21.2 M☉）</td></tr>
+<tr><th scope="row">事件视界直径</th><td>125.2 km（0.00983 × 地球直径）</td></tr>
 <tr><th scope="row">距离</th><td>7,240 光年</td></tr>
 <tr><th scope="row">星座</th><td>天鹅座</td></tr>
 </tbody>
@@ -50,4 +50,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../gw190521/">GW190521</a></p>
 <p class="obj-nav">下一颗：<a href="../v404_cyg/">V404 天鹅座</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

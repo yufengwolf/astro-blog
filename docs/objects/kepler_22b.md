@@ -1,5 +1,5 @@
 ---
-description: "开普勒22b（Kepler-22b）的天体数据：—、平均半径 15,200 km、密度 —、表面温度 -11.1 °C。数据整理自公开天文资料。"
+description: "开普勒22b（Kepler-22b）的天体数据：—、平均直径 30,400 km、密度 —、温度 262 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>开普勒22b <small>Kepler-22b</small></h1>
     <p class="obj-tagline">位于宜居带的系外行星，环绕恒星开普勒22运行</p>
-    <p class="obj-summary">平均半径 15,200 km</p>
+    <p class="obj-summary">平均直径 30,400 km</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>15,200 km</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-11.1 °C</td></tr>
+<tr><th scope="row">平均直径</th><td>30,400 km（2.39 × 地球直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>262 K（-11.1 °C）</td></tr>
 <tr><th scope="row">星座</th><td>天鹅座</td></tr>
 </tbody>
 </table>
@@ -49,4 +49,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../kepler_452b/">开普勒452b</a></p>
 <p class="obj-nav">下一颗：<a href="../k2-18_b/">K2-18 b</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

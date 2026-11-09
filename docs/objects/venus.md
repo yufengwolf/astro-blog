@@ -1,5 +1,5 @@
 ---
-description: "金星（Venus）的天体数据：4.87×10²⁴ kg、平均半径 6,052 km、密度 5.243 g/cm³、表面温度 464 °C。数据整理自公开天文资料。"
+description: "金星（Venus）的天体数据：4.87×10²⁴ kg、平均直径 12,104 km、密度 5.243 g/cm³、温度 737 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>金星 <small>Venus</small></h1>
     <p class="obj-tagline">被浓厚二氧化碳大气包裹的炽热世界，太阳系表面最热的行星</p>
-    <p class="obj-summary">平均半径 6,052 km · 质量 4.87×10²⁴ kg</p>
+    <p class="obj-summary">平均直径 12,104 km · 质量 4.87×10²⁴ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>4.87×10²⁴ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>6,052 km</td></tr>
+<tr><th scope="row">质量</th><td>4.87×10²⁴ kg（0.815 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>12,104 km（0.95 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>5.243 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>8.87 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>10.36 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>464 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-46.5 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>737 K（464 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>227 K（-46.5 °C）</td></tr>
 <tr><th scope="row">表面气压</th><td>92 bar</td></tr>
 <tr><th scope="row">反照率</th><td>0.69（Bond 0.77 / Geometric 0.689）</td></tr>
 </tbody>
@@ -129,4 +129,4 @@ A：不能，它是地内行星，只能在日出前或日落后短暂出现，�
 <p class="obj-nav">← 上一颗：<a href="../mercury/">水星</a></p>
 <p class="obj-nav">下一颗：<a href="../earth/">地球</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

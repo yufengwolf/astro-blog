@@ -1,5 +1,5 @@
 ---
-description: "绘架座 β（Beta Pictoris）的天体数据：1.79 M☉、半径 1.53 R☉、光度 8.7 L☉、表面温度 8054 K。数据整理自公开天文资料。"
+description: "绘架座 β（Beta Pictoris）的天体数据：3.56×10³⁰ kg、直径 2,128,842 km、光度 3.33×10²⁷ W、温度 8,054 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>绘架座 β <small>Beta Pictoris</small></h1>
     <p class="obj-tagline">第一个被直接拍到碎屑盘的恒星，年轻星群的命名来源</p>
-    <p class="obj-summary">半径 1.53 R☉ · 质量 1.79 M☉</p>
+    <p class="obj-summary">直径 2,128,842 km · 质量 3.56×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.79 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>1.53 R☉</td></tr>
+<tr><th scope="row">质量</th><td>3.56×10³⁰ kg（1.79 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>2,128,842 km（1.53 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>209.66 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>668.08 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>8054 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>8,054 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A6V</td></tr>
 <tr><th scope="row">恒星类型</th><td>白主序星（A6V）</td></tr>
-<tr><th scope="row">光度</th><td>8.7 L☉</td></tr>
+<tr><th scope="row">光度</th><td>3.33×10²⁷ W（8.7 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>63 光年</td></tr>
 <tr><th scope="row">星座</th><td>绘架座</td></tr>
 </tbody>
@@ -64,4 +64,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../pegasi_51/">飞马座 51</a></p>
 <p class="obj-nav">下一颗：<a href="../procyon_a/">南河三</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

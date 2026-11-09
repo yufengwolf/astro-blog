@@ -1,5 +1,5 @@
 ---
-description: "开普勒452b（Kepler-452b）的天体数据：—、平均半径 12,600 km、密度 —、表面温度 -8.1 °C。数据整理自公开天文资料。"
+description: "开普勒452b（Kepler-452b）的天体数据：—、平均直径 25,200 km、密度 —、温度 265 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>开普勒452b <small>Kepler-452b</small></h1>
     <p class="obj-tagline">位于天鹅座的系外类地行星，常被称为地球2.0</p>
-    <p class="obj-summary">平均半径 12,600 km</p>
+    <p class="obj-summary">平均直径 25,200 km</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>12,600 km</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-8.1 °C</td></tr>
+<tr><th scope="row">平均直径</th><td>25,200 km（1.98 × 地球直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>265 K（-8.1 °C）</td></tr>
 <tr><th scope="row">星座</th><td>天鹅座</td></tr>
 </tbody>
 </table>
@@ -50,4 +50,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../proxima_centauri_b/">比邻星b</a></p>
 <p class="obj-nav">下一颗：<a href="../kepler_22b/">开普勒22b</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

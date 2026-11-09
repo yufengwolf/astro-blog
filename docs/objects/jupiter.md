@@ -1,5 +1,5 @@
 ---
-description: "木星（Jupiter）的天体数据：1.9×10²⁷ kg、平均半径 69,911 km、密度 1.326 g/cm³、表面温度 -110 °C。数据整理自公开天文资料。"
+description: "木星（Jupiter）的天体数据：1.9×10²⁷ kg、平均直径 139,822 km、密度 1.326 g/cm³、温度 163 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>木星 <small>Jupiter</small></h1>
     <p class="obj-tagline">太阳系最大的行星，质量超过其余七颗行星的总和</p>
-    <p class="obj-summary">平均半径 69,911 km · 质量 1.9×10²⁷ kg</p>
+    <p class="obj-summary">平均直径 139,822 km · 质量 1.9×10²⁷ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.9×10²⁷ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>69,911 km</td></tr>
+<tr><th scope="row">质量</th><td>1.9×10²⁷ kg（318 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>139,822 km（11 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.326 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>25.92 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>59.50 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-110 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-163.2 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>163 K（-110 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>110 K（-163.2 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.34（Bond 0.343 / Geometric 0.538）</td></tr>
 </tbody>
 </table>
@@ -141,4 +141,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../mars/">火星</a></p>
 <p class="obj-nav">下一颗：<a href="../saturn/">土星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

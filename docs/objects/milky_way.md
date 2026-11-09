@@ -1,5 +1,5 @@
 ---
-description: "银河系（Milky Way）的天体数据：1.5×10¹² M☉、半径/大小 50,000 光年、光度 2.5×10¹⁰ L☉、表面温度 —。数据整理自公开天文资料。"
+description: "银河系（Milky Way）的天体数据：2.98×10⁴² kg、直径（等效球径） 100,000 光年、光度 9.57×10³⁶ W、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge galaxy">星系</span>
     <h1>银河系 <small>Milky Way</small></h1>
     <p class="obj-tagline">我们的家园星系，太阳系所在的棒旋星系</p>
-    <p class="obj-summary">半径/大小 50,000 光年 · 质量 1.5×10¹² M☉</p>
+    <p class="obj-summary">直径（等效球径） 100,000 光年 · 质量 2.98×10⁴² kg</p>
   </div>
 </div>
 
@@ -22,9 +22,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.5×10¹² M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>50,000 光年</td></tr>
-<tr><th scope="row">光度</th><td>2.5×10¹⁰ L☉</td></tr>
+<tr><th scope="row">质量</th><td>2.98×10⁴² kg（1.5×10¹² M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>100,000 光年</td></tr>
+<tr><th scope="row">光度</th><td>9.57×10³⁶ W（2.5×10¹⁰ L☉）</td></tr>
 <tr><th scope="row">类型</th><td>棒旋星系（SBbc）</td></tr>
 </tbody>
 </table>
@@ -51,4 +51,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../tarantula/">蜘蛛星云</a></p>
 <p class="obj-nav">下一颗：<a href="../m31/">仙女座星系</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

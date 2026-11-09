@@ -1,5 +1,5 @@
 ---
-description: "比邻星（Proxima Centauri）的天体数据：0.122 M☉、半径 0.154 R☉、光度 0.0017 L☉、表面温度 3040 K。数据整理自公开天文资料。"
+description: "比邻星（Proxima Centauri）的天体数据：2.43×10²⁹ kg、直径 214,276 km、光度 6.51×10²³ W、温度 3,040 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>比邻星 <small>Proxima Centauri</small></h1>
     <p class="obj-tagline">半人马座α三星系统的成员，距离太阳最近的恒星，一颗暗弱的红矮星</p>
-    <p class="obj-summary">半径 0.154 R☉ · 质量 0.122 M☉</p>
+    <p class="obj-summary">直径 214,276 km · 质量 2.43×10²⁹ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>0.122 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>0.154 R☉</td></tr>
+<tr><th scope="row">质量</th><td>2.43×10²⁹ kg（0.122 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>214,276 km（16.8 × 地球直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>1410.47 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>549.75 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>3040 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3,040 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M5.5Ve（红矮星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>红矮星（M5.5Ve）</td></tr>
-<tr><th scope="row">光度</th><td>0.0017 L☉</td></tr>
+<tr><th scope="row">光度</th><td>6.51×10²³ W（0.0017 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>4 光年</td></tr>
 <tr><th scope="row">星座</th><td>半人马座</td></tr>
 </tbody>
@@ -67,4 +67,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../sirius_a/">天狼星 A</a></p>
 <p class="obj-nav">下一颗：<a href="../m87_star/">M87*</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

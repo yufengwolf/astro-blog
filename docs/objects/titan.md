@@ -1,5 +1,5 @@
 ---
-description: "土卫六（Titan）的天体数据：1.35×10²³ kg、平均半径 2,576 km、密度 1.881 g/cm³、表面温度 -179 °C。数据整理自公开天文资料。"
+description: "土卫六（Titan）的天体数据：1.35×10²³ kg、平均直径 5,151 km、密度 1.881 g/cm³、温度 94 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>土卫六 <small>Titan</small></h1>
     <p class="obj-tagline">太阳系唯一拥有浓厚大气的卫星，地表有液态甲烷的湖泊与河流</p>
-    <p class="obj-summary">平均半径 2,576 km · 质量 1.35×10²³ kg</p>
+    <p class="obj-summary">平均直径 5,151 km · 质量 1.35×10²³ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.35×10²³ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>2,576 km</td></tr>
+<tr><th scope="row">质量</th><td>1.35×10²³ kg（0.0225 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>5,151 km（0.404 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.881 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>1.35 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>2.64 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-179 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>94 K（-179 °C）</td></tr>
 <tr><th scope="row">表面气压</th><td>1.47 bar</td></tr>
 <tr><th scope="row">反照率</th><td>0.22（Geometric 口径）</td></tr>
 </tbody>
@@ -69,4 +69,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../rhea/">土卫五</a></p>
 <p class="obj-nav">下一颗：<a href="../hyperion/">土卫七</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

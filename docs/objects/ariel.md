@@ -1,5 +1,5 @@
 ---
-description: "天卫一（Ariel）的天体数据：1.29×10²¹ kg、平均半径 578.9 km、密度 1.59 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "天卫一（Ariel）的天体数据：1.29×10²¹ kg、平均直径 1,158 km、密度 1.59 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>天卫一 <small>Ariel</small></h1>
     <p class="obj-tagline">天王星系统中最明亮的卫星，表面峡谷纵横</p>
-    <p class="obj-summary">平均半径 578.9 km · 质量 1.29×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,158 km · 质量 1.29×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.29×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>578.9 km</td></tr>
+<tr><th scope="row">质量</th><td>1.29×10²¹ kg（2.16×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,158 km（0.0909 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.59 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.27 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.559 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../miranda/">天卫五</a></p>
 <p class="obj-nav">下一颗：<a href="../umbriel/">天卫二</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

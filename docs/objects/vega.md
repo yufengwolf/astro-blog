@@ -1,5 +1,5 @@
 ---
-description: "织女星（Vega）的天体数据：2.14 M☉、半径 2.36 R☉、光度 40 L☉、表面温度 9600 K。数据整理自公开天文资料。"
+description: "织女星（Vega）的天体数据：4.26×10³⁰ kg、直径 3,283,704 km、光度 1.53×10²⁸ W、温度 9,600 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>织女星 <small>Vega</small></h1>
     <p class="obj-tagline">天琴座α，夏季大三角的顶点，一颗 A 型主序星，曾是北极星</p>
-    <p class="obj-summary">半径 2.36 R☉ · 质量 2.14 M☉</p>
+    <p class="obj-summary">直径 3,283,704 km · 质量 4.26×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.14 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>2.36 R☉</td></tr>
+<tr><th scope="row">质量</th><td>4.26×10³⁰ kg（2.14 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>3,283,704 km（2.36 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>105.35 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>588.17 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>9600 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>9,600 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A0V（主序星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝白主序星（A0V）</td></tr>
-<tr><th scope="row">光度</th><td>40 L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.53×10²⁸ W（40 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>25 光年</td></tr>
 <tr><th scope="row">星座</th><td>天琴座</td></tr>
 </tbody>
@@ -64,4 +64,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../betelgeuse/">参宿四</a></p>
 <p class="obj-nav">下一颗：<a href="../sirius_a/">天狼星 A</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

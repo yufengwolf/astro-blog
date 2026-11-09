@@ -1,5 +1,5 @@
 ---
-description: "凯龙星（Chiron）的天体数据：3.7×10¹⁸ kg、平均半径 106.0 km、密度 0.741644 g/cm³、表面温度 -183.1 °C。数据整理自公开天文资料。"
+description: "凯龙星（Chiron）的天体数据：3.7×10¹⁸ kg、平均直径 212.0 km、密度 0.741644 g/cm³、温度 90 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge asteroid">小行星</span>
     <h1>凯龙星 <small>Chiron</small></h1>
     <p class="obj-tagline">半人马型小天体，位于土星与天王星之间，兼具彗星特征</p>
-    <p class="obj-summary">平均半径 106.0 km · 质量 3.7×10¹⁸ kg</p>
+    <p class="obj-summary">平均直径 212.0 km · 质量 3.7×10¹⁸ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3.7×10¹⁸ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>106.0 km</td></tr>
+<tr><th scope="row">质量</th><td>3.7×10¹⁸ kg（6.2×10⁻⁷ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>212.0 km（0.0166 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>0.741644 g/cm³</td></tr>
 <tr><th scope="row">星座</th><td>人马座</td></tr>
 </tbody>
@@ -53,4 +53,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../quaoar/">创神星</a></p>
 <p class="obj-nav">下一颗：<a href="../oj_287/">OJ 287</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

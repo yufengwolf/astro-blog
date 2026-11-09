@@ -1,5 +1,5 @@
 ---
-description: "海王星（Neptune）的天体数据：1.02×10²⁶ kg、平均半径 24,764 km、密度 1.638 g/cm³、表面温度 -200 °C。数据整理自公开天文资料。"
+description: "海王星（Neptune）的天体数据：1.02×10²⁶ kg、平均直径 49,528 km、密度 1.638 g/cm³、温度 73 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>海王星 <small>Neptune</small></h1>
     <p class="obj-tagline">太阳系最外侧的行星，风速可达每小时 2100 公里</p>
-    <p class="obj-summary">平均半径 24,764 km · 质量 1.02×10²⁶ kg</p>
+    <p class="obj-summary">平均直径 49,528 km · 质量 1.02×10²⁶ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.02×10²⁶ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>24,764 km</td></tr>
+<tr><th scope="row">质量</th><td>1.02×10²⁶ kg（17.1 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>49,528 km（3.89 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.638 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>11.15 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>23.50 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-200 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-226.6 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>73 K（-200 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>47 K（-226.6 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.29（Bond 0.29 / Geometric 0.442）</td></tr>
 </tbody>
 </table>
@@ -70,4 +70,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../uranus/">天王星</a></p>
 <p class="obj-nav">下一颗：<a href="../pluto/">冥王星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

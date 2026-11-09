@@ -1,5 +1,5 @@
 ---
-description: "月球（Moon）的天体数据：7.35×10²² kg、平均半径 1,737 km、密度 3.344 g/cm³、表面温度 -20 °C。数据整理自公开天文资料。"
+description: "月球（Moon）的天体数据：7.35×10²² kg、平均直径 3,475 km、密度 3.344 g/cm³、温度 253 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>月球 <small>Moon</small></h1>
     <p class="obj-tagline">地球唯一的天然卫星，潮汐锁定使它永远以同一面朝向地球</p>
-    <p class="obj-summary">平均半径 1,737 km · 质量 7.35×10²² kg</p>
+    <p class="obj-summary">平均直径 3,475 km · 质量 7.35×10²² kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>7.35×10²² kg</td></tr>
-<tr><th scope="row">平均半径</th><td>1,737 km</td></tr>
+<tr><th scope="row">质量</th><td>7.35×10²² kg（0.0123 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>3,475 km（0.273 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>3.344 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>1.62 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>2.38 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-20 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>-2.8 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>253 K（-20 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>270 K（-2.8 °C）</td></tr>
 <tr><th scope="row">表面气压</th><td>3×10⁻¹⁵ bar</td></tr>
 <tr><th scope="row">反照率</th><td>0.12（Bond 0.11 / Geometric 0.12）</td></tr>
 </tbody>
@@ -71,4 +71,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../eris/">阋神星</a></p>
 <p class="obj-nav">下一颗：<a href="../phobos/">火卫一</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

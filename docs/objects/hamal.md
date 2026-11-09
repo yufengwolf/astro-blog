@@ -1,5 +1,5 @@
 ---
-description: "娄宿三（Hamal）的天体数据：1.43 M☉、半径 15.2 R☉、光度 —、表面温度 4553 K。数据整理自公开天文资料。"
+description: "娄宿三（Hamal）的天体数据：2.84×10³⁰ kg、直径 21,135,366 km、光度 —、温度 4,553 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>娄宿三 <small>Hamal</small></h1>
     <p class="obj-tagline">白羊座最亮的星，一颗步入暮年的橙巨星</p>
-    <p class="obj-summary">半径 15.2 R☉ · 质量 1.43 M☉</p>
+    <p class="obj-summary">直径 21,135,366 km · 质量 2.84×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.43 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>15.2 R☉</td></tr>
+<tr><th scope="row">质量</th><td>2.84×10³⁰ kg（1.43 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>21,135,366 km（15.2 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>1.70 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>189.51 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>4553 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>4,553 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K2III</td></tr>
 <tr><th scope="row">恒星类型</th><td>橙巨星（K2III）</td></tr>
 <tr><th scope="row">距离</th><td>66 光年</td></tr>
@@ -63,4 +63,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../mirfak/">天船三</a></p>
 <p class="obj-nav">下一颗：<a href="../markab/">室宿一</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

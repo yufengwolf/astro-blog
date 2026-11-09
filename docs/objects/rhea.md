@@ -1,5 +1,5 @@
 ---
-description: "土卫五（Rhea）的天体数据：2.31×10²¹ kg、平均半径 763.8 km、密度 1.236 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "土卫五（Rhea）的天体数据：2.31×10²¹ kg、平均直径 1,528 km、密度 1.236 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>土卫五 <small>Rhea</small></h1>
     <p class="obj-tagline">土星第二大卫星，由约三分之二的冰与三分之一的岩石构成</p>
-    <p class="obj-summary">平均半径 763.8 km · 质量 2.31×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,528 km · 质量 2.31×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.31×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>763.8 km</td></tr>
+<tr><th scope="row">质量</th><td>2.31×10²¹ kg（3.87×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,528 km（0.12 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.236 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.26 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.635 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../dione/">土卫四</a></p>
 <p class="obj-nav">下一颗：<a href="../titan/">土卫六</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

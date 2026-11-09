@@ -1,5 +1,5 @@
 ---
-description: "毕星团（Hyades）的天体数据：400 M☉、半径/大小 7 光年、距离 153 光年、表面温度 —。数据整理自公开天文资料。"
+description: "毕星团（Hyades）的天体数据：7.95×10³² kg、直径（等效球径） 14.7 光年、距离 153 光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge cluster">星团</span>
     <h1>毕星团 <small>Hyades</small></h1>
     <p class="obj-tagline">金牛座的 V 形头部，离太阳最近的疏散星团之一</p>
-    <p class="obj-summary">半径/大小 7 光年 · 质量 400 M☉</p>
+    <p class="obj-summary">直径（等效球径） 14.7 光年 · 质量 7.95×10³² kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>400 M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>7 光年</td></tr>
+<tr><th scope="row">质量</th><td>7.95×10³² kg（400 M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>14.7 光年</td></tr>
 <tr><th scope="row">距离</th><td>153 光年</td></tr>
 <tr><th scope="row">类型</th><td>疏散星团</td></tr>
 <tr><th scope="row">星座</th><td>金牛座</td></tr>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../m45/">昴星团</a></p>
 <p class="obj-nav">下一颗：<a href="../m44/">蜂巢星团</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

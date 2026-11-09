@@ -1,5 +1,5 @@
 ---
-description: "弧矢增二十二（Zeta Puppis）的天体数据：—、半径 14 R☉、光度 —、表面温度 42000 K。数据整理自公开天文资料。"
+description: "弧矢增二十二（Zeta Puppis）的天体数据：—、直径 19,479,600 km、光度 —、温度 42,000 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>弧矢增二十二 <small>Zeta Puppis</small></h1>
     <p class="obj-tagline">船尾座最亮的星，肉眼可见最热的恒星之一</p>
-    <p class="obj-summary">半径 14 R☉</p>
+    <p class="obj-summary">直径 19,479,600 km</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>14 R☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>42000 K</td></tr>
+<tr><th scope="row">平均直径</th><td>19,479,600 km（14 × 太阳直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>42,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>O5Ibf</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝超巨星（O5Ibf）</td></tr>
 <tr><th scope="row">距离</th><td>1,093 光年</td></tr>
@@ -60,4 +60,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../p_cygni/">天鹅座 P</a></p>
 <p class="obj-nav">下一颗：<a href="../r136a1/">R136a1</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

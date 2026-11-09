@@ -1,5 +1,5 @@
 ---
-description: "史蒂文森 2-18（Stephenson 2-18）的天体数据：12 M☉、半径 2,150 R☉、光度 4.37×10⁵ L☉、表面温度 3200 K。数据整理自公开天文资料。"
+description: "史蒂文森 2-18（Stephenson 2-18）的天体数据：2.39×10³¹ kg、直径 2.99×10⁹ km、光度 1.67×10³² W、温度 3,200 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>史蒂文森 2-18 <small>Stephenson 2-18</small></h1>
     <p class="obj-tagline">位于盾牌座方向的红超巨星，是目前已知体积最大的恒星之一</p>
-    <p class="obj-summary">半径 2,150 R☉ · 质量 12 M☉</p>
+    <p class="obj-summary">直径 2.99×10⁹ km · 质量 2.39×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>12 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>2,150 R☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>3200 K</td></tr>
+<tr><th scope="row">质量</th><td>2.39×10³¹ kg（12 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>2.99×10⁹ km（2.15×10³ × 太阳直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3,200 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M6Ia（红超巨星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>红超巨星（M6Ia）</td></tr>
-<tr><th scope="row">光度</th><td>4.37×10⁵ L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.67×10³² W（4.37×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2 万光年</td></tr>
 <tr><th scope="row">星座</th><td>盾牌座</td></tr>
 </tbody>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../pistol_star/">手枪星</a></p>
 <p class="obj-nav">下一颗：<a href="../arcturus/">大角星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

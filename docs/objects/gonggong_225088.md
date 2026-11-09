@@ -1,5 +1,5 @@
 ---
-description: "共工星（225088 Gonggong）的天体数据：—、平均半径 615.0 km、密度 —、表面温度 -243.1 °C。数据整理自公开天文资料。"
+description: "共工星（225088 Gonggong）的天体数据：—、平均直径 1,230 km、密度 —、温度 30 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>共工星 <small>225088 Gonggong</small></h1>
     <p class="obj-tagline">柯伊伯带离散盘冰质矮行星，以中国水神共工命名</p>
-    <p class="obj-summary">平均半径 615.0 km</p>
+    <p class="obj-summary">平均直径 1,230 km</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>615.0 km</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-243.1 °C</td></tr>
+<tr><th scope="row">平均直径</th><td>1,230 km（0.0965 × 地球直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>30 K（-243.1 °C）</td></tr>
 <tr><th scope="row">星座</th><td>双子座</td></tr>
 </tbody>
 </table>
@@ -61,4 +61,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../vanth/">范斯（亡卫一）</a></p>
 <p class="obj-nav">下一颗：<a href="../pallas/">智神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

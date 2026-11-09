@@ -1,5 +1,5 @@
 ---
-description: "大麦哲伦云（Large Magellanic Cloud）的天体数据：1×10¹⁰ M☉、半径/大小 7,000 光年、光度 —、表面温度 —。数据整理自公开天文资料。"
+description: "大麦哲伦云（Large Magellanic Cloud）的天体数据：1.99×10⁴⁰ kg、直径（等效球径） 14,000 光年、光度 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge galaxy">星系</span>
     <h1>大麦哲伦云 <small>Large Magellanic Cloud</small></h1>
     <p class="obj-tagline">银河系最大的卫星星系，南天夜空中挂着的模糊云块</p>
-    <p class="obj-summary">半径/大小 7,000 光年 · 质量 1×10¹⁰ M☉</p>
+    <p class="obj-summary">直径（等效球径） 14,000 光年 · 质量 1.99×10⁴⁰ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1×10¹⁰ M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>7,000 光年</td></tr>
+<tr><th scope="row">质量</th><td>1.99×10⁴⁰ kg（1×10¹⁰ M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>14,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>16 万光年</td></tr>
 <tr><th scope="row">类型</th><td>不规则（麦哲伦型）矮星系</td></tr>
 <tr><th scope="row">星座</th><td>剑鱼座 / 山案座</td></tr>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../m33/">三角座星系</a></p>
 <p class="obj-nav">下一颗：<a href="../smc/">小麦哲伦云</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

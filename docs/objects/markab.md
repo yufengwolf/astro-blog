@@ -1,5 +1,5 @@
 ---
-description: "室宿一（Markab）的天体数据：4 M☉、半径 —、光度 160 L☉、表面温度 11000 K。数据整理自公开天文资料。"
+description: "室宿一（Markab）的天体数据：7.95×10³⁰ kg、直径 —、光度 6.12×10²⁸ W、温度 11,000 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>室宿一 <small>Markab</small></h1>
     <p class="obj-tagline">飞马座四边形的一角，正值暮年的蓝白巨星</p>
-    <p class="obj-summary">质量 4 M☉</p>
+    <p class="obj-summary">质量 7.95×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>4 M☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>11000 K</td></tr>
+<tr><th scope="row">质量</th><td>7.95×10³⁰ kg（4 M☉）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>11,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B9III</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝白巨星（B9III）</td></tr>
-<tr><th scope="row">光度</th><td>160 L☉</td></tr>
+<tr><th scope="row">光度</th><td>6.12×10²⁸ W（160 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>140 光年</td></tr>
 <tr><th scope="row">星座</th><td>飞马座</td></tr>
 </tbody>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../hamal/">娄宿三</a></p>
 <p class="obj-nav">下一颗：<a href="../alpheratz/">壁宿二</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

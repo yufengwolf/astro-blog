@@ -1,5 +1,5 @@
 ---
-description: "船帆脉冲星（Vela Pulsar）的天体数据：1.4 M☉、半径 —、光度 2×10⁴ L☉、表面温度 1.2×10⁶ K。数据整理自公开天文资料。"
+description: "船帆脉冲星（Vela Pulsar）的天体数据：2.78×10³⁰ kg、直径 —、光度 7.66×10³⁰ W、温度 1.2×10⁶ K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>船帆脉冲星 <small>Vela Pulsar</small></h1>
     <p class="obj-tagline">船帆座超新星遗迹中心的中子星，自转突变的经典样本</p>
-    <p class="obj-summary">质量 1.4 M☉</p>
+    <p class="obj-summary">质量 2.78×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,10 +22,10 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.4 M☉</td></tr>
+<tr><th scope="row">质量</th><td>2.78×10³⁰ kg（1.4 M☉）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>1.2×10⁶ K</td></tr>
 <tr><th scope="row">恒星类型</th><td>中子星（脉冲星）</td></tr>
-<tr><th scope="row">光度</th><td>2×10⁴ L☉</td></tr>
+<tr><th scope="row">光度</th><td>7.66×10³⁰ W（2×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>959 光年</td></tr>
 <tr><th scope="row">星座</th><td>船帆座</td></tr>
 </tbody>
@@ -60,4 +60,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../crab_pulsar/">蟹云脉冲星</a></p>
 <p class="obj-nav">下一颗：<a href="../sgr_1806_20/">SGR 1806-20</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

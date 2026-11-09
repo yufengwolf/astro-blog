@@ -1,5 +1,5 @@
 ---
-description: "天鹅座 P（P Cygni）的天体数据：37 M☉、半径 76 R☉、光度 6.1×10⁵ L☉、表面温度 18700 K。数据整理自公开天文资料。"
+description: "天鹅座 P（P Cygni）的天体数据：7.36×10³¹ kg、直径 105,746,400 km、光度 2.34×10³² W、温度 18,700 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>天鹅座 P <small>P Cygni</small></h1>
     <p class="obj-tagline">1600 年无预警增亮的'新星'，至今仍在抛射物质</p>
-    <p class="obj-summary">半径 76 R☉ · 质量 37 M☉</p>
+    <p class="obj-summary">直径 105,746,400 km · 质量 7.36×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>37 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>76 R☉</td></tr>
+<tr><th scope="row">质量</th><td>7.36×10³¹ kg（37 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>105,746,400 km（76 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>1.76 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>430.97 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>18700 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>18,700 K</td></tr>
 <tr><th scope="row">光谱型</th><td>LBV</td></tr>
 <tr><th scope="row">恒星类型</th><td>高光度蓝变星（LBV）</td></tr>
-<tr><th scope="row">光度</th><td>6.1×10⁵ L☉</td></tr>
+<tr><th scope="row">光度</th><td>2.34×10³² W（6.1×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>5,300 光年</td></tr>
 <tr><th scope="row">星座</th><td>天鹅座</td></tr>
 </tbody>
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../mira/">蒭藁增二</a></p>
 <p class="obj-nav">下一颗：<a href="../naos/">弧矢增二十二</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

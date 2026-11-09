@@ -1,5 +1,5 @@
 ---
-description: "壁宿二（Alpheratz）的天体数据：3.63 M☉、半径 2.94 R☉、光度 158 L☉、表面温度 11950 K。数据整理自公开天文资料。"
+description: "壁宿二（Alpheratz）的天体数据：7.22×10³⁰ kg、直径 4,090,716 km、光度 6.05×10²⁸ W、温度 11,950 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>壁宿二 <small>Alpheratz</small></h1>
     <p class="obj-tagline">仙女座与飞马座共用的一角，蓝白亚巨星</p>
-    <p class="obj-summary">半径 2.94 R☉ · 质量 3.63 M☉</p>
+    <p class="obj-summary">直径 4,090,716 km · 质量 7.22×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3.63 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>2.94 R☉</td></tr>
+<tr><th scope="row">质量</th><td>7.22×10³⁰ kg（3.63 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>4,090,716 km（2.94 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>115.15 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>686.32 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>11950 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>11,950 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B8IV</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝白亚巨星（B8IV）</td></tr>
-<tr><th scope="row">光度</th><td>158 L☉</td></tr>
+<tr><th scope="row">光度</th><td>6.05×10²⁸ W（158 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>97 光年</td></tr>
 <tr><th scope="row">星座</th><td>仙女座</td></tr>
 </tbody>
@@ -65,4 +65,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../markab/">室宿一</a></p>
 <p class="obj-nav">下一颗：<a href="../mirach/">奎宿九</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

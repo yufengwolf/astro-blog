@@ -1,5 +1,5 @@
 ---
-description: "渐台二（Beta Lyrae）的天体数据：2.97 M☉、半径 15.2 R☉、光度 6.5×10³ L☉、表面温度 13300 K。数据整理自公开天文资料。"
+description: "渐台二（Beta Lyrae）的天体数据：5.91×10³⁰ kg、直径 21,149,280 km、光度 2.49×10³⁰ W、温度 13,300 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>渐台二 <small>Beta Lyrae</small></h1>
     <p class="obj-tagline">物质正从一颗星流向另一颗的食双星</p>
-    <p class="obj-summary">半径 15.2 R☉ · 质量 2.97 M☉</p>
+    <p class="obj-summary">直径 21,149,280 km · 质量 5.91×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.97 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>15.2 R☉</td></tr>
+<tr><th scope="row">质量</th><td>5.91×10³⁰ kg（2.97 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>21,149,280 km（15.2 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>3.52 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>273.03 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>13300 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>13,300 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B7II</td></tr>
 <tr><th scope="row">恒星类型</th><td>食双星（质量转移系统）</td></tr>
-<tr><th scope="row">光度</th><td>6.5×10³ L☉</td></tr>
+<tr><th scope="row">光度</th><td>2.49×10³⁰ W（6.5×10³ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>960 光年</td></tr>
 <tr><th scope="row">星座</th><td>天琴座</td></tr>
 </tbody>
@@ -68,4 +68,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../algol/">大陵五</a></p>
 <p class="obj-nav">下一颗：<a href="../almaaz/">御夫座 ε</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

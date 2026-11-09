@@ -1,5 +1,5 @@
 ---
-description: "创神星（Quaoar）的天体数据：1.2×10²¹ kg、平均半径 555.0 km、密度 1.67577 g/cm³、表面温度 -231.1 °C。数据整理自公开天文资料。"
+description: "创神星（Quaoar）的天体数据：1.2×10²¹ kg、平均直径 1,110 km、密度 1.67577 g/cm³、温度 42 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>创神星 <small>Quaoar</small></h1>
     <p class="obj-tagline">柯伊伯带矮行星，拥有行星环，位于海王星轨道外侧</p>
-    <p class="obj-summary">平均半径 555.0 km · 质量 1.2×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,110 km · 质量 1.2×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.2×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>555.0 km</td></tr>
+<tr><th scope="row">质量</th><td>1.2×10²¹ kg（2.01×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,110 km（0.0871 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.67577 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.26 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.537 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>-231.1 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>42 K（-231.1 °C）</td></tr>
 <tr><th scope="row">星座</th><td>蛇夫座</td></tr>
 </tbody>
 </table>
@@ -64,4 +64,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../disnomia/">阋卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../chiron/">凯龙星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "天卫四（Oberon）的天体数据：2.88×10²¹ kg、平均半径 761.4 km、密度 1.56 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "天卫四（Oberon）的天体数据：2.88×10²¹ kg、平均直径 1,523 km、密度 1.56 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>天卫四 <small>Oberon</small></h1>
     <p class="obj-tagline">天王星最外侧的大卫星，表面遍布撞击坑与深色物质</p>
-    <p class="obj-summary">平均半径 761.4 km · 质量 2.88×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,523 km · 质量 2.88×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.88×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>761.4 km</td></tr>
+<tr><th scope="row">质量</th><td>2.88×10²¹ kg（4.82×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,523 km（0.12 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.56 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.35 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.726 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../titania/">天卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../pistol_star/">手枪星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

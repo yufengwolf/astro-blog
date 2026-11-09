@@ -1,5 +1,5 @@
 ---
-description: "北河二（Castor）的天体数据：2.37 M☉、半径 2.09 R☉、光度 30 L☉、表面温度 10286 K。数据整理自公开天文资料。"
+description: "北河二（Castor）的天体数据：4.71×10³⁰ kg、直径 2,906,635 km、光度 1.15×10²⁸ W、温度 10,286 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>北河二 <small>Castor</small></h1>
     <p class="obj-tagline">六颗恒星组成的聚星系统，冬季大三角的一角</p>
-    <p class="obj-summary">半径 2.09 R☉ · 质量 2.37 M☉</p>
+    <p class="obj-summary">直径 2,906,635 km · 质量 4.71×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>2.37 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>2.09 R☉</td></tr>
+<tr><th scope="row">质量</th><td>4.71×10³⁰ kg（2.37 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>2,906,635 km（2.09 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>148.97 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>658.03 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>10286 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>10,286 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A1Vm</td></tr>
 <tr><th scope="row">恒星类型</th><td>白主序星（A1Vm 六合星系统）</td></tr>
-<tr><th scope="row">光度</th><td>30 L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.15×10²⁸ W（30 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>49 光年</td></tr>
 <tr><th scope="row">星座</th><td>双子座</td></tr>
 </tbody>
@@ -56,4 +56,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../alphacen_b/">南门二 B</a></p>
 <p class="obj-nav">下一颗：<a href="../pollux/">北河三</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

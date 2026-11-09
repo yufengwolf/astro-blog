@@ -1,5 +1,5 @@
 ---
-description: "南河三（Procyon）的天体数据：1.49 M☉、半径 —、光度 6.9 L☉、表面温度 6530 K。数据整理自公开天文资料。"
+description: "南河三（Procyon）的天体数据：2.97×10³⁰ kg、直径 —、光度 2.64×10²⁷ W、温度 6,530 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>南河三 <small>Procyon</small></h1>
     <p class="obj-tagline">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
-    <p class="obj-summary">质量 1.49 M☉</p>
+    <p class="obj-summary">质量 2.97×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.49 M☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>6530 K</td></tr>
+<tr><th scope="row">质量</th><td>2.97×10³⁰ kg（1.49 M☉）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>6,530 K</td></tr>
 <tr><th scope="row">光谱型</th><td>F5IV-V</td></tr>
 <tr><th scope="row">恒星类型</th><td>主序星（F5V-IV）</td></tr>
-<tr><th scope="row">光度</th><td>6.9 L☉</td></tr>
+<tr><th scope="row">光度</th><td>2.64×10²⁷ W（6.9 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>11 光年</td></tr>
 <tr><th scope="row">星座</th><td>小犬座</td></tr>
 </tbody>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../beta_pictoris/">绘架座 β</a></p>
 <p class="obj-nav">下一颗：<a href="../orcus/">亡神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

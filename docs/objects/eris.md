@@ -1,5 +1,5 @@
 ---
-description: "阋神星（Eris）的天体数据：1.6×10²² kg、平均半径 1,163 km、密度 —、表面温度 —。数据整理自公开天文资料。"
+description: "阋神星（Eris）的天体数据：1.6×10²² kg、平均直径 2,326 km、密度 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>阋神星 <small>Eris</small></h1>
     <p class="obj-tagline">质量最大的矮行星，它的发现促使冥王星降级</p>
-    <p class="obj-summary">平均半径 1,163 km · 质量 1.6×10²² kg</p>
+    <p class="obj-summary">平均直径 2,326 km · 质量 1.6×10²² kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.6×10²² kg</td></tr>
-<tr><th scope="row">平均半径</th><td>1,163 km</td></tr>
+<tr><th scope="row">质量</th><td>1.6×10²² kg（0.00268 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>2,326 km（0.183 × 地球直径）</td></tr>
 </tbody>
 </table>
 </section>
@@ -60,4 +60,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../haumea/">妊神星</a></p>
 <p class="obj-nav">下一颗：<a href="../moon/">月球</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

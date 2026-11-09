@@ -1,5 +1,5 @@
 ---
-description: "手枪星（Pistol Star）的天体数据：—、半径 308 R☉、光度 1.66×10⁶ L☉、表面温度 11800 K。数据整理自公开天文资料。"
+description: "手枪星（Pistol Star）的天体数据：—、直径 428,551,200 km、光度 6.35×10³² W、温度 11,800 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>手枪星 <small>Pistol Star</small></h1>
     <p class="obj-tagline">银河系中心附近的蓝色特超巨星，曾抛出手枪星云，是已知最明亮的恒星之一</p>
-    <p class="obj-summary">半径 308 R☉</p>
+    <p class="obj-summary">直径 428,551,200 km</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>308 R☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>11800 K</td></tr>
+<tr><th scope="row">平均直径</th><td>428,551,200 km（308 × 太阳直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>11,800 K</td></tr>
 <tr><th scope="row">光谱型</th><td>LBV（蓝色特超巨星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>高光度蓝变星（LBV）</td></tr>
-<tr><th scope="row">光度</th><td>1.66×10⁶ L☉</td></tr>
+<tr><th scope="row">光度</th><td>6.35×10³² W（1.66×10⁶ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2 万光年</td></tr>
 <tr><th scope="row">星座</th><td>人马座</td></tr>
 </tbody>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../oberon/">天卫四</a></p>
 <p class="obj-nav">下一颗：<a href="../stephenson_2_18/">史蒂文森 2-18</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -56,13 +56,16 @@ plugins:
   - search
 
 # ---- 自定义样式与脚本（天体数据库工具页） ----
+# 这些 URL 不带内容 hash。docs/_headers 已对 /* 设 Cache-Control: no-cache，
+# 但在 _headers 生效前就缓存了旧副本的客户端仍可能拿到旧版，故附版本查询串。
+# 【硬规则】每次改 site.css / docs/js/*.js，同步把下面的 v= 递增（与 gen_pages.VERSION 一致）。
 extra_css:
-  - stylesheets/site.css
+  - stylesheets/site.css?v=1.8
 
 extra_javascript:
-  - js/astro-explore.js
-  - js/compare.js
-  - js/solar-embed.js
+  - js/astro-explore.js?v=1.8
+  - js/compare.js?v=1.8
+  - js/solar-embed.js?v=1.8
 
 # ---- 导航结构 ----
 # 首页 = 天体总览工具页；objects/ 与 data.md 由 scripts/gen_pages.py 自动生成维护

@@ -1,5 +1,5 @@
 ---
-description: "轩辕十四（Regulus）的天体数据：3.8 M☉、半径 4.35 R☉、光度 316 L☉、表面温度 12460 K。数据整理自公开天文资料。"
+description: "轩辕十四（Regulus）的天体数据：7.56×10³⁰ kg、直径 6,052,590 km、光度 1.21×10²⁹ W、温度 12,460 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>轩辕十四 <small>Regulus</small></h1>
     <p class="obj-tagline">狮子座的心脏，一颗飞速自转的蓝白恒星</p>
-    <p class="obj-summary">半径 4.35 R☉ · 质量 3.8 M☉</p>
+    <p class="obj-summary">直径 6,052,590 km · 质量 7.56×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3.8 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>4.35 R☉</td></tr>
+<tr><th scope="row">质量</th><td>7.56×10³⁰ kg（3.8 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>6,052,590 km（4.35 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>55.06 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>577.29 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>12460 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>12,460 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B8IVn</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝白主序星（B8IVn）</td></tr>
-<tr><th scope="row">光度</th><td>316 L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.21×10²⁹ W（316 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>79 光年</td></tr>
 <tr><th scope="row">星座</th><td>狮子座</td></tr>
 </tbody>
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../spica/">角宿一</a></p>
 <p class="obj-nav">下一颗：<a href="../formalhaut/">北落师门</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

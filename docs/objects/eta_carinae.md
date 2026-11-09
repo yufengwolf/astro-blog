@@ -1,5 +1,5 @@
 ---
-description: "海山二（Eta Carinae）的天体数据：—、半径 60 R☉、光度 5×10⁶ L☉、表面温度 —。数据整理自公开天文资料。"
+description: "海山二（Eta Carinae）的天体数据：—、直径 83,484,000 km、光度 1.91×10³³ W、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>海山二 <small>Eta Carinae</small></h1>
     <p class="obj-tagline">银河系内最亮的高光度蓝变星，随时可能爆发为超新星</p>
-    <p class="obj-summary">半径 60 R☉</p>
+    <p class="obj-summary">直径 83,484,000 km</p>
   </div>
 </div>
 
@@ -22,10 +22,10 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>60 R☉</td></tr>
+<tr><th scope="row">平均直径</th><td>83,484,000 km（60 × 太阳直径）</td></tr>
 <tr><th scope="row">光谱型</th><td>LBV</td></tr>
 <tr><th scope="row">恒星类型</th><td>高光度蓝变星（LBV）</td></tr>
-<tr><th scope="row">光度</th><td>5×10⁶ L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.91×10³³ W（5×10⁶ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>7,500 光年</td></tr>
 <tr><th scope="row">星座</th><td>船底座</td></tr>
 </tbody>
@@ -51,4 +51,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../gw150514/">GW150914 并合黑洞</a></p>
 <p class="obj-nav">下一颗：<a href="../vesta/">灶神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

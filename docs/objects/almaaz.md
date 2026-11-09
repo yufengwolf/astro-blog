@@ -1,5 +1,5 @@
 ---
-description: "御夫座 ε（Epsilon Aurigae）的天体数据：15 M☉、半径 143 R☉、光度 3.79×10⁴ L☉、表面温度 7750 K。数据整理自公开天文资料。"
+description: "御夫座 ε（Epsilon Aurigae）的天体数据：2.99×10³¹ kg、直径 198,970,200 km、光度 1.45×10³¹ W、温度 7,750 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>御夫座 ε <small>Epsilon Aurigae</small></h1>
     <p class="obj-tagline">每 27 年才发生一次罕见星食的'柱一'</p>
-    <p class="obj-summary">半径 143 R☉ · 质量 15 M☉</p>
+    <p class="obj-summary">直径 198,970,200 km · 质量 2.99×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>15 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>143 R☉</td></tr>
+<tr><th scope="row">质量</th><td>2.99×10³¹ kg（15 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>198,970,200 km（143 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>0.20 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>200.12 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>7750 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>7,750 K</td></tr>
 <tr><th scope="row">光谱型</th><td>F0Iab</td></tr>
 <tr><th scope="row">恒星类型</th><td>食变星（F0Iab 主星 + 尘埃盘伴星）</td></tr>
-<tr><th scope="row">光度</th><td>3.79×10⁴ L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.45×10³¹ W（3.79×10⁴ L☉）</td></tr>
 <tr><th scope="row">星座</th><td>御夫座</td></tr>
 </tbody>
 </table>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../sheliak/">渐台二</a></p>
 <p class="obj-nav">下一颗：<a href="../kepler_452/">开普勒 452</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

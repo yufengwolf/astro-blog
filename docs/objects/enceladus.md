@@ -1,5 +1,5 @@
 ---
-description: "土卫二（Enceladus）的天体数据：1.08×10²⁰ kg、平均半径 252.1 km、密度 1.61 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "土卫二（Enceladus）的天体数据：1.08×10²⁰ kg、平均直径 504.2 km、密度 1.61 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>土卫二 <small>Enceladus</small></h1>
     <p class="obj-tagline">南极喷泉将地下海洋的物质直接送入太空的冰质小卫星</p>
-    <p class="obj-summary">平均半径 252.1 km · 质量 1.08×10²⁰ kg</p>
+    <p class="obj-summary">平均直径 504.2 km · 质量 1.08×10²⁰ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.08×10²⁰ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>252.1 km</td></tr>
+<tr><th scope="row">质量</th><td>1.08×10²⁰ kg（1.81×10⁻⁵ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>504.2 km（0.0396 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.61 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.11 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.239 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../mimas/">土卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../tethys/">土卫三</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

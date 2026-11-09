@@ -1,5 +1,5 @@
 ---
-description: "宇宙微波背景（Cosmic Microwave Background）的天体数据：—、半径/大小 45,700,000,000 光年、距离 457 亿光年、表面温度 3 K。数据整理自公开天文资料。"
+description: "宇宙微波背景（Cosmic Microwave Background）的天体数据：—、直径（等效球径） 91,400,000,000 光年、距离 457 亿光年、温度 3 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge structure">大尺度结构</span>
     <h1>宇宙微波背景 <small>Cosmic Microwave Background</small></h1>
     <p class="obj-tagline">大爆炸的余晖，宇宙最古老的光（最后散射面）</p>
-    <p class="obj-summary">半径/大小 45,700,000,000 光年</p>
+    <p class="obj-summary">直径（等效球径） 91,400,000,000 光年</p>
   </div>
 </div>
 
@@ -22,7 +22,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">半径 / 大小</th><td>45,700,000,000 光年</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>91,400,000,000 光年</td></tr>
 <tr><th scope="row">平均温度</th><td>3 K</td></tr>
 <tr><th scope="row">距离</th><td>457 亿光年</td></tr>
 <tr><th scope="row">类型</th><td>宇宙微波背景辐射（最后散射面）</td></tr>
@@ -50,4 +50,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../hercules_corona_wall/">武仙-北冕座长城</a></p>
 <p class="obj-nav">下一颗：<a href="../observable_universe/">可观测宇宙</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

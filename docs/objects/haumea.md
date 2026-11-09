@@ -1,5 +1,5 @@
 ---
-description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均半径 780.0 km、密度 —、表面温度 —。数据整理自公开天文资料。"
+description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均直径 1,560 km、密度 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>妊神星 <small>Haumea</small></h1>
     <p class="obj-tagline">自转极快的椭球状矮行星，拥有光环</p>
-    <p class="obj-summary">平均半径 780.0 km · 质量 4×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,560 km · 质量 4×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>4×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>780.0 km</td></tr>
+<tr><th scope="row">质量</th><td>4×10²¹ kg（6.7×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,560 km（0.122 × 地球直径）</td></tr>
 </tbody>
 </table>
 </section>
@@ -61,4 +61,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../makemake/">鸟神星</a></p>
 <p class="obj-nav">下一颗：<a href="../eris/">阋神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

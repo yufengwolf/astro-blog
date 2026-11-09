@@ -23,23 +23,38 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图/页面布局批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.7"
+VERSION = "1.8"
 VERIFIED = "2026-10-24"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
           "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星",
           "black_hole": "黑洞", "nebula": "星云", "galaxy": "星系",
           "cluster": "星团", "structure": "大尺度结构", "comet": "彗星"}
-AU_KM = 1.496e8
-# 恒星单位换算基准（详情页/卡片对恒星用 R☉/M☉/L☉ 展示，底层仍存 km/kg 供大小对比）
+# ---- 展示单位基准 ----
+# 底层 astro.json 一律存 SI/天文基本单位（km / kg / W / ℃ 等效值），radius_km 存的是
+# **半径**（已抽样核对：m42 半径 12 光年、note 明写「直径约 24 光年」；黑洞 note
+# 明写「史瓦西半径约 128 AU」）。展示层统一换算成「直径 = 2 × 半径」，零数据迁移。
 R_SUN_KM = 695700.0
 M_SUN_KG = 1.9884e30
 L_SUN_W = 3.828e26
-LY_KM = 9.4607e12            # 1 光年（km）——延展天体以光年计径，底层换算 km 存储
+R_EARTH_KM = 6371.0
+M_EARTH_KG = 5.9722e24
+AU_KM = 1.496e8
+LY_KM = 9.4607e12            # 1 光年（km）
+D_SUN_KM = 2 * R_SUN_KM
+D_EARTH_KM = 2 * R_EARTH_KM
+# 主单位阈值：直径超过 1e12 km（≈0.106 光年）改用光年，避免出现 13 位 km 数字
+DIAM_LY_MIN_KM = 1e12
+# 辅单位基准阈值：直径 ≥ 半个太阳直径用「× 太阳直径」，否则用「× 地球直径」；
+# 质量 ≥ 0.01 M☉ 用 M☉，否则用 M⊕。纯按量级，不再按 category 硬编码主单位。
+DIAM_SUN_MIN_KM = 0.5 * D_SUN_KM
+MASS_SUN_MIN_KG = 0.01 * M_SUN_KG
 # 延展天体：以光年计径、参与对比页时按「全幅=等效球径」绘制（非真实形状，示意）
 EXT_CATS = {"nebula", "galaxy", "cluster", "structure"}
 # 只有实体固态/流体天体展示平均密度（黑洞/星云/星系等无意义）
 DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
+# 有「表面温度」概念的类别：温度主单位统一 K，这些类别额外括注 ℃
+SURFACE_TEMP_CATS = DENSITY_CATS | {"exoplanet"}
 # 展示顺序（首页 chips / hero 统计 / 总表分类列）
 CAT_ORDER = ("star", "planet", "dwarf_planet", "moon", "galaxy", "nebula",
              "cluster", "black_hole", "structure", "asteroid", "comet",
@@ -70,41 +85,68 @@ def num3(v):
     return sci(v)
 
 
-def fmt_mass(kg, cat=None):
+def fmt_mass(kg, cat=None, compact=False):
+    """质量：主单位一律 kg 科学计数；辅单位按量级给 M☉ / M⊕。
+
+    compact=True 用于首页卡片、总表、SEO description 等空间有限处（只给主单位）。
+    改单位规则时只需改本函数：对比页不再自己实现，改读 payload 里的 mass_text。
+    """
     if kg is None:
         return None
-    if cat in ("star", "black_hole", "galaxy", "cluster", "structure", "nebula"):
-        return f"{num3(kg / M_SUN_KG)} M☉"
-    e = math.floor(math.log10(kg))
-    return f"{kg / 10 ** e:.3g}×10{sup(e)} kg"
+    main = f"{sci(kg)} kg"
+    if compact:
+        return main
+    if kg >= MASS_SUN_MIN_KG:
+        return f"{main}（{num3(kg / M_SUN_KG)} M☉）"
+    return f"{main}（{num3(kg / M_EARTH_KG)} M⊕）"
 
 
-def fmt_radius(r, cat=None):
+def size_label(cat):
+    """展示口径统一为「直径」；黑洞是事件视界，延展天体是等效球径。"""
+    if cat == "black_hole":
+        return "事件视界直径"
+    if cat in EXT_CATS:
+        return "直径（等效球径）"
+    if cat == "star":
+        return "直径"
+    return "平均直径"
+
+
+def fmt_diameter(r, cat=None, compact=False):
+    """半径(km) → 直径展示：主单位按量级（km / 光年），辅单位保留专业倍数。
+
+    - d ≥ 1e12 km → 光年（星云/星系/大尺度结构，不给 km 辅单位：13 位数字无意义）
+    - 其余 → km（≥1e9 用科学计数，≥1000 千分位整数，更小保留 1 位小数）
+    - 辅单位：黑洞给 AU；直径 ≥ 0.5 D☉ 给「× 太阳直径」；否则「× 地球直径」
+    底层 radius_km 保持半径原值不变，对比页 payload 也仍传 radius（半径比 = 直径比）。
+    """
     if r is None:
         return None
-    if cat == "star":
-        rs = r / R_SUN_KM
-        if rs < 0.001:
-            return f"{sci(rs)} R☉"          # 脉冲星/白矮星：1.44×10⁻⁵ R☉
-        if rs >= 1000:
-            return f"{rs:,.0f} R☉"          # 红超巨星：1,260 R☉
-        return f"{rs:.3g} R☉"
-    if cat == "black_hole":
-        # 黑洞半径 = 史瓦西半径；小恒星级黑洞用 km，大质量用 AU
-        if r >= 1e8:
-            return f"{r / AU_KM:.3g} AU"
-        return f"{r:,.0f} km"
-    if cat in EXT_CATS:
-        return f"{r / LY_KM:,.0f} 光年"
-    return f"{r:,.1f} km" if r < 1000 else f"{r:,.0f} km"
+    d = 2 * r
+    if d >= DIAM_LY_MIN_KM:
+        ly = d / LY_KM
+        return f"{ly:,.0f} 光年" if ly >= 100 else f"{num3(ly)} 光年"
+    if d >= 1e9:
+        main = f"{sci(d)} km"
+    elif d >= 1000:
+        main = f"{d:,.0f} km"
+    else:
+        main = f"{d:,.1f} km"
+    if compact:
+        return main
+    if cat == "black_hole" and d >= 1e8:
+        return f"{main}（{d / AU_KM:,.0f} AU）"
+    if d >= DIAM_SUN_MIN_KM:
+        return f"{main}（{num3(d / D_SUN_KM)} × 太阳直径）"
+    return f"{main}（{num3(d / D_EARTH_KM)} × 地球直径）"
 
 
-def fmt_lum(w, cat=None):
+def fmt_lum(w, cat=None, compact=False):
+    """光度：主单位 W 科学计数，辅单位 L☉（仅在完整格式）。"""
     if w is None:
         return None
-    if cat in ("star", "galaxy"):
-        return f"{num3(w / L_SUN_W)} L☉"
-    return f"{w:.3g} W"
+    main = f"{sci(w)} W"
+    return main if compact else f"{main}（{num3(w / L_SUN_W)} L☉）"
 
 
 def fmt_distance(ly):
@@ -133,18 +175,26 @@ def fmt_axis(a, parent):
     return s
 
 
-def fmt_temp(t, cat=None):
+def fmt_temp(t, cat=None, compact=False):
+    """温度：底层 mean_temp_c 存的是「开尔文 − 273.15」等效摄氏值。
+
+    v1.8 起主单位统一 K（此前恒星/星云显示 K、行星显示 °C，同一字段双口径）；
+    有表面温度的固态天体在完整格式下额外括注 ℃，兼顾直观与专业。
+    """
     if t is None:
         return None
-    if cat in ("star", "nebula", "structure"):
-        k = t + 273.15
-        if k >= 1e6:
-            return f"{sci(k)} K"            # 中子星表面：1.6×10⁶ K
-        return f"{k:.0f} K"
-    # 非恒星按摄氏度展示：统一保留 1 位小数（:g 去掉多余尾零），
-    # 避免 K→℃ 换算带来的浮点噪声直接裸露（如 -103.14999999999998 ℃）
+    k = float(t) + 273.15
+    if k >= 1e6:
+        main = f"{sci(k)} K"                # 中子星表面：1.6×10⁶ K
+    elif k >= 1000:
+        main = f"{k:,.0f} K"
+    else:
+        main = f"{k:.0f} K"
+    if compact or cat not in SURFACE_TEMP_CATS:
+        return main
+    # 统一保留 1 位小数（:g 去掉多余尾零），避免 K→℃ 换算的浮点噪声裸露
     v = round(float(t), 1)
-    return f"{v:g} °C"
+    return f"{main}（{v:g} °C）"
 
 
 def fmt_period(d):
@@ -306,13 +356,13 @@ def build_index(data):
         cats[o["category"]] = cats.get(o["category"], 0) + 1
     L = []
     L.append("---")
-    L.append('description: "收录 %d 个天体的结构化数据：质量、半径、密度、表面温度、'
+    L.append('description: "收录 %d 个天体的结构化数据：质量、直径、密度、表面温度、'
              '轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"' % n)
     L.append("---")
     L.append("")
     L.append('<div class="astro-hero">')
     L.append("  <h1>天体数据库</h1>")
-    L.append(f'  <p class="astro-hero-sub">{n} 个天体的质量、半径、密度、温度</p>')
+    L.append(f'  <p class="astro-hero-sub">{n} 个天体的质量、直径、密度、温度</p>')
     L.append(f'  <p class="astro-hero-links"><a href="#articles">科普文章</a>'
              f'<span class="sep">·</span><a href="objects/">天体库总表</a></p>')
     L.append("</div>")
@@ -329,7 +379,7 @@ def build_index(data):
     L.append('    <select id="astro-sort" aria-label="排序方式">')
     L.append('      <option value="name">名称</option>')
     L.append('      <option value="mass">质量 ↓</option>')
-    L.append('      <option value="radius">半径 ↓</option>')
+    L.append('      <option value="radius">直径 ↓</option>')
     L.append('      <option value="density">密度 ↓</option>')
     L.append('      <option value="temp">表面温度 ↓</option>')
     L.append('      <option value="period">轨道周期 ↓</option>')
@@ -344,20 +394,21 @@ def build_index(data):
         ph, orb = o.get("physical") or {}, o.get("orbit") or {}
         m, r = ph.get("mass_kg"), ph.get("radius_km")
         cat = o["category"]
+        # 卡片用 compact 格式（只给主单位），避免辅单位把三行 stats 撑得过长
         if cat == "star":
-            key_stat = fmt_lum(o.get("luminosity_w"), cat) or fmt_temp(ph.get("mean_temp_c"), cat)
+            key_stat = fmt_lum(o.get("luminosity_w"), cat, True) or fmt_temp(ph.get("mean_temp_c"), cat, True)
         elif cat == "galaxy":
-            key_stat = fmt_lum(o.get("luminosity_w"), cat) or fmt_radius(r, cat)
+            key_stat = fmt_lum(o.get("luminosity_w"), cat, True) or fmt_diameter(r, cat, True)
         elif cat == "black_hole":
-            key_stat = fmt_mass(m, cat)
+            key_stat = fmt_mass(m, cat, True)
         elif cat in EXT_CATS:
-            key_stat = fmt_temp(ph.get("mean_temp_c"), cat) or fmt_radius(r, cat)
+            key_stat = fmt_temp(ph.get("mean_temp_c"), cat, True) or fmt_diameter(r, cat, True)
         else:
-            key_stat = fmt_temp(ph.get("mean_temp_c"), cat) or (
+            key_stat = fmt_temp(ph.get("mean_temp_c"), cat, True) or (
                 f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None)
-        # stats 去重：key_stat 回退到 fmt_radius 时会与半径重复（如星云"150 光年"×2）
+        # stats 去重：key_stat 回退到 fmt_diameter 时会与直径重复（如星云"300 光年"×2）
         stats = []
-        for s in (fmt_mass(m, cat), fmt_radius(r, cat), key_stat):
+        for s in (fmt_mass(m, cat, True), fmt_diameter(r, cat, True), key_stat):
             if s and s not in stats:
                 stats.append(s)
         stats_html = "".join(f"<span>{s}</span>" for s in stats)
@@ -410,7 +461,7 @@ def build_object_index(data):
     objs = data["objects"]
     L = []
     L.append("---")
-    L.append('description: "本站收录的全部 %d 个天体的关键数据总表：质量、半径、密度、温度、轨道周期与卫星数量。"' % len(objs))
+    L.append('description: "本站收录的全部 %d 个天体的关键数据总表：质量、直径、密度、温度、轨道周期与卫星数量。"' % len(objs))
     L.append("---")
     L.append("")
     L.append("# 天体库")
@@ -418,7 +469,7 @@ def build_object_index(data):
     L.append(f"本站收录的全部 {len(objs)} 个天体。点击名称进入详情页（完整数据 + 科普文章）；"
              f"需要筛选排序？回到<a href=\"../\">天体总览工具页</a>。")
     L.append("")
-    L.append("| 天体 | 分类 | 母天体 | 质量 | 半径/大小 | 密度 | 均温 | 距离 | 轨道周期 | 卫星数 |")
+    L.append("| 天体 | 分类 | 母天体 | 质量 | 直径 | 密度 | 均温 | 距离 | 轨道周期 | 卫星数 |")
     L.append("|---|---|---|---|---|---|---|---|---|---|")
     by_id = {o["id"]: o for o in objs}
     for o in objs:
@@ -427,17 +478,21 @@ def build_object_index(data):
         pname = f'<a href="{parent["id"]}.md">{parent["name"]}</a>' if parent else "—"
         L.append("| [{name}]({id}.md) | {cat} | {parent} | {mass} | {radius} | {dens} | {temp} | {dist} | {period} | {moons} |".format(
             name=o["name"], id=o["id"], cat=CAT_ZH[o["category"]], parent=pname,
-            mass=dash(fmt_mass(ph.get("mass_kg"), o["category"])),
-            radius=dash(fmt_radius(ph.get("radius_km"), o["category"])),
+            mass=dash(fmt_mass(ph.get("mass_kg"), o["category"], True)),
+            radius=dash(fmt_diameter(ph.get("radius_km"), o["category"], True)),
             dens=dash(f"{ph['density_g_cm3']:g} g/cm³" if (ph.get("density_g_cm3") and o["category"] in DENSITY_CATS) else None),
-            temp=dash(fmt_temp(ph.get("mean_temp_c"), o["category"])),
+            temp=dash(fmt_temp(ph.get("mean_temp_c"), o["category"], True)),
             dist=dash(fmt_distance(o.get("distance_ly"))),
             period=dash(fmt_period(orb.get("orbital_period_days"))),
             moons=dash((o.get("moons") or {}).get("count")),
         ))
     L.append("")
     L.append('<details class="obj-fields">')
-    L.append("<summary>字段说明（质量 kg · 半径 km · 密度 g/cm³ · 温度 °C · 半长轴 km · 周期 天 · 卫星数 颗）</summary>")
+    L.append("<summary>字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）</summary>")
+    L.append("")
+    L.append('<p><strong>注意：</strong>本表描述的是 <code>astro.json</code> / CSV 的<strong>原始字段</strong>。'
+             '<code>radius_km</code> 存的是<strong>半径</strong>；页面与卡片统一按「直径 = 2 × 半径」展示，'
+             '主单位按量级自动切换 km / 光年，并辅以地球或太阳直径倍数、M⊕ / M☉、℃ 括注。</p>')
     L.append("")
     L.append("| 字段 | 含义 | 单位 |")
     L.append("|---|---|---|")
@@ -484,6 +539,13 @@ def sizecompare_payload(objs, img_prefix="../"):
             # 延展天体（星云/星系/星团/大尺度结构）：贴图全幅≈天体本身，
             # 对比页按「全幅=等效球径」绘制（非真实形状，示意），跳过球体测量
             "ext": o["category"] in EXT_CATS,
+            # v1.8 起：单位字符串由生成器统一产出（全站唯一实现），compare.js
+            # 直接读这些字段，不再自带第二套 fmtRadius/fmtMassCat/fmtTemp/fmtLum。
+            # 半径仍按原值传给可视化（半径比 = 直径比，缩放计算不受影响）。
+            "diameter_text": fmt_diameter(ph.get("radius_km"), o["category"]),
+            "mass_text": fmt_mass(ph.get("mass_kg"), o["category"]),
+            "temp_text": fmt_temp(ph.get("mean_temp_c"), o["category"]),
+            "lum_text": fmt_lum(o.get("luminosity_w"), o["category"]),
         })
     return json.dumps({"rows": rows}, ensure_ascii=False)
 
@@ -546,23 +608,19 @@ def build_object(root, o, by_id, order, registry=None):
     cat = o["category"]
     L = []
     L.append("---")
-    desc_mass = dash(fmt_mass(ph.get("mass_kg"), cat))
-    desc_radius = dash(fmt_radius(ph.get("radius_km"), cat))
-    radius_label = {"black_hole": "史瓦西半径", "star": "半径"}.get(
-        cat, "半径/大小" if cat in EXT_CATS else "平均半径")
-    if cat == "star":
-        desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat))}'
-    elif cat == "galaxy":
-        desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat))}'
-    elif cat == "black_hole":
-        desc_extra = f'距离 {dash(fmt_distance(o.get("distance_ly")))}'
-    elif cat in EXT_CATS:
+    # SEO description 用 compact 格式控制长度，且必须给「直径」口径（v1.8 起）
+    desc_mass = dash(fmt_mass(ph.get("mass_kg"), cat, True))
+    desc_diameter = dash(fmt_diameter(ph.get("radius_km"), cat, True))
+    size_lbl = size_label(cat)
+    if cat in ("star", "galaxy"):
+        desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat, True))}'
+    elif cat == "black_hole" or cat in EXT_CATS:
         desc_extra = f'距离 {dash(fmt_distance(o.get("distance_ly")))}'
     else:
         desc_extra = f'密度 {dash(f"{ph["density_g_cm3"]:g} g/cm³" if ph.get("density_g_cm3") else None)}'
     L.append(f'description: "{o["name"]}（{o["name_en"]}）的天体数据：{desc_mass}、'
-             f'{radius_label} {desc_radius}、{desc_extra}、'
-             f'表面温度 {dash(fmt_temp(ph.get("mean_temp_c"), cat))}。数据整理自公开天文资料。"')
+             f'{size_lbl} {desc_diameter}、{desc_extra}、'
+             f'温度 {dash(fmt_temp(ph.get("mean_temp_c"), cat, True))}。数据整理自公开天文资料。"')
     # 详情页去掉右侧 TOC 栏：正文列从 ~764px 放宽到 ~1006px（1440 视口），
     # 给双列参数表与后续 3D 嵌入腾出宽度；页面短、标题少，TOC 价值低于宽度
     L.append("hide:")
@@ -575,14 +633,13 @@ def build_object(root, o, by_id, order, registry=None):
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')
     L.append(f'    <p class="obj-tagline">{o["tagline"]}</p>')
-    # 速览摘要：只保留 2 个最具辨识度的量，压成单行文本。
-    # 原 obj-keystats 是 4 个数值 chip 块，与紧随其后的「物理参数」表重复展示
-    # 质量/半径/温度/光度，既占高度又形成"第二张数据表"。物理参数表是唯一明细来源。
+    # 速览摘要：只留 2 个最具辨识度的量，压成单行（compact 保证移动端不折成多行）。
+    # 完整带辅单位的明细统一放在下面的「物理参数」表，避免同屏重复。
     summary = []
-    size = fmt_radius(ph.get("radius_km"), cat)
-    mass = fmt_mass(ph.get("mass_kg"), cat)
+    size = fmt_diameter(ph.get("radius_km"), cat, True)
+    mass = fmt_mass(ph.get("mass_kg"), cat, True)
     if size:
-        summary.append(f"{radius_label} {size}")
+        summary.append(f"{size_lbl} {size}")
     if mass:
         summary.append(f"质量 {mass}")
     if summary:
@@ -613,14 +670,14 @@ def build_object(root, o, by_id, order, registry=None):
         # 黑洞：实心球参数（密度/重力/逃逸/气压/反照率）均无意义，只列口径清晰的量
         phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
-            ("史瓦西半径", fmt_radius(ph.get("radius_km"), cat)),
+            ("事件视界直径", fmt_diameter(ph.get("radius_km"), cat)),
             ("距离", fmt_distance(o.get("distance_ly"))),
         ]
     elif cat in ("asteroid", "comet"):
         # 小天体：实心球参数大多不适用（彗星是脏雪球、形状不规则），只列有意义的量
         phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
-            ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
+            ("平均直径", fmt_diameter(ph.get("radius_km"), cat)),
             *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
               if ph.get("density_g_cm3") else []),
             ("反照率", albedo_text()),
@@ -628,7 +685,7 @@ def build_object(root, o, by_id, order, registry=None):
     elif cat in EXT_CATS:
         phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
-            ("半径 / 大小", fmt_radius(ph.get("radius_km"), cat)),
+            ("直径（等效球径）", fmt_diameter(ph.get("radius_km"), cat)),
             *([("光度", fmt_lum(o.get("luminosity_w"), cat))] if o.get("luminosity_w") else []),
             *([("平均温度", fmt_temp(ph.get("mean_temp_c"), cat))]
               if ph.get("mean_temp_c") is not None else []),
@@ -638,7 +695,7 @@ def build_object(root, o, by_id, order, registry=None):
     else:
         phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
-            ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
+            ("平均直径", fmt_diameter(ph.get("radius_km"), cat)),
             *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
               if ph.get("density_g_cm3") and cat in DENSITY_CATS else []),
             ("表面重力", fmt_gravity(ph.get("gravity_m_s2"))),

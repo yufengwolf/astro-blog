@@ -1,5 +1,5 @@
 ---
-description: "室女座星系团（Virgo Cluster）的天体数据：1.2×10¹⁵ M☉、半径/大小 7,500,000 光年、距离 5,400 万光年、表面温度 —。数据整理自公开天文资料。"
+description: "室女座星系团（Virgo Cluster）的天体数据：2.39×10⁴⁵ kg、直径（等效球径） 15,000,000 光年、距离 5,400 万光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge structure">大尺度结构</span>
     <h1>室女座星系团 <small>Virgo Cluster</small></h1>
     <p class="obj-tagline">离我们最近的大型星系团，上千个星系的引力都会</p>
-    <p class="obj-summary">半径/大小 7,500,000 光年 · 质量 1.2×10¹⁵ M☉</p>
+    <p class="obj-summary">直径（等效球径） 15,000,000 光年 · 质量 2.39×10⁴⁵ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.2×10¹⁵ M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>7,500,000 光年</td></tr>
+<tr><th scope="row">质量</th><td>2.39×10⁴⁵ kg（1.2×10¹⁵ M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>15,000,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>5,400 万光年</td></tr>
 <tr><th scope="row">类型</th><td>星系团</td></tr>
 <tr><th scope="row">星座</th><td>室女座</td></tr>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../local_group/">本星系群</a></p>
 <p class="obj-nav">下一颗：<a href="../laniakea/">拉尼亚凯亚超星系团</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

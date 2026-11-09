@@ -1,5 +1,5 @@
 ---
-description: "大陵五（Algol）的天体数据：3.17 M☉、半径 2.73 R☉、光度 —、表面温度 13000 K。数据整理自公开天文资料。"
+description: "大陵五（Algol）的天体数据：6.3×10³⁰ kg、直径 3,798,522 km、光度 —、温度 13,000 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>大陵五 <small>Algol</small></h1>
     <p class="obj-tagline">中国古代记为会变亮的'魔星'，实为相互遮挡的食双星</p>
-    <p class="obj-summary">半径 2.73 R☉ · 质量 3.17 M☉</p>
+    <p class="obj-summary">直径 3,798,522 km · 质量 6.3×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3.17 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>2.73 R☉</td></tr>
+<tr><th scope="row">质量</th><td>6.3×10³⁰ kg（3.17 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>3,798,522 km（2.73 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>116.62 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>665.58 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>13000 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>13,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B8V</td></tr>
 <tr><th scope="row">恒星类型</th><td>食双星（三合星系统）</td></tr>
 <tr><th scope="row">距离</th><td>94 光年</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../r136a1/">R136a1</a></p>
 <p class="obj-nav">下一颗：<a href="../sheliak/">渐台二</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

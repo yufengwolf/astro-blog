@@ -1,5 +1,5 @@
 ---
-description: "水星（Mercury）的天体数据：3.3×10²³ kg、平均半径 2,440 km、密度 5.429 g/cm³、表面温度 167 °C。数据整理自公开天文资料。"
+description: "水星（Mercury）的天体数据：3.3×10²³ kg、平均直径 4,879 km、密度 5.429 g/cm³、温度 440 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>水星 <small>Mercury</small></h1>
     <p class="obj-tagline">离太阳最近的行星，一个太阳日比一个水星年还长</p>
-    <p class="obj-summary">平均半径 2,440 km · 质量 3.3×10²³ kg</p>
+    <p class="obj-summary">平均直径 4,879 km · 质量 3.3×10²³ kg</p>
   </div>
 </div>
 
@@ -22,13 +22,13 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3.3×10²³ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>2,440 km</td></tr>
+<tr><th scope="row">质量</th><td>3.3×10²³ kg（0.0553 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>4,879 km（0.383 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>5.429 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>3.70 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>4.30 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>167 °C</td></tr>
-<tr><th scope="row">有效温度（black-body 口径）</th><td>166.4 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>440 K（167 °C）</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>440 K（166.4 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.14（Bond 0.068 / Geometric 0.142）</td></tr>
 </tbody>
 </table>
@@ -138,4 +138,4 @@ A：外观很像，但水星坑底物质成分、撞击演化历史和月球存�
 <p class="obj-nav">← 上一颗：<a href="../sun/">太阳</a></p>
 <p class="obj-nav">下一颗：<a href="../venus/">金星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

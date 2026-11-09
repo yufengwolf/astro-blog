@@ -1,5 +1,5 @@
 ---
-description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、平均半径 561.4 km、密度 1.478 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、平均直径 1,123 km、密度 1.478 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>土卫四 <small>Dione</small></h1>
     <p class="obj-tagline">冰质卫星，纵横的冰壳悬崖记录着古老的地质活动</p>
-    <p class="obj-summary">平均半径 561.4 km · 质量 1.1×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,123 km · 质量 1.1×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.1×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>561.4 km</td></tr>
+<tr><th scope="row">质量</th><td>1.1×10²¹ kg（1.84×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,123 km（0.0881 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.478 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.23 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.510 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../tethys/">土卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../rhea/">土卫五</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

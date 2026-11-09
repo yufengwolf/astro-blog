@@ -1,5 +1,5 @@
 ---
-description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半径 715.9 km、密度 —、表面温度 —。数据整理自公开天文资料。"
+description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均直径 1,432 km、密度 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>鸟神星 <small>Makemake</small></h1>
     <p class="obj-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
-    <p class="obj-summary">平均半径 715.9 km · 质量 3×10²¹ kg</p>
+    <p class="obj-summary">平均直径 1,432 km · 质量 3×10²¹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3×10²¹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>715.9 km</td></tr>
+<tr><th scope="row">质量</th><td>3×10²¹ kg（5.02×10⁻⁴ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,432 km（0.112 × 地球直径）</td></tr>
 </tbody>
 </table>
 </section>
@@ -60,4 +60,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../ceres/">谷神星</a></p>
 <p class="obj-nav">下一颗：<a href="../haumea/">妊神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "参宿七（Rigel）的天体数据：21 M☉、半径 78 R☉、光度 1.2×10⁵ L☉、表面温度 12100 K。数据整理自公开天文资料。"
+description: "参宿七（Rigel）的天体数据：4.18×10³¹ kg、直径 108,529,200 km、光度 4.59×10³¹ W、温度 12,100 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>参宿七 <small>Rigel</small></h1>
     <p class="obj-tagline">猎户座β，全天第七亮星，一颗蓝白色的蓝超巨星</p>
-    <p class="obj-summary">半径 78 R☉ · 质量 21 M☉</p>
+    <p class="obj-summary">直径 108,529,200 km · 质量 4.18×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>21 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>78 R☉</td></tr>
+<tr><th scope="row">质量</th><td>4.18×10³¹ kg（21 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>108,529,200 km（78 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>0.95 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>320.49 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>12100 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>12,100 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B8Ia（蓝超巨星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝超巨星（B8Ia）</td></tr>
-<tr><th scope="row">光度</th><td>1.2×10⁵ L☉</td></tr>
+<tr><th scope="row">光度</th><td>4.59×10³¹ W（1.2×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>860 光年</td></tr>
 <tr><th scope="row">星座</th><td>猎户座</td></tr>
 </tbody>
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../antares/">心宿二</a></p>
 <p class="obj-nav">下一颗：<a href="../betelgeuse/">参宿四</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

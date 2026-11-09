@@ -1,5 +1,5 @@
 ---
-description: "天卫五（Miranda）的天体数据：6.6×10¹⁹ kg、平均半径 235.8 km、密度 1.2 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "天卫五（Miranda）的天体数据：6.6×10¹⁹ kg、平均直径 471.6 km、密度 1.2 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>天卫五 <small>Miranda</small></h1>
     <p class="obj-tagline">天王星系统中地质最奇特的卫星，断崖与沟槽密布</p>
-    <p class="obj-summary">平均半径 235.8 km · 质量 6.6×10¹⁹ kg</p>
+    <p class="obj-summary">平均直径 471.6 km · 质量 6.6×10¹⁹ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>6.6×10¹⁹ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>235.8 km</td></tr>
+<tr><th scope="row">质量</th><td>6.6×10¹⁹ kg（1.11×10⁻⁵ M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>471.6 km（0.037 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.2 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>0.08 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.193 km/s</td></tr>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../triton/">海卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../ariel/">天卫一</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

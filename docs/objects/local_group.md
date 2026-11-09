@@ -1,5 +1,5 @@
 ---
-description: "本星系群（Local Group）的天体数据：3×10¹² M☉、半径/大小 5,000,000 光年、距离 —、表面温度 —。数据整理自公开天文资料。"
+description: "本星系群（Local Group）的天体数据：5.97×10⁴² kg、直径（等效球径） 10,000,000 光年、距离 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge structure">大尺度结构</span>
     <h1>本星系群 <small>Local Group</small></h1>
     <p class="obj-tagline">银河系所属的星系社群，80 多个星系的小团体</p>
-    <p class="obj-summary">半径/大小 5,000,000 光年 · 质量 3×10¹² M☉</p>
+    <p class="obj-summary">直径（等效球径） 10,000,000 光年 · 质量 5.97×10⁴² kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>3×10¹² M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>5,000,000 光年</td></tr>
+<tr><th scope="row">质量</th><td>5.97×10⁴² kg（3×10¹² M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>10,000,000 光年</td></tr>
 <tr><th scope="row">类型</th><td>星系群</td></tr>
 </tbody>
 </table>
@@ -50,4 +50,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../omega_cen/">半人马座 ω</a></p>
 <p class="obj-nav">下一颗：<a href="../virgo_cluster/">室女座星系团</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

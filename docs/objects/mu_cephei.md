@@ -1,5 +1,5 @@
 ---
-description: "造父四（Mu Cephei）的天体数据：19.2 M☉、半径 1,260 R☉、光度 3.1×10⁵ L☉、表面温度 3750 K。数据整理自公开天文资料。"
+description: "造父四（Mu Cephei）的天体数据：3.82×10³¹ kg、直径 1.75×10⁹ km、光度 1.19×10³² W、温度 3,750 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>造父四 <small>Mu Cephei</small></h1>
     <p class="obj-tagline">血红色的特超巨星，肉眼可见的最大恒星之一</p>
-    <p class="obj-summary">半径 1,260 R☉ · 质量 19.2 M☉</p>
+    <p class="obj-summary">直径 1.75×10⁹ km · 质量 3.82×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>19.2 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>1,260 R☉</td></tr>
+<tr><th scope="row">质量</th><td>3.82×10³¹ kg（19.2 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>1.75×10⁹ km（1.26×10³ × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>3.32×10⁻³ m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>76.25 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>3750 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3,750 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M2Ia</td></tr>
 <tr><th scope="row">恒星类型</th><td>红特超巨星（M2Ia）</td></tr>
-<tr><th scope="row">光度</th><td>3.1×10⁵ L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.19×10³² W（3.1×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2,840 光年</td></tr>
 <tr><th scope="row">星座</th><td>仙王座</td></tr>
 </tbody>
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../aludra/">弧矢二</a></p>
 <p class="obj-nav">下一颗：<a href="../uy_scuti/">盾牌座 UY</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

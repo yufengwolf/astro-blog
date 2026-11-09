@@ -1,5 +1,5 @@
 ---
-description: "WASP-12 b（WASP-12 b）的天体数据：1.51×10²⁷ kg、平均半径 148,000 km、密度 0.24 g/cm³、表面温度 2326.8 °C。数据整理自公开天文资料。"
+description: "WASP-12 b（WASP-12 b）的天体数据：1.51×10²⁷ kg、平均直径 296,000 km、密度 0.24 g/cm³、温度 2,600 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge planet">行星</span>
     <h1>WASP-12 b <small>WASP-12 b</small></h1>
     <p class="obj-tagline">一颗距离母星极近的热木星，正在被恒星潮汐吞噬</p>
-    <p class="obj-summary">平均半径 148,000 km · 质量 1.51×10²⁷ kg</p>
+    <p class="obj-summary">平均直径 296,000 km · 质量 1.51×10²⁷ kg</p>
   </div>
 </div>
 
@@ -22,12 +22,12 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.51×10²⁷ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>148,000 km</td></tr>
+<tr><th scope="row">质量</th><td>1.51×10²⁷ kg（253 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>296,000 km（23.2 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>0.24 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>4.60 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>36.90 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>2326.8 °C</td></tr>
+<tr><th scope="row">平均表面温度</th><td>2,600 K（2326.8 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.06</td></tr>
 <tr><th scope="row">星座</th><td>御夫座</td></tr>
 </tbody>
@@ -57,4 +57,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../lhs_1140_b/">LHS 1140 b</a></p>
 <p class="obj-nav">下一颗：<a href="../55_cancri_e/">巨蟹座55e</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

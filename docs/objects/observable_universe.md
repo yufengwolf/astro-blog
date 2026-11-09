@@ -1,5 +1,5 @@
 ---
-description: "可观测宇宙（Observable Universe）的天体数据：7.54×10²² M☉、半径/大小 46,500,000,000 光年、距离 —、表面温度 3 K。数据整理自公开天文资料。"
+description: "可观测宇宙（Observable Universe）的天体数据：1.5×10⁵³ kg、直径（等效球径） 93,000,000,000 光年、距离 —、温度 3 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge structure">大尺度结构</span>
     <h1>可观测宇宙 <small>Observable Universe</small></h1>
     <p class="obj-tagline">以地球为球心的粒子视界，人类信息的全部边疆</p>
-    <p class="obj-summary">半径/大小 46,500,000,000 光年 · 质量 7.54×10²² M☉</p>
+    <p class="obj-summary">直径（等效球径） 93,000,000,000 光年 · 质量 1.5×10⁵³ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>7.54×10²² M☉</td></tr>
-<tr><th scope="row">半径 / 大小</th><td>46,500,000,000 光年</td></tr>
+<tr><th scope="row">质量</th><td>1.5×10⁵³ kg（7.54×10²² M☉）</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>93,000,000,000 光年</td></tr>
 <tr><th scope="row">平均温度</th><td>3 K</td></tr>
 <tr><th scope="row">类型</th><td>可观测宇宙（粒子视界）</td></tr>
 </tbody>
@@ -51,4 +51,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../cmb/">宇宙微波背景</a></p>
 <p class="obj-nav">下一颗：<a href="../m17/">天鹅星云</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

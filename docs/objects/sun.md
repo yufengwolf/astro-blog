@@ -1,5 +1,5 @@
 ---
-description: "太阳（Sun）的天体数据：1 M☉、半径 1 R☉、光度 1 L☉、表面温度 5772 K。数据整理自公开天文资料。"
+description: "太阳（Sun）的天体数据：1.99×10³⁰ kg、直径 1,391,400 km、光度 3.83×10²⁶ W、温度 5,772 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>太阳 <small>Sun</small></h1>
     <p class="obj-tagline">太阳系的中心恒星，独占太阳系总质量的 99.86%</p>
-    <p class="obj-summary">半径 1 R☉ · 质量 1 M☉</p>
+    <p class="obj-summary">直径 1,391,400 km · 质量 1.99×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>1 R☉</td></tr>
+<tr><th scope="row">质量</th><td>1.99×10³⁰ kg（1 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,391,400 km（1 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>274.19 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>617.66 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>5772 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5,772 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G2V</td></tr>
 <tr><th scope="row">恒星类型</th><td>黄矮星（G2V 主序星）</td></tr>
-<tr><th scope="row">光度</th><td>1 L☉</td></tr>
+<tr><th scope="row">光度</th><td>3.83×10²⁶ W（1 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>0 光年</td></tr>
 </tbody>
 </table>
@@ -65,4 +65,4 @@ hide:
 
 <p class="obj-nav">下一颗：<a href="../mercury/">水星</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

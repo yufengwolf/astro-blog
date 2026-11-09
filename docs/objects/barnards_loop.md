@@ -1,5 +1,5 @@
 ---
-description: "巴纳德环（Barnard's Loop）的天体数据：—、半径/大小 150 光年、距离 1,600 光年、表面温度 —。数据整理自公开天文资料。"
+description: "巴纳德环（Barnard's Loop）的天体数据：—、直径（等效球径） 300 光年、距离 1,600 光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge nebula">星云</span>
     <h1>巴纳德环 <small>Barnard's Loop</small></h1>
     <p class="obj-tagline">横跨猎户座大半边的巨大圆弧，可能源于数百万年前的一次超新星</p>
-    <p class="obj-summary">半径/大小 150 光年</p>
+    <p class="obj-summary">直径（等效球径） 300 光年</p>
   </div>
 </div>
 
@@ -22,7 +22,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">半径 / 大小</th><td>150 光年</td></tr>
+<tr><th scope="row">直径（等效球径）</th><td>300 光年</td></tr>
 <tr><th scope="row">距离</th><td>1,600 光年</td></tr>
 <tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
 <tr><th scope="row">星座</th><td>猎户座</td></tr>
@@ -50,4 +50,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../rosette/">玫瑰星云</a></p>
 <p class="obj-nav">下一颗：<a href="../tarantula/">蜘蛛星云</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

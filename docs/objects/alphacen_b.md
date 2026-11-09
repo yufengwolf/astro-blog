@@ -1,5 +1,5 @@
 ---
-description: "南门二 B（Alpha Centauri B）的天体数据：0.907 M☉、半径 0.863 R☉、光度 0.5 L☉、表面温度 5260 K。数据整理自公开天文资料。"
+description: "南门二 B（Alpha Centauri B）的天体数据：1.8×10³⁰ kg、直径 1,201,056 km、光度 1.91×10²⁶ W、温度 5,260 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>南门二 B <small>Alpha Centauri B</small></h1>
     <p class="obj-tagline">南门二系统的橙矮星伴星，肉眼与主星不可分</p>
-    <p class="obj-summary">半径 0.863 R☉ · 质量 0.907 M☉</p>
+    <p class="obj-summary">直径 1,201,056 km · 质量 1.8×10³⁰ kg</p>
   </div>
 </div>
 
@@ -22,14 +22,14 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>0.907 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>0.863 R☉</td></tr>
+<tr><th scope="row">质量</th><td>1.8×10³⁰ kg（0.907 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>1,201,056 km（0.863 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>333.76 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>633.14 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>5260 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5,260 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K1V</td></tr>
 <tr><th scope="row">恒星类型</th><td>橙矮星（K1V 主序星）</td></tr>
-<tr><th scope="row">光度</th><td>0.5 L☉</td></tr>
+<tr><th scope="row">光度</th><td>1.91×10²⁶ W（0.5 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>4 光年</td></tr>
 <tr><th scope="row">星座</th><td>半人马座</td></tr>
 </tbody>
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../alphacen_a/">南门二 A</a></p>
 <p class="obj-nav">下一颗：<a href="../castor/">北河二</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "心宿二（Antares）的天体数据：—、半径 680 R☉、光度 7.59×10⁴ L☉、表面温度 3400 K。数据整理自公开天文资料。"
+description: "心宿二（Antares）的天体数据：—、直径 946,152,000 km、光度 2.91×10³¹ W、温度 3,400 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>心宿二 <small>Antares</small></h1>
     <p class="obj-tagline">天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）</p>
-    <p class="obj-summary">半径 680 R☉</p>
+    <p class="obj-summary">直径 946,152,000 km</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">平均半径</th><td>680 R☉</td></tr>
-<tr><th scope="row">平均表面温度</th><td>3400 K</td></tr>
+<tr><th scope="row">平均直径</th><td>946,152,000 km（680 × 太阳直径）</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3,400 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M1.5Iab-Ib（红超巨星）</td></tr>
 <tr><th scope="row">恒星类型</th><td>红超巨星（M1.5Iab-Ib）</td></tr>
-<tr><th scope="row">光度</th><td>7.59×10⁴ L☉</td></tr>
+<tr><th scope="row">光度</th><td>2.91×10³¹ W（7.59×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>550 光年</td></tr>
 <tr><th scope="row">星座</th><td>天蝎座</td></tr>
 </tbody>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../arcturus/">大角星</a></p>
 <p class="obj-nav">下一颗：<a href="../rigel/">参宿七</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,5 @@
 ---
-description: "弧矢七（Adhara）的天体数据：12.6 M☉、半径 13.9 R☉、光度 —、表面温度 22900 K。数据整理自公开天文资料。"
+description: "弧矢七（Adhara）的天体数据：2.51×10³¹ kg、直径 19,340,460 km、光度 —、温度 22,900 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge star">恒星</span>
     <h1>弧矢七 <small>Adhara</small></h1>
     <p class="obj-tagline">470 万年前它曾是夜空最亮的星，强极紫外光源</p>
-    <p class="obj-summary">半径 13.9 R☉ · 质量 12.6 M☉</p>
+    <p class="obj-summary">直径 19,340,460 km · 质量 2.51×10³¹ kg</p>
   </div>
 </div>
 
@@ -22,11 +22,11 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>12.6 M☉</td></tr>
-<tr><th scope="row">平均半径</th><td>13.9 R☉</td></tr>
+<tr><th scope="row">质量</th><td>2.51×10³¹ kg（12.6 M☉）</td></tr>
+<tr><th scope="row">平均直径</th><td>19,340,460 km（13.9 × 太阳直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>17.88 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>588.07 km/s</td></tr>
-<tr><th scope="row">平均表面温度</th><td>22900 K</td></tr>
+<tr><th scope="row">平均表面温度</th><td>22,900 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B2II</td></tr>
 <tr><th scope="row">恒星类型</th><td>蓝白亮巨星（B2II）</td></tr>
 <tr><th scope="row">距离</th><td>430 光年</td></tr>
@@ -54,4 +54,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../wezen/">弧矢一</a></p>
 <p class="obj-nav">下一颗：<a href="../aludra/">弧矢二</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>

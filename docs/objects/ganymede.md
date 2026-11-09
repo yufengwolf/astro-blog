@@ -1,5 +1,5 @@
 ---
-description: "木卫三（Ganymede）的天体数据：1.48×10²³ kg、平均半径 2,631 km、密度 1.94 g/cm³、表面温度 —。数据整理自公开天文资料。"
+description: "木卫三（Ganymede）的天体数据：1.48×10²³ kg、平均直径 5,262 km、密度 1.94 g/cm³、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge moon">卫星</span>
     <h1>木卫三 <small>Ganymede</small></h1>
     <p class="obj-tagline">太阳系最大的卫星，比水星还大，且拥有自己的磁场</p>
-    <p class="obj-summary">平均半径 2,631 km · 质量 1.48×10²³ kg</p>
+    <p class="obj-summary">平均直径 5,262 km · 质量 1.48×10²³ kg</p>
   </div>
 </div>
 
@@ -22,8 +22,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">质量</th><td>1.48×10²³ kg</td></tr>
-<tr><th scope="row">平均半径</th><td>2,631 km</td></tr>
+<tr><th scope="row">质量</th><td>1.48×10²³ kg（0.0248 M⊕）</td></tr>
+<tr><th scope="row">平均直径</th><td>5,262 km（0.413 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.94 g/cm³</td></tr>
 <tr><th scope="row">表面重力</th><td>1.43 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>2.74 km/s</td></tr>
@@ -67,4 +67,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../europa/">木卫二</a></p>
 <p class="obj-nav">下一颗：<a href="../callisto/">木卫四</a> →</p>
 
-<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>
