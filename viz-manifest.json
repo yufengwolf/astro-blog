@@ -2,48 +2,15 @@
   "version": 1,
   "generated_from": {
     "solar-3d": "https://astro-solar-3d.pages.dev",
-    "size-of-space": "https://legendacr.github.io/size-of-space",
-    "note": "覆盖度随 3D 仓库演进；改后重跑本脚本或手工编辑此文件"
+    "note": "当前仅 astro-solar-3d 一个来源（size-of-space 待用户部署 CF Pages 后加回）。src 统一为 `?view=<id>`，场景由外部仓库决定；改 3D 仓库覆盖度后重跑本脚本。"
   },
   "objects": {
-    "aldebaran": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#aldebaran"
-      }
-    ],
-    "antares": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#antares"
-      }
-    ],
-    "arcturus": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#arcturus"
-      }
-    ],
     "ariel": [
       {
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/uranus.html"
-      }
-    ],
-    "betelgeuse": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#betelgeuse"
+        "src": "https://astro-solar-3d.pages.dev/?view=ariel"
       }
     ],
     "callisto": [
@@ -51,15 +18,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/jupiter.html"
-      }
-    ],
-    "ceres": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#ceres"
+        "src": "https://astro-solar-3d.pages.dev/?view=callisto"
       }
     ],
     "deimos": [
@@ -67,21 +26,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/mars.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#deimos"
-      }
-    ],
-    "deneb": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#deneb"
+        "src": "https://astro-solar-3d.pages.dev/?view=deimos"
       }
     ],
     "dione": [
@@ -89,7 +34,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=dione"
       }
     ],
     "earth": [
@@ -97,13 +42,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/earth-moon.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#earth"
+        "src": "https://astro-solar-3d.pages.dev/?view=earth"
       }
     ],
     "enceladus": [
@@ -111,13 +50,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#enceladus"
+        "src": "https://astro-solar-3d.pages.dev/?view=enceladus"
       }
     ],
     "europa": [
@@ -125,13 +58,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/jupiter.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#europa"
+        "src": "https://astro-solar-3d.pages.dev/?view=europa"
       }
     ],
     "ganymede": [
@@ -139,29 +66,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/jupiter.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#ganymede"
-      }
-    ],
-    "halley": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#halley"
-      }
-    ],
-    "hercules_corona_wall": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#herculeswall"
+        "src": "https://astro-solar-3d.pages.dev/?view=ganymede"
       }
     ],
     "hyperion": [
@@ -169,13 +74,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#hyperion"
+        "src": "https://astro-solar-3d.pages.dev/?view=hyperion"
       }
     ],
     "iapetus": [
@@ -183,15 +82,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
-      }
-    ],
-    "ic1101": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#ic1101"
+        "src": "https://astro-solar-3d.pages.dev/?view=iapetus"
       }
     ],
     "io": [
@@ -199,13 +90,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/jupiter.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#io"
+        "src": "https://astro-solar-3d.pages.dev/?view=io"
       }
     ],
     "jupiter": [
@@ -213,85 +98,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/jupiter.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#jupiter"
-      }
-    ],
-    "laniakea": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#laniakea"
-      }
-    ],
-    "lmc": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#lmc"
-      }
-    ],
-    "local_group": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#localgroup"
-      }
-    ],
-    "m1": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#crab"
-      }
-    ],
-    "m16": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#eagle"
-      }
-    ],
-    "m31": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#andromeda"
-      }
-    ],
-    "m42": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#orion"
-      }
-    ],
-    "m57": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#ring"
-      }
-    ],
-    "m87": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#m87"
+        "src": "https://astro-solar-3d.pages.dev/?view=jupiter"
       }
     ],
     "mars": [
@@ -299,13 +106,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/mars.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#mars"
+        "src": "https://astro-solar-3d.pages.dev/?view=mars"
       }
     ],
     "mercury": [
@@ -313,13 +114,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/index.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#mercury"
+        "src": "https://astro-solar-3d.pages.dev/?view=mercury"
       }
     ],
     "milky_way": [
@@ -327,13 +122,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/galaxy.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#milkyway"
+        "src": "https://astro-solar-3d.pages.dev/?view=milky_way"
       }
     ],
     "mimas": [
@@ -341,7 +130,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=mimas"
       }
     ],
     "miranda": [
@@ -349,7 +138,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/uranus.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=miranda"
       }
     ],
     "moon": [
@@ -357,13 +146,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/earth-moon.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#moon"
+        "src": "https://astro-solar-3d.pages.dev/?view=moon"
       }
     ],
     "neptune": [
@@ -371,13 +154,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/neptune.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#neptune"
+        "src": "https://astro-solar-3d.pages.dev/?view=neptune"
       }
     ],
     "oberon": [
@@ -385,7 +162,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/uranus.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=oberon"
       }
     ],
     "phobos": [
@@ -393,13 +170,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/mars.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#phobos"
+        "src": "https://astro-solar-3d.pages.dev/?view=phobos"
       }
     ],
     "pluto": [
@@ -407,21 +178,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/pluto.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#pluto"
-      }
-    ],
-    "pollux": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#pollux"
+        "src": "https://astro-solar-3d.pages.dev/?view=pluto"
       }
     ],
     "rhea": [
@@ -429,15 +186,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
-      }
-    ],
-    "rigel": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#rigel"
+        "src": "https://astro-solar-3d.pages.dev/?view=rhea"
       }
     ],
     "saturn": [
@@ -445,53 +194,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#saturn"
-      }
-    ],
-    "sgr_a_star": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#sgra"
-      }
-    ],
-    "sirius_a": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#sirius"
-      }
-    ],
-    "sirius_b": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#siriusb"
-      }
-    ],
-    "smc": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#smc"
-      }
-    ],
-    "stephenson_2_18": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#stephenson218"
+        "src": "https://astro-solar-3d.pages.dev/?view=saturn"
       }
     ],
     "sun": [
@@ -499,21 +202,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/index.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#sun"
-      }
-    ],
-    "tarantula": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#tarantula"
+        "src": "https://astro-solar-3d.pages.dev/?view=sun"
       }
     ],
     "tethys": [
@@ -521,7 +210,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=tethys"
       }
     ],
     "titan": [
@@ -529,13 +218,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/saturn.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#titan"
+        "src": "https://astro-solar-3d.pages.dev/?view=titan"
       }
     ],
     "titania": [
@@ -543,23 +226,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/uranus.html"
-      }
-    ],
-    "ton618": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#ton618"
-      }
-    ],
-    "trappist_1": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#trappist1"
+        "src": "https://astro-solar-3d.pages.dev/?view=titania"
       }
     ],
     "triton": [
@@ -567,7 +234,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/neptune.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=triton"
       }
     ],
     "umbriel": [
@@ -575,7 +242,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/uranus.html"
+        "src": "https://astro-solar-3d.pages.dev/?view=umbriel"
       }
     ],
     "uranus": [
@@ -583,29 +250,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/uranus.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#uranus"
-      }
-    ],
-    "uy_scuti": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#uyscuti"
-      }
-    ],
-    "vega": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#vega"
+        "src": "https://astro-solar-3d.pages.dev/?view=uranus"
       }
     ],
     "venus": [
@@ -613,29 +258,7 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/index.html"
-      },
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#venus"
-      }
-    ],
-    "vesta": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#vesta"
-      }
-    ],
-    "virgo_cluster": [
-      {
-        "repo": "size-of-space",
-        "kind": "scale",
-        "title": "尺寸对比",
-        "src": "https://legendacr.github.io/size-of-space/#virgo"
+        "src": "https://astro-solar-3d.pages.dev/?view=venus"
       }
     ]
   }

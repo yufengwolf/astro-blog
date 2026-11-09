@@ -13,7 +13,7 @@
 - **AI 编排录入**：只给一个名字，`add_object.py` 让豆包自动定位类型、抽数据、写库，并**自动出图 + 自动生成页面/构建**。
 - **详情页三段式布局（v1.7）**：hero 只留 2 项单行速览，物理/轨道/其他特征三表在桌面双列、移动单列；空值行直接不渲染，正文列去掉右侧 TOC 后铺满，为后续 3D 头像/轨道嵌入预留栅格位。详见[维护指南](维护指南.md)。
 - **展示单位统一（v1.8）**：全站口径从"半径"改为"直径 = 2 × 半径"，主单位按量级自动切换 km / 光年，辅单位给地球/太阳直径倍数或 M⊕ / M☉；温度统一 K、有表面温度的固态天体括注 ℃；黑洞称"事件视界直径"。单位字符串由 `gen_pages.py` 唯一实现，对比页（`compare.js`）改读预生成 `*_text` 字段，消除两套口径。详见[维护指南](维护指南.md)。
-- **详情页 3D 可视化（v1.9）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。覆盖来自两个外部 3D 仓库：astro-solar-3d（真实三维太阳系，32 个太阳系天体）与 size-of-space（尺寸对比，52 个含深空天体，其中 20 个可双源切换）；多来源时渲染来源切换按钮。详见[维护指南](维护指南.md)。
+- **详情页 3D 可视化（v1.9 重构）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。本仓库只做「消费者」：提供 iframe 窗口 + `?view=<id>` 地址，把天体 id 透传给外部仓库 `astro-solar-3d`（真实三维太阳系，当前 32 个太阳系天体有内容），**绝不硬编码场景**；具体渲染由外部仓库决定（其 `?view=<id>` 全局路由是另一个 chat 的改造需求）。size-of-space 待部署 CF Pages 后再接入。详见[维护指南](维护指南.md)。
 
 ---
 
@@ -23,7 +23,7 @@
 .
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
-├─ viz-manifest.json     # 3D 可视化覆盖契约（gen_viz_manifest.py 生成；详情页按它条件嵌入）
+├─ viz-manifest.json     # 3D 覆盖契约（gen_viz_manifest.py 生成；id→?view=<id> 透传；详情页条件嵌入）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -35,7 +35,7 @@
 │  ├─ nasa_image.py      # NASA 真实影像: <id> <url> 手动安装 / --search / --auto-batch
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
 │  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
-│  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（3D 覆盖契约：astro-solar-3d + size-of-space 两源机械派生）
+│  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（3D 覆盖契约：仅 astro-solar-3d，输出 ?view=<id> 透传；size-of-space 待接入）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -179,15 +179,21 @@ iOS Safari 不支持元素全屏时回退为新标签打开独立页。
 
 ### 7.2 详情页 3D 可视化块（P3：viz-manifest 契约）
 
-P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化」块（hero 正下方、参数表之前），与 7.1 的导航页是两回事：导航页是太阳系总入口，而**详情页块是按天体就近展示它的 3D / 尺寸对比**。
+P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化」块（hero 正下方、参数表之前），与 7.1 的导航页是两回事：导航页是太阳系总入口，而**详情页块是按天体就近展示它的 3D**。
 
-- **契约文件 `viz-manifest.json`**（仓库根）：由 `scripts/gen_viz_manifest.py` 机械派生，列「哪些天体有 3D 覆盖、去哪个外链」。`gen_pages` 渲染详情页前读它，无条目就不渲染（优雅降级）。
-- **两个外部 3D 源**（各自独立部署、独立维护，均不在本仓库）：
-  - `astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`）：真实三维太阳系，**32** 个太阳系天体（行星/卫星/冥王星/银河系场景）。
-  - `size-of-space`（GitHub Pages **上游 `https://legendacr.github.io/size-of-space/`**）：尺寸对比工具，hash 路由 `#<id>`，**52** 个天体（含大量深空）。⚠️ 我方 fork `yufengwolf/size-of-space` 虽带 `deploy.yml` 但**尚未在 GitHub 开启 Pages**（当前 404）；要自建部署：去该 fork 的 Settings → Pages → Source 选 "GitHub Actions"，再 push main 触发部署，成功后把 `gen_viz_manifest.py` 的 `SIZEOFSPACE_BASE` 改回 `https://yufengwolf.github.io/size-of-space`。
-- **覆盖统计**：178 个天体中 **64 个**（36%）有 3D 覆盖——solar-3d 32、size-of-space 52、其中 **20 个双来源**（详情页渲染「真实三维系统 / 尺寸对比」切换按钮，默认嵌入第一个）。
+**架构原则（用户拍板）**：本仓库只做「消费者」——
+- 提供**窗口（iframe）** + **地址（`?view=<id>`）**；
+- **绝不硬编码**「某天体 → 某场景 HTML」。具体渲染成什么（地球单独 / 地月系统 / 太阳专属视角……）完全由外部仓库 `astro-solar-3d` 决定。
+- `viz-manifest.json` 就是这份「契约表格」：本仓库只声明「哪些天体有 3D、透传哪个 id」，外部仓库按 id 填充内容。
 
-> 改 3D 覆盖度（如 solar-3d 新增场景、size-of-space 新增对象）：编辑 `gen_viz_manifest.py` 的 `SOLAR3D_SCENES` / `SIZEOFSPACE_IDS`，重跑 `python scripts/gen_viz_manifest.py` 重新生成契约，再 `gen_pages`；或手工直接编辑 `viz-manifest.json`（二者择一，勿长期分叉）。
+- **契约文件 `viz-manifest.json`**（仓库根）：由 `scripts/gen_viz_manifest.py` 机械派生，列出「哪些天体有 3D 覆盖、透传哪个 id」。`gen_pages` 渲染详情页前读它，无条目就不渲染（优雅降级）。
+- **当前唯一外部 3D 源**：`astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`，我方自有，真实三维太阳系），**32** 个太阳系天体（行星/卫星/冥王星/银河系）有内容可锚定。详情页统一输出 `https://astro-solar-3d.pages.dev/?view=<id>`，把 id 交给外部仓库。
+- **size-of-space 暂未接入**：用户尚未把它部署到 CF Pages（fork 带 `deploy.yml` 但未开 Pages），待部署后再作为第二个来源加回 `gen_viz_manifest.py`。
+- **覆盖统计**：178 个天体中 **32 个**（18%）当前有 3D 覆盖（仅 solar-3d）。
+
+> ⚠️ **外部仓库改造依赖（重要，属另一个 chat 的需求）**：`astro-solar-3d` 当前是多页站点（各系统独立 HTML），其 `?view=<id>` 仅用作「单页内的取景预设选择器」，**还没有**「按 id 全局路由到对应天体场景」的能力。因此现阶段详情页 3D 块可能只显示其落地/总览页（降级态，属预期）；要真正做到「一个地址直接看地球/太阳/金星的 3D」，需在 `astro-solar-3d` 仓库实现 `?view=<id>` 全局路由——这是外部仓库的改造，本仓库不碰，应在单独 chat 提需求。
+
+> 改 3D 覆盖度（如 solar-3d 新增天体）：编辑 `gen_viz_manifest.py` 的 `SOLAR3D_IDS` 集合，重跑 `python scripts/gen_viz_manifest.py` 重新生成契约，再 `gen_pages`；或手工直接编辑 `viz-manifest.json`（二者择一，勿长期分叉）。
 
 ---
 

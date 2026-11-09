@@ -606,7 +606,7 @@ def build_compare(data):
 # 主站与 3D 仓库解耦：哪些天体有 3D 模型、去哪个外链，全在 viz-manifest.json。
 # 缺失条目 = 该天体无 3D 覆盖 → 详情页不渲染 3D 块（优雅降级）。
 VIZ_MANIFEST = {}
-VIZ_REPO_NAME = {"solar-3d": "astro-solar-3d", "size-of-space": "size-of-space"}
+VIZ_REPO_NAME = {"solar-3d": "astro-solar-3d"}
 
 
 def load_viz_manifest(root):

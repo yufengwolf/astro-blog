@@ -23,7 +23,7 @@ hide:
     <span class="solar-bar-btns"></span>
   </div>
   <div class="solar-frame">
-    <iframe src="https://astro-solar-3d.pages.dev/saturn.html" title="真实三维系统" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
+    <iframe src="https://astro-solar-3d.pages.dev/?view=mimas" title="真实三维系统" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
   </div>
   <p class="obj-viz-note">由外部 3D 项目（astro-solar-3d）提供，与本站数据独立维护；加载慢或无法显示时可直接打开原站。</p>
 </div>
