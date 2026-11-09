@@ -1,5 +1,7 @@
 ---
 description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—、半径/大小 175,000 光年、光度 —、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,32 +10,38 @@ description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—�
     <span class="astro-badge galaxy">星系</span>
     <h1>斯蒂芬五重星系 <small>Stephan's Quintet</small></h1>
     <p class="obj-tagline">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
-    <div class="obj-keystats">
-      <span>175,000 光年</span>
-      <span>29,000 万光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 175,000 光年</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：星系</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | — |
-| 半径 / 大小 | 175,000 光年 |
-| 距离 | 29,000 万光年 |
-| 类型 | 致密星系群 |
-| 星座 | 飞马座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 致密星系群 |
-| 已知成员 | NGC 7317 / 7318A / 7318B / 7319 / 7320 |
-| 备注 | 群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。 |
-| 发现 | 1877 年（Stephan 发现） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半径 / 大小</th><td>175,000 光年</td></tr>
+<tr><th scope="row">距离</th><td>29,000 万光年</td></tr>
+<tr><th scope="row">类型</th><td>致密星系群</td></tr>
+<tr><th scope="row">星座</th><td>飞马座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>致密星系群</td></tr>
+<tr><th scope="row">已知成员</th><td>NGC 7317 / 7318A / 7318B / 7319 / 7320</td></tr>
+<tr><th scope="row">备注</th><td>群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。</td></tr>
+<tr><th scope="row">发现</th><td>1877 年（Stephan 发现）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -43,4 +51,4 @@ description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—�
 <p class="obj-nav">← 上一颗：<a href="../ic1101/">IC 1101</a></p>
 <p class="obj-nav">下一颗：<a href="../m45/">昴星团</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

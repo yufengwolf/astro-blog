@@ -1,5 +1,7 @@
 ---
 description: "地球（Earth）的天体数据：5.97×10²⁴ kg、平均半径 6,371 km、密度 5.514 g/cm³、表面温度 15 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,51 +10,59 @@ description: "地球（Earth）的天体数据：5.97×10²⁴ kg、平均半径
     <span class="astro-badge planet">行星</span>
     <h1>地球 <small>Earth</small></h1>
     <p class="obj-tagline">目前已知唯一存在生命的行星，约 71% 表面被液态水覆盖</p>
-    <div class="obj-keystats">
-      <span>5.97×10²⁴ kg</span>
-      <span>6,371 km</span>
-      <span>15 °C</span>
-      <span>5.514 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 6,371 km · 质量 5.97×10²⁴ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 5.97×10²⁴ kg |
-| 平均半径 | 6,371 km |
-| 平均密度 | 5.514 g/cm³ |
-| 表面重力 | 9.82 m/s² |
-| 逃逸速度 | 11.19 km/s |
-| 平均表面温度 | 15 °C |
-| 有效温度（black-body 口径） | -19.1 °C |
-| 表面气压 | 1 bar |
-| 反照率 | 0.29（Bond 0.294 / Geometric 0.434） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 149,600,000 km（1 AU） |
-| 轨道周期 | 365.3 天 |
-| 平均轨道速度 | 29.78 km/s |
-| 轨道倾角 | 0° |
-| 轨道偏心率 | 0.0167 |
-| 转轴倾角 | 23.44° |
-| 自转周期 | 23.93 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | 氮约 78%、氧约 21%（其余为氩、二氧化碳等微量） |
-| 全球磁场 | 是 |
-| 环系 | 否 |
-| 已确认卫星 | 1 颗（ notable：<a href="../moon/">月球</a>） |
-| 发现 | 史前 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>5.97×10²⁴ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>6,371 km</td></tr>
+<tr><th scope="row">平均密度</th><td>5.514 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>9.82 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>11.19 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>15 °C</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>-19.1 °C</td></tr>
+<tr><th scope="row">表面气压</th><td>1 bar</td></tr>
+<tr><th scope="row">反照率</th><td>0.29（Bond 0.294 / Geometric 0.434）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>149,600,000 km（1 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>365.3 天</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>29.78 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>0°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.0167</td></tr>
+<tr><th scope="row">转轴倾角</th><td>23.44°</td></tr>
+<tr><th scope="row">自转周期</th><td>23.93 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">大气成分</th><td>氮约 78%、氧约 21%（其余为氩、二氧化碳等微量）</td></tr>
+<tr><th scope="row">全球磁场</th><td>是</td></tr>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>1 颗（主要：<a href="../moon/">月球</a>）</td></tr>
+<tr><th scope="row">发现</th><td>史前</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -62,4 +72,4 @@ description: "地球（Earth）的天体数据：5.97×10²⁴ kg、平均半径
 <p class="obj-nav">← 上一颗：<a href="../venus/">金星</a></p>
 <p class="obj-nav">下一颗：<a href="../mars/">火星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "木卫二（Europa）的天体数据：4.8×10²² kg、平均半径 1,561 km、密度 3.01 g/cm³、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,49 +10,53 @@ description: "木卫二（Europa）的天体数据：4.8×10²² kg、平均半�
     <span class="astro-badge moon">卫星</span>
     <h1>木卫二 <small>Europa</small></h1>
     <p class="obj-tagline">冰壳之下藏有全球性液态海洋，搜寻地外生命的热门目标</p>
-    <div class="obj-keystats">
-      <span>4.8×10²² kg</span>
-      <span>1,561 km</span>
-      <span>3.01 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 1,561 km · 质量 4.8×10²² kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../jupiter/">木星</a> · 分类：卫星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 4.8×10²² kg |
-| 平均半径 | 1,561 km |
-| 平均密度 | 3.01 g/cm³ |
-| 表面重力 | 1.31 m/s² |
-| 逃逸速度 | 2.02 km/s |
-| 平均表面温度 | — |
-| 表面气压 | — |
-| 反照率 | 0.68（Geometric 口径） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 671,100 km |
-| 轨道周期 | 3.6 天 |
-| 平均轨道速度 | 13.74 km/s |
-| 轨道倾角 | 0.47° |
-| 轨道偏心率 | 0.009 |
-| 转轴倾角 | — |
-| 自转周期 | 3.55 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 否 |
-| 已确认卫星 | 0 颗 |
-| 发现 | 伽利略，1610 年 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>4.8×10²² kg</td></tr>
+<tr><th scope="row">平均半径</th><td>1,561 km</td></tr>
+<tr><th scope="row">平均密度</th><td>3.01 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>1.31 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>2.02 km/s</td></tr>
+<tr><th scope="row">反照率</th><td>0.68（Geometric 口径）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>671,100 km</td></tr>
+<tr><th scope="row">轨道周期</th><td>3.6 天</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>13.74 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>0.47°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.009</td></tr>
+<tr><th scope="row">自转周期</th><td>3.55 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>0 颗</td></tr>
+<tr><th scope="row">发现</th><td>伽利略，1610 年</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -60,4 +66,4 @@ description: "木卫二（Europa）的天体数据：4.8×10²² kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../io/">木卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../ganymede/">木卫三</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "本星系群（Local Group）的天体数据：3×10¹² M☉、半径/大小 5,000,000 光年、距离 —、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,31 +10,37 @@ description: "本星系群（Local Group）的天体数据：3×10¹² M☉、�
     <span class="astro-badge structure">大尺度结构</span>
     <h1>本星系群 <small>Local Group</small></h1>
     <p class="obj-tagline">银河系所属的星系社群，80 多个星系的小团体</p>
-    <div class="obj-keystats">
-      <span>3×10¹² M☉</span>
-      <span>5,000,000 光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 5,000,000 光年 · 质量 3×10¹² M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：大尺度结构</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 3×10¹² M☉ |
-| 半径 / 大小 | 5,000,000 光年 |
-| 距离 | — |
-| 类型 | 星系群 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 星系群 |
-| 已知成员 | 80 余个星系（含银河系、仙女座、三角座、大小麦哲伦云等） |
-| 备注 | 直径约 1000 万光年；总质量估值 2~5×10¹² M☉（银河系 + 仙女座合计已约 3×10¹² M☉）。 |
-| 发现 | 1920 年代（哈勃确立河外星系后） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>3×10¹² M☉</td></tr>
+<tr><th scope="row">半径 / 大小</th><td>5,000,000 光年</td></tr>
+<tr><th scope="row">类型</th><td>星系群</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>星系群</td></tr>
+<tr><th scope="row">已知成员</th><td>80 余个星系（含银河系、仙女座、三角座、大小麦哲伦云等）</td></tr>
+<tr><th scope="row">备注</th><td>直径约 1000 万光年；总质量估值 2~5×10¹² M☉（银河系 + 仙女座合计已约 3×10¹² M☉）。</td></tr>
+<tr><th scope="row">发现</th><td>1920 年代（哈勃确立河外星系后）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -42,4 +50,4 @@ description: "本星系群（Local Group）的天体数据：3×10¹² M☉、�
 <p class="obj-nav">← 上一颗：<a href="../omega_cen/">半人马座 ω</a></p>
 <p class="obj-nav">下一颗：<a href="../virgo_cluster/">室女座星系团</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

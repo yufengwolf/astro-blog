@@ -1,5 +1,7 @@
 ---
 description: "角宿一（Spica）的天体数据：11.4 M☉、半径 7.47 R☉、光度 1.21×10⁴ L☉、表面温度 22400 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,55 +10,55 @@ description: "角宿一（Spica）的天体数据：11.4 M☉、半径 7.47 R☉
     <span class="astro-badge star">恒星</span>
     <h1>角宿一 <small>Spica</small></h1>
     <p class="obj-tagline">室女座最亮的星，蓝白双星四天互绕一周</p>
-    <div class="obj-keystats">
-      <span>11.4 M☉</span>
-      <span>7.47 R☉</span>
-      <span>22400 K</span>
-      <span>1.21×10⁴ L☉</span>
-    </div>
+    <p class="obj-summary">半径 7.47 R☉ · 质量 11.4 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 11.4 M☉ |
-| 平均半径 | 7.47 R☉ |
-| 表面重力 | 56.16 m/s² |
-| 逃逸速度 | 764.03 km/s |
-| 平均表面温度 | 22400 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | B1III-IV |
-| 恒星类型 | 蓝巨星（B1III-IV 双星） |
-| 光度 | 1.21×10⁴ L☉ |
-| 距离 | 250 光年 |
-| 星座 | 室女座 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 17,951,744 km |
-| 轨道周期 | 5.3 天 |
-| 平均轨道速度 | — |
-| 轨道倾角 | 63° |
-| 轨道偏心率 | 0.13 |
-| 转轴倾角 | — |
-| 自转周期 | — |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 已知成员 | 2 |
-| 备注 | 两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】 |
-| 发现 | 自古已知 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>11.4 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>7.47 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>56.16 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>764.03 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>22400 K</td></tr>
+<tr><th scope="row">光谱型</th><td>B1III-IV</td></tr>
+<tr><th scope="row">恒星类型</th><td>蓝巨星（B1III-IV 双星）</td></tr>
+<tr><th scope="row">光度</th><td>1.21×10⁴ L☉</td></tr>
+<tr><th scope="row">距离</th><td>250 光年</td></tr>
+<tr><th scope="row">星座</th><td>室女座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>17,951,744 km</td></tr>
+<tr><th scope="row">轨道周期</th><td>5.3 天</td></tr>
+<tr><th scope="row">轨道倾角</th><td>63°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.13</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">已知成员</th><td>2</td></tr>
+<tr><th scope="row">备注</th><td>两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】</td></tr>
+<tr><th scope="row">发现</th><td>自古已知</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -66,4 +68,4 @@ description: "角宿一（Spica）的天体数据：11.4 M☉、半径 7.47 R☉
 <p class="obj-nav">← 上一颗：<a href="../aldebaran/">毕宿五</a></p>
 <p class="obj-nav">下一颗：<a href="../regulus/">轩辕十四</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

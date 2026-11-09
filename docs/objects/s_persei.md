@@ -1,5 +1,7 @@
 ---
 description: "英仙座 S（S Persei）的天体数据：20 M☉、半径 1,200 R☉、光度 1.5×10⁵ L☉、表面温度 3500 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "英仙座 S（S Persei）的天体数据：20 M☉、半径 1,200 
     <span class="astro-badge star">恒星</span>
     <h1>英仙座 S <small>S Persei</small></h1>
     <p class="obj-tagline">英仙座双星团方向的红超巨星，半规则变星</p>
-    <div class="obj-keystats">
-      <span>20 M☉</span>
-      <span>1,200 R☉</span>
-      <span>3500 K</span>
-      <span>1.5×10⁵ L☉</span>
-    </div>
+    <p class="obj-summary">半径 1,200 R☉ · 质量 20 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 20 M☉ |
-| 平均半径 | 1,200 R☉ |
-| 表面重力 | 3.81×10⁻³ m/s² |
-| 逃逸速度 | 79.74 km/s |
-| 平均表面温度 | 3500 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | M3.5I |
-| 恒星类型 | 红超巨星（M3.5I） |
-| 光度 | 1.5×10⁵ L☉ |
-| 距离 | 7,900 光年 |
-| 星座 | 英仙座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 藏在英仙座双星团方向的红超巨星，质量约 20 M☉、半径约 1200 R☉；光变幅度接近 1 个星等，是双星团观测区的'隐藏巨人'。 |
-| 发现 | 19 世纪被记录为变星 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>20 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>1,200 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>3.81×10⁻³ m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>79.74 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3500 K</td></tr>
+<tr><th scope="row">光谱型</th><td>M3.5I</td></tr>
+<tr><th scope="row">恒星类型</th><td>红超巨星（M3.5I）</td></tr>
+<tr><th scope="row">光度</th><td>1.5×10⁵ L☉</td></tr>
+<tr><th scope="row">距离</th><td>7,900 光年</td></tr>
+<tr><th scope="row">星座</th><td>英仙座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>藏在英仙座双星团方向的红超巨星，质量约 20 M☉、半径约 1200 R☉；光变幅度接近 1 个星等，是双星团观测区的'隐藏巨人'。</td></tr>
+<tr><th scope="row">发现</th><td>19 世纪被记录为变星</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "英仙座 S（S Persei）的天体数据：20 M☉、半径 1,200 
 <p class="obj-nav">← 上一颗：<a href="../rw_cephei/">仙王座 RW</a></p>
 <p class="obj-nav">下一颗：<a href="../mira/">蒭藁增二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "造父四（Mu Cephei）的天体数据：19.2 M☉、半径 1,260 R☉、光度 3.1×10⁵ L☉、表面温度 3750 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "造父四（Mu Cephei）的天体数据：19.2 M☉、半径 1,260
     <span class="astro-badge star">恒星</span>
     <h1>造父四 <small>Mu Cephei</small></h1>
     <p class="obj-tagline">血红色的特超巨星，肉眼可见的最大恒星之一</p>
-    <div class="obj-keystats">
-      <span>19.2 M☉</span>
-      <span>1,260 R☉</span>
-      <span>3750 K</span>
-      <span>3.1×10⁵ L☉</span>
-    </div>
+    <p class="obj-summary">半径 1,260 R☉ · 质量 19.2 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 19.2 M☉ |
-| 平均半径 | 1,260 R☉ |
-| 表面重力 | 3.32×10⁻³ m/s² |
-| 逃逸速度 | 76.25 km/s |
-| 平均表面温度 | 3750 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | M2Ia |
-| 恒星类型 | 红特超巨星（M2Ia） |
-| 光度 | 3.1×10⁵ L☉ |
-| 距离 | 2,840 光年 |
-| 星座 | 仙王座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 又名'石榴星'（Garnet Star），因石榴石般的血红色闻名；半径估计在 972~1650 R☉ 之间依口径而变，此处取 1260 R☉。它的紫外光几乎全被自身大气吸收。 |
-| 发现 | 自古已知；1780 年代赫歇尔注意到其红色 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>19.2 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>1,260 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>3.32×10⁻³ m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>76.25 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3750 K</td></tr>
+<tr><th scope="row">光谱型</th><td>M2Ia</td></tr>
+<tr><th scope="row">恒星类型</th><td>红特超巨星（M2Ia）</td></tr>
+<tr><th scope="row">光度</th><td>3.1×10⁵ L☉</td></tr>
+<tr><th scope="row">距离</th><td>2,840 光年</td></tr>
+<tr><th scope="row">星座</th><td>仙王座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>又名'石榴星'（Garnet Star），因石榴石般的血红色闻名；半径估计在 972~1650 R☉ 之间依口径而变，此处取 1260 R☉。它的紫外光几乎全被自身大气吸收。</td></tr>
+<tr><th scope="row">发现</th><td>自古已知；1780 年代赫歇尔注意到其红色</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "造父四（Mu Cephei）的天体数据：19.2 M☉、半径 1,260
 <p class="obj-nav">← 上一颗：<a href="../aludra/">弧矢二</a></p>
 <p class="obj-nav">下一颗：<a href="../uy_scuti/">盾牌座 UY</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

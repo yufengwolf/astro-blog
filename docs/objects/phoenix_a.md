@@ -1,5 +1,7 @@
 ---
 description: "凤凰座A（Phoenix A）的天体数据：1×10¹¹ M☉、史瓦西半径 1.97e+03 AU、距离 57 亿光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,31 +10,36 @@ description: "凤凰座A（Phoenix A）的天体数据：1×10¹¹ M☉、史瓦
     <span class="astro-badge black_hole">黑洞</span>
     <h1>凤凰座A <small>Phoenix A</small></h1>
     <p class="obj-tagline">凤凰座A是凤凰座星系团中心的超大质量黑洞</p>
-    <div class="obj-keystats">
-      <span>1×10¹¹ M☉</span>
-      <span>1.97e+03 AU</span>
-      <span>57 亿光年</span>
-    </div>
+    <p class="obj-summary">史瓦西半径 1.97e+03 AU · 质量 1×10¹¹ M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：黑洞</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1×10¹¹ M☉ |
-| 史瓦西半径 | 1.97e+03 AU |
-| 距离 | 57 亿光年 |
-| 星座 | 凤凰座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 超大质量黑洞 |
-| 备注 | 质量约1000亿倍太阳质量，为已知质量最大黑洞之一，事件视界半径为近似值 【2发不一致，争议字段已置空待补:physical/radius_km(296000000.0 vs 295250000000)】 |
-| 发现 | — |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1×10¹¹ M☉</td></tr>
+<tr><th scope="row">史瓦西半径</th><td>1.97e+03 AU</td></tr>
+<tr><th scope="row">距离</th><td>57 亿光年</td></tr>
+<tr><th scope="row">星座</th><td>凤凰座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>超大质量黑洞</td></tr>
+<tr><th scope="row">备注</th><td>质量约1000亿倍太阳质量，为已知质量最大黑洞之一，事件视界半径为近似值 【2发不一致，争议字段已置空待补:physical/radius_km(296000000.0 vs 295250000000)】</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -42,4 +49,4 @@ description: "凤凰座A（Phoenix A）的天体数据：1×10¹¹ M☉、史瓦
 <p class="obj-nav">← 上一颗：<a href="../j2157-3602/">J2157-3602</a></p>
 <p class="obj-nav">下一颗：<a href="../gaia_bh1/">盖亚BH1</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

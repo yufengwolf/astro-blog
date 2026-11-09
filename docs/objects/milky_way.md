@@ -1,5 +1,7 @@
 ---
 description: "银河系（Milky Way）的天体数据：1.5×10¹² M☉、半径/大小 50,000 光年、光度 2.5×10¹⁰ L☉、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,33 +10,38 @@ description: "银河系（Milky Way）的天体数据：1.5×10¹² M☉、半�
     <span class="astro-badge galaxy">星系</span>
     <h1>银河系 <small>Milky Way</small></h1>
     <p class="obj-tagline">我们的家园星系，太阳系所在的棒旋星系</p>
-    <div class="obj-keystats">
-      <span>1.5×10¹² M☉</span>
-      <span>50,000 光年</span>
-      <span>2.5×10¹⁰ L☉</span>
-    </div>
+    <p class="obj-summary">半径/大小 50,000 光年 · 质量 1.5×10¹² M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：星系</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.5×10¹² M☉ |
-| 半径 / 大小 | 50,000 光年 |
-| 光度 | 2.5×10¹⁰ L☉ |
-| 距离 | — |
-| 类型 | 棒旋星系（SBbc） |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 棒旋星系（SBbc） |
-| 已知成员 | 约 4000 亿颗恒星 |
-| 备注 | 直径约 10 万光年（不同口径 10~20 万光年）；太阳距银心约 2.6 万光年，绕银心一周约 2.3 亿年。 |
-| 发现 | 史前 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.5×10¹² M☉</td></tr>
+<tr><th scope="row">半径 / 大小</th><td>50,000 光年</td></tr>
+<tr><th scope="row">光度</th><td>2.5×10¹⁰ L☉</td></tr>
+<tr><th scope="row">类型</th><td>棒旋星系（SBbc）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>棒旋星系（SBbc）</td></tr>
+<tr><th scope="row">已知成员</th><td>约 4000 亿颗恒星</td></tr>
+<tr><th scope="row">备注</th><td>直径约 10 万光年（不同口径 10~20 万光年）；太阳距银心约 2.6 万光年，绕银心一周约 2.3 亿年。</td></tr>
+<tr><th scope="row">发现</th><td>史前</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -44,4 +51,4 @@ description: "银河系（Milky Way）的天体数据：1.5×10¹² M☉、半�
 <p class="obj-nav">← 上一颗：<a href="../tarantula/">蜘蛛星云</a></p>
 <p class="obj-nav">下一颗：<a href="../m31/">仙女座星系</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

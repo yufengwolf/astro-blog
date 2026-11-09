@@ -1,5 +1,7 @@
 ---
 description: "南门二 A（Alpha Centauri A）的天体数据：1.1 M☉、半径 1.22 R☉、光度 1.52 L☉、表面温度 5790 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,43 +10,43 @@ description: "南门二 A（Alpha Centauri A）的天体数据：1.1 M☉、半�
     <span class="astro-badge star">恒星</span>
     <h1>南门二 A <small>Alpha Centauri A</small></h1>
     <p class="obj-tagline">距太阳系最近的恒星系统主星，与太阳宛如孪生</p>
-    <div class="obj-keystats">
-      <span>1.1 M☉</span>
-      <span>1.22 R☉</span>
-      <span>5790 K</span>
-      <span>1.52 L☉</span>
-    </div>
+    <p class="obj-summary">半径 1.22 R☉ · 质量 1.1 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.1 M☉ |
-| 平均半径 | 1.22 R☉ |
-| 表面重力 | 201.51 m/s² |
-| 逃逸速度 | 585.68 km/s |
-| 平均表面温度 | 5790 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | G2V |
-| 恒星类型 | 黄矮星（G2V 主序星） |
-| 光度 | 1.52 L☉ |
-| 距离 | 4 光年 |
-| 星座 | 半人马座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 已知成员 | 3 |
-| 备注 | 光谱、质量与太阳几乎一致的 G2V 恒星；与南门二 B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。 |
-| 发现 | 自古已知 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.1 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>1.22 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>201.51 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>585.68 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5790 K</td></tr>
+<tr><th scope="row">光谱型</th><td>G2V</td></tr>
+<tr><th scope="row">恒星类型</th><td>黄矮星（G2V 主序星）</td></tr>
+<tr><th scope="row">光度</th><td>1.52 L☉</td></tr>
+<tr><th scope="row">距离</th><td>4 光年</td></tr>
+<tr><th scope="row">星座</th><td>半人马座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">已知成员</th><td>3</td></tr>
+<tr><th scope="row">备注</th><td>光谱、质量与太阳几乎一致的 G2V 恒星；与南门二 B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。</td></tr>
+<tr><th scope="row">发现</th><td>自古已知</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -54,4 +56,4 @@ description: "南门二 A（Alpha Centauri A）的天体数据：1.1 M☉、半�
 <p class="obj-nav">← 上一颗：<a href="../sgr_1806_20/">SGR 1806-20</a></p>
 <p class="obj-nav">下一颗：<a href="../alphacen_b/">南门二 B</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

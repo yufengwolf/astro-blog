@@ -1,5 +1,7 @@
 ---
 description: "毕星团（Hyades）的天体数据：400 M☉、半径/大小 7 光年、距离 153 光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,33 +10,39 @@ description: "毕星团（Hyades）的天体数据：400 M☉、半径/大小 7 
     <span class="astro-badge cluster">星团</span>
     <h1>毕星团 <small>Hyades</small></h1>
     <p class="obj-tagline">金牛座的 V 形头部，离太阳最近的疏散星团之一</p>
-    <div class="obj-keystats">
-      <span>400 M☉</span>
-      <span>7 光年</span>
-      <span>153 光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 7 光年 · 质量 400 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../milky_way/">银河系</a> · 分类：星团</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 400 M☉ |
-| 半径 / 大小 | 7 光年 |
-| 距离 | 153 光年 |
-| 类型 | 疏散星团 |
-| 星座 | 金牛座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 疏散星团 |
-| 已知成员 | 约 300~400 颗成员星 |
-| 备注 | 直径约 15 光年；年龄约 6.25 亿年，构成金牛座头部的 V 字形。 |
-| 发现 | 史前（古希腊已有记载） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>400 M☉</td></tr>
+<tr><th scope="row">半径 / 大小</th><td>7 光年</td></tr>
+<tr><th scope="row">距离</th><td>153 光年</td></tr>
+<tr><th scope="row">类型</th><td>疏散星团</td></tr>
+<tr><th scope="row">星座</th><td>金牛座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>疏散星团</td></tr>
+<tr><th scope="row">已知成员</th><td>约 300~400 颗成员星</td></tr>
+<tr><th scope="row">备注</th><td>直径约 15 光年；年龄约 6.25 亿年，构成金牛座头部的 V 字形。</td></tr>
+<tr><th scope="row">发现</th><td>史前（古希腊已有记载）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -44,4 +52,4 @@ description: "毕星团（Hyades）的天体数据：400 M☉、半径/大小 7 
 <p class="obj-nav">← 上一颗：<a href="../m45/">昴星团</a></p>
 <p class="obj-nav">下一颗：<a href="../m44/">蜂巢星团</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

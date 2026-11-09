@@ -1,5 +1,7 @@
 ---
 description: "武仙-北冕座长城（Hercules–Corona Borealis Great Wall）的天体数据：1×10¹⁸ M☉、半径/大小 5,000,000,000 光年、距离 100 亿光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,32 +10,38 @@ description: "武仙-北冕座长城（Hercules–Corona Borealis Great Wall）�
     <span class="astro-badge structure">大尺度结构</span>
     <h1>武仙-北冕座长城 <small>Hercules–Corona Borealis Great Wall</small></h1>
     <p class="obj-tagline">已知最大的宇宙结构之一，横跨百亿光年的星系巨墙</p>
-    <div class="obj-keystats">
-      <span>1×10¹⁸ M☉</span>
-      <span>5,000,000,000 光年</span>
-      <span>100 亿光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 5,000,000,000 光年 · 质量 1×10¹⁸ M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：大尺度结构</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1×10¹⁸ M☉ |
-| 半径 / 大小 | 5,000,000,000 光年 |
-| 距离 | 100 亿光年 |
-| 类型 | 宇宙长城（星系丝状结构） |
-| 星座 | 武仙座 — 北冕座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 宇宙长城（星系丝状结构） |
-| 备注 | 直径约 100 亿光年（共动尺度，口径存在争议）；2013 年基于伽马射线暴分布发现。 |
-| 发现 | 2013 年（Horvath 等发现） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1×10¹⁸ M☉</td></tr>
+<tr><th scope="row">半径 / 大小</th><td>5,000,000,000 光年</td></tr>
+<tr><th scope="row">距离</th><td>100 亿光年</td></tr>
+<tr><th scope="row">类型</th><td>宇宙长城（星系丝状结构）</td></tr>
+<tr><th scope="row">星座</th><td>武仙座 — 北冕座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>宇宙长城（星系丝状结构）</td></tr>
+<tr><th scope="row">备注</th><td>直径约 100 亿光年（共动尺度，口径存在争议）；2013 年基于伽马射线暴分布发现。</td></tr>
+<tr><th scope="row">发现</th><td>2013 年（Horvath 等发现）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -43,4 +51,4 @@ description: "武仙-北冕座长城（Hercules–Corona Borealis Great Wall）�
 <p class="obj-nav">← 上一颗：<a href="../great_attractor/">巨引源</a></p>
 <p class="obj-nav">下一颗：<a href="../cmb/">宇宙微波背景</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

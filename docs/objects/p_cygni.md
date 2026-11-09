@@ -1,5 +1,7 @@
 ---
 description: "天鹅座 P（P Cygni）的天体数据：37 M☉、半径 76 R☉、光度 6.1×10⁵ L☉、表面温度 18700 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "天鹅座 P（P Cygni）的天体数据：37 M☉、半径 76 R☉
     <span class="astro-badge star">恒星</span>
     <h1>天鹅座 P <small>P Cygni</small></h1>
     <p class="obj-tagline">1600 年无预警增亮的'新星'，至今仍在抛射物质</p>
-    <div class="obj-keystats">
-      <span>37 M☉</span>
-      <span>76 R☉</span>
-      <span>18700 K</span>
-      <span>6.1×10⁵ L☉</span>
-    </div>
+    <p class="obj-summary">半径 76 R☉ · 质量 37 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 37 M☉ |
-| 平均半径 | 76 R☉ |
-| 表面重力 | 1.76 m/s² |
-| 逃逸速度 | 430.97 km/s |
-| 平均表面温度 | 18700 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | LBV |
-| 恒星类型 | 高光度蓝变星（LBV） |
-| 光度 | 6.1×10⁵ L☉ |
-| 距离 | 5,300 光年 |
-| 星座 | 天鹅座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 1600 年突然亮如三等星，随后缓慢回落，至今仍在以强劲星风抛射物质；与海山二同类，是'假超新星'现象的鼻祖。 |
-| 发现 | 1600 年 8 月突然增亮为 3 等（被记为'新星'） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>37 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>76 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>1.76 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>430.97 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>18700 K</td></tr>
+<tr><th scope="row">光谱型</th><td>LBV</td></tr>
+<tr><th scope="row">恒星类型</th><td>高光度蓝变星（LBV）</td></tr>
+<tr><th scope="row">光度</th><td>6.1×10⁵ L☉</td></tr>
+<tr><th scope="row">距离</th><td>5,300 光年</td></tr>
+<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>1600 年突然亮如三等星，随后缓慢回落，至今仍在以强劲星风抛射物质；与海山二同类，是'假超新星'现象的鼻祖。</td></tr>
+<tr><th scope="row">发现</th><td>1600 年 8 月突然增亮为 3 等（被记为'新星'）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "天鹅座 P（P Cygni）的天体数据：37 M☉、半径 76 R☉
 <p class="obj-nav">← 上一颗：<a href="../mira/">蒭藁增二</a></p>
 <p class="obj-nav">下一颗：<a href="../naos/">弧矢增二十二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

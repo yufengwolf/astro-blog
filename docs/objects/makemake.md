@@ -1,5 +1,7 @@
 ---
 description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半径 715.9 km、密度 —、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,47 +10,47 @@ description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半�
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>鸟神星 <small>Makemake</small></h1>
     <p class="obj-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
-    <div class="obj-keystats">
-      <span>3×10²¹ kg</span>
-      <span>715.9 km</span>
-    </div>
+    <p class="obj-summary">平均半径 715.9 km · 质量 3×10²¹ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：矮行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 3×10²¹ kg |
-| 平均半径 | 715.9 km |
-| 表面重力 | — |
-| 逃逸速度 | — |
-| 平均表面温度 | — |
-| 表面气压 | — |
-| 反照率 | — |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 6,817,314,568 km（45.6 AU） |
-| 轨道周期 | 307.6 年（112,365 天） |
-| 平均轨道速度 | — |
-| 轨道倾角 | 29.03° |
-| 轨道偏心率 | 0.1589 |
-| 转轴倾角 | — |
-| 自转周期 | 22.83 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 已确认卫星 | 1 颗（ notable：MK2） |
-| 发现 | 迈克尔·布朗等，2005 年 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>3×10²¹ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>715.9 km</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>6,817,314,568 km（45.6 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>307.6 年（112,365 天）</td></tr>
+<tr><th scope="row">轨道倾角</th><td>29.03°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.1589</td></tr>
+<tr><th scope="row">自转周期</th><td>22.83 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">已确认卫星</th><td>1 颗（主要：MK2）</td></tr>
+<tr><th scope="row">发现</th><td>迈克尔·布朗等，2005 年</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -58,4 +60,4 @@ description: "鸟神星（Makemake）的天体数据：3×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../ceres/">谷神星</a></p>
 <p class="obj-nav">下一颗：<a href="../haumea/">妊神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

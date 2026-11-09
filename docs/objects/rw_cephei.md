@@ -1,5 +1,7 @@
 ---
 description: "仙王座 RW（RW Cephei）的天体数据：13.9 M☉、半径 1,100 R☉、光度 3.5×10⁵ L☉、表面温度 4000 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "仙王座 RW（RW Cephei）的天体数据：13.9 M☉、半径 1,
     <span class="astro-badge star">恒星</span>
     <h1>仙王座 RW <small>RW Cephei</small></h1>
     <p class="obj-tagline">会不规则变暗的特超巨星，2022 年经历创纪录变暗</p>
-    <div class="obj-keystats">
-      <span>13.9 M☉</span>
-      <span>1,100 R☉</span>
-      <span>4000 K</span>
-      <span>3.5×10⁵ L☉</span>
-    </div>
+    <p class="obj-summary">半径 1,100 R☉ · 质量 13.9 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 13.9 M☉ |
-| 平均半径 | 1,100 R☉ |
-| 表面重力 | 3.15×10⁻³ m/s² |
-| 逃逸速度 | 69.43 km/s |
-| 平均表面温度 | 4000 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | K2 0-Ia |
-| 恒星类型 | 橙黄特超巨星（K2 0-Ia） |
-| 光度 | 3.5×10⁵ L☉ |
-| 距离 | 1 万光年 |
-| 星座 | 仙王座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 半径逾千倍太阳的半规则变星；2022 年它经历了有记录以来最深的一次变暗，可能与一次大规模的尘埃物质抛射有关。 |
-| 发现 | 1901 年被确认为变星 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>13.9 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>1,100 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>3.15×10⁻³ m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>69.43 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>4000 K</td></tr>
+<tr><th scope="row">光谱型</th><td>K2 0-Ia</td></tr>
+<tr><th scope="row">恒星类型</th><td>橙黄特超巨星（K2 0-Ia）</td></tr>
+<tr><th scope="row">光度</th><td>3.5×10⁵ L☉</td></tr>
+<tr><th scope="row">距离</th><td>1 万光年</td></tr>
+<tr><th scope="row">星座</th><td>仙王座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>半径逾千倍太阳的半规则变星；2022 年它经历了有记录以来最深的一次变暗，可能与一次大规模的尘埃物质抛射有关。</td></tr>
+<tr><th scope="row">发现</th><td>1901 年被确认为变星</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "仙王座 RW（RW Cephei）的天体数据：13.9 M☉、半径 1,
 <p class="obj-nav">← 上一颗：<a href="../uy_scuti/">盾牌座 UY</a></p>
 <p class="obj-nav">下一颗：<a href="../s_persei/">英仙座 S</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

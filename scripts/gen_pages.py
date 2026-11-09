@@ -22,8 +22,8 @@ from pathlib import Path
 
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
-# 页面版本戳：每次数据/贴图批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.6"
+# 页面版本戳：每次数据/贴图/页面布局批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
+VERSION = "1.7"
 VERIFIED = "2026-10-24"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
@@ -211,6 +211,27 @@ def fmt_yn(v):
 
 def dash(v):
     return v if v is not None else "—"
+
+
+def table_html(rows):
+    """两列参数表 → 裸 HTML <table> 行列表。
+
+    空值行（None / "" / "—"）直接不渲染：稀疏天体不再出现整列破折号，
+    太阳的轨道表从 7 行缩到实际有值的 2 行。全空时返回空列表，
+    调用方据此跳过整个区块（不再输出只有表头的空表）。
+
+    用 HTML 而非 Markdown 表格：可精确控制 DOM 结构，供 .obj-data-grid
+    在桌面排成双列；同时长文本里的 "|" 不会破坏表格语法。
+    表格不带 class，Material 的 .md-typeset table 样式照常生效。
+    """
+    kept = [(k, v) for k, v in rows if v is not None and v != "" and v != "—"]
+    if not kept:
+        return []
+    out = ["<table>", "<thead><tr><th>参数</th><th>数值</th></tr></thead>", "<tbody>"]
+    for k, v in kept:
+        out.append(f'<tr><th scope="row">{k}</th><td>{v}</td></tr>')
+    out += ["</tbody>", "</table>"]
+    return out
 
 
 def load_data(root):
@@ -542,6 +563,10 @@ def build_object(root, o, by_id, order, registry=None):
     L.append(f'description: "{o["name"]}（{o["name_en"]}）的天体数据：{desc_mass}、'
              f'{radius_label} {desc_radius}、{desc_extra}、'
              f'表面温度 {dash(fmt_temp(ph.get("mean_temp_c"), cat))}。数据整理自公开天文资料。"')
+    # 详情页去掉右侧 TOC 栏：正文列从 ~764px 放宽到 ~1006px（1440 视口），
+    # 给双列参数表与后续 3D 嵌入腾出宽度；页面短、标题少，TOC 价值低于宽度
+    L.append("hide:")
+    L.append("  - toc")
     L.append("---")
     L.append("")
     L.append(f'<div class="obj-hero">')
@@ -550,26 +575,18 @@ def build_object(root, o, by_id, order, registry=None):
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')
     L.append(f'    <p class="obj-tagline">{o["tagline"]}</p>')
-    dist = fmt_distance(o.get("distance_ly"))
-    if cat == "star":
-        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
-                fmt_temp(ph.get("mean_temp_c"), cat), fmt_lum(o.get("luminosity_w"), cat)]
-    elif cat == "black_hole":
-        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat), dist]
-    elif cat == "galaxy":
-        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
-                fmt_lum(o.get("luminosity_w"), cat), dist]
-    elif cat in EXT_CATS:
-        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat), dist]
-    else:
-        keys = [fmt_mass(ph.get("mass_kg"), cat), fmt_radius(ph.get("radius_km"), cat),
-                fmt_temp(ph.get("mean_temp_c"), cat),
-                f"{ph['density_g_cm3']:g} g/cm³" if ph.get("density_g_cm3") else None]
-    L.append('    <div class="obj-keystats">')
-    for k in keys:
-        if k:
-            L.append(f"      <span>{k}</span>")
-    L.append("    </div>")
+    # 速览摘要：只保留 2 个最具辨识度的量，压成单行文本。
+    # 原 obj-keystats 是 4 个数值 chip 块，与紧随其后的「物理参数」表重复展示
+    # 质量/半径/温度/光度，既占高度又形成"第二张数据表"。物理参数表是唯一明细来源。
+    summary = []
+    size = fmt_radius(ph.get("radius_km"), cat)
+    mass = fmt_mass(ph.get("mass_kg"), cat)
+    if size:
+        summary.append(f"{radius_label} {size}")
+    if mass:
+        summary.append(f"质量 {mass}")
+    if summary:
+        L.append(f'    <p class="obj-summary">{" · ".join(summary)}</p>')
     L.append("  </div>")
     L.append("</div>")
     L.append("")
@@ -580,10 +597,6 @@ def build_object(root, o, by_id, order, registry=None):
     else:
         L.append(f'<p class="obj-parent">分类：{CAT_ZH[cat]}</p>')
 
-    L.append("## 物理参数")
-    L.append("")
-    L.append("| 参数 | 数值 |")
-    L.append("|---|---|")
     def albedo_text():
         a = ph.get("albedo")
         ab, ag = ph.get("albedo_bond"), ph.get("albedo_geometric")
@@ -598,14 +611,14 @@ def build_object(root, o, by_id, order, registry=None):
 
     if cat == "black_hole":
         # 黑洞：实心球参数（密度/重力/逃逸/气压/反照率）均无意义，只列口径清晰的量
-        rows = [
+        phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
             ("史瓦西半径", fmt_radius(ph.get("radius_km"), cat)),
             ("距离", fmt_distance(o.get("distance_ly"))),
         ]
     elif cat in ("asteroid", "comet"):
         # 小天体：实心球参数大多不适用（彗星是脏雪球、形状不规则），只列有意义的量
-        rows = [
+        phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
             ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
             *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
@@ -613,7 +626,7 @@ def build_object(root, o, by_id, order, registry=None):
             ("反照率", albedo_text()),
         ]
     elif cat in EXT_CATS:
-        rows = [
+        phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
             ("半径 / 大小", fmt_radius(ph.get("radius_km"), cat)),
             *([("光度", fmt_lum(o.get("luminosity_w"), cat))] if o.get("luminosity_w") else []),
@@ -623,7 +636,7 @@ def build_object(root, o, by_id, order, registry=None):
             *([("类型", o["subtype"])] if o.get("subtype") else []),
         ]
     else:
-        rows = [
+        phys_rows = [
             ("质量", fmt_mass(ph.get("mass_kg"), cat)),
             ("平均半径", fmt_radius(ph.get("radius_km"), cat)),
             *([("平均密度", f"{ph['density_g_cm3']:g} g/cm³")]
@@ -639,76 +652,84 @@ def build_object(root, o, by_id, order, registry=None):
             ("反照率", albedo_text()),
         ]
     if o.get("spectral_type"):
-        rows.append(("光谱型", o["spectral_type"]))
+        phys_rows.append(("光谱型", o["spectral_type"]))
     if cat == "star" and o.get("subtype"):
-        rows.append(("恒星类型", o["subtype"]))
+        phys_rows.append(("恒星类型", o["subtype"]))
     if cat == "star" and o.get("luminosity_w"):
-        rows.append(("光度", fmt_lum(o["luminosity_w"], cat)))
+        phys_rows.append(("光度", fmt_lum(o["luminosity_w"], cat)))
     if o.get("distance_ly") is not None and cat == "star":
-        rows.append(("距离", fmt_distance(o["distance_ly"])))
+        phys_rows.append(("距离", fmt_distance(o["distance_ly"])))
     if o.get("constellation"):
-        rows.append(("星座", o["constellation"]))
-    for k, v in rows:
-        L.append(f"| {k} | {dash(v)} |")
-    L.append("")
+        phys_rows.append(("星座", o["constellation"]))
+    blocks = []
+    t = table_html(phys_rows)
+    if t:
+        blocks.append(("物理参数", "physical", t))
 
-    if any(orb.get(k) is not None for k in
-           ("semimajor_axis_km", "orbital_period_days", "orbital_velocity_km_s",
-            "inclination_deg", "eccentricity", "obliquity_deg", "rotation_period_hours")):
-        L.append("## 轨道参数")
-        L.append("")
-        L.append("| 参数 | 数值 |")
-        L.append("|---|---|")
-        orows = [
-            ("半长轴", fmt_axis(orb.get("semimajor_axis_km"), o.get("parent"))),
-            ("轨道周期", fmt_period(orb.get("orbital_period_days"))),
-            ("平均轨道速度", fmt_velocity(orb.get("orbital_velocity_km_s"))),
-            ("轨道倾角", fmt_angle(orb.get("inclination_deg"))),
-            ("轨道偏心率", fmt_ecc(orb.get("eccentricity"))),
-            ("转轴倾角", fmt_angle(orb.get("obliquity_deg"))),
-            ("自转周期", fmt_rotation(orb.get("rotation_period_hours"))),
-        ]
-        for k, v in orows:
-            L.append(f"| {k} | {dash(v)} |")
-        L.append("")
+    orows = [
+        ("半长轴", fmt_axis(orb.get("semimajor_axis_km"), o.get("parent"))),
+        ("轨道周期", fmt_period(orb.get("orbital_period_days"))),
+        ("平均轨道速度", fmt_velocity(orb.get("orbital_velocity_km_s"))),
+        ("轨道倾角", fmt_angle(orb.get("inclination_deg"))),
+        ("轨道偏心率", fmt_ecc(orb.get("eccentricity"))),
+        ("转轴倾角", fmt_angle(orb.get("obliquity_deg"))),
+        ("自转周期", fmt_rotation(orb.get("rotation_period_hours"))),
+    ]
+    t = table_html(orows)
+    if t:
+        blocks.append(("轨道参数", "orbit", t))
 
-    L.append("## 其他特征")
-    L.append("")
-    L.append("| 项目 | 数值 |")
-    L.append("|---|---|")
+    feat_rows = []
     if cat in EXT_CATS or cat == "black_hole":
         # 延展天体/黑洞：无大气/磁场/环系/卫星等固态天体概念，改列类型与备注
         if o.get("subtype"):
-            L.append(f'| 类型 | {o["subtype"]} |')
+            feat_rows.append(("类型", o["subtype"]))
         if o.get("members"):
-            L.append(f'| 已知成员 | {o["members"]} |')
+            feat_rows.append(("已知成员", o["members"]))
         if o.get("note"):
-            L.append(f'| 备注 | {o["note"]} |')
+            feat_rows.append(("备注", o["note"]))
     else:
         if o.get("atmosphere"):
-            L.append(f'| 大气成分 | {o["atmosphere"]} |')
-        else:
-            L.append("| 大气成分 | — |")
-        L.append(f'| 全球磁场 | {fmt_yn(o.get("magnetic_field"))} |')
-        L.append(f'| 环系 | {fmt_yn(o.get("rings"))} |')
+            feat_rows.append(("大气成分", o["atmosphere"]))
+        # 三态里 None 表示「根本没有这项数据」，不再输出「未知」占位行；False 才是明确的「否」
+        if o.get("magnetic_field") is not None:
+            feat_rows.append(("全球磁场", fmt_yn(o["magnetic_field"])))
+        if o.get("rings") is not None:
+            feat_rows.append(("环系", fmt_yn(o["rings"])))
         if cat == "star":
             # 恒星补充：双星/聚星成员数（members）与备注（note）
             if o.get("members"):
-                L.append(f'| 已知成员 | {o["members"]} |')
+                feat_rows.append(("已知成员", o["members"]))
             if o.get("note"):
-                L.append(f'| 备注 | {o["note"]} |')
+                feat_rows.append(("备注", o["note"]))
     moons = o.get("moons") or {}
     if moons.get("count") is not None:
         notable = "、".join(
             f'<a href="../{s["id"]}/">{s["name"]}</a>' if s else nm
             for nm, s in ((nm, next((x for x in data_objs if x["name"] == nm), None)) for nm in (moons.get("notable") or [])))
-        cell = f'{moons["count"]} 颗' + (f'（ notable：{notable}）' if notable else "")
-        L.append(f"| 已确认卫星 | {cell} |")
+        cell = f'{moons["count"]} 颗' + (f'（主要：{notable}）' if notable else "")
+        feat_rows.append(("已确认卫星", cell))
     disc = o.get("discovery") or {}
     disc_str = disc.get("known_since") or (
-        f'{disc.get("discoverer")}，{disc.get("year")} 年' if disc.get("discoverer") else "—")
-    L.append(f'| 发现 | {disc_str} |')
-    L.append("")
+        f'{disc.get("discoverer")}，{disc.get("year")} 年' if disc.get("discoverer") else None)
+    if disc_str:
+        feat_rows.append(("发现", disc_str))
+    t = table_html(feat_rows)
+    if t:
+        blocks.append(("其他特征", "features", t))
+
+    L.append("")  # 与 obj-parent 的 raw HTML 块显式分隔，避免被合并进同一块解析
+    # 三张参数表装进同一个 grid：桌面双列、移动单列，消除全宽竖排造成的右侧空白。
+    # 输出为单个 raw HTML 块（块内不插空行，否则 Python-Markdown 会提前结束 HTML 块）。
+    if blocks:
+        L.append('<div class="obj-data-grid">')
+        for title, anchor, t in blocks:
+            L.append('<section class="obj-data-block">')
+            L.append(f'<h2 id="{anchor}">{title}</h2>')
+            L.extend(t)
+            L.append('</section>')
+        L.append('</div>')
+        L.append("")
 
     L.append('<section class="obj-source">')
     L.append("  <h2>数据来源</h2>")

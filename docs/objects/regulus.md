@@ -1,5 +1,7 @@
 ---
 description: "轩辕十四（Regulus）的天体数据：3.8 M☉、半径 4.35 R☉、光度 316 L☉、表面温度 12460 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "轩辕十四（Regulus）的天体数据：3.8 M☉、半径 4.35 
     <span class="astro-badge star">恒星</span>
     <h1>轩辕十四 <small>Regulus</small></h1>
     <p class="obj-tagline">狮子座的心脏，一颗飞速自转的蓝白恒星</p>
-    <div class="obj-keystats">
-      <span>3.8 M☉</span>
-      <span>4.35 R☉</span>
-      <span>12460 K</span>
-      <span>316 L☉</span>
-    </div>
+    <p class="obj-summary">半径 4.35 R☉ · 质量 3.8 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 3.8 M☉ |
-| 平均半径 | 4.35 R☉ |
-| 表面重力 | 55.06 m/s² |
-| 逃逸速度 | 577.29 km/s |
-| 平均表面温度 | 12460 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | B8IVn |
-| 恒星类型 | 蓝白主序星（B8IVn） |
-| 光度 | 316 L☉ |
-| 距离 | 79 光年 |
-| 星座 | 狮子座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 几乎正对黄道，是月亮与行星掩星的常客。约 15.9 小时一圈的自转把它甩成明显扁球，两极表面重力比赤道强约一倍。 |
-| 发现 | 自古已知 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>3.8 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>4.35 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>55.06 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>577.29 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>12460 K</td></tr>
+<tr><th scope="row">光谱型</th><td>B8IVn</td></tr>
+<tr><th scope="row">恒星类型</th><td>蓝白主序星（B8IVn）</td></tr>
+<tr><th scope="row">光度</th><td>316 L☉</td></tr>
+<tr><th scope="row">距离</th><td>79 光年</td></tr>
+<tr><th scope="row">星座</th><td>狮子座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>几乎正对黄道，是月亮与行星掩星的常客。约 15.9 小时一圈的自转把它甩成明显扁球，两极表面重力比赤道强约一倍。</td></tr>
+<tr><th scope="row">发现</th><td>自古已知</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "轩辕十四（Regulus）的天体数据：3.8 M☉、半径 4.35 
 <p class="obj-nav">← 上一颗：<a href="../spica/">角宿一</a></p>
 <p class="obj-nav">下一颗：<a href="../formalhaut/">北落师门</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

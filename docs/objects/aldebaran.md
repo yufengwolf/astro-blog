@@ -1,5 +1,7 @@
 ---
 description: "毕宿五（Aldebaran）的天体数据：1.16 M☉、半径 44.1 R☉、光度 439 L☉、表面温度 3910 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,54 +10,51 @@ description: "毕宿五（Aldebaran）的天体数据：1.16 M☉、半径 44.1 
     <span class="astro-badge star">恒星</span>
     <h1>毕宿五 <small>Aldebaran</small></h1>
     <p class="obj-tagline">金牛座的红眼睛，一颗正在充气膨胀的红巨星</p>
-    <div class="obj-keystats">
-      <span>1.16 M☉</span>
-      <span>44.1 R☉</span>
-      <span>3910 K</span>
-      <span>439 L☉</span>
-    </div>
+    <p class="obj-summary">半径 44.1 R☉ · 质量 1.16 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.16 M☉ |
-| 平均半径 | 44.1 R☉ |
-| 表面重力 | 0.16 m/s² |
-| 逃逸速度 | 100.14 km/s |
-| 平均表面温度 | 3910 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | K5III |
-| 恒星类型 | 红巨星（K5III） |
-| 光度 | 439 L☉ |
-| 距离 | 65 光年 |
-| 星座 | 金牛座 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | — |
-| 轨道周期 | — |
-| 平均轨道速度 | — |
-| 轨道倾角 | — |
-| 轨道偏心率 | — |
-| 转轴倾角 | — |
-| 自转周期 | 75.00 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】 |
-| 发现 | 自古已知 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.16 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>44.1 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>0.16 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>100.14 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3910 K</td></tr>
+<tr><th scope="row">光谱型</th><td>K5III</td></tr>
+<tr><th scope="row">恒星类型</th><td>红巨星（K5III）</td></tr>
+<tr><th scope="row">光度</th><td>439 L☉</td></tr>
+<tr><th scope="row">距离</th><td>65 光年</td></tr>
+<tr><th scope="row">星座</th><td>金牛座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">自转周期</th><td>75.00 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">发现</th><td>自古已知</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -65,4 +64,4 @@ description: "毕宿五（Aldebaran）的天体数据：1.16 M☉、半径 44.1 
 <p class="obj-nav">← 上一颗：<a href="../capella/">五车二</a></p>
 <p class="obj-nav">下一颗：<a href="../spica/">角宿一</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

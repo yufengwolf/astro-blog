@@ -10,12 +10,17 @@
 
   // ---- 全局增强 1：表格横向滚动包裹 ----
   // MkDocs 渲染的 Markdown 表格是裸 <table>（自身无法 overflow），移动端
-  // 10 列总表会被挤压变形。包一层 .table-scroll（overflow-x:auto + 首列 sticky），
-  // 桌面端不设 min-width 不触发滚动，无副作用。可横滚时加 .is-scrollable 显示右缘渐隐提示。
+  // 10 列总表会被挤压变形。包一层 .table-scroll（overflow-x:auto + 首列 sticky）。
+  // 按列数加 --wide：只有 3 列及以上的宽表才需要 min-width:40rem 触发横滚；
+  // 详情页的两列参数表不该被 40rem 撑宽（否则桌面/手机都会横溢），
+  // 交由 CSS 让它 100% 贴合容器、长文本折行。
   document.querySelectorAll(".md-typeset table").forEach(function (t) {
     if (t.parentElement && t.parentElement.classList.contains("table-scroll")) return;
+    var head = t.tHead;
+    var cols = head && head.rows.length ? head.rows[0].cells.length
+             : (t.rows.length ? t.rows[0].cells.length : 0);
     var wrap = document.createElement("div");
-    wrap.className = "table-scroll";
+    wrap.className = "table-scroll" + (cols >= 3 ? " table-scroll--wide" : "");
     t.parentNode.insertBefore(wrap, t);
     wrap.appendChild(t);
     var check = function () {
@@ -24,6 +29,8 @@
     check();
     wrap.addEventListener("scroll", check, { passive: true });
     window.addEventListener("resize", check);
+    // Material 的表格包装脚本可能在本脚本之后才执行，load 后重算一次
+    window.addEventListener("load", check);
   });
 
   // ---- 全局增强 2：sticky 工具栏的 top 偏移（避开吸顶 header）----

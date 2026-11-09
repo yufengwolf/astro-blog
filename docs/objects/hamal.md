@@ -1,5 +1,7 @@
 ---
 description: "娄宿三（Hamal）的天体数据：1.43 M☉、半径 15.2 R☉、光度 —、表面温度 4553 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,52 +10,50 @@ description: "娄宿三（Hamal）的天体数据：1.43 M☉、半径 15.2 R☉
     <span class="astro-badge star">恒星</span>
     <h1>娄宿三 <small>Hamal</small></h1>
     <p class="obj-tagline">白羊座最亮的星，一颗步入暮年的橙巨星</p>
-    <div class="obj-keystats">
-      <span>1.43 M☉</span>
-      <span>15.2 R☉</span>
-      <span>4553 K</span>
-    </div>
+    <p class="obj-summary">半径 15.2 R☉ · 质量 1.43 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.43 M☉ |
-| 平均半径 | 15.2 R☉ |
-| 表面重力 | 1.70 m/s² |
-| 逃逸速度 | 189.51 km/s |
-| 平均表面温度 | 4553 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | K2III |
-| 恒星类型 | 橙巨星（K2III） |
-| 距离 | 66 光年 |
-| 星座 | 白羊座 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | — |
-| 轨道周期 | — |
-| 平均轨道速度 | — |
-| 轨道倾角 | — |
-| 轨道偏心率 | — |
-| 转轴倾角 | — |
-| 自转周期 | 183.33 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。 【AI复校 2026-10-27：置空:physical/lum_sun; 填充:orbit/rotation_period_hours】 |
-| 发现 | 自古已知 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.43 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>15.2 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>1.70 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>189.51 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>4553 K</td></tr>
+<tr><th scope="row">光谱型</th><td>K2III</td></tr>
+<tr><th scope="row">恒星类型</th><td>橙巨星（K2III）</td></tr>
+<tr><th scope="row">距离</th><td>66 光年</td></tr>
+<tr><th scope="row">星座</th><td>白羊座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">自转周期</th><td>183.33 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。 【AI复校 2026-10-27：置空:physical/lum_sun; 填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">发现</th><td>自古已知</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -63,4 +63,4 @@ description: "娄宿三（Hamal）的天体数据：1.43 M☉、半径 15.2 R☉
 <p class="obj-nav">← 上一颗：<a href="../mirfak/">天船三</a></p>
 <p class="obj-nav">下一颗：<a href="../markab/">室宿一</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "南门二 B（Alpha Centauri B）的天体数据：0.907 M☉、半径 0.863 R☉、光度 0.5 L☉、表面温度 5260 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "南门二 B（Alpha Centauri B）的天体数据：0.907 M☉、�
     <span class="astro-badge star">恒星</span>
     <h1>南门二 B <small>Alpha Centauri B</small></h1>
     <p class="obj-tagline">南门二系统的橙矮星伴星，肉眼与主星不可分</p>
-    <div class="obj-keystats">
-      <span>0.907 M☉</span>
-      <span>0.863 R☉</span>
-      <span>5260 K</span>
-      <span>0.5 L☉</span>
-    </div>
+    <p class="obj-summary">半径 0.863 R☉ · 质量 0.907 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../alphacen_a/">南门二 A</a> · 分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 0.907 M☉ |
-| 平均半径 | 0.863 R☉ |
-| 表面重力 | 333.76 m/s² |
-| 逃逸速度 | 633.14 km/s |
-| 平均表面温度 | 5260 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | K1V |
-| 恒星类型 | 橙矮星（K1V 主序星） |
-| 光度 | 0.5 L☉ |
-| 距离 | 4 光年 |
-| 星座 | 半人马座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 略小略暗的橙矮星伴星；合起来视星等 -0.27，为全天第三亮（少数资料列第四）的'星'。 |
-| 发现 | 自古已知（肉眼与 A 不可分） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>0.907 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>0.863 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>333.76 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>633.14 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5260 K</td></tr>
+<tr><th scope="row">光谱型</th><td>K1V</td></tr>
+<tr><th scope="row">恒星类型</th><td>橙矮星（K1V 主序星）</td></tr>
+<tr><th scope="row">光度</th><td>0.5 L☉</td></tr>
+<tr><th scope="row">距离</th><td>4 光年</td></tr>
+<tr><th scope="row">星座</th><td>半人马座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>略小略暗的橙矮星伴星；合起来视星等 -0.27，为全天第三亮（少数资料列第四）的'星'。</td></tr>
+<tr><th scope="row">发现</th><td>自古已知（肉眼与 A 不可分）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "南门二 B（Alpha Centauri B）的天体数据：0.907 M☉、�
 <p class="obj-nav">← 上一颗：<a href="../alphacen_a/">南门二 A</a></p>
 <p class="obj-nav">下一颗：<a href="../castor/">北河二</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "土卫六（Titan）的天体数据：1.35×10²³ kg、平均半径 2,576 km、密度 1.881 g/cm³、表面温度 -179 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,50 +10,56 @@ description: "土卫六（Titan）的天体数据：1.35×10²³ kg、平均半�
     <span class="astro-badge moon">卫星</span>
     <h1>土卫六 <small>Titan</small></h1>
     <p class="obj-tagline">太阳系唯一拥有浓厚大气的卫星，地表有液态甲烷的湖泊与河流</p>
-    <div class="obj-keystats">
-      <span>1.35×10²³ kg</span>
-      <span>2,576 km</span>
-      <span>-179 °C</span>
-      <span>1.881 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 2,576 km · 质量 1.35×10²³ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../saturn/">土星</a> · 分类：卫星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.35×10²³ kg |
-| 平均半径 | 2,576 km |
-| 平均密度 | 1.881 g/cm³ |
-| 表面重力 | 1.35 m/s² |
-| 逃逸速度 | 2.64 km/s |
-| 平均表面温度 | -179 °C |
-| 表面气压 | 1.47 bar |
-| 反照率 | 0.22（Geometric 口径） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 1,221,870 km |
-| 轨道周期 | 15.9 天 |
-| 平均轨道速度 | 5.58 km/s |
-| 轨道倾角 | 0.33° |
-| 轨道偏心率 | 0.0292 |
-| 转轴倾角 | — |
-| 自转周期 | 15.95 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | 氮约 95%、甲烷约 5% |
-| 全球磁场 | 未知 |
-| 环系 | 否 |
-| 已确认卫星 | 0 颗 |
-| 发现 | 克里斯蒂安·惠更斯，1655 年 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.35×10²³ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>2,576 km</td></tr>
+<tr><th scope="row">平均密度</th><td>1.881 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>1.35 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>2.64 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>-179 °C</td></tr>
+<tr><th scope="row">表面气压</th><td>1.47 bar</td></tr>
+<tr><th scope="row">反照率</th><td>0.22（Geometric 口径）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>1,221,870 km</td></tr>
+<tr><th scope="row">轨道周期</th><td>15.9 天</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>5.58 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>0.33°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.0292</td></tr>
+<tr><th scope="row">自转周期</th><td>15.95 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">大气成分</th><td>氮约 95%、甲烷约 5%</td></tr>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>0 颗</td></tr>
+<tr><th scope="row">发现</th><td>克里斯蒂安·惠更斯，1655 年</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -61,4 +69,4 @@ description: "土卫六（Titan）的天体数据：1.35×10²³ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../rhea/">土卫五</a></p>
 <p class="obj-nav">下一颗：<a href="../hyperion/">土卫七</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

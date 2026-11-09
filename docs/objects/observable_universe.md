@@ -1,5 +1,7 @@
 ---
 description: "可观测宇宙（Observable Universe）的天体数据：7.54×10²² M☉、半径/大小 46,500,000,000 光年、距离 —、表面温度 3 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,32 +10,38 @@ description: "可观测宇宙（Observable Universe）的天体数据：7.54×10
     <span class="astro-badge structure">大尺度结构</span>
     <h1>可观测宇宙 <small>Observable Universe</small></h1>
     <p class="obj-tagline">以地球为球心的粒子视界，人类信息的全部边疆</p>
-    <div class="obj-keystats">
-      <span>7.54×10²² M☉</span>
-      <span>46,500,000,000 光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 46,500,000,000 光年 · 质量 7.54×10²² M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：大尺度结构</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 7.54×10²² M☉ |
-| 半径 / 大小 | 46,500,000,000 光年 |
-| 平均温度 | 3 K |
-| 距离 | — |
-| 类型 | 可观测宇宙（粒子视界） |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 可观测宇宙（粒子视界） |
-| 已知成员 | 估计约 2 万亿个星系 |
-| 备注 | 半径约 465 亿光年（共动距离）；年龄约 138 亿年；普通物质 4.9%、暗物质 26.8%、暗能量 68.3%。 |
-| 发现 | 现代宇宙学概念（哈勃定律，1929） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>7.54×10²² M☉</td></tr>
+<tr><th scope="row">半径 / 大小</th><td>46,500,000,000 光年</td></tr>
+<tr><th scope="row">平均温度</th><td>3 K</td></tr>
+<tr><th scope="row">类型</th><td>可观测宇宙（粒子视界）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>可观测宇宙（粒子视界）</td></tr>
+<tr><th scope="row">已知成员</th><td>估计约 2 万亿个星系</td></tr>
+<tr><th scope="row">备注</th><td>半径约 465 亿光年（共动距离）；年龄约 138 亿年；普通物质 4.9%、暗物质 26.8%、暗能量 68.3%。</td></tr>
+<tr><th scope="row">发现</th><td>现代宇宙学概念（哈勃定律，1929）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -43,4 +51,4 @@ description: "可观测宇宙（Observable Universe）的天体数据：7.54×10
 <p class="obj-nav">← 上一颗：<a href="../cmb/">宇宙微波背景</a></p>
 <p class="obj-nav">下一颗：<a href="../m17/">天鹅星云</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "盖亚BH1（Gaia BH1）的天体数据：9.81 M☉、史瓦西半径 29 km、距离 1,560 光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,44 +10,48 @@ description: "盖亚BH1（Gaia BH1）的天体数据：9.81 M☉、史瓦西半�
     <span class="astro-badge black_hole">黑洞</span>
     <h1>盖亚BH1 <small>Gaia BH1</small></h1>
     <p class="obj-tagline">距离地球约1560光年的休眠恒星级黑洞，拥有一颗G型伴星</p>
-    <div class="obj-keystats">
-      <span>9.81 M☉</span>
-      <span>29 km</span>
-      <span>1,560 光年</span>
-    </div>
+    <p class="obj-summary">史瓦西半径 29 km · 质量 9.81 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：黑洞</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 9.81 M☉ |
-| 史瓦西半径 | 29 km |
-| 距离 | 1,560 光年 |
-| 星座 | 蛇夫座 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 149,597,871 km |
-| 轨道周期 | — |
-| 平均轨道速度 | — |
-| 轨道倾角 | 127° |
-| 轨道偏心率 | 0.45 |
-| 转轴倾角 | — |
-| 自转周期 | — |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 恒星级黑洞 |
-| 已知成员 | 黑洞+G型主序伴星 |
-| 备注 | 黑洞参数为观测拟合近似值，伴星轨道参数存在一定测量误差 【2发不一致，争议字段已置空待补:orbit/orbital_period_years(0.33 vs 0.508)】 |
-| 发现 | — |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>9.81 M☉</td></tr>
+<tr><th scope="row">史瓦西半径</th><td>29 km</td></tr>
+<tr><th scope="row">距离</th><td>1,560 光年</td></tr>
+<tr><th scope="row">星座</th><td>蛇夫座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>149,597,871 km</td></tr>
+<tr><th scope="row">轨道倾角</th><td>127°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.45</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>恒星级黑洞</td></tr>
+<tr><th scope="row">已知成员</th><td>黑洞+G型主序伴星</td></tr>
+<tr><th scope="row">备注</th><td>黑洞参数为观测拟合近似值，伴星轨道参数存在一定测量误差 【2发不一致，争议字段已置空待补:orbit/orbital_period_years(0.33 vs 0.508)】</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -55,4 +61,4 @@ description: "盖亚BH1（Gaia BH1）的天体数据：9.81 M☉、史瓦西半�
 <p class="obj-nav">← 上一颗：<a href="../phoenix_a/">凤凰座A</a></p>
 <p class="obj-nav">下一颗：<a href="../v404_cygni/">天鹅座V404</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

@@ -1,5 +1,7 @@
 ---
 description: "创神星（Quaoar）的天体数据：1.2×10²¹ kg、平均半径 555.0 km、密度 1.67577 g/cm³、表面温度 -231.1 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,51 +10,51 @@ description: "创神星（Quaoar）的天体数据：1.2×10²¹ kg、平均半�
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>创神星 <small>Quaoar</small></h1>
     <p class="obj-tagline">柯伊伯带矮行星，拥有行星环，位于海王星轨道外侧</p>
-    <div class="obj-keystats">
-      <span>1.2×10²¹ kg</span>
-      <span>555.0 km</span>
-      <span>-231.1 °C</span>
-      <span>1.67577 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 555.0 km · 质量 1.2×10²¹ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：矮行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.2×10²¹ kg |
-| 平均半径 | 555.0 km |
-| 平均密度 | 1.67577 g/cm³ |
-| 表面重力 | 0.26 m/s² |
-| 逃逸速度 | 0.537 km/s |
-| 平均表面温度 | -231.1 °C |
-| 表面气压 | — |
-| 反照率 | — |
-| 星座 | 蛇夫座 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 6,522,467,163 km（43.6 AU） |
-| 轨道周期 | 287.5 年（105,009 天） |
-| 平均轨道速度 | 4.50 km/s |
-| 轨道倾角 | 7.99° |
-| 轨道偏心率 | 0.038 |
-| 转轴倾角 | — |
-| 自转周期 | — |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 已确认卫星 | 1 颗 |
-| 发现 | — |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.2×10²¹ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>555.0 km</td></tr>
+<tr><th scope="row">平均密度</th><td>1.67577 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>0.26 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>0.537 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>-231.1 °C</td></tr>
+<tr><th scope="row">星座</th><td>蛇夫座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>6,522,467,163 km（43.6 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>287.5 年（105,009 天）</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>4.50 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>7.99°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.038</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">已确认卫星</th><td>1 颗</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -62,4 +64,4 @@ description: "创神星（Quaoar）的天体数据：1.2×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../disnomia/">阋卫一</a></p>
 <p class="obj-nav">下一颗：<a href="../chiron/">凯龙星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

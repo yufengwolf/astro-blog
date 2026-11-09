@@ -27,9 +27,9 @@
   max-width: 64rem;
   margin-inline: auto;
 }
-/* 详情页正文与来源区限宽，长文阅读舒适 */
+/* 详情页来源/文章区：与放宽后的正文列对齐（详情页 hide toc 后约 1006px / 1440 视口） */
 .obj-source, .obj-article {
-  max-width: 52rem;
+  max-width: min(100%, 64rem);
   margin-inline: auto;
 }
 
@@ -53,15 +53,38 @@
 }
 .md-typeset .table-scroll table {
   margin: 0;
-  /* 多列表格（天体库总表 10 列）的最小可读宽度：窄容器下保持列宽、
-     容器横向滚动，而不是把每列压扁；桌面/平板容器宽于此时不触发滚动 */
-  min-width: 40rem;
+  min-width: 0;
+  width: 100%;
 }
+/* Material 运行时会把 .md-typeset table 再包一层 .md-typeset__scrollwrap
+   （自带 margin:1em -0.8rem 负边距 + 内层 .md-typeset__table padding 0 16px），
+   与我们外层的 .table-scroll 叠加后向右撑出恒定 16px，桌面/手机都横溢。
+   横滚统一交给外层 .table-scroll：内层负边距、内边距、自身 overflow 全部归零。 */
+.table-scroll .md-typeset__scrollwrap {
+  margin: 0;
+  overflow-x: visible;
+}
+.table-scroll .md-typeset__table {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+/* 只有 3 列及以上的宽表（首页天体库 10 列总表、数据页 3 列字段说明表）才保留
+   最小可读宽度：窄容器下保持列宽并横向滚动，而不是把每列压扁。
+   旧规则给所有表强加 40rem，详情页两列参数表被撑到 780px，桌面/手机都横溢；
+   2 列表现由 JS 不打 --wide，改为 100% 贴合容器 + 长文本折行。 */
+.md-typeset .table-scroll--wide table { min-width: 40rem; }
 /* 横滚容器内数值不折行：列按内容撑宽（总宽超容器时横向滚动查看），
    避免 "3.3×10²³ kg" 被折成 "3.3" + "kg" 两行。
    加 .md-typeset 前缀提特异性，压过 Material 主题自带的表格规则 */
 .md-typeset .table-scroll th,
 .md-typeset .table-scroll td { white-space: nowrap; }
+/* 两列参数表：数值列允许折行，长文本不再把表格撑出容器 */
+.md-typeset .table-scroll:not(.table-scroll--wide) th:last-child,
+.md-typeset .table-scroll:not(.table-scroll--wide) td:last-child {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
 /* 字段说明表的「含义」列是长文本，允许折行 */
 .md-typeset .obj-fields .table-scroll td:nth-child(2),
 .md-typeset .obj-fields .table-scroll th:nth-child(2) { white-space: normal; }
@@ -463,19 +486,31 @@
   color: var(--md-default-fg-color--light);
   text-wrap: pretty;
 }
-.obj-keystats {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.3rem;
+/* 速览摘要：单行小字，不再用 4 个数值 chip 块与下方参数表重复占高 */
+.obj-summary {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  text-wrap: pretty;
 }
-.obj-keystats span {
-  padding: 0.22rem 0.6rem;
-  font-size: 0.76rem;
-  border-radius: 0.45rem;
-  border: none;
-  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent);
+/* 参数区：基线（移动/平板）单列；≥1024px 双列（见桌面媒体查询）。
+   三张表不再各自竖排占满全宽，右侧空白消失，也为后续 3D 区块留出栅格位。 */
+.obj-data-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 1.4rem;
+  align-items: start;
+  margin: 0.2rem 0 1rem;
 }
+.obj-data-block { min-width: 0; }
+.obj-data-block h2 {
+  margin: 0.8rem 0 0.35rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.02rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.obj-data-block .table-scroll { border-radius: 0; }
 .obj-parent {
   font-size: 0.84rem;
   color: var(--md-default-fg-color--light);
@@ -879,14 +914,7 @@ html[data-md-color-scheme="slate"] .md-header {
     backdrop-filter: blur(2px);
   }
   .obj-hero-info h1 { font-size: 1.7rem; }
-  .obj-keystats { justify-content: flex-start; }
-  .obj-keystats span {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.8rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--md-default-fg-color--lightest);
-    background: var(--md-default-bg-color);
-  }
+  .obj-summary { font-size: 0.88rem; }
   .obj-tagline { font-size: 0.98rem; }
   .obj-parent { font-size: 0.84rem; margin: 0 0 0.9rem; }
   .obj-source p { font-size: 0.82rem; }
@@ -954,7 +982,11 @@ html[data-md-color-scheme="slate"] .md-header {
   .obj-hero .astro-img img { height: 360px; }
   .obj-hero-info h1 { font-size: 1.7rem; }
   .obj-tagline { font-size: 0.98rem; }
-  .obj-keystats span { font-size: 0.82rem; padding: 0.28rem 0.7rem; }
+  .obj-summary { font-size: 0.9rem; }
+  /* 桌面：参数表双列；奇数个区块时最后一块跨两列，避免右下留空 */
+  .obj-data-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.8rem; }
+  .obj-data-grid .obj-data-block:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .obj-data-block h2 { font-size: 1.1rem; }
   .obj-source, .obj-article { margin-top: 1.6rem; padding: 1rem 1.2rem; }
   .obj-source h2, .obj-article h2 { font-size: 1.05rem; }
   .obj-source p { font-size: 0.82rem; }

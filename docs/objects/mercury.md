@@ -1,5 +1,7 @@
 ---
 description: "水星（Mercury）的天体数据：3.3×10²³ kg、平均半径 2,440 km、密度 5.429 g/cm³、表面温度 167 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,51 +10,57 @@ description: "水星（Mercury）的天体数据：3.3×10²³ kg、平均半径
     <span class="astro-badge planet">行星</span>
     <h1>水星 <small>Mercury</small></h1>
     <p class="obj-tagline">离太阳最近的行星，一个太阳日比一个水星年还长</p>
-    <div class="obj-keystats">
-      <span>3.3×10²³ kg</span>
-      <span>2,440 km</span>
-      <span>167 °C</span>
-      <span>5.429 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 2,440 km · 质量 3.3×10²³ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 3.3×10²³ kg |
-| 平均半径 | 2,440 km |
-| 平均密度 | 5.429 g/cm³ |
-| 表面重力 | 3.70 m/s² |
-| 逃逸速度 | 4.30 km/s |
-| 平均表面温度 | 167 °C |
-| 有效温度（black-body 口径） | 166.4 °C |
-| 表面气压 | — |
-| 反照率 | 0.14（Bond 0.068 / Geometric 0.142） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 57,910,000 km（0.387 AU） |
-| 轨道周期 | 88.0 天 |
-| 平均轨道速度 | 47.40 km/s |
-| 轨道倾角 | 7° |
-| 轨道偏心率 | 0.206 |
-| 转轴倾角 | 0.034° |
-| 自转周期 | 58.65 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 是 |
-| 环系 | 否 |
-| 已确认卫星 | 0 颗 |
-| 发现 | 史前 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>3.3×10²³ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>2,440 km</td></tr>
+<tr><th scope="row">平均密度</th><td>5.429 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>3.70 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>4.30 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>167 °C</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>166.4 °C</td></tr>
+<tr><th scope="row">反照率</th><td>0.14（Bond 0.068 / Geometric 0.142）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>57,910,000 km（0.387 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>88.0 天</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>47.40 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>7°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.206</td></tr>
+<tr><th scope="row">转轴倾角</th><td>0.034°</td></tr>
+<tr><th scope="row">自转周期</th><td>58.65 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">全球磁场</th><td>是</td></tr>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>0 颗</td></tr>
+<tr><th scope="row">发现</th><td>史前</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -130,4 +138,4 @@ A：外观很像，但水星坑底物质成分、撞击演化历史和月球存�
 <p class="obj-nav">← 上一颗：<a href="../sun/">太阳</a></p>
 <p class="obj-nav">下一颗：<a href="../venus/">金星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

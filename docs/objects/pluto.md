@@ -1,5 +1,7 @@
 ---
 description: "冥王星（Pluto）的天体数据：1.3×10²² kg、平均半径 1,188 km、密度 1.85 g/cm³、表面温度 -225 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,52 +10,58 @@ description: "冥王星（Pluto）的天体数据：1.3×10²² kg、平均半�
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>冥王星 <small>Pluto</small></h1>
     <p class="obj-tagline">曾被列为第九大行星，与卫星卡戎构成双天体系统</p>
-    <div class="obj-keystats">
-      <span>1.3×10²² kg</span>
-      <span>1,188 km</span>
-      <span>-225 °C</span>
-      <span>1.85 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 1,188 km · 质量 1.3×10²² kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：矮行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.3×10²² kg |
-| 平均半径 | 1,188 km |
-| 平均密度 | 1.85 g/cm³ |
-| 表面重力 | 0.62 m/s² |
-| 逃逸速度 | 1.21 km/s |
-| 平均表面温度 | -225 °C |
-| 有效温度（black-body 口径） | -235.7 °C |
-| 表面温度 | -242.2 °C |
-| 表面气压 | 1.3×10⁻⁵ bar |
-| 反照率 | 0.52（Bond 0.72 / Geometric 0.52） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 5,906,376,272 km（39.5 AU） |
-| 轨道周期 | 247.9 年（90,560 天） |
-| 平均轨道速度 | 4.67 km/s |
-| 轨道倾角 | 17.16° |
-| 轨道偏心率 | 0.244 |
-| 转轴倾角 | 119.5° |
-| 自转周期 | 逆行自转 · 6.39 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 否 |
-| 已确认卫星 | 5 颗（ notable：卡戎） |
-| 发现 | 克莱德·汤博，1930 年 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.3×10²² kg</td></tr>
+<tr><th scope="row">平均半径</th><td>1,188 km</td></tr>
+<tr><th scope="row">平均密度</th><td>1.85 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>0.62 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>1.21 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>-225 °C</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>-235.7 °C</td></tr>
+<tr><th scope="row">表面温度</th><td>-242.2 °C</td></tr>
+<tr><th scope="row">表面气压</th><td>1.3×10⁻⁵ bar</td></tr>
+<tr><th scope="row">反照率</th><td>0.52（Bond 0.72 / Geometric 0.52）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>5,906,376,272 km（39.5 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>247.9 年（90,560 天）</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>4.67 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>17.16°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.244</td></tr>
+<tr><th scope="row">转轴倾角</th><td>119.5°</td></tr>
+<tr><th scope="row">自转周期</th><td>逆行自转 · 6.39 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>5 颗（主要：卡戎）</td></tr>
+<tr><th scope="row">发现</th><td>克莱德·汤博，1930 年</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -140,4 +148,4 @@ A：表层主要是氮冰、甲烷冰；水冰埋藏在更深处，构成冥王�
 <p class="obj-nav">← 上一颗：<a href="../neptune/">海王星</a></p>
 <p class="obj-nav">下一颗：<a href="../ceres/">谷神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

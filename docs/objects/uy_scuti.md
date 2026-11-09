@@ -1,5 +1,7 @@
 ---
 description: "盾牌座 UY（UY Scuti）的天体数据：8.5 M☉、半径 909 R☉、光度 1.24×10⁵ L☉、表面温度 3550 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "盾牌座 UY（UY Scuti）的天体数据：8.5 M☉、半径 909 
     <span class="astro-badge star">恒星</span>
     <h1>盾牌座 UY <small>UY Scuti</small></h1>
     <p class="obj-tagline">体积最大的已知恒星之一，盾牌座的红超巨星</p>
-    <div class="obj-keystats">
-      <span>8.5 M☉</span>
-      <span>909 R☉</span>
-      <span>3550 K</span>
-      <span>1.24×10⁵ L☉</span>
-    </div>
+    <p class="obj-summary">半径 909 R☉ · 质量 8.5 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 8.5 M☉ |
-| 平均半径 | 909 R☉ |
-| 表面重力 | 2.82×10⁻³ m/s² |
-| 逃逸速度 | 59.73 km/s |
-| 平均表面温度 | 3550 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | M4Ia |
-| 恒星类型 | 红超巨星（M4Ia） |
-| 光度 | 1.24×10⁵ L☉ |
-| 距离 | 5,871 光年 |
-| 星座 | 盾牌座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 曾以约 1708 R☉ 的旧估计闻名，最新观测把半径下修至约 909 R☉——仍接近太阳的千倍。半规则变星，约 8.5 个月内光变约 1 个星等。 |
-| 发现 | 1861 年编入波恩星表 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>8.5 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>909 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>2.82×10⁻³ m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>59.73 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>3550 K</td></tr>
+<tr><th scope="row">光谱型</th><td>M4Ia</td></tr>
+<tr><th scope="row">恒星类型</th><td>红超巨星（M4Ia）</td></tr>
+<tr><th scope="row">光度</th><td>1.24×10⁵ L☉</td></tr>
+<tr><th scope="row">距离</th><td>5,871 光年</td></tr>
+<tr><th scope="row">星座</th><td>盾牌座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>曾以约 1708 R☉ 的旧估计闻名，最新观测把半径下修至约 909 R☉——仍接近太阳的千倍。半规则变星，约 8.5 个月内光变约 1 个星等。</td></tr>
+<tr><th scope="row">发现</th><td>1861 年编入波恩星表</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "盾牌座 UY（UY Scuti）的天体数据：8.5 M☉、半径 909 
 <p class="obj-nav">← 上一颗：<a href="../mu_cephei/">造父四</a></p>
 <p class="obj-nav">下一颗：<a href="../rw_cephei/">仙王座 RW</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

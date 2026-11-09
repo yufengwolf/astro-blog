@@ -1,5 +1,7 @@
 ---
 description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均半径 780.0 km、密度 —、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,47 +10,48 @@ description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均半径
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>妊神星 <small>Haumea</small></h1>
     <p class="obj-tagline">自转极快的椭球状矮行星，拥有光环</p>
-    <div class="obj-keystats">
-      <span>4×10²¹ kg</span>
-      <span>780.0 km</span>
-    </div>
+    <p class="obj-summary">平均半径 780.0 km · 质量 4×10²¹ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：矮行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 4×10²¹ kg |
-| 平均半径 | 780.0 km |
-| 表面重力 | — |
-| 逃逸速度 | — |
-| 平均表面温度 | — |
-| 表面气压 | — |
-| 反照率 | — |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 6,441,727,731 km（43.1 AU） |
-| 轨道周期 | 282.6 年（103,208 天） |
-| 平均轨道速度 | — |
-| 轨道倾角 | 28.21° |
-| 轨道偏心率 | 0.1944 |
-| 转轴倾角 | — |
-| 自转周期 | 3.92 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 是 |
-| 已确认卫星 | 2 颗（ notable：妊卫一、妊卫二） |
-| 发现 | 迈克尔·布朗等，2004 年 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>4×10²¹ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>780.0 km</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>6,441,727,731 km（43.1 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>282.6 年（103,208 天）</td></tr>
+<tr><th scope="row">轨道倾角</th><td>28.21°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.1944</td></tr>
+<tr><th scope="row">自转周期</th><td>3.92 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">环系</th><td>是</td></tr>
+<tr><th scope="row">已确认卫星</th><td>2 颗（主要：妊卫一、妊卫二）</td></tr>
+<tr><th scope="row">发现</th><td>迈克尔·布朗等，2004 年</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -58,4 +61,4 @@ description: "妊神星（Haumea）的天体数据：4×10²¹ kg、平均半径
 <p class="obj-nav">← 上一颗：<a href="../makemake/">鸟神星</a></p>
 <p class="obj-nav">下一颗：<a href="../eris/">阋神星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

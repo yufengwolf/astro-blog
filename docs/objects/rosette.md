@@ -1,5 +1,7 @@
 ---
 description: "玫瑰星云（Rosette Nebula）的天体数据：—、半径/大小 65 光年、距离 5,000 光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,31 +10,37 @@ description: "玫瑰星云（Rosette Nebula）的天体数据：—、半径/大
     <span class="astro-badge nebula">星云</span>
     <h1>玫瑰星云 <small>Rosette Nebula</small></h1>
     <p class="obj-tagline">麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云</p>
-    <div class="obj-keystats">
-      <span>65 光年</span>
-      <span>5,000 光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 65 光年</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：星云</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | — |
-| 半径 / 大小 | 65 光年 |
-| 距离 | 5,000 光年 |
-| 类型 | 发射星云（H II 区） |
-| 星座 | 麒麟座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 发射星云（H II 区） |
-| 备注 | 直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。 |
-| 发现 | 1690 年（Flamsteed 发现） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半径 / 大小</th><td>65 光年</td></tr>
+<tr><th scope="row">距离</th><td>5,000 光年</td></tr>
+<tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
+<tr><th scope="row">星座</th><td>麒麟座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
+<tr><th scope="row">备注</th><td>直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。</td></tr>
+<tr><th scope="row">发现</th><td>1690 年（Flamsteed 发现）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -42,4 +50,4 @@ description: "玫瑰星云（Rosette Nebula）的天体数据：—、半径/大
 <p class="obj-nav">← 上一颗：<a href="../m2_9/">双喷射星星云</a></p>
 <p class="obj-nav">下一颗：<a href="../barnards_loop/">巴纳德环</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

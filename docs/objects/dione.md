@@ -1,5 +1,7 @@
 ---
 description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、平均半径 561.4 km、密度 1.478 g/cm³、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,49 +10,53 @@ description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、平均半�
     <span class="astro-badge moon">卫星</span>
     <h1>土卫四 <small>Dione</small></h1>
     <p class="obj-tagline">冰质卫星，纵横的冰壳悬崖记录着古老的地质活动</p>
-    <div class="obj-keystats">
-      <span>1.1×10²¹ kg</span>
-      <span>561.4 km</span>
-      <span>1.478 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 561.4 km · 质量 1.1×10²¹ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../saturn/">土星</a> · 分类：卫星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.1×10²¹ kg |
-| 平均半径 | 561.4 km |
-| 平均密度 | 1.478 g/cm³ |
-| 表面重力 | 0.23 m/s² |
-| 逃逸速度 | 0.510 km/s |
-| 平均表面温度 | — |
-| 表面气压 | — |
-| 反照率 | 0.68 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 377,400 km |
-| 轨道周期 | 2.7 天 |
-| 平均轨道速度 | 10.03 km/s |
-| 轨道倾角 | 0.02° |
-| 轨道偏心率 | 0.0022 |
-| 转轴倾角 | — |
-| 自转周期 | 2.74 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 否 |
-| 已确认卫星 | 0 颗 |
-| 发现 | 乔凡尼·卡西尼，1684 年 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.1×10²¹ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>561.4 km</td></tr>
+<tr><th scope="row">平均密度</th><td>1.478 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>0.23 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>0.510 km/s</td></tr>
+<tr><th scope="row">反照率</th><td>0.68</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>377,400 km</td></tr>
+<tr><th scope="row">轨道周期</th><td>2.7 天</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>10.03 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>0.02°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.0022</td></tr>
+<tr><th scope="row">自转周期</th><td>2.74 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>0 颗</td></tr>
+<tr><th scope="row">发现</th><td>乔凡尼·卡西尼，1684 年</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -60,4 +66,4 @@ description: "土卫四（Dione）的天体数据：1.1×10²¹ kg、平均半�
 <p class="obj-nav">← 上一颗：<a href="../tethys/">土卫三</a></p>
 <p class="obj-nav">下一颗：<a href="../rhea/">土卫五</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

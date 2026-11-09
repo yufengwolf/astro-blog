@@ -1,5 +1,7 @@
 ---
 description: "天鹅座 X-1（Cygnus X-1）的天体数据：21.2 M☉、史瓦西半径 63 km、距离 7,240 光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,31 +10,37 @@ description: "天鹅座 X-1（Cygnus X-1）的天体数据：21.2 M☉、史瓦�
     <span class="astro-badge black_hole">黑洞</span>
     <h1>天鹅座 X-1 <small>Cygnus X-1</small></h1>
     <p class="obj-tagline">人类确认的第一个恒星级黑洞，霍金打赌输掉的那位</p>
-    <div class="obj-keystats">
-      <span>21.2 M☉</span>
-      <span>63 km</span>
-      <span>7,240 光年</span>
-    </div>
+    <p class="obj-summary">史瓦西半径 63 km · 质量 21.2 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：黑洞</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 21.2 M☉ |
-| 史瓦西半径 | 63 km |
-| 距离 | 7,240 光年 |
-| 星座 | 天鹅座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 恒星级黑洞（X 射线双星） |
-| 备注 | 2021 年 VLBA 精确测量：21.2 M☉、7240 光年；视界面自转速度 ≥95% 光速。 |
-| 发现 | 1964 年（探空火箭 X 射线源）；1990 年代确认黑洞 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>21.2 M☉</td></tr>
+<tr><th scope="row">史瓦西半径</th><td>63 km</td></tr>
+<tr><th scope="row">距离</th><td>7,240 光年</td></tr>
+<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>恒星级黑洞（X 射线双星）</td></tr>
+<tr><th scope="row">备注</th><td>2021 年 VLBA 精确测量：21.2 M☉、7240 光年；视界面自转速度 ≥95% 光速。</td></tr>
+<tr><th scope="row">发现</th><td>1964 年（探空火箭 X 射线源）；1990 年代确认黑洞</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -42,4 +50,4 @@ description: "天鹅座 X-1（Cygnus X-1）的天体数据：21.2 M☉、史瓦�
 <p class="obj-nav">← 上一颗：<a href="../gw190521/">GW190521</a></p>
 <p class="obj-nav">下一颗：<a href="../v404_cyg/">V404 天鹅座</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

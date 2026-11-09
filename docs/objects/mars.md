@@ -1,5 +1,7 @@
 ---
 description: "火星（Mars）的天体数据：6.42×10²³ kg、平均半径 3,390 km、密度 3.934 g/cm³、表面温度 -59 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,51 +10,59 @@ description: "火星（Mars）的天体数据：6.42×10²³ kg、平均半径 3
     <span class="astro-badge planet">行星</span>
     <h1>火星 <small>Mars</small></h1>
     <p class="obj-tagline">红色的沙漠行星，拥有太阳系最高的火山与最深的峡谷</p>
-    <div class="obj-keystats">
-      <span>6.42×10²³ kg</span>
-      <span>3,390 km</span>
-      <span>-59 °C</span>
-      <span>3.934 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 3,390 km · 质量 6.42×10²³ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 6.42×10²³ kg |
-| 平均半径 | 3,390 km |
-| 平均密度 | 3.934 g/cm³ |
-| 表面重力 | 3.73 m/s² |
-| 逃逸速度 | 5.03 km/s |
-| 平均表面温度 | -59 °C |
-| 有效温度（black-body 口径） | -63.4 °C |
-| 表面气压 | 0.00636 bar |
-| 反照率 | 0.25（Bond 0.25 / Geometric 0.17） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 227,956,000 km（1.52 AU） |
-| 轨道周期 | 687.0 天 |
-| 平均轨道速度 | 24.08 km/s |
-| 轨道倾角 | 1.848° |
-| 轨道偏心率 | 0.0935 |
-| 转轴倾角 | 25.19° |
-| 自转周期 | 24.62 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | 二氧化碳 95.1%、氮 2.6%、氩 1.9%（其余为氧、一氧化碳等微量） |
-| 全球磁场 | 否 |
-| 环系 | 否 |
-| 已确认卫星 | 2 颗（ notable：<a href="../phobos/">火卫一</a>、<a href="../deimos/">火卫二</a>） |
-| 发现 | 史前 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>6.42×10²³ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>3,390 km</td></tr>
+<tr><th scope="row">平均密度</th><td>3.934 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>3.73 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>5.03 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>-59 °C</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>-63.4 °C</td></tr>
+<tr><th scope="row">表面气压</th><td>0.00636 bar</td></tr>
+<tr><th scope="row">反照率</th><td>0.25（Bond 0.25 / Geometric 0.17）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>227,956,000 km（1.52 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>687.0 天</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>24.08 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>1.848°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.0935</td></tr>
+<tr><th scope="row">转轴倾角</th><td>25.19°</td></tr>
+<tr><th scope="row">自转周期</th><td>24.62 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">大气成分</th><td>二氧化碳 95.1%、氮 2.6%、氩 1.9%（其余为氧、一氧化碳等微量）</td></tr>
+<tr><th scope="row">全球磁场</th><td>否</td></tr>
+<tr><th scope="row">环系</th><td>否</td></tr>
+<tr><th scope="row">已确认卫星</th><td>2 颗（主要：<a href="../phobos/">火卫一</a>、<a href="../deimos/">火卫二</a>）</td></tr>
+<tr><th scope="row">发现</th><td>史前</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -128,4 +138,4 @@ A：不会，火星大气独立，没有物质通道将沙尘输送到地球。
 <p class="obj-nav">← 上一颗：<a href="../earth/">地球</a></p>
 <p class="obj-nav">下一颗：<a href="../jupiter/">木星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

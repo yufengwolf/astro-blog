@@ -1,5 +1,7 @@
 ---
 description: "土星（Saturn）的天体数据：5.68×10²⁶ kg、平均半径 58,232 km、密度 0.687 g/cm³、表面温度 -140 °C。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,51 +10,58 @@ description: "土星（Saturn）的天体数据：5.68×10²⁶ kg、平均半�
     <span class="astro-badge planet">行星</span>
     <h1>土星 <small>Saturn</small></h1>
     <p class="obj-tagline">以壮观环系闻名的气态巨行星，平均密度比水还小</p>
-    <div class="obj-keystats">
-      <span>5.68×10²⁶ kg</span>
-      <span>58,232 km</span>
-      <span>-140 °C</span>
-      <span>0.687 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 58,232 km · 质量 5.68×10²⁶ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 5.68×10²⁶ kg |
-| 平均半径 | 58,232 km |
-| 平均密度 | 0.687 g/cm³ |
-| 表面重力 | 11.19 m/s² |
-| 逃逸速度 | 35.50 km/s |
-| 平均表面温度 | -140 °C |
-| 有效温度（black-body 口径） | -192.2 °C |
-| 表面气压 | — |
-| 反照率 | 0.34（Bond 0.342 / Geometric 0.499） |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 1,432,041,000 km（9.57 AU） |
-| 轨道周期 | 29.4 年（10,756 天） |
-| 平均轨道速度 | 9.67 km/s |
-| 轨道倾角 | 2.486° |
-| 轨道偏心率 | 0.052 |
-| 转轴倾角 | 26.73° |
-| 自转周期 | 10.66 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | 氢 96.3%、氦 3.25%（其余为甲烷、氨等微量） |
-| 全球磁场 | 是 |
-| 环系 | 是 |
-| 已确认卫星 | 274 颗（ notable：<a href="../titan/">土卫六</a>、<a href="../rhea/">土卫五</a>、<a href="../iapetus/">土卫八</a>） |
-| 发现 | 史前 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>5.68×10²⁶ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>58,232 km</td></tr>
+<tr><th scope="row">平均密度</th><td>0.687 g/cm³</td></tr>
+<tr><th scope="row">表面重力</th><td>11.19 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>35.50 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>-140 °C</td></tr>
+<tr><th scope="row">有效温度（black-body 口径）</th><td>-192.2 °C</td></tr>
+<tr><th scope="row">反照率</th><td>0.34（Bond 0.342 / Geometric 0.499）</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>1,432,041,000 km（9.57 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>29.4 年（10,756 天）</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>9.67 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>2.486°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.052</td></tr>
+<tr><th scope="row">转轴倾角</th><td>26.73°</td></tr>
+<tr><th scope="row">自转周期</th><td>10.66 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">大气成分</th><td>氢 96.3%、氦 3.25%（其余为甲烷、氨等微量）</td></tr>
+<tr><th scope="row">全球磁场</th><td>是</td></tr>
+<tr><th scope="row">环系</th><td>是</td></tr>
+<tr><th scope="row">已确认卫星</th><td>274 颗（主要：<a href="../titan/">土卫六</a>、<a href="../rhea/">土卫五</a>、<a href="../iapetus/">土卫八</a>）</td></tr>
+<tr><th scope="row">发现</th><td>史前</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -135,4 +144,4 @@ A：高速自转产生离心力，赤道区域物质向外凸起，两极方向�
 <p class="obj-nav">← 上一颗：<a href="../jupiter/">木星</a></p>
 <p class="obj-nav">下一颗：<a href="../uranus/">天王星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

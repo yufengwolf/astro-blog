@@ -1,5 +1,7 @@
 ---
 description: "马头星云（Horsehead Nebula）的天体数据：—、半径/大小 2 光年、距离 1,375 光年、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,31 +10,37 @@ description: "马头星云（Horsehead Nebula）的天体数据：—、半径/�
     <span class="astro-badge nebula">星云</span>
     <h1>马头星云 <small>Horsehead Nebula</small></h1>
     <p class="obj-tagline">猎户座腰带旁的暗尘埃剪影，夜空最 recognizable 的剪影</p>
-    <div class="obj-keystats">
-      <span>2 光年</span>
-      <span>1,375 光年</span>
-    </div>
+    <p class="obj-summary">半径/大小 2 光年</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：星云</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | — |
-| 半径 / 大小 | 2 光年 |
-| 距离 | 1,375 光年 |
-| 类型 | 暗星云 |
-| 星座 | 猎户座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 类型 | 暗星云 |
-| 备注 | 直径约 3.5 光年；本身不发光，是背景发射星云 IC 434 前的尘埃暗带。 |
-| 发现 | 1888 年（Fleming 在照相底片上发现） |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半径 / 大小</th><td>2 光年</td></tr>
+<tr><th scope="row">距离</th><td>1,375 光年</td></tr>
+<tr><th scope="row">类型</th><td>暗星云</td></tr>
+<tr><th scope="row">星座</th><td>猎户座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">类型</th><td>暗星云</td></tr>
+<tr><th scope="row">备注</th><td>直径约 3.5 光年；本身不发光，是背景发射星云 IC 434 前的尘埃暗带。</td></tr>
+<tr><th scope="row">发现</th><td>1888 年（Fleming 在照相底片上发现）</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -42,4 +50,4 @@ description: "马头星云（Horsehead Nebula）的天体数据：—、半径/�
 <p class="obj-nav">← 上一颗：<a href="../m8/">礁湖星云</a></p>
 <p class="obj-nav">下一颗：<a href="../m57/">环状星云</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

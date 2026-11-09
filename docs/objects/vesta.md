@@ -1,5 +1,7 @@
 ---
 description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均半径 262.7 km、密度 3.4116 g/cm³、表面温度 —。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,44 +10,49 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
     <span class="astro-badge asteroid">小行星</span>
     <h1>灶神星 <small>4 Vesta</small></h1>
     <p class="obj-tagline">小行星带的巨型原行星，南极有一个直径 500 公里的超级撞击坑</p>
-    <div class="obj-keystats">
-      <span>2.59×10²⁰ kg</span>
-      <span>262.7 km</span>
-      <span>3.4116 g/cm³</span>
-    </div>
+    <p class="obj-summary">平均半径 262.7 km · 质量 2.59×10²⁰ kg</p>
   </div>
 </div>
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：小行星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 2.59×10²⁰ kg |
-| 平均半径 | 262.7 km |
-| 平均密度 | 3.4116 g/cm³ |
-| 反照率 | — |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | 353,380,000 km（2.36 AU） |
-| 轨道周期 | 3.6 年（1,326 天） |
-| 平均轨道速度 | 19.34 km/s |
-| 轨道倾角 | 7.14° |
-| 轨道偏心率 | 0.0887 |
-| 转轴倾角 | 29° |
-| 自转周期 | 5.34 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 发现 | 1807 年 3 月 29 日 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>2.59×10²⁰ kg</td></tr>
+<tr><th scope="row">平均半径</th><td>262.7 km</td></tr>
+<tr><th scope="row">平均密度</th><td>3.4116 g/cm³</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">半长轴</th><td>353,380,000 km（2.36 AU）</td></tr>
+<tr><th scope="row">轨道周期</th><td>3.6 年（1,326 天）</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>19.34 km/s</td></tr>
+<tr><th scope="row">轨道倾角</th><td>7.14°</td></tr>
+<tr><th scope="row">轨道偏心率</th><td>0.0887</td></tr>
+<tr><th scope="row">转轴倾角</th><td>29°</td></tr>
+<tr><th scope="row">自转周期</th><td>5.34 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">发现</th><td>1807 年 3 月 29 日</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -55,4 +62,4 @@ description: "灶神星（4 Vesta）的天体数据：2.59×10²⁰ kg、平均�
 <p class="obj-nav">← 上一颗：<a href="../eta_carinae/">海山二</a></p>
 <p class="obj-nav">下一颗：<a href="../halley/">哈雷彗星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

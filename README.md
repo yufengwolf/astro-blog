@@ -1,6 +1,6 @@
 # 星野笔记 · 天体数据库
 
-基于 MkDocs + Material for MkDocs 的**静态天体数据工具站**：**152 个天体、11 类**（恒星 56 / 卫星 21 / 星系 18 / 星云 16 / 星团 11 / 行星 8 / 黑洞 8 / 大尺度结构 7 / 矮行星 5 / 小行星 1 / 彗星 1）的结构化数据（质量 / 半径 / 密度 / 温度 / 轨道 / 卫星 / 光谱型等），覆盖太阳系天体到恒星、星云、星系、黑洞；首页支持搜索、分类筛选、按任意数值排序；每个天体有独立详情页（完整数据表 + 可选科普文章）；另有独立 `/compare/` 对比页做多天体尺寸/参数对比。
+基于 MkDocs + Material for MkDocs 的**静态天体数据工具站**：**178 个天体、11 类**（恒星 56 / 卫星 23 / 行星 19 / 星系 18 / 星云 16 / 黑洞 13 / 星团 11 / 矮行星 9 / 大尺度结构 7 / 小行星 5 / 彗星 1）的结构化数据（质量 / 半径 / 密度 / 温度 / 轨道 / 卫星 / 光谱型等），覆盖太阳系天体到恒星、星云、星系、黑洞；首页支持搜索、分类筛选、按任意数值排序；每个天体有独立详情页（完整数据表 + 可选科普文章）；另有独立 `/compare/` 对比页做多天体尺寸/参数对比。
 
 > **维护者看这里**：[维护指南.md](维护指南.md) —— 自助维护全流程（AI 录入 / 图片编排 / NASA 真图 / 数据校验 / 收尾构建），含端到端流程图与命令速查，每条都是可直接复制的命令。**任何代码改动都必须同步更新该指南与本文档**（见文末「文档维护约定」）。
 
@@ -11,6 +11,7 @@
 - **数据站为主、文章附属**：以 `docs/data/astro.json` 为唯一事实源，所有页面/CSV/贴图从它生成。
 - **可追溯**：每个对象带 `data_source` / `data_verified` / `image_source` / `image_locked`，可一条命令筛出"AI 吐的数据""未校验的数据""程序化占位图""真实照片"。
 - **AI 编排录入**：只给一个名字，`add_object.py` 让豆包自动定位类型、抽数据、写库，并**自动出图 + 自动生成页面/构建**。
+- **详情页三段式布局（v1.7）**：hero 只留 2 项单行速览，物理/轨道/其他特征三表在桌面双列、移动单列；空值行直接不渲染，正文列去掉右侧 TOC 后铺满，为后续 3D 头像/轨道嵌入预留栅格位。详见[维护指南](维护指南.md)。
 
 ---
 
@@ -30,7 +31,7 @@
 │  ├─ fetch_astro_data.py# 太阳系权威核查: status/--propose/--apply
 │  ├─ nasa_image.py      # NASA 真实影像: <id> <url> 手动安装 / --search / --auto-batch
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
-│  ├─ gen_pages.py       # 页面生成器 v1.6（--check 校验同步）
+│  ├─ gen_pages.py       # 页面生成器 v1.7（--check 校验同步；HTML 参数表 + 双列 grid）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -42,12 +43,12 @@
 │  └─ insert_*.py        # 历史一次性批录入（insert_stars/insert_bigscale/insert_bigscale2，已不再日常使用）
 └─ docs/
    ├─ index.md           # 【生成】天体总览工具页（勿手改）
-   ├─ objects/           # 【生成】152 个天体详情页 + index.md 总表（勿手改）
+   ├─ objects/           # 【生成】178 个天体详情页 + index.md 总表（勿手改）
    ├─ data.md            # 【生成】数据集下载页（不挂导航，仅 URL/sitemap 可达）
    ├─ data/astro.json    # 天体数据库（唯一事实源）
    ├─ data/nasa_images.json # NASA 真实影像登记表
    ├─ data/astro_flat.csv# 【生成】扁平 CSV
-   ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）
+   ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）+ 全局表格横滚包裹（按列数分宽/窄表）
    ├─ js/compare.js      # 独立对比页 /compare/ 逻辑
    ├─ js/solar-embed.js  # 3D 嵌入页：全屏切换 + 移动端横屏提示
    ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式

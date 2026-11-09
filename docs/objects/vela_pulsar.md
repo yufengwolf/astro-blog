@@ -1,5 +1,7 @@
 ---
 description: "船帆脉冲星（Vela Pulsar）的天体数据：1.4 M☉、半径 —、光度 2×10⁴ L☉、表面温度 1.2×10⁶ K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,52 +10,47 @@ description: "船帆脉冲星（Vela Pulsar）的天体数据：1.4 M☉、半�
     <span class="astro-badge star">恒星</span>
     <h1>船帆脉冲星 <small>Vela Pulsar</small></h1>
     <p class="obj-tagline">船帆座超新星遗迹中心的中子星，自转突变的经典样本</p>
-    <div class="obj-keystats">
-      <span>1.4 M☉</span>
-      <span>1.2×10⁶ K</span>
-      <span>2×10⁴ L☉</span>
-    </div>
+    <p class="obj-summary">质量 1.4 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.4 M☉ |
-| 平均半径 | — |
-| 表面重力 | — |
-| 逃逸速度 | — |
-| 平均表面温度 | 1.2×10⁶ K |
-| 表面气压 | — |
-| 反照率 | — |
-| 恒星类型 | 中子星（脉冲星） |
-| 光度 | 2×10⁴ L☉ |
-| 距离 | 959 光年 |
-| 星座 | 船帆座 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | — |
-| 轨道周期 | — |
-| 平均轨道速度 | — |
-| 轨道倾角 | — |
-| 轨道偏心率 | — |
-| 转轴倾角 | — |
-| 自转周期 | 0.09 小时 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 位于船帆座超新星遗迹中心，自转周期 89.33 毫秒；以周期性的'跃变'（glitch，自转突然加速）闻名，是探测中子星内部超流结构的天然实验室。 【AI复校 2026-10-27（仅1发成功）：置空:physical/radius_sun,physical/radius_km; 填充:physical/temp_k,physical/lum_sun,orbit/rotation_period_hours】 |
-| 发现 | 1968 年发现 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.4 M☉</td></tr>
+<tr><th scope="row">平均表面温度</th><td>1.2×10⁶ K</td></tr>
+<tr><th scope="row">恒星类型</th><td>中子星（脉冲星）</td></tr>
+<tr><th scope="row">光度</th><td>2×10⁴ L☉</td></tr>
+<tr><th scope="row">距离</th><td>959 光年</td></tr>
+<tr><th scope="row">星座</th><td>船帆座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">自转周期</th><td>0.09 小时</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>位于船帆座超新星遗迹中心，自转周期 89.33 毫秒；以周期性的'跃变'（glitch，自转突然加速）闻名，是探测中子星内部超流结构的天然实验室。 【AI复校 2026-10-27（仅1发成功）：置空:physical/radius_sun,physical/radius_km; 填充:physical/temp_k,physical/lum_sun,orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">发现</th><td>1968 年发现</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -63,4 +60,4 @@ description: "船帆脉冲星（Vela Pulsar）的天体数据：1.4 M☉、半�
 <p class="obj-nav">← 上一颗：<a href="../crab_pulsar/">蟹云脉冲星</a></p>
 <p class="obj-nav">下一颗：<a href="../sgr_1806_20/">SGR 1806-20</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

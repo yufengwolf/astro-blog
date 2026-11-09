@@ -1,5 +1,7 @@
 ---
 description: "飞马座 51（51 Pegasi）的天体数据：1.11 M☉、半径 1.23 R☉、光度 1.5 L☉、表面温度 5793 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,42 +10,42 @@ description: "飞马座 51（51 Pegasi）的天体数据：1.11 M☉、半径 1.
     <span class="astro-badge star">恒星</span>
     <h1>飞马座 51 <small>51 Pegasi</small></h1>
     <p class="obj-tagline">人类发现第一颗系外行星的恒星，2019 年诺贝尔物理学奖</p>
-    <div class="obj-keystats">
-      <span>1.11 M☉</span>
-      <span>1.23 R☉</span>
-      <span>5793 K</span>
-      <span>1.5 L☉</span>
-    </div>
+    <p class="obj-summary">半径 1.23 R☉ · 质量 1.11 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1.11 M☉ |
-| 平均半径 | 1.23 R☉ |
-| 表面重力 | 201.17 m/s² |
-| 逃逸速度 | 586.76 km/s |
-| 平均表面温度 | 5793 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | G2IV |
-| 恒星类型 | 黄次巨星（G2IV） |
-| 光度 | 1.5 L☉ |
-| 距离 | 48 光年 |
-| 星座 | 飞马座 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | — |
-| 全球磁场 | 未知 |
-| 环系 | 未知 |
-| 备注 | 人类发现的第一颗围绕类太阳恒星的系外行星（飞马座 51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。 |
-| 发现 | 1995 年 Mayor & Queloz 发现其行星 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1.11 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>1.23 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>201.17 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>586.76 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5793 K</td></tr>
+<tr><th scope="row">光谱型</th><td>G2IV</td></tr>
+<tr><th scope="row">恒星类型</th><td>黄次巨星（G2IV）</td></tr>
+<tr><th scope="row">光度</th><td>1.5 L☉</td></tr>
+<tr><th scope="row">距离</th><td>48 光年</td></tr>
+<tr><th scope="row">星座</th><td>飞马座</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">备注</th><td>人类发现的第一颗围绕类太阳恒星的系外行星（飞马座 51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。</td></tr>
+<tr><th scope="row">发现</th><td>1995 年 Mayor & Queloz 发现其行星</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -53,4 +55,4 @@ description: "飞马座 51（51 Pegasi）的天体数据：1.11 M☉、半径 1.
 <p class="obj-nav">← 上一颗：<a href="../cancri_55/">巨蟹座 55</a></p>
 <p class="obj-nav">下一颗：<a href="../beta_pictoris/">绘架座 β</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>

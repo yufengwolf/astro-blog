@@ -1,5 +1,7 @@
 ---
 description: "太阳（Sun）的天体数据：1 M☉、半径 1 R☉、光度 1 L☉、表面温度 5772 K。数据整理自公开天文资料。"
+hide:
+  - toc
 ---
 
 <div class="obj-hero">
@@ -8,53 +10,53 @@ description: "太阳（Sun）的天体数据：1 M☉、半径 1 R☉、光度 1
     <span class="astro-badge star">恒星</span>
     <h1>太阳 <small>Sun</small></h1>
     <p class="obj-tagline">太阳系的中心恒星，独占太阳系总质量的 99.86%</p>
-    <div class="obj-keystats">
-      <span>1 M☉</span>
-      <span>1 R☉</span>
-      <span>5772 K</span>
-      <span>1 L☉</span>
-    </div>
+    <p class="obj-summary">半径 1 R☉ · 质量 1 M☉</p>
   </div>
 </div>
 
 <p class="obj-parent">分类：恒星</p>
-## 物理参数
 
-| 参数 | 数值 |
-|---|---|
-| 质量 | 1 M☉ |
-| 平均半径 | 1 R☉ |
-| 表面重力 | 274.19 m/s² |
-| 逃逸速度 | 617.66 km/s |
-| 平均表面温度 | 5772 K |
-| 表面气压 | — |
-| 反照率 | — |
-| 光谱型 | G2V |
-| 恒星类型 | 黄矮星（G2V 主序星） |
-| 光度 | 1 L☉ |
-| 距离 | 0 光年 |
-
-## 轨道参数
-
-| 参数 | 数值 |
-|---|---|
-| 半长轴 | — |
-| 轨道周期 | — |
-| 平均轨道速度 | — |
-| 轨道倾角 | — |
-| 轨道偏心率 | — |
-| 转轴倾角 | 7.25° |
-| 自转周期 | 25.38 天 |
-
-## 其他特征
-
-| 项目 | 数值 |
-|---|---|
-| 大气成分 | 光球层：氢 90.97%、氦 8.89%（其余为氧、碳、氖等微量） |
-| 全球磁场 | 是 |
-| 环系 | 未知 |
-| 备注 | 【AI复校 2026-10-27：填充:distance_ly】 |
-| 发现 | 史前 |
+<div class="obj-data-grid">
+<section class="obj-data-block">
+<h2 id="physical">物理参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">质量</th><td>1 M☉</td></tr>
+<tr><th scope="row">平均半径</th><td>1 R☉</td></tr>
+<tr><th scope="row">表面重力</th><td>274.19 m/s²</td></tr>
+<tr><th scope="row">逃逸速度</th><td>617.66 km/s</td></tr>
+<tr><th scope="row">平均表面温度</th><td>5772 K</td></tr>
+<tr><th scope="row">光谱型</th><td>G2V</td></tr>
+<tr><th scope="row">恒星类型</th><td>黄矮星（G2V 主序星）</td></tr>
+<tr><th scope="row">光度</th><td>1 L☉</td></tr>
+<tr><th scope="row">距离</th><td>0 光年</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="orbit">轨道参数</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">转轴倾角</th><td>7.25°</td></tr>
+<tr><th scope="row">自转周期</th><td>25.38 天</td></tr>
+</tbody>
+</table>
+</section>
+<section class="obj-data-block">
+<h2 id="features">其他特征</h2>
+<table>
+<thead><tr><th>参数</th><th>数值</th></tr></thead>
+<tbody>
+<tr><th scope="row">大气成分</th><td>光球层：氢 90.97%、氦 8.89%（其余为氧、碳、氖等微量）</td></tr>
+<tr><th scope="row">全球磁场</th><td>是</td></tr>
+<tr><th scope="row">备注</th><td>【AI复校 2026-10-27：填充:distance_ly】</td></tr>
+<tr><th scope="row">发现</th><td>史前</td></tr>
+</tbody>
+</table>
+</section>
+</div>
 
 <section class="obj-source">
   <h2>数据来源</h2>
@@ -63,4 +65,4 @@ description: "太阳（Sun）的天体数据：1 M☉、半径 1 R☉、光度 1
 
 <p class="obj-nav">下一颗：<a href="../mercury/">水星</a> →</p>
 
-<p class="obj-version">数据版本 v1.6（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.7（2026-10-24 核对）· 178 个天体已全部配图</p>
