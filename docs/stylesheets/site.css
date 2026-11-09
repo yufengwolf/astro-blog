@@ -1082,6 +1082,28 @@ html[data-md-color-scheme="slate"] .md-header {
 }
 .solar-embed .solar-fs-btn:hover { background: #273144; }
 .solar-embed .solar-fs-btn:active { transform: translateY(1px); }
+.solar-embed .solar-src-btn {
+  appearance: none;
+  border: 1px solid #38414f;
+  background: #1b2230;
+  color: #cfe0ff;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.solar-embed .solar-src-btn:hover { background: #273144; }
+.solar-embed .solar-src-btn:active { transform: translateY(1px); }
+.obj-viz-note {
+  margin: 0;
+  padding: 0.4rem 0.75rem;
+  background: #11161f;
+  color: #9fb0c3;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  border-top: 1px solid #1d2530;
+}
 
 .solar-embed .solar-frame {
   position: relative;

@@ -16,6 +16,18 @@ hide:
 
 <p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：行星</p>
 
+
+<div class="solar-embed obj-viz">
+  <div class="solar-bar">
+    <span class="solar-title">3D 交互可视化</span>
+    <span class="solar-bar-btns"><button type="button" class="solar-src-btn" data-src="https://astro-solar-3d.pages.dev/mars.html">真实三维系统</button><button type="button" class="solar-src-btn" data-src="https://legendacr.github.io/size-of-space/#mars">尺寸对比</button></span>
+  </div>
+  <div class="solar-frame">
+    <iframe src="https://astro-solar-3d.pages.dev/mars.html" title="真实三维系统" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
+  </div>
+  <p class="obj-viz-note">由外部 3D 项目（astro-solar-3d、size-of-space）提供，与本站数据独立维护；加载慢或无法显示时可直接打开原站。</p>
+</div>
+
 <div class="obj-data-grid">
 <section class="obj-data-block">
 <h2 id="physical">物理参数</h2>
@@ -138,4 +150,4 @@ A：不会，火星大气独立，没有物质通道将沙尘输送到地球。
 <p class="obj-nav">← 上一颗：<a href="../earth/">地球</a></p>
 <p class="obj-nav">下一颗：<a href="../jupiter/">木星</a> →</p>
 
-<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>

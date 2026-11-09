@@ -60,4 +60,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../crab_pulsar/">蟹云脉冲星</a></p>
 <p class="obj-nav">下一颗：<a href="../sgr_1806_20/">SGR 1806-20</a> →</p>
 
-<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>

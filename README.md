@@ -13,6 +13,7 @@
 - **AI 编排录入**：只给一个名字，`add_object.py` 让豆包自动定位类型、抽数据、写库，并**自动出图 + 自动生成页面/构建**。
 - **详情页三段式布局（v1.7）**：hero 只留 2 项单行速览，物理/轨道/其他特征三表在桌面双列、移动单列；空值行直接不渲染，正文列去掉右侧 TOC 后铺满，为后续 3D 头像/轨道嵌入预留栅格位。详见[维护指南](维护指南.md)。
 - **展示单位统一（v1.8）**：全站口径从"半径"改为"直径 = 2 × 半径"，主单位按量级自动切换 km / 光年，辅单位给地球/太阳直径倍数或 M⊕ / M☉；温度统一 K、有表面温度的固态天体括注 ℃；黑洞称"事件视界直径"。单位字符串由 `gen_pages.py` 唯一实现，对比页（`compare.js`）改读预生成 `*_text` 字段，消除两套口径。详见[维护指南](维护指南.md)。
+- **详情页 3D 可视化（v1.9）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。覆盖来自两个外部 3D 仓库：astro-solar-3d（真实三维太阳系，32 个太阳系天体）与 size-of-space（尺寸对比，52 个含深空天体，其中 20 个可双源切换）；多来源时渲染来源切换按钮。详见[维护指南](维护指南.md)。
 
 ---
 
@@ -22,6 +23,7 @@
 .
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
+├─ viz-manifest.json     # 3D 可视化覆盖契约（gen_viz_manifest.py 生成；详情页按它条件嵌入）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -32,7 +34,8 @@
 │  ├─ fetch_astro_data.py# 太阳系权威核查: status/--propose/--apply
 │  ├─ nasa_image.py      # NASA 真实影像: <id> <url> 手动安装 / --search / --auto-batch
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
-│  ├─ gen_pages.py       # 页面生成器 v1.8（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现）
+│  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
+│  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（3D 覆盖契约：astro-solar-3d + size-of-space 两源机械派生）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -51,7 +54,7 @@
    ├─ data/astro_flat.csv# 【生成】扁平 CSV
    ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）+ 全局表格横滚包裹（按列数分宽/窄表）
    ├─ js/compare.js      # 独立对比页 /compare/ 逻辑
-   ├─ js/solar-embed.js  # 3D 嵌入页：全屏切换 + 移动端横屏提示
+   ├─ js/solar-embed.js  # 3D 嵌入块：全屏切换 + 移动端横屏提示 + 多来源切换按钮
    ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式
    ├─ solar-demo.md      # 【手写】太阳系 3D 交互站主页（导航卡片 iframe）
    └─ assets/planets/*.webp  # 星球贴图（152/152，透明背景 600px）
@@ -144,6 +147,8 @@ mkdocs serve -a 127.0.0.1:8001              # 8000 端口被御风 Home 占用�
 
 ## 七、太阳系 3D 交互站（外站 iframe）
 
+### 7.1 太阳系 3D 导航页（solar-demo.md）
+
 本站只有 **1 个** 3D 导航页（`/solar-demo/`，左侧导航叫「太阳系3D模型」），但**3D 工程本身不在本仓库**——它是独立仓库 + 独立 Cloudflare Pages 站点。
 该页用 `iframe` 嵌入 3D 站点的**导航主页**（卡片式，列出全部 8 个系统），在 iframe 内点任意卡片即可直接打开对应系统；顶部「↺ 重新选择」按钮可一键退回主页换看别的系统。
 
@@ -171,6 +176,18 @@ mkdocs serve -a 127.0.0.1:8001              # 8000 端口被御风 Home 占用�
 **全屏实现**：按钮在本站页面上，调的是本站元素的 `requestFullscreen()`（同源，无需授权）；
 iframe 上的 `allow="fullscreen"` 只是兜底。移动端全屏会尝试锁定横屏，仍竖屏则显示旋转提示；
 iOS Safari 不支持元素全屏时回退为新标签打开独立页。
+
+### 7.2 详情页 3D 可视化块（P3：viz-manifest 契约）
+
+P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化」块（hero 正下方、参数表之前），与 7.1 的导航页是两回事：导航页是太阳系总入口，而**详情页块是按天体就近展示它的 3D / 尺寸对比**。
+
+- **契约文件 `viz-manifest.json`**（仓库根）：由 `scripts/gen_viz_manifest.py` 机械派生，列「哪些天体有 3D 覆盖、去哪个外链」。`gen_pages` 渲染详情页前读它，无条目就不渲染（优雅降级）。
+- **两个外部 3D 源**（各自独立部署、独立维护，均不在本仓库）：
+  - `astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`）：真实三维太阳系，**32** 个太阳系天体（行星/卫星/冥王星/银河系场景）。
+  - `size-of-space`（GitHub Pages **上游 `https://legendacr.github.io/size-of-space/`**）：尺寸对比工具，hash 路由 `#<id>`，**52** 个天体（含大量深空）。⚠️ 我方 fork `yufengwolf/size-of-space` 虽带 `deploy.yml` 但**尚未在 GitHub 开启 Pages**（当前 404）；要自建部署：去该 fork 的 Settings → Pages → Source 选 "GitHub Actions"，再 push main 触发部署，成功后把 `gen_viz_manifest.py` 的 `SIZEOFSPACE_BASE` 改回 `https://yufengwolf.github.io/size-of-space`。
+- **覆盖统计**：178 个天体中 **64 个**（36%）有 3D 覆盖——solar-3d 32、size-of-space 52、其中 **20 个双来源**（详情页渲染「真实三维系统 / 尺寸对比」切换按钮，默认嵌入第一个）。
+
+> 改 3D 覆盖度（如 solar-3d 新增场景、size-of-space 新增对象）：编辑 `gen_viz_manifest.py` 的 `SOLAR3D_SCENES` / `SIZEOFSPACE_IDS`，重跑 `python scripts/gen_viz_manifest.py` 重新生成契约，再 `gen_pages`；或手工直接编辑 `viz-manifest.json`（二者择一，勿长期分叉）。
 
 ---
 

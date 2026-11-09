@@ -16,6 +16,18 @@ hide:
 
 <p class="obj-parent">分类：恒星</p>
 
+
+<div class="solar-embed obj-viz">
+  <div class="solar-bar">
+    <span class="solar-title">3D 交互可视化</span>
+    <span class="solar-bar-btns"></span>
+  </div>
+  <div class="solar-frame">
+    <iframe src="https://legendacr.github.io/size-of-space/#pollux" title="尺寸对比" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
+  </div>
+  <p class="obj-viz-note">由外部 3D 项目（size-of-space）提供，与本站数据独立维护；加载慢或无法显示时可直接打开原站。</p>
+</div>
+
 <div class="obj-data-grid">
 <section class="obj-data-block">
 <h2 id="physical">物理参数</h2>
@@ -54,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../castor/">北河二</a></p>
 <p class="obj-nav">下一颗：<a href="../capella/">五车二</a> →</p>
 
-<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>

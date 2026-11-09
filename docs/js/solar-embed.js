@@ -60,6 +60,16 @@
       });
     }
 
+    // 「源切换」：多来源（如 真实三维系统 / 尺寸对比）时在 iframe 间切换
+    var srcBtns = embed.querySelectorAll('.solar-src-btn');
+    for (var i = 0; i < srcBtns.length; i++) {
+      (function (btn) {
+        btn.addEventListener('click', function () {
+          if (frame) frame.setAttribute('src', btn.getAttribute('data-src'));
+        });
+      })(srcBtns[i]);
+    }
+
     var showRotate = function (show) {
       embed.classList.toggle('solar-show-rotate', !!show);
     };

@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../gliese_581/">格利泽 581</a></p>
 <p class="obj-nav">下一颗：<a href="../cancri_55/">巨蟹座 55</a> →</p>
 
-<p class="obj-version">数据版本 v1.8（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>

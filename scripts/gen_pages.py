@@ -23,7 +23,7 @@ from pathlib import Path
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
 
 # 页面版本戳：每次数据/贴图/页面布局批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
-VERSION = "1.8"
+VERSION = "1.9"
 VERIFIED = "2026-10-24"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
@@ -602,6 +602,55 @@ def build_compare(data):
     return "\n".join(L)
 
 
+# ---- 3D 可视化覆盖契约（P3：viz-manifest.json）----
+# 主站与 3D 仓库解耦：哪些天体有 3D 模型、去哪个外链，全在 viz-manifest.json。
+# 缺失条目 = 该天体无 3D 覆盖 → 详情页不渲染 3D 块（优雅降级）。
+VIZ_MANIFEST = {}
+VIZ_REPO_NAME = {"solar-3d": "astro-solar-3d", "size-of-space": "size-of-space"}
+
+
+def load_viz_manifest(root):
+    p = root / "viz-manifest.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8")).get("objects", {})
+    except Exception:
+        return {}
+
+
+def viz_block(oid):
+    """详情页 3D 嵌入块：复用 .solar-embed 组件（全屏/铺满/源切换由 solar-embed.js 处理）。
+
+    无覆盖 → 返回空字符串（不渲染）。多来源 → 渲染来源切换按钮，默认嵌入第一个。
+    """
+    entries = VIZ_MANIFEST.get(oid)
+    if not entries:
+        return ""
+    primary = entries[0]
+    src_btns = ""
+    if len(entries) > 1:
+        btns = "".join(
+            f'<button type="button" class="solar-src-btn" data-src="{e["src"]}">{e["title"]}</button>'
+            for e in entries)
+        src_btns = btns
+    repos = "、".join(VIZ_REPO_NAME.get(e["repo"], e["repo"]) for e in entries)
+    return (
+        '<div class="solar-embed obj-viz">\n'
+        '  <div class="solar-bar">\n'
+        '    <span class="solar-title">3D 交互可视化</span>\n'
+        f'    <span class="solar-bar-btns">{src_btns}</span>\n'
+        '  </div>\n'
+        '  <div class="solar-frame">\n'
+        f'    <iframe src="{primary["src"]}" title="{primary["title"]}" '
+        'loading="lazy" allowfullscreen allow="fullscreen"></iframe>\n'
+        '  </div>\n'
+        f'  <p class="obj-viz-note">由外部 3D 项目（{repos}）提供，与本站数据独立维护；'
+        '加载慢或无法显示时可直接打开原站。</p>\n'
+        '</div>'
+    )
+
+
 def build_object(root, o, by_id, order, registry=None):
     oid = o["id"]
     ph, orb = o.get("physical") or {}, o.get("orbit") or {}
@@ -776,6 +825,13 @@ def build_object(root, o, by_id, order, registry=None):
         blocks.append(("其他特征", "features", t))
 
     L.append("")  # 与 obj-parent 的 raw HTML 块显式分隔，避免被合并进同一块解析
+    # P3：3D 交互可视化块（有覆盖才渲染；无则优雅降级）。放在 hero 正下方、数据栅格之前，
+    # 让访客先看到该天体的真 3D / 尺寸对比，再读参数表；无覆盖的天体则不渲染（不占位置）。
+    vb = viz_block(oid)
+    if vb:
+        L.append("")
+        L.append(vb)
+        L.append("")
     # 三张参数表装进同一个 grid：桌面双列、移动单列，消除全宽竖排造成的右侧空白。
     # 输出为单个 raw HTML 块（块内不插空行，否则 Python-Markdown 会提前结束 HTML 块）。
     if blocks:
@@ -928,6 +984,8 @@ def main():
     data_objs[:] = objs
     by_id = {o["id"]: o for o in objs}
     order = [o["id"] for o in objs]
+    global VIZ_MANIFEST
+    VIZ_MANIFEST = load_viz_manifest(root)
 
     outputs = {"docs/index.md": build_index(data), "docs/data.md": build_data_page(data, objs),
                "docs/compare.md": build_compare(data),
