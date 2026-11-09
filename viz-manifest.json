@@ -276,6 +276,26 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=jupiter"
       }
     ],
+    "kepler_452": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "开普勒 452（类地行星系统）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=kepler452&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=kepler452"
+      }
+    ],
+    "kepler_452b": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "开普勒 452（类地行星系统）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=kepler452&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=kepler452"
+      }
+    ],
     "m1": [
       {
         "repo": "solar-3d",
@@ -324,6 +344,16 @@
         "name": "猎户座大星云 M42",
         "src": "https://astro-solar-3d.pages.dev/go?body=m42&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=m42"
+      }
+    ],
+    "m45": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "昴星团 M45（七姐妹）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=pleiades&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=pleiades"
       }
     ],
     "m7": [
@@ -436,6 +466,26 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=oberon"
       }
     ],
+    "omega_cen": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "半人马座 ω 星团",
+        "src": "https://astro-solar-3d.pages.dev/go?body=omegaCen&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=omegaCen"
+      }
+    ],
+    "pegasi_51": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "飞马座 51（首颗热木星母星）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=peg51&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=peg51"
+      }
+    ],
     "phobos": [
       {
         "repo": "solar-3d",
@@ -464,6 +514,36 @@
         "name": "北河三（双子座 β）",
         "src": "https://astro-solar-3d.pages.dev/go?body=pollux&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=pollux"
+      }
+    ],
+    "procyon_a": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "南河三（小犬座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=procyon&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=procyon"
+      }
+    ],
+    "proxima_centauri": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "比邻星（半人马座 αC）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=proxima&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=proxima"
+      }
+    ],
+    "proxima_centauri_b": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "比邻星（半人马座 αC）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=proxima&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=proxima"
       }
     ],
     "rhea": [
@@ -504,6 +584,26 @@
         "name": "人马座 A*（银河系中心）",
         "src": "https://astro-solar-3d.pages.dev/go?body=sagA&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=sagA"
+      }
+    ],
+    "sirius_a": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "天狼星（大犬座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=sirius&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=sirius"
+      }
+    ],
+    "sirius_b": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "天狼星（大犬座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=sirius&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=sirius"
       }
     ],
     "sun": [

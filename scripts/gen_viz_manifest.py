@@ -39,6 +39,17 @@ ALIASES = {
     "alphacen_a": "alphaCen",
     "alphacen_b": "alphaCen",
     "51_pegasi_b": "peg51",
+    # —— 以下为 2026-11-09 增补：我库 id 与外部 links.json id 错配（已逐一核对外部 name 确认）——
+    "proxima_centauri": "proxima",       # 比邻星（半人马座 αC）
+    "proxima_centauri_b": "proxima",     # 比邻星 b
+    "omega_cen": "omegaCen",             # 半人马座 ω 星团
+    "kepler_452": "kepler452",           # 开普勒 452 系统
+    "kepler_452b": "kepler452",          # 开普勒 452b
+    "procyon_a": "procyon",              # 南河三（小犬座 α）
+    "sirius_a": "sirius",                # 天狼星 A（外部仅建模为 sirius 星）
+    "sirius_b": "sirius",                # 天狼星 B（同上）
+    "m45": "pleiades",                   # 昴星团 M45（七姐妹）
+    "pegasi_51": "peg51",                # 飞马座 51（首颗热木星母星）
 }
 
 
