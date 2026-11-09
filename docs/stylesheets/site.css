@@ -143,10 +143,6 @@
   border-radius: 0.8rem;
   background: var(--md-default-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
-  position: sticky;
-  /* top 由 JS 按 .md-header 实际高度写入 --astro-sticky-top，避免被吸顶 header 遮住 */
-  top: var(--astro-sticky-top, 0px);
-  z-index: 5;
   box-shadow: 0 1px 0 color-mix(in srgb, var(--md-default-fg-color) 5%, transparent);
 }
 .astro-toolbar #astro-search {

@@ -1,9 +1,8 @@
 /**
  * astro-explore.js — 天体总览页交互（原生 JS，无依赖）
  * 只对服务端预渲染的卡片 DOM 做筛选/排序/搜索，不请求任何数据接口。
- * 另含两段全局增强（每页注入，先于页面逻辑执行）：
- *   1) Markdown 表格包进横向滚动容器（移动端多列表格必需，附首列固定）
- *   2) 按 .md-header 实际高度写 --astro-sticky-top（工具栏 sticky 不被吸顶 header 遮住）
+ * 另含一段全局增强（每页注入，先于页面逻辑执行）：
+ *   Markdown 表格包进横向滚动容器（移动端多列表格必需，附首列固定）
  */
 (function () {
   "use strict";
@@ -32,15 +31,6 @@
     // Material 的表格包装脚本可能在本脚本之后才执行，load 后重算一次
     window.addEventListener("load", check);
   });
-
-  // ---- 全局增强 2：sticky 工具栏的 top 偏移（避开吸顶 header）----
-  var header = document.querySelector(".md-header");
-  function setStickyTop() {
-    var h = header ? header.offsetHeight : 0;
-    document.documentElement.style.setProperty("--astro-sticky-top", h + "px");
-  }
-  setStickyTop();
-  window.addEventListener("resize", setStickyTop);
 
   // ---- 天体总览页：筛选 / 排序 / 搜索 ----
   var grid = document.querySelector(".astro-grid");
