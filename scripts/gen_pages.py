@@ -635,6 +635,8 @@ def viz_block(oid):
             for e in entries)
         src_btns = btns
     repos = "、".join(VIZ_REPO_NAME.get(e["repo"], e["repo"]) for e in entries)
+    title_attr = primary.get("name") or primary["title"]
+    full = primary.get("full", primary["src"])
     return (
         '<div class="solar-embed obj-viz">\n'
         '  <div class="solar-bar">\n'
@@ -642,11 +644,11 @@ def viz_block(oid):
         f'    <span class="solar-bar-btns">{src_btns}</span>\n'
         '  </div>\n'
         '  <div class="solar-frame">\n'
-        f'    <iframe src="{primary["src"]}" title="{primary["title"]}" '
+        f'    <iframe src="{primary["src"]}" title="{title_attr} 三维模型" '
         'loading="lazy" allowfullscreen allow="fullscreen"></iframe>\n'
         '  </div>\n'
         f'  <p class="obj-viz-note">由外部 3D 项目（{repos}）提供，与本站数据独立维护；'
-        '加载慢或无法显示时可直接打开原站。</p>\n'
+        f'嵌入为精简界面，<a href="{full}" target="_blank" rel="noopener">打开完整交互版 ↗</a>。</p>\n'
         '</div>'
     )
 

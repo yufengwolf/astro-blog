@@ -16,18 +16,6 @@ hide:
 
 <p class="obj-parent">分类：星系</p>
 
-
-<div class="solar-embed obj-viz">
-  <div class="solar-bar">
-    <span class="solar-title">3D 交互可视化</span>
-    <span class="solar-bar-btns"></span>
-  </div>
-  <div class="solar-frame">
-    <iframe src="https://astro-solar-3d.pages.dev/?view=milky_way" title="真实三维系统" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
-  </div>
-  <p class="obj-viz-note">由外部 3D 项目（astro-solar-3d）提供，与本站数据独立维护；加载慢或无法显示时可直接打开原站。</p>
-</div>
-
 <div class="obj-data-grid">
 <section class="obj-data-block">
 <h2 id="physical">物理参数</h2>

@@ -1,16 +1,99 @@
 {
-  "version": 1,
+  "version": 2,
   "generated_from": {
     "solar-3d": "https://astro-solar-3d.pages.dev",
-    "note": "当前仅 astro-solar-3d 一个来源（size-of-space 待用户部署 CF Pages 后加回）。src 统一为 `?view=<id>`，场景由外部仓库决定；改 3D 仓库覆盖度后重跑本脚本。"
+    "links_snapshot": "scripts\\solar3d_links.json",
+    "note": "当前仅 astro-solar-3d 一个来源（size-of-space 待用户部署 CF Pages 后加回）。src 统一为 `go.html?body=<id>&embed=1`，由外部仓库决定页面与渲染；契约（哪些天体有 3D）来自外部仓库的 links.json 快照，改 3D 覆盖度后 `--sync` 刷新快照或重跑本脚本即可。"
   },
   "objects": {
+    "51_pegasi_b": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "飞马座 51（首颗热木星母星）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=peg51&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=peg51"
+      }
+    ],
+    "aldebaran": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "毕宿五（金牛座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=aldebaran&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=aldebaran"
+      }
+    ],
+    "alphacen_a": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "南门二（半人马座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=alphaCen&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=alphaCen"
+      }
+    ],
+    "alphacen_b": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "南门二（半人马座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=alphaCen&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=alphaCen"
+      }
+    ],
+    "altair": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "河鼓二（牛郎星）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=altair&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=altair"
+      }
+    ],
+    "antares": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "心宿二（天蝎座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=antares&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=antares"
+      }
+    ],
+    "arcturus": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "大角星（牧夫座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=arcturus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=arcturus"
+      }
+    ],
     "ariel": [
       {
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=ariel"
+        "name": "天卫一（爱丽儿）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=ariel&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=ariel"
+      }
+    ],
+    "betelgeuse": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "参宿四（猎户座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=betelgeuse&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=betelgeuse"
       }
     ],
     "callisto": [
@@ -18,7 +101,39 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=callisto"
+        "name": "木卫四（卡利斯托）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=callisto&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=callisto"
+      }
+    ],
+    "capella": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "五车二（御夫座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=capella&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=capella"
+      }
+    ],
+    "ceres": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "谷神星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=ceres&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=ceres"
+      }
+    ],
+    "cyg_x1": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "天鹅座 X-1",
+        "src": "https://astro-solar-3d.pages.dev/go?body=cygx1&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=cygx1"
       }
     ],
     "deimos": [
@@ -26,7 +141,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=deimos"
+        "name": "火卫二（得摩斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=deimos&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=deimos"
       }
     ],
     "dione": [
@@ -34,7 +151,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=dione"
+        "name": "土卫四（狄俄涅）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=dione&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=dione"
       }
     ],
     "earth": [
@@ -42,7 +161,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=earth"
+        "name": "地球",
+        "src": "https://astro-solar-3d.pages.dev/go?body=earth&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=earth"
       }
     ],
     "enceladus": [
@@ -50,7 +171,19 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=enceladus"
+        "name": "土卫二（恩克拉多斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=enceladus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=enceladus"
+      }
+    ],
+    "eris": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "阋神星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=eris&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=eris"
       }
     ],
     "europa": [
@@ -58,7 +191,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=europa"
+        "name": "木卫二（欧罗巴）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=europa&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=europa"
       }
     ],
     "ganymede": [
@@ -66,7 +201,39 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=ganymede"
+        "name": "木卫三（盖尼米德）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=ganymede&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=ganymede"
+      }
+    ],
+    "halley": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "哈雷彗星 1P",
+        "src": "https://astro-solar-3d.pages.dev/go?body=halley&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=halley"
+      }
+    ],
+    "haumea": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "妊神星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=haumea&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=haumea"
+      }
+    ],
+    "hyades": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "毕星团",
+        "src": "https://astro-solar-3d.pages.dev/go?body=hyades&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=hyades"
       }
     ],
     "hyperion": [
@@ -74,7 +241,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=hyperion"
+        "name": "土卫七（许珀里翁）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=hyperion&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=hyperion"
       }
     ],
     "iapetus": [
@@ -82,7 +251,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=iapetus"
+        "name": "土卫八（伊阿珀托斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=iapetus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=iapetus"
       }
     ],
     "io": [
@@ -90,7 +261,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=io"
+        "name": "木卫一（艾奥）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=io&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=io"
       }
     ],
     "jupiter": [
@@ -98,7 +271,89 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=jupiter"
+        "name": "木星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=jupiter&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=jupiter"
+      }
+    ],
+    "m1": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "蟹状星云 M1",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m1&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m1"
+      }
+    ],
+    "m16": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "鹰星云 M16（创生之柱）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m16&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m16"
+      }
+    ],
+    "m20": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "三叶星云 M20",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m20&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m20"
+      }
+    ],
+    "m22": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "M22 人马座大星团",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m22&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m22"
+      }
+    ],
+    "m42": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "猎户座大星云 M42",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m42&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m42"
+      }
+    ],
+    "m7": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "托勒密星团 M7",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m7&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m7"
+      }
+    ],
+    "m8": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "礁湖星云 M8",
+        "src": "https://astro-solar-3d.pages.dev/go?body=m8&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=m8"
+      }
+    ],
+    "makemake": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "鸟神星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=makemake&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=makemake"
       }
     ],
     "mars": [
@@ -106,7 +361,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=mars"
+        "name": "火星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=mars&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=mars"
       }
     ],
     "mercury": [
@@ -114,15 +371,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=mercury"
-      }
-    ],
-    "milky_way": [
-      {
-        "repo": "solar-3d",
-        "kind": "system",
-        "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=milky_way"
+        "name": "水星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=mercury&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=mercury"
       }
     ],
     "mimas": [
@@ -130,7 +381,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=mimas"
+        "name": "土卫一（弥玛斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=mimas&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=mimas"
       }
     ],
     "miranda": [
@@ -138,7 +391,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=miranda"
+        "name": "天卫五（米兰达）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=miranda&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=miranda"
       }
     ],
     "moon": [
@@ -146,7 +401,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=moon"
+        "name": "月球",
+        "src": "https://astro-solar-3d.pages.dev/go?body=moon&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=moon"
       }
     ],
     "neptune": [
@@ -154,7 +411,19 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=neptune"
+        "name": "海王星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=neptune&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=neptune"
+      }
+    ],
+    "ngc3372": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "船底座星云 NGC 3372",
+        "src": "https://astro-solar-3d.pages.dev/go?body=ngc3372&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=ngc3372"
       }
     ],
     "oberon": [
@@ -162,7 +431,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=oberon"
+        "name": "天卫四（奥伯龙）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=oberon&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=oberon"
       }
     ],
     "phobos": [
@@ -170,7 +441,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=phobos"
+        "name": "火卫一（福波斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=phobos&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=phobos"
       }
     ],
     "pluto": [
@@ -178,7 +451,19 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=pluto"
+        "name": "冥王星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=pluto&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=pluto"
+      }
+    ],
+    "pollux": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "北河三（双子座 β）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=pollux&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=pollux"
       }
     ],
     "rhea": [
@@ -186,7 +471,19 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=rhea"
+        "name": "土卫五（瑞亚）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=rhea&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=rhea"
+      }
+    ],
+    "rigel": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "参宿七（猎户座 β）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=rigel&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=rigel"
       }
     ],
     "saturn": [
@@ -194,7 +491,19 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=saturn"
+        "name": "土星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=saturn&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=saturn"
+      }
+    ],
+    "sgr_a_star": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "人马座 A*（银河系中心）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=sagA&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=sagA"
       }
     ],
     "sun": [
@@ -202,7 +511,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=sun"
+        "name": "太阳",
+        "src": "https://astro-solar-3d.pages.dev/go?body=sun&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=sun"
       }
     ],
     "tethys": [
@@ -210,7 +521,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=tethys"
+        "name": "土卫三（忒堤斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=tethys&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=tethys"
       }
     ],
     "titan": [
@@ -218,7 +531,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=titan"
+        "name": "土卫六（泰坦）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=titan&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=titan"
       }
     ],
     "titania": [
@@ -226,7 +541,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=titania"
+        "name": "天卫三（泰坦妮亚）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=titania&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=titania"
       }
     ],
     "triton": [
@@ -234,7 +551,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=triton"
+        "name": "海卫一（特里同）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=triton&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=triton"
       }
     ],
     "umbriel": [
@@ -242,7 +561,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=umbriel"
+        "name": "天卫二（乌姆柏里厄尔）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=umbriel&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=umbriel"
       }
     ],
     "uranus": [
@@ -250,7 +571,19 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=uranus"
+        "name": "天王星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=uranus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=uranus"
+      }
+    ],
+    "vega": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "织女星（天琴座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=vega&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=vega"
       }
     ],
     "venus": [
@@ -258,7 +591,9 @@
         "repo": "solar-3d",
         "kind": "system",
         "title": "真实三维系统",
-        "src": "https://astro-solar-3d.pages.dev/?view=venus"
+        "name": "金星",
+        "src": "https://astro-solar-3d.pages.dev/go?body=venus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=venus"
       }
     ]
   }
