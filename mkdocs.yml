@@ -67,6 +67,12 @@ extra_javascript:
   - js/compare.js?v=1.9
   - js/solar-embed.js?v=1.9
 
+# ---- 构建钩子 ----
+# 构建前自动由 JSON 重新生成「宇宙层级」思维导图（universe-tree.json -> docs/universe-hierarchy.html），
+# 保证数据源改动后页面自适应同步。详见 universe_hook.py。
+hooks:
+  - universe_hook.py
+
 # ---- 导航结构 ----
 # 首页 = 天体总览工具页；objects/ 与 data.md 由 scripts/gen_pages.py 自动生成维护
 # 详情页（objects/<天体>.md）经首页卡片、天体库总表与详情页上下导航互相链接，sitemap 全量收录
@@ -76,4 +82,4 @@ nav:
   - 天体对比: compare.md
   - 天体库: objects/index.md
   - 太阳系3D模型: solar-demo.md
-  - 宇宙层级: universe-hierarchy.md
+  - 宇宙层级: universe-hierarchy.html

@@ -41,6 +41,10 @@ HTML = """<!DOCTYPE html>
     padding:6px 0 12px;backdrop-filter:blur(6px)}
   h1{font-size:19px;font-weight:700;letter-spacing:.5px}
   h1 .em{color:var(--accent)}
+  .back{display:inline-flex;align-items:center;gap:4px;margin-left:10px;font-size:12px;
+    color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;
+    padding:3px 10px;vertical-align:middle;transition:.15s}
+  .back:hover{color:var(--txt);border-color:var(--accent2);background:var(--panel)}
   .sub{color:var(--muted);font-size:12px;margin-top:2px}
   .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
   .search{flex:1 1 220px;min-width:180px;display:flex;align-items:center;gap:6px;
@@ -91,7 +95,7 @@ HTML = """<!DOCTYPE html>
 <body>
 <div class="wrap">
   <div class="topbar">
-    <h1>🌌 宇宙天体<span class="em">层级思维导图</span></h1>
+    <h1>🌌 宇宙天体<span class="em">层级思维导图</span><a class="back" href="/">← 返回星野笔记</a></h1>
     <div class="sub">按「引力从属 / 包含关系」组织的天体层级 · 数据来源：外部层级文档 + 星野笔记天体库（astro.json）融合</div>
     <div class="toolbar">
       <label class="search">
@@ -236,7 +240,7 @@ CAT_ORDER.filter(c=>CAT_SET.has(c)).forEach(t=>{ const s=document.createElement(
 
 document.getElementById('q').addEventListener('input',e=>{ query=e.target.value.trim(); render(); });
 document.getElementById('expandAll').addEventListener('click',()=>{
-  (function walk(n,p){ const path=p+'/'+(n.name); if((n.children||[]).length){expanded.add(path);n.children.forEach(c=>walk(c,path));} }) (DATA,'');
+  (function walk(n,p){ const path=pathOf(p, n.name); if((n.children||[]).length){expanded.add(path);n.children.forEach(c=>walk(c,path));} }) (DATA,'');
   render();
 });
 document.getElementById('collapseAll').addEventListener('click',()=>{ expanded.clear(); render(); });
