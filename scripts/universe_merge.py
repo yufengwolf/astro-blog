@@ -177,12 +177,27 @@ for o in repo["objects"]:
     if norm(o["name"]) in index and o["id"] not in placed_ids:
         covered += 1
 
+# ---------- 接入仓库详情卡片：为"与 repo 同名"的节点打 repo_id ----------
+# 这样树里已有、但非本次 ADDITIONS 追加的节点（如 太阳/地球/比邻星）也能
+# 在生成页面时渲染出「↗」链接，直达本站 objects/<id>/ 详情卡片。
+name_to_repo = {norm(o["name"]): o["id"] for o in repo["objects"]}
+linked_ids = []
+def tag_repo_id(n):
+    k = norm(n["name"])
+    if k in name_to_repo and "repo_id" not in n:
+        n["repo_id"] = name_to_repo[k]
+        linked_ids.append((n["name"], name_to_repo[k]))
+    for c in n.get("children", []):
+        tag_repo_id(c)
+tag_repo_id(base)
+
 print("\n" + "=" * 60)
 print("【融合】astro.json -> universe-tree.json")
 print("=" * 60)
 print(f"库内天体总数(astro.json): {len(repo_objs)}")
 print(f"树中已存在(同名覆盖，未改动): {covered}")
 print(f"本次新增节点: {len(added)}")
+print(f"接入详情卡片链接(repo_id 命中): {len(linked_ids)}")
 for nm, par, tp in added:
     print(f"  + {nm}  [{tp}]  -> 挂到「{par}」")
 print(f"\n跳过(树中已存在同名): {len(skipped_exist)}")

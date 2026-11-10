@@ -85,16 +85,21 @@ hide:
   border-left:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.18))}
 .uh-children.collapsed{display:none}
 .uh-head{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:7px;
-  cursor:pointer;transition:.12s}
+  cursor:pointer;transition:.12s;line-height:1.3}
 .uh-head:hover{background:var(--md-default-fg-color--lightest,rgba(125,125,125,.08))}
-.uh-arrow{width:14px;height:14px;flex:none;fill:var(--md-default-fg-color--light,#9aa6c4);transition:transform .15s}
+.uh-arrow{width:16px;height:16px;flex:none;display:inline-flex;align-items:center;justify-content:center;
+  fill:var(--md-default-fg-color--light,#9aa6c4);transition:transform .15s}
+.uh-arrow svg{width:14px;height:14px;display:block}
 .uh-arrow.leaf{opacity:0}
 .uh-arrow.open{transform:rotate(90deg)}
 .uh-nm{font-weight:600;color:var(--md-default-fg-color,#e6edf6)}
+.uh-nm a{color:inherit;text-decoration:none}
+.uh-nm a:hover{text-decoration:underline}
 .uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#10202b;font-weight:700;white-space:nowrap}
+.uh-link{flex:none;margin-left:6px;color:var(--md-accent-fg-color,#7c4dff);font-size:.8rem;
+  text-decoration:none;opacity:.65;transition:.15s}
+.uh-link:hover{opacity:1;text-decoration:underline}
 .uh-cnt{font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4);margin-left:auto;flex:none}
-.uh-meta{padding:0 8px 6px 29px;color:var(--md-default-fg-color--light,#9aa6c4);font-size:.8rem;line-height:1.55}
-.uh-meta .uh-src::before{content:"📚 "}
 .uh-nm mark{background:var(--md-primary-fg-color,#7c4dff);color:#fff;border-radius:3px;padding:0 1px}
 .uh-empty{color:var(--md-default-fg-color--light,#9aa6c4);text-align:center;padding:30px;font-size:.85rem}
 .uh-legend{margin-top:22px;border-top:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.18));
@@ -103,7 +108,6 @@ hide:
 .uh-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
 @media (max-width:560px){
   .uh-children{margin-left:9px;padding-left:9px}
-  .uh-meta{padding-left:23px}
 }
 </style>
 
@@ -173,6 +177,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var badge = document.createElement('span'); badge.className = 'uh-badge';
     badge.style.background = colorOf(n.type); badge.textContent = n.type || '';
     head.appendChild(ar); head.appendChild(nm); head.appendChild(badge);
+    if (n.repo_id){
+      var link = document.createElement('a'); link.className = 'uh-link';
+      link.href = '/objects/' + n.repo_id + '/'; link.title = '查看本站详情卡片';
+      link.textContent = '↗';
+      link.addEventListener('click', function(e){ e.stopPropagation(); });
+      head.appendChild(link);
+    }
     if (hasKids){ var c = document.createElement('span'); c.className = 'uh-cnt'; c.textContent = countDesc(n); head.appendChild(c); }
 
     head.addEventListener('click', function (){
@@ -183,13 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
       render();
     });
     node.appendChild(head);
-
-    if (n.info || n.source){
-      var meta = document.createElement('div'); meta.className = 'uh-meta';
-      if (n.info) meta.appendChild(document.createTextNode(n.info + ' '));
-      if (n.source){ var s = document.createElement('span'); s.className = 'uh-src'; s.textContent = n.source; meta.appendChild(s); }
-      node.appendChild(meta);
-    }
 
     if (hasKids){
       var kids = document.createElement('div'); kids.className = 'uh-children';
