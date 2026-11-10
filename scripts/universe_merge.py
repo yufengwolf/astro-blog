@@ -5,12 +5,15 @@ universe_merge.py — 把仓库 astro.json 中"缺失且能明确归属"的天�
 外部提供的 universe-data.json 层级树，产出融合后的完整数据源 universe-tree.json。
 
 设计原则（用户硬约束：层级/所属必须严格，天体自身数据准确性次要）：
-1. universe-data.json 的层级为权威骨架，不重构、不挪动既有节点。
-2. 仅追加 astro.json 中存在、但树中缺失、且能明确映射到某个树节点的天体。
-3. 每个追加项的目标父节点由 astro.json 的 parent 关系推导，人工校订到
-   最贴合的现有树节点（如银河系的星云并入"银盘"、疏散星团并入"疏散星团集合"、
-   TNO 矮行星并入"柯伊伯带"），保证所属正确。
-4. 同名（归一化后）不重复追加。
+1. universe-data.json 的层级为权威骨架，不重构、不挪动既有节点（仅追加）。
+2. 仓库 astro.json 的**全部 178 个天体**都接入：按各对象的 parent 关系沿仓库父链
+   找到树上已有节点挂接；仓库 parent=None 的天体按类别归入合适的宇宙结构节点
+   （恒星→猎户臂、星云/银河星团→银盘、星系→拉尼亚凯亚、黑洞→拉尼亚凯亚、
+    星团→银河系、矮行星/小行星/彗星→太阳系统/柯伊伯带、结构→可观测宇宙）。
+3. 名称匹配做健壮归一化：小写 + 去全部空白（含全角）+ 去括号；并额外支持
+   「星」尾差异（"天狼星A" 与 "天狼星 A"、"天狼 B" 与 "天狼星B" 视为同一天体），
+   避免重复节点、保证详情卡片链接 (repo_id) 正确命中。
+4. 同名（归一化后）不重复追加；孤儿天体仍可按类别归入，不再整棵跳过。
 
 用法：python scripts/universe_merge.py
 """
@@ -22,9 +25,20 @@ REPO = os.path.join(ROOT, "docs", "data", "astro.json")
 OUT  = os.path.join(ROOT, "universe-tree.json")
 
 def norm(name):
-    """取（前的中文/ASCII 名，去括号，去空格）做归一并去重判定。"""
+    """小写 + 去括号内容 + 去全部空白（含全角），用于健壮同名判定。"""
     n = re.split(r"[（(]", name)[0]
-    return n.strip()
+    n = n.strip().lower()
+    n = re.sub(r"\s+", "", n)
+    n = n.replace("　", "")
+    return n
+
+def norm_star(name):
+    """在 norm 基础上，去掉「星 + 字母/数字后缀」这类内部差异，用于
+    "天狼星B"(天狼星+b) 与 "天狼 B"(天狼+b) 视作同一天体；
+    不影响"疏散星团"等词（其"星"后接的是汉字，不去掉）。"""
+    k = norm(name)
+    k = re.sub(r"星(?=[a-z0-9])", "", k)
+    return k
 
 # ---------- 读入 ----------
 base = json.load(open(BASE, encoding="utf-8"))
@@ -49,7 +63,6 @@ def walk(n, path, depth):
 
 walk(base, [], 0)
 
-# 可观测宇宙各直接子分支的"展开度"
 root = base
 for child in root.get("children", []):
     name = child["name"]
@@ -62,7 +75,7 @@ maxdepth = max(depths.values())
 print("=" * 60)
 print("【审计】universe-data.json 结构统计")
 print("=" * 60)
-print(f"节点总数(去重后): {total}")
+print(f"骨架节点总数(去重后): {total}")
 print(f"最大层级深度(根=0): {maxdepth}")
 print(f"重复归一化名: {dupes if dupes else '无'}")
 print("\n可观测宇宙直接子分支(展开度):")
@@ -70,143 +83,139 @@ for k, v in branch_leaves.items():
     print(f"  - {k}: 直接子节点 {v} 个"
           + ("  [几乎为空，仅叶子]" if v <= 1 else ""))
 
-# ---------- 融合映射 ----------
+# ---------- 名称索引（含去星尾） ----------
+tree_index = {}
+tree_index_star = {}
+def index_node(n):
+    tree_index.setdefault(norm(n["name"]), n)
+    tree_index_star.setdefault(norm_star(n["name"]), n)
+    for c in n.get("children", []):
+        index_node(c)
+index_node(base)
+
 TYPE_MAP = {
     "star": "恒星", "planet": "行星", "moon": "天然卫星",
     "galaxy": "星系", "nebula": "星云", "black_hole": "黑洞",
     "cluster": "星团", "dwarf_planet": "矮行星", "asteroid": "小行星",
     "comet": "彗星", "structure": "宇宙结构",
 }
-
-# 需要追加的 repo 天体 -> 目标父节点(树的现有节点名)
-# 仅列"缺失且能明确归属"的项；target 必须是树中已存在的节点名。
-ADDITIONS = [
-    ("m17",            "银盘"),          # 天鹅星云
-    ("ngc3372",        "银盘"),          # 船底座星云
-    ("ngc7000",        "银盘"),          # 北美洲星云
-    ("hyades",         "疏散星团集合"),   # 毕星团
-    ("m44",            "疏散星团集合"),   # 蜂巢星团
-    ("m11",            "疏散星团集合"),   # 野鸭星团
-    ("m7",             "疏散星团集合"),   # 托勒密星团
-    ("halley",         "太阳系统"),       # 哈雷彗星
-    ("gonggong_225088","柯伊伯带"),       # 共工星
-    ("quaoar",         "柯伊伯带"),       # 创神星
-    ("sedna",          "柯伊伯带"),       # 赛德娜
-    ("hyperion",       "土星"),           # 土卫七
-    ("tarantula",      "大麦哲伦云"),     # 蜘蛛星云(+其下 R136→R136a1 链)
-    ("great_attractor","拉尼亚凯亚超星系团"),  # 巨引源
-    ("cmb",            "可观测宇宙"),     # 宇宙微波背景
-]
-
-# repo 中已被树覆盖(或无法明确归属)而跳过的 id（用于报告）
-SKIP_IDS = {
-    "ic1101", "ic1101_bh",  # 孤儿巨星系，无干净父节点（不在拉尼亚凯亚内）
-    # 以下在树中已存在同名节点，靠下方"已存在"检测跳过，无需列此
+# parent=None 的仓库天体按类别归入的骨架节点
+CATEGORY_DEFAULT = {
+    "star": "猎户臂（本地臂）", "nebula": "银盘", "galaxy": "拉尼亚凯亚超星系团",
+    "black_hole": "拉尼亚凯亚超星系团", "cluster": "银河系", "dwarf_planet": "柯伊伯带",
+    "asteroid": "太阳系统", "comet": "太阳系统", "structure": "可观测宇宙",
+    "planet": "太阳系统", "moon": "太阳系统",
+}
+# 仓库 parent id -> 期望挂接的骨架节点（修正 milky_way→银盘 等）
+PARENT_OVERRIDE = {
+    "milky_way": "银盘", "local_group": "本星系群",
+    "virgo_cluster": "室女座星系团", "laniakea": "拉尼亚凯亚超星系团",
 }
 
-def find_node(name):
-    return index.get(norm(name))
-
-added, skipped_exist, skipped_no_target, skipped_unknown = [], [], [], []
 placed_ids = set()
+placed_cache = {}
+created, tagged, fuzzy, defaulted = [], [], [], []
 
-def build_node(o):
-    """由 repo 对象构造树节点。"""
-    t = TYPE_MAP.get(o.get("category"), o.get("subtype") or o.get("category"))
-    node = {"name": o["name"], "type": t}
-    tag = o.get("tagline")
-    if tag:
-        node["info"] = tag
-    return node
+def resolve_tree_parent(name):
+    k = norm(name)
+    if k in tree_index:
+        return tree_index[k]
+    ks = norm_star(name)
+    if ks in tree_index_star:
+        return tree_index_star[ks]
+    return None
 
-def attach_chain(repo_id, target_node, depth_limit=4):
-    """把 repo 对象及其全部后代递归挂到 target_node 下（用于蜘蛛星云链）。"""
-    if repo_id in placed_ids:
-        return
-    o = repo_objs[repo_id]
-    # 避免重复
-    for c in target_node.get("children", []):
-        if norm(c["name"]) == norm(o["name"]):
-            # 已存在：仍尝试挂它的后代到该已存在节点
-            existing = c
-            placed_ids.add(repo_id)
-            for kid in repo["objects"]:
-                if kid.get("parent") == repo_id:
-                    attach_chain(kid["id"], existing)
-            return
-    node = build_node(o)
-    kids = [k for k in repo["objects"] if k.get("parent") == repo_id]
-    if kids:
-        node["children"] = []
-        for kid in kids:
-            attach_chain(kid["id"], node)
-    target_node.setdefault("children", []).append(node)
-    placed_ids.add(repo_id)
-    added.append((o["name"], target_node.get("name") or "根", node["type"]))
+def default_parent_node(cat):
+    tgt = CATEGORY_DEFAULT.get(cat, "可观测宇宙")
+    node = resolve_tree_parent(tgt)
+    return node or tree_index.get(norm("可观测宇宙")) or base
 
-# 普通叶子/已知目标追加
-for rid, target_name in ADDITIONS:
+def ensure_in_tree(rid, visiting=None):
     if rid in placed_ids:
-        continue
-    if rid not in repo_objs:
-        skipped_unknown.append(rid)
-        continue
-    tgt = find_node(target_name)
-    if not tgt:
-        skipped_no_target.append((rid, target_name))
-        continue
-    o = repo_objs[rid]
-    # 同名检测
-    exists = any(norm(c["name"]) == norm(o["name"]) for c in tgt.get("children", []))
-    if exists:
-        skipped_exist.append((o["name"], target_name))
-        placed_ids.add(rid)
-        continue
-    # 蜘蛛星云需要递归挂后代
-    if rid == "tarantula":
-        attach_chain("tarantula", tgt)
-        continue
-    node = build_node(o)
-    tgt.setdefault("children", []).append(node)
-    placed_ids.add(rid)
-    added.append((o["name"], target_name, node["type"]))
+        return placed_cache.get(rid)
+    po = repo_objs.get(rid)
+    if po is None:
+        return None
+    visiting = visiting or set()
+    if rid in visiting:
+        return None
+    visiting.add(rid)
 
-# 额外扫描：报告 repo 中"天体本身已在树里、无需追加"的覆盖情况（抽样）
-covered = 0
+    # 特判：仓库的 sun 在骨架里没有独立节点（骨架用"太阳系统"承载），
+    # 把 sun 直接对应到"太阳系统"，避免凭空生成空节点 / 把太阳系错挂到猎户臂。
+    if rid == "sun":
+        node = resolve_tree_parent("太阳系统")
+        if node is not None:
+            if "repo_id" not in node:
+                node["repo_id"] = "sun"
+                tagged.append(("太阳(sun)", node["name"]))
+            placed_ids.add(rid); placed_cache[rid] = node
+            return node
+
+    # 1) 自身已存在于树（健壮/去星匹配）→ 仅补 repo_id，不新建
+    ke = norm(po["name"]); ks = norm_star(po["name"])
+    existing = tree_index.get(ke) or tree_index_star.get(ks)
+    if existing is not None:
+        if "repo_id" not in existing:
+            existing["repo_id"] = rid
+            (tagged if ke in tree_index else fuzzy).append((po["name"], existing["name"]))
+        placed_ids.add(rid); placed_cache[rid] = existing
+        return existing
+
+    # 2) 解析父节点
+    prid = po.get("parent")
+    parent_node = None
+    if prid:
+        if prid in PARENT_OVERRIDE:
+            parent_node = resolve_tree_parent(PARENT_OVERRIDE[prid])
+        if parent_node is None and prid in repo_objs:
+            parent_node = ensure_in_tree(prid, visiting)
+        if parent_node is None:
+            parent_node = resolve_tree_parent(prid) if prid in repo_objs else None
+    if parent_node is None:
+        parent_node = default_parent_node(po.get("category"))
+        defaulted.append((po["name"], parent_node["name"], po.get("category")))
+
+    # 3) 父节点下去重创建
+    t = TYPE_MAP.get(po.get("category"), po.get("subtype") or po.get("category"))
+    newnode = {"name": po["name"], "type": t}
+    tag = po.get("tagline")
+    if tag:
+        newnode["info"] = tag
+    newnode["repo_id"] = rid
+    for c in parent_node.get("children", []):
+        if norm(c["name"]) == ke or norm_star(c["name"]) == ks:
+            if "repo_id" not in c:
+                c["repo_id"] = rid
+                (tagged if norm(c["name"]) == ke else fuzzy).append((po["name"], c["name"]))
+            placed_ids.add(rid); placed_cache[rid] = c
+            return c
+    parent_node.setdefault("children", []).append(newnode)
+    index_node(newnode)
+    created.append((po["name"], parent_node["name"], t))
+    placed_ids.add(rid); placed_cache[rid] = newnode
+    return newnode
+
 for o in repo["objects"]:
-    if norm(o["name"]) in index and o["id"] not in placed_ids:
-        covered += 1
-
-# ---------- 接入仓库详情卡片：为"与 repo 同名"的节点打 repo_id ----------
-# 这样树里已有、但非本次 ADDITIONS 追加的节点（如 太阳/地球/比邻星）也能
-# 在生成页面时渲染出「↗」链接，直达本站 objects/<id>/ 详情卡片。
-name_to_repo = {norm(o["name"]): o["id"] for o in repo["objects"]}
-linked_ids = []
-def tag_repo_id(n):
-    k = norm(n["name"])
-    if k in name_to_repo and "repo_id" not in n:
-        n["repo_id"] = name_to_repo[k]
-        linked_ids.append((n["name"], name_to_repo[k]))
-    for c in n.get("children", []):
-        tag_repo_id(c)
-tag_repo_id(base)
+    ensure_in_tree(o["id"])
 
 print("\n" + "=" * 60)
-print("【融合】astro.json -> universe-tree.json")
+print("【融合】astro.json(全部) -> universe-tree.json")
 print("=" * 60)
 print(f"库内天体总数(astro.json): {len(repo_objs)}")
-print(f"树中已存在(同名覆盖，未改动): {covered}")
-print(f"本次新增节点: {len(added)}")
-print(f"接入详情卡片链接(repo_id 命中): {len(linked_ids)}")
-for nm, par, tp in added:
+print(f"命中已有节点(补 repo_id): {len(tagged)}")
+print(f"去星尾模糊命中(避免重复): {len(fuzzy)}")
+for nm, tn in fuzzy:
+    print(f"  ~ {nm}  ->  命中「{tn}」(星尾差异)")
+print(f"新建节点: {len(created)}")
+for nm, par, tp in created:
     print(f"  + {nm}  [{tp}]  -> 挂到「{par}」")
-print(f"\n跳过(树中已存在同名): {len(skipped_exist)}")
-for nm, par in skipped_exist:
-    print(f"  = {nm}  (「{par}」下已有)")
-print(f"跳过(无目标父节点/孤儿): {len(skipped_no_target)}")
-for rid, t in skipped_no_target:
-    print(f"  ! {rid} -> {t}")
-print(f"跳过(不在 repo 中): {skipped_unknown}")
+print(f"按类别默认归入(仓库 parent=None): {len(defaulted)}")
+from collections import Counter
+dc = Counter(d[2] for d in defaulted)
+for cat, c in dc.items():
+    print(f"  · {cat}: {c} 个")
+print(f"未归类(仓库中找不到且类别无默认): {sum(1 for o in repo['objects'] if o['id'] not in placed_ids)}")
 
 # 写出融合结果（写入前比对：内容无变化则跳过，避免 mkdocs serve 监听触发重建死循环）
 new_text = json.dumps(base, ensure_ascii=False, indent=2)

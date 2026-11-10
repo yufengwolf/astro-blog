@@ -206,8 +206,8 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 主题化页面 `universe-hierarchy.md`（左侧导航「宇宙层级」**直接打开**，融入 Material 主题，含侧边栏 / 站内字体 / 配色），以可折叠树呈现天体的**层级 / 从属关系**，数据源为仓库根目录的 `universe-tree.json`。
 
 - `universe-data.json`：外部提供的层级文档（完整数据源的**基础**）。可观测宇宙 → 拉尼亚凯亚超星系团 → 本星系群 → 银河系 → 太阳系 这一条链最完整，宇宙其余部分（其他超星系团 / 星系团）基本为空。
-- `universe-tree.json`：由 `universe-data.json` 与 `docs/data/astro.json` **融合**后的完整数据源，由 `scripts/universe_merge.py` 生成。融合只**追加** astro.json 中缺失且能明确归属的天体（如银河系星云 / 疏散星团、柯伊伯带矮行星、土卫七、蜘蛛星云 → R136 → R136a1 链、巨引源、宇宙微波背景），**不重构既有层级**。天体本体数值准确性要求不高，**层级所属严格**。融合还会为所有与 astro.json **同名命中**的节点打上 `repo_id` 字段（当前 79 个），用于页面内一键跳转到本站详情卡片。
-- `docs/universe-hierarchy.md`：由 `scripts/build_universe_html.py` 从 `universe-tree.json` 生成**主题化页面**（内嵌 JSON + 交互脚本，样式全部用 Material 主题 CSS 变量，自动继承站内字体 / 配色、随深浅色切换适配）。含搜索、大类筛选、展开 / 折叠全部、面包屑路径；**每个节点只占一行**（名称 + 类型色标 + 后代计数，不再单独铺描述行，描述数据保留在 JSON 供后续详情卡片承载）；凡带 `repo_id` 的节点（如太阳 / 地球 / 比邻星 / 银河系）行尾显示「↗」链接，点击直达本站 `objects/<id>/` 详情卡片（不影响行内点击展开 / 折叠）。左侧导航「宇宙层级」**直接打开本页**（无 iframe 包装）。
+- `universe-tree.json`：由 `universe-data.json` 与 `docs/data/astro.json` **融合**后的完整数据源，由 `scripts/universe_merge.py` 生成。融合把 astro.json 的**全部 178 个天体**都接进层级树：按各对象的 `parent` 关系沿仓库父链找到树上已有节点挂接；仓库里 `parent=None` 的天体按类别归入合适的宇宙结构节点（恒星→猎户臂、星云/银河星团→银盘、星系→拉尼亚凯亚超星系团、黑洞→拉尼亚凯亚超星系团、星团→银河系、矮行星/小行星/彗星→太阳系统/柯伊伯带、结构→可观测宇宙）。**不重构既有层级**，天体本体数值准确性要求不高、**层级所属严格**。融合为**全部 178 个**节点打上 `repo_id` 字段，页面内一键跳转到本站详情卡片。
+- `docs/universe-hierarchy.md`：由 `scripts/build_universe_html.py` 从 `universe-tree.json` 生成**主题化页面**（内嵌 JSON + 交互脚本，样式全部用 Material 主题 CSS 变量，自动继承站内字体 / 配色、随深浅色切换适配）。含搜索、大类筛选、展开 / 折叠全部、面包屑路径；**每个节点只占一行**（名称 + 类型色标 + 后代计数，不再单独铺描述行，描述数据保留在 JSON 供后续详情卡片承载）；**全部 178 个节点**行尾都显示「↗」链接，点击直达本站 `objects/<id>/` 详情卡片（不影响行内点击展开 / 折叠）。左侧导航「宇宙层级」**直接打开本页**（无 iframe 包装）。
 - `universe_hook.py`：MkDocs 构建钩子。每次 `mkdocs build` 前自动依次运行 `universe_merge.py` 与 `build_universe_html.py`，**数据源（universe-data.json / astro.json）改动后构建即自动同步页面**（数据驱动、自适应），无需手动执行生成脚本。两个生成脚本都在写入前比对磁盘已有内容，**内容无变化则跳过写入**——这是为了避免 `mkdocs serve` 监听 `docs/` 触发「重写→重建」无限刷新的死循环。
 
 刷新流程（改数据后）：
