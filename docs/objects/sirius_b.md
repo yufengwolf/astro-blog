@@ -1,20 +1,20 @@
 ---
-description: "天狼 B（Sirius B）的天体数据：2.02×10³⁰ kg、直径 11,268 km、光度 9.38×10²⁴ W、温度 25,000 K。数据整理自公开天文资料。"
+description: "天狼星B（Sirius B）的天体数据：2.02×10³⁰ kg、直径 11,268 km、光度 9.38×10²⁴ W、温度 25,000 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_b.webp" alt="天狼 B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_b.webp" alt="天狼星B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>天狼 B <small>Sirius B</small></h1>
+    <h1>天狼星B <small>Sirius B</small></h1>
     <p class="obj-tagline">质量与太阳相当，体积却只有地球大小——最早被发现的白矮星</p>
     <p class="obj-summary">直径 11,268 km · 质量 2.02×10³⁰ kg</p>
   </div>
 </div>
 
-<p class="obj-parent">母天体：<a href="../sirius_a/">天狼星 A</a> · 分类：恒星</p>
+<p class="obj-parent">母天体：<a href="../sirius_a/">天狼星A</a> · 分类：恒星</p>
 
 
 <div class="solar-embed obj-viz">
@@ -77,6 +77,6 @@ hide:
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../halley/">哈雷彗星</a></p>
-<p class="obj-nav">下一颗：<a href="../eridani_40a/">波江座 40A</a> →</p>
+<p class="obj-nav">下一颗：<a href="../eridani_40a/">波江座40A</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

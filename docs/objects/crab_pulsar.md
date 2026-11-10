@@ -59,7 +59,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/Crab_Pulsar" target="_blank" rel="noopener">Wikipedia · Crab Pulsar</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../eridani_40b/">波江座 40B</a></p>
+<p class="obj-nav">← 上一颗：<a href="../eridani_40b/">波江座40B</a></p>
 <p class="obj-nav">下一颗：<a href="../vela_pulsar/">船帆脉冲星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

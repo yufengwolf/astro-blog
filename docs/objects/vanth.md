@@ -1,14 +1,14 @@
 ---
-description: "范斯（亡卫一）（Vanth）的天体数据：3×10¹⁹ kg、平均直径 440.0 km、密度 0.67 g/cm³、温度 44 K。数据整理自公开天文资料。"
+description: "范斯（Vanth）的天体数据：3×10¹⁹ kg、平均直径 440.0 km、密度 0.67 g/cm³、温度 44 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/vanth.webp" alt="范斯（亡卫一）" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/vanth.webp" alt="范斯" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
-    <h1>范斯（亡卫一） <small>Vanth</small></h1>
+    <h1>范斯 <small>Vanth</small></h1>
     <p class="obj-tagline">柯伊伯带矮行星亡神星（Orcus）的唯一已知卫星</p>
     <p class="obj-summary">平均直径 440.0 km · 质量 3×10¹⁹ kg</p>
   </div>
@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../orcus/">亡神星</a></p>
 <p class="obj-nav">下一颗：<a href="../gonggong_225088/">共工星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

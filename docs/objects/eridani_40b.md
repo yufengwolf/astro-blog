@@ -1,20 +1,20 @@
 ---
-description: "波江座 40B（40 Eridani B）的天体数据：1.11×10³⁰ kg、直径 18,200 km、光度 5.16×10²⁴ W、温度 17,200 K。数据整理自公开天文资料。"
+description: "波江座40B（40 Eridani B）的天体数据：1.11×10³⁰ kg、直径 18,200 km、光度 5.16×10²⁴ W、温度 17,200 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40b.webp" alt="波江座 40B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40b.webp" alt="波江座40B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>波江座 40B <small>40 Eridani B</small></h1>
+    <h1>波江座40B <small>40 Eridani B</small></h1>
     <p class="obj-tagline">肉眼不可见的白矮星，人类最早确认的白矮星之一</p>
     <p class="obj-summary">直径 18,200 km · 质量 1.11×10³⁰ kg</p>
   </div>
 </div>
 
-<p class="obj-parent">母天体：<a href="../eridani_40a/">波江座 40A</a> · 分类：恒星</p>
+<p class="obj-parent">母天体：<a href="../eridani_40a/">波江座40A</a> · 分类：恒星</p>
 
 <div class="obj-data-grid">
 <section class="obj-data-block">
@@ -50,7 +50,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座 40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】</td></tr>
+<tr><th scope="row">备注</th><td>看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】</td></tr>
 <tr><th scope="row">发现</th><td>1783 年 1 月 31 日威廉·赫歇尔发现</td></tr>
 </tbody>
 </table>
@@ -62,7 +62,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/40_Eridani" target="_blank" rel="noopener">Wikipedia · 40 Eridani</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../eridani_40a/">波江座 40A</a></p>
+<p class="obj-nav">← 上一颗：<a href="../eridani_40a/">波江座40A</a></p>
 <p class="obj-nav">下一颗：<a href="../crab_pulsar/">蟹云脉冲星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

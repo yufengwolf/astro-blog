@@ -153,4 +153,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../mars/">火星</a></p>
 <p class="obj-nav">下一颗：<a href="../saturn/">土星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

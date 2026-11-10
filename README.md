@@ -1,6 +1,6 @@
 # 星野笔记 · 天体数据库
 
-基于 MkDocs + Material for MkDocs 的**静态天体数据工具站**：**178 个天体、11 类**（恒星 56 / 卫星 23 / 行星 19 / 星系 18 / 星云 16 / 黑洞 13 / 星团 11 / 矮行星 9 / 大尺度结构 7 / 小行星 5 / 彗星 1）的结构化数据（质量 / 半径 / 密度 / 温度 / 轨道 / 卫星 / 光谱型等），覆盖太阳系天体到恒星、星云、星系、黑洞；首页支持搜索、分类筛选、按任意数值排序；每个天体有独立详情页（完整数据表 + 可选科普文章）；另有独立 `/compare/` 对比页做多天体尺寸/参数对比。
+基于 MkDocs + Material for MkDocs 的**静态天体数据工具站**：**177 个天体、11 类**（恒星 56 / 卫星 23 / 行星 19 / 星系 18 / 星云 16 / 黑洞 12 / 星团 11 / 矮行星 9 / 大尺度结构 7 / 小行星 5 / 彗星 1）的结构化数据（质量 / 半径 / 密度 / 温度 / 轨道 / 卫星 / 光谱型等），覆盖太阳系天体到恒星、星云、星系、黑洞；首页支持搜索、分类筛选、按任意数值排序；每个天体有独立详情页（完整数据表 + 可选科普文章）；另有独立 `/compare/` 对比页做多天体尺寸/参数对比。
 
 > **维护者看这里**：[维护指南.md](维护指南.md) —— 自助维护全流程（AI 录入 / 图片编排 / NASA 真图 / 数据校验 / 收尾构建），含端到端流程图与命令速查，每条都是可直接复制的命令。**任何代码改动都必须同步更新该指南与本文档**（见文末「文档维护约定」）。
 
@@ -13,7 +13,7 @@
 - **AI 编排录入**：只给一个名字，`add_object.py` 让豆包自动定位类型、抽数据、写库，并**自动出图 + 自动生成页面/构建**。
 - **详情页三段式布局（v1.7）**：hero 只留 2 项单行速览，物理/轨道/其他特征三表在桌面双列、移动单列；空值行直接不渲染，正文列去掉右侧 TOC 后铺满，为后续 3D 头像/轨道嵌入预留栅格位。详见[维护指南](维护指南.md)。
 - **展示单位统一（v1.8）**：全站口径从"半径"改为"直径 = 2 × 半径"，主单位按量级自动切换 km / 光年，辅单位给地球/太阳直径倍数或 M⊕ / M☉；温度统一 K、有表面温度的固态天体括注 ℃；黑洞称"事件视界直径"。单位字符串由 `gen_pages.py` 唯一实现，对比页（`compare.js`）改读预生成 `*_text` 字段，消除两套口径。详见[维护指南](维护指南.md)。
-- **详情页 3D 可视化（v1.9 重构）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。本仓库只做「消费者」：提供 iframe 窗口 + `go.html?body=<id>&embed=1` 地址，把天体 id 透传给外部仓库 `astro-solar-3d`（真实三维太阳系，130 天体支持 `?body=<id>` 直达外链），**绝不硬编码场景**；契约（哪些天体有 3D）来自外部仓库的 `links.json` 快照（`--sync` 刷新）。当前 59/178 有覆盖。size-of-space 待部署 CF Pages 后再接入。详见[维护指南](维护指南.md)。
+- **详情页 3D 可视化（v1.9 重构）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。本仓库只做「消费者」：提供 iframe 窗口 + `go.html?body=<id>&embed=1` 地址，把天体 id 透传给外部仓库 `astro-solar-3d`（真实三维太阳系，130 天体支持 `?body=<id>` 直达外链），**绝不硬编码场景**；契约（哪些天体有 3D）来自外部仓库的 `links.json` 快照（`--sync` 刷新）。当前 69/177 有覆盖。size-of-space 待部署 CF Pages 后再接入。详见[维护指南](维护指南.md)。
 
 ---
 
@@ -24,8 +24,8 @@
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
 ├─ viz-manifest.json     # 3D 覆盖契约（gen_viz_manifest.py 生成；消费外部 links.json 快照；go.html?body=<id> 透传；详情页条件嵌入）
-├─ universe-data.json    # 【宇宙层级】外部提供的层级文档（基础数据源）
-├─ universe-tree.json    # 【宇宙层级】融合后的完整数据源（universe_merge.py 生成；HTML 的唯一事实源）
+├─ universe-data.json    # 【宇宙层级】层级与命名事实源（282 节点 + 顶层 _convention 8 条规范）
+├─ universe-tree.json    # 【宇宙层级】融合产物（177 个 repo_id；页面唯一事实源，universe_merge.py 生成）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -38,9 +38,10 @@
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
 │  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
 │  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（消费 scripts/solar3d_links.json 快照；go.html?body=<id>&embed=1 透传；--sync 刷新快照；size-of-space 待接入）
-│  ├─ universe_merge.py   # 【宇宙层级】universe-data.json + astro.json → universe-tree.json（仅追加缺失且明确归属的天体）
-│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（主题化页面，JSON 内嵌，融入 Material 主题）
+│  ├─ universe_merge.py   # 【宇宙层级】骨架 + astro.json → universe-tree.json（字节级精确挂接 + 类型/归属校验，不追加不臆测）
+│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（按 category 着色/筛选，alias 可搜）
 │  ├─ universe_hook.py    # 【宇宙层级】MkDocs 构建钩子：build 前自动跑上面两步，JSON 改动即同步页面
+│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 交互回归（搜索/筛选/展开/详情链接实跑）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -52,7 +53,7 @@
 │  └─ insert_*.py        # 历史一次性批录入（insert_stars/insert_bigscale/insert_bigscale2，已不再日常使用）
 └─ docs/
    ├─ index.md           # 【生成】天体总览工具页（勿手改）
-   ├─ objects/           # 【生成】178 个天体详情页 + index.md 总表（勿手改）
+   ├─ objects/           # 【生成】177 个天体详情页 + index.md 总表（勿手改）
    ├─ data.md            # 【生成】数据集下载页（不挂导航，仅 URL/sitemap 可达）
    ├─ data/astro.json    # 天体数据库（唯一事实源）
    ├─ data/nasa_images.json # NASA 真实影像登记表
@@ -194,7 +195,7 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 - **契约来源 `viz-manifest.json`**（仓库根）：由 `scripts/gen_viz_manifest.py` **消费**外部仓库发布的 `links.json` 快照（仓库内 `scripts/solar3d_links.json`，`--sync` 可从线上刷新）机械派生。即「哪些天体有 3D」这张表由外部仓库填充，本仓库只读它；`gen_pages` 渲染详情页前读 `viz-manifest.json`，无条目就不渲染（优雅降级）。
 - **外链格式**（astro-solar-3d 规定）：万能入口 `go.html?body=<ID>` 只给 id，外部仓库自动落到正确页面（太阳系/卫星系/银河系…）；追加 `&embed=1` 隐藏导航/菜单只留天体特写（适合 iframe）；详情页块还附「打开完整交互版 ↗」链接（去掉 `embed=1` 的新标签地址）。
-- **当前唯一外部 3D 源**：`astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`，我方自有，真实三维太阳系），其 `links.json` 含 **130** 个天体（行星/卫星/冥王星/深空恒星星云），支持 `?body=<id>` 直达外链。详情页匹配我库 178 天体后，当前 **59 个**（33%）有 3D 覆盖。
+- **当前唯一外部 3D 源**：`astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`，我方自有，真实三维太阳系），其 `links.json` 含 **130** 个天体（行星/卫星/冥王星/深空恒星星云），支持 `?body=<id>` 直达外链。详情页匹配我库 177 天体后，当前 **69 个**（39%）有 3D 覆盖。
 - **size-of-space 暂未接入**：用户尚未把它部署到 CF Pages（fork 带 `deploy.yml` 但未开 Pages），待部署后再作为第二个来源加回 `gen_viz_manifest.py`。
 
 > 改 3D 覆盖度：外部仓库新增天体后，运行 `python scripts/gen_viz_manifest.py --sync` 刷新 `solar3d_links.json` 快照（或手动复制其部署产物的 `links.json`），再重跑 `gen_viz_manifest.py` + `gen_pages` 即可，无需改代码。仅当**我库 id 与外部 id 命名不一致**时才需在 `gen_viz_manifest.py` 的 `ALIASES` 里加一条（如 `sgr_a_star→sagA`、`cyg_x1→cygx1`）。
@@ -203,19 +204,32 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 ## 八、宇宙天体层级思维导图
 
-主题化页面 `universe-hierarchy.md`（左侧导航「宇宙层级」**直接打开**，融入 Material 主题，含侧边栏 / 站内字体 / 配色），以可折叠树呈现天体的**层级 / 从属关系**，数据源为仓库根目录的 `universe-tree.json`。
+主题化页面 `docs/universe-hierarchy.md`（左侧导航「宇宙层级」**直接打开**，融入 Material 主题，含侧边栏 / 站内字体 / 配色），以可折叠树呈现天体的**层级 / 从属关系**。数据源分三层：`universe-data.json`（层级 + 命名事实源）→ `universe-tree.json`（融合产物）→ 页面内嵌 JSON。
 
-- `universe-data.json`：外部提供的层级文档（完整数据源的**基础**）。可观测宇宙 → 拉尼亚凯亚超星系团 → 本星系群 → 银河系 → 太阳系 这一条链最完整，宇宙其余部分（其他超星系团 / 星系团）基本为空。
-- `universe-tree.json`：由 `universe-data.json` 与 `docs/data/astro.json` **融合**后的完整数据源，由 `scripts/universe_merge.py` 生成。融合把 astro.json 的**全部 178 个天体**都接进层级树：按各对象的 `parent` 关系沿仓库父链找到树上已有节点挂接；仓库里 `parent=None` 的天体按类别归入合适的宇宙结构节点（恒星→猎户臂、星云/银河星团→银盘、星系→拉尼亚凯亚超星系团、黑洞→拉尼亚凯亚超星系团、星团→银河系、矮行星/小行星/彗星→太阳系统/柯伊伯带、结构→可观测宇宙）。**不重构既有层级**，天体本体数值准确性要求不高、**层级所属严格**。融合为**全部 178 个**节点打上 `repo_id` 字段，页面内一键跳转到本站详情卡片。
-- `docs/universe-hierarchy.md`：由 `scripts/build_universe_html.py` 从 `universe-tree.json` 生成**主题化页面**（内嵌 JSON + 交互脚本，样式全部用 Material 主题 CSS 变量，自动继承站内字体 / 配色、随深浅色切换适配）。含搜索、大类筛选、展开 / 折叠全部、面包屑路径；**每个节点只占一行**（名称 + 类型色标 + 后代计数，不再单独铺描述行，描述数据保留在 JSON 供后续详情卡片承载）；**全部 178 个节点**行尾都显示「↗」链接，点击直达本站 `objects/<id>/` 详情卡片（不影响行内点击展开 / 折叠）。左侧导航「宇宙层级」**直接打开本页**（无 iframe 包装）。
-- `universe_hook.py`：MkDocs 构建钩子。每次 `mkdocs build` 前自动依次运行 `universe_merge.py` 与 `build_universe_html.py`，**数据源（universe-data.json / astro.json）改动后构建即自动同步页面**（数据驱动、自适应），无需手动执行生成脚本。两个生成脚本都在写入前比对磁盘已有内容，**内容无变化则跳过写入**——这是为了避免 `mkdocs serve` 监听 `docs/` 触发「重写→重建」无限刷新的死循环。
+- `universe-data.json`：**层级与命名的事实源**（282 个节点）。顶层 `_convention` 定义 8 条规范；每个节点带受控 `category`，M/NGC 编号与西文别名放 `alias`，备注放 `info`。命名与 `astro.json.name` **字节级精确对齐**：大小写有语义（`天狼星A` 与 `开普勒16b` 后缀不同不可混），不做小写/去空白/星尾差异等容错；归属严格，无确证依据的放进明确标注「归属未细化」的容器，不按类别臆测。
+- `universe-tree.json`：`scripts/universe_merge.py` 把 `astro.json` 的 **177 个天体**按 `name`（或骨架 `alias`）**精确挂接**到骨架并打上 `repo_id`，同时校验「节点 `category` 与仓库 `category` 一致」和「仓库 `parent` 链与骨架祖先链容器兼容」。骨架就是事实源，**不再追加节点、不再按类别默认归属**；异常项（category 不一致 / 归属冲突 / 未匹配 / 骨架重名）必须为零才算数据合格。
+- `docs/universe-hierarchy.md`：`scripts/build_universe_html.py` 从 `universe-tree.json` 生成**主题化页面**（内嵌 JSON + 交互脚本，样式全部用 Material 主题 CSS 变量，自动继承站内字体 / 配色）。含搜索（名称 / `alias` 编号 / 类型 / `category`）、大类筛选、展开·折叠全部、面包屑；**每节点一行**，节点显示规范编号 `alias`；**177 个**带 `repo_id` 的节点行尾「↗」直达 `objects/<id>/` 详情卡片（不影响行内展开 / 折叠）。
+- `universe_hook.py`：MkDocs 构建钩子。每次 `mkdocs build` 前自动依次运行 `universe_merge.py` 与 `build_universe_html.py`，**数据改动后构建即自动同步页面**。两个生成脚本都在写入前比对磁盘内容，无变化则跳过写入，避免 `mkdocs serve`「重写→重建」死循环。
 
-刷新流程（改数据后）：
+```mermaid
+flowchart LR
+    UD["universe-data.json<br/>层级+命名事实源 282 节点<br/>_convention 8 条"] --> M["universe_merge.py<br/>字节级精确挂接 + 类型/归属校验"]
+    AS["docs/data/astro.json<br/>177 天体 + parent 链"] --> M
+    M --> UT["universe-tree.json<br/>177 个 repo_id"]
+    UT --> B["build_universe_html.py<br/>按 category 着色 + alias 可搜"]
+    B --> PG["docs/universe-hierarchy.md<br/>Material 主题化页面"]
+    H["universe_hook.py<br/>on_pre_build"] -. 自动触发 .-> M
+    H -. 自动触发 .-> B
+```
+
+刷新流程（改 `astro.json` / `universe-data.json` 后；**两边的 `name` 必须字节级一致**）：
 
 ```bash
-python scripts/universe_merge.py       # universe-data.json + astro.json → universe-tree.json
+python scripts/universe_merge.py       # 校验：177 精确命中 / 0 不一致 / 0 冲突 / 0 未匹配
 python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.md
-# 注：上面两步已接入 universe_hook.py，随 `mkdocs build` 自动执行，无需手动跑；也可手动跑做单独调试
+python scripts/gen_pages.py --check && mkdocs build --strict
+# 注：上面两步已接入 universe_hook.py，随 mkdocs build 自动执行；手动跑用于单独调试
+node scripts/check_universe_dom.js     # 可选：jsdom 实跑搜索/筛选/展开/详情链接（需本机有 jsdom）
 ```
 
 ## 九、文档维护约定

@@ -14,7 +14,7 @@ hide:
   </div>
 </div>
 
-<p class="obj-parent">母天体：<a href="../m87/">室女座 A（M87）</a> · 分类：黑洞</p>
+<p class="obj-parent">母天体：<a href="../m87/">室女座A</a> · 分类：黑洞</p>
 
 <div class="obj-data-grid">
 <section class="obj-data-block">
@@ -48,6 +48,6 @@ hide:
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../proxima_centauri/">比邻星</a></p>
-<p class="obj-nav">下一颗：<a href="../sgr_a_star/">人马座 A*</a> →</p>
+<p class="obj-nav">下一颗：<a href="../sgr_a_star/">人马座A*</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

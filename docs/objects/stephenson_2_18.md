@@ -1,14 +1,14 @@
 ---
-description: "史蒂文森 2-18（Stephenson 2-18）的天体数据：2.39×10³¹ kg、直径 2.99×10⁹ km、光度 1.67×10³² W、温度 3,200 K。数据整理自公开天文资料。"
+description: "史蒂文森2-18（Stephenson 2-18）的天体数据：2.39×10³¹ kg、直径 2.99×10⁹ km、光度 1.67×10³² W、温度 3,200 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/stephenson_2_18.webp" alt="史蒂文森 2-18" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/stephenson_2_18.webp" alt="史蒂文森2-18" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>史蒂文森 2-18 <small>Stephenson 2-18</small></h1>
+    <h1>史蒂文森2-18 <small>Stephenson 2-18</small></h1>
     <p class="obj-tagline">位于盾牌座方向的红超巨星，是目前已知体积最大的恒星之一</p>
     <p class="obj-summary">直径 2.99×10⁹ km · 质量 2.39×10³¹ kg</p>
   </div>
@@ -52,4 +52,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../pistol_star/">手枪星</a></p>
 <p class="obj-nav">下一颗：<a href="../arcturus/">大角星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

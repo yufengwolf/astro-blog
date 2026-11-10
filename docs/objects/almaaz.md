@@ -1,14 +1,14 @@
 ---
-description: "御夫座 ε（Epsilon Aurigae）的天体数据：2.99×10³¹ kg、直径 198,970,200 km、光度 1.45×10³¹ W、温度 7,750 K。数据整理自公开天文资料。"
+description: "御夫座ε（Epsilon Aurigae）的天体数据：2.99×10³¹ kg、直径 198,970,200 km、光度 1.45×10³¹ W、温度 7,750 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/almaaz.webp" alt="御夫座 ε" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/almaaz.webp" alt="御夫座ε" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>御夫座 ε <small>Epsilon Aurigae</small></h1>
+    <h1>御夫座ε <small>Epsilon Aurigae</small></h1>
     <p class="obj-tagline">每 27 年才发生一次罕见星食的'柱一'</p>
     <p class="obj-summary">直径 198,970,200 km · 质量 2.99×10³¹ kg</p>
   </div>
@@ -64,6 +64,6 @@ hide:
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../sheliak/">渐台二</a></p>
-<p class="obj-nav">下一颗：<a href="../kepler_452/">开普勒 452</a> →</p>
+<p class="obj-nav">下一颗：<a href="../kepler_452/">开普勒452</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

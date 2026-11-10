@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-10-27",
-    "object_count": 178,
+    "object_count": 177,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -13,12 +13,12 @@
       "NASA NSSDC Jovian/Saturnian/Neptunian/Uranian Satellite Fact Sheets https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html",
       "NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api",
       "Wikipedia 各天体条目（黑洞/星云/星系/星团/大尺度结构，2026-10-24 核对）https://en.wikipedia.org/",
-      "Event Horizon Telescope（M87* / 人马座 A* 黑洞照片）https://eventhorizontelescope.org/",
+      "Event Horizon Telescope（M87* / 人马座A* 黑洞照片）https://eventhorizontelescope.org/",
       "LIGO/Virgo 合作组 · GW190521 探测论文（2020）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102",
       "Wikipedia 各天体条目（著名星云/星系/星团/小天体，2026-10-24 核对）https://en.wikipedia.org/",
       "LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
       "Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/",
-      "诺贝尔物理学奖 2019 新闻稿（飞马座 51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/"
+      "诺贝尔物理学奖 2019 新闻稿（飞马座51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/"
     ],
     "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；北冕座 R 因无可靠距离数据未收录；m7/ngc4755 等 NASA 库无真图的天体保留程序化贴图"
   },
@@ -2031,7 +2031,7 @@
     },
     {
       "id": "stephenson_2_18",
-      "name": "史蒂文森 2-18",
+      "name": "史蒂文森2-18",
       "name_en": "Stephenson 2-18",
       "category": "star",
       "parent": null,
@@ -2388,7 +2388,7 @@
     },
     {
       "id": "sirius_a",
-      "name": "天狼星 A",
+      "name": "天狼星A",
       "name_en": "Sirius A",
       "category": "star",
       "parent": null,
@@ -2575,7 +2575,7 @@
     },
     {
       "id": "sgr_a_star",
-      "name": "人马座 A*",
+      "name": "人马座A*",
       "name_en": "Sagittarius A*",
       "category": "black_hole",
       "parent": "milky_way",
@@ -4053,7 +4053,7 @@
     },
     {
       "id": "m87",
-      "name": "室女座 A（M87）",
+      "name": "室女座A",
       "name_en": "Messier 87",
       "category": "galaxy",
       "parent": "virgo_cluster",
@@ -4757,7 +4757,7 @@
     },
     {
       "id": "m67",
-      "name": "梅西耶 67",
+      "name": "梅西耶67",
       "name_en": "Messier 67",
       "category": "cluster",
       "parent": "milky_way",
@@ -4949,7 +4949,7 @@
     },
     {
       "id": "m22",
-      "name": "梅西耶 22",
+      "name": "梅西耶22",
       "name_en": "Messier 22",
       "category": "cluster",
       "parent": "milky_way",
@@ -5013,7 +5013,7 @@
     },
     {
       "id": "omega_cen",
-      "name": "半人马座 ω",
+      "name": "半人马座ω",
       "name_en": "Omega Centauri",
       "category": "cluster",
       "parent": "milky_way",
@@ -5065,7 +5065,7 @@
       "source_dates": {
         "wiki_omegacen": "2026-10-24"
       },
-      "image_credit": "NASA/JPL-Caltech · WISE 半人马座 ω 球状星团",
+      "image_credit": "NASA/JPL-Caltech · WISE 半人马座ω 球状星团",
       "image_url": "https://images.nasa.gov/details/PIA13125",
       "image_locked": true,
       "srcs": [
@@ -6549,7 +6549,7 @@
     },
     {
       "id": "sirius_b",
-      "name": "天狼 B",
+      "name": "天狼星B",
       "name_en": "Sirius B",
       "category": "star",
       "parent": "sirius_a",
@@ -6610,7 +6610,7 @@
     },
     {
       "id": "eridani_40a",
-      "name": "波江座 40A",
+      "name": "波江座40A",
       "name_en": "40 Eridani A",
       "category": "star",
       "parent": null,
@@ -6671,7 +6671,7 @@
     },
     {
       "id": "eridani_40b",
-      "name": "波江座 40B",
+      "name": "波江座40B",
       "name_en": "40 Eridani B",
       "category": "star",
       "parent": "eridani_40a",
@@ -6705,7 +6705,7 @@
       "spectral_type": "DA4",
       "subtype": "白矮星（DA4）",
       "members": null,
-      "note": "看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座 40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】",
+      "note": "看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】",
       "luminosity_w": 5.163972e+24,
       "distance_ly": 16.35,
       "constellation": "波江座",
@@ -6915,7 +6915,7 @@
     },
     {
       "id": "alphacen_a",
-      "name": "南门二 A",
+      "name": "南门二A",
       "name_en": "Alpha Centauri A",
       "category": "star",
       "parent": null,
@@ -6949,7 +6949,7 @@
       "spectral_type": "G2V",
       "subtype": "黄矮星（G2V 主序星）",
       "members": 3,
-      "note": "光谱、质量与太阳几乎一致的 G2V 恒星；与南门二 B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。",
+      "note": "光谱、质量与太阳几乎一致的 G2V 恒星；与南门二B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。",
       "luminosity_w": 5.814732e+26,
       "distance_ly": 4.37,
       "constellation": "半人马座",
@@ -6976,7 +6976,7 @@
     },
     {
       "id": "alphacen_b",
-      "name": "南门二 B",
+      "name": "南门二B",
       "name_en": "Alpha Centauri B",
       "category": "star",
       "parent": "alphacen_a",
@@ -8135,7 +8135,7 @@
     },
     {
       "id": "uy_scuti",
-      "name": "盾牌座 UY",
+      "name": "盾牌座UY",
       "name_en": "UY Scuti",
       "category": "star",
       "parent": null,
@@ -8684,7 +8684,7 @@
     },
     {
       "id": "almaaz",
-      "name": "御夫座 ε",
+      "name": "御夫座ε",
       "name_en": "Epsilon Aurigae",
       "category": "star",
       "parent": null,
@@ -8745,7 +8745,7 @@
     },
     {
       "id": "kepler_452",
-      "name": "开普勒 452",
+      "name": "开普勒452",
       "name_en": "Kepler-452",
       "category": "star",
       "parent": null,
@@ -8806,7 +8806,7 @@
     },
     {
       "id": "kepler_22",
-      "name": "开普勒 22",
+      "name": "开普勒22",
       "name_en": "Kepler-22",
       "category": "star",
       "parent": null,
@@ -8928,7 +8928,7 @@
     },
     {
       "id": "gliese_581",
-      "name": "格利泽 581",
+      "name": "格利泽581",
       "name_en": "Gliese 581",
       "category": "star",
       "parent": null,
@@ -8989,7 +8989,7 @@
     },
     {
       "id": "kepler_186",
-      "name": "开普勒 186",
+      "name": "开普勒186",
       "name_en": "Kepler-186",
       "category": "star",
       "parent": null,
@@ -9050,7 +9050,7 @@
     },
     {
       "id": "cancri_55",
-      "name": "巨蟹座 55",
+      "name": "巨蟹座55",
       "name_en": "55 Cancri",
       "category": "star",
       "parent": null,
@@ -9084,7 +9084,7 @@
       "spectral_type": "G8V",
       "subtype": "黄矮星（G8V 双星）",
       "members": 2,
-      "note": "已发现 5 颗系外行星的双星系统；其中巨蟹座 55e 是著名的'超级地球'，表面温度足以熔化岩石，可能是一片岩浆海。",
+      "note": "已发现 5 颗系外行星的双星系统；其中巨蟹座55e 是著名的'超级地球'，表面温度足以熔化岩石，可能是一片岩浆海。",
       "luminosity_w": 2.41164e+26,
       "distance_ly": 40.9,
       "constellation": "巨蟹座",
@@ -9111,7 +9111,7 @@
     },
     {
       "id": "pegasi_51",
-      "name": "飞马座 51",
+      "name": "飞马座51",
       "name_en": "51 Pegasi",
       "category": "star",
       "parent": null,
@@ -9145,7 +9145,7 @@
       "spectral_type": "G2IV",
       "subtype": "黄次巨星（G2IV）",
       "members": null,
-      "note": "人类发现的第一颗围绕类太阳恒星的系外行星（飞马座 51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。",
+      "note": "人类发现的第一颗围绕类太阳恒星的系外行星（飞马座51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。",
       "luminosity_w": 5.742e+26,
       "distance_ly": 47.9,
       "constellation": "飞马座",
@@ -9174,7 +9174,7 @@
     },
     {
       "id": "beta_pictoris",
-      "name": "绘架座 β",
+      "name": "绘架座β",
       "name_en": "Beta Pictoris",
       "category": "star",
       "parent": null,
@@ -9208,7 +9208,7 @@
       "spectral_type": "A6V",
       "subtype": "白主序星（A6V）",
       "members": null,
-      "note": "第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座 βb/c）；它还是'绘架座 β 移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
+      "note": "第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座βb/c）；它还是'绘架座β移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
       "luminosity_w": 3.3303599999999997e+27,
       "distance_ly": 63.4,
       "constellation": "绘架座",
@@ -9357,7 +9357,7 @@
     },
     {
       "id": "vanth",
-      "name": "范斯（亡卫一）",
+      "name": "范斯",
       "name_en": "Vanth",
       "category": "moon",
       "parent": "orcus",
@@ -9543,7 +9543,7 @@
       "name": "婚神星",
       "name_en": "Juno",
       "category": "asteroid",
-      "parent": null,
+      "parent": "sun",
       "tagline": "第3号小行星，主带大型石质小行星，最早发现的小行星之一",
       "physical": {
         "mass_kg": 2.67e+19,
@@ -9604,7 +9604,7 @@
       "name": "健神星",
       "name_en": "Hygiea",
       "category": "asteroid",
-      "parent": null,
+      "parent": "sun",
       "tagline": "主小行星带大型小行星，曾被认定为矮行星候选天体",
       "physical": {
         "mass_kg": 8.3e+19,
@@ -9848,7 +9848,7 @@
       "name": "凯龙星",
       "name_en": "Chiron",
       "category": "asteroid",
-      "parent": null,
+      "parent": "sun",
       "tagline": "半人马型小天体，位于土星与天王星之间，兼具彗星特征",
       "physical": {
         "mass_kg": 3.7e+18,
@@ -10149,72 +10149,11 @@
       "image_locked": false
     },
     {
-      "id": "v404_cygni",
-      "name": "天鹅座V404",
-      "name_en": "V404 Cygni",
-      "category": "black_hole",
-      "parent": null,
-      "tagline": "天鹅座恒星级黑洞，低质量X射线双星（三体系统），存在间歇性爆发",
-      "physical": {
-        "mass_kg": 1.791e+31,
-        "radius_km": 26.600638167773084,
-        "density_g_cm3": null,
-        "gravity_m_s2": 1689345638532.421,
-        "escape_velocity_km_s": 299788.5721136228,
-        "mean_temp_c": null,
-        "surface_pressure_bar": null,
-        "albedo": null
-      },
-      "orbit": {
-        "semimajor_axis_km": 20943701.898000002,
-        "orbital_period_days": 6.464925,
-        "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": 0,
-        "obliquity_deg": null,
-        "rotation_period_hours": null
-      },
-      "moons": {
-        "count": null,
-        "notable": []
-      },
-      "rings": null,
-      "magnetic_field": null,
-      "atmosphere": null,
-      "spectral_type": null,
-      "luminosity_w": null,
-      "distance_ly": 7800,
-      "constellation": "天鹅座",
-      "subtype": "恒星级黑洞（黑洞无光谱，伴星K0IV）",
-      "members": "黑洞+K0IV型供体恒星+遥远第三颗伴星，内层双星公转约6.47天",
-      "note": "黑洞质量约9倍太阳质量，史瓦西半径约26.6km；内层双星轨道偏心率近似为0，2015年发生大规模X射线爆发 【2发一致】",
-      "discovery": {
-        "known_since": null,
-        "discoverer": null,
-        "year": null
-      },
-      "sources": [
-        "src_v404_cygni"
-      ],
-      "verified": "2026-10-27",
-      "data_verified": false,
-      "data_source": "llm_doubao",
-      "article": null,
-      "image": "assets/planets/v404_cygni.webp",
-      "source_dates": {
-        "src_v404_cygni": "2026-10-27"
-      },
-      "image_credit": "程序化示意图",
-      "image_url": null,
-      "image_source": "programmatic",
-      "image_locked": false
-    },
-    {
       "id": "51_pegasi_b",
       "name": "飞马座51b",
       "name_en": "51 Pegasi b",
       "category": "planet",
-      "parent": "51_pegasi",
+      "parent": "pegasi_51",
       "tagline": "首颗被发现围绕类太阳恒星运转的热木星",
       "physical": {
         "mass_kg": 6.75e+26,
@@ -10458,7 +10397,7 @@
       "name": "K2-18 b",
       "name_en": "K2-18 b",
       "category": "planet",
-      "parent": "k2-18",
+      "parent": null,
       "tagline": "位于狮子座的系外行星，被认为是氢海行星，大气中检测到二甲硫醚",
       "physical": {
         "mass_kg": null,
@@ -10512,14 +10451,15 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "host_star": "K2-18"
     },
     {
       "id": "lhs_1140_b",
       "name": "LHS 1140 b",
       "name_en": "LHS 1140 b",
       "category": "planet",
-      "parent": "lhs_1140",
+      "parent": null,
       "tagline": "位于宜居带的岩石超级地球，环绕红矮星LHS 1140",
       "physical": {
         "mass_kg": 3.340512e+25,
@@ -10573,14 +10513,15 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "host_star": "LHS 1140"
     },
     {
       "id": "wasp-12_b",
       "name": "WASP-12 b",
       "name_en": "WASP-12 b",
       "category": "planet",
-      "parent": "wasp-12",
+      "parent": null,
       "tagline": "一颗距离母星极近的热木星，正在被恒星潮汐吞噬",
       "physical": {
         "mass_kg": 1.51e+27,
@@ -10634,14 +10575,15 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "host_star": "WASP-12"
     },
     {
       "id": "55_cancri_e",
       "name": "巨蟹座55e",
       "name_en": "55 Cancri e",
       "category": "planet",
-      "parent": "55_cancri_a",
+      "parent": "cancri_55",
       "tagline": "巨蟹座55A周围的超级地球，极热碳行星，被称为钻石行星",
       "physical": {
         "mass_kg": 4.02e+25,
@@ -10702,7 +10644,7 @@
       "name": "HD 189733 b",
       "name_en": "HD 189733 b",
       "category": "planet",
-      "parent": "hd_189733",
+      "parent": null,
       "tagline": "位于狐狸座的热木星，呈深蓝色，存在硅酸盐雨",
       "physical": {
         "mass_kg": 1.13e+27,
@@ -10756,14 +10698,15 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "host_star": "HD 189733"
     },
     {
       "id": "wasp_107_b",
       "name": "WASP-107 b",
       "name_en": "WASP-107 b",
       "category": "planet",
-      "parent": "wasp_107",
+      "parent": null,
       "tagline": "一颗低密度热木星，大气富含甲烷与水蒸气",
       "physical": {
         "mass_kg": null,
@@ -10817,14 +10760,15 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "host_star": "WASP-107"
     },
     {
       "id": "kepler_16b",
       "name": "开普勒16b",
       "name_en": "Kepler-16b",
       "category": "planet",
-      "parent": "kepler_16",
+      "parent": null,
       "tagline": "环绕双星系统开普勒16的系外行星，是首个被证实的环双星行星",
       "physical": {
         "mass_kg": 1.04e+27,
@@ -10878,7 +10822,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "host_star": "开普勒16"
     }
   ],
   "source_registry": {
@@ -11481,10 +11426,6 @@
     "src_gaia_bh1": {
       "name": "Wikipedia · Gaia BH1",
       "url": "https://en.wikipedia.org/wiki/Gaia_BH1"
-    },
-    "src_v404_cygni": {
-      "name": "Wikipedia · V404 Cygni",
-      "url": "https://en.wikipedia.org/wiki/V404_Cygni"
     },
     "src_51_pegasi_b": {
       "name": "Wikipedia · 51 Pegasi b",

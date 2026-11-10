@@ -14,7 +14,7 @@ hide:
   </div>
 </div>
 
-<p class="obj-parent">母天体：<a href="../kepler_452/">开普勒 452</a> · 分类：行星</p>
+<p class="obj-parent">母天体：<a href="../kepler_452/">开普勒452</a> · 分类：行星</p>
 
 
 <div class="solar-embed obj-viz">
@@ -62,4 +62,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../proxima_centauri_b/">比邻星b</a></p>
 <p class="obj-nav">下一颗：<a href="../kepler_22b/">开普勒22b</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

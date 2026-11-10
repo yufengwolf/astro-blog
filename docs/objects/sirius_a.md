@@ -1,14 +1,14 @@
 ---
-description: "天狼星 A（Sirius A）的天体数据：4.1×10³⁰ kg、直径 2,379,294 km、光度 9.57×10²⁷ W、温度 9,940 K。数据整理自公开天文资料。"
+description: "天狼星A（Sirius A）的天体数据：4.1×10³⁰ kg、直径 2,379,294 km、光度 9.57×10²⁷ W、温度 9,940 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_a.webp" alt="天狼星 A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_a.webp" alt="天狼星A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>天狼星 A <small>Sirius A</small></h1>
+    <h1>天狼星A <small>Sirius A</small></h1>
     <p class="obj-tagline">大犬座α的主星，夜空中最亮的恒星，一颗 A 型主序星</p>
     <p class="obj-summary">直径 2,379,294 km · 质量 4.1×10³⁰ kg</p>
   </div>
@@ -67,4 +67,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../vega/">织女星</a></p>
 <p class="obj-nav">下一颗：<a href="../proxima_centauri/">比邻星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

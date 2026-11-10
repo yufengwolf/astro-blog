@@ -1,14 +1,14 @@
 ---
-description: "开普勒 186（Kepler-186）的天体数据：1.08×10³⁰ kg、直径 727,702 km、光度 2.11×10²⁵ W、温度 3,755 K。数据整理自公开天文资料。"
+description: "开普勒186（Kepler-186）的天体数据：1.08×10³⁰ kg、直径 727,702 km、光度 2.11×10²⁵ W、温度 3,755 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_186.webp" alt="开普勒 186" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_186.webp" alt="开普勒186" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>开普勒 186 <small>Kepler-186</small></h1>
+    <h1>开普勒186 <small>Kepler-186</small></h1>
     <p class="obj-tagline">拥有宜居带'地球大小'行星的红矮星</p>
     <p class="obj-summary">直径 727,702 km · 质量 1.08×10³⁰ kg</p>
   </div>
@@ -52,7 +52,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/Kepler-186" target="_blank" rel="noopener">Wikipedia · Kepler-186</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../gliese_581/">格利泽 581</a></p>
-<p class="obj-nav">下一颗：<a href="../cancri_55/">巨蟹座 55</a> →</p>
+<p class="obj-nav">← 上一颗：<a href="../gliese_581/">格利泽581</a></p>
+<p class="obj-nav">下一颗：<a href="../cancri_55/">巨蟹座55</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

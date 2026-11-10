@@ -61,7 +61,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/TRAPPIST-1" target="_blank" rel="noopener">Wikipedia · TRAPPIST-1</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../kepler_22/">开普勒 22</a></p>
-<p class="obj-nav">下一颗：<a href="../gliese_581/">格利泽 581</a> →</p>
+<p class="obj-nav">← 上一颗：<a href="../kepler_22/">开普勒22</a></p>
+<p class="obj-nav">下一颗：<a href="../gliese_581/">格利泽581</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

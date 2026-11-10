@@ -53,7 +53,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/Castor_(star)" target="_blank" rel="noopener">Wikipedia · Castor (star)</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../alphacen_b/">南门二 B</a></p>
+<p class="obj-nav">← 上一颗：<a href="../alphacen_b/">南门二B</a></p>
 <p class="obj-nav">下一颗：<a href="../pollux/">北河三</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

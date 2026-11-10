@@ -14,7 +14,7 @@ hide:
   </div>
 </div>
 
-<p class="obj-parent">分类：小行星</p>
+<p class="obj-parent">母天体：<a href="../sun/">太阳</a> · 分类：小行星</p>
 
 <div class="obj-data-grid">
 <section class="obj-data-block">
@@ -34,7 +34,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">半长轴</th><td>469,737,314 km</td></tr>
+<tr><th scope="row">半长轴</th><td>469,737,314 km（3.14 AU）</td></tr>
 <tr><th scope="row">轨道周期</th><td>5.6 年（2,031 天）</td></tr>
 <tr><th scope="row">平均轨道速度</th><td>16.80 km/s</td></tr>
 <tr><th scope="row">轨道倾角</th><td>3.84°</td></tr>
@@ -63,4 +63,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../juno/">婚神星</a></p>
 <p class="obj-nav">下一颗：<a href="../sedna/">赛德娜</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

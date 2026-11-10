@@ -1,43 +1,61 @@
 {
+  "_convention": [
+    "一、命名总则：name 为规范中文名，与仓库 astro.json 的 name 字节级精确对齐（大小写、空格均有语义，不做任何归一化容错）；不在 name 里塞编号、别名或类型备注，附加信息一律放 alias / info 字段。名字对不上时改数据，不放宽匹配。",
+    "二、编号天体：有通用中文名的用「中文名（编号）」，例如 猎户座大星云（M42）；无通用中文名、仅星表编号的用「编号（中文类别）」，例如 M5（球状星团）。",
+    "三、大小写有语义：多星系统成员用「系统名 + 大写字母」（天狼星A、南门二B），系外行星用「宿主名 + 小写字母」（比邻星b、开普勒16b）。大小写不可忽略；融合按字节精确匹配，禁止 lower / 去空白 / 去括号 / 星尾差异等容错，未命中即报错。",
+    "四、天然卫星用「主星简称 + 卫 + 中文序号（西方名）」，例如 木卫一（伊奥）；引力波事件、类星体等非正式天体须显式标注性质。",
+    "五、格式：括号统一全角「（）」；名称内禁止斜杠「/」；罗马数字用半角 I/II/III；拉丁编号与序号间保留一个半角空格（IC 10、NGC 147），中文与类别词之间不加空格。",
+    "六、type 只写纯粹类型名（光谱型/形态/类别），补充说明与不确定表述一律放 info；category 取自受控词表：宇宙结构/星系/星云/恒星/行星/卫星/星团/矮行星/小行星/彗星/黑洞/其他。",
+    "七、归属严格：每个节点的父节点必须反映真实引力从属或包含关系。已确证的精确挂接；无确证依据的放进明确标注「归属未细化」的容器，绝不按类别臆测塞进某个超星系团或旋臂。",
+    "八、本文件是「宇宙层级」章节的唯一事实源；astro.json 提供天体详情与 parent 链。改任一数据源后随 mkdocs build 自动重生页面。"
+  ],
   "name": "可观测宇宙",
   "type": "宇宙边界",
-  "info": "半径约465亿光年，ΛCDM标准模型",
+  "category": "宇宙结构",
+  "info": "半径约 465 亿光年，基于 ΛCDM 标准宇宙学模型",
   "source": "NASA / ΛCDM",
   "children": [
     {
       "name": "双鱼-鲸鱼座超星系团复合体",
       "type": "超星系团复合体",
-      "info": "拉尼亚凯亚超星系团隶属于该复合体",
+      "category": "宇宙结构",
+      "info": "拉尼亚凯亚超星系团所属的更大尺度纤维结构",
       "source": "Tully et al. 2014",
       "children": [
         {
           "name": "拉尼亚凯亚超星系团",
           "type": "超星系团",
-          "info": "引力中心：巨引源；包含本星系群、室女座星系团、M81星系群",
+          "category": "宇宙结构",
+          "info": "引力中心为巨引源；包含本星系群、室女座星系团、M81 星系群等",
           "source": "Tully et al. 2014",
           "children": [
             {
               "name": "本星系群",
               "type": "星系群",
-              "info": "约50余个星系，无中心巨椭圆星系",
+              "category": "宇宙结构",
+              "info": "约 50 余个星系，无中心巨椭圆星系",
               "source": "NASA",
               "children": [
                 {
                   "name": "银河系",
                   "type": "棒旋星系",
-                  "info": "直径约10万光年，包含数千亿恒星",
+                  "category": "星系",
+                  "info": "直径约 10 万光年，包含数千亿颗恒星",
                   "source": "ESA",
                   "children": [
                     {
                       "name": "银核",
                       "type": "星系核心区域",
-                      "info": "高密度恒星核心，包含中心黑洞",
+                      "category": "宇宙结构",
+                      "info": "高密度恒星核心，包含中心超大质量黑洞",
                       "source": "EHT",
                       "children": [
                         {
-                          "name": "人马座A* (Sgr A*)",
+                          "name": "人马座A*",
+                          "alias": "Sgr A*",
                           "type": "超大质量黑洞",
-                          "info": "银河系中心黑洞，430万倍太阳质量",
+                          "category": "黑洞",
+                          "info": "银河系中心黑洞，约 430 万倍太阳质量",
                           "source": "EHT 2022"
                         }
                       ]
@@ -45,24 +63,28 @@
                     {
                       "name": "银盘",
                       "type": "星系盘",
+                      "category": "宇宙结构",
                       "info": "银河系恒星、星云主要分布区域，分为多条旋臂",
                       "source": "ESA",
                       "children": [
                         {
                           "name": "盾牌-半人马臂",
                           "type": "主旋臂",
+                          "category": "宇宙结构",
                           "info": "银河系内侧主旋臂",
                           "children": [
                             {
                               "name": "海山二",
-                              "type": "高光度蓝变星（双星系统）",
-                              "info": "质量巨大，不稳定，高光度蓝变星",
+                              "type": "高光度蓝变星",
+                              "category": "恒星",
+                              "info": "双星系统；质量巨大、极不稳定，光度极高",
                               "source": "ESA"
                             },
                             {
                               "name": "老人星",
-                              "type": "黄超巨星",
-                              "info": "全天第二亮恒星",
+                              "type": "亮巨星",
+                              "category": "恒星",
+                              "info": "全天第二亮恒星，光谱型 A9 II",
                               "source": "NASA"
                             }
                           ]
@@ -70,63 +92,97 @@
                         {
                           "name": "英仙臂",
                           "type": "主旋臂",
-                          "info": "外侧主旋臂，大量亮星云、星团",
+                          "category": "宇宙结构",
+                          "info": "外侧主旋臂，含大量亮星云与星团",
                           "children": [
                             {
-                              "name": "M36 疏散星团",
+                              "name": "M36（疏散星团）",
+                              "alias": "M36",
                               "type": "疏散星团",
-                              "info": "年轻星团"
+                              "category": "星团",
+                              "info": "年轻疏散星团"
                             },
                             {
-                              "name": "M37 疏散星团",
+                              "name": "M37（疏散星团）",
+                              "alias": "M37",
                               "type": "疏散星团",
+                              "category": "星团",
                               "info": "银河系最富疏散星团之一"
                             },
                             {
-                              "name": "M38 疏散星团",
-                              "type": "疏散星团"
+                              "name": "M38（疏散星团）",
+                              "alias": "M38",
+                              "type": "疏散星团",
+                              "category": "星团"
                             }
                           ]
                         },
                         {
                           "name": "猎户臂（本地臂）",
                           "type": "次级旋臂",
-                          "info": "我们所在的次级旋臂，太阳就在这里",
+                          "category": "宇宙结构",
+                          "info": "太阳所在的次级旋臂",
                           "source": "NASA",
                           "children": [
                             {
                               "name": "太阳系统",
                               "type": "恒星系统",
-                              "info": "G2V黄矮星，太阳系引力中心",
+                              "category": "宇宙结构",
+                              "info": "G2V 黄矮星太阳的引力系统",
                               "source": "NASA",
                               "children": [
                                 {
+                                  "name": "太阳",
+                                  "type": "G2V 黄矮星",
+                                  "category": "恒星",
+                                  "info": "太阳系中心恒星，独占太阳系总质量 99.86%"
+                                },
+                                {
                                   "name": "内行星系统",
                                   "type": "行星分组",
+                                  "category": "宇宙结构",
                                   "children": [
                                     {
                                       "name": "水星",
                                       "type": "类地行星",
+                                      "category": "行星",
                                       "info": "无卫星"
                                     },
                                     {
                                       "name": "金星",
                                       "type": "类地行星",
+                                      "category": "行星",
                                       "info": "无卫星"
                                     },
                                     {
                                       "name": "地球",
                                       "type": "类地行星",
+                                      "category": "行星",
                                       "children": [
-                                        { "name": "月球", "type": "天然卫星" }
+                                        {
+                                          "name": "月球",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
                                       ]
                                     },
                                     {
                                       "name": "火星",
                                       "type": "类地行星",
+                                      "category": "行星",
                                       "children": [
-                                        { "name": "火卫一（福波斯）", "type": "天然卫星" },
-                                        { "name": "火卫二（德莫斯）", "type": "天然卫星" }
+                                        {
+                                          "name": "火卫一",
+                                          "alias": "福波斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "火卫二",
+                                          "alias": "德莫斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
                                       ]
                                     }
                                   ]
@@ -134,66 +190,217 @@
                                 {
                                   "name": "主小行星带",
                                   "type": "小行星带",
+                                  "category": "宇宙结构",
                                   "children": [
-                                    { "name": "谷神星", "type": "矮行星" },
-                                    { "name": "灶神星", "type": "原行星" },
-                                    { "name": "智神星", "type": "小行星" },
-                                    { "name": "婚神星", "type": "小行星" },
-                                    { "name": "健神星", "type": "小行星" }
+                                    {
+                                      "name": "谷神星",
+                                      "type": "矮行星",
+                                      "category": "矮行星"
+                                    },
+                                    {
+                                      "name": "灶神星",
+                                      "type": "原行星",
+                                      "category": "小行星"
+                                    },
+                                    {
+                                      "name": "智神星",
+                                      "type": "小行星",
+                                      "category": "小行星"
+                                    },
+                                    {
+                                      "name": "婚神星",
+                                      "type": "小行星",
+                                      "category": "小行星"
+                                    },
+                                    {
+                                      "name": "健神星",
+                                      "type": "小行星",
+                                      "category": "小行星"
+                                    }
                                   ]
                                 },
                                 {
                                   "name": "外行星系统",
                                   "type": "行星分组",
+                                  "category": "宇宙结构",
                                   "children": [
                                     {
                                       "name": "木星",
                                       "type": "气态巨行星",
-                                      "info": "已知卫星极多，这里列出知名大卫星",
+                                      "category": "行星",
+                                      "info": "已知卫星极多，此处列出知名大卫星",
                                       "children": [
-                                        { "name": "木卫一（伊奥）", "type": "天然卫星" },
-                                        { "name": "木卫二（欧罗巴）", "type": "天然卫星" },
-                                        { "name": "木卫三（盖尼米德）", "type": "天然卫星" },
-                                        { "name": "木卫四（卡利斯托）", "type": "天然卫星" },
-                                        { "name": "木卫五（阿马尔忒亚）", "type": "天然卫星" },
-                                        { "name": "木卫六（希玛利亚）", "type": "天然卫星" },
-                                        { "name": "木卫七（伊拉拉）", "type": "天然卫星" },
-                                        { "name": "木卫八（帕西法尔）", "type": "天然卫星" }
+                                        {
+                                          "name": "木卫一",
+                                          "alias": "伊奥",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫二",
+                                          "alias": "欧罗巴",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫三",
+                                          "alias": "盖尼米德",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫四",
+                                          "alias": "卡利斯托",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫五",
+                                          "alias": "阿马尔忒亚",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫六",
+                                          "alias": "希玛利亚",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫七",
+                                          "alias": "伊拉拉",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "木卫八",
+                                          "alias": "帕西法尔",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
                                       ]
                                     },
                                     {
                                       "name": "土星",
                                       "type": "气态巨行星",
+                                      "category": "行星",
                                       "info": "行星环系统，卫星数量极多，列出经典知名卫星",
                                       "children": [
-                                        { "name": "土卫六（泰坦）", "type": "天然卫星" },
-                                        { "name": "土卫二（恩克拉多斯）", "type": "天然卫星" },
-                                        { "name": "土卫一（弥玛斯）", "type": "天然卫星" },
-                                        { "name": "土卫三（忒堤斯）", "type": "天然卫星" },
-                                        { "name": "土卫四（狄俄涅）", "type": "天然卫星" },
-                                        { "name": "土卫五（瑞亚）", "type": "天然卫星" },
-                                        { "name": "土卫八（伊阿珀托斯）", "type": "天然卫星" },
-                                        { "name": "土卫九（菲比）", "type": "天然卫星" }
+                                        {
+                                          "name": "土卫六",
+                                          "alias": "泰坦",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫二",
+                                          "alias": "恩克拉多斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫一",
+                                          "alias": "弥玛斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫三",
+                                          "alias": "忒堤斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫四",
+                                          "alias": "狄俄涅",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫五",
+                                          "alias": "瑞亚",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫八",
+                                          "alias": "伊阿珀托斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫九",
+                                          "alias": "菲比",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "土卫七",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
                                       ]
                                     },
                                     {
                                       "name": "天王星",
                                       "type": "冰巨行星",
+                                      "category": "行星",
                                       "children": [
-                                        { "name": "天卫一（艾瑞尔）", "type": "天然卫星" },
-                                        { "name": "天卫二（乌姆布里尔）", "type": "天然卫星" },
-                                        { "name": "天卫三（泰坦妮亚）", "type": "天然卫星" },
-                                        { "name": "天卫四（奥伯龙）", "type": "天然卫星" },
-                                        { "name": "天卫五（米兰达）", "type": "天然卫星" }
+                                        {
+                                          "name": "天卫一",
+                                          "alias": "艾瑞尔",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "天卫二",
+                                          "alias": "乌姆布里尔",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "天卫三",
+                                          "alias": "泰坦妮亚",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "天卫四",
+                                          "alias": "奥伯龙",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "天卫五",
+                                          "alias": "米兰达",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
                                       ]
                                     },
                                     {
                                       "name": "海王星",
                                       "type": "冰巨行星",
+                                      "category": "行星",
                                       "children": [
-                                        { "name": "海卫一（特里同）", "type": "天然卫星" },
-                                        { "name": "海卫二（涅瑞伊得）", "type": "天然卫星" },
-                                        { "name": "海卫八（普洛透斯）", "type": "天然卫星" }
+                                        {
+                                          "name": "海卫一",
+                                          "alias": "特里同",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "海卫二",
+                                          "alias": "涅瑞伊得",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "海卫八",
+                                          "alias": "普洛透斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
                                       ]
                                     }
                                   ]
@@ -201,277 +408,1021 @@
                                 {
                                   "name": "柯伊伯带",
                                   "type": "外海王星天体带",
+                                  "category": "宇宙结构",
                                   "children": [
-                                    { "name": "冥王星", "type": "矮行星", "children": [{"name":"冥卫一（卡戎）","type":"天然卫星"},{"name":"冥卫二（尼克斯）","type":"天然卫星"},{"name":"冥卫三（许德拉）","type":"天然卫星"}] },
-                                    { "name": "阋神星", "type": "矮行星" },
-                                    { "name": "妊神星", "type": "矮行星" },
-                                    { "name": "鸟神星", "type": "矮行星" },
-                                    { "name": "亡神星", "type": "矮行星" }
+                                    {
+                                      "name": "冥王星",
+                                      "type": "矮行星",
+                                      "category": "矮行星",
+                                      "children": [
+                                        {
+                                          "name": "冥卫一",
+                                          "alias": "卡戎",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "冥卫二",
+                                          "alias": "尼克斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        },
+                                        {
+                                          "name": "冥卫三",
+                                          "alias": "许德拉",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "阋神星",
+                                      "type": "矮行星",
+                                      "category": "矮行星",
+                                      "children": [
+                                        {
+                                          "name": "阋卫一",
+                                          "type": "天然卫星",
+                                          "category": "卫星"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "妊神星",
+                                      "type": "矮行星",
+                                      "category": "矮行星"
+                                    },
+                                    {
+                                      "name": "鸟神星",
+                                      "type": "矮行星",
+                                      "category": "矮行星"
+                                    },
+                                    {
+                                      "name": "亡神星",
+                                      "type": "矮行星",
+                                      "category": "矮行星",
+                                      "children": [
+                                        {
+                                          "name": "范斯",
+                                          "type": "天然卫星",
+                                          "category": "卫星",
+                                          "alias": "亡卫一"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "共工星",
+                                      "type": "矮行星",
+                                      "category": "矮行星",
+                                      "info": "离散盘天体"
+                                    },
+                                    {
+                                      "name": "赛德娜",
+                                      "type": "矮行星",
+                                      "category": "矮行星",
+                                      "info": "内奥尔特云／离散盘天体"
+                                    },
+                                    {
+                                      "name": "创神星",
+                                      "type": "矮行星",
+                                      "category": "矮行星",
+                                      "info": "经典柯伊伯带天体"
+                                    }
                                   ]
                                 },
                                 {
                                   "name": "奥尔特云",
                                   "type": "彗星储库",
+                                  "category": "宇宙结构",
                                   "info": "太阳系最外层边界"
+                                },
+                                {
+                                  "name": "哈雷彗星",
+                                  "type": "彗星",
+                                  "category": "彗星",
+                                  "info": "周期约 76 年的短周期彗星"
+                                },
+                                {
+                                  "name": "凯龙星",
+                                  "type": "半人马小行星",
+                                  "category": "小行星",
+                                  "info": "轨道介于土星与天王星之间的半人马天体"
                                 }
                               ]
                             },
                             {
-                              "name": "南门二（半人马α）三合星系统",
-                              "type": "多星系统",
-                              "info": "距离太阳4.37光年",
-                              "source": "ESA",
+                              "name": "本地泡（太阳邻域恒星系统）",
+                              "type": "恒星分组",
+                              "category": "宇宙结构",
+                              "info": "太阳周边约数百光年内的近邻恒星与恒星系统，均位于本地臂",
                               "children": [
-                                { "name": "南门二A", "type": "G2V主序星" },
-                                { "name": "南门二B", "type": "K1V橙色矮星" },
                                 {
-                                  "name": "比邻星（南门二C）",
-                                  "type": "M5.5V红矮星",
-                                  "info": "距离太阳4.22光年，离我们最近恒星",
+                                  "name": "南门二",
+                                  "alias": "半人马座α",
+                                  "type": "三合星系统",
+                                  "category": "恒星",
+                                  "info": "距离太阳约 4.37 光年",
+                                  "source": "ESA",
                                   "children": [
-                                    { "name": "比邻星b", "type": "系外行星（已确认，宜居带类地）" },
-                                    { "name": "比邻星c", "type": "系外行星（候选，超级地球）" },
-                                    { "name": "比邻星d", "type": "系外行星（已确认，极小类地）" }
+                                    {
+                                      "name": "南门二A",
+                                      "type": "G2V 主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "南门二B",
+                                      "type": "K1V 橙矮星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "比邻星",
+                                      "alias": "南门二C",
+                                      "type": "M5.5V 红矮星",
+                                      "category": "恒星",
+                                      "info": "距离太阳约 4.22 光年，离我们最近的恒星",
+                                      "children": [
+                                        {
+                                          "name": "比邻星b",
+                                          "type": "系外行星",
+                                          "category": "行星",
+                                          "info": "位于宜居带的类地行星"
+                                        },
+                                        {
+                                          "name": "比邻星c",
+                                          "type": "系外行星",
+                                          "category": "行星",
+                                          "info": "候选超级地球，存在争议"
+                                        },
+                                        {
+                                          "name": "比邻星d",
+                                          "type": "系外行星",
+                                          "category": "行星",
+                                          "info": "已确认的极小类地行星"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "巴纳德星",
+                                  "type": "M4V 红矮星",
+                                  "category": "恒星",
+                                  "info": "距离约 5.96 光年，自行极高；巴纳德星 b 已证伪",
+                                  "source": "NASA"
+                                },
+                                {
+                                  "name": "天狼星",
+                                  "type": "双星系统",
+                                  "category": "恒星",
+                                  "info": "全天最亮恒星，距离约 8.6 光年",
+                                  "source": "NASA",
+                                  "children": [
+                                    {
+                                      "name": "天狼星A",
+                                      "type": "A1V 主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "天狼星B",
+                                      "type": "白矮星",
+                                      "category": "恒星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "南河三",
+                                  "type": "双星系统",
+                                  "category": "恒星",
+                                  "info": "距离约 11.4 光年",
+                                  "source": "NASA",
+                                  "children": [
+                                    {
+                                      "name": "南河三A",
+                                      "type": "F5IV 主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "南河三B",
+                                      "type": "白矮星",
+                                      "category": "恒星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "织女星",
+                                  "type": "A0V 主序星",
+                                  "category": "恒星",
+                                  "info": "天琴座 α，距离约 25 光年",
+                                  "source": "NASA"
+                                },
+                                {
+                                  "name": "大角星",
+                                  "type": "红巨星",
+                                  "category": "恒星",
+                                  "info": "牧夫座 α，光谱型 K0 III，距离约 37 光年",
+                                  "source": "NASA"
+                                },
+                                {
+                                  "name": "河鼓二",
+                                  "alias": "牛郎星",
+                                  "type": "A7V 主序星",
+                                  "category": "恒星",
+                                  "info": "天鹰座 α，距离约 16.7 光年",
+                                  "source": "NASA"
+                                },
+                                {
+                                  "name": "毕宿五",
+                                  "type": "红巨星",
+                                  "category": "恒星",
+                                  "info": "金牛座 α，光谱型 K5 III",
+                                  "source": "NASA"
+                                },
+                                {
+                                  "name": "五车二",
+                                  "alias": "御夫座α",
+                                  "type": "四合星系统",
+                                  "category": "恒星",
+                                  "info": "两对双星互相绕转，距离约 42 光年",
+                                  "source": "NASA",
+                                  "children": [
+                                    {
+                                      "name": "五车二Aa",
+                                      "type": "G 型巨星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "五车二Ab",
+                                      "type": "G 型巨星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "五车二Ba",
+                                      "type": "M 型矮星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "五车二Bb",
+                                      "type": "M 型矮星",
+                                      "category": "恒星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "北河二",
+                                  "alias": "双子座α",
+                                  "type": "六合星系统",
+                                  "category": "恒星",
+                                  "info": "三组双星构成，距离约 51 光年",
+                                  "source": "NASA",
+                                  "children": [
+                                    {
+                                      "name": "北河二A1",
+                                      "type": "A 型主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "北河二A2",
+                                      "type": "A 型主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "北河二B1",
+                                      "type": "A 型主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "北河二B2",
+                                      "type": "A 型主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "北河二C1",
+                                      "type": "M 型矮星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "北河二C2",
+                                      "type": "M 型矮星",
+                                      "category": "恒星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "北河三",
+                                  "alias": "双子座β",
+                                  "type": "红巨星",
+                                  "category": "恒星",
+                                  "info": "光谱型 K0 III；拥有行星北河三b（Thestias）",
+                                  "source": "NASA",
+                                  "children": [
+                                    {
+                                      "name": "北河三b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "已确认的气态巨行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "特拉比斯特 1",
+                                  "alias": "TRAPPIST-1",
+                                  "type": "恒星系统",
+                                  "category": "恒星",
+                                  "info": "M8V 红矮星，距离约 40 光年；7 颗类地行星，多颗位于宜居带",
+                                  "children": [
+                                    {
+                                      "name": "TRAPPIST-1 b",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    },
+                                    {
+                                      "name": "TRAPPIST-1 c",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    },
+                                    {
+                                      "name": "TRAPPIST-1 d",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    },
+                                    {
+                                      "name": "TRAPPIST-1 e",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "位于宜居带"
+                                    },
+                                    {
+                                      "name": "TRAPPIST-1 f",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "位于宜居带"
+                                    },
+                                    {
+                                      "name": "TRAPPIST-1 g",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "位于宜居带"
+                                    },
+                                    {
+                                      "name": "TRAPPIST-1 h",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "格利泽581",
+                                  "alias": "Gliese 581",
+                                  "type": "M 型红矮星",
+                                  "category": "恒星",
+                                  "info": "距离约 20 光年；格利泽581g/d 存在争议，未被确认",
+                                  "children": [
+                                    {
+                                      "name": "格利泽581b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "已确认"
+                                    },
+                                    {
+                                      "name": "格利泽581c",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "已确认"
+                                    },
+                                    {
+                                      "name": "格利泽581e",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "已确认"
+                                    },
+                                    {
+                                      "name": "格利泽581g",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "存在争议，未确认"
+                                    }
                                   ]
                                 }
                               ]
-                            },
-                            {
-                              "name": "巴纳德星",
-                              "type": "M4V红矮星",
-                              "info": "距离5.96光年，自行很高；巴纳德星b已证伪",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "天狼星双星系统",
-                              "type": "双星系统",
-                              "info": "全天最亮恒星，距离8.6光年",
-                              "source": "NASA",
-                              "children": [
-                                { "name": "天狼星A", "type": "A1V主序星" },
-                                { "name": "天狼星B", "type": "白矮星伴星" }
-                              ]
-                            },
-                            {
-                              "name": "南河三双星系统",
-                              "type": "双星系统",
-                              "info": "距离11.4光年",
-                              "source": "NASA",
-                              "children": [
-                                { "name": "南河三A", "type": "F5IV主序星" },
-                                { "name": "南河三B", "type": "白矮星伴星" }
-                              ]
-                            },
-                            {
-                              "name": "织女星",
-                              "type": "A0V主序星",
-                              "info": "天琴座α，距离25光年",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "大角星",
-                              "type": "红巨星",
-                              "info": "牧夫座α，距离37光年",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "牛郎星（河鼓二）",
-                              "type": "A7V主序星",
-                              "info": "天鹰座α，距离16.7光年",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "天津四",
-                              "type": "蓝超巨星",
-                              "info": "天鹅座α，距离约2600光年",
-                              "source": "ESA"
-                            },
-                            {
-                              "name": "心宿二",
-                              "type": "红超巨星",
-                              "info": "天蝎座α",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "毕宿五",
-                              "type": "红巨星",
-                              "info": "金牛座α",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "五车二（御夫座α）四星系统",
-                              "type": "四星系统",
-                              "info": "两对双星互相绕转",
-                              "source": "NASA",
-                              "children": [
-                                { "name": "五车二Aa", "type": "G型巨星" },
-                                { "name": "五车二Ab", "type": "G型巨星" },
-                                { "name": "五车二Ba", "type": "M型矮星" },
-                                { "name": "五车二Bb", "type": "M型矮星" }
-                              ]
-                            },
-                            {
-                              "name": "北河二（双子座α）六合星系统",
-                              "type": "六合星系统",
-                              "info": "三组双星构成",
-                              "source": "NASA",
-                              "children": [
-                                { "name": "北河二A1/A2", "type": "双星对子" },
-                                { "name": "北河二B1/B2", "type": "双星对子" },
-                                { "name": "北河二C1/C2", "type": "双星对子" }
-                              ]
-                            },
-                            {
-                              "name": "北河三（双子座β）",
-                              "type": "红巨星",
-                              "info": "拥有行星北河三b（Thestias）",
-                              "source": "NASA",
-                              "children": [
-                                { "name": "北河三b", "type": "系外行星（已确认，气态巨行星）" }
-                              ]
-                            },
-                            {
-                              "name": "盾牌座UY",
-                              "type": "红超巨星",
-                              "info": "体积巨大的红超巨星",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "史蒂文森2-18",
-                              "type": "红超巨星",
-                              "info": "已知体积最大红超巨星之一",
-                              "source": "NASA"
-                            },
-                            {
-                              "name": "TRAPPIST-1系统",
-                              "type": "恒星系统",
-                              "info": "M8V红矮星，7颗类地行星，多颗宜居带",
-                              "children": [
-                                { "name": "TRAPPIST-1 b", "type": "系外行星" },
-                                { "name": "TRAPPIST-1 c", "type": "系外行星" },
-                                { "name": "TRAPPIST-1 d", "type": "系外行星" },
-                                { "name": "TRAPPIST-1 e", "type": "系外行星（宜居带）" },
-                                { "name": "TRAPPIST-1 f", "type": "系外行星（宜居带）" },
-                                { "name": "TRAPPIST-1 g", "type": "系外行星（宜居带）" },
-                                { "name": "TRAPPIST-1 h", "type": "系外行星" }
-                              ]
-                            },
-                            {
-                              "name": "开普勒-452系统",
-                              "type": "恒星系统",
-                              "children": [
-                                { "name": "开普勒452b", "type": "系外行星（超级地球，候选宜居）" }
-                              ]
-                            },
-                            {
-                              "name": "开普勒-22系统",
-                              "type": "恒星系统",
-                              "children": [
-                                { "name": "开普勒22b", "type": "系外行星（超级地球）" }
-                              ]
-                            },
-                            {
-                              "name": "开普勒-16双星系统",
-                              "type": "双星系统",
-                              "children": [
-                                { "name": "开普勒16A", "type": "主序星" },
-                                { "name": "开普勒16B", "type": "红矮星" },
-                                { "name": "开普勒16b", "type": "系外行星（环双星行星）" }
-                              ]
-                            },
-                            {
-                              "name": "PSR B1257+12 脉冲星系统",
-                              "type": "脉冲星系统",
-                              "info": "人类最早发现的系外行星宿主",
-                              "children": [
-                                { "name": "PSR B1257+12 b", "type": "脉冲星行星" },
-                                { "name": "PSR B1257+12 c", "type": "脉冲星行星" },
-                                { "name": "PSR B1257+12 d", "type": "脉冲星行星" }
-                              ]
-                            },
-                            {
-                              "name": "格利泽581",
-                              "type": "M型红矮星",
-                              "info": "格利泽581g/d存在争议，未被确认",
-                              "children": [
-                                { "name": "格利泽581b", "type": "系外行星（已确认）" },
-                                { "name": "格利泽581c", "type": "系外行星（已确认）" },
-                                { "name": "格利泽581e", "type": "系外行星（已确认）" },
-                                { "name": "格利泽581g", "type": "系外行星（争议）" }
-                              ]
-                            },
-                            {
-                              "name": "M42 猎户座大星云",
-                              "type": "发射星云",
-                              "info": "恒星形成区"
-                            },
-                            {
-                              "name": "M16 鹰星云（创生之柱）",
-                              "type": "发射星云",
-                              "info": "恒星形成区"
-                            },
-                            {
-                              "name": "M1 蟹状星云",
-                              "type": "超新星遗迹",
-                              "info": "1054年超新星爆发遗迹"
-                            },
-                            {
-                              "name": "M78 星云",
-                              "type": "反射星云",
-                              "info": "猎户座反射星云"
-                            },
-                            {
-                              "name": "马头星云",
-                              "type": "暗星云",
-                              "info": "巴纳德33"
-                            },
-                            {
-                              "name": "M57 环状星云",
-                              "type": "行星状星云"
-                            },
-                            {
-                              "name": "M27 哑铃星云",
-                              "type": "行星状星云"
                             }
                           ]
                         },
                         {
                           "name": "人马臂",
                           "type": "主旋臂",
+                          "category": "宇宙结构",
                           "info": "内侧主旋臂"
                         },
                         {
                           "name": "外缘臂",
                           "type": "旋臂",
+                          "category": "宇宙结构",
                           "info": "银河系最外侧旋臂"
+                        },
+                        {
+                          "name": "银河系内著名天体（旋臂归属未细化）",
+                          "type": "天体分组",
+                          "category": "宇宙结构",
+                          "info": "距离较远、缺乏可靠旋臂归属依据的银河系内天体；不臆测具体旋臂",
+                          "children": [
+                            {
+                              "name": "恒星（旋臂归属未细化）",
+                              "type": "恒星分组",
+                              "category": "宇宙结构",
+                              "info": "本站收录但缺乏可靠旋臂归属依据的银河系内恒星",
+                              "children": [
+                                {
+                                  "name": "手枪星",
+                                  "type": "高光度蓝变星",
+                                  "category": "恒星",
+                                  "info": "位于银河系中心方向"
+                                },
+                                {
+                                  "name": "参宿七",
+                                  "type": "蓝超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "参宿四",
+                                  "type": "红超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "波江座40A",
+                                  "type": "K1V 橙矮星",
+                                  "category": "恒星",
+                                  "info": "波江座 40 三合星系统主星，距约 16 光年"
+                                },
+                                {
+                                  "name": "波江座40B",
+                                  "type": "白矮星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "船帆脉冲星",
+                                  "type": "脉冲星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "SGR 1806-20",
+                                  "type": "磁星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "角宿一",
+                                  "type": "B 型主序星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "轩辕十四",
+                                  "type": "B 型主序星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "北落师门",
+                                  "type": "A 型主序星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "天船三",
+                                  "type": "F 型超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "娄宿三",
+                                  "type": "K 型巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "室宿一",
+                                  "type": "B 型主序星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "壁宿二",
+                                  "type": "B 型主序星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "奎宿九",
+                                  "type": "M 型红巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "弧矢一",
+                                  "type": "F 型超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "弧矢七",
+                                  "type": "B 型超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "弧矢二",
+                                  "type": "B 型超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "造父四",
+                                  "type": "红超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "仙王座 RW",
+                                  "type": "红超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "英仙座 S",
+                                  "type": "红超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "蒭藁增二",
+                                  "type": "米拉变星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "天鹅座 P",
+                                  "type": "高光度蓝变星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "弧矢增二十二",
+                                  "type": "O 型星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "大陵五",
+                                  "type": "食双星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "渐台二",
+                                  "type": "食双星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "御夫座ε",
+                                  "type": "F 型超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "开普勒186",
+                                  "type": "红矮星",
+                                  "category": "恒星",
+                                  "alias": "Kepler-186"
+                                },
+                                {
+                                  "name": "巨蟹座55",
+                                  "type": "K 型主序星",
+                                  "category": "恒星",
+                                  "alias": "55 Cancri",
+                                  "children": [
+                                    {
+                                      "name": "巨蟹座55e",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "alias": "55 Cancri e"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "飞马座51",
+                                  "type": "G 型主序星",
+                                  "category": "恒星",
+                                  "alias": "51 Pegasi",
+                                  "children": [
+                                    {
+                                      "name": "飞马座51b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "alias": "51 Pegasi b",
+                                      "info": "1995 年发现，首颗围绕类太阳恒星确认的系外行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "绘架座β",
+                                  "type": "A 型主序星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "天津四",
+                                  "type": "蓝超巨星",
+                                  "category": "恒星",
+                                  "info": "天鹅座 α，光谱型 A2 Ia，距约 2600 光年"
+                                },
+                                {
+                                  "name": "心宿二",
+                                  "type": "红超巨星",
+                                  "category": "恒星",
+                                  "info": "天蝎座 α"
+                                },
+                                {
+                                  "name": "盾牌座UY",
+                                  "type": "红超巨星",
+                                  "category": "恒星"
+                                },
+                                {
+                                  "name": "史蒂文森2-18",
+                                  "type": "红超巨星",
+                                  "category": "恒星",
+                                  "info": "已知体积最大的红超巨星之一"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "星云（旋臂归属未细化）",
+                              "type": "星云分组",
+                              "category": "宇宙结构",
+                              "info": "本站收录但缺乏可靠旋臂归属依据的银河系内星云",
+                              "children": [
+                                {
+                                  "name": "三叶星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "M20"
+                                },
+                                {
+                                  "name": "礁湖星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "M8"
+                                },
+                                {
+                                  "name": "螺旋星云",
+                                  "type": "行星状星云",
+                                  "category": "星云",
+                                  "alias": "NGC 7293"
+                                },
+                                {
+                                  "name": "双喷射星星云",
+                                  "type": "行星状星云",
+                                  "category": "星云",
+                                  "alias": "M2-9"
+                                },
+                                {
+                                  "name": "玫瑰星云",
+                                  "type": "发射星云",
+                                  "category": "星云"
+                                },
+                                {
+                                  "name": "巴纳德环",
+                                  "type": "发射星云",
+                                  "category": "星云"
+                                },
+                                {
+                                  "name": "天鹅星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "M17"
+                                },
+                                {
+                                  "name": "船底座星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "NGC 3372"
+                                },
+                                {
+                                  "name": "北美洲星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "NGC 7000"
+                                },
+                                {
+                                  "name": "猎户座大星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "M42",
+                                  "info": "恒星形成区"
+                                },
+                                {
+                                  "name": "鹰状星云",
+                                  "type": "发射星云",
+                                  "category": "星云",
+                                  "alias": "M16",
+                                  "info": "恒星形成区，含创生之柱"
+                                },
+                                {
+                                  "name": "蟹状星云",
+                                  "type": "超新星遗迹",
+                                  "category": "星云",
+                                  "alias": "M1",
+                                  "info": "1054 年超新星爆发遗迹",
+                                  "children": [
+                                    {
+                                      "name": "蟹云脉冲星",
+                                      "type": "脉冲星",
+                                      "category": "恒星",
+                                      "info": "超新星遗迹中心的脉冲星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "M78（反射星云）",
+                                  "type": "反射星云",
+                                  "category": "星云",
+                                  "alias": "M78"
+                                },
+                                {
+                                  "name": "马头星云",
+                                  "type": "暗星云",
+                                  "category": "星云",
+                                  "alias": "巴纳德33"
+                                },
+                                {
+                                  "name": "环状星云",
+                                  "type": "行星状星云",
+                                  "category": "星云",
+                                  "alias": "M57"
+                                },
+                                {
+                                  "name": "哑铃星云",
+                                  "type": "行星状星云",
+                                  "category": "星云",
+                                  "alias": "M27"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "系外行星系统（宿主恒星）",
+                              "type": "恒星系统分组",
+                              "category": "宇宙结构",
+                              "info": "系外行星与其宿主恒星的引力从属关系",
+                              "children": [
+                                {
+                                  "name": "K2-18",
+                                  "type": "红矮星",
+                                  "category": "恒星",
+                                  "children": [
+                                    {
+                                      "name": "K2-18 b",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "LHS 1140",
+                                  "type": "红矮星",
+                                  "category": "恒星",
+                                  "children": [
+                                    {
+                                      "name": "LHS 1140 b",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "WASP-12",
+                                  "type": "G 型主序星",
+                                  "category": "恒星",
+                                  "children": [
+                                    {
+                                      "name": "WASP-12 b",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "HD 189733",
+                                  "type": "K 型主序星",
+                                  "category": "恒星",
+                                  "children": [
+                                    {
+                                      "name": "HD 189733 b",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "WASP-107",
+                                  "type": "K 型主序星",
+                                  "category": "恒星",
+                                  "children": [
+                                    {
+                                      "name": "WASP-107 b",
+                                      "type": "系外行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "开普勒452",
+                                  "type": "G 型主序星",
+                                  "category": "恒星",
+                                  "alias": "Kepler-452",
+                                  "children": [
+                                    {
+                                      "name": "开普勒452b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "超级地球，候选宜居"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "开普勒22",
+                                  "type": "G 型主序星",
+                                  "category": "恒星",
+                                  "alias": "Kepler-22",
+                                  "children": [
+                                    {
+                                      "name": "开普勒22b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "超级地球"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "开普勒16",
+                                  "type": "双星系统",
+                                  "category": "恒星",
+                                  "alias": "Kepler-16",
+                                  "info": "环双星行星系统",
+                                  "children": [
+                                    {
+                                      "name": "开普勒16A",
+                                      "type": "主序星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "开普勒16B",
+                                      "type": "红矮星",
+                                      "category": "恒星"
+                                    },
+                                    {
+                                      "name": "开普勒16b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "首个被证实的环双星行星"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "PSR B1257+12",
+                                  "type": "脉冲星系统",
+                                  "category": "恒星",
+                                  "info": "人类最早发现系外行星的宿主脉冲星",
+                                  "children": [
+                                    {
+                                      "name": "PSR B1257+12 b",
+                                      "type": "脉冲星行星",
+                                      "category": "行星"
+                                    },
+                                    {
+                                      "name": "PSR B1257+12 c",
+                                      "type": "脉冲星行星",
+                                      "category": "行星"
+                                    },
+                                    {
+                                      "name": "PSR B1257+12 d",
+                                      "type": "脉冲星行星",
+                                      "category": "行星"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "疏散星团（银盘）",
+                          "type": "星团分组",
+                          "category": "宇宙结构",
+                          "info": "疏散星团分布于银盘，与银晕中的球状星团不同",
+                          "children": [
+                            {
+                              "name": "昴星团",
+                              "alias": "M45",
+                              "type": "疏散星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "梅西耶67",
+                              "alias": "M67",
+                              "type": "疏散星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "毕星团",
+                              "type": "疏散星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "蜂巢星团",
+                              "type": "疏散星团",
+                              "category": "星团",
+                              "alias": "M44"
+                            },
+                            {
+                              "name": "野鸭星团",
+                              "type": "疏散星团",
+                              "category": "星团",
+                              "alias": "M11"
+                            },
+                            {
+                              "name": "托勒密星团",
+                              "type": "疏散星团",
+                              "category": "星团",
+                              "alias": "M7"
+                            },
+                            {
+                              "name": "珠宝盒星团",
+                              "type": "疏散星团",
+                              "category": "星团",
+                              "alias": "NGC 4755"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "银河系内恒星级黑洞",
+                          "type": "黑洞分组",
+                          "category": "宇宙结构",
+                          "info": "银河系内由大质量恒星坍缩形成的恒星级黑洞",
+                          "children": [
+                            {
+                              "name": "天鹅座 X-1",
+                              "type": "恒星级黑洞",
+                              "category": "黑洞",
+                              "info": "著名 X 射线双星，人类最早确认的黑洞候选之一"
+                            },
+                            {
+                              "name": "V404 天鹅座",
+                              "alias": "天鹅座V404",
+                              "type": "恒星级黑洞",
+                              "category": "黑洞",
+                              "info": "低质量 X 射线双星中的黑洞"
+                            },
+                            {
+                              "name": "盖亚BH1",
+                              "type": "恒星级黑洞",
+                              "category": "黑洞",
+                              "info": "距离地球最近的已知黑洞，约 1560 光年"
+                            }
+                          ]
                         }
                       ]
                     },
                     {
                       "name": "银晕",
                       "type": "星系晕",
+                      "category": "宇宙结构",
                       "info": "暗物质晕 + 球状星团分布区",
                       "source": "ESA",
                       "children": [
                         {
-                          "name": "球状星团集合",
+                          "name": "球状星团（银晕）",
                           "type": "星团分组",
+                          "category": "宇宙结构",
                           "children": [
-                            { "name": "ω半人马座星团", "type": "球状星团" },
-                            { "name": "杜鹃座47", "type": "球状星团" },
-                            { "name": "M13 武仙座球状星团", "type": "球状星团" },
-                            { "name": "M22", "type": "球状星团" },
-                            { "name": "M5", "type": "球状星团" },
-                            { "name": "M15", "type": "球状星团" },
-                            { "name": "M92", "type": "球状星团" }
-                          ]
-                        },
-                        {
-                          "name": "疏散星团集合",
-                          "type": "星团分组",
-                          "children": [
-                            { "name": "M45 昴星团", "type": "疏散星团" },
-                            { "name": "M67", "type": "疏散星团" }
+                            {
+                              "name": "半人马座ω",
+                              "alias": "ω星团",
+                              "type": "球状星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "杜鹃座47",
+                              "type": "球状星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "武仙座球状星团",
+                              "alias": "M13",
+                              "type": "球状星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "梅西耶22",
+                              "alias": "M22",
+                              "type": "球状星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "M5（球状星团）",
+                              "alias": "M5",
+                              "type": "球状星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "M15（球状星团）",
+                              "alias": "M15",
+                              "type": "球状星团",
+                              "category": "星团"
+                            },
+                            {
+                              "name": "M92（球状星团）",
+                              "alias": "M92",
+                              "type": "球状星团",
+                              "category": "星团"
+                            }
                           ]
                         }
                       ]
@@ -479,94 +1430,354 @@
                     {
                       "name": "银河系卫星矮星系",
                       "type": "卫星星系分组",
+                      "category": "宇宙结构",
                       "children": [
-                        { "name": "大麦哲伦云", "type": "不规则矮星系" },
-                        { "name": "小麦哲伦云", "type": "不规则矮星系" },
-                        { "name": "人马座矮椭球星系", "type": "矮椭球星系" },
-                        { "name": "大犬座矮星系", "type": "矮不规则星系" },
-                        { "name": "小熊座矮星系", "type": "矮椭球星系" },
-                        { "name": "天龙座矮星系", "type": "矮椭球星系" }
+                        {
+                          "name": "大麦哲伦云",
+                          "type": "不规则矮星系",
+                          "category": "星系",
+                          "children": [
+                            {
+                              "name": "蜘蛛星云",
+                              "type": "发射星云",
+                              "category": "星云",
+                              "alias": "NGC 2070",
+                              "info": "大麦哲伦云内巨大恒星形成区",
+                              "children": [
+                                {
+                                  "name": "R136 星团",
+                                  "type": "疏散星团",
+                                  "category": "星团",
+                                  "info": "蜘蛛星云中心的超大质量星团",
+                                  "children": [
+                                    {
+                                      "name": "R136a1",
+                                      "type": "沃尔夫-拉叶星",
+                                      "category": "恒星",
+                                      "info": "已知质量最大的恒星之一"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "小麦哲伦云",
+                          "type": "不规则矮星系",
+                          "category": "星系"
+                        },
+                        {
+                          "name": "人马座矮椭球星系",
+                          "type": "矮椭球星系",
+                          "category": "星系"
+                        },
+                        {
+                          "name": "大犬座矮星系",
+                          "type": "矮不规则星系",
+                          "category": "星系"
+                        },
+                        {
+                          "name": "小熊座矮星系",
+                          "type": "矮椭球星系",
+                          "category": "星系"
+                        },
+                        {
+                          "name": "天龙座矮星系",
+                          "type": "矮椭球星系",
+                          "category": "星系"
+                        }
                       ]
                     }
                   ]
                 },
                 {
-                  "name": "仙女座星系 M31",
-                  "type": "棒旋星系",
-                  "info": "本星系群最大星系，未来会和银河系并合",
+                  "name": "仙女座星系",
+                  "alias": "M31",
+                  "type": "旋涡星系",
+                  "category": "星系",
+                  "info": "本星系群最大星系，未来将与银河系并合",
                   "children": [
-                    { "name": "M32", "type": "矮椭圆卫星星系" },
-                    { "name": "M110", "type": "矮椭圆卫星星系" },
-                    { "name": "仙女座Ⅰ", "type": "矮椭球卫星星系" },
-                    { "name": "仙女座Ⅱ", "type": "矮椭球卫星星系" }
+                    {
+                      "name": "M32（矮椭圆星系）",
+                      "alias": "M32",
+                      "type": "矮椭圆卫星星系",
+                      "category": "星系"
+                    },
+                    {
+                      "name": "M110（矮椭圆星系）",
+                      "alias": "M110",
+                      "type": "矮椭圆卫星星系",
+                      "category": "星系"
+                    },
+                    {
+                      "name": "仙女座 I",
+                      "type": "矮椭球卫星星系",
+                      "category": "星系"
+                    },
+                    {
+                      "name": "仙女座 II",
+                      "type": "矮椭球卫星星系",
+                      "category": "星系"
+                    }
                   ]
                 },
                 {
-                  "name": "三角座星系 M33",
+                  "name": "三角座星系",
+                  "alias": "M33",
                   "type": "旋涡星系",
+                  "category": "星系",
                   "info": "本星系群第三大星系"
                 },
                 {
                   "name": "IC 10",
-                  "type": "不规则矮星系"
+                  "type": "不规则矮星系",
+                  "category": "星系"
                 },
                 {
                   "name": "NGC 147",
-                  "type": "矮椭圆星系"
+                  "type": "矮椭圆星系",
+                  "category": "星系"
                 },
                 {
                   "name": "NGC 185",
-                  "type": "矮椭圆星系"
+                  "type": "矮椭圆星系",
+                  "category": "星系"
                 }
               ]
             },
             {
               "name": "室女座星系团",
               "type": "富星系团",
+              "category": "宇宙结构",
               "info": "拉尼亚凯亚内部大型富星系团",
               "children": [
                 {
-                  "name": "M87星系",
+                  "name": "室女座A",
+                  "alias": "M87",
                   "type": "巨椭圆星系",
+                  "category": "星系",
                   "children": [
-                    { "name": "M87*", "type": "超大质量黑洞", "source": "EHT 2019" }
+                    {
+                      "name": "M87*",
+                      "type": "超大质量黑洞",
+                      "category": "黑洞",
+                      "source": "EHT 2019"
+                    }
                   ]
                 },
-                { "name": "M49", "type": "巨椭圆星系" },
-                { "name": "M60", "type": "巨椭圆星系" },
-                { "name": "M104 草帽星系",
-                  "type": "旋涡星系"
+                {
+                  "name": "M49（巨椭圆星系）",
+                  "alias": "M49",
+                  "type": "巨椭圆星系",
+                  "category": "星系"
+                },
+                {
+                  "name": "M60（巨椭圆星系）",
+                  "alias": "M60",
+                  "type": "巨椭圆星系",
+                  "category": "星系"
+                },
+                {
+                  "name": "草帽星系",
+                  "alias": "M104",
+                  "type": "旋涡星系",
+                  "category": "星系"
                 }
               ]
             },
             {
               "name": "M81星系群",
               "type": "星系群",
+              "category": "宇宙结构",
               "children": [
-                { "name": "M81", "type": "旋涡星系" },
-                { "name": "M82", "type": "星暴星系" }
+                {
+                  "name": "波德星系",
+                  "alias": "M81",
+                  "type": "旋涡星系",
+                  "category": "星系"
+                },
+                {
+                  "name": "雪茄星系",
+                  "alias": "M82",
+                  "type": "星暴星系",
+                  "category": "星系"
+                }
               ]
+            },
+            {
+              "name": "半人马座A星系群",
+              "type": "星系群",
+              "category": "宇宙结构",
+              "info": "距离约 1200 万光年的近邻星系群",
+              "children": [
+                {
+                  "name": "半人马 A",
+                  "alias": "NGC 5128",
+                  "type": "透镜状星系",
+                  "category": "星系"
+                },
+                {
+                  "name": "南风车星系",
+                  "alias": "M83",
+                  "type": "旋涡星系",
+                  "category": "星系"
+                }
+              ]
+            },
+            {
+              "name": "巨引源",
+              "type": "引力异常区域",
+              "category": "宇宙结构",
+              "info": "拉尼亚凯亚的引力中心"
             }
           ]
         }
       ]
     },
     {
+      "name": "本星系群外近邻星系（超星系团归属未细化）",
+      "type": "星系分组",
+      "category": "宇宙结构",
+      "info": "本星系群之外的近邻星系；现有层级数据不足以确定其超星系团归属，故不臆测",
+      "children": [
+        {
+          "name": "涡状星系",
+          "alias": "M51",
+          "type": "旋涡星系",
+          "category": "星系"
+        },
+        {
+          "name": "风车星系",
+          "alias": "M101",
+          "type": "旋涡星系",
+          "category": "星系"
+        },
+        {
+          "name": "黑眼星系",
+          "alias": "M64",
+          "type": "旋涡星系",
+          "category": "星系"
+        },
+        {
+          "name": "NGC 1300",
+          "type": "棒旋星系",
+          "category": "星系"
+        },
+        {
+          "name": "天线星系",
+          "alias": "NGC 4038",
+          "type": "相互作用星系",
+          "category": "星系"
+        },
+        {
+          "name": "斯蒂芬五重星系",
+          "type": "致密星系群",
+          "category": "星系"
+        }
+      ]
+    },
+    {
+      "name": "Abell 2029 星系团",
+      "type": "富星系团",
+      "category": "宇宙结构",
+      "info": "距离约 10 亿光年（红移 z≈0.077），远超拉尼亚凯亚范围",
+      "source": "NASA / Wikipedia",
+      "children": [
+        {
+          "name": "IC 1101",
+          "type": "超巨椭圆星系",
+          "category": "星系",
+          "info": "Abell 2029 的中心 cD 星系，已知直径最大的星系之一",
+          "children": [
+            {
+              "name": "IC 1101 中心黑洞",
+              "type": "超大质量黑洞",
+              "category": "黑洞"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "遥远宇宙类星体与活动星系核（宇宙学距离）",
+      "type": "天体分组",
+      "category": "宇宙结构",
+      "info": "红移较高、距离数亿至百亿光年的活动星系核；不属于本星系群或拉尼亚凯亚",
+      "children": [
+        {
+          "name": "TON 618",
+          "type": "类星体",
+          "category": "黑洞",
+          "info": "极远类星体，中心为超大质量黑洞，距约 182 亿光年"
+        },
+        {
+          "name": "OJ 287",
+          "type": "耀变体",
+          "category": "黑洞",
+          "info": "已知双黑洞候选体，红移约 0.306"
+        },
+        {
+          "name": "J2157-3602",
+          "type": "类星体",
+          "category": "黑洞",
+          "info": "已知增长最快的黑洞之一，宇宙学距离"
+        },
+        {
+          "name": "凤凰座A",
+          "type": "活动星系核",
+          "category": "黑洞",
+          "info": "凤凰座星系团中心星系的超大质量黑洞"
+        }
+      ]
+    },
+    {
+      "name": "引力波并合事件（探测记录）",
+      "type": "事件分组",
+      "category": "宇宙结构",
+      "info": "LIGO/Virgo 探测到的双黑洞并合事件，是观测记录而非可归位的静态天体",
+      "children": [
+        {
+          "name": "GW150914 并合黑洞",
+          "type": "引力波事件",
+          "category": "黑洞",
+          "info": "人类首次直接探测到的引力波事件（2015）",
+          "source": "LIGO/Virgo 2016"
+        },
+        {
+          "name": "GW190521",
+          "type": "引力波事件",
+          "category": "黑洞",
+          "info": "中等质量黑洞形成的并合事件（2019）",
+          "source": "LIGO/Virgo 2020"
+        }
+      ]
+    },
+    {
       "name": "武仙-北冕座长城",
       "type": "巨型宇宙纤维",
+      "category": "宇宙结构",
       "info": "已知超大尺度宇宙结构",
       "source": "NASA"
     },
     {
       "name": "夏普利超星系团",
       "type": "超星系团",
+      "category": "宇宙结构",
       "info": "遥远、质量巨大的致密超星系团，不在拉尼亚凯亚内",
       "source": "NASA"
     },
     {
       "name": "后发座星系团",
       "type": "富星系团",
-      "info": "遥远致密富星系团"
+      "category": "宇宙结构",
+      "info": "遥远致密的富星系团"
+    },
+    {
+      "name": "宇宙微波背景",
+      "type": "宇宙背景辐射",
+      "category": "宇宙结构",
+      "info": "大爆炸后约 38 万年的最后散射面"
     }
   ]
 }

@@ -14,7 +14,7 @@ hide:
   </div>
 </div>
 
-<p class="obj-parent">分类：行星</p>
+<p class="obj-parent">母天体：<a href="../pegasi_51/">飞马座51</a> · 分类：行星</p>
 
 
 <div class="solar-embed obj-viz">
@@ -62,7 +62,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/51_Pegasi_b" target="_blank" rel="noopener">Wikipedia · 51 Pegasi b</a>；核对日期：2026-10-27。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../v404_cygni/">天鹅座V404</a></p>
+<p class="obj-nav">← 上一颗：<a href="../gaia_bh1/">盖亚BH1</a></p>
 <p class="obj-nav">下一颗：<a href="../proxima_centauri_b/">比邻星b</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

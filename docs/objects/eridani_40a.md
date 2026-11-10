@@ -1,14 +1,14 @@
 ---
-description: "波江座 40A（40 Eridani A）的天体数据：1.55×10³⁰ kg、直径 1,118,686 km、光度 1.53×10²⁶ W、温度 5,126 K。数据整理自公开天文资料。"
+description: "波江座40A（40 Eridani A）的天体数据：1.55×10³⁰ kg、直径 1,118,686 km、光度 1.53×10²⁶ W、温度 5,126 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40a.webp" alt="波江座 40A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40a.webp" alt="波江座40A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>波江座 40A <small>40 Eridani A</small></h1>
+    <h1>波江座40A <small>40 Eridani A</small></h1>
     <p class="obj-tagline">《星际迷航》中瓦肯人的太阳，一颗宁静的橙黄矮星</p>
     <p class="obj-summary">直径 1,118,686 km · 质量 1.55×10³⁰ kg</p>
   </div>
@@ -62,7 +62,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/40_Eridani" target="_blank" rel="noopener">Wikipedia · 40 Eridani</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../sirius_b/">天狼 B</a></p>
-<p class="obj-nav">下一颗：<a href="../eridani_40b/">波江座 40B</a> →</p>
+<p class="obj-nav">← 上一颗：<a href="../sirius_b/">天狼星B</a></p>
+<p class="obj-nav">下一颗：<a href="../eridani_40b/">波江座40B</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

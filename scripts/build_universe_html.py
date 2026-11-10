@@ -32,7 +32,7 @@ hide:
   - toc
 ---
 
-下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。数据由外部层级文档与「星野笔记」天体库（`astro.json`）融合而成；**天体本体数值准确性要求不高，层级所属严格**。
+下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。层级数据由 `universe-data.json` 提供，天体详情与仓库数据（`astro.json`）精确对齐；**命名遵循统一规范，类型与归属严格按天体真实性质挂接**。带「归属未细化」的容器表示现有资料不足以确定更精确的层级，不做臆测归类。名称右侧带 `↗` 的节点可跳转本站详情卡片；搜索支持中文名与 M/NGC 等规范编号。
 
 <section id="uh" class="uh">
   <div class="uh-bar">
@@ -93,6 +93,8 @@ hide:
 .uh-arrow.leaf{opacity:0}
 .uh-arrow.open{transform:rotate(90deg)}
 .uh-nm{font-weight:600;color:var(--md-default-fg-color,#e6edf6)}
+.uh-alias{font-weight:400;font-size:.78rem;margin-left:6px;
+  color:var(--md-default-fg-color--light,#9aa6c4);opacity:.85}
 .uh-nm a{color:inherit;text-decoration:none}
 .uh-nm a:hover{text-decoration:underline}
 .uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#10202b;font-weight:700;white-space:nowrap}
@@ -125,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     t = t || '';
     if (/黑洞/.test(t)) return '黑洞';
     if (/星云/.test(t)) return '星云';
-    if (/(超星系团|复合体|长城|星系团|星系群|纤维|宇宙|结构|边界|晕|星系盘|核心区域|分组|储库|系统)/.test(t)) return '宇宙结构';
+    if (/(超星系团|复合体|长城|星系团|星系群|纤维|宇宙|结构|边界|晕|星系盘|核心区域|分组|储库)/.test(t)) return '宇宙结构';
     if (/恒星|主序|巨星|矮星|变星/.test(t)) return '恒星';
     if (/行星/.test(t)) return '行星';
     if (/卫星/.test(t)) return '卫星';
@@ -136,9 +138,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (/星系/.test(t)) return '星系';
     return '其他';
   }
-  function colorOf(t){ return CAT_COLOR[catOf(t)]; }
+  // 优先使用节点显式 category（受控词表），缺省时回退 catOf 正则推断
+  function nodeCat(n){
+    var c = n.category;
+    if (c && CAT_COLOR[c]) return c;
+    return catOf(n.type || '');
+  }
+  function colorOf(n){ return CAT_COLOR[nodeCat(n)]; }
   var CAT_SET = new Set();
-  (function collect(n){ CAT_SET.add(catOf(n.type)); (n.children||[]).forEach(collect); })(DATA);
+  (function collect(n){ CAT_SET.add(nodeCat(n)); (n.children||[]).forEach(collect); })(DATA);
 
   var expanded = new Set();
   var activeTypes = new Set();
@@ -149,10 +157,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function pathOf(parent, name){ return parent ? parent + '/' + name : name; }
   function countDesc(n){ var c=0; (n.children||[]).forEach(function(x){ c += 1 + countDesc(x); }); return c; }
   function matches(n){
-    if (activeTypes.size && !activeTypes.has(catOf(n.type))) return false;
+    if (activeTypes.size && !activeTypes.has(nodeCat(n))) return false;
     if (!query) return true;
     var q = query.toLowerCase();
-    return (n.name||'').toLowerCase().indexOf(q) >= 0 || (n.type||'').toLowerCase().indexOf(q) >= 0;
+    return (n.name||'').toLowerCase().indexOf(q) >= 0
+        || (n.alias||'').toLowerCase().indexOf(q) >= 0
+        || (n.type||'').toLowerCase().indexOf(q) >= 0
+        || nodeCat(n).indexOf(q) >= 0;
   }
   function subHasMatch(n){ if (matches(n)) return true; return (n.children||[]).some(subHasMatch); }
 
@@ -174,8 +185,13 @@ document.addEventListener('DOMContentLoaded', function () {
         nm.innerHTML = esc(n.name.slice(0,idx)) + '<mark>' + esc(n.name.slice(idx, idx+query.length)) + '</mark>' + esc(n.name.slice(idx+query.length));
       } else nm.textContent = n.name;
     } else nm.textContent = n.name;
+    if (n.alias){
+      var al = document.createElement('span'); al.className = 'uh-alias';
+      al.textContent = n.alias;
+      nm.appendChild(al);
+    }
     var badge = document.createElement('span'); badge.className = 'uh-badge';
-    badge.style.background = colorOf(n.type); badge.textContent = n.type || '';
+    badge.style.background = colorOf(n); badge.textContent = n.type || '';
     head.appendChild(ar); head.appendChild(nm); head.appendChild(badge);
     if (n.repo_id){
       var link = document.createElement('a'); link.className = 'uh-link';

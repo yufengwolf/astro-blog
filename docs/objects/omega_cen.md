@@ -1,14 +1,14 @@
 ---
-description: "半人马座 ω（Omega Centauri）的天体数据：7.95×10³⁶ kg、直径（等效球径） 166 光年、距离 2 万光年、温度 —。数据整理自公开天文资料。"
+description: "半人马座ω（Omega Centauri）的天体数据：7.95×10³⁶ kg、直径（等效球径） 166 光年、距离 2 万光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/omega_cen.webp" alt="半人马座 ω" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA13125" target="_blank" rel="noopener">NASA/JPL-Caltech · WISE 半人马座 ω 球状星团</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/omega_cen.webp" alt="半人马座ω" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA13125" target="_blank" rel="noopener">NASA/JPL-Caltech · WISE 半人马座ω 球状星团</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge cluster">星团</span>
-    <h1>半人马座 ω <small>Omega Centauri</small></h1>
+    <h1>半人马座ω <small>Omega Centauri</small></h1>
     <p class="obj-tagline">银河系最大的球状星团，疑为被吞噬矮星系的残核</p>
     <p class="obj-summary">直径（等效球径） 166 光年 · 质量 7.95×10³⁶ kg</p>
   </div>
@@ -61,7 +61,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/Omega_Centauri" target="_blank" rel="noopener">Wikipedia · Omega Centauri</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../m22/">梅西耶 22</a></p>
+<p class="obj-nav">← 上一颗：<a href="../m22/">梅西耶22</a></p>
 <p class="obj-nav">下一颗：<a href="../local_group/">本星系群</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

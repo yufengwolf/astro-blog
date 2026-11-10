@@ -1,14 +1,14 @@
 ---
-description: "人马座 A*（Sagittarius A*）的天体数据：8.54×10³⁶ kg、事件视界直径 25,380,231 km、距离 3 万光年、温度 —。数据整理自公开天文资料。"
+description: "人马座A*（Sagittarius A*）的天体数据：8.54×10³⁶ kg、事件视界直径 25,380,231 km、距离 3 万光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/sgr_a_star.webp" alt="人马座 A*" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/sgr_a_star.webp" alt="人马座A*" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
-    <h1>人马座 A* <small>Sagittarius A*</small></h1>
+    <h1>人马座A* <small>Sagittarius A*</small></h1>
     <p class="obj-tagline">银河系中心的超大质量黑洞，2022 年人类拍下第二张黑洞照片</p>
     <p class="obj-summary">事件视界直径 25,380,231 km · 质量 8.54×10³⁶ kg</p>
   </div>
@@ -62,4 +62,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../m87_star/">M87*</a></p>
 <p class="obj-nav">下一颗：<a href="../ton618/">TON 618</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

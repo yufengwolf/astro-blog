@@ -1,14 +1,14 @@
 ---
-description: "开普勒 22（Kepler-22）的天体数据：1.7×10³⁰ kg、直径 1,209,127 km、光度 3.02×10²⁶ W、温度 5,596 K。数据整理自公开天文资料。"
+description: "开普勒22（Kepler-22）的天体数据：1.7×10³⁰ kg、直径 1,209,127 km、光度 3.02×10²⁶ W、温度 5,596 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_22.webp" alt="开普勒 22" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_22.webp" alt="开普勒22" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>开普勒 22 <small>Kepler-22</small></h1>
+    <h1>开普勒22 <small>Kepler-22</small></h1>
     <p class="obj-tagline">拥有首颗宜居带系外行星的类太阳恒星</p>
     <p class="obj-summary">直径 1,209,127 km · 质量 1.7×10³⁰ kg</p>
   </div>
@@ -61,7 +61,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/Kepler-22" target="_blank" rel="noopener">Wikipedia · Kepler-22</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../kepler_452/">开普勒 452</a></p>
+<p class="obj-nav">← 上一颗：<a href="../kepler_452/">开普勒452</a></p>
 <p class="obj-nav">下一颗：<a href="../trappist_1/">特拉比斯特 1</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

@@ -141,14 +141,20 @@ def main():
                 err(f"{oid}: notable 卫星「{name}」的 parent 是 {sat.get('parent')}，应为 {oid}")
 
     # 第二遍：parent 结构校验（by_id 已完整，支持前向引用）
+    # host_star：系外行星的宿主恒星未被本站收录时，parent 允许为 null，
+    # 但必须显式登记宿主恒星名，归属可追溯（层级由 universe-data.json 承载）。
     for o in objs:
         oid, cat = o.get("id"), o.get("category")
         parent = o.get("parent")
+        host_star = o.get("host_star")
+        external_host = parent is None and bool(host_star) and cat in ("planet", "exoplanet")
+        if external_host and not isinstance(host_star, str):
+            err(f"{oid}: host_star 必须是宿主恒星名称字符串")
         allowed = PARENT_RULES.get(cat)
         if allowed is not None:
             if parent is None:
-                if None not in allowed:
-                    err(f"{oid}: {cat} 的 parent 不能为空")
+                if None not in allowed and not external_host:
+                    err(f"{oid}: {cat} 的 parent 不能为空（宿主恒星未收录时请登记 host_star）")
             else:
                 pcat = by_id.get(parent, {}).get("category")
                 if pcat is None:
@@ -156,7 +162,7 @@ def main():
                 elif pcat not in allowed:
                     err(f"{oid}: {cat} 的 parent 必须是 {sorted(str(a) for a in allowed)} "
                         f"之一的分类，当前 {parent} 是 {pcat}")
-        if cat in ("planet", "dwarf_planet") and parent not in by_id:
+        if cat in ("planet", "dwarf_planet") and parent not in by_id and not external_host:
             err(f"{oid}: 行星/矮行星的 parent 必须在库中")
         if cat == "moon" and (parent not in by_id
                               or by_id.get(parent, {}).get("category") not in ("planet", "dwarf_planet")):

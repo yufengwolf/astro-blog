@@ -1,14 +1,14 @@
 ---
-description: "开普勒 452（Kepler-452）的天体数据：2.06×10³⁰ kg、直径 1,544,454 km、光度 4.21×10²⁶ W、温度 5,757 K。数据整理自公开天文资料。"
+description: "开普勒452（Kepler-452）的天体数据：2.06×10³⁰ kg、直径 1,544,454 km、光度 4.21×10²⁶ W、温度 5,757 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_452.webp" alt="开普勒 452" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_452.webp" alt="开普勒452" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>开普勒 452 <small>Kepler-452</small></h1>
+    <h1>开普勒452 <small>Kepler-452</small></h1>
     <p class="obj-tagline">拥有'地球表哥' Kepler-452b 的类太阳恒星</p>
     <p class="obj-summary">直径 1,544,454 km · 质量 2.06×10³⁰ kg</p>
   </div>
@@ -63,7 +63,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/Kepler-452" target="_blank" rel="noopener">Wikipedia · Kepler-452</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../almaaz/">御夫座 ε</a></p>
-<p class="obj-nav">下一颗：<a href="../kepler_22/">开普勒 22</a> →</p>
+<p class="obj-nav">← 上一颗：<a href="../almaaz/">御夫座ε</a></p>
+<p class="obj-nav">下一颗：<a href="../kepler_22/">开普勒22</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

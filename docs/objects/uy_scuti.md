@@ -1,14 +1,14 @@
 ---
-description: "盾牌座 UY（UY Scuti）的天体数据：1.69×10³¹ kg、直径 1.26×10⁹ km、光度 4.75×10³¹ W、温度 3,550 K。数据整理自公开天文资料。"
+description: "盾牌座UY（UY Scuti）的天体数据：1.69×10³¹ kg、直径 1.26×10⁹ km、光度 4.75×10³¹ W、温度 3,550 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/uy_scuti.webp" alt="盾牌座 UY" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/uy_scuti.webp" alt="盾牌座UY" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>盾牌座 UY <small>UY Scuti</small></h1>
+    <h1>盾牌座UY <small>UY Scuti</small></h1>
     <p class="obj-tagline">体积最大的已知恒星之一，盾牌座的红超巨星</p>
     <p class="obj-summary">直径 1.26×10⁹ km · 质量 1.69×10³¹ kg</p>
   </div>
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../mu_cephei/">造父四</a></p>
 <p class="obj-nav">下一颗：<a href="../rw_cephei/">仙王座 RW</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

@@ -52,7 +52,7 @@ hide:
   <p>数据来源：<a href="https://en.wikipedia.org/wiki/RW_Cephei" target="_blank" rel="noopener">Wikipedia · RW Cephei</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-nav">← 上一颗：<a href="../uy_scuti/">盾牌座 UY</a></p>
+<p class="obj-nav">← 上一颗：<a href="../uy_scuti/">盾牌座UY</a></p>
 <p class="obj-nav">下一颗：<a href="../s_persei/">英仙座 S</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>

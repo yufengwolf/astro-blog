@@ -1,14 +1,14 @@
 ---
-description: "格利泽 581（Gliese 581）的天体数据：6.16×10²⁹ kg、直径 417,420 km、光度 4.98×10²⁴ W、温度 3,480 K。数据整理自公开天文资料。"
+description: "格利泽581（Gliese 581）的天体数据：6.16×10²⁹ kg、直径 417,420 km、光度 4.98×10²⁴ W、温度 3,480 K。数据整理自公开天文资料。"
 hide:
   - toc
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/gliese_581.webp" alt="格利泽 581" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/gliese_581.webp" alt="格利泽581" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
-    <h1>格利泽 581 <small>Gliese 581</small></h1>
+    <h1>格利泽581 <small>Gliese 581</small></h1>
     <p class="obj-tagline">拥有多颗系外行星的红矮星，宜居性争论的经典目标</p>
     <p class="obj-summary">直径 417,420 km · 质量 6.16×10²⁹ kg</p>
   </div>
@@ -62,6 +62,6 @@ hide:
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../trappist_1/">特拉比斯特 1</a></p>
-<p class="obj-nav">下一颗：<a href="../kepler_186/">开普勒 186</a> →</p>
+<p class="obj-nav">下一颗：<a href="../kepler_186/">开普勒186</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 178 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>
