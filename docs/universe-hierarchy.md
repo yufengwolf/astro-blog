@@ -22,46 +22,54 @@ hide:
 </section>
 
 <style>
-.uh-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0 4px}
+.uh-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 8px}
 .uh-search{flex:1 1 240px;min-width:200px;display:flex;align-items:center;gap:8px;
-  background:var(--md-code-bg-color,#11152a);border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.22));
-  border-radius:8px;padding:8px 12px}
+  background:var(--md-default-fg-color--lightest,rgba(125,125,125,.10));
+  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+  border-radius:8px;padding:8px 12px;transition:.15s}
+.uh-search:focus-within{border-color:var(--md-accent-fg-color,#7c4dff);
+  background:var(--md-default-fg-color--lighter,rgba(125,125,125,.14))}
 .uh-search svg{width:16px;height:16px;fill:var(--md-default-fg-color--light,#9aa6c4);flex:none}
 .uh-search input{flex:1;background:transparent;border:0;outline:0;
   color:var(--md-default-fg-color,#e6edf6);font-size:.9rem;font-family:inherit}
-.uh-btn{background:var(--md-code-bg-color,#11152a);border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.22));
-  color:var(--md-default-fg-color,#e6edf6);border-radius:8px;padding:7px 12px;cursor:pointer;font-size:.85rem;
-  font-family:inherit;transition:.15s}
-.uh-btn:hover{border-color:var(--md-accent-fg-color,#5c6bc0)}
+.uh-btn{background:var(--md-default-fg-color--lightest,rgba(125,125,125,.10));
+  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+  color:var(--md-default-fg-color,#e6edf6);border-radius:8px;padding:7px 12px;cursor:pointer;
+  font-size:.85rem;font-family:inherit;transition:.15s}
+.uh-btn:hover{background:var(--md-default-fg-color--lighter,rgba(125,125,125,.18));
+  border-color:var(--md-accent-fg-color,#7c4dff)}
 .uh-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .uh-chip{font-size:.75rem;padding:4px 10px;border-radius:999px;
-  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.22));
-  background:var(--md-code-bg-color,#11152a);color:var(--md-default-fg-color--light,#9aa6c4);
-  cursor:pointer;user-select:none;transition:.15s;display:flex;align-items:center;gap:5px}
+  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+  background:var(--md-default-fg-color--lightest,rgba(125,125,125,.10));
+  color:var(--md-default-fg-color--light,#9aa6c4);cursor:pointer;user-select:none;
+  transition:.15s;display:flex;align-items:center;gap:5px}
 .uh-chip .uh-dot{width:8px;height:8px;border-radius:50%}
-.uh-chip.on{color:var(--md-default-fg-color,#e6edf6);border-color:var(--md-accent-fg-color,#5c6bc0)}
+.uh-chip.on{color:var(--md-accent-fg-color,#7c4dff);border-color:var(--md-accent-fg-color,#7c4dff);
+  background:color-mix(in srgb,var(--md-accent-fg-color,#7c4dff) 16%,transparent)}
 .uh-crumb{margin:14px 0 6px;font-size:.75rem;color:var(--md-default-fg-color--light,#9aa6c4);
   min-height:18px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.uh-crumb b{color:var(--md-primary-fg-color,#7c8cff)}
+.uh-crumb b{color:var(--md-primary-fg-color,#7c4dff)}
 .uh-crumb .uh-sep{opacity:.5}
 .uh-tree{margin-top:6px}
 .uh-node{position:relative}
 .uh-children{margin-left:14px;padding-left:12px;
-  border-left:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16))}
+  border-left:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.18))}
 .uh-children.collapsed{display:none}
-.uh-head{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:7px;cursor:pointer;transition:.12s}
-.uh-head:hover{background:var(--md-code-bg-color,#11152a)}
+.uh-head{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:7px;
+  cursor:pointer;transition:.12s}
+.uh-head:hover{background:var(--md-default-fg-color--lightest,rgba(125,125,125,.08))}
 .uh-arrow{width:14px;height:14px;flex:none;fill:var(--md-default-fg-color--light,#9aa6c4);transition:transform .15s}
 .uh-arrow.leaf{opacity:0}
 .uh-arrow.open{transform:rotate(90deg)}
 .uh-nm{font-weight:600;color:var(--md-default-fg-color,#e6edf6)}
-.uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#111;font-weight:700;white-space:nowrap}
+.uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#10202b;font-weight:700;white-space:nowrap}
 .uh-cnt{font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4);margin-left:auto;flex:none}
 .uh-meta{padding:0 8px 6px 29px;color:var(--md-default-fg-color--light,#9aa6c4);font-size:.8rem;line-height:1.55}
 .uh-meta .uh-src::before{content:"📚 "}
-.uh-nm mark{background:var(--md-primary-fg-color,#7c8cff);color:#fff;border-radius:3px;padding:0 1px}
+.uh-nm mark{background:var(--md-primary-fg-color,#7c4dff);color:#fff;border-radius:3px;padding:0 1px}
 .uh-empty{color:var(--md-default-fg-color--light,#9aa6c4);text-align:center;padding:30px;font-size:.85rem}
-.uh-legend{margin-top:22px;border-top:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+.uh-legend{margin-top:22px;border-top:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.18));
   padding-top:12px;display:flex;flex-wrap:wrap;gap:10px;font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4)}
 .uh-legend span{display:flex;align-items:center;gap:5px}
 .uh-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
@@ -76,9 +84,9 @@ hide:
 document.addEventListener('DOMContentLoaded', function () {
   var DATA = JSON.parse(document.getElementById('uh-data').textContent);
   var CAT_COLOR = {
-    '宇宙结构':'#f783ac','星系':'#b388ff','星云':'#4dd0c4','恒星':'#ffd166',
-    '行星':'#5b9bff','卫星':'#56c5e8','星团':'#69db7c','矮行星':'#ffa94d',
-    '小行星':'#adb5bd','彗星':'#ced4da','黑洞':'#ff6b6b','其他':'#90a4ae'
+    '宇宙结构':'#f06292','星系':'#ba68c8','星云':'#4db6ac','恒星':'#ffd54f',
+    '行星':'#64b5f6','卫星':'#4dd0e1','星团':'#81c784','矮行星':'#ffb74d',
+    '小行星':'#b0bec5','彗星':'#cfd8dc','黑洞':'#e57373','其他':'#90a4ae'
   };
   var CAT_ORDER = ['宇宙结构','星系','星云','恒星','行星','卫星','星团','矮行星','小行星','彗星','黑洞','其他'];
   function catOf(t){

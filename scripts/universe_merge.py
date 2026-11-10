@@ -193,6 +193,12 @@ for rid, t in skipped_no_target:
     print(f"  ! {rid} -> {t}")
 print(f"跳过(不在 repo 中): {skipped_unknown}")
 
-# 写出融合结果
-json.dump(base, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+# 写出融合结果（写入前比对：内容无变化则跳过，避免 mkdocs serve 监听触发重建死循环）
+new_text = json.dumps(base, ensure_ascii=False, indent=2)
+if os.path.exists(OUT):
+    with open(OUT, encoding="utf-8") as f:
+        if f.read() == new_text:
+            print(f"\n融合数据源无变化，跳过写出: {os.path.relpath(OUT, ROOT)}  (节点去重后 {len(index)})")
+            raise SystemExit(0)
+open(OUT, "w", encoding="utf-8").write(new_text)
 print(f"\n已写出融合数据源: {os.path.relpath(OUT, ROOT)}  (节点去重后 {len(index)})")

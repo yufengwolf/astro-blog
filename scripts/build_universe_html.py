@@ -8,8 +8,10 @@ docs/universe-hierarchy.md。
   - 页面是 Material 主题内的普通 .md 页：自动带左侧导航、顶部栏、站内搜索、仓库字体/配色。
   - 思维导图内容（树 / 搜索 / 大类筛选 / 折叠 / 面包屑）由 JSON 驱动生成，内嵌在页面里，
     不依赖 iframe、不依赖外部 a.html。
-  - 样式全部使用 Material 主题 CSS 变量（--md-*），随浅/深色切换自动适配，视觉与全站一致。
+  - 样式全部使用 Material 主题 CSS 变量（--md-*），随浅/深色切换自动适配，视觉与全站一致；
+    控件采用「通透淡层 + 主题边框」的 Material 标准做法，避免深色主题下层层叠黑、与全站割裂。
   - universe-tree.json 为唯一事实源；改 JSON 后随 `mkdocs build` 自动重生（见 universe_hook.py）。
+  - 写入前比对磁盘已有内容：内容无变化则跳过写入，避免 mkdocs serve 监听 docs/ 触发重建死循环。
 """
 import json, os
 
@@ -48,46 +50,54 @@ hide:
 </section>
 
 <style>
-.uh-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0 4px}
+.uh-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 8px}
 .uh-search{flex:1 1 240px;min-width:200px;display:flex;align-items:center;gap:8px;
-  background:var(--md-code-bg-color,#11152a);border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.22));
-  border-radius:8px;padding:8px 12px}
+  background:var(--md-default-fg-color--lightest,rgba(125,125,125,.10));
+  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+  border-radius:8px;padding:8px 12px;transition:.15s}
+.uh-search:focus-within{border-color:var(--md-accent-fg-color,#7c4dff);
+  background:var(--md-default-fg-color--lighter,rgba(125,125,125,.14))}
 .uh-search svg{width:16px;height:16px;fill:var(--md-default-fg-color--light,#9aa6c4);flex:none}
 .uh-search input{flex:1;background:transparent;border:0;outline:0;
   color:var(--md-default-fg-color,#e6edf6);font-size:.9rem;font-family:inherit}
-.uh-btn{background:var(--md-code-bg-color,#11152a);border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.22));
-  color:var(--md-default-fg-color,#e6edf6);border-radius:8px;padding:7px 12px;cursor:pointer;font-size:.85rem;
-  font-family:inherit;transition:.15s}
-.uh-btn:hover{border-color:var(--md-accent-fg-color,#5c6bc0)}
+.uh-btn{background:var(--md-default-fg-color--lightest,rgba(125,125,125,.10));
+  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+  color:var(--md-default-fg-color,#e6edf6);border-radius:8px;padding:7px 12px;cursor:pointer;
+  font-size:.85rem;font-family:inherit;transition:.15s}
+.uh-btn:hover{background:var(--md-default-fg-color--lighter,rgba(125,125,125,.18));
+  border-color:var(--md-accent-fg-color,#7c4dff)}
 .uh-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .uh-chip{font-size:.75rem;padding:4px 10px;border-radius:999px;
-  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.22));
-  background:var(--md-code-bg-color,#11152a);color:var(--md-default-fg-color--light,#9aa6c4);
-  cursor:pointer;user-select:none;transition:.15s;display:flex;align-items:center;gap:5px}
+  border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+  background:var(--md-default-fg-color--lightest,rgba(125,125,125,.10));
+  color:var(--md-default-fg-color--light,#9aa6c4);cursor:pointer;user-select:none;
+  transition:.15s;display:flex;align-items:center;gap:5px}
 .uh-chip .uh-dot{width:8px;height:8px;border-radius:50%}
-.uh-chip.on{color:var(--md-default-fg-color,#e6edf6);border-color:var(--md-accent-fg-color,#5c6bc0)}
+.uh-chip.on{color:var(--md-accent-fg-color,#7c4dff);border-color:var(--md-accent-fg-color,#7c4dff);
+  background:color-mix(in srgb,var(--md-accent-fg-color,#7c4dff) 16%,transparent)}
 .uh-crumb{margin:14px 0 6px;font-size:.75rem;color:var(--md-default-fg-color--light,#9aa6c4);
   min-height:18px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.uh-crumb b{color:var(--md-primary-fg-color,#7c8cff)}
+.uh-crumb b{color:var(--md-primary-fg-color,#7c4dff)}
 .uh-crumb .uh-sep{opacity:.5}
 .uh-tree{margin-top:6px}
 .uh-node{position:relative}
 .uh-children{margin-left:14px;padding-left:12px;
-  border-left:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16))}
+  border-left:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.18))}
 .uh-children.collapsed{display:none}
-.uh-head{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:7px;cursor:pointer;transition:.12s}
-.uh-head:hover{background:var(--md-code-bg-color,#11152a)}
+.uh-head{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:7px;
+  cursor:pointer;transition:.12s}
+.uh-head:hover{background:var(--md-default-fg-color--lightest,rgba(125,125,125,.08))}
 .uh-arrow{width:14px;height:14px;flex:none;fill:var(--md-default-fg-color--light,#9aa6c4);transition:transform .15s}
 .uh-arrow.leaf{opacity:0}
 .uh-arrow.open{transform:rotate(90deg)}
 .uh-nm{font-weight:600;color:var(--md-default-fg-color,#e6edf6)}
-.uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#111;font-weight:700;white-space:nowrap}
+.uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#10202b;font-weight:700;white-space:nowrap}
 .uh-cnt{font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4);margin-left:auto;flex:none}
 .uh-meta{padding:0 8px 6px 29px;color:var(--md-default-fg-color--light,#9aa6c4);font-size:.8rem;line-height:1.55}
 .uh-meta .uh-src::before{content:"📚 "}
-.uh-nm mark{background:var(--md-primary-fg-color,#7c8cff);color:#fff;border-radius:3px;padding:0 1px}
+.uh-nm mark{background:var(--md-primary-fg-color,#7c4dff);color:#fff;border-radius:3px;padding:0 1px}
 .uh-empty{color:var(--md-default-fg-color--light,#9aa6c4);text-align:center;padding:30px;font-size:.85rem}
-.uh-legend{margin-top:22px;border-top:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
+.uh-legend{margin-top:22px;border-top:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.18));
   padding-top:12px;display:flex;flex-wrap:wrap;gap:10px;font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4)}
 .uh-legend span{display:flex;align-items:center;gap:5px}
 .uh-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
@@ -102,9 +112,9 @@ hide:
 document.addEventListener('DOMContentLoaded', function () {
   var DATA = JSON.parse(document.getElementById('uh-data').textContent);
   var CAT_COLOR = {
-    '宇宙结构':'#f783ac','星系':'#b388ff','星云':'#4dd0c4','恒星':'#ffd166',
-    '行星':'#5b9bff','卫星':'#56c5e8','星团':'#69db7c','矮行星':'#ffa94d',
-    '小行星':'#adb5bd','彗星':'#ced4da','黑洞':'#ff6b6b','其他':'#90a4ae'
+    '宇宙结构':'#f06292','星系':'#ba68c8','星云':'#4db6ac','恒星':'#ffd54f',
+    '行星':'#64b5f6','卫星':'#4dd0e1','星团':'#81c784','矮行星':'#ffb74d',
+    '小行星':'#b0bec5','彗星':'#cfd8dc','黑洞':'#e57373','其他':'#90a4ae'
   };
   var CAT_ORDER = ['宇宙结构','星系','星云','恒星','行星','卫星','星团','矮行星','小行星','彗星','黑洞','其他'];
   function catOf(t){
@@ -239,14 +249,24 @@ document.addEventListener('DOMContentLoaded', function () {
 > 本页数据由仓库根目录的 `universe-tree.json` 驱动生成（经 `scripts/universe_merge.py` 融合 `universe-data.json` 与 `docs/data/astro.json`）；数据源改动后随 `mkdocs build` 自动同步，无需手动操作。
 """
 
-html = MD.replace("__TREE__", tree_json)
+new_html = MD.replace("__TREE__", tree_json)
+
 def iter_nodes(n):
     yield n
     for c in n.get("children", []):
         yield from iter_nodes(c)
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
+# 写入前比对：内容无变化则跳过，避免 mkdocs serve 监听 docs/ 触发「重写→重建」死循环
+if os.path.exists(OUT):
+    with open(OUT, encoding="utf-8") as f:
+        old = f.read()
+    if old == new_html:
+        print("universe-hierarchy.md 内容无变化，跳过写入（避免 mkdocs serve 循环刷新）")
+        raise SystemExit(0)
+
 with open(OUT, "w", encoding="utf-8") as f:
-    f.write(html)
-print("wrote", os.path.relpath(OUT, ROOT), "size", len(html), "bytes; embedded nodes:",
+    f.write(new_html)
+print("wrote", os.path.relpath(OUT, ROOT), "size", len(new_html), "bytes; embedded nodes:",
       sum(1 for _ in iter_nodes(data)))
