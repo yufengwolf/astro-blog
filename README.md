@@ -24,6 +24,8 @@
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
 ├─ viz-manifest.json     # 3D 覆盖契约（gen_viz_manifest.py 生成；消费外部 links.json 快照；go.html?body=<id> 透传；详情页条件嵌入）
+├─ universe-data.json    # 【宇宙层级】外部提供的层级文档（基础数据源）
+├─ universe-tree.json    # 【宇宙层级】融合后的完整数据源（universe_merge.py 生成；HTML 的唯一事实源）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -36,6 +38,8 @@
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
 │  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
 │  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（消费 scripts/solar3d_links.json 快照；go.html?body=<id>&embed=1 透传；--sync 刷新快照；size-of-space 待接入）
+│  ├─ universe_merge.py   # 【宇宙层级】universe-data.json + astro.json → universe-tree.json（仅追加缺失且明确归属的天体）
+│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.html（自包含思维导图，JSON 内嵌）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -57,6 +61,8 @@
    ├─ js/solar-embed.js  # 3D 嵌入块：全屏切换 + 移动端横屏提示 + 多来源切换按钮
    ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式
    ├─ solar-demo.md      # 【手写】太阳系 3D 交互站主页（导航卡片 iframe）
+   ├─ universe-hierarchy.md    # 【手写】宇宙层级导航页（iframe 嵌入独立 HTML）
+   ├─ universe-hierarchy.html # 【生成】宇宙层级思维导图自包含静态页（JSON 内嵌，可离线打开）
    └─ assets/planets/*.webp  # 星球贴图（152/152，透明背景 600px）
 ```
 
@@ -195,6 +201,22 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 ---
 
-## 八、文档维护约定
+## 八、宇宙天体层级思维导图
+
+独立静态页 `/universe-hierarchy/`（左侧导航「宇宙层级」），以可折叠树呈现天体的**层级 / 从属关系**，数据源为仓库根目录的 `universe-tree.json`。
+
+- `universe-data.json`：外部提供的层级文档（完整数据源的**基础**）。可观测宇宙 → 拉尼亚凯亚超星系团 → 本星系群 → 银河系 → 太阳系 这一条链最完整，宇宙其余部分（其他超星系团 / 星系团）基本为空。
+- `universe-tree.json`：由 `universe-data.json` 与 `docs/data/astro.json` **融合**后的完整数据源，由 `scripts/universe_merge.py` 生成。融合只**追加** astro.json 中缺失且能明确归属的天体（如银河系星云 / 疏散星团、柯伊伯带矮行星、土卫七、蜘蛛星云 → R136 → R136a1 链、巨引源、宇宙微波背景），**不重构既有层级**。天体本体数值准确性要求不高，**层级所属严格**。
+- `docs/universe-hierarchy.html`：由 `scripts/build_universe_html.py` 从 `universe-tree.json` 生成的自包含静态页（JSON 内嵌，可离线 / 直接打开），含搜索、大类筛选、展开 / 折叠全部、面包屑路径。
+- `docs/universe-hierarchy.md`：用 iframe 嵌入上述 HTML 的导航页（对齐 `solar-demo.md` 模式），并链接「在新标签页打开完整独立版」。
+
+刷新流程（改数据后）：
+
+```bash
+python scripts/universe_merge.py       # universe-data.json + astro.json → universe-tree.json
+python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.html
+```
+
+## 九、文档维护约定
 
 **硬规则**：本站任何脚本或工作流变更（新增/修改/删除脚本、增删命令参数、改图片路由、改数据字段、改 LLM 路由），都**必须在同一轮改动中同步更新 [维护指南.md](维护指南.md) 与本文档**（对应章节 + 流程图），并随代码一起提交。**不依赖任何人提醒。** 详细清单见维护指南第十一章。
