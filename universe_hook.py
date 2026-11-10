@@ -21,7 +21,7 @@ def on_pre_build(config):
     py = sys.executable
     steps = (
         ("scripts/universe_merge.py", "融合数据源 universe-tree.json"),
-        ("scripts/build_universe_html.py", "生成思维导图页 universe-hierarchy.html"),
+        ("scripts/build_universe_html.py", "生成思维导图页 universe-hierarchy.md"),
     )
     for rel, label in steps:
         script = os.path.join(root, rel)

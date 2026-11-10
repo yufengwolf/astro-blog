@@ -68,7 +68,7 @@ extra_javascript:
   - js/solar-embed.js?v=1.9
 
 # ---- 构建钩子 ----
-# 构建前自动由 JSON 重新生成「宇宙层级」思维导图（universe-tree.json -> docs/universe-hierarchy.html），
+# 构建前自动由 JSON 重新生成「宇宙层级」思维导图（universe-tree.json -> docs/universe-hierarchy.md，主题化页面），
 # 保证数据源改动后页面自适应同步。详见 universe_hook.py。
 hooks:
   - universe_hook.py
@@ -82,4 +82,4 @@ nav:
   - 天体对比: compare.md
   - 天体库: objects/index.md
   - 太阳系3D模型: solar-demo.md
-  - 宇宙层级: universe-hierarchy.html
+  - 宇宙层级: universe-hierarchy.md

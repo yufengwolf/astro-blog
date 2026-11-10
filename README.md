@@ -39,7 +39,7 @@
 │  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
 │  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（消费 scripts/solar3d_links.json 快照；go.html?body=<id>&embed=1 透传；--sync 刷新快照；size-of-space 待接入）
 │  ├─ universe_merge.py   # 【宇宙层级】universe-data.json + astro.json → universe-tree.json（仅追加缺失且明确归属的天体）
-│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.html（自包含思维导图，JSON 内嵌）
+│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（主题化页面，JSON 内嵌，融入 Material 主题）
 │  ├─ universe_hook.py    # 【宇宙层级】MkDocs 构建钩子：build 前自动跑上面两步，JSON 改动即同步页面
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
@@ -62,7 +62,7 @@
    ├─ js/solar-embed.js  # 3D 嵌入块：全屏切换 + 移动端横屏提示 + 多来源切换按钮
    ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式
    ├─ solar-demo.md      # 【手写】太阳系 3D 交互站主页（导航卡片 iframe）
-   ├─ universe-hierarchy.html # 【生成】宇宙层级思维导图自包含静态页（JSON 内嵌，可离线打开；导航直接指向，无 iframe）
+   ├─ universe-hierarchy.md    # 【生成】宇宙层级思维导图（主题化 MkDocs 页面，JSON 内嵌，带侧边栏/站内字体；导航直接指向）
    └─ assets/planets/*.webp  # 星球贴图（152/152，透明背景 600px）
 ```
 
@@ -203,18 +203,18 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 ## 八、宇宙天体层级思维导图
 
-独立静态页 `universe-hierarchy.html`（左侧导航「宇宙层级」**直接打开**，无 iframe 包装），以可折叠树呈现天体的**层级 / 从属关系**，数据源为仓库根目录的 `universe-tree.json`。
+主题化页面 `universe-hierarchy.md`（左侧导航「宇宙层级」**直接打开**，融入 Material 主题，含侧边栏 / 站内字体 / 配色），以可折叠树呈现天体的**层级 / 从属关系**，数据源为仓库根目录的 `universe-tree.json`。
 
 - `universe-data.json`：外部提供的层级文档（完整数据源的**基础**）。可观测宇宙 → 拉尼亚凯亚超星系团 → 本星系群 → 银河系 → 太阳系 这一条链最完整，宇宙其余部分（其他超星系团 / 星系团）基本为空。
 - `universe-tree.json`：由 `universe-data.json` 与 `docs/data/astro.json` **融合**后的完整数据源，由 `scripts/universe_merge.py` 生成。融合只**追加** astro.json 中缺失且能明确归属的天体（如银河系星云 / 疏散星团、柯伊伯带矮行星、土卫七、蜘蛛星云 → R136 → R136a1 链、巨引源、宇宙微波背景），**不重构既有层级**。天体本体数值准确性要求不高，**层级所属严格**。
-- `docs/universe-hierarchy.html`：由 `scripts/build_universe_html.py` 从 `universe-tree.json` 生成的自包含静态页（JSON 内嵌，可离线 / 直接打开），含搜索、大类筛选、展开 / 折叠全部、面包屑路径。左侧导航「宇宙层级」**直接打开本页**（无 iframe 包装）。
+- `docs/universe-hierarchy.md`：由 `scripts/build_universe_html.py` 从 `universe-tree.json` 生成**主题化页面**（内嵌 JSON + 交互脚本，样式全部用 Material 主题 CSS 变量，自动继承站内字体 / 配色、随深浅色切换适配）。含搜索、大类筛选、展开 / 折叠全部、面包屑路径。左侧导航「宇宙层级」**直接打开本页**（无 iframe 包装）。
 - `universe_hook.py`：MkDocs 构建钩子。每次 `mkdocs build` 前自动依次运行 `universe_merge.py` 与 `build_universe_html.py`，**数据源（universe-data.json / astro.json）改动后构建即自动同步页面**（数据驱动、自适应），无需手动执行生成脚本。
 
 刷新流程（改数据后）：
 
 ```bash
 python scripts/universe_merge.py       # universe-data.json + astro.json → universe-tree.json
-python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.html
+python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.md
 # 注：上面两步已接入 universe_hook.py，随 `mkdocs build` 自动执行，无需手动跑；也可手动跑做单独调试
 ```
 
