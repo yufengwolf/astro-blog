@@ -1,21 +1,21 @@
 ---
-description: "收录 179 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 202 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">179 个天体的质量、直径、密度、温度</p>
+  <p class="astro-hero-sub">202 个天体的质量、直径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部 179</button>
-    <button type="button" class="chip" data-filter="star">恒星 58</button>
+    <button type="button" class="chip active" data-filter="all">全部 202</button>
+    <button type="button" class="chip" data-filter="star">恒星 71</button>
     <button type="button" class="chip" data-filter="planet">行星 19</button>
     <button type="button" class="chip" data-filter="dwarf_planet">矮行星 9</button>
-    <button type="button" class="chip" data-filter="moon">卫星 23</button>
+    <button type="button" class="chip" data-filter="moon">卫星 33</button>
     <button type="button" class="chip" data-filter="galaxy">星系 18</button>
     <button type="button" class="chip" data-filter="nebula">星云 16</button>
     <button type="button" class="chip" data-filter="cluster">星团 11</button>
@@ -2008,6 +2008,259 @@ description: "收录 179 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
+  <article class="astro-card" data-category="moon" data-name="木卫五 Amalthea" data-mass="2.08e+18" data-radius="83.5" data-density="0.8529" data-temp="-153" data-period="0.4982" data-moons="0">
+    <a class="astro-card-link" href="objects/amalthea/">
+      <div class="astro-img moon"><img src="assets/planets/amalthea.webp" alt="木卫五" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">木卫五<span class="en">Amalthea</span></div>
+        <p class="astro-card-tagline">木星内侧形状不规则的小卫星，表面呈暗红色</p>
+        <div class="astro-card-stats"><span>2.08×10¹⁸ kg</span><span>167.0 km</span><span>120 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="木卫六 Himalia" data-mass="9.56e+18" data-radius="85.0" data-density="3.7163" data-temp="-160" data-period="250.57" data-moons="0">
+    <a class="astro-card-link" href="objects/himalia/">
+      <div class="astro-img moon"><img src="assets/planets/himalia.webp" alt="木卫六" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">木卫六<span class="en">Himalia</span></div>
+        <p class="astro-card-tagline">木星希玛利亚群最大卫星</p>
+        <div class="astro-card-stats"><span>9.56×10¹⁸ kg</span><span>170.0 km</span><span>113 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="木卫七 Elara" data-mass="8.7e+17" data-radius="43.0" data-density="2.6123" data-temp="-149.15" data-period="259.6528" data-moons="0">
+    <a class="astro-card-link" href="objects/elara/">
+      <div class="astro-img moon"><img src="assets/planets/elara.webp" alt="木卫七" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">木卫七<span class="en">Elara</span></div>
+        <p class="astro-card-tagline">木星不规则卫星，希玛利亚群成员</p>
+        <div class="astro-card-stats"><span>8.7×10¹⁷ kg</span><span>86.0 km</span><span>124 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="木卫八 Pasiphae" data-mass="3e+17" data-radius="30.0" data-density="2.6526" data-temp="-149.15" data-period="764.082032" data-moons="0">
+    <a class="astro-card-link" href="objects/pasiphae/">
+      <div class="astro-img moon"><img src="assets/planets/pasiphae.webp" alt="木卫八" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">木卫八<span class="en">Pasiphae</span></div>
+        <p class="astro-card-tagline">木星逆行不规则卫星，帕西法尔群原型</p>
+        <div class="astro-card-stats"><span>3×10¹⁷ kg</span><span>60.0 km</span><span>124 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="土卫九 Phoebe" data-mass="8.292e+18" data-radius="106.5" data-density="1.6388" data-temp="-198" data-period="550.48" data-moons="0">
+    <a class="astro-card-link" href="objects/phoebe/">
+      <div class="astro-img moon"><img src="assets/planets/phoebe.webp" alt="土卫九" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">土卫九<span class="en">Phoebe</span></div>
+        <p class="astro-card-tagline">土星逆行捕获卫星，黑暗冰岩天体</p>
+        <div class="astro-card-stats"><span>8.29×10¹⁸ kg</span><span>213.0 km</span><span>75 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="海卫二 Nereid" data-mass="2e+19" data-radius="170.0" data-density="0.9718" data-temp="" data-period="360.13619" data-moons="0">
+    <a class="astro-card-link" href="objects/nereid/">
+      <div class="astro-img moon"><img src="assets/planets/nereid.webp" alt="海卫二" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">海卫二<span class="en">Nereid</span></div>
+        <p class="astro-card-tagline">拥有极高偏心率轨道的海王星卫星</p>
+        <div class="astro-card-stats"><span>2×10¹⁹ kg</span><span>340.0 km</span><span>0.9718 g/cm³</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="海卫八 Proteus" data-mass="4.4e+19" data-radius="209.0" data-density="1.1506" data-temp="-220" data-period="1.12231477" data-moons="0">
+    <a class="astro-card-link" href="objects/proteus/">
+      <div class="astro-img moon"><img src="assets/planets/proteus.webp" alt="海卫八" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">海卫八<span class="en">Proteus</span></div>
+        <p class="astro-card-tagline">海王星第二大卫星，形状不规则的冰岩卫星</p>
+        <div class="astro-card-stats"><span>4.4×10¹⁹ kg</span><span>418.0 km</span><span>53 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="冥卫一 Charon" data-mass="1.586e+21" data-radius="606.0" data-density="1.7014" data-temp="-220" data-period="6.387" data-moons="0">
+    <a class="astro-card-link" href="objects/charon/">
+      <div class="astro-img moon"><img src="assets/planets/charon.webp" alt="冥卫一" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">冥卫一<span class="en">Charon</span></div>
+        <p class="astro-card-tagline">冥王星的伴星，互相潮汐锁定</p>
+        <div class="astro-card-stats"><span>1.59×10²¹ kg</span><span>1,212 km</span><span>53 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="冥卫二 Nix" data-mass="5e+16" data-radius="18.0" data-density="2.0467" data-temp="-230" data-period="24.8546" data-moons="0">
+    <a class="astro-card-link" href="objects/nix/">
+      <div class="astro-img moon"><img src="assets/planets/nix.webp" alt="冥卫二" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">冥卫二<span class="en">Nix</span></div>
+        <p class="astro-card-tagline">冥王星的小型不规则卫星</p>
+        <div class="astro-card-stats"><span>5×10¹⁶ kg</span><span>36.0 km</span><span>43 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="moon" data-name="冥卫三 Hydra" data-mass="3e+16" data-radius="20.0" data-density="0.8952" data-temp="-240" data-period="38.206" data-moons="0">
+    <a class="astro-card-link" href="objects/hydra/">
+      <div class="astro-img moon"><img src="assets/planets/hydra.webp" alt="冥卫三" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">冥卫三<span class="en">Hydra</span></div>
+        <p class="astro-card-tagline">冥王星最外侧卫星</p>
+        <div class="astro-card-stats"><span>3×10¹⁶ kg</span><span>40.0 km</span><span>33 K</span></div>
+      </div>
+      <span class="astro-badge moon">卫星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="五车二Aa Capella Aa" data-mass="5.108938804e+30" data-radius="8334486.0" data-density="0.002107" data-temp="4696.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/capella_aa/">
+      <div class="astro-img star"><img src="assets/planets/capella_aa.webp" alt="五车二Aa" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">五车二Aa<span class="en">Capella Aa</span></div>
+        <p class="astro-card-tagline">五车二 A 子系统的亮巨星主星</p>
+        <div class="astro-card-stats"><span>5.11×10³⁰ kg</span><span>16,668,972 km</span><span>3.01×10²⁸ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="五车二Ab Capella Ab" data-mass="4.938090576e+30" data-radius="6143031.0" data-density="0.005085" data-temp="5456.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/capella_ab/">
+      <div class="astro-img star"><img src="assets/planets/capella_ab.webp" alt="五车二Ab" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">五车二Ab<span class="en">Capella Ab</span></div>
+        <p class="astro-card-tagline">五车二 A 子系统的次巨星伴星</p>
+        <div class="astro-card-stats"><span>4.94×10³⁰ kg</span><span>12,286,062 km</span><span>2.78×10²⁸ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="五车二Ba Capella Ba" data-mass="1.0541276e+30" data-radius="333936.0" data-density="6.757948" data-temp="3426.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/capella_ba/">
+      <div class="astro-img star"><img src="assets/planets/capella_ba.webp" alt="五车二Ba" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">五车二Ba<span class="en">Capella Ba</span></div>
+        <p class="astro-card-tagline">五车二系统远端红矮星</p>
+        <div class="astro-card-stats"><span>1.05×10³⁰ kg</span><span>667,872 km</span><span>2.3×10²⁵ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="五车二Bb Capella Bb" data-mass="1.0541276e+30" data-radius="375678.0" data-density="4.746323" data-temp="3426.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/capella_bb/">
+      <div class="astro-img star"><img src="assets/planets/capella_bb.webp" alt="五车二Bb" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">五车二Bb<span class="en">Capella Bb</span></div>
+        <p class="astro-card-tagline">五车二系统暗弱红矮星伴星</p>
+        <div class="astro-card-stats"><span>1.05×10³⁰ kg</span><span>751,356 km</span><span>1.53×10²⁵ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="北河二A1 Castor A1" data-mass="5.489419199999999e+30" data-radius="1669680.0" data-density="0.281539" data-temp="10012.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/castor_a1/">
+      <div class="astro-img star"><img src="assets/planets/castor_a1.webp" alt="北河二A1" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河二A1<span class="en">Castor A1</span></div>
+        <p class="astro-card-tagline">北河二主星，A型主序星</p>
+        <div class="astro-card-stats"><span>5.49×10³⁰ kg</span><span>3,339,360 km</span><span>1.3×10²⁸ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="北河二A2 Castor A2" data-mass="1.1933519999999999e+30" data-radius="417420.0" data-density="3.91706" data-temp="3526.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/castor_a2/">
+      <div class="astro-img star"><img src="assets/planets/castor_a2.webp" alt="北河二A2" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河二A2<span class="en">Castor A2</span></div>
+        <p class="astro-card-tagline">北河二A的伴星，红矮星耀星</p>
+        <div class="astro-card-stats"><span>1.19×10³⁰ kg</span><span>834,840 km</span><span>2.68×10²⁵ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="北河二B1 Castor B1" data-mass="5.9269816e+30" data-radius="2295810.0" data-density="0.116933" data-temp="8568.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/castor_b1/">
+      <div class="astro-img star"><img src="assets/planets/castor_b1.webp" alt="北河二B1" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河二B1<span class="en">Castor B1</span></div>
+        <p class="astro-card-tagline">北河二六合星系统B子系统主星</p>
+        <div class="astro-card-stats"><span>5.93×10³⁰ kg</span><span>4,591,620 km</span><span>5.36×10²⁷ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="北河二B2 Castor B2" data-mass="9.9446e+29" data-radius="347850.0" data-density="5.640566" data-temp="3426.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/castor_b2/">
+      <div class="astro-img star"><img src="assets/planets/castor_b2.webp" alt="北河二B2" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河二B2<span class="en">Castor B2</span></div>
+        <p class="astro-card-tagline">北河二 B 子系统的红矮星伴星</p>
+        <div class="astro-card-stats"><span>9.94×10²⁹ kg</span><span>695,700 km</span><span>1.53×10²⁵ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="北河二C1 Castor C1" data-mass="1.1933519999999999e+30" data-radius="431334.0" data-density="3.550086" data-temp="3526.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/castor_c1/">
+      <div class="astro-img star"><img src="assets/planets/castor_c1.webp" alt="北河二C1" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河二C1<span class="en">Castor C1</span></div>
+        <p class="astro-card-tagline">北河二六合星系统的红矮星子星</p>
+        <div class="astro-card-stats"><span>1.19×10³⁰ kg</span><span>862,668 km</span><span>9.95×10²⁴ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="北河二C2 Castor C2" data-mass="9.9446e+29" data-radius="347850.0" data-density="5.640566" data-temp="3426.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/castor_c2/">
+      <div class="astro-img star"><img src="assets/planets/castor_c2.webp" alt="北河二C2" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河二C2<span class="en">Castor C2</span></div>
+        <p class="astro-card-tagline">北河二六合星系统中的红矮星</p>
+        <div class="astro-card-stats"><span>9.94×10²⁹ kg</span><span>695,700 km</span><span>2.3×10²⁵ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="开普勒16A Kepler-16 A" data-mass="1.3717581239999998e+30" data-radius="451439.73000000004" data-density="3.559505" data-temp="4176.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/kepler_16_a/">
+      <div class="astro-img star"><img src="assets/planets/kepler_16_a.webp" alt="开普勒16A" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">开普勒16A<span class="en">Kepler-16 A</span></div>
+        <p class="astro-card-tagline">开普勒16双星系统的 K 型主星</p>
+        <div class="astro-card-stats"><span>1.37×10³⁰ kg</span><span>902,879 km</span><span>5.67×10²⁵ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="开普勒16B Kepler-16 B" data-mass="4.02955192e+29" data-radius="157367.34" data-density="24.6845" data-temp="2886.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/kepler_16_b/">
+      <div class="astro-img star"><img src="assets/planets/kepler_16_b.webp" alt="开普勒16B" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">开普勒16B<span class="en">Kepler-16 B</span></div>
+        <p class="astro-card-tagline">开普勒16双星系统的 M 型伴星</p>
+        <div class="astro-card-stats"><span>4.03×10²⁹ kg</span><span>314,735 km</span><span>4.44×10²⁴ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="南河三B Procyon B" data-mass="1.17744064e+30" data-radius="8584.938" data-density="444261.750169" data-temp="7466.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/procyon_b/">
+      <div class="astro-img star"><img src="assets/planets/procyon_b.webp" alt="南河三B" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">南河三B<span class="en">Procyon B</span></div>
+        <p class="astro-card-tagline">第三亮白矮星</p>
+        <div class="astro-card-stats"><span>1.18×10³⁰ kg</span><span>17,170 km</span><span>1.88×10²³ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
 </div>
 <p class="astro-empty" id="astro-empty" hidden>没有匹配的天体，换个关键词或分类试试。</p>
 
@@ -2029,4 +2282,4 @@ description: "收录 179 个天体的结构化数据：质量、直径、密度�
   <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-11）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.9 · 收录 179 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.9 · 收录 202 个天体（全部配图）</p>

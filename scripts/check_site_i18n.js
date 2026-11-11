@@ -59,7 +59,7 @@ ok(firstTitle.firstChild.nodeValue.trim() === '太阳', '中文卡片主名为�
 ok(firstTitle.querySelector('.en').textContent === 'Sun', '中文卡片副名为英文名');
 ok(firstBadge.textContent === '恒星', '中文分类徽章');
 ok(CJK.test(firstTag.textContent), '中文简介为中文');
-ok(A.$('.astro-chips .chip').textContent.trim() === '全部 179', '中文筛选 chips');
+ok(A.$('.astro-chips .chip').textContent.trim() === '全部 202', '中文筛选 chips');
 
 // 切到英文
 langBtn.dispatchEvent(new A.window.Event('click'));
@@ -74,7 +74,7 @@ ok(firstTitle.firstChild.nodeValue.trim() === 'Sun', '英文模式卡片主名�
 ok(firstTitle.querySelector('.en').textContent === '太阳', '英文模式副名为中文名');
 ok(firstBadge.textContent === 'Star', '英文分类徽章');
 ok(!CJK.test(firstTag.textContent), '英文简介不含中文', firstTag.textContent.slice(0, 60));
-ok(A.$('.astro-chips .chip').textContent.trim() === 'All 179', '英文筛选 chips');
+ok(A.$('.astro-chips .chip').textContent.trim() === 'All 202', '英文筛选 chips');
 ok(A.$('#astro-search').getAttribute('placeholder') === 'Search objects…', '搜索框占位符转英文');
 ok(/Showing \d+ of \d+ objects/.test(A.$('#astro-count').textContent), '计数文案转英文',
    A.$('#astro-count').textContent);
@@ -88,7 +88,7 @@ ok(firstTitle.firstChild.nodeValue.trim() === '太阳', '卡片主名恢复中�
 ok(firstTitle.querySelector('.en').textContent === 'Sun', '卡片副名恢复英文');
 ok(firstBadge.textContent === '恒星', '徽章恢复中文');
 ok(CJK.test(firstTag.textContent), '简介恢复中文');
-ok(A.$('.astro-chips .chip').textContent.trim() === '全部 179', 'chips 恢复中文');
+ok(A.$('.astro-chips .chip').textContent.trim() === '全部 202', 'chips 恢复中文');
 ok(/显示 \d+ \/ \d+ 个天体/.test(A.$('#astro-count').textContent), '计数恢复中文');
 
 // 重新加载时读取持久化偏好

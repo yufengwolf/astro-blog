@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../aludra/">弧矢二</a></p>
 <p class="obj-nav">下一颗：<a href="../uy_scuti/">盾牌座UY</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 179 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 202 个天体已全部配图</p>

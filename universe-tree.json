@@ -476,36 +476,40 @@
                                           "repo_id": "callisto"
                                         },
                                         {
-                                          "id": "c.amalthea",
+                                          "id": "amalthea",
                                           "name": "木卫五",
                                           "name_en": "Amalthea",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "阿马尔忒亚"
+                                          "alias": "阿马尔忒亚",
+                                          "repo_id": "amalthea"
                                         },
                                         {
-                                          "id": "c.himalia",
+                                          "id": "himalia",
                                           "name": "木卫六",
                                           "name_en": "Himalia",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "希玛利亚"
+                                          "alias": "希玛利亚",
+                                          "repo_id": "himalia"
                                         },
                                         {
-                                          "id": "c.elara",
+                                          "id": "elara",
                                           "name": "木卫七",
                                           "name_en": "Elara",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "伊拉拉"
+                                          "alias": "伊拉拉",
+                                          "repo_id": "elara"
                                         },
                                         {
-                                          "id": "c.pasiphae",
+                                          "id": "pasiphae",
                                           "name": "木卫八",
                                           "name_en": "Pasiphae",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "帕西法尔"
+                                          "alias": "帕西法尔",
+                                          "repo_id": "pasiphae"
                                         }
                                       ],
                                       "repo_id": "jupiter"
@@ -582,12 +586,13 @@
                                           "repo_id": "iapetus"
                                         },
                                         {
-                                          "id": "c.phoebe",
+                                          "id": "phoebe",
                                           "name": "土卫九",
                                           "name_en": "Phoebe",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "菲比"
+                                          "alias": "菲比",
+                                          "repo_id": "phoebe"
                                         },
                                         {
                                           "id": "hyperion",
@@ -672,20 +677,22 @@
                                           "repo_id": "triton"
                                         },
                                         {
-                                          "id": "c.nereid",
+                                          "id": "nereid",
                                           "name": "海卫二",
                                           "name_en": "Nereid",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "涅瑞伊得"
+                                          "alias": "涅瑞伊得",
+                                          "repo_id": "nereid"
                                         },
                                         {
-                                          "id": "c.proteus",
+                                          "id": "proteus",
                                           "name": "海卫八",
                                           "name_en": "Proteus",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "普洛透斯"
+                                          "alias": "普洛透斯",
+                                          "repo_id": "proteus"
                                         }
                                       ],
                                       "repo_id": "neptune"
@@ -707,28 +714,31 @@
                                       "category": "矮行星",
                                       "children": [
                                         {
-                                          "id": "c.charon",
+                                          "id": "charon",
                                           "name": "冥卫一",
                                           "name_en": "Charon",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "卡戎"
+                                          "alias": "卡戎",
+                                          "repo_id": "charon"
                                         },
                                         {
-                                          "id": "c.nix",
+                                          "id": "nix",
                                           "name": "冥卫二",
                                           "name_en": "Nix",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "尼克斯"
+                                          "alias": "尼克斯",
+                                          "repo_id": "nix"
                                         },
                                         {
-                                          "id": "c.hydra",
+                                          "id": "hydra",
                                           "name": "冥卫三",
                                           "name_en": "Hydra",
                                           "type": "天然卫星",
                                           "category": "卫星",
-                                          "alias": "许德拉"
+                                          "alias": "许德拉",
+                                          "repo_id": "hydra"
                                         }
                                       ],
                                       "repo_id": "pluto"
@@ -963,18 +973,12 @@
                                   "source": "NASA",
                                   "children": [
                                     {
-                                      "id": "c.procyon-a",
-                                      "name": "南河三A",
-                                      "name_en": "Procyon A",
-                                      "type": "F5IV 主序星",
-                                      "category": "恒星"
-                                    },
-                                    {
-                                      "id": "c.procyon-b",
+                                      "id": "procyon_b",
                                       "name": "南河三B",
                                       "name_en": "Procyon B",
                                       "type": "白矮星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "procyon_b"
                                     }
                                   ],
                                   "repo_id": "procyon_a"
@@ -1031,32 +1035,36 @@
                                   "source": "NASA",
                                   "children": [
                                     {
-                                      "id": "c.capella-aa",
+                                      "id": "capella_aa",
                                       "name": "五车二Aa",
                                       "name_en": "Capella Aa",
                                       "type": "G 型巨星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "capella_aa"
                                     },
                                     {
-                                      "id": "c.capella-ab",
+                                      "id": "capella_ab",
                                       "name": "五车二Ab",
                                       "name_en": "Capella Ab",
                                       "type": "G 型巨星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "capella_ab"
                                     },
                                     {
-                                      "id": "c.capella-ba",
+                                      "id": "capella_ba",
                                       "name": "五车二Ba",
                                       "name_en": "Capella Ba",
                                       "type": "M 型矮星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "capella_ba"
                                     },
                                     {
-                                      "id": "c.capella-bb",
+                                      "id": "capella_bb",
                                       "name": "五车二Bb",
                                       "name_en": "Capella Bb",
                                       "type": "M 型矮星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "capella_bb"
                                     }
                                   ],
                                   "repo_id": "capella"
@@ -1072,46 +1080,52 @@
                                   "source": "NASA",
                                   "children": [
                                     {
-                                      "id": "c.castor-a1",
+                                      "id": "castor_a1",
                                       "name": "北河二A1",
                                       "name_en": "Castor A1",
                                       "type": "A 型主序星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "castor_a1"
                                     },
                                     {
-                                      "id": "c.castor-a2",
+                                      "id": "castor_a2",
                                       "name": "北河二A2",
                                       "name_en": "Castor A2",
                                       "type": "A 型主序星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "castor_a2"
                                     },
                                     {
-                                      "id": "c.castor-b1",
+                                      "id": "castor_b1",
                                       "name": "北河二B1",
                                       "name_en": "Castor B1",
                                       "type": "A 型主序星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "castor_b1"
                                     },
                                     {
-                                      "id": "c.castor-b2",
+                                      "id": "castor_b2",
                                       "name": "北河二B2",
                                       "name_en": "Castor B2",
                                       "type": "A 型主序星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "castor_b2"
                                     },
                                     {
-                                      "id": "c.castor-c1",
+                                      "id": "castor_c1",
                                       "name": "北河二C1",
                                       "name_en": "Castor C1",
                                       "type": "M 型矮星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "castor_c1"
                                     },
                                     {
-                                      "id": "c.castor-c2",
+                                      "id": "castor_c2",
                                       "name": "北河二C2",
                                       "name_en": "Castor C2",
                                       "type": "M 型矮星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "castor_c2"
                                     }
                                   ],
                                   "repo_id": "castor"
@@ -1902,18 +1916,20 @@
                                   "info": "环双星行星系统",
                                   "children": [
                                     {
-                                      "id": "c.kepler-16-a",
+                                      "id": "kepler_16_a",
                                       "name": "开普勒16A",
                                       "name_en": "Kepler-16 A",
                                       "type": "主序星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "kepler_16_a"
                                     },
                                     {
-                                      "id": "c.kepler-16-b",
+                                      "id": "kepler_16_b",
                                       "name": "开普勒16B",
                                       "name_en": "Kepler-16 B",
                                       "type": "红矮星",
-                                      "category": "恒星"
+                                      "category": "恒星",
+                                      "repo_id": "kepler_16_b"
                                     },
                                     {
                                       "id": "kepler_16b",

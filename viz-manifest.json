@@ -56,6 +56,16 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=altair"
       }
     ],
+    "amalthea": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "木卫五（阿马尔塞）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=amalthea&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=amalthea"
+      }
+    ],
     "antares": [
       {
         "repo": "solar-3d",
@@ -106,6 +116,16 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=callisto"
       }
     ],
+    "canopus": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "老人星（船底座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=canopus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=canopus"
+      }
+    ],
     "capella": [
       {
         "repo": "solar-3d",
@@ -124,6 +144,16 @@
         "name": "谷神星",
         "src": "https://astro-solar-3d.pages.dev/go?body=ceres&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=ceres"
+      }
+    ],
+    "charon": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "冥卫一（卡戎）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=charon&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=charon"
       }
     ],
     "cyg_x1": [
@@ -164,6 +194,16 @@
         "name": "地球",
         "src": "https://astro-solar-3d.pages.dev/go?body=earth&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=earth"
+      }
+    ],
+    "elara": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "木卫七（埃拉腊）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=elara&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=elara"
       }
     ],
     "enceladus": [
@@ -226,6 +266,16 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=haumea"
       }
     ],
+    "himalia": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "木卫六（希玛利亚）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=himalia&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=himalia"
+      }
+    ],
     "hyades": [
       {
         "repo": "solar-3d",
@@ -234,6 +284,16 @@
         "name": "毕星团",
         "src": "https://astro-solar-3d.pages.dev/go?body=hyades&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=hyades"
+      }
+    ],
+    "hydra": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "冥卫三（许德拉）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=hydra&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=hydra"
       }
     ],
     "hyperion": [
@@ -446,6 +506,16 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=neptune"
       }
     ],
+    "nereid": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "海卫二（涅瑞伊得斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=nereid&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=nereid"
+      }
+    ],
     "ngc3372": [
       {
         "repo": "solar-3d",
@@ -454,6 +524,16 @@
         "name": "船底座星云 NGC 3372",
         "src": "https://astro-solar-3d.pages.dev/go?body=ngc3372&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=ngc3372"
+      }
+    ],
+    "nix": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "冥卫二（尼克斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=nix&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=nix"
       }
     ],
     "oberon": [
@@ -476,6 +556,16 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=omegaCen"
       }
     ],
+    "pasiphae": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "木卫八（帕西法厄）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=pasiphae&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=pasiphae"
+      }
+    ],
     "pegasi_51": [
       {
         "repo": "solar-3d",
@@ -494,6 +584,16 @@
         "name": "火卫一（福波斯）",
         "src": "https://astro-solar-3d.pages.dev/go?body=phobos&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=phobos"
+      }
+    ],
+    "phoebe": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "土卫九（菲比）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=phoebe&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=phoebe"
       }
     ],
     "pluto": [
@@ -524,6 +624,16 @@
         "name": "南河三（小犬座 α）",
         "src": "https://astro-solar-3d.pages.dev/go?body=procyon&embed=1",
         "full": "https://astro-solar-3d.pages.dev/go?body=procyon"
+      }
+    ],
+    "proteus": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "海卫八（普罗透斯）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=proteus&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=proteus"
       }
     ],
     "proxima_centauri": [
