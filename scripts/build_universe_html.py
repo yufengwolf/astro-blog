@@ -48,6 +48,11 @@ hide:
   <div class="uh-chips" id="uh-chips"></div>
   <div class="uh-crumb" id="uh-crumb"></div>
   <div class="uh-tree" id="uh-tree"></div>
+  <div class="uh-ns" id="uh-ns">
+    <h3 class="uh-ns-title" id="uh-ns-title"></h3>
+    <p class="uh-ns-note" id="uh-ns-note"></p>
+    <div class="uh-tree uh-ns-tree" id="uh-ns-tree"></div>
+  </div>
   <div class="uh-legend" id="uh-legend"></div>
 </section>
 
@@ -113,6 +118,9 @@ hide:
   padding-top:12px;display:flex;flex-wrap:wrap;gap:10px;font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4)}
 .uh-legend span{display:flex;align-items:center;gap:5px}
 .uh-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.uh-ns{margin-top:26px;border-top:1px dashed var(--md-default-fg-color--lightest,rgba(125,125,125,.28));padding-top:16px}
+.uh-ns-title{margin:0 0 6px;font-size:1.02rem;font-weight:700;color:var(--md-default-fg-color,#e6edf6)}
+.uh-ns-note{margin:0 0 10px;font-size:.78rem;line-height:1.55;color:var(--md-default-fg-color--light,#9aa6c4);max-width:920px}
 @media (max-width:560px){
   .uh-children{margin-left:9px;padding-left:9px}
 }
@@ -124,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var DATA = JSON.parse(document.getElementById('uh-data').textContent);
   var TYPE_EN = DATA.type_i18n || {};
   var CAT_EN = DATA.category_i18n || {};
+  var NS = DATA.non_structure || [];
   var CAT_COLOR = {
     '宇宙结构':'#f06292','星系':'#ba68c8','星云':'#4db6ac','恒星':'#ffd54f',
     '行星':'#64b5f6','卫星':'#4dd0e1','星团':'#81c784','矮行星':'#ffb74d',
@@ -134,12 +143,16 @@ document.addEventListener('DOMContentLoaded', function () {
     zh: {
       intro: '下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。层级数据由 universe-data.json 提供，天体详情与仓库数据（astro.json）按英文 id 唯一关联；命名遵循统一规范，类型与归属严格按天体真实性质挂接。带「归属未细化」的容器表示现有资料不足以确定更精确的层级，不做臆测归类。名称右侧带 ↗ 的节点可跳转本站详情卡片；搜索支持中文名、英文名与 M/NGC 等规范编号，右上角可切换中文 / EN。',
       search: '搜索天体名称 / 类型 / 英文名…', expand: '展开全部', collapse: '折叠全部',
-      lang: 'EN', empty: '没有匹配的天体。试试别的名称或清空筛选。', link: '查看本站详情卡片'
+      lang: 'EN', empty: '没有匹配的天体。试试别的名称或清空筛选。', link: '查看本站详情卡片',
+      nsTitle: '非结构 · 宇宙学现象',
+      nsNote: '以下并非引力束缚的「结构」层级，而是宇宙学现象或探测记录（宇宙微波背景辐射、引力波并合事件、遥远类星体与活动星系核）。它们仍按英文 id 与本站天体详情唯一关联，但刻意独立于层级树之外，以免与真实空间归属混淆——这些对象没有稳定的「上级结构」。'
     },
     en: {
       intro: 'A hierarchy of celestial objects organized by gravitational affiliation and containment, from the Observable Universe down to planets, moons, clusters and nebulae. Hierarchy comes from universe-data.json; object details in astro.json are linked by a unique English id. Naming follows a strict convention and every affiliation reflects the object real physical nature. Containers marked "Unspecified" mean current sources do not support a finer placement — no guessing. Nodes with ↗ open the object detail card; search supports Chinese names, English names and M/NGC catalog numbers. Use the top-right button to switch language.',
       search: 'Search name / type / catalog number…', expand: 'Expand all', collapse: 'Collapse all',
-      lang: '中文', empty: 'No matching objects. Try another name or clear the filters.', link: 'Open object detail card'
+      lang: '中文', empty: 'No matching objects. Try another name or clear the filters.', link: 'Open object detail card',
+      nsTitle: 'Non-structure · Cosmological Phenomena',
+      nsNote: 'These are not gravitationally-bound structures but cosmological phenomena or detection records (Cosmic Microwave Background, gravitational-wave merger events, distant quasars and active galactic nuclei). They remain uniquely linked to object details by English id, yet are deliberately kept outside the structure tree to avoid confusion with real spatial affiliation — such objects have no stable parent structure.'
     }
   };
   function catOf(t){
@@ -166,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function colorOf(n){ return CAT_COLOR[nodeCat(n)]; }
   var CAT_SET = new Set();
   (function collect(n){ CAT_SET.add(nodeCat(n)); (n.children||[]).forEach(collect); })(DATA);
+  NS.forEach(function(root){ (function collect(n){ CAT_SET.add(nodeCat(n)); (n.children||[]).forEach(collect); })(root); });
 
   // 语言状态以全站 i18n.js 为准；独立打开本页 / jsdom 单测时退化为页面内切换
   var lang = (window.SITE_LANG === 'en') ? 'en' : 'zh';
@@ -177,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var crumbEl = document.getElementById('uh-crumb');
   var chipsEl = document.getElementById('uh-chips');
   var legendEl = document.getElementById('uh-legend');
+  var nsTreeEl = document.getElementById('uh-ns-tree');
 
   function T(){ return I18N[lang]; }
   function disp(n){ return lang === 'en' ? (n.name_en || n.name) : n.name; }
@@ -192,6 +207,8 @@ document.addEventListener('DOMContentLoaded', function () {
     setText('uh-expand', t.expand);
     setText('uh-collapse', t.collapse);
     setText('uh-lang', t.lang);
+    setText('uh-ns-title', t.nsTitle);
+    setText('uh-ns-note', t.nsNote);
     var q = document.getElementById('uh-q'); if (q) q.placeholder = t.search;
     var sec = document.getElementById('uh'); if (sec) sec.setAttribute('data-lang', lang);
   }
@@ -285,11 +302,27 @@ document.addEventListener('DOMContentLoaded', function () {
     treeEl.innerHTML = '';
     if (query || activeTypes.size){
       var list = DATA.children.filter(subHasMatch);
-      if (!list.length){ treeEl.innerHTML = '<div class="uh-empty">' + esc(T().empty) + '</div>'; return; }
-      list.forEach(function(c){ treeEl.appendChild(renderNode(c, '', 1, [])); });
+      if (!list.length){ treeEl.innerHTML = '<div class="uh-empty">' + esc(T().empty) + '</div>'; }
+      else list.forEach(function(c){ treeEl.appendChild(renderNode(c, '', 1, [])); });
     } else {
       treeEl.appendChild(renderNode(DATA, '', 0, []));
     }
+    renderNS();
+  }
+
+  function renderNS(){
+    if (!nsTreeEl) return;
+    nsTreeEl.innerHTML = '';
+    var sec = document.getElementById('uh-ns');
+    if (!NS.length){ if (sec) sec.style.display = 'none'; return; }
+    var filtering = query || activeTypes.size;
+    var any = false;
+    NS.forEach(function(root){
+      if (filtering && !subHasMatch(root)) return;
+      nsTreeEl.appendChild(renderNode(root, '', 1, []));
+      any = true;
+    });
+    if (sec) sec.style.display = any ? '' : 'none';
   }
 
   function renderChips(){
@@ -320,6 +353,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var path = pathOf(p, n.id);
       if ((n.children||[]).length){ expanded.add(path); n.children.forEach(function(c){ walk(c, path); }); }
     })(DATA, '');
+    NS.forEach(function(root){
+      (function walk(n, p){
+        var path = pathOf(p, n.id);
+        if ((n.children||[]).length){ expanded.add(path); n.children.forEach(function(c){ walk(c, path); }); }
+      })(root, '');
+    });
     render();
   });
   document.getElementById('uh-collapse').addEventListener('click', function (){ expanded.clear(); render(); });

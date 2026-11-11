@@ -24,8 +24,8 @@
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
 ├─ viz-manifest.json     # 3D 覆盖契约（gen_viz_manifest.py 生成；消费外部 links.json 快照；go.html?body=<id> 透传；详情页条件嵌入）
-├─ universe-data.json    # 【宇宙层级】层级拓扑事实源（282 节点；稳定英文 id + 双语词表 + _convention 10 条）
-├─ universe-tree.json    # 【宇宙层级】融合产物（177 个 repo_id = id；页面唯一事实源，universe_merge.py 生成）
+├─ universe-data.json    # 【宇宙层级】层级拓扑事实源（主树 287 + 非结构 9 = 296 节点；稳定英文 id + 双语词表 + _convention 11 条；非结构存 non_structure 数组）
+├─ universe-tree.json    # 【宇宙层级】融合产物（主树 170 + 非结构 7 个 repo_id = id；页面唯一事实源，universe_merge.py 生成）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -38,10 +38,10 @@
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
 │  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入；产出 i18n-data.js 的 names/cats/taglines/fields 四表）
 │  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（消费 scripts/solar3d_links.json 快照；go.html?body=<id>&embed=1 透传；--sync 刷新快照；size-of-space 待接入）
-│  ├─ universe_merge.py   # 【宇宙层级】骨架 + astro.json → universe-tree.json（按英文 id 双向 1:1 唯一关联 + 镜像/类型/词表/归属校验）
-│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（中文/EN 切换、按 category 着色、双语搜索）
+│  ├─ universe_merge.py   # 【宇宙层级】骨架 + astro.json → universe-tree.json（按英文 id 双向 1:1 唯一关联 + 镜像/类型/词表/归属校验；non_structure 单独校验、跳过归属冲突）
+│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（中文/EN 切换、按 category 着色、双语搜索；非结构·宇宙学现象独立区块）
 │  ├─ universe_hook.py    # 【宇宙层级】MkDocs 构建钩子：build 前自动跑上面两步，JSON 改动即同步页面
-│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 30 项回归（id 唯一 / 双语切换 / 英文名搜索 / 搜索筛选展开链接）
+│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 32 项回归（id 唯一 / 双语切换 / 英文名搜索 / 非结构区块渲染与双语）
 │  ├─ check_site_i18n.js # 【全站双语】jsdom 54 项回归（顶栏开关 / 语言持久化 / 可逆恢复 / 署名链接保留 / 对比页）
 │  ├─ check_i18n_coverage.js # 【全站双语】jsdom 7 页英文覆盖率 + 译表漂移检测（当前 100% / 漂移 0）
 │  ├─ translate_fields.py # 【全站双语】把 astro.json 自由文本字段译成英文（增量 / 断点续跑，产出 i18n_fields.json）
@@ -227,14 +227,14 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 ### 生成链
 
-- `universe-data.json`：**层级拓扑事实源**（282 节点）。归属严格，无确证依据的放进标注「归属未细化」的容器，不按类别臆测。
-- `universe-tree.json`：`scripts/universe_merge.py` **只按 id** 做双向 1:1 关联，打上 `repo_id`（等于 id），并校验「名称镜像 / `category` / 中英词表覆盖 / 仓库 `parent` 链与骨架祖先链容器兼容」。**禁止** `lower()`、去空白、去括号、星尾差异、`alias` 兜底等任何名称模糊匹配；id 缺失、重复、孤立立即报错（EXIT=1）。
-- `docs/universe-hierarchy.md`：`scripts/build_universe_html.py` 生成主题化页面，支持**中文 / EN 一键切换**（节点名、说明、类型徽章、大类 chips、图例、搜索提示、空态文案），中文名 / 英文名 / M·NGC 编号 / id 搜索、大类筛选、展开折叠、面包屑。**展开状态与筛选状态按 id / 受控 `category` 存储，切换语言不丢失**；177 个带 `repo_id` 的节点行尾「↗」直达 `objects/<id>/`。
+- `universe-data.json`：**层级拓扑事实源**（主树 287 + 非结构 9 = 296 节点）。引力束缚结构走 `children` 层级树；宇宙微波背景、引力波并合事件、遥远类星体与活动星系核等**非引力束缚对象**单独放 `non_structure` 数组（仍按 id 与 astro.json 关联，但刻意移出层级树，避免与真实空间归属混淆）。归属严格，无确证依据的放进标注「归属未细化」的容器，不按类别臆测。
+- `universe-tree.json`：`scripts/universe_merge.py` **只按 id** 做双向 1:1 关联，打上 `repo_id`（等于 id），并校验「名称镜像 / `category` / 中英词表覆盖 / 仓库 `parent` 链与骨架祖先链容器兼容」。**`non_structure` 节点同样参与 id / `category` / 词表校验，但跳过 parent 链归属冲突检查**（它们被刻意移出层级树）。**禁止** `lower()`、去空白、去括号、星尾差异、`alias` 兜底等任何名称模糊匹配；id 缺失、重复、孤立立即报错（EXIT=1）。
+- `docs/universe-hierarchy.md`：`scripts/build_universe_html.py` 生成主题化页面，支持**中文 / EN 一键切换**（节点名、说明、类型徽章、大类 chips、图例、搜索提示、空态文案），中文名 / 英文名 / M·NGC 编号 / id 搜索、大类筛选、展开折叠、面包屑；层级树下方另设**「非结构 · 宇宙学现象」独立区块**（CMB / 引力波并合事件 / 类星体-AGN），带独立标题与说明，同样支持双语与搜索过滤。**展开状态与筛选状态按 id / 受控 `category` 存储，切换语言不丢失**；170 个主树带 `repo_id` 的节点行尾「↗」直达 `objects/<id>/`。
 - `universe_hook.py`：构建钩子，`mkdocs build` 前自动跑上面两步；两个生成脚本写前比对内容，无变化跳过写入，避免 `mkdocs serve` 死循环。
 
 ```mermaid
 flowchart LR
-    UD["universe-data.json<br/>层级拓扑 282 节点<br/>稳定英文 id + 双语词表"] --> M["universe_merge.py<br/>按 id 双向 1:1 唯一关联<br/>镜像/类型/词表/归属校验"]
+    UD["universe-data.json<br/>层级拓扑 296 节点（主树 287 + 非结构 9）<br/>稳定英文 id + 双语词表"] --> M["universe_merge.py<br/>按 id 双向 1:1 唯一关联<br/>镜像/类型/词表/归属校验<br/>non_structure 跳过归属冲突"]
     AS["docs/data/astro.json<br/>177 天体：名称中英 · 属性 · parent"] --> M
     M --> UT["universe-tree.json<br/>177 个 repo_id (= id)"]
     UT --> B["build_universe_html.py<br/>中文/EN 切换 · category 着色 · 双语搜索"]
@@ -250,7 +250,7 @@ python scripts/universe_merge.py       # 必须 177 id 精确命中 / 0 镜像�
 python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.md
 python scripts/gen_pages.py --check && mkdocs build --strict
 # 注：上面两步已接入 universe_hook.py，随 mkdocs build 自动执行；手动跑用于单独调试
-node scripts/check_universe_dom.js     # jsdom 实跑 30 项：id 唯一 / 双语切换 / 英文名搜索 / 展开状态保留
+node scripts/check_universe_dom.js     # jsdom 实跑 32 项：id 唯一 / 双语切换 / 英文名搜索 / 非结构区块渲染与双语
 node scripts/check_site_i18n.js        # jsdom 实跑 54 项：全站双语 / 顶栏开关 / 可逆恢复
 node scripts/check_i18n_coverage.js    # 7 页英文覆盖率 100% / 译表漂移 0
 ```

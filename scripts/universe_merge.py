@@ -71,6 +71,19 @@ def walk(n, parent=None):
 
 walk(base)
 
+# ---------- 非结构·宇宙学现象 ----------
+# 这些节点不属于引力束缚结构，单独存放于 non_structure 数组。
+# 仍参与 id / category / i18n / repo_id 校验，但不参与 parent 链归属冲突检查
+# （它们被刻意移出层级树，astro.json 中的 parent 不再对应层级祖先）。
+ns_ids = set()
+for ns in base.get("non_structure", []):
+    walk(ns, None)
+    def _collect_ns(n):
+        ns_ids.add(n["id"])
+        for c in n.get("children", []):
+            _collect_ns(c)
+    _collect_ns(ns)
+
 body_ids = {i for i in by_id if not i.startswith(CONTAINER_PREFIX)}
 container_ids = set(by_id) - body_ids
 orphans = sorted(body_ids - set(repo_objs))       # 骨架有、astro 无
@@ -115,6 +128,8 @@ def ancestor_ids(n):
 
 conflicts = []
 for o in repo["objects"]:
+    if o["id"] in ns_ids:
+        continue                                     # 非结构节点不参与归属冲突检查
     prid = o.get("parent")
     if not prid or prid not in repo_objs:
         continue
@@ -160,6 +175,7 @@ print("归属冲突(parent 链与骨架不一致): %d" % len(conflicts))
 for c in conflicts:
     print("  ! %s 仓库父=%s 骨架祖先=%s" % c)
 print("\n按 category 分布(骨架):", dict(Counter(n.get("category") for n in by_id.values())))
+print("非结构·宇宙学现象节点: %d 个 (已跳过归属冲突检查)" % len(ns_ids))
 
 problems = sum(len(x) for x in (dupes, invalid_ids, orphans, uncovered,
                                 name_bad, cat_bad, i18n_bad, conflicts))

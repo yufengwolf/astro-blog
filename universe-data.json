@@ -9,7 +9,8 @@
     "七、格式：括号统一全角「（）」；名称内禁止斜杠「/」；罗马数字用半角 I/II/III；拉丁编号与序号间保留一个半角空格（IC 10、NGC 147），中文与类别词之间不加空格。",
     "八、type 只写纯粹类型名（光谱型/形态/类别），补充说明与不确定表述一律放 info；category 取自受控词表：宇宙结构/星系/星云/恒星/行星/卫星/星团/矮行星/小行星/彗星/黑洞/其他。顶层 type_i18n / category_i18n 为对应英文词表，全节点共用。",
     "九、双语：每个节点都有 name_en（本站天体镜像自 astro.json.name_en，容器在本文件定义）；alias 为通用编号不翻译。页面按语言切换展示，切换只读取双语字段，不依赖任何名称匹配。",
-    "十、归属严格：每个节点的父节点必须反映真实引力从属或包含关系。已确证的精确挂接；无确证依据的放进明确标注「归属未细化」的容器，绝不按类别臆测塞进某个超星系团或旋臂。改任一数据源后随 mkdocs build 自动重生页面。"
+    "十、归属严格：每个节点的父节点必须反映真实引力从属或包含关系。已确证的精确挂接；无确证依据的放进明确标注「归属未细化」的容器，绝不按类别臆测塞进某个超星系团或旋臂。改任一数据源后随 mkdocs build 自动重生页面。",
+    "十一、非结构区块：不属于引力束缚宇宙结构的内容（如宇宙微波背景、引力波探测事件、遥远类星体/AGN）统一放入顶层 non_structure 数组，由页面单独渲染为「非结构·宇宙学现象」区块，不参与主层级树的搜索/筛选/折叠。"
   ],
   "type_i18n": {
     "天然卫星": "Natural Satellite",
@@ -116,7 +117,8 @@
     "活动星系核": "Active Galactic Nucleus",
     "事件分组": "Event Group",
     "巨型宇宙纤维": "Giant Cosmic Filament",
-    "宇宙背景辐射": "Cosmic Background Radiation"
+    "宇宙背景辐射": "Cosmic Background Radiation",
+    "椭圆星系": "Elliptical Galaxy"
   },
   "category_i18n": {
     "宇宙结构": "Cosmic Structure",
@@ -2273,64 +2275,84 @@
               "type": "引力异常区域",
               "category": "宇宙结构",
               "info": "拉尼亚凯亚的引力中心"
+            },
+            {
+              "id": "c.m51-group",
+              "name": "M51星系群",
+              "name_en": "M51 Group",
+              "type": "星系群",
+              "category": "宇宙结构",
+              "info": "M51涡状星系所属的星系群，位于室女座超星系团外围，属拉尼亚凯亚",
+              "source": "NASA/IPAC",
+              "children": [
+                {
+                  "id": "m51",
+                  "name": "涡状星系",
+                  "name_en": "Whirlpool Galaxy (M51)",
+                  "type": "旋涡星系",
+                  "category": "星系",
+                  "alias": "M51"
+                }
+              ]
+            },
+            {
+              "id": "c.m101-group",
+              "name": "M101星系群",
+              "name_en": "M101 Group",
+              "type": "星系群",
+              "category": "宇宙结构",
+              "info": "M101风车星系所属的松散星系群，属大熊座云子结构，归入拉尼亚凯亚",
+              "source": "NASA/IPAC",
+              "children": [
+                {
+                  "id": "m101",
+                  "name": "风车星系",
+                  "name_en": "Pinwheel Galaxy",
+                  "type": "旋涡星系",
+                  "category": "星系",
+                  "alias": "M101"
+                }
+              ]
+            },
+            {
+              "id": "c.m94-group",
+              "name": "M94星系群（猎犬座I）",
+              "name_en": "M94 Group (Canes Venatici I)",
+              "type": "星系群",
+              "category": "宇宙结构",
+              "info": "M64黑眼星系所属的星系群（猎犬座I），归入拉尼亚凯亚",
+              "source": "NASA/IPAC",
+              "children": [
+                {
+                  "id": "m64",
+                  "name": "黑眼星系",
+                  "name_en": "Black Eye Galaxy",
+                  "type": "旋涡星系",
+                  "category": "星系",
+                  "alias": "M64"
+                }
+              ]
+            },
+            {
+              "id": "c.ngc4038-group",
+              "name": "NGC 4038星系群",
+              "name_en": "NGC 4038 Group",
+              "type": "星系群",
+              "category": "宇宙结构",
+              "info": "天线星系（NGC4038/4039）所属的致密相互作用星系群，归入拉尼亚凯亚",
+              "source": "NASA/IPAC",
+              "children": [
+                {
+                  "id": "ngc4038",
+                  "name": "天线星系",
+                  "name_en": "Antennae Galaxies",
+                  "type": "相互作用星系",
+                  "category": "星系",
+                  "alias": "NGC 4038"
+                }
+              ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "c.nearby-galaxies-beyond-the-local-group-supercluster-unspecified",
-      "name": "本星系群外近邻星系（超星系团归属未细化）",
-      "name_en": "Nearby Galaxies beyond the Local Group (Supercluster Unspecified)",
-      "type": "星系分组",
-      "category": "宇宙结构",
-      "info": "本星系群之外的近邻星系；现有层级数据不足以确定其超星系团归属，故不臆测",
-      "children": [
-        {
-          "id": "m51",
-          "name": "涡状星系",
-          "name_en": "Whirlpool Galaxy (M51)",
-          "type": "旋涡星系",
-          "category": "星系",
-          "alias": "M51"
-        },
-        {
-          "id": "m101",
-          "name": "风车星系",
-          "name_en": "Pinwheel Galaxy",
-          "type": "旋涡星系",
-          "category": "星系",
-          "alias": "M101"
-        },
-        {
-          "id": "m64",
-          "name": "黑眼星系",
-          "name_en": "Black Eye Galaxy",
-          "type": "旋涡星系",
-          "category": "星系",
-          "alias": "M64"
-        },
-        {
-          "id": "ngc1300",
-          "name": "NGC 1300",
-          "name_en": "NGC 1300",
-          "type": "棒旋星系",
-          "category": "星系"
-        },
-        {
-          "id": "ngc4038",
-          "name": "天线星系",
-          "name_en": "Antennae Galaxies",
-          "type": "相互作用星系",
-          "category": "星系",
-          "alias": "NGC 4038"
-        },
-        {
-          "id": "stephens_quintet",
-          "name": "斯蒂芬五重星系",
-          "name_en": "Stephan's Quintet",
-          "type": "致密星系群",
-          "category": "星系"
         }
       ]
     },
@@ -2362,6 +2384,160 @@
         }
       ]
     },
+    {
+      "id": "hercules_corona_wall",
+      "name": "武仙-北冕座长城",
+      "name_en": "Hercules–Corona Borealis Great Wall",
+      "type": "巨型宇宙纤维",
+      "category": "宇宙结构",
+      "info": "已知最大尺度宇宙纤维之一，由伽马射线暴过密区统计发现；非由预知星系团组装，无公认独立成员清单，故无下级节点",
+      "source": "NASA"
+    },
+    {
+      "id": "c.shapley-supercluster",
+      "name": "夏普利超星系团",
+      "name_en": "Shapley Supercluster",
+      "type": "超星系团",
+      "category": "宇宙结构",
+      "info": "遥远、质量巨大的致密超星系团，不在拉尼亚凯亚内",
+      "source": "NASA",
+      "children": [
+        {
+          "id": "c.abell-3558",
+          "name": "阿贝尔3558",
+          "name_en": "Abell 3558",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "夏普利超星系团核心主导星系团",
+          "source": "Abell Catalogue",
+          "alias": "A3558"
+        },
+        {
+          "id": "c.abell-3560",
+          "name": "阿贝尔3560",
+          "name_en": "Abell 3560",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "夏普利核心区重要伴星系团",
+          "source": "Abell Catalogue",
+          "alias": "A3560"
+        },
+        {
+          "id": "c.abell-3562",
+          "name": "阿贝尔3562",
+          "name_en": "Abell 3562",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "X射线明亮星系团",
+          "source": "Abell Catalogue",
+          "alias": "A3562"
+        },
+        {
+          "id": "c.abell-3556",
+          "name": "阿贝尔3556",
+          "name_en": "Abell 3556",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "与A3558正在并合",
+          "source": "Abell Catalogue",
+          "alias": "A3556"
+        },
+        {
+          "id": "c.abell-3571",
+          "name": "阿贝尔3571",
+          "name_en": "Abell 3571",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "夏普利外围子团",
+          "source": "Abell Catalogue",
+          "alias": "A3571"
+        }
+      ]
+    },
+    {
+      "id": "c.coma-cluster",
+      "name": "后发座星系团",
+      "name_en": "Coma Cluster",
+      "type": "富星系团",
+      "category": "宇宙结构",
+      "info": "遥远致密的富星系团",
+      "children": [
+        {
+          "id": "c.ngc4889",
+          "name": "NGC 4889",
+          "name_en": "NGC 4889",
+          "type": "超巨椭圆星系",
+          "category": "星系",
+          "info": "后发团中心主导cD星系，拥有超大质量黑洞",
+          "source": "NASA/IPAC"
+        },
+        {
+          "id": "c.ngc4874",
+          "name": "NGC 4874",
+          "name_en": "NGC 4874",
+          "type": "超巨椭圆星系",
+          "category": "星系",
+          "info": "后发团核心另一主导cD星系，富球状星团",
+          "source": "NASA/IPAC"
+        },
+        {
+          "id": "c.ngc4921",
+          "name": "NGC 4921",
+          "name_en": "NGC 4921",
+          "type": "旋涡星系",
+          "category": "星系",
+          "info": "后发团最知名旋涡星系，位于团外围",
+          "source": "NASA/IPAC"
+        },
+        {
+          "id": "c.ngc4839",
+          "name": "NGC 4839",
+          "name_en": "NGC 4839",
+          "type": "椭圆星系",
+          "category": "星系",
+          "info": "属于正在并合的子群",
+          "source": "NASA/IPAC"
+        },
+        {
+          "id": "c.ngc4840",
+          "name": "NGC 4840",
+          "name_en": "NGC 4840",
+          "type": "透镜状星系",
+          "category": "星系",
+          "info": "团内亮透镜星系",
+          "source": "NASA/IPAC"
+        },
+        {
+          "id": "c.ngc4816",
+          "name": "NGC 4816",
+          "name_en": "NGC 4816",
+          "type": "椭圆星系",
+          "category": "星系",
+          "info": "团内亮成员椭圆星系",
+          "source": "NASA/IPAC"
+        }
+      ]
+    },
+    {
+      "id": "ngc1300",
+      "name": "NGC 1300",
+      "name_en": "NGC 1300",
+      "type": "棒旋星系",
+      "category": "星系",
+      "info": "棒旋星系，属波江座星系团，经核实不属拉尼亚凯亚超星系团",
+      "source": "NASA/IPAC"
+    },
+    {
+      "id": "stephens_quintet",
+      "name": "斯蒂芬五重星系",
+      "name_en": "Stephan's Quintet",
+      "type": "致密星系群",
+      "category": "星系",
+      "info": "致密相互作用星系群（HCG 92），属飞马座星系团复合体，经核实不属拉尼亚凯亚",
+      "source": "NASA/IPAC"
+    }
+  ],
+  "non_structure": [
     {
       "id": "c.distant-quasars-and-agn-cosmological-distances",
       "name": "遥远宇宙类星体与活动星系核（宇宙学距离）",
@@ -2431,32 +2607,6 @@
           "source": "LIGO/Virgo 2020"
         }
       ]
-    },
-    {
-      "id": "hercules_corona_wall",
-      "name": "武仙-北冕座长城",
-      "name_en": "Hercules–Corona Borealis Great Wall",
-      "type": "巨型宇宙纤维",
-      "category": "宇宙结构",
-      "info": "已知超大尺度宇宙结构",
-      "source": "NASA"
-    },
-    {
-      "id": "c.shapley-supercluster",
-      "name": "夏普利超星系团",
-      "name_en": "Shapley Supercluster",
-      "type": "超星系团",
-      "category": "宇宙结构",
-      "info": "遥远、质量巨大的致密超星系团，不在拉尼亚凯亚内",
-      "source": "NASA"
-    },
-    {
-      "id": "c.coma-cluster",
-      "name": "后发座星系团",
-      "name_en": "Coma Cluster",
-      "type": "富星系团",
-      "category": "宇宙结构",
-      "info": "遥远致密的富星系团"
     },
     {
       "id": "cmb",

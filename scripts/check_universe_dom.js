@@ -23,6 +23,11 @@ const html = `<!DOCTYPE html><html><body>
   <div class="uh-chips" id="uh-chips"></div>
   <div class="uh-crumb" id="uh-crumb"></div>
   <div class="uh-tree" id="uh-tree"></div>
+  <div class="uh-ns" id="uh-ns">
+    <h3 class="uh-ns-title" id="uh-ns-title"></h3>
+    <p class="uh-ns-note" id="uh-ns-note"></p>
+    <div class="uh-tree" id="uh-ns-tree"></div>
+  </div>
   <div class="uh-legend" id="uh-legend"></div>
 </section>
 <script id="uh-data" type="application/json">${jsonScript[2]}</script>
@@ -56,16 +61,16 @@ const tree = JSON.parse(jsonScript[2]);
 const nodes = [];
 (function w(n) { nodes.push(n); (n.children || []).forEach(w); })(tree);
 const ids = nodes.map(n => n.id);
-ok(ids.length === 282, '内嵌节点数', `count=${ids.length}`);
+ok(ids.length === 287, '内嵌节点数', `count=${ids.length}`);
 ok(ids.every(i => typeof i === 'string' && /^[a-z0-9._-]+$/.test(i)), '全部 id 为 ASCII 稳定标识');
 ok(new Set(ids).size === ids.length, 'id 全局唯一', `unique=${new Set(ids).size}`);
 const withRepo = nodes.filter(n => n.repo_id);
-ok(withRepo.length === 177 && withRepo.every(n => n.id === n.repo_id),
+ok(withRepo.length === 170 && withRepo.every(n => n.id === n.repo_id),
    '天体节点 id === repo_id（唯一关联，无名称匹配）', `count=${withRepo.length}`);
-ok(nodes.filter(n => n.id.startsWith('c.')).length === 105, '容器使用 c. 命名空间');
+ok(nodes.filter(n => n.id.startsWith('c.')).length === 117, '容器使用 c. 命名空间');
 ok(nodes.every(n => typeof n.name_en === 'string' && n.name_en.length > 0),
    '全部节点具备 name_en');
-ok(Object.keys(tree.type_i18n || {}).length === 105 && Object.keys(tree.category_i18n || {}).length === 12,
+ok(Object.keys(tree.type_i18n || {}).length === 106 && Object.keys(tree.category_i18n || {}).length === 12,
    '类型/大类中英词表齐备');
 
 // ---------- 初始渲染（中文） ----------
@@ -145,6 +150,13 @@ const openZh = $$('.uh-children:not(.collapsed)').length;
 ok(openEn > 0 && openEn === openZh, '切换语言不丢失展开状态（id 路径）', `en=${openEn} zh=${openZh}`);
 ok($('#uh').getAttribute('data-lang') === 'zh' && $$('.uh-nm').some(n => CJK.test(n.textContent)),
    '可切回中文');
+
+// ---------- 非结构 · 宇宙学现象 独立区块 ----------
+ok($$('#uh-ns-tree .uh-head').length === 9, '非结构区块渲染 9 个节点', `heads=${$$('#uh-ns-tree .uh-head').length}`);
+ok($('#uh-ns-title').textContent.length > 0 && $('#uh-ns-note').textContent.length > 0,
+   '非结构区块标题/说明已填充');
+const nsTitleEn = (function(){ langBtn.dispatchEvent(new window.Event('click')); const t = $('#uh-ns-title').textContent; langBtn.dispatchEvent(new window.Event('click')); return t; })();
+ok(!CJK.test(nsTitleEn), '非结构区块标题可切换为英文', nsTitleEn.slice(0, 48));
 
 console.log('\n' + (fail.length ? `FAILED: ${fail.length}` : 'ALL PASS'));
 process.exit(fail.length ? 1 : 0);
