@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/moon.webp" alt="月球" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e000868" target="_blank" rel="noopener">NASA/GSFC 满月合成</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/moon.webp" alt="月球" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/GSFC_20171208_Archive_e000868&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/GSFC full moon composite&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e000868" target="_blank" rel="noopener">NASA/GSFC 满月合成</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>月球 <small>Moon</small></h1>
-    <p class="obj-tagline">地球唯一的天然卫星，潮汐锁定使它永远以同一面朝向地球</p>
+    <p class="obj-tagline" data-obj-id="moon">地球唯一的天然卫星，潮汐锁定使它永远以同一面朝向地球</p>
     <p class="obj-summary">平均直径 3,475 km · 质量 7.35×10²² kg</p>
   </div>
 </div>

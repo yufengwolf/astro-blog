@@ -512,7 +512,7 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="star" data-name="比邻星 Proxima Centauri" data-mass="2.425848e+29" data-radius="107137.8" data-density="47.091963990433904" data-temp="2766.8" data-period="199791750.0" data-moons="">
+  <article class="astro-card" data-category="star" data-name="比邻星 Proxima Centauri" data-mass="2.425848e+29" data-radius="107137.8" data-density="47.091964" data-temp="2766.8" data-period="199791750.0" data-moons="">
     <a class="astro-card-link" href="objects/proxima_centauri/">
       <div class="astro-img star"><img src="assets/planets/proxima_centauri.webp" alt="比邻星" loading="lazy"></div>
       <div class="astro-card-body">
@@ -1788,7 +1788,7 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="moon" data-name="阋卫一 Dysnomia" data-mass="8.2e+19" data-radius="350" data-density="1.4" data-temp="-243.14999999999998" data-period="13.8795" data-moons="0">
+  <article class="astro-card" data-category="moon" data-name="阋卫一 Dysnomia" data-mass="8.2e+19" data-radius="350" data-density="0.456584" data-temp="-243.14999999999998" data-period="15.7859" data-moons="0">
     <a class="astro-card-link" href="objects/disnomia/">
       <div class="astro-img moon"><img src="assets/planets/disnomia.webp" alt="阋卫一" loading="lazy"></div>
       <div class="astro-card-body">
@@ -1810,7 +1810,7 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge dwarf_planet">矮行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="asteroid" data-name="凯龙星 Chiron" data-mass="3.7e+18" data-radius="106" data-density="0.7416440536147451" data-temp="-183.14999999999998" data-period="18415.905" data-moons="">
+  <article class="astro-card" data-category="asteroid" data-name="凯龙星 Chiron" data-mass="3.7e+18" data-radius="106" data-density="0.741644" data-temp="-183.14999999999998" data-period="18415.905" data-moons="">
     <a class="astro-card-link" href="objects/chiron/">
       <div class="astro-img asteroid"><img src="assets/planets/chiron.webp" alt="凯龙星" loading="lazy"></div>
       <div class="astro-card-body">
@@ -1821,13 +1821,13 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge asteroid">小行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="black_hole" data-name="OJ 287 OJ 287" data-mass="3.65e+41" data-radius="542112391470.5291" data-density="" data-temp="" data-period="4353.78" data-moons="">
+  <article class="astro-card" data-category="black_hole" data-name="OJ 287 OJ 287" data-mass="3.6498149999999996e+40" data-radius="54205785705.14808" data-density="" data-temp="" data-period="4353.78" data-moons="">
     <a class="astro-card-link" href="objects/oj_287/">
       <div class="astro-img black_hole"><img src="assets/planets/oj_287.webp" alt="OJ 287" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">OJ 287<span class="en">OJ 287</span></div>
         <p class="astro-card-tagline">巨蟹座耀变体，由一对超大质量双黑洞构成，约12年周期性爆发</p>
-        <div class="astro-card-stats"><span>3.65×10⁴¹ kg</span><span>0.115 光年</span></div>
+        <div class="astro-card-stats"><span>3.65×10⁴⁰ kg</span><span>1.08×10¹¹ km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -1920,46 +1920,46 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="planet" data-name="LHS 1140 b LHS 1140 b" data-mass="3.340512e+25" data-radius="10922.49" data-density="7.8" data-temp="-47.14999999999998" data-period="" data-moons="">
+  <article class="astro-card" data-category="planet" data-name="LHS 1140 b LHS 1140 b" data-mass="3.34442344041e+25" data-radius="11034.11317076" data-density="5.9432" data-temp="-47.14999999999998" data-period="24.73723" data-moons="">
     <a class="astro-card-link" href="objects/lhs_1140_b/">
       <div class="astro-img planet"><img src="assets/planets/lhs_1140_b.webp" alt="LHS 1140 b" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">LHS 1140 b<span class="en">LHS 1140 b</span></div>
         <p class="astro-card-tagline">位于宜居带的岩石超级地球，环绕红矮星LHS 1140</p>
-        <div class="astro-card-stats"><span>3.34×10²⁵ kg</span><span>21,845 km</span><span>226 K</span></div>
+        <div class="astro-card-stats"><span>3.34×10²⁵ kg</span><span>22,068 km</span><span>226 K</span></div>
       </div>
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="planet" data-name="WASP-12 b WASP-12 b" data-mass="1.51e+27" data-radius="148000.0" data-density="0.24" data-temp="2326.85" data-period="3.5063999999999997" data-moons="">
+  <article class="astro-card" data-category="planet" data-name="WASP-12 b WASP-12 b" data-mass="2.7902511e+27" data-radius="140481.78" data-density="0.240267" data-temp="2326.85" data-period="1.091418901" data-moons="">
     <a class="astro-card-link" href="objects/wasp-12_b/">
       <div class="astro-img planet"><img src="assets/planets/wasp-12_b.webp" alt="WASP-12 b" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">WASP-12 b<span class="en">WASP-12 b</span></div>
         <p class="astro-card-tagline">一颗距离母星极近的热木星，正在被恒星潮汐吞噬</p>
-        <div class="astro-card-stats"><span>1.51×10²⁷ kg</span><span>296,000 km</span><span>2,600 K</span></div>
+        <div class="astro-card-stats"><span>2.79×10²⁷ kg</span><span>280,964 km</span><span>2,600 K</span></div>
       </div>
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="planet" data-name="巨蟹座55e 55 Cancri e" data-mass="4.02e+25" data-radius="12500.0" data-density="5.9" data-temp="2126.85" data-period="3.3603" data-moons="">
+  <article class="astro-card" data-category="planet" data-name="巨蟹座55e 55 Cancri e" data-mass="4.77175266399e+25" data-radius="11958.9172396" data-density="6.660606" data-temp="2126.85" data-period="0.7365474" data-moons="">
     <a class="astro-card-link" href="objects/55_cancri_e/">
       <div class="astro-img planet"><img src="assets/planets/55_cancri_e.webp" alt="巨蟹座55e" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">巨蟹座55e<span class="en">55 Cancri e</span></div>
         <p class="astro-card-tagline">巨蟹座55A周围的超级地球，极热碳行星，被称为钻石行星</p>
-        <div class="astro-card-stats"><span>4.02×10²⁵ kg</span><span>25,000 km</span><span>2,400 K</span></div>
+        <div class="astro-card-stats"><span>4.77×10²⁵ kg</span><span>23,918 km</span><span>2,400 K</span></div>
       </div>
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="planet" data-name="HD 189733 b HD 189733 b" data-mass="1.13e+27" data-radius="76400.0" data-density="0.95" data-temp="926.85" data-period="11.32275" data-moons="">
+  <article class="astro-card" data-category="planet" data-name="HD 189733 b HD 189733 b" data-mass="2.1448868999999997e+27" data-radius="80785.95999999999" data-density="0.971199" data-temp="926.85" data-period="2.21857567" data-moons="">
     <a class="astro-card-link" href="objects/hd_189733_b/">
       <div class="astro-img planet"><img src="assets/planets/hd_189733_b.webp" alt="HD 189733 b" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">HD 189733 b<span class="en">HD 189733 b</span></div>
         <p class="astro-card-tagline">位于狐狸座的热木星，呈深蓝色，存在硅酸盐雨</p>
-        <div class="astro-card-stats"><span>1.13×10²⁷ kg</span><span>152,800 km</span><span>1,200 K</span></div>
+        <div class="astro-card-stats"><span>2.14×10²⁷ kg</span><span>161,572 km</span><span>1,200 K</span></div>
       </div>
       <span class="astro-badge planet">行星</span>
     </a>
@@ -1975,13 +1975,13 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="planet" data-name="开普勒16b Kepler-16b" data-mass="1.04e+27" data-radius="60300.0" data-density="0.964" data-temp="14.850000000000023" data-period="230.838" data-moons="">
+  <article class="astro-card" data-category="planet" data-name="开普勒16b Kepler-16b" data-mass="6.320772900000001e+26" data-radius="53890.6696" data-density="0.964142" data-temp="14.850000000000023" data-period="228.776" data-moons="">
     <a class="astro-card-link" href="objects/kepler_16b/">
       <div class="astro-img planet"><img src="assets/planets/kepler_16b.webp" alt="开普勒16b" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">开普勒16b<span class="en">Kepler-16b</span></div>
         <p class="astro-card-tagline">环绕双星系统开普勒16的系外行星，是首个被证实的环双星行星</p>
-        <div class="astro-card-stats"><span>1.04×10²⁷ kg</span><span>120,600 km</span><span>288 K</span></div>
+        <div class="astro-card-stats"><span>6.32×10²⁶ kg</span><span>107,781 km</span><span>288 K</span></div>
       </div>
       <span class="astro-badge planet">行星</span>
     </a>
@@ -1993,18 +1993,18 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
   <h2>科普文章</h2>
   <p>每颗天体的数据页之下，附一篇深度科普：</p>
   <ul class="astro-article-list">
-    <li><a href="objects/mercury/">水星（Mercury）</a></li>
-    <li><a href="objects/venus/">金星（Venus）</a></li>
-    <li><a href="objects/mars/">火星（Mars）</a></li>
-    <li><a href="objects/jupiter/">木星（Jupiter）</a></li>
-    <li><a href="objects/saturn/">土星（Saturn）</a></li>
-    <li><a href="objects/pluto/">冥王星（Pluto）</a></li>
+    <li><a href="objects/mercury/" data-en="Mercury">水星（Mercury）</a></li>
+    <li><a href="objects/venus/" data-en="Venus">金星（Venus）</a></li>
+    <li><a href="objects/mars/" data-en="Mars">火星（Mars）</a></li>
+    <li><a href="objects/jupiter/" data-en="Jupiter">木星（Jupiter）</a></li>
+    <li><a href="objects/saturn/" data-en="Saturn">土星（Saturn）</a></li>
+    <li><a href="objects/pluto/" data-en="Pluto">冥王星（Pluto）</a></li>
   </ul>
 </section>
 
 <section class="astro-note">
   <h2>数据说明</h2>
-  <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-10-27）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-11）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
 <p class="obj-version">数据版本 v1.9 · 收录 177 个天体（全部配图）</p>

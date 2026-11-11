@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mirfak.webp" alt="天船三" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mirfak.webp" alt="天船三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>天船三 <small>Mirfak</small></h1>
-    <p class="obj-tagline">英仙座最亮的星，年轻星团核心的黄白超巨星</p>
+    <p class="obj-tagline" data-obj-id="mirfak">英仙座最亮的星，年轻星团核心的黄白超巨星</p>
     <p class="obj-summary">直径 94,615,200 km · 质量 1.69×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>218.38 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>6,350 K</td></tr>
 <tr><th scope="row">光谱型</th><td>F5Ib</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄白超巨星（F5Ib）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow-white supergiant (F5Ib)">黄白超巨星（F5Ib）</td></tr>
 <tr><th scope="row">光度</th><td>1.91×10³⁰ W（5×10³ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>510 光年</td></tr>
-<tr><th scope="row">星座</th><td>英仙座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Perseus">英仙座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>英仙座最亮的星，也是年轻疏散星团 Melotte 20 的核心成员；光度约为太阳的 5000 倍，是肉眼可见的最亮黄白超巨星之一。</td></tr>
+<tr><th scope="row">备注</th><td data-en="The brightest star in Perseus and a core member of the young open cluster Melotte 20; its luminosity is about 5000 times that of the Sun, and it is one of the brightest yellow-white supergiants visible to the naked eye.">英仙座最亮的星，也是年轻疏散星团 Melotte 20 的核心成员；光度约为太阳的 5000 倍，是肉眼可见的最亮黄白超巨星之一。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

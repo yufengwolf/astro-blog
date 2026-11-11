@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/mars.webp" alt="火星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00407" target="_blank" rel="noopener">NASA/JPL · 海盗号全球彩色视图</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/mars.webp" alt="火星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00407&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Viking Global Color View&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00407" target="_blank" rel="noopener">NASA/JPL · 海盗号全球彩色视图</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>火星 <small>Mars</small></h1>
-    <p class="obj-tagline">红色的沙漠行星，拥有太阳系最高的火山与最深的峡谷</p>
+    <p class="obj-tagline" data-obj-id="mars">红色的沙漠行星，拥有太阳系最高的火山与最深的峡谷</p>
     <p class="obj-summary">平均直径 6,779 km · 质量 6.42×10²³ kg</p>
   </div>
 </div>
@@ -66,7 +66,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">大气成分</th><td>二氧化碳 95.1%、氮 2.6%、氩 1.9%（其余为氧、一氧化碳等微量）</td></tr>
+<tr><th scope="row">大气成分</th><td data-en="Carbon dioxide 95.1%, Nitrogen 2.6%, Argon 1.9% (trace amounts of oxygen, carbon monoxide, etc.)">二氧化碳 95.1%、氮 2.6%、氩 1.9%（其余为氧、一氧化碳等微量）</td></tr>
 <tr><th scope="row">全球磁场</th><td>否</td></tr>
 <tr><th scope="row">环系</th><td>否</td></tr>
 <tr><th scope="row">已确认卫星</th><td>2 颗（主要：<a href="../phobos/">火卫一</a>、<a href="../deimos/">火卫二</a>）</td></tr>

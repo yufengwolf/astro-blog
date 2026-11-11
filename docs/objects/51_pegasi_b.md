@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/51_pegasi_b.webp" alt="飞马座51b" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/51_pegasi_b.webp" alt="飞马座51b" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>飞马座51b <small>51 Pegasi b</small></h1>
-    <p class="obj-tagline">首颗被发现围绕类太阳恒星运转的热木星</p>
+    <p class="obj-tagline" data-obj-id="51_pegasi_b">首颗被发现围绕类太阳恒星运转的热木星</p>
     <p class="obj-summary">质量 6.75×10²⁶ kg</p>
   </div>
 </div>
@@ -38,7 +38,7 @@ hide:
 <tr><th scope="row">平均密度</th><td>0.37 g/cm³</td></tr>
 <tr><th scope="row">平均表面温度</th><td>1,200 K（926.9 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.05</td></tr>
-<tr><th scope="row">星座</th><td>飞马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pegasus">飞马座</td></tr>
 </tbody>
 </table>
 </section>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/venus.webp" alt="金星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/S91-50688" target="_blank" rel="noopener">NASA/JPL · 麦哲伦雷达全球视图</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/venus.webp" alt="金星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/S91-50688&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Magellan radar global view&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/S91-50688" target="_blank" rel="noopener">NASA/JPL · 麦哲伦雷达全球视图</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>金星 <small>Venus</small></h1>
-    <p class="obj-tagline">被浓厚二氧化碳大气包裹的炽热世界，太阳系表面最热的行星</p>
+    <p class="obj-tagline" data-obj-id="venus">被浓厚二氧化碳大气包裹的炽热世界，太阳系表面最热的行星</p>
     <p class="obj-summary">平均直径 12,104 km · 质量 4.87×10²⁴ kg</p>
   </div>
 </div>

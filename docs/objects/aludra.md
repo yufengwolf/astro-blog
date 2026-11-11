@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/aludra.webp" alt="弧矢二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/aludra.webp" alt="弧矢二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>弧矢二 <small>Aludra</small></h1>
-    <p class="obj-tagline">大犬座的蓝白超巨星，将以超新星结束一生</p>
+    <p class="obj-tagline" data-obj-id="aludra">大犬座的蓝白超巨星，将以超新星结束一生</p>
     <p class="obj-summary">直径 78,335,820 km · 质量 3.82×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>360.61 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>15,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B5Ia</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白超巨星（B5Ia）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue-white supergiant (B5Ia)">蓝白超巨星（B5Ia）</td></tr>
 <tr><th scope="row">光度</th><td>4.04×10³¹ W（1.05×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2,000 光年</td></tr>
-<tr><th scope="row">星座</th><td>大犬座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Canis Major">大犬座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>与弧矢一、弧矢七同属阿拉伯语'少女'（al-Adhara）星群；质量近 20 倍太阳，光度超过太阳十万倍，已走到生命末期。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Together with Wezen and Aludra, it belongs to the Arabic &quot;the Virgins&quot; (al-Adhara) asterism; its mass is nearly 20 solar masses, luminosity exceeds 100,000 times that of the Sun, and it has reached the late stage of its life.">与弧矢一、弧矢七同属阿拉伯语'少女'（al-Adhara）星群；质量近 20 倍太阳，光度超过太阳十万倍，已走到生命末期。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

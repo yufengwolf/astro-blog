@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/lmc.webp" alt="大麦哲伦云" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA15254" target="_blank" rel="noopener">ESA/NASA/JPL-Caltech · Herschel 红外大麦哲伦云全景</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/lmc.webp" alt="大麦哲伦云" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA15254&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ESA/NASA/JPL-Caltech · Herschel infrared full view of the Large Magellanic Cloud&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA15254" target="_blank" rel="noopener">ESA/NASA/JPL-Caltech · Herschel 红外大麦哲伦云全景</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge galaxy">星系</span>
     <h1>大麦哲伦云 <small>Large Magellanic Cloud</small></h1>
-    <p class="obj-tagline">银河系最大的卫星星系，南天夜空中挂着的模糊云块</p>
+    <p class="obj-tagline" data-obj-id="lmc">银河系最大的卫星星系，南天夜空中挂着的模糊云块</p>
     <p class="obj-summary">直径（等效球径） 14,000 光年 · 质量 1.99×10⁴⁰ kg</p>
   </div>
 </div>
@@ -25,8 +25,8 @@ hide:
 <tr><th scope="row">质量</th><td>1.99×10⁴⁰ kg（1×10¹⁰ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>14,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>16 万光年</td></tr>
-<tr><th scope="row">类型</th><td>不规则（麦哲伦型）矮星系</td></tr>
-<tr><th scope="row">星座</th><td>剑鱼座 / 山案座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Irregular (Magellanic-type) dwarf galaxy">不规则（麦哲伦型）矮星系</td></tr>
+<tr><th scope="row">星座</th><td data-en="Dorado / Mensa">剑鱼座 / 山案座</td></tr>
 </tbody>
 </table>
 </section>
@@ -35,9 +35,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>不规则（麦哲伦型）矮星系</td></tr>
-<tr><th scope="row">已知成员</th><td>约 100 亿颗恒星</td></tr>
-<tr><th scope="row">备注</th><td>直径约 1.4 万光年；蜘蛛星云的宿主。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Irregular (Magellanic-type) dwarf galaxy">不规则（麦哲伦型）矮星系</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="~10 billion stars">约 100 亿颗恒星</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~14,000 light-years; host galaxy of the Tarantula Nebula.">直径约 1.4 万光年；蜘蛛星云的宿主。</td></tr>
 <tr><th scope="row">发现</th><td>1519 年（麦哲伦环球记录）</td></tr>
 </tbody>
 </table>

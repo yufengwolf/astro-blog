@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/ceres.webp" alt="谷神星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA19619" target="_blank" rel="noopener">NASA/JPL-Caltech/UCLA · 黎明号</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/ceres.webp" alt="谷神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA19619&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL-Caltech/UCLA · Dawn&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA19619" target="_blank" rel="noopener">NASA/JPL-Caltech/UCLA · 黎明号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>谷神星 <small>Ceres</small></h1>
-    <p class="obj-tagline">小行星带中最大的天体，唯一位于内太阳系的矮行星</p>
+    <p class="obj-tagline" data-obj-id="ceres">小行星带中最大的天体，唯一位于内太阳系的矮行星</p>
     <p class="obj-summary">平均直径 939.4 km · 质量 9.38×10²⁰ kg</p>
   </div>
 </div>

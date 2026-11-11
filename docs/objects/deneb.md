@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/deneb.webp" alt="天津四" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/deneb.webp" alt="天津四" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>天津四 <small>Deneb</small></h1>
-    <p class="obj-tagline">夏季大三角最远的一角，已知最亮的蓝白超巨星之一</p>
+    <p class="obj-tagline" data-obj-id="deneb">夏季大三角最远的一角，已知最亮的蓝白超巨星之一</p>
     <p class="obj-summary">直径 282,454,200 km · 质量 3.78×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>188.96 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>8,525 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A2Iae</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白超巨星（A2Iae）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue-white supergiant (A2Iae)">蓝白超巨星（A2Iae）</td></tr>
 <tr><th scope="row">光度</th><td>7.5×10³¹ W（1.96×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2,615 光年</td></tr>
-<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cygnus">天鹅座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>光度约为太阳的 20 万倍，是已知最亮的 A 型超巨星之一；距离估计 1400~2600 光年仍有争议（依测量口径而异），此处取约 2600 光年。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Luminous at roughly 200,000 times the Sun&#x27;s luminosity, it is one of the brightest known A-type supergiants; its estimated distance of 1400~2600 light-years remains debated (depending on measurement methods), and approximately 2600 light-years is adopted here.">光度约为太阳的 20 万倍，是已知最亮的 A 型超巨星之一；距离估计 1400~2600 光年仍有争议（依测量口径而异），此处取约 2600 光年。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

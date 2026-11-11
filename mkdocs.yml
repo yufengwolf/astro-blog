@@ -58,14 +58,18 @@ plugins:
 # ---- 自定义样式与脚本（天体数据库工具页） ----
 # 这些 URL 不带内容 hash。docs/_headers 已对 /* 设 Cache-Control: no-cache，
 # 但在 _headers 生效前就缓存了旧副本的客户端仍可能拿到旧版，故附版本查询串。
-# 【硬规则】每次改 site.css / docs/js/*.js，同步把下面的 v= 递增（与 gen_pages.VERSION 一致）。
+# 【硬规则】每次改 site.css / docs/js/*.js，同步把下面的 v= 递增（静态资源戳，与页面版本 gen_pages.VERSION 相互独立）。
 extra_css:
-  - stylesheets/site.css?v=2.0
+  - stylesheets/site.css?v=2.2
 
 extra_javascript:
-  - js/astro-explore.js?v=2.0
-  - js/compare.js?v=1.9
-  - js/solar-embed.js?v=1.9
+  # i18n-data.js 由 gen_pages.py 生成（names/cats/taglines/fields，按 id 索引），必须排在 i18n.js 之前；
+  # i18n.js 必须排在三个业务脚本之前，后者才能用 siteT() / onSiteLang()。
+  - js/i18n-data.js?v=2.2
+  - js/i18n.js?v=2.2
+  - js/astro-explore.js?v=2.2
+  - js/compare.js?v=2.2
+  - js/solar-embed.js?v=2.2
 
 # ---- 构建钩子 ----
 # 构建前自动由 JSON 重新生成「宇宙层级」思维导图（universe-tree.json -> docs/universe-hierarchy.md，主题化页面），

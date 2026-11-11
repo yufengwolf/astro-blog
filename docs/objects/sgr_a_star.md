@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/sgr_a_star.webp" alt="人马座A*" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/sgr_a_star.webp" alt="人马座A*" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>人马座A* <small>Sagittarius A*</small></h1>
-    <p class="obj-tagline">银河系中心的超大质量黑洞，2022 年人类拍下第二张黑洞照片</p>
+    <p class="obj-tagline" data-obj-id="sgr_a_star">银河系中心的超大质量黑洞，2022 年人类拍下第二张黑洞照片</p>
     <p class="obj-summary">事件视界直径 25,380,231 km · 质量 8.54×10³⁶ kg</p>
   </div>
 </div>
@@ -37,7 +37,7 @@ hide:
 <tr><th scope="row">质量</th><td>8.54×10³⁶ kg（4.3×10⁶ M☉）</td></tr>
 <tr><th scope="row">事件视界直径</th><td>25,380,231 km（18.2 × 太阳直径）</td></tr>
 <tr><th scope="row">距离</th><td>3 万光年</td></tr>
-<tr><th scope="row">星座</th><td>人马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Sagittarius">人马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -46,8 +46,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>超大质量黑洞</td></tr>
-<tr><th scope="row">备注</th><td>史瓦西半径约 0.085 AU（约 1270 万 km）；周围恒星轨道数十年跟踪定轨。</td></tr>
+<tr><th scope="row">类型</th><td data-en="supermassive black hole">超大质量黑洞</td></tr>
+<tr><th scope="row">备注</th><td data-en="Schwarzschild radius ~0.085 AU (~12.7 million km); orbital determination by decades-long tracking of surrounding stellar orbits.">史瓦西半径约 0.085 AU（约 1270 万 km）；周围恒星轨道数十年跟踪定轨。</td></tr>
 <tr><th scope="row">发现</th><td>1974 年（射电源发现）；2022 年 EHT 成像</td></tr>
 </tbody>
 </table>

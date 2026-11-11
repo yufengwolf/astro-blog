@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/stephens_quintet.webp" alt="斯蒂芬五重星系" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA04201" target="_blank" rel="noopener">NASA/ESA · 哈勃望远镜斯蒂芬五重星系（1999）</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/stephens_quintet.webp" alt="斯蒂芬五重星系" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA04201&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/ESA · Hubble Space Telescope Stephan&#x27;s Quintet (1999)&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA04201" target="_blank" rel="noopener">NASA/ESA · 哈勃望远镜斯蒂芬五重星系（1999）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge galaxy">星系</span>
     <h1>斯蒂芬五重星系 <small>Stephan's Quintet</small></h1>
-    <p class="obj-tagline">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
+    <p class="obj-tagline" data-obj-id="stephens_quintet">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
     <p class="obj-summary">直径（等效球径） 350,000 光年</p>
   </div>
 </div>
@@ -24,8 +24,8 @@ hide:
 <tbody>
 <tr><th scope="row">直径（等效球径）</th><td>350,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>29,000 万光年</td></tr>
-<tr><th scope="row">类型</th><td>致密星系群</td></tr>
-<tr><th scope="row">星座</th><td>飞马座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Compact galaxy group">致密星系群</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pegasus">飞马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,9 +34,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>致密星系群</td></tr>
+<tr><th scope="row">类型</th><td data-en="Compact galaxy group">致密星系群</td></tr>
 <tr><th scope="row">已知成员</th><td>NGC 7317 / 7318A / 7318B / 7319 / 7320</td></tr>
-<tr><th scope="row">备注</th><td>群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。</td></tr>
+<tr><th scope="row">备注</th><td data-en="The group spans about 350,000 light-years; four galaxies are undergoing merging and tidal disruption (NGC 7320 is merely a foreground galaxy).">群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。</td></tr>
 <tr><th scope="row">发现</th><td>1877 年（Stephan 发现）</td></tr>
 </tbody>
 </table>

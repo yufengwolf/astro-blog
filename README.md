@@ -36,12 +36,15 @@
 │  ├─ fetch_astro_data.py# 太阳系权威核查: status/--propose/--apply
 │  ├─ nasa_image.py      # NASA 真实影像: <id> <url> 手动安装 / --search / --auto-batch
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
-│  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
+│  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入；产出 i18n-data.js 的 names/cats/taglines/fields 四表）
 │  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（消费 scripts/solar3d_links.json 快照；go.html?body=<id>&embed=1 透传；--sync 刷新快照；size-of-space 待接入）
 │  ├─ universe_merge.py   # 【宇宙层级】骨架 + astro.json → universe-tree.json（按英文 id 双向 1:1 唯一关联 + 镜像/类型/词表/归属校验）
 │  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（中文/EN 切换、按 category 着色、双语搜索）
 │  ├─ universe_hook.py    # 【宇宙层级】MkDocs 构建钩子：build 前自动跑上面两步，JSON 改动即同步页面
-│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 31 项回归（id 唯一 / 双语切换 / 英文名搜索 / 搜索筛选展开链接）
+│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 30 项回归（id 唯一 / 双语切换 / 英文名搜索 / 搜索筛选展开链接）
+│  ├─ check_site_i18n.js # 【全站双语】jsdom 54 项回归（顶栏开关 / 语言持久化 / 可逆恢复 / 署名链接保留 / 对比页）
+│  ├─ check_i18n_coverage.js # 【全站双语】jsdom 7 页英文覆盖率 + 译表漂移检测（当前 100% / 漂移 0）
+│  ├─ translate_fields.py # 【全站双语】把 astro.json 自由文本字段译成英文（增量 / 断点续跑，产出 i18n_fields.json）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -58,6 +61,9 @@
    ├─ data/astro.json    # 天体数据库（唯一事实源）
    ├─ data/nasa_images.json # NASA 真实影像登记表
    ├─ data/astro_flat.csv# 【生成】扁平 CSV
+   ├─ data/i18n_fields.json # 数据层自由文本英文译稿（411 条去重，按 id + 字段索引，可人工审阅）
+   ├─ js/i18n-data.js    # 【生成】全站双语数据（names/cats/taglines/fields 四表，按 id 索引）
+   ├─ js/i18n.js         # 全站双语运行时：UI 词表 + 可逆 DOM 替换 + 顶栏语言按钮
    ├─ js/astro-explore.js# 首页交互（筛选/排序/搜索）+ 全局表格横滚包裹（按列数分宽/窄表）
    ├─ js/compare.js      # 独立对比页 /compare/ 逻辑
    ├─ js/solar-embed.js  # 3D 嵌入块：全屏切换 + 移动端横屏提示 + 多来源切换按钮
@@ -114,6 +120,8 @@ python scripts/nasa_image.py 共工星 ai --retries 5  # 改重试次数；--no-
 
 ```bash
 python scripts/lint_data.py && python scripts/gen_pages.py --check && mkdocs build --strict
+node scripts/check_site_i18n.js      # 全站双语回归（须先 build，读 site/ 产物）
+node scripts/check_i18n_coverage.js  # 7 页英文覆盖率 + 译表漂移（须先 build）
 ```
 
 ---
@@ -242,9 +250,42 @@ python scripts/universe_merge.py       # 必须 177 id 精确命中 / 0 镜像�
 python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.md
 python scripts/gen_pages.py --check && mkdocs build --strict
 # 注：上面两步已接入 universe_hook.py，随 mkdocs build 自动执行；手动跑用于单独调试
-node scripts/check_universe_dom.js     # jsdom 实跑 31 项：id 唯一 / 双语切换 / 英文名搜索 / 展开状态保留
+node scripts/check_universe_dom.js     # jsdom 实跑 30 项：id 唯一 / 双语切换 / 英文名搜索 / 展开状态保留
+node scripts/check_site_i18n.js        # jsdom 实跑 54 项：全站双语 / 顶栏开关 / 可逆恢复
+node scripts/check_i18n_coverage.js    # 7 页英文覆盖率 100% / 译表漂移 0
 ```
 
-## 九、文档维护约定
+## 九、全站中英双语（顶栏切换）
+
+站点所有页面共用**一个语言状态**：顶栏 **中 / EN** 按钮位于 Material 明暗模式切换**左侧**，选择写入 `localStorage['astro-site-lang']`，刷新与跨页面均保持；`<html data-lang>` / `<html lang>` 同步切换。
+
+| 层 | 事实源 | 职责 |
+|---|---|---|
+| 数据 | `astro.json` 的 `name_en` / `tagline_en`（177/177，`lint_data.py` 强制必填） | `gen_pages.py` 产出 `docs/js/i18n-data.js`，按 **id** 索引名称 / 分类 / 简介的中英双份 |
+| 数据译稿 | `docs/data/i18n_fields.json`（411 条去重「中文原文 → 英文」，按 **id + 字段** 索引） | 覆盖 `subtype` / `note` / `atmosphere` / `spectral_type` / `constellation` / `image_credit` / `members` / `host_star`，以及数据集页来源清单与待补充；`gen_pages.py` 拼成 `i18n-data.js` 的 `fields` 表，运行时按**整串精确**替换（不做名称匹配） |
+| 词表 | `docs/js/i18n.js` 的 `UI` + `CATS` | 站点名、导航、表头、字段、按钮、提示、单位的中英对照（与 `universe-data.json` 的 `category_i18n` 同口径） |
+| 运行时 | `docs/js/i18n.js` | 可逆文本节点替换（WeakMap 存原文）、`BLOCKS` 静态块译表、`PATTERNS` / `CELL_SUB` 有界替换、`data-en` / `data-en-html` 精确属性、名称主次互换、`site:langchange` 事件、顶栏按钮注入、译表漂移检测 |
+| 业务脚本 | `astro-explore.js` / `compare.js` / `solar-embed.js` | 动态生成的计数 / 对比表 / 全屏按钮改用 `siteT()`，并监听语言变更重渲染 |
+| 层级页 | `build_universe_html.py` | 页内「中文 / EN」按钮改调 `setSiteLang()`，与全站同源；独立打开或 jsdom 单测时降级为页内切换 |
+
+**边界**：仅 `articles/` 科普长文正文仍保留中文（内容本地化，不做界面 i18n）；数据层自由文本已由 `i18n_fields.json` 全量翻译，实测 7 个主要页面英文模式中文残留 **0**。`data-en` 用于纯文本整块替换；**含 `<a>` 链接的块必须改用 `data-en-html`**（`textContent` 赋值会抹掉链接）。新增 UI 文案同步 `i18n.js` 的 `UI`；改任一 CSS/JS 必须递增 `mkdocs.yml` 的 `?v=2.2`。
+
+```mermaid
+flowchart LR
+    FE["i18n_fields.json<br/>411 条自由文本译稿"] --> GP
+    AS["astro.json<br/>name_en / tagline_en (177)"] --> GP["gen_pages.py"]
+    GP --> ID["docs/js/i18n-data.js<br/>names / cats / taglines / fields"]
+    ID --> RT["i18n.js<br/>UI 词表 + 可逆 DOM 替换"]
+    RT --> HDR["顶栏 中/EN 按钮<br/>localStorage 持久化"]
+    HDR -. site:langchange .-> RT
+    RT -. 事件 .-> BIZ["三个业务 JS<br/>重渲染动态文案"]
+    BIZ --> PG["全站页面<br/>首页 / 详情 / 对比 / 3D / 层级"]
+    RT --> PG
+    CV["check_i18n_coverage.js<br/>7 页覆盖率 100% / 漂移 0"] -.校验.-> PG
+```
+
+验证：`node scripts/check_site_i18n.js`（jsdom 实跑 54 项：顶栏位置、语言持久化、中文↔英文可逆、名称互换、徽章、简介、表头、影像署名链接保留、对比页表格）+ `node scripts/check_i18n_coverage.js`（7 页英文覆盖率 ≥99%、译表漂移 0），必须先 `mkdocs build --strict`。
+
+## 十、文档维护约定
 
 **硬规则**：本站任何脚本或工作流变更（新增/修改/删除脚本、增删命令参数、改图片路由、改数据字段、改 LLM 路由），都**必须在同一轮改动中同步更新 [维护指南.md](维护指南.md) 与本文档**（对应章节 + 流程图），并随代码一起提交。**不依赖任何人提醒。** 详细清单见维护指南第十一章。

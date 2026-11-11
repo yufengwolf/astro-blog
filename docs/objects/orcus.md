@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/orcus.webp" alt="亡神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/orcus.webp" alt="亡神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>亡神星 <small>Orcus</small></h1>
-    <p class="obj-tagline">柯伊伯带 plutino 矮行星，与海王星3:2共振，拥有卫星范斯。</p>
+    <p class="obj-tagline" data-obj-id="orcus">柯伊伯带 plutino 矮行星，与海王星3:2共振，拥有卫星范斯。</p>
     <p class="obj-summary">平均直径 910.0 km · 质量 6.34×10²⁰ kg</p>
   </div>
 </div>
@@ -28,7 +28,7 @@ hide:
 <tr><th scope="row">表面重力</th><td>0.20 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.431 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>45 K（-228.1 °C）</td></tr>
-<tr><th scope="row">星座</th><td>双鱼座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pisces">双鱼座</td></tr>
 </tbody>
 </table>
 </section>

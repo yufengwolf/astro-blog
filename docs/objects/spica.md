@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/spica.webp" alt="角宿一" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/spica.webp" alt="角宿一" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>角宿一 <small>Spica</small></h1>
-    <p class="obj-tagline">室女座最亮的星，蓝白双星四天互绕一周</p>
+    <p class="obj-tagline" data-obj-id="spica">室女座最亮的星，蓝白双星四天互绕一周</p>
     <p class="obj-summary">直径 10,393,758 km · 质量 2.27×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>764.03 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>22,400 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B1III-IV</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝巨星（B1III-IV 双星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue giant (B1III-IV binary)">蓝巨星（B1III-IV 双星）</td></tr>
 <tr><th scope="row">光度</th><td>4.63×10³⁰ W（1.21×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>250 光年</td></tr>
-<tr><th scope="row">星座</th><td>室女座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Virgo">室女座</td></tr>
 </tbody>
 </table>
 </section>
@@ -53,7 +53,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">已知成员</th><td>2</td></tr>
-<tr><th scope="row">备注</th><td>两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】</td></tr>
+<tr><th scope="row">备注</th><td data-en="The two blue-white stars orbit each other in only about 4 days; strong tidal forces distort them into egg shapes (ellipsoidal variable). It forms the Spring Triangle with Denebola and Arcturus. 【AI Review 2026-10-27：Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】">两颗蓝白恒星仅约 4 天互绕一周，强潮汐力把彼此拉成蛋形（椭球变星）；与五帝座一、大角星构成春季大三角。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

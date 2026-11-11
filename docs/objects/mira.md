@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mira.webp" alt="蒭藁增二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mira.webp" alt="蒭藁增二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>蒭藁增二 <small>Mira</small></h1>
-    <p class="obj-tagline">人类发现的第一颗变星，约 332 天完成一次呼吸</p>
+    <p class="obj-tagline" data-obj-id="mira">人类发现的第一颗变星，约 332 天完成一次呼吸</p>
     <p class="obj-summary">直径 510,643,800 km · 质量 2.35×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>35.02 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,050 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M7IIIe</td></tr>
-<tr><th scope="row">恒星类型</th><td>红巨星（M7IIIe 变星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red giant (M7IIIe variable star)">红巨星（M7IIIe 变星）</td></tr>
 <tr><th scope="row">光度</th><td>3.4×10³⁰ W（8.88×10³ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>300 光年</td></tr>
-<tr><th scope="row">星座</th><td>鲸鱼座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cetus">鲸鱼座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>星等以约 332 天为周期在 2 等~10 等之间起伏：亮时肉眼可见，暗时需望远镜。它正剧烈流失质量，在星风中拖着一条约 13 光年长的尾巴。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Its magnitude fluctuates between 2 mag and 10 mag with a period of approximately 332 days: visible to the naked eye at maximum brightness, requiring a telescope at minimum. It is losing mass vigorously, trailing a roughly 13-light-year-long tail in its stellar wind.">星等以约 332 天为周期在 2 等~10 等之间起伏：亮时肉眼可见，暗时需望远镜。它正剧烈流失质量，在星风中拖着一条约 13 光年长的尾巴。</td></tr>
 <tr><th scope="row">发现</th><td>1596 年 Fabricius 发现（第一颗被确认的变星）</td></tr>
 </tbody>
 </table>

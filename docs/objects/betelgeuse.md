@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/betelgeuse.webp" alt="参宿四" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/betelgeuse.webp" alt="参宿四" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>参宿四 <small>Betelgeuse</small></h1>
-    <p class="obj-tagline">猎户座α，一颗著名的红超巨星，亮度不规则变化，最接近地球的红超巨星之一</p>
+    <p class="obj-tagline" data-obj-id="betelgeuse">猎户座α，一颗著名的红超巨星，亮度不规则变化，最接近地球的红超巨星之一</p>
     <p class="obj-summary">直径 1.06×10⁹ km · 质量 2.78×10³¹ kg</p>
   </div>
 </div>
@@ -37,11 +37,11 @@ hide:
 <tr><th scope="row">质量</th><td>2.78×10³¹ kg（14 M☉）</td></tr>
 <tr><th scope="row">平均直径</th><td>1.06×10⁹ km（764 × 太阳直径）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,600 K</td></tr>
-<tr><th scope="row">光谱型</th><td>M1-M2Ia（红超巨星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>红超巨星（M1-M2Ia）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="M1-M2Ia (Red supergiant)">M1-M2Ia（红超巨星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red supergiant (M1-M2Ia)">红超巨星（M1-M2Ia）</td></tr>
 <tr><th scope="row">光度</th><td>3.33×10³¹ W（8.71×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>548 光年</td></tr>
-<tr><th scope="row">星座</th><td>猎户座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Orion">猎户座</td></tr>
 </tbody>
 </table>
 </section>

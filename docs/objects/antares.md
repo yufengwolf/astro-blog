@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/antares.webp" alt="心宿二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/antares.webp" alt="心宿二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>心宿二 <small>Antares</small></h1>
-    <p class="obj-tagline">天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）</p>
+    <p class="obj-tagline" data-obj-id="antares">天蝎座α，代表“蝎子的心脏”，一颗明亮的红超巨星（“大火”）</p>
     <p class="obj-summary">直径 946,152,000 km</p>
   </div>
 </div>
@@ -36,11 +36,11 @@ hide:
 <tbody>
 <tr><th scope="row">平均直径</th><td>946,152,000 km（680 × 太阳直径）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,400 K</td></tr>
-<tr><th scope="row">光谱型</th><td>M1.5Iab-Ib（红超巨星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>红超巨星（M1.5Iab-Ib）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="M1.5Iab-Ib (Red supergiant)">M1.5Iab-Ib（红超巨星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red supergiant (M1.5Iab-Ib)">红超巨星（M1.5Iab-Ib）</td></tr>
 <tr><th scope="row">光度</th><td>2.91×10³¹ W（7.59×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>550 光年</td></tr>
-<tr><th scope="row">星座</th><td>天蝎座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Scorpius">天蝎座</td></tr>
 </tbody>
 </table>
 </section>
@@ -49,7 +49,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】</td></tr>
+<tr><th scope="row">备注</th><td data-en="[AI Reproduced 2026-10-27: physical/mass_sun, physical/mass_kg set to empty]">【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】</td></tr>
 <tr><th scope="row">发现</th><td>史前</td></tr>
 </tbody>
 </table>

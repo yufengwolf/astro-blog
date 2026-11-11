@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/arcturus.webp" alt="大角星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/arcturus.webp" alt="大角星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>大角星 <small>Arcturus</small></h1>
-    <p class="obj-tagline">牧夫座的最亮星，一颗橙色的红巨星，是夜空中最亮的恒星之一</p>
+    <p class="obj-tagline" data-obj-id="arcturus">牧夫座的最亮星，一颗橙色的红巨星，是夜空中最亮的恒星之一</p>
     <p class="obj-summary">直径 35,341,560 km · 质量 2.15×10³⁰ kg</p>
   </div>
 </div>
@@ -39,11 +39,11 @@ hide:
 <tr><th scope="row">表面重力</th><td>0.46 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>127.36 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>4,290 K</td></tr>
-<tr><th scope="row">光谱型</th><td>K0III（红巨星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>红巨星（K0III）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="K0III (Red giant)">K0III（红巨星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red giant (K0III)">红巨星（K0III）</td></tr>
 <tr><th scope="row">光度</th><td>6.51×10²⁸ W（170 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>37 光年</td></tr>
-<tr><th scope="row">星座</th><td>牧夫座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Boötes">牧夫座</td></tr>
 </tbody>
 </table>
 </section>

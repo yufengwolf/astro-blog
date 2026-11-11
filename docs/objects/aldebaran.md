@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/aldebaran.webp" alt="毕宿五" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/aldebaran.webp" alt="毕宿五" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>毕宿五 <small>Aldebaran</small></h1>
-    <p class="obj-tagline">金牛座的红眼睛，一颗正在充气膨胀的红巨星</p>
+    <p class="obj-tagline" data-obj-id="aldebaran">金牛座的红眼睛，一颗正在充气膨胀的红巨星</p>
     <p class="obj-summary">直径 61,402,482 km · 质量 2.31×10³⁰ kg</p>
   </div>
 </div>
@@ -40,10 +40,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>100.14 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,910 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K5III</td></tr>
-<tr><th scope="row">恒星类型</th><td>红巨星（K5III）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red giant (K5III)">红巨星（K5III）</td></tr>
 <tr><th scope="row">光度</th><td>1.68×10²⁹ W（439 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>65 光年</td></tr>
-<tr><th scope="row">星座</th><td>金牛座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Taurus">金牛座</td></tr>
 </tbody>
 </table>
 </section>
@@ -61,7 +61,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="The brightest star in Taurus; its radius has expanded to about 44 times that of the Sun. It lies along the line of sight to the Hyades cluster but is a much closer foreground star and not a member of the cluster. 【AI Review 2026-10-27：Fill:orbit/rotation_period_hours】">金牛座最亮的星，半径已膨胀到太阳的约 44 倍；它恰好位于毕星团（Hyades）视线方向上，是比星团近得多的前景星，并非星团成员。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

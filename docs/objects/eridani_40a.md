@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40a.webp" alt="波江座40A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40a.webp" alt="波江座40A" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>波江座40A <small>40 Eridani A</small></h1>
-    <p class="obj-tagline">《星际迷航》中瓦肯人的太阳，一颗宁静的橙黄矮星</p>
+    <p class="obj-tagline" data-obj-id="eridani_40a">《星际迷航》中瓦肯人的太阳，一颗宁静的橙黄矮星</p>
     <p class="obj-summary">直径 1,118,686 km · 质量 1.55×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>608.37 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>5,126 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K1V</td></tr>
-<tr><th scope="row">恒星类型</th><td>橙矮星（K1V 主序星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Orange dwarf (K1V main-sequence star)">橙矮星（K1V 主序星）</td></tr>
 <tr><th scope="row">光度</th><td>1.53×10²⁶ W（0.4 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>16 光年</td></tr>
-<tr><th scope="row">星座</th><td>波江座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Eridanus">波江座</td></tr>
 </tbody>
 </table>
 </section>
@@ -50,7 +50,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">已知成员</th><td>3</td></tr>
-<tr><th scope="row">备注</th><td>又名 Keid，与白矮星 B、红矮星 C 组成三合系统，B/C 双星绕它一周约需 8000 年；因出现在《星际迷航》设定中（瓦肯人的太阳）而广为人知。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="Also named Keid, it forms a triple system with white dwarf B and red dwarf C; the B/C binary takes about 8000 years to orbit it; it is well-known for appearing in Star Trek canon as the sun of the Vulcans. 【AI Review 2026-10-27: Fill:orbit/rotation_period_hours】">又名 Keid，与白矮星 B、红矮星 C 组成三合系统，B/C 双星绕它一周约需 8000 年；因出现在《星际迷航》设定中（瓦肯人的太阳）而广为人知。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

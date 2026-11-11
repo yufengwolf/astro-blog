@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/castor.webp" alt="北河二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/castor.webp" alt="北河二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>北河二 <small>Castor</small></h1>
-    <p class="obj-tagline">六颗恒星组成的聚星系统，冬季大三角的一角</p>
+    <p class="obj-tagline" data-obj-id="castor">六颗恒星组成的聚星系统，冬季大三角的一角</p>
     <p class="obj-summary">直径 2,906,635 km · 质量 4.71×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>658.03 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>10,286 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A1Vm</td></tr>
-<tr><th scope="row">恒星类型</th><td>白主序星（A1Vm 六合星系统）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="White main-sequence star (A1Vm sextuple star system)">白主序星（A1Vm 六合星系统）</td></tr>
 <tr><th scope="row">光度</th><td>1.15×10²⁸ W（30 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>49 光年</td></tr>
-<tr><th scope="row">星座</th><td>双子座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Gemini">双子座</td></tr>
 </tbody>
 </table>
 </section>
@@ -41,7 +41,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">已知成员</th><td>6</td></tr>
-<tr><th scope="row">备注</th><td>冬季大三角的一角。肉眼看似一颗星，实为六颗恒星的聚星系统：A、B 两对各含分光双星，另有一对远距红矮星伴星（YY Geminorum）。</td></tr>
+<tr><th scope="row">备注</th><td data-en="One vertex of the Winter Triangle. Appears as a single star to the naked eye, but it is a multiple system of six stars: pairs A and B are each spectroscopic binaries, plus a distant red dwarf companion pair (YY Geminorum).">冬季大三角的一角。肉眼看似一颗星，实为六颗恒星的聚星系统：A、B 两对各含分光双星，另有一对远距红矮星伴星（YY Geminorum）。</td></tr>
 <tr><th scope="row">发现</th><td>1678 年被发现是双星</td></tr>
 </tbody>
 </table>

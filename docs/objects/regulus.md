@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/regulus.webp" alt="轩辕十四" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/regulus.webp" alt="轩辕十四" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>轩辕十四 <small>Regulus</small></h1>
-    <p class="obj-tagline">狮子座的心脏，一颗飞速自转的蓝白恒星</p>
+    <p class="obj-tagline" data-obj-id="regulus">狮子座的心脏，一颗飞速自转的蓝白恒星</p>
     <p class="obj-summary">直径 6,052,590 km · 质量 7.56×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>577.29 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>12,460 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B8IVn</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白主序星（B8IVn）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue-white main-sequence star (B8IVn)">蓝白主序星（B8IVn）</td></tr>
 <tr><th scope="row">光度</th><td>1.21×10²⁹ W（316 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>79 光年</td></tr>
-<tr><th scope="row">星座</th><td>狮子座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Leo">狮子座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>几乎正对黄道，是月亮与行星掩星的常客。约 15.9 小时一圈的自转把它甩成明显扁球，两极表面重力比赤道强约一倍。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Nearly aligned with the ecliptic, it is frequently occulted by the Moon and planets. Its rotation period of about 15.9 hours distorts it into a noticeably oblate spheroid; the surface gravity at the poles is roughly twice that at the equator.">几乎正对黄道，是月亮与行星掩星的常客。约 15.9 小时一圈的自转把它甩成明显扁球，两极表面重力比赤道强约一倍。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

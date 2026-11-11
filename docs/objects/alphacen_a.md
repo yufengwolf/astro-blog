@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/alphacen_a.webp" alt="南门二A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/alphacen_a.webp" alt="南门二A" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>南门二A <small>Alpha Centauri A</small></h1>
-    <p class="obj-tagline">距太阳系最近的恒星系统主星，与太阳宛如孪生</p>
+    <p class="obj-tagline" data-obj-id="alphacen_a">距太阳系最近的恒星系统主星，与太阳宛如孪生</p>
     <p class="obj-summary">直径 1,702,239 km · 质量 2.19×10³⁰ kg</p>
   </div>
 </div>
@@ -40,10 +40,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>585.68 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>5,790 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G2V</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄矮星（G2V 主序星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow dwarf (G2V main-sequence star)">黄矮星（G2V 主序星）</td></tr>
 <tr><th scope="row">光度</th><td>5.81×10²⁶ W（1.52 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>4 光年</td></tr>
-<tr><th scope="row">星座</th><td>半人马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Centaurus">半人马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -53,7 +53,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">已知成员</th><td>3</td></tr>
-<tr><th scope="row">备注</th><td>光谱、质量与太阳几乎一致的 G2V 恒星；与南门二B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。</td></tr>
+<tr><th scope="row">备注</th><td data-en="G2V star with nearly identical spectrum and mass to the Sun; forms a close binary with Alpha Centauri B (orbital period ~80 yr), while Proxima Centauri orbits this bright pair at ~0.2 ly away.">光谱、质量与太阳几乎一致的 G2V 恒星；与南门二B 组成密近双星（互绕一周约 80 年），比邻星则在约 0.2 光年外绕这对亮星运行。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/gonggong_225088.webp" alt="共工星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/gonggong_225088.webp" alt="共工星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>共工星 <small>225088 Gonggong</small></h1>
-    <p class="obj-tagline">柯伊伯带离散盘冰质矮行星，以中国水神共工命名</p>
+    <p class="obj-tagline" data-obj-id="gonggong_225088">柯伊伯带离散盘冰质矮行星，以中国水神共工命名</p>
     <p class="obj-summary">平均直径 1,230 km</p>
   </div>
 </div>
@@ -24,7 +24,7 @@ hide:
 <tbody>
 <tr><th scope="row">平均直径</th><td>1,230 km（0.0965 × 地球直径）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>30 K（-243.1 °C）</td></tr>
-<tr><th scope="row">星座</th><td>双子座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Gemini">双子座</td></tr>
 </tbody>
 </table>
 </section>

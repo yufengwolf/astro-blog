@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/cmb.webp" alt="宇宙微波背景" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA16873" target="_blank" rel="noopener">ESA/NASA · Planck 卫星全天图（2013 年发布）</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/cmb.webp" alt="宇宙微波背景" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA16873&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ESA/NASA · Planck satellite all-sky map (released 2013)&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA16873" target="_blank" rel="noopener">ESA/NASA · Planck 卫星全天图（2013 年发布）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>宇宙微波背景 <small>Cosmic Microwave Background</small></h1>
-    <p class="obj-tagline">大爆炸的余晖，宇宙最古老的光（最后散射面）</p>
+    <p class="obj-tagline" data-obj-id="cmb">大爆炸的余晖，宇宙最古老的光（最后散射面）</p>
     <p class="obj-summary">直径（等效球径） 91,400,000,000 光年</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">直径（等效球径）</th><td>91,400,000,000 光年</td></tr>
 <tr><th scope="row">平均温度</th><td>3 K</td></tr>
 <tr><th scope="row">距离</th><td>457 亿光年</td></tr>
-<tr><th scope="row">类型</th><td>宇宙微波背景辐射（最后散射面）</td></tr>
+<tr><th scope="row">类型</th><td data-en="Cosmic Microwave Background (last scattering surface)">宇宙微波背景辐射（最后散射面）</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,8 +34,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>宇宙微波背景辐射（最后散射面）</td></tr>
-<tr><th scope="row">备注</th><td>共动距离约 457 亿光年；温度 2.725 K，起伏仅约 10⁻⁵，这些起伏是今天所有星系结构的种子。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Cosmic Microwave Background (last scattering surface)">宇宙微波背景辐射（最后散射面）</td></tr>
+<tr><th scope="row">备注</th><td data-en="Comoving distance ~45.7 billion light-years; temperature 2.725 K, fluctuations only ~10⁻⁵, these fluctuations are the seeds of all present-day galaxy structures.">共动距离约 457 亿光年；温度 2.725 K，起伏仅约 10⁻⁵，这些起伏是今天所有星系结构的种子。</td></tr>
 <tr><th scope="row">发现</th><td>1965 年（Penzias & Wilson 发现）</td></tr>
 </tbody>
 </table>

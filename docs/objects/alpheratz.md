@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/alpheratz.webp" alt="壁宿二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/alpheratz.webp" alt="壁宿二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>壁宿二 <small>Alpheratz</small></h1>
-    <p class="obj-tagline">仙女座与飞马座共用的一角，蓝白亚巨星</p>
+    <p class="obj-tagline" data-obj-id="alpheratz">仙女座与飞马座共用的一角，蓝白亚巨星</p>
     <p class="obj-summary">直径 4,090,716 km · 质量 7.22×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>686.32 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>11,950 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B8IV</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白亚巨星（B8IV）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue-white subgiant (B8IV)">蓝白亚巨星（B8IV）</td></tr>
 <tr><th scope="row">光度</th><td>6.05×10²⁸ W（158 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>97 光年</td></tr>
-<tr><th scope="row">星座</th><td>仙女座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Andromeda">仙女座</td></tr>
 </tbody>
 </table>
 </section>
@@ -50,7 +50,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>历史上同时被算作仙女座 α 与飞马座 δ，是两座共用的一角；本身还是一对分光双星，主星比伴星亮数百倍。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years】</td></tr>
+<tr><th scope="row">备注</th><td data-en="Historically classified as both Alpha Andromedae and Delta Pegasi, it is a shared corner of the two constellations; it is itself a spectroscopic binary, with the primary star hundreds of times brighter than the companion. 【AI Review 2026-10-27: Fill:orbit/semimajor_axis_au,orbit/orbital_period_years】">历史上同时被算作仙女座 α 与飞马座 δ，是两座共用的一角；本身还是一对分光双星，主星比伴星亮数百倍。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

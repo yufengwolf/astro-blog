@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/uy_scuti.webp" alt="盾牌座UY" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/uy_scuti.webp" alt="盾牌座UY" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>盾牌座UY <small>UY Scuti</small></h1>
-    <p class="obj-tagline">体积最大的已知恒星之一，盾牌座的红超巨星</p>
+    <p class="obj-tagline" data-obj-id="uy_scuti">体积最大的已知恒星之一，盾牌座的红超巨星</p>
     <p class="obj-summary">直径 1.26×10⁹ km · 质量 1.69×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>59.73 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,550 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M4Ia</td></tr>
-<tr><th scope="row">恒星类型</th><td>红超巨星（M4Ia）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red supergiant (M4Ia)">红超巨星（M4Ia）</td></tr>
 <tr><th scope="row">光度</th><td>4.75×10³¹ W（1.24×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>5,871 光年</td></tr>
-<tr><th scope="row">星座</th><td>盾牌座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Scutum">盾牌座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>曾以约 1708 R☉ 的旧估计闻名，最新观测把半径下修至约 909 R☉——仍接近太阳的千倍。半规则变星，约 8.5 个月内光变约 1 个星等。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Once known for an old estimate of about 1708 R☉; latest observations revise its radius down to approximately 909 R☉ — still nearly one thousand times that of the Sun. Semiregular variable star, varying by about 1 magnitude over roughly 8.5 months.">曾以约 1708 R☉ 的旧估计闻名，最新观测把半径下修至约 909 R☉——仍接近太阳的千倍。半规则变星，约 8.5 个月内光变约 1 个星等。</td></tr>
 <tr><th scope="row">发现</th><td>1861 年编入波恩星表</td></tr>
 </tbody>
 </table>

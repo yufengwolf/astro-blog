@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/mimas.webp" alt="土卫一" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA06257" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/mimas.webp" alt="土卫一" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA06257&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/SSI · Cassini&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA06257" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫一 <small>Mimas</small></h1>
-    <p class="obj-tagline">被称为'死星'的卫星，赫歇尔撞击坑占其表面的三分之一</p>
+    <p class="obj-tagline" data-obj-id="mimas">被称为'死星'的卫星，赫歇尔撞击坑占其表面的三分之一</p>
     <p class="obj-summary">平均直径 397.4 km · 质量 3.79×10¹⁹ kg</p>
   </div>
 </div>

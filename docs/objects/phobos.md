@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/phobos.webp" alt="火卫一" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA10368" target="_blank" rel="noopener">NASA/JPL/MSSS · 火星全球勘测者</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/phobos.webp" alt="火卫一" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA10368&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/MSSS · Mars Global Surveyor&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA10368" target="_blank" rel="noopener">NASA/JPL/MSSS · 火星全球勘测者</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>火卫一 <small>Phobos</small></h1>
-    <p class="obj-tagline">火星较大的卫星，正以每百年约 1.8 米的速度靠近火星</p>
+    <p class="obj-tagline" data-obj-id="phobos">火星较大的卫星，正以每百年约 1.8 米的速度靠近火星</p>
     <p class="obj-summary">平均直径 22.5 km · 质量 1.06×10¹⁶ kg</p>
   </div>
 </div>

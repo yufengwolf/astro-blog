@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/eris.webp" alt="阋神星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA17307" target="_blank" rel="noopener">NASA/ESA 艺术概念图</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/eris.webp" alt="阋神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA17307&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/ESA artistic concept&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA17307" target="_blank" rel="noopener">NASA/ESA 艺术概念图</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>阋神星 <small>Eris</small></h1>
-    <p class="obj-tagline">质量最大的矮行星，它的发现促使冥王星降级</p>
+    <p class="obj-tagline" data-obj-id="eris">质量最大的矮行星，它的发现促使冥王星降级</p>
     <p class="obj-summary">平均直径 2,326 km · 质量 1.6×10²² kg</p>
   </div>
 </div>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/juno.webp" alt="婚神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/juno.webp" alt="婚神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge asteroid">小行星</span>
     <h1>婚神星 <small>Juno</small></h1>
-    <p class="obj-tagline">第3号小行星，主带大型石质小行星，最早发现的小行星之一</p>
+    <p class="obj-tagline" data-obj-id="juno">第3号小行星，主带大型石质小行星，最早发现的小行星之一</p>
     <p class="obj-summary">平均直径 272.0 km · 质量 2.67×10¹⁹ kg</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">质量</th><td>2.67×10¹⁹ kg（4.47×10⁻⁶ M⊕）</td></tr>
 <tr><th scope="row">平均直径</th><td>272.0 km（0.0213 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>2.534 g/cm³</td></tr>
-<tr><th scope="row">星座</th><td>室女座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Virgo">室女座</td></tr>
 </tbody>
 </table>
 </section>

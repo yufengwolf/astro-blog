@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/hyades.webp" alt="毕星团" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/hyades.webp" alt="毕星团" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge cluster">星团</span>
     <h1>毕星团 <small>Hyades</small></h1>
-    <p class="obj-tagline">金牛座的 V 形头部，离太阳最近的疏散星团之一</p>
+    <p class="obj-tagline" data-obj-id="hyades">金牛座的 V 形头部，离太阳最近的疏散星团之一</p>
     <p class="obj-summary">直径（等效球径） 14.7 光年 · 质量 7.95×10³² kg</p>
   </div>
 </div>
@@ -37,8 +37,8 @@ hide:
 <tr><th scope="row">质量</th><td>7.95×10³² kg（400 M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>14.7 光年</td></tr>
 <tr><th scope="row">距离</th><td>153 光年</td></tr>
-<tr><th scope="row">类型</th><td>疏散星团</td></tr>
-<tr><th scope="row">星座</th><td>金牛座</td></tr>
+<tr><th scope="row">类型</th><td data-en="open cluster">疏散星团</td></tr>
+<tr><th scope="row">星座</th><td data-en="Taurus">金牛座</td></tr>
 </tbody>
 </table>
 </section>
@@ -47,9 +47,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>疏散星团</td></tr>
-<tr><th scope="row">已知成员</th><td>约 300~400 颗成员星</td></tr>
-<tr><th scope="row">备注</th><td>直径约 15 光年；年龄约 6.25 亿年，构成金牛座头部的 V 字形。</td></tr>
+<tr><th scope="row">类型</th><td data-en="open cluster">疏散星团</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="about 300~400 member stars">约 300~400 颗成员星</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter of about 15 light-years; age of about 625 million years, forming the V-shape of the Taurus head.">直径约 15 光年；年龄约 6.25 亿年，构成金牛座头部的 V 字形。</td></tr>
 <tr><th scope="row">发现</th><td>史前（古希腊已有记载）</td></tr>
 </tbody>
 </table>

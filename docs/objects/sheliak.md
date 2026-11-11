@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sheliak.webp" alt="渐台二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sheliak.webp" alt="渐台二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>渐台二 <small>Beta Lyrae</small></h1>
-    <p class="obj-tagline">物质正从一颗星流向另一颗的食双星</p>
+    <p class="obj-tagline" data-obj-id="sheliak">物质正从一颗星流向另一颗的食双星</p>
     <p class="obj-summary">直径 21,149,280 km · 质量 5.91×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>273.03 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>13,300 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B7II</td></tr>
-<tr><th scope="row">恒星类型</th><td>食双星（质量转移系统）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Eclipsing binary (mass-transfer system)">食双星（质量转移系统）</td></tr>
 <tr><th scope="row">光度</th><td>2.49×10³⁰ W（6.5×10³ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>960 光年</td></tr>
-<tr><th scope="row">星座</th><td>天琴座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Lyra">天琴座</td></tr>
 </tbody>
 </table>
 </section>
@@ -53,7 +53,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">已知成员</th><td>2</td></tr>
-<tr><th scope="row">备注</th><td>两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。 【AI复校 2026-10-27：置空:physical/mass_sun; 填充:orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity,orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="The two stars are so close that material flows from one to the other, enveloped by a common envelope; light variation is nearly continuous, and it is one of the earliest confirmed eclipsing binaries. 【AI Review 2026-10-27: Clear:physical/mass_sun; Fill:orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity,orbit/rotation_period_hours】">两颗星已近到物质正从一颗流向另一颗，外面裹着公共包层；光变几乎连续不断，是已知最早被确认的食双星之一。 【AI复校 2026-10-27：置空:physical/mass_sun; 填充:orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity,orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>1784 年古德里克发现其光变</td></tr>
 </tbody>
 </table>

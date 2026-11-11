@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/iapetus.webp" alt="土卫八" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA11690" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/iapetus.webp" alt="土卫八" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA11690&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/SSI · Cassini&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA11690" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫八 <small>Iapetus</small></h1>
-    <p class="obj-tagline">'阴阳脸'卫星，一面亮如雪一面黑如炭，赤道还有一道奇异山脊</p>
+    <p class="obj-tagline" data-obj-id="iapetus">'阴阳脸'卫星，一面亮如雪一面黑如炭，赤道还有一道奇异山脊</p>
     <p class="obj-summary">平均直径 1,469 km · 质量 1.81×10²¹ kg</p>
   </div>
 </div>

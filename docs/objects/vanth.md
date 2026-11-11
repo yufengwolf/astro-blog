@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/vanth.webp" alt="范斯" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/vanth.webp" alt="范斯" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>范斯 <small>Vanth</small></h1>
-    <p class="obj-tagline">柯伊伯带矮行星亡神星（Orcus）的唯一已知卫星</p>
+    <p class="obj-tagline" data-obj-id="vanth">柯伊伯带矮行星亡神星（Orcus）的唯一已知卫星</p>
     <p class="obj-summary">平均直径 440.0 km · 质量 3×10¹⁹ kg</p>
   </div>
 </div>
@@ -29,7 +29,7 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>0.135 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>44 K（-229.1 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.08</td></tr>
-<tr><th scope="row">星座</th><td>蛇夫座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Ophiuchus">蛇夫座</td></tr>
 </tbody>
 </table>
 </section>

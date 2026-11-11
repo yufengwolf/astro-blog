@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/proxima_centauri_b.webp" alt="比邻星b" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/proxima_centauri_b.webp" alt="比邻星b" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>比邻星b <small>Proxima Centauri b</small></h1>
-    <p class="obj-tagline">比邻星的类地系外行星，位于宜居带内</p>
+    <p class="obj-tagline" data-obj-id="proxima_centauri_b">比邻星的类地系外行星，位于宜居带内</p>
     <p class="obj-summary">平均直径 14,140 km</p>
   </div>
 </div>
@@ -38,7 +38,7 @@ hide:
 <tr><th scope="row">平均密度</th><td>5.1 g/cm³</td></tr>
 <tr><th scope="row">平均表面温度</th><td>234 K（-39.1 °C）</td></tr>
 <tr><th scope="row">反照率</th><td>0.30</td></tr>
-<tr><th scope="row">星座</th><td>半人马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Centaurus">半人马座</td></tr>
 </tbody>
 </table>
 </section>

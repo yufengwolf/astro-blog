@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/quaoar.webp" alt="创神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/quaoar.webp" alt="创神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>创神星 <small>Quaoar</small></h1>
-    <p class="obj-tagline">柯伊伯带矮行星，拥有行星环，位于海王星轨道外侧</p>
+    <p class="obj-tagline" data-obj-id="quaoar">柯伊伯带矮行星，拥有行星环，位于海王星轨道外侧</p>
     <p class="obj-summary">平均直径 1,110 km · 质量 1.2×10²¹ kg</p>
   </div>
 </div>
@@ -28,7 +28,7 @@ hide:
 <tr><th scope="row">表面重力</th><td>0.26 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.537 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>42 K（-231.1 °C）</td></tr>
-<tr><th scope="row">星座</th><td>蛇夫座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Ophiuchus">蛇夫座</td></tr>
 </tbody>
 </table>
 </section>

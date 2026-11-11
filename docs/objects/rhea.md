@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/rhea.webp" alt="土卫五" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA06578" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/rhea.webp" alt="土卫五" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA06578&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/SSI · Cassini&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA06578" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫五 <small>Rhea</small></h1>
-    <p class="obj-tagline">土星第二大卫星，由约三分之二的冰与三分之一的岩石构成</p>
+    <p class="obj-tagline" data-obj-id="rhea">土星第二大卫星，由约三分之二的冰与三分之一的岩石构成</p>
     <p class="obj-summary">平均直径 1,528 km · 质量 2.31×10²¹ kg</p>
   </div>
 </div>

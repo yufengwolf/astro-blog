@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/adhara.webp" alt="弧矢七" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/adhara.webp" alt="弧矢七" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>弧矢七 <small>Adhara</small></h1>
-    <p class="obj-tagline">470 万年前它曾是夜空最亮的星，强极紫外光源</p>
+    <p class="obj-tagline" data-obj-id="adhara">470 万年前它曾是夜空最亮的星，强极紫外光源</p>
     <p class="obj-summary">直径 19,340,460 km · 质量 2.51×10³¹ kg</p>
   </div>
 </div>
@@ -28,9 +28,9 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>588.07 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>22,900 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B2II</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白亮巨星（B2II）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue-white bright giant (B2II)">蓝白亮巨星（B2II）</td></tr>
 <tr><th scope="row">距离</th><td>430 光年</td></tr>
-<tr><th scope="row">星座</th><td>大犬座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Canis Major">大犬座</td></tr>
 </tbody>
 </table>
 </section>
@@ -39,7 +39,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>约 470 万年前它距地球更近，曾以 -3.99 等成为全天最亮的星；今天它仍是夜空中最强的极紫外辐射源，其紫外光子主导着本地星际云的电离状态。 【AI复校 2026-10-27（仅1发成功）：置空:physical/lum_sun】</td></tr>
+<tr><th scope="row">备注</th><td data-en="It was closer to Earth about 4.7 million years ago and once became the brightest star in the whole sky at magnitude -3.99; today it remains the strongest extreme ultraviolet radiation source in the night sky, and its ultraviolet photons dominate the ionization state of the Local Interstellar Cloud. 【AI Review 2026-10-27 (Only 1 run succeeded): Empty:physical/lum_sun】">约 470 万年前它距地球更近，曾以 -3.99 等成为全天最亮的星；今天它仍是夜空中最强的极紫外辐射源，其紫外光子主导着本地星际云的电离状态。 【AI复校 2026-10-27（仅1发成功）：置空:physical/lum_sun】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

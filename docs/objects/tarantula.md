@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img nebula"><img src="../../assets/planets/tarantula.webp" alt="蜘蛛星云" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA14415" target="_blank" rel="noopener">NASA/CXC/STScI/JPL-Caltech · 蜘蛛星云多波段合成（Chandra+哈勃+斯皮策）</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img nebula"><img src="../../assets/planets/tarantula.webp" alt="蜘蛛星云" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA14415&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/CXC/STScI/JPL-Caltech · Tarantula Nebula Multi-wavelength Composite (Chandra+Hubble+Spitzer)&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA14415" target="_blank" rel="noopener">NASA/CXC/STScI/JPL-Caltech · 蜘蛛星云多波段合成（Chandra+哈勃+斯皮策）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge nebula">星云</span>
     <h1>蜘蛛星云 <small>Tarantula Nebula (30 Doradus)</small></h1>
-    <p class="obj-tagline">大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云</p>
+    <p class="obj-tagline" data-obj-id="tarantula">大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云</p>
     <p class="obj-summary">直径（等效球径） 1,000 光年</p>
   </div>
 </div>
@@ -24,8 +24,8 @@ hide:
 <tbody>
 <tr><th scope="row">直径（等效球径）</th><td>1,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>16 万光年</td></tr>
-<tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
-<tr><th scope="row">星座</th><td>剑鱼座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
+<tr><th scope="row">星座</th><td data-en="Dorado">剑鱼座</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,8 +34,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
-<tr><th scope="row">备注</th><td>直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~1000 light-years; if placed at the Milky Way&#x27;s location, its radiance would be bright enough to cast shadows.">直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。</td></tr>
 <tr><th scope="row">发现</th><td>1751 年（Lacaille 发现）</td></tr>
 </tbody>
 </table>

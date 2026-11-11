@@ -37,6 +37,11 @@
   var byId = {};
   rows.forEach(function (r) { byId[r.id] = r; });
 
+  // ---- 全站双语：文案取 i18n.js 词表，天体名取 payload 的 en 字段 ----
+  function isEn() { return window.SITE_LANG === 'en'; }
+  function T(key, zh) { return window.siteT ? window.siteT(key) : zh; }
+  function disp(r) { return isEn() ? (r.en || r.name) : r.name; }
+
   // ---- 分类配色（用于无贴图天体纯色圆 + 倍数卡圆点）----
   var CAT_COLOR = {
     star: ["#f5a623", "#e06c00"],
@@ -80,8 +85,18 @@
   // ---- 单位字符串：统一读 payload 的预生成字段 ----
   // v1.8 起 gen_pages.py 是唯一实现（fmt_diameter / fmt_mass / fmt_lum / fmt_temp），
   // 这里只做读取，避免详情页与对比页出现两套单位口径。入参一律是行对象。
+  // 英文模式仅替换括号与中文基准单位词，数值与 SI 单位一律保持原样。
+  function L(s) {
+    if (!isEn() || typeof s !== 'string') return s;
+    return s.replace(/（/g, ' (').replace(/）/g, ')')
+            .replace(/× 太阳直径/g, '× solar diameter')
+            .replace(/× 地球直径/g, '× Earth diameter')
+            .replace(/太阳质量/g, 'solar mass')
+            .replace(/太阳半径/g, 'solar radius')
+            .replace(/光年/g, 'ly');
+  }
   function textOf(field) {
-    return function (r) { return (r && r[field]) || "—"; };
+    return function (r) { return L((r && r[field]) || "—"); };
   }
   var fmtDiameter = textOf("diameter_text");
   var fmtMass = textOf("mass_text");
@@ -113,8 +128,9 @@
     var h = (x && typeof x === "object" && "rotation" in x) ? x.rotation : x;
     if (h == null) return "—";
     var retro = h < 0, s; h = Math.abs(h);
-    s = h >= 48 ? (h / 24).toFixed(2) + " 天" : h.toFixed(2) + " 小时";
-    return (retro ? "逆行 · " : "") + s;
+    s = h >= 48 ? (h / 24).toFixed(2) + " " + T("unitDays", "天")
+                : h.toFixed(2) + " " + T("unitHours", "小时");
+    return (retro ? T("retrograde", "逆行 · ") : "") + s;
   }
   // 倍数的人类可读格式：≥100 千分位整数（33,600 而非 3.36e+4），中段 3 位有效数字
   function fmtRatio(x) {
@@ -185,7 +201,7 @@
   function renderViz(a, b) {
     vizEl.innerHTML = "";
     if (a.radius == null || b.radius == null) {
-      noteEl.textContent = "所选天体缺少半径数据，无法绘制大小对比。";
+      noteEl.textContent = T("noRadius", "所选天体缺少半径数据，无法绘制大小对比。");
       if (toggleEl) toggleEl.hidden = true;
       return;
     }
@@ -238,11 +254,13 @@
         var big = (r === a) ? b : a;
         return '<div class="sizecmp-side">' +
           '<div class="sizecmp-ball-wrap"><span class="sizecmp-dot" style="background:' + col + '"></span></div>' +
-          '<div class="sizecmp-name sizecmp-name-dot">' + esc(r.name) + '</div>' +
+          '<div class="sizecmp-name sizecmp-name-dot">' + esc(disp(r)) + '</div>' +
           '<div class="sizecmp-sub">' + fmtDiameter(r) + '</div>' +
-          '<div class="sizecmp-dot-note">按真实比例仅 ' +
-            (px < 0.1 ? '不足 0.1' : px.toFixed(1)) + ' 像素：仅为' + esc(big.name) +
-            ' 的 1/' + fmtRatio(ratio) + '</div>' +
+          '<div class="sizecmp-dot-note">' + T('cmpDotOnly', '按真实比例仅 ') +
+            (px < 0.1 ? T('cmpDotUnder', '不足 0.1') : px.toFixed(1)) +
+            T('cmpDotPx', ' 像素：仅为') +
+            (isEn() ? '1/' + fmtRatio(ratio) + ' of ' + esc(disp(big))
+                    : esc(disp(big)) + ' 的 1/' + fmtRatio(ratio)) + '</div>' +
           '</div>';
       }
       var ball;
@@ -251,32 +269,37 @@
         // dw/dh = _aspect，严格保持宽高比（不变形）；S 两侧同一值 → 真实比例不变
         var t = (r === a) ? tA : tB;
         var dw = (t.w * S).toFixed(1), dh = (t.h * S).toFixed(1);
-        ball = '<img class="sizecmp-img" src="' + esc(r.image) + '" alt="' + esc(r.name) +
+        ball = '<img class="sizecmp-img" src="' + esc(r.image) + '" alt="' + esc(disp(r)) +
           '" style="width:' + dw + 'px;height:' + dh + 'px">';
       } else {
         var d = (2 * px * S).toFixed(1);   // 纯色实心球同样按 S 缩放，保持真实比例
         ball = '<span class="sizecmp-solid" style="width:' + d + 'px;height:' + d +
-          'px;background:' + col + '">' + esc((r.name || '?').charAt(0)) + '</span>';
+          'px;background:' + col + '">' + esc((disp(r) || '?').charAt(0)) + '</span>';
       }
       return '<div class="sizecmp-side">' +
         '<div class="sizecmp-ball-wrap">' + ball + '</div>' +
-        '<div class="sizecmp-name">' + esc(r.name) + '</div>' +
+        '<div class="sizecmp-name">' + esc(disp(r)) + '</div>' +
         '<div class="sizecmp-sub">' + fmtDiameter(r) + '</div>' +
         '</div>';
     }
     vizEl.innerHTML = '<div class="sizecmp-viz-inner">' + side(a, pa, dotA) + side(b, pb, dotB) + '</div>';
     var extInvolved = a.ext || b.ext;
     var dotNames = [];
-    if (dotA) dotNames.push(a.name);
-    if (dotB) dotNames.push(b.name);
+    if (dotA) dotNames.push(disp(a));
+    if (dotB) dotNames.push(disp(b));
     var parts = [];
-    if (extInvolved) parts.push("星系/星云等延展天体以等效球径示意（非真实形状），具体尺度以数字为准");
-    if (dotNames.length) parts.push(dotNames.join("、") + " 在真实比例下已缩为一个点（旁标实际倍数），未作放大");
-    var tail = parts.length ? "；" + parts.join("；") + "。" : "。";
+    if (extInvolved) parts.push(T('cmpExtNote', '星系/星云等延展天体以等效球径示意（非真实形状），具体尺度以数字为准'));
+    if (dotNames.length) parts.push(dotNames.join(isEn() ? ', ' : '、') +
+      T('cmpDotNote', ' 在真实比例下已缩为一个点（旁标实际倍数），未作放大'));
+    var tail = parts.length ? (isEn() ? '. ' + parts.join('. ') + '.' : '；' + parts.join('；') + '。')
+                            : (isEn() ? '.' : '。');
     noteEl.textContent =
-      (extInvolved ? "天体" : "球体") + (useLog ? "按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）" : "按真实直径比例绘制") +
-      "（" + a.name + " " + fmtDiameter(a) + " : " + b.name + " " + fmtDiameter(b) +
-      " ≈ " + fmtRatio(ratio) + " : 1）" + tail;
+      T(extInvolved ? 'cmpObject' : 'cmpSphere', extInvolved ? '天体' : '球体') +
+      (isEn() ? ' ' : '') +
+      T(useLog ? 'cmpLogNote' : 'cmpLinearNote',
+        useLog ? '按对数刻度绘制（非真实比例，仅让悬殊尺寸都可见）' : '按真实直径比例绘制') +
+      (isEn() ? ' (' : '（') + disp(a) + ' ' + fmtDiameter(a) + ' : ' + disp(b) + ' ' + fmtDiameter(b) +
+      ' ≈ ' + fmtRatio(ratio) + ' : 1' + (isEn() ? ')' : '）') + tail;
     updateToggleUI();
   }
 
@@ -298,13 +321,14 @@
     return '<div class="sizecmp-ratio-card">' +
       '<div class="sizecmp-ratio-title">' + title + "</div>" +
       '<div class="sizecmp-ratio-big">' + mult.toPrecision(3) + "×</div>" +
-      '<div class="sizecmp-ratio-sub">' + esc(big.name) + " 是 " + esc(small.name) +
-        " 的 " + mult.toPrecision(3) + " 倍</div>" +
+      '<div class="sizecmp-ratio-sub">' + (isEn()
+        ? esc(disp(big)) + ' is ' + mult.toPrecision(3) + '× ' + esc(disp(small))
+        : esc(disp(big)) + ' 是 ' + esc(disp(small)) + ' 的 ' + mult.toPrecision(3) + ' 倍') + '</div>' +
       '<div class="sizecmp-ratio-rows">' +
         '<div><span class="dot" style="background:' + cBig + '"></span>' +
-          esc(big.name) + " <b>1.00×</b> <i>" + (fmt ? fmt(big) : bv) + "</i></div>" +
+          esc(disp(big)) + " <b>1.00×</b> <i>" + (fmt ? fmt(big) : bv) + "</i></div>" +
         '<div><span class="dot" style="background:' + cSmall + '"></span>' +
-          esc(small.name) + " <b>" + relSmall.toPrecision(3) + "×</b> <i>" +
+          esc(disp(small)) + " <b>" + relSmall.toPrecision(3) + "×</b> <i>" +
           (fmt ? fmt(small) : sv) + "</i></div>" +
       "</div></div>";
   }
@@ -312,20 +336,20 @@
   // ---- 详细数据表 ----（fmt 接收行对象）
   function renderDetail(a, b) {
     var defs = [
-      ["直径", fmtDiameter, function (r) { return r.radius; }],
-      ["体积（等效球）", fmtKm3, function (r) { return volume(r); }],
-      ["质量", fmtMass, function (r) { return r.mass; }],
-      ["光度", fmtLum, function (r) { return r.lum; }],
-      ["平均密度", fmtDensity, function (r) { return r.density; }],
-      ["表面重力", fmtGravity, function (r) { return r.gravity; }],
-      ["逃逸速度", fmtVelocity, function (r) { return r.escape; }],
-      ["平均温度", fmtTemp, function (r) { return r.temp; }],
-      ["自转周期", fmtRotation, function (r) { return r.rotation; }],
+      [T('rDiameter', '直径'), fmtDiameter, function (r) { return r.radius; }],
+      [T('rVolumeEq', '体积（等效球）'), fmtKm3, function (r) { return volume(r); }],
+      [T('rMass', '质量'), fmtMass, function (r) { return r.mass; }],
+      [T('fLum', '光度'), fmtLum, function (r) { return r.lum; }],
+      [T('fDensity', '平均密度'), fmtDensity, function (r) { return r.density; }],
+      [T('rGravity', '表面重力'), fmtGravity, function (r) { return r.gravity; }],
+      [T('fEscape', '逃逸速度'), fmtVelocity, function (r) { return r.escape; }],
+      [T('rTemp', '平均温度'), fmtTemp, function (r) { return r.temp; }],
+      [T('fRotation', '自转周期'), fmtRotation, function (r) { return r.rotation; }],
       // 类型细分为字符串（恒星类型/星云类型/星系类型等），无倍数概念，仅展示
-      ["类型", function (r) { return r.subtype || "—"; }, function (r) { return r.subtype; }]
+      [T('rType', '类型'), function (r) { return r.subtype || "—"; }, function (r) { return r.subtype; }]
     ];
     var html = '<table class="sizecmp-table"><thead><tr>' +
-      "<th>参数</th><th>" + esc(a.name) + "</th><th>" + esc(b.name) +
+      '<th>' + T('cmpParam', '参数') + '</th><th>' + esc(disp(a)) + '</th><th>' + esc(disp(b)) +
       "</th><th>A ÷ B</th></tr></thead><tbody>";
     defs.forEach(function (d) {
       var va = d[2](a), vb = d[2](b);
@@ -345,9 +369,9 @@
     // 倍数一律用底层 radius/mass 原始数值算：半径比 === 直径比，缩放与口径都不受影响；
     // 展示文本则由 fmtDiameter/fmtMass 读 payload 的预生成字符串（v1.8 起统一）。
     ratiosEl.innerHTML =
-      ratioCard("直径", a.radius, b.radius, a, b, fmtDiameter) +
-      ratioCard("体积", volume(a), volume(b), a, b, fmtKm3) +
-      ratioCard("质量", a.mass, b.mass, a, b, fmtMass);
+      ratioCard(T('rDiameter', '直径'), a.radius, b.radius, a, b, fmtDiameter) +
+      ratioCard(T('rVolume', '体积'), volume(a), volume(b), a, b, fmtKm3) +
+      ratioCard(T('rMass', '质量'), a.mass, b.mass, a, b, fmtMass);
     renderDetail(a, b);
     syncHash(a.id, b.id);
   }
@@ -356,15 +380,14 @@
     var url = location.pathname + location.search + "#cmp=" + a + "," + b;
     if (history.replaceState) history.replaceState(null, "", url);
     else location.hash = "cmp=" + a + "," + b;
-    if (shareEl) shareEl.textContent = "分享链接已更新：复制当前地址即可还原此对比组合。";
+    if (shareEl) shareEl.textContent = T('shareHint', '分享链接已更新：复制当前地址即可还原此对比组合。');
   }
 
   // ---- 选择框填充（支持按类型筛选）----
-  // 选项标签仅显示中文名（去掉「（英文名）」，避免移动端过长）；
-  // 数据侧仍保留 r.en，后续可加「中/英一键切换」功能复用
+  // 选项标签跟随全站语言切换：中文模式中文名、英文模式英文名；数据侧 r.en 已在 payload 内
   function optionHTML(r, sel) {
     return '<option value="' + r.id + '"' + (sel ? " selected" : "") + ">" +
-      esc(r.name) + "</option>";
+      esc(disp(r)) + "</option>";
   }
   // 分类集合：按 rows 出现顺序去重（数据侧已按分类排序，天然稳定）
   var catOrder = [], catSeen = {};
@@ -380,8 +403,9 @@
     return list.length ? list[0].id : "";
   }
   function fillCatSelects() {
-    var html = '<option value="">全部类型</option>' + catOrder.map(function (c) {
-      return '<option value="' + c[1] + '">' + esc(c[0]) + "</option>";
+    var html = '<option value="">' + T('allTypes', '全部类型') + '</option>' + catOrder.map(function (c) {
+      var label = window.siteCat ? window.siteCat(c[1]) : c[0];
+      return '<option value="' + c[1] + '">' + esc(label) + "</option>";
     }).join("");
     catSelA.innerHTML = html; catSelB.innerHTML = html;
   }
@@ -426,6 +450,13 @@
       var a = byId[selA.value], b = byId[selB.value];
       if (a && b) render();
     }, 150);
+  });
+  // 顶栏切换语言：重建下拉选项与表格文案，保持当前对比组合不丢失
+  if (window.onSiteLang) window.onSiteLang(function () {
+    var a = selA.value, b = selB.value;
+    fillCatSelects();
+    fillSelects(a, b);
+    render();
   });
   maybeRender();   // 无图片时 pending 已为 0，立即渲染；有图片等 onload
 })();

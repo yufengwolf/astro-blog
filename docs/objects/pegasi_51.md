@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pegasi_51.webp" alt="飞马座51" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pegasi_51.webp" alt="飞马座51" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>飞马座51 <small>51 Pegasi</small></h1>
-    <p class="obj-tagline">人类发现第一颗系外行星的恒星，2019 年诺贝尔物理学奖</p>
+    <p class="obj-tagline" data-obj-id="pegasi_51">人类发现第一颗系外行星的恒星，2019 年诺贝尔物理学奖</p>
     <p class="obj-summary">直径 1,711,422 km · 质量 2.21×10³⁰ kg</p>
   </div>
 </div>
@@ -40,10 +40,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>586.76 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>5,793 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G2IV</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄次巨星（G2IV）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow subgiant (G2IV)">黄次巨星（G2IV）</td></tr>
 <tr><th scope="row">光度</th><td>5.74×10²⁶ W（1.5 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>48 光年</td></tr>
-<tr><th scope="row">星座</th><td>飞马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pegasus">飞马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -52,7 +52,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>人类发现的第一颗围绕类太阳恒星的系外行星（飞马座51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。</td></tr>
+<tr><th scope="row">备注</th><td data-en="The first exoplanet discovered orbiting a Sun-like star (51 Pegasi b, a &#x27;hot Jupiter&#x27;) was found here; the two discoverers were awarded the 2019 Nobel Prize in Physics, marking the start of the exoplanet era.">人类发现的第一颗围绕类太阳恒星的系外行星（飞马座51b，一颗'热木星'）就在这里；两位发现者因此获得 2019 年诺贝尔物理学奖——系外行星时代由此开启。</td></tr>
 <tr><th scope="row">发现</th><td>1995 年 Mayor & Queloz 发现其行星</td></tr>
 </tbody>
 </table>

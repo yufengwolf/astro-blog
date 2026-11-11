@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/miranda.webp" alt="天卫五" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA01490" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/miranda.webp" alt="天卫五" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA01490&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Voyager 2&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA01490" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫五 <small>Miranda</small></h1>
-    <p class="obj-tagline">天王星系统中地质最奇特的卫星，断崖与沟槽密布</p>
+    <p class="obj-tagline" data-obj-id="miranda">天王星系统中地质最奇特的卫星，断崖与沟槽密布</p>
     <p class="obj-summary">平均直径 471.6 km · 质量 6.6×10¹⁹ kg</p>
   </div>
 </div>

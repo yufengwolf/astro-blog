@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/uranus.webp" alt="天王星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA18182" target="_blank" rel="noopener">NASA/JPL-Caltech</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/uranus.webp" alt="天王星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA18182&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL-Caltech&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA18182" target="_blank" rel="noopener">NASA/JPL-Caltech</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>天王星 <small>Uranus</small></h1>
-    <p class="obj-tagline">躺着自转的冰巨星，自转轴倾角约 98 度</p>
+    <p class="obj-tagline" data-obj-id="uranus">躺着自转的冰巨星，自转轴倾角约 98 度</p>
     <p class="obj-summary">平均直径 51,118 km · 质量 8.68×10²⁵ kg</p>
   </div>
 </div>

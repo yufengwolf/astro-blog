@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/alphacen_b.webp" alt="南门二B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/alphacen_b.webp" alt="南门二B" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>南门二B <small>Alpha Centauri B</small></h1>
-    <p class="obj-tagline">南门二系统的橙矮星伴星，肉眼与主星不可分</p>
+    <p class="obj-tagline" data-obj-id="alphacen_b">南门二系统的橙矮星伴星，肉眼与主星不可分</p>
     <p class="obj-summary">直径 1,201,056 km · 质量 1.8×10³⁰ kg</p>
   </div>
 </div>
@@ -40,10 +40,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>633.14 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>5,260 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K1V</td></tr>
-<tr><th scope="row">恒星类型</th><td>橙矮星（K1V 主序星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Orange dwarf (K1V main-sequence star)">橙矮星（K1V 主序星）</td></tr>
 <tr><th scope="row">光度</th><td>1.91×10²⁶ W（0.5 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>4 光年</td></tr>
-<tr><th scope="row">星座</th><td>半人马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Centaurus">半人马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -52,7 +52,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>略小略暗的橙矮星伴星；合起来视星等 -0.27，为全天第三亮（少数资料列第四）的'星'。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Slightly smaller and fainter orange dwarf companion; combined apparent magnitude -0.27, the third-brightest &#x27;star&#x27; in the sky (listed as fourth in a few references).">略小略暗的橙矮星伴星；合起来视星等 -0.27，为全天第三亮（少数资料列第四）的'星'。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知（肉眼与 A 不可分）</td></tr>
 </tbody>
 </table>

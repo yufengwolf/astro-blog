@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>南河三 <small>Procyon</small></h1>
-    <p class="obj-tagline">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
+    <p class="obj-tagline" data-obj-id="procyon_a">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
     <p class="obj-summary">质量 2.97×10³⁰ kg</p>
   </div>
 </div>
@@ -37,10 +37,10 @@ hide:
 <tr><th scope="row">质量</th><td>2.97×10³⁰ kg（1.49 M☉）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>6,530 K</td></tr>
 <tr><th scope="row">光谱型</th><td>F5IV-V</td></tr>
-<tr><th scope="row">恒星类型</th><td>主序星（F5V-IV）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Main-sequence star (F5V-IV)">主序星（F5V-IV）</td></tr>
 <tr><th scope="row">光度</th><td>2.64×10²⁷ W（6.9 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>11 光年</td></tr>
-<tr><th scope="row">星座</th><td>小犬座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Canis Minor">小犬座</td></tr>
 </tbody>
 </table>
 </section>
@@ -49,8 +49,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">已知成员</th><td>南河三A（主星）与南河三B（白矮星伴星）组成的双星系统</td></tr>
-<tr><th scope="row">备注</th><td>南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="Binary system composed of Procyon A (primary star) and Procyon B (white dwarf companion)">南河三A（主星）与南河三B（白矮星伴星）组成的双星系统</td></tr>
+<tr><th scope="row">备注</th><td data-en="Procyon B is a white dwarf with a mass of approximately 0.6 solar masses and a radius roughly equal to Earth&#x27;s. 【AI Review 2026-10-27：Clear:physical/radius_sun,physical/radius_km】">南河三B是白矮星，质量约0.6太阳质量，半径约地球大小。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】</td></tr>
 </tbody>
 </table>
 </section>

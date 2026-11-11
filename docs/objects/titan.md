@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/titan.webp" alt="土卫六" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA06230" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/titan.webp" alt="土卫六" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA06230&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/SSI · Cassini&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA06230" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫六 <small>Titan</small></h1>
-    <p class="obj-tagline">太阳系唯一拥有浓厚大气的卫星，地表有液态甲烷的湖泊与河流</p>
+    <p class="obj-tagline" data-obj-id="titan">太阳系唯一拥有浓厚大气的卫星，地表有液态甲烷的湖泊与河流</p>
     <p class="obj-summary">平均直径 5,151 km · 质量 1.35×10²³ kg</p>
   </div>
 </div>
@@ -64,7 +64,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">大气成分</th><td>氮约 95%、甲烷约 5%</td></tr>
+<tr><th scope="row">大气成分</th><td data-en="Nitrogen ~95%, methane ~5%">氮约 95%、甲烷约 5%</td></tr>
 <tr><th scope="row">环系</th><td>否</td></tr>
 <tr><th scope="row">已确认卫星</th><td>0 颗</td></tr>
 <tr><th scope="row">发现</th><td>克里斯蒂安·惠更斯，1655 年</td></tr>

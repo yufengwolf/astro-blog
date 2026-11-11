@@ -3,7 +3,7 @@
 
 派生量规则（与页面值互相印证）：
   - 密度   ≈ 质量 / (4/3·π·r³)        半径 ≥200km 才校验（不规则小天体球近似失效）
-  - 轨道速度 ≈ 2π·a / T                有半长轴和周期即校验
+  - 轨道速度 ∈ [椭圆平均速度, 圆轨道速度]  见 ellipse_mean_factor() 推导
   - 逃逸速度 ≈ sqrt(2GM/r)             有质量和半径即校验
 任何 error 都会以非零退出码结束，供人工流程/CI 把关。
 """
@@ -59,6 +59,28 @@ def approx(a, b, tol):
     return abs(a - b) / abs(b) <= tol
 
 
+def ellipse_mean_factor(e):
+    """椭圆轨道「时间平均速度 / 圆轨道速度」= (2/π)·E(e)（第二类完全椭圆积分）。
+
+    推导（偏近点角 E 换元，dt = (T/2π)(1-e·cosE)dE）：
+        v = sqrt(GM/a)·sqrt((1+e·cosE)/(1-e·cosE))
+        <v> = (1/T)∫v·dt = sqrt(GM/a)·(1/2π)∫₀^{2π} sqrt(1-e²cos²E) dE
+            = (2πa/T)·(2/π)·E(e)
+    e=0 时 E(0)=π/2，系数=1，退化为圆轨道速度 2πa/T。
+    采用 1024 点梯形求积，e<0.99 时相对误差 <1e-9，避免引入 scipy 依赖。
+
+    注意：2πa/T 只是**圆轨道**速度；对高偏心率轨道（如 Sedna e=0.849、
+    Halley e=0.967）直接拿它当唯一真值，会把正确的「平均轨道速度」误判为错误。
+    """
+    if not e or e <= 0:
+        return 1.0
+    if e >= 1:
+        return 0.0
+    n = 1024
+    return sum(math.sqrt(max(0.0, 1 - e * e * math.cos(2 * math.pi * i / n) ** 2))
+               for i in range(n)) / n
+
+
 def main():
     data = json.loads(DATA.read_text(encoding="utf-8"))
     objs = data.get("objects", [])
@@ -74,7 +96,8 @@ def main():
 
         if o.get("category") not in CATEGORIES:
             err(f"{oid}: category 非法: {o.get('category')}")
-        for f in ("name", "name_en", "tagline"):
+        # 全站双语：英文名称与英文一句话简介是数据契约的一部分，缺一即视为不同步
+        for f in ("name", "name_en", "tagline", "tagline_en"):
             if not o.get(f):
                 err(f"{oid}: 缺少字段 {f}")
         if len(o.get("tagline") or "") > 60:
@@ -112,7 +135,9 @@ def main():
         if t is not None and not (-273 <= t <= t_max):
             err(f"{oid}: mean_temp_c 越界: {t}")
         p = orb.get("orbital_period_days")
-        if p is not None and not (0.01 <= p <= 1e7):
+        # 上限 1e9 天 ~ 274 万年：覆盖长周期束缚轨道（比邻星绕南门二 AB
+        # P=547000 年 ≈ 2.0e8 天，Kervella et al. 2016），原 1e7 天会把这类真值判错。
+        if p is not None and not (0.01 <= p <= 1e9):
             err(f"{oid}: orbital_period_days 越界: {p}")
         rot = orb.get("rotation_period_hours")
         if rot is not None and not (-1e5 <= rot <= 1e5):
@@ -124,10 +149,24 @@ def main():
                 err(f"{oid}: 密度不一致：记录 {d} vs 由质量/半径派生 {derived:.3f}")
 
         a, T, v = orb.get("semimajor_axis_km"), orb.get("orbital_period_days"), orb.get("orbital_velocity_km_s")
+        e = orb.get("eccentricity") or 0
         if a and T and v is not None:
-            derived_v = 2 * math.pi * a * 1000 / (T * 86400) / 1000
-            if not approx(derived_v, v, 0.06):
-                err(f"{oid}: 轨道速度不一致：记录 {v} vs 由 2πa/T 派生 {derived_v:.3f}")
+            # 数据源的「轨道速度」有两种常见口径：圆轨道速度 2πa/T，或椭圆轨道
+            # 时间平均速度 (2πa/T)·f(e)。二者都是合法记录，故校验允许区间为
+            # [平均速度×0.94, 圆速度×1.06]；e→0 时区间收窄回原 ±6% 严格校验。
+            v_circ = 2 * math.pi * a * 1000 / (T * 86400) / 1000
+            v_mean = v_circ * ellipse_mean_factor(e)
+            lo, hi = v_mean * 0.94, v_circ * 1.06
+            if not (lo <= v <= hi):
+                # 附 vis-viva 物理区间，便于人工判断记录值是笔误还是别的速度口径
+                if 0 <= e < 1 and e > 0:
+                    bound = (v_circ * math.sqrt((1 - e) / (1 + e)),
+                             v_circ * math.sqrt((1 + e) / (1 - e)))
+                    extra = f"，vis-viva 物理区间 [{bound[0]:.3f}, {bound[1]:.3f}]"
+                else:
+                    extra = ""
+                err(f"{oid}: 轨道速度不一致：记录 {v} vs 允许区间 "
+                    f"[{lo:.3f}, {hi:.3f}]（2πa/T={v_circ:.3f}）{extra}")
 
         esc = ph.get("escape_velocity_km_s")
         if m and r and esc is not None:

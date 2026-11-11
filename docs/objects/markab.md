@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/markab.webp" alt="室宿一" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/markab.webp" alt="室宿一" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>室宿一 <small>Markab</small></h1>
-    <p class="obj-tagline">飞马座四边形的一角，正值暮年的蓝白巨星</p>
+    <p class="obj-tagline" data-obj-id="markab">飞马座四边形的一角，正值暮年的蓝白巨星</p>
     <p class="obj-summary">质量 7.95×10³⁰ kg</p>
   </div>
 </div>
@@ -25,10 +25,10 @@ hide:
 <tr><th scope="row">质量</th><td>7.95×10³⁰ kg（4 M☉）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>11,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>B9III</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白巨星（B9III）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Blue-white giant (B9III)">蓝白巨星（B9III）</td></tr>
 <tr><th scope="row">光度</th><td>6.12×10²⁸ W（160 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>140 光年</td></tr>
-<tr><th scope="row">星座</th><td>飞马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pegasus">飞马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -37,7 +37,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】</td></tr>
+<tr><th scope="row">备注</th><td data-en="A corner of the Great Square of Pegasus, a blue-white giant leaving the main sequence and evolving toward the red giant stage. 【AI Review 2026-10-27: Clear:physical/radius_sun,physical/radius_km】">飞马座四边形的一角，一颗正在离开主序、向红巨星阶段演化的蓝白巨星。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

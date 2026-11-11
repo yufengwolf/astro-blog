@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pollux.webp" alt="北河三" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pollux.webp" alt="北河三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>北河三 <small>Pollux</small></h1>
-    <p class="obj-tagline">双子座最亮的星，一颗拥有系外行星的橙巨星</p>
+    <p class="obj-tagline" data-obj-id="pollux">双子座最亮的星，一颗拥有系外行星的橙巨星</p>
     <p class="obj-summary">直径 12,244,320 km · 质量 3.8×10³⁰ kg</p>
   </div>
 </div>
@@ -40,9 +40,9 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>287.76 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>4,586 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K0III</td></tr>
-<tr><th scope="row">恒星类型</th><td>橙巨星（K0III）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Orange giant (K0III)">橙巨星（K0III）</td></tr>
 <tr><th scope="row">距离</th><td>34 光年</td></tr>
-<tr><th scope="row">星座</th><td>双子座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Gemini">双子座</td></tr>
 </tbody>
 </table>
 </section>
@@ -51,7 +51,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。 【AI复校 2026-10-27：置空:physical/lum_sun】</td></tr>
+<tr><th scope="row">备注</th><td data-en="The brightest star in Gemini (brighter than its &#x27;brother&#x27; Pollux, despite a later Bayer designation). Its exoplanet Thestias (β Geminorum b) was confirmed in 2006, with a mass of approximately 2.3 Jupiter masses and an orbital period of about 590 days. 【AI Review 2026-10-27：Empty:physical/lum_sun】">双子座最亮的星（比'哥哥'北河二更亮，尽管拜耳命名更晚）。2006 年确认其系外行星 Thestias（双子座 βb），质量约 2.3 倍木星，周期约 590 天。 【AI复校 2026-10-27：置空:physical/lum_sun】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

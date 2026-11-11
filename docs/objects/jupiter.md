@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/jupiter.webp" alt="木星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA02873" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/jupiter.webp" alt="木星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA02873&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/SSI · Cassini&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA02873" target="_blank" rel="noopener">NASA/JPL/SSI · 卡西尼</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>木星 <small>Jupiter</small></h1>
-    <p class="obj-tagline">太阳系最大的行星，质量超过其余七颗行星的总和</p>
+    <p class="obj-tagline" data-obj-id="jupiter">太阳系最大的行星，质量超过其余七颗行星的总和</p>
     <p class="obj-summary">平均直径 139,822 km · 质量 1.9×10²⁷ kg</p>
   </div>
 </div>
@@ -65,7 +65,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">大气成分</th><td>氢 89.8%、氦 10.2%（其余为甲烷、氨等微量）</td></tr>
+<tr><th scope="row">大气成分</th><td data-en="Hydrogen 89.8%, Helium 10.2% (trace amounts of methane, ammonia, etc.)">氢 89.8%、氦 10.2%（其余为甲烷、氨等微量）</td></tr>
 <tr><th scope="row">全球磁场</th><td>是</td></tr>
 <tr><th scope="row">环系</th><td>是</td></tr>
 <tr><th scope="row">已确认卫星</th><td>95 颗（主要：<a href="../io/">木卫一</a>、<a href="../europa/">木卫二</a>、<a href="../ganymede/">木卫三</a>、<a href="../callisto/">木卫四</a>）</td></tr>

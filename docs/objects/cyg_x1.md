@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/cyg_x1.webp" alt="天鹅座 X-1" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/cyg_x1.webp" alt="天鹅座 X-1" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>天鹅座 X-1 <small>Cygnus X-1</small></h1>
-    <p class="obj-tagline">人类确认的第一个恒星级黑洞，霍金打赌输掉的那位</p>
+    <p class="obj-tagline" data-obj-id="cyg_x1">人类确认的第一个恒星级黑洞，霍金打赌输掉的那位</p>
     <p class="obj-summary">事件视界直径 125.2 km · 质量 4.22×10³¹ kg</p>
   </div>
 </div>
@@ -37,7 +37,7 @@ hide:
 <tr><th scope="row">质量</th><td>4.22×10³¹ kg（21.2 M☉）</td></tr>
 <tr><th scope="row">事件视界直径</th><td>125.2 km（0.00983 × 地球直径）</td></tr>
 <tr><th scope="row">距离</th><td>7,240 光年</td></tr>
-<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cygnus">天鹅座</td></tr>
 </tbody>
 </table>
 </section>
@@ -46,8 +46,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>恒星级黑洞（X 射线双星）</td></tr>
-<tr><th scope="row">备注</th><td>2021 年 VLBA 精确测量：21.2 M☉、7240 光年；视界面自转速度 ≥95% 光速。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Stellar-mass black hole (X-ray binary)">恒星级黑洞（X 射线双星）</td></tr>
+<tr><th scope="row">备注</th><td data-en="2021 VLBA precise measurement: 21.2 M☉, 7240 light-years; horizon rotation speed ≥95% the speed of light.">2021 年 VLBA 精确测量：21.2 M☉、7240 光年；视界面自转速度 ≥95% 光速。</td></tr>
 <tr><th scope="row">发现</th><td>1964 年（探空火箭 X 射线源）；1990 年代确认黑洞</td></tr>
 </tbody>
 </table>

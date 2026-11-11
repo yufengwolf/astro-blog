@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40b.webp" alt="波江座40B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eridani_40b.webp" alt="波江座40B" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>波江座40B <small>40 Eridani B</small></h1>
-    <p class="obj-tagline">肉眼不可见的白矮星，人类最早确认的白矮星之一</p>
+    <p class="obj-tagline" data-obj-id="eridani_40b">肉眼不可见的白矮星，人类最早确认的白矮星之一</p>
     <p class="obj-summary">直径 18,200 km · 质量 1.11×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>4034.24 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>17,200 K</td></tr>
 <tr><th scope="row">光谱型</th><td>DA4</td></tr>
-<tr><th scope="row">恒星类型</th><td>白矮星（DA4）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="White dwarf (DA4)">白矮星（DA4）</td></tr>
 <tr><th scope="row">光度</th><td>5.16×10²⁴ W（0.0135 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>16 光年</td></tr>
-<tr><th scope="row">星座</th><td>波江座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Eridanus">波江座</td></tr>
 </tbody>
 </table>
 </section>
@@ -50,7 +50,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】</td></tr>
+<tr><th scope="row">备注</th><td data-en="It appears faint yet &#x27;white&#x27;, which implies an extremely small volume — this observational reasoning laid the foundation for white dwarf physics; it also orbits together with a red dwarf (40 Eridani C). 【AI Review 2026-10-27: Fill:orbit/semimajor_axis_au,orbit/eccentricity】">看似暗弱却'白'，意味着体积必须极小——这一观测推理奠定了白矮星物理学；它还与一颗红矮星（波江座40C）结伴绕行。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/eccentricity】</td></tr>
 <tr><th scope="row">发现</th><td>1783 年 1 月 31 日威廉·赫歇尔发现</td></tr>
 </tbody>
 </table>

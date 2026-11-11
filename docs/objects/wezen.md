@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/wezen.webp" alt="弧矢一" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/wezen.webp" alt="弧矢一" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>弧矢一 <small>Wezen</small></h1>
-    <p class="obj-tagline">大犬座第二亮星，直径约太阳 188 倍的黄白超巨星</p>
+    <p class="obj-tagline" data-obj-id="wezen">大犬座第二亮星，直径约太阳 188 倍的黄白超巨星</p>
     <p class="obj-summary">直径 261,583,200 km · 质量 2.96×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>173.89 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>6,150 K</td></tr>
 <tr><th scope="row">光谱型</th><td>F8Ia</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄白超巨星（F8Ia）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow-white supergiant (F8Ia)">黄白超巨星（F8Ia）</td></tr>
 <tr><th scope="row">光度</th><td>1.68×10³¹ W（4.4×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>1,600 光年</td></tr>
-<tr><th scope="row">星座</th><td>大犬座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Canis Major">大犬座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>天狼星之后大犬座第二亮的星；直径约太阳 188 倍，表面温度却只有太阳的一半多一点，是一颗'虚胖'的超巨星，最终将以超新星收场。</td></tr>
+<tr><th scope="row">备注</th><td data-en="The second-brightest star in Canis Major after Sirius; its diameter is about 188 times that of the Sun, yet its surface temperature is only a little more than half that of the Sun. It is a &quot;puffy&quot; supergiant and will end its life as a supernova.">天狼星之后大犬座第二亮的星；直径约太阳 188 倍，表面温度却只有太阳的一半多一点，是一颗'虚胖'的超巨星，最终将以超新星收场。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

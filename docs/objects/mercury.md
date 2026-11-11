@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/mercury.webp" alt="水星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001545" target="_blank" rel="noopener">NASA/MESSENGER · 全球彩色合成（增强色）</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/mercury.webp" alt="水星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/GSFC_20171208_Archive_e001545&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/MESSENGER · Global color composite (enhanced color)&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e001545" target="_blank" rel="noopener">NASA/MESSENGER · 全球彩色合成（增强色）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>水星 <small>Mercury</small></h1>
-    <p class="obj-tagline">离太阳最近的行星，一个太阳日比一个水星年还长</p>
+    <p class="obj-tagline" data-obj-id="mercury">离太阳最近的行星，一个太阳日比一个水星年还长</p>
     <p class="obj-summary">平均直径 4,879 km · 质量 3.3×10²³ kg</p>
   </div>
 </div>

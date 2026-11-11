@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/kepler_22b.webp" alt="开普勒22b" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/kepler_22b.webp" alt="开普勒22b" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>开普勒22b <small>Kepler-22b</small></h1>
-    <p class="obj-tagline">位于宜居带的系外行星，环绕恒星开普勒22运行</p>
+    <p class="obj-tagline" data-obj-id="kepler_22b">位于宜居带的系外行星，环绕恒星开普勒22运行</p>
     <p class="obj-summary">平均直径 30,400 km</p>
   </div>
 </div>
@@ -24,7 +24,7 @@ hide:
 <tbody>
 <tr><th scope="row">平均直径</th><td>30,400 km（2.39 × 地球直径）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>262 K（-11.1 °C）</td></tr>
-<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cygnus">天鹅座</td></tr>
 </tbody>
 </table>
 </section>

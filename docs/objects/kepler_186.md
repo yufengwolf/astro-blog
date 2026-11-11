@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_186.webp" alt="开普勒186" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_186.webp" alt="开普勒186" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>开普勒186 <small>Kepler-186</small></h1>
-    <p class="obj-tagline">拥有宜居带'地球大小'行星的红矮星</p>
+    <p class="obj-tagline" data-obj-id="kepler_186">拥有宜居带'地球大小'行星的红矮星</p>
     <p class="obj-summary">直径 727,702 km · 质量 1.08×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>629.94 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,755 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M1V</td></tr>
-<tr><th scope="row">恒星类型</th><td>红矮星（M1V）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red dwarf (M1V)">红矮星（M1V）</td></tr>
 <tr><th scope="row">光度</th><td>2.11×10²⁵ W（0.055 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>579 光年</td></tr>
-<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cygnus">天鹅座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>拥有五颗行星，其中最外侧的 Kepler-186f 是首颗被确认位于宜居带内、且半径接近地球的系外行星；不过它的阳光远比地球暗淡，正午可能如同地球的黄昏。</td></tr>
+<tr><th scope="row">备注</th><td data-en="It has five planets; the outermost one, Kepler-186f, is the first confirmed exoplanet within the habitable zone with a radius close to Earth. However, its sunlight is far dimmer than Earth’s, and noon there may resemble dusk on Earth.">拥有五颗行星，其中最外侧的 Kepler-186f 是首颗被确认位于宜居带内、且半径接近地球的系外行星；不过它的阳光远比地球暗淡，正午可能如同地球的黄昏。</td></tr>
 <tr><th scope="row">发现</th><td>2014 年开普勒望远镜确认五行星系统</td></tr>
 </tbody>
 </table>

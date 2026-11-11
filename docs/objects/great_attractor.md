@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/great_attractor.webp" alt="巨引源" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/great_attractor.webp" alt="巨引源" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>巨引源 <small>Great Attractor</small></h1>
-    <p class="obj-tagline">隐匿在银河盘面背后的引力深渊，牵引着本超星系团</p>
+    <p class="obj-tagline" data-obj-id="great_attractor">隐匿在银河盘面背后的引力深渊，牵引着本超星系团</p>
     <p class="obj-summary">直径（等效球径） 400,000,000 光年 · 质量 1.99×10⁴⁶ kg</p>
   </div>
 </div>
@@ -25,8 +25,8 @@ hide:
 <tr><th scope="row">质量</th><td>1.99×10⁴⁶ kg（1×10¹⁶ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>400,000,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>20,000 万光年</td></tr>
-<tr><th scope="row">类型</th><td>引力异常区域</td></tr>
-<tr><th scope="row">星座</th><td>矩尺座 / 南三角座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Gravitational anomaly region">引力异常区域</td></tr>
+<tr><th scope="row">星座</th><td data-en="Norma / Triangulum Australe">矩尺座 / 南三角座</td></tr>
 </tbody>
 </table>
 </section>
@@ -35,8 +35,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>引力异常区域</td></tr>
-<tr><th scope="row">备注</th><td>区域尺度约 4 亿光年；位于银河隐匿带（Zone of Avoidance）后方，通过星系本动速度发现。中心近矩尺座星系团（ACO 3627）；质量构成仍有争议。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Gravitational anomaly region">引力异常区域</td></tr>
+<tr><th scope="row">备注</th><td data-en="Region scale ~400 million light-years; lies behind the Zone of Avoidance, discovered via galaxy peculiar velocities. Centered near the Norma Cluster (ACO 3627); its mass composition remains debated.">区域尺度约 4 亿光年；位于银河隐匿带（Zone of Avoidance）后方，通过星系本动速度发现。中心近矩尺座星系团（ACO 3627）；质量构成仍有争议。</td></tr>
 <tr><th scope="row">发现</th><td>1987 年（Dressler 命名）</td></tr>
 </tbody>
 </table>

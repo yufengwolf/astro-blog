@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/omega_cen.webp" alt="半人马座ω" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA13125" target="_blank" rel="noopener">NASA/JPL-Caltech · WISE 半人马座ω 球状星团</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img cluster"><img src="../../assets/planets/omega_cen.webp" alt="半人马座ω" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA13125&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL-Caltech · WISE Omega Centauri Globular Cluster&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA13125" target="_blank" rel="noopener">NASA/JPL-Caltech · WISE 半人马座ω 球状星团</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge cluster">星团</span>
     <h1>半人马座ω <small>Omega Centauri</small></h1>
-    <p class="obj-tagline">银河系最大的球状星团，疑为被吞噬矮星系的残核</p>
+    <p class="obj-tagline" data-obj-id="omega_cen">银河系最大的球状星团，疑为被吞噬矮星系的残核</p>
     <p class="obj-summary">直径（等效球径） 166 光年 · 质量 7.95×10³⁶ kg</p>
   </div>
 </div>
@@ -37,8 +37,8 @@ hide:
 <tr><th scope="row">质量</th><td>7.95×10³⁶ kg（4×10⁶ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>166 光年</td></tr>
 <tr><th scope="row">距离</th><td>2 万光年</td></tr>
-<tr><th scope="row">类型</th><td>球状星团</td></tr>
-<tr><th scope="row">星座</th><td>半人马座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Globular cluster">球状星团</td></tr>
+<tr><th scope="row">星座</th><td data-en="Centaurus">半人马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -47,9 +47,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>球状星团</td></tr>
-<tr><th scope="row">已知成员</th><td>约 1000 万颗成员星</td></tr>
-<tr><th scope="row">备注</th><td>直径约 170 光年；质量与星族异常，可能是被银河系吞并的矮星系核心。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Globular cluster">球状星团</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="about 10 million member stars">约 1000 万颗成员星</td></tr>
+<tr><th scope="row">备注</th><td data-en="diameter about 170 light-years; anomalous mass and stellar population, possibly the core of a dwarf galaxy accreted by the Milky Way.">直径约 170 光年；质量与星族异常，可能是被银河系吞并的矮星系核心。</td></tr>
 <tr><th scope="row">发现</th><td>公元 150 年（托勒密记为「星」）；1677 年哈雷确认非恒星</td></tr>
 </tbody>
 </table>

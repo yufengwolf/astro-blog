@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/europa.webp" alt="木卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00502" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/europa.webp" alt="木卫二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00502&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Galileo&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00502" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫二 <small>Europa</small></h1>
-    <p class="obj-tagline">冰壳之下藏有全球性液态海洋，搜寻地外生命的热门目标</p>
+    <p class="obj-tagline" data-obj-id="europa">冰壳之下藏有全球性液态海洋，搜寻地外生命的热门目标</p>
     <p class="obj-summary">平均直径 3,122 km · 质量 4.8×10²² kg</p>
   </div>
 </div>

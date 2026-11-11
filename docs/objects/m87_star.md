@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/m87_star.webp" alt="M87*" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/m87_star.webp" alt="M87*" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>M87* <small>M87*</small></h1>
-    <p class="obj-tagline">人类拍下的第一张黑洞照片主角，室女座星系团中心的超大质量黑洞</p>
+    <p class="obj-tagline" data-obj-id="m87_star">人类拍下的第一张黑洞照片主角，室女座星系团中心的超大质量黑洞</p>
     <p class="obj-summary">事件视界直径 3.84×10¹⁰ km · 质量 1.29×10⁴⁰ kg</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">质量</th><td>1.29×10⁴⁰ kg（6.5×10⁹ M☉）</td></tr>
 <tr><th scope="row">事件视界直径</th><td>3.84×10¹⁰ km（257 AU）</td></tr>
 <tr><th scope="row">距离</th><td>5,400 万光年</td></tr>
-<tr><th scope="row">星座</th><td>室女座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Virgo">室女座</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,8 +34,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>超大质量黑洞</td></tr>
-<tr><th scope="row">备注</th><td>史瓦西半径约 128 AU，比海王星轨道还大；吸积盘喷流延伸数千光年。</td></tr>
+<tr><th scope="row">类型</th><td data-en="supermassive black hole">超大质量黑洞</td></tr>
+<tr><th scope="row">备注</th><td data-en="Schwarzschild radius ~128 AU, larger than Neptune&#x27;s orbit; accretion disk jets extend thousands of light-years.">史瓦西半径约 128 AU，比海王星轨道还大；吸积盘喷流延伸数千光年。</td></tr>
 <tr><th scope="row">发现</th><td>2019 年（EHT 发布首张黑洞照片）</td></tr>
 </tbody>
 </table>

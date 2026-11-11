@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/saturn.webp" alt="土星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00349" target="_blank" rel="noopener">NASA/JPL/USGS</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/saturn.webp" alt="土星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00349&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/USGS&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00349" target="_blank" rel="noopener">NASA/JPL/USGS</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>土星 <small>Saturn</small></h1>
-    <p class="obj-tagline">以壮观环系闻名的气态巨行星，平均密度比水还小</p>
+    <p class="obj-tagline" data-obj-id="saturn">以壮观环系闻名的气态巨行星，平均密度比水还小</p>
     <p class="obj-summary">平均直径 116,464 km · 质量 5.68×10²⁶ kg</p>
   </div>
 </div>
@@ -65,7 +65,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">大气成分</th><td>氢 96.3%、氦 3.25%（其余为甲烷、氨等微量）</td></tr>
+<tr><th scope="row">大气成分</th><td data-en="Hydrogen 96.3%, Helium 3.25% (with trace amounts of methane, ammonia, etc.)">氢 96.3%、氦 3.25%（其余为甲烷、氨等微量）</td></tr>
 <tr><th scope="row">全球磁场</th><td>是</td></tr>
 <tr><th scope="row">环系</th><td>是</td></tr>
 <tr><th scope="row">已确认卫星</th><td>274 颗（主要：<a href="../titan/">土卫六</a>、<a href="../rhea/">土卫五</a>、<a href="../iapetus/">土卫八</a>）</td></tr>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/capella.webp" alt="五车二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/capella.webp" alt="五车二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>五车二 <small>Capella</small></h1>
-    <p class="obj-tagline">御夫座最亮的星，四星系统金光耀眼</p>
+    <p class="obj-tagline" data-obj-id="capella">御夫座最亮的星，四星系统金光耀眼</p>
     <p class="obj-summary">直径 16,696,800 km · 质量 5.11×10³⁰ kg</p>
   </div>
 </div>
@@ -40,10 +40,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>285.84 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>4,970 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G3III</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄巨星（G3III 四星系统）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow giant (G3III quadruple system)">黄巨星（G3III 四星系统）</td></tr>
 <tr><th scope="row">光度</th><td>3.01×10²⁸ W（78.7 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>43 光年</td></tr>
-<tr><th scope="row">星座</th><td>御夫座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Auriga">御夫座</td></tr>
 </tbody>
 </table>
 </section>
@@ -53,7 +53,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">已知成员</th><td>4</td></tr>
-<tr><th scope="row">备注</th><td>北天第五亮星。主星对是两颗黄巨星（互绕一周约 104 天），另有两颗暗红矮星伴星。</td></tr>
+<tr><th scope="row">备注</th><td data-en="The fifth-brightest star in the northern sky. The primary pair consists of two yellow giants (orbiting each other in roughly 104 days), with two additional faint red dwarf companions.">北天第五亮星。主星对是两颗黄巨星（互绕一周约 104 天），另有两颗暗红矮星伴星。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

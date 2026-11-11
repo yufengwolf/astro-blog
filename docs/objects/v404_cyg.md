@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/v404_cyg.webp" alt="V404 天鹅座" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img black_hole"><img src="../../assets/planets/v404_cyg.webp" alt="V404 天鹅座" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge black_hole">黑洞</span>
     <h1>V404 天鹅座 <small>V404 Cygni</small></h1>
-    <p class="obj-tagline">低质量 X 射线双星，2015 年剧烈爆发出名的黑洞</p>
+    <p class="obj-tagline" data-obj-id="v404_cyg">低质量 X 射线双星，2015 年剧烈爆发出名的黑洞</p>
     <p class="obj-summary">事件视界直径 53.2 km · 质量 1.79×10³¹ kg</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">质量</th><td>1.79×10³¹ kg（9 M☉）</td></tr>
 <tr><th scope="row">事件视界直径</th><td>53.2 km（0.00417 × 地球直径）</td></tr>
 <tr><th scope="row">距离</th><td>7,800 光年</td></tr>
-<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cygnus">天鹅座</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,8 +34,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>恒星级黑洞（X 射线双星）</td></tr>
-<tr><th scope="row">备注</th><td>质量估值 9~12 M☉，此处取 9 M☉；2015 年 6 月爆发为当时 50 年来最亮的 X 射线亮斑之一。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Stellar-mass black hole (X-ray binary)">恒星级黑洞（X 射线双星）</td></tr>
+<tr><th scope="row">备注</th><td data-en="Mass estimate 9~12 M☉, 9 M☉ is adopted here; outburst in June 2015 made it one of the brightest X-ray flares in the preceding 50 years.">质量估值 9~12 M☉，此处取 9 M☉；2015 年 6 月爆发为当时 50 年来最亮的 X 射线亮斑之一。</td></tr>
 <tr><th scope="row">发现</th><td>1989 年（Ginga X 射线爆发发现）</td></tr>
 </tbody>
 </table>

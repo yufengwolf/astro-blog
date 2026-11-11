@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/virgo_cluster.webp" alt="室女座星系团" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA07906" target="_blank" rel="noopener">NASA/JPL-Caltech · GALEX 紫外室女座星系团</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/virgo_cluster.webp" alt="室女座星系团" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA07906&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL-Caltech · GALEX Ultraviolet Virgo Cluster&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA07906" target="_blank" rel="noopener">NASA/JPL-Caltech · GALEX 紫外室女座星系团</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>室女座星系团 <small>Virgo Cluster</small></h1>
-    <p class="obj-tagline">离我们最近的大型星系团，上千个星系的引力都会</p>
+    <p class="obj-tagline" data-obj-id="virgo_cluster">离我们最近的大型星系团，上千个星系的引力都会</p>
     <p class="obj-summary">直径（等效球径） 15,000,000 光年 · 质量 2.39×10⁴⁵ kg</p>
   </div>
 </div>
@@ -25,8 +25,8 @@ hide:
 <tr><th scope="row">质量</th><td>2.39×10⁴⁵ kg（1.2×10¹⁵ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>15,000,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>5,400 万光年</td></tr>
-<tr><th scope="row">类型</th><td>星系团</td></tr>
-<tr><th scope="row">星座</th><td>室女座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Galaxy cluster">星系团</td></tr>
+<tr><th scope="row">星座</th><td data-en="Virgo">室女座</td></tr>
 </tbody>
 </table>
 </section>
@@ -35,9 +35,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>星系团</td></tr>
-<tr><th scope="row">已知成员</th><td>约 1300~2000 个星系</td></tr>
-<tr><th scope="row">备注</th><td>直径约 1500 万光年；本星系群正被它牵引着下落。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Galaxy cluster">星系团</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="~1300–2000 galaxies">约 1300~2000 个星系</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~15 million light-years; the Local Group is falling toward it under its gravitational pull.">直径约 1500 万光年；本星系群正被它牵引着下落。</td></tr>
 <tr><th scope="row">发现</th><td>1781 年（Messier 记录成员）；1950 年代确认为星系团</td></tr>
 </tbody>
 </table>

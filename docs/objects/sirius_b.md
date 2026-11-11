@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_b.webp" alt="天狼星B" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_b.webp" alt="天狼星B" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>天狼星B <small>Sirius B</small></h1>
-    <p class="obj-tagline">质量与太阳相当，体积却只有地球大小——最早被发现的白矮星</p>
+    <p class="obj-tagline" data-obj-id="sirius_b">质量与太阳相当，体积却只有地球大小——最早被发现的白矮星</p>
     <p class="obj-summary">直径 11,268 km · 质量 2.02×10³⁰ kg</p>
   </div>
 </div>
@@ -40,10 +40,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>6925.09 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>25,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>DA2</td></tr>
-<tr><th scope="row">恒星类型</th><td>白矮星（DA2）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="White dwarf (DA2)">白矮星（DA2）</td></tr>
 <tr><th scope="row">光度</th><td>9.38×10²⁴ W（0.0245 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>9 光年</td></tr>
-<tr><th scope="row">星座</th><td>大犬座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Canis Major">大犬座</td></tr>
 </tbody>
 </table>
 </section>
@@ -64,7 +64,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>质量与太阳相当、半径仅约 5634 km（比地球还小）的致密残骸，表面重力约为地球的 40 万倍；它是天狼星系中率先耗尽燃料、先行演化的一颗，而明亮的伴星天狼 A 仍是主序星。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】</td></tr>
+<tr><th scope="row">备注</th><td data-en="Dense remnant with mass comparable to the Sun and radius of only about 5634 km (smaller than Earth), surface gravity roughly 400,000 times that of Earth; it is the first member in the Sirius system to exhaust fuel and evolve, while the bright companion Sirius A remains a main-sequence star. 【AI Review 2026-10-27: Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】">质量与太阳相当、半径仅约 5634 km（比地球还小）的致密残骸，表面重力约为地球的 40 万倍；它是天狼星系中率先耗尽燃料、先行演化的一颗，而明亮的伴星天狼 A 仍是主序星。 【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】</td></tr>
 <tr><th scope="row">发现</th><td>1862 年 Alvan Graham Clark 发现</td></tr>
 </tbody>
 </table>

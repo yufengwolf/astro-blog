@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img comet"><img src="../../assets/planets/halley.webp" alt="哈雷彗星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA17485" target="_blank" rel="noopener">ESA/NASA · 乔托号 1986 年拍摄的哈雷彗星核</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img comet"><img src="../../assets/planets/halley.webp" alt="哈雷彗星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA17485&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nucleus of Comet Halley photographed by ESA/NASA Giotto in 1986&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA17485" target="_blank" rel="noopener">ESA/NASA · 乔托号 1986 年拍摄的哈雷彗星核</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge comet">彗星</span>
     <h1>哈雷彗星 <small>1P/Halley</small></h1>
-    <p class="obj-tagline">每 76 年回归一次的著名周期彗星，肉眼可见的脏雪球</p>
+    <p class="obj-tagline" data-obj-id="halley">每 76 年回归一次的著名周期彗星，肉眼可见的脏雪球</p>
     <p class="obj-summary">平均直径 11.0 km · 质量 2.2×10¹⁴ kg</p>
   </div>
 </div>

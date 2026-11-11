@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/makemake.webp" alt="鸟神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>鸟神星 <small>Makemake</small></h1>
-    <p class="obj-tagline">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
+    <p class="obj-tagline" data-obj-id="makemake">柯伊伯带最大的经典天体之一，表面覆盖甲烷冰</p>
     <p class="obj-summary">平均直径 1,432 km · 质量 3×10²¹ kg</p>
   </div>
 </div>

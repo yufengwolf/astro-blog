@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/haumea.webp" alt="妊神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/haumea.webp" alt="妊神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>妊神星 <small>Haumea</small></h1>
-    <p class="obj-tagline">自转极快的椭球状矮行星，拥有光环</p>
+    <p class="obj-tagline" data-obj-id="haumea">自转极快的椭球状矮行星，拥有光环</p>
     <p class="obj-summary">平均直径 1,560 km · 质量 4×10²¹ kg</p>
   </div>
 </div>

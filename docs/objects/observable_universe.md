@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/observable_universe.webp" alt="可观测宇宙" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA17449" target="_blank" rel="noopener">ESA/NASA · Planck 卫星与宇宙微波背景（艺术概念图）</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/observable_universe.webp" alt="可观测宇宙" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA17449&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ESA/NASA · Planck satellite and Cosmic Microwave Background (artistic concept)&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA17449" target="_blank" rel="noopener">ESA/NASA · Planck 卫星与宇宙微波背景（艺术概念图）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>可观测宇宙 <small>Observable Universe</small></h1>
-    <p class="obj-tagline">以地球为球心的粒子视界，人类信息的全部边疆</p>
+    <p class="obj-tagline" data-obj-id="observable_universe">以地球为球心的粒子视界，人类信息的全部边疆</p>
     <p class="obj-summary">直径（等效球径） 93,000,000,000 光年 · 质量 1.5×10⁵³ kg</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">质量</th><td>1.5×10⁵³ kg（7.54×10²² M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>93,000,000,000 光年</td></tr>
 <tr><th scope="row">平均温度</th><td>3 K</td></tr>
-<tr><th scope="row">类型</th><td>可观测宇宙（粒子视界）</td></tr>
+<tr><th scope="row">类型</th><td data-en="Observable Universe (particle horizon)">可观测宇宙（粒子视界）</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,9 +34,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>可观测宇宙（粒子视界）</td></tr>
-<tr><th scope="row">已知成员</th><td>估计约 2 万亿个星系</td></tr>
-<tr><th scope="row">备注</th><td>半径约 465 亿光年（共动距离）；年龄约 138 亿年；普通物质 4.9%、暗物质 26.8%、暗能量 68.3%。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Observable Universe (particle horizon)">可观测宇宙（粒子视界）</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="An estimated 2 trillion galaxies">估计约 2 万亿个星系</td></tr>
+<tr><th scope="row">备注</th><td data-en="Radius ~46.5 billion light-years (comoving distance); age ~13.8 billion years; ordinary matter 4.9%, dark matter 26.8%, dark energy 68.3%.">半径约 465 亿光年（共动距离）；年龄约 138 亿年；普通物质 4.9%、暗物质 26.8%、暗能量 68.3%。</td></tr>
 <tr><th scope="row">发现</th><td>现代宇宙学概念（哈勃定律，1929）</td></tr>
 </tbody>
 </table>

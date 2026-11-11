@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/ganymede.webp" alt="木卫三" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00353" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/ganymede.webp" alt="木卫三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00353&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Galileo&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00353" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫三 <small>Ganymede</small></h1>
-    <p class="obj-tagline">太阳系最大的卫星，比水星还大，且拥有自己的磁场</p>
+    <p class="obj-tagline" data-obj-id="ganymede">太阳系最大的卫星，比水星还大，且拥有自己的磁场</p>
     <p class="obj-summary">平均直径 5,262 km · 质量 1.48×10²³ kg</p>
   </div>
 </div>

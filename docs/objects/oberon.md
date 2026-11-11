@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/oberon.webp" alt="天卫四" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00034" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/oberon.webp" alt="天卫四" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00034&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Voyager 2&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00034" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫四 <small>Oberon</small></h1>
-    <p class="obj-tagline">天王星最外侧的大卫星，表面遍布撞击坑与深色物质</p>
+    <p class="obj-tagline" data-obj-id="oberon">天王星最外侧的大卫星，表面遍布撞击坑与深色物质</p>
     <p class="obj-summary">平均直径 1,523 km · 质量 2.88×10²¹ kg</p>
   </div>
 </div>

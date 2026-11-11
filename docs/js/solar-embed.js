@@ -78,7 +78,7 @@
       var fs = fsElement();
       if (fs && fs !== embed) return; // 当前是另一个嵌入块在全屏
       if (fs) {
-        btn.textContent = '退出全屏';
+        btn.textContent = window.siteT ? window.siteT('exitFullscreen') : '退出全屏';
         // 移动端进入全屏后尝试锁定横屏
         if (isMobile() && window.screen && screen.orientation && screen.orientation.lock) {
           screen.orientation.lock('landscape').catch(function () {});
@@ -86,7 +86,7 @@
         // 仍竖屏则提示旋转
         showRotate(isMobile() && isPortrait());
       } else {
-        btn.textContent = '全屏';
+        btn.textContent = window.siteT ? window.siteT('fullscreen') : '全屏';
         showRotate(false);
         if (window.screen && screen.orientation && screen.orientation.unlock) {
           screen.orientation.unlock();
@@ -107,6 +107,7 @@
     });
 
     document.addEventListener('fullscreenchange', function () { update(); fitWidth(); });
+    if (window.onSiteLang) window.onSiteLang(function () { update(); });
     document.addEventListener('webkitfullscreenchange', function () { update(); fitWidth(); });
     window.addEventListener('orientationchange', function () {
       if (fsElement() === embed) update();

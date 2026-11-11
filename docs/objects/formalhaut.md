@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/formalhaut.webp" alt="北落师门" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/formalhaut.webp" alt="北落师门" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>北落师门 <small>Fomalhaut</small></h1>
-    <p class="obj-tagline">南天孤独的亮星，拥有著名的尘埃碎屑盘</p>
+    <p class="obj-tagline" data-obj-id="formalhaut">南天孤独的亮星，拥有著名的尘埃碎屑盘</p>
     <p class="obj-summary">直径 2,560,176 km · 质量 3.82×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>630.94 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>8,590 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A3V</td></tr>
-<tr><th scope="row">恒星类型</th><td>白主序星（A3V）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="White main-sequence star (A3V)">白主序星（A3V）</td></tr>
 <tr><th scope="row">光度</th><td>6.35×10²⁷ W（16.6 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>25 光年</td></tr>
-<tr><th scope="row">星座</th><td>南鱼座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Piscis Austrinus">南鱼座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>南天孤悬的亮星（周围 20° 内没有别的亮星）。其尘埃碎屑盘是第一批被望远镜直接拍到的碎屑盘，盘中候选行星'北落师门 b'的真身至今仍有争议。</td></tr>
+<tr><th scope="row">备注</th><td data-en="A bright star isolated in the southern sky (no other bright stars within 20°). Its debris disk was among the first debris disks imaged directly by telescopes, and the nature of the candidate planet Fomalhaut b within the disk remains controversial.">南天孤悬的亮星（周围 20° 内没有别的亮星）。其尘埃碎屑盘是第一批被望远镜直接拍到的碎屑盘，盘中候选行星'北落师门 b'的真身至今仍有争议。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

@@ -2,7 +2,7 @@
   "meta": {
     "name": "星野天体数据库",
     "version": "1.0.0",
-    "updated": "2026-10-27",
+    "updated": "2026-11-11",
     "object_count": 177,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
@@ -18,7 +18,8 @@
       "Wikipedia 各天体条目（著名星云/星系/星团/小天体，2026-10-24 核对）https://en.wikipedia.org/",
       "LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
       "Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/",
-      "诺贝尔物理学奖 2019 新闻稿（飞马座51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/"
+      "诺贝尔物理学奖 2019 新闻稿（飞马座51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/",
+      "NASA Exoplanet Archive · Planetary Systems 默认参数（5 颗系外行星主值，2026-11-11 核对） https://exoplanetarchive.ipac.caltech.edu/"
     ],
     "pending": "TNO 三兄弟（鸟神星/妊神星/阋神星）物理参数待权威源实测值（当前诚实留 null）；北冕座 R 因无可靠距离数据未收录；m7/ngc4755 等 NASA 库无真图的天体保留程序化贴图"
   },
@@ -80,7 +81,8 @@
       "data_source": "authority",
       "data_verified": true,
       "distance_ly": 1.58e-05,
-      "note": "【AI复校 2026-10-27：填充:distance_ly】"
+      "note": "【AI复校 2026-10-27：填充:distance_ly】",
+      "tagline_en": "The Sun, the central star containing 99.86% of the solar system's mass"
     },
     {
       "id": "mercury",
@@ -137,7 +139,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Mercury, where a solar day exceeds a Mercurian year"
     },
     {
       "id": "venus",
@@ -194,7 +197,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Venus, a hot world shrouded in thick carbon dioxide atmosphere"
     },
     {
       "id": "earth",
@@ -254,7 +258,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Earth, the only known planet with life, 71% covered by liquid water"
     },
     {
       "id": "mars",
@@ -314,7 +319,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Mars, the red desert planet with the highest volcano and deepest canyon"
     },
     {
       "id": "jupiter",
@@ -376,7 +382,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Jupiter, the largest planet, more massive than the other seven combined"
     },
     {
       "id": "saturn",
@@ -437,7 +444,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Saturn, a gas giant known for its spectacular rings and low density"
     },
     {
       "id": "uranus",
@@ -498,7 +506,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Uranus, an ice giant rotating on its side with a 98-degree axial tilt"
     },
     {
       "id": "neptune",
@@ -557,7 +566,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Neptune, the outermost planet with winds reaching 2100 km/h"
     },
     {
       "id": "pluto",
@@ -617,7 +627,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Pluto, formerly the ninth planet, forming a binary system with Charon"
     },
     {
       "id": "ceres",
@@ -669,7 +680,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Ceres, the largest asteroid belt object and inner solar system dwarf planet"
     },
     {
       "id": "makemake",
@@ -715,7 +727,8 @@
       "image_credit": "AI 生成",
       "image_source": "programmatic",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Eris, a classical Kuiper belt object with a methane ice surface"
     },
     {
       "id": "haumea",
@@ -762,7 +775,8 @@
       "image_credit": "AI 生成",
       "image_source": "programmatic",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Haumea, a rapidly rotating ellipsoidal dwarf planet with rings"
     },
     {
       "id": "eris",
@@ -810,7 +824,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Eris, the most massive dwarf planet, whose discovery led to Pluto's demotion"
     },
     {
       "id": "moon",
@@ -867,7 +882,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "The Moon, Earth's only natural satellite, tidally locked to always face Earth"
     },
     {
       "id": "phobos",
@@ -922,7 +938,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Larger Martian moon, approaching Mars at ~1.8 meters per century"
     },
     {
       "id": "deimos",
@@ -977,7 +994,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Smaller Martian moon, irregular shape, covered in fine regolith"
     },
     {
       "id": "io",
@@ -1032,7 +1050,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Most volcanically active body, surface covered with sulfur deposits"
     },
     {
       "id": "europa",
@@ -1087,7 +1106,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Subsurface global ocean, prime target for extraterrestrial life search"
     },
     {
       "id": "ganymede",
@@ -1142,7 +1162,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Largest moon, bigger than Mercury, possesses its own magnetic field"
     },
     {
       "id": "callisto",
@@ -1197,7 +1218,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Heavily cratered, surface largely unmodified by geological activity"
     },
     {
       "id": "mimas",
@@ -1252,7 +1274,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Dead moon, Herschel crater covers one-third of its surface"
     },
     {
       "id": "enceladus",
@@ -1307,7 +1330,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Icy moon ejecting subsurface ocean material via south polar plumes"
     },
     {
       "id": "tethys",
@@ -1362,7 +1386,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Icy moon with Ithaca Chasma extending ~2000 km"
     },
     {
       "id": "dione",
@@ -1417,7 +1442,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Icy moon with ice cliffs recording ancient geological activity"
     },
     {
       "id": "rhea",
@@ -1472,7 +1498,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Saturn's second-largest moon, composed of two-thirds ice and one-third rock"
     },
     {
       "id": "titan",
@@ -1527,7 +1554,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "The only moon with a thick atmosphere, featuring lakes and rivers of liquid methane"
     },
     {
       "id": "hyperion",
@@ -1582,7 +1610,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "An irregularly shaped moon with chaotic rotation, making its orientation unpredictable"
     },
     {
       "id": "iapetus",
@@ -1637,7 +1666,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "A 'yin-yang' moon, bright on one side, dark on the other, with a strange equatorial ridge"
     },
     {
       "id": "triton",
@@ -1692,7 +1722,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "A retrograde moon, likely a captured Kuiper Belt object"
     },
     {
       "id": "miranda",
@@ -1747,7 +1778,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Uranus's most geologically unique moon, covered in cliffs and grooves"
     },
     {
       "id": "ariel",
@@ -1802,7 +1834,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Uranus's brightest moon, with a surface crisscrossed by valleys"
     },
     {
       "id": "umbriel",
@@ -1857,7 +1890,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Uranus's darkest moon, covered in ancient impact craters"
     },
     {
       "id": "titania",
@@ -1912,7 +1946,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Uranus's largest moon, featuring a vast system of graben"
     },
     {
       "id": "oberon",
@@ -1967,7 +2002,8 @@
       "image_locked": true,
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Uranus's outermost large moon, with a surface covered in craters and dark material"
     },
     {
       "id": "pistol_star",
@@ -2027,7 +2063,8 @@
       "image_source": "doubao_template",
       "data_source": "manual",
       "data_verified": false,
-      "note": "【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】"
+      "note": "【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】",
+      "tagline_en": "Blue hypergiant near the galactic center, ejected the Pistol Nebula, one of the brightest known stars"
     },
     {
       "id": "stephenson_2_18",
@@ -2086,7 +2123,8 @@
       "subtype": "红超巨星（M6Ia）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Red supergiant in Scutum, one of the largest known stars"
     },
     {
       "id": "arcturus",
@@ -2145,7 +2183,8 @@
       "subtype": "红巨星（K0III）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Brightest star in Boötes, an orange red giant, one of the brightest stars in the night sky"
     },
     {
       "id": "antares",
@@ -2205,7 +2244,8 @@
       "image_source": "doubao_template",
       "data_source": "manual",
       "data_verified": false,
-      "note": "【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】"
+      "note": "【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】",
+      "tagline_en": "Alpha Scorpii, representing the \"Scorpion's Heart,\" a bright red supergiant (Antares)"
     },
     {
       "id": "rigel",
@@ -2265,7 +2305,8 @@
       "image_source": "doubao_template",
       "data_source": "manual",
       "data_verified": false,
-      "note": "【AI复校 2026-10-27：置空:physical/radius_km】"
+      "note": "【AI复校 2026-10-27：置空:physical/radius_km】",
+      "tagline_en": "Betelgeuse, Orion's β, seventh brightest star, a blue-white blue supergiant"
     },
     {
       "id": "betelgeuse",
@@ -2324,7 +2365,8 @@
       "subtype": "红超巨星（M1-M2Ia）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Betelgeuse, a famous red supergiant with irregular brightness variations, one of the closest to Earth"
     },
     {
       "id": "vega",
@@ -2384,7 +2426,8 @@
       "image_source": "doubao_template",
       "data_source": "manual",
       "data_verified": false,
-      "note": "【AI复校 2026-10-27：填充:orbit/rotation_period_hours】"
+      "note": "【AI复校 2026-10-27：填充:orbit/rotation_period_hours】",
+      "tagline_en": "Alpha Lyrae, vertex of the Summer Triangle, an A-type main-sequence star, formerly the North Star"
     },
     {
       "id": "sirius_a",
@@ -2444,7 +2487,8 @@
       "members": 2,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Primary star of Alpha Canis Majoris, brightest star in night sky, an A-type main sequence star"
     },
     {
       "id": "proxima_centauri",
@@ -2456,17 +2500,17 @@
       "physical": {
         "mass_kg": 2.425848e+29,
         "radius_km": 107137.8,
-        "density_g_cm3": 47.091963990433904,
-        "gravity_m_s2": 1410.4715774599404,
-        "escape_velocity_km_s": 549.7541664627701,
+        "density_g_cm3": 47.091964,
+        "gravity_m_s2": 1410.471577,
+        "escape_velocity_km_s": 549.754166,
         "mean_temp_c": 2766.8,
         "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": 1944772319099.9998,
+        "semimajor_axis_km": 1301501475090.0,
         "orbital_period_days": 199791750.0,
-        "orbital_velocity_km_s": 0.5,
+        "orbital_velocity_km_s": 0.442568,
         "inclination_deg": null,
         "eccentricity": 0.5,
         "obliquity_deg": null,
@@ -2489,7 +2533,8 @@
         "year": null
       },
       "sources": [
-        "wiki_proxima"
+        "wiki_proxima",
+        "kervella2016"
       ],
       "verified": "2026-10-24",
       "article": null,
@@ -2503,8 +2548,9 @@
       "subtype": "红矮星（M5.5Ve）",
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false,
-      "note": "【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】"
+      "data_verified": true,
+      "note": "【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】 【2026-11-11 权威源核查：Kervella et al. 2016 给出 a=8700(+700/-400) AU、P=547000 yr、e=0.50；原 13000 AU 是当时的瞬时线性分离而非半长轴，已按 a/P/e 重算轨道速度】",
+      "tagline_en": "Member of the Alpha Centauri triple system, closest star to the Sun, a faint red dwarf"
     },
     {
       "id": "m87_star",
@@ -2571,7 +2617,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The supermassive black hole at the center of the Virgo Cluster, the subject of the first human-captured black hole image"
     },
     {
       "id": "sgr_a_star",
@@ -2638,7 +2685,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The supermassive black hole at the Galactic Center, captured in humanity's second black hole photo in 2022"
     },
     {
       "id": "ton618",
@@ -2702,7 +2750,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of the most massive black holes, a quasar engine with 66 billion solar masses"
     },
     {
       "id": "ic1101_bh",
@@ -2766,7 +2815,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The black hole at the core of IC 1101, with highly debated mass estimates"
     },
     {
       "id": "gw190521",
@@ -2833,7 +2883,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Humanity's first confirmed intermediate-mass black hole, product of a binary black hole merger"
     },
     {
       "id": "cyg_x1",
@@ -2897,7 +2948,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Humanity's first confirmed stellar-mass black hole, the one Hawking lost his bet on"
     },
     {
       "id": "v404_cyg",
@@ -2961,7 +3013,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Low-mass X-ray binary, a black hole famous for its violent 2015 outburst"
     },
     {
       "id": "m42",
@@ -3025,7 +3078,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The brightest winter nebula, one of the closest stellar nurseries in the Milky Way"
     },
     {
       "id": "m1",
@@ -3089,7 +3143,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Supernova remnant witnessed by Song Dynasty astronomers, the universe's most famous relic nebula"
     },
     {
       "id": "m16",
@@ -3153,7 +3208,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Home of Hubble's Pillars of Creation, a stellar factory in Serpens"
     },
     {
       "id": "m20",
@@ -3217,7 +3273,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A colorful nebula combining emission, reflection, and dark lanes, a Sagittarius palette"
     },
     {
       "id": "m8",
@@ -3281,7 +3338,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A giant emission nebula in Sagittarius, visible to the naked eye in the Milky Way"
     },
     {
       "id": "horsehead",
@@ -3345,7 +3403,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A dark dust silhouette near Orion's Belt, the night sky's most recognizable outline"
     },
     {
       "id": "m57",
@@ -3409,7 +3468,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A cosmic smoke ring in Lyra, a typical portrait of a dying star"
     },
     {
       "id": "ngc7293",
@@ -3473,7 +3533,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The 'Eye of God' in Aquarius, the nearest planetary nebula to Earth"
     },
     {
       "id": "m2_9",
@@ -3537,7 +3598,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A butterfly-shaped nebula in Ophiuchus, a living sample of bipolar outflows"
     },
     {
       "id": "rosette",
@@ -3601,7 +3663,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A cosmic rose blooming in Monoceros, an emission nebula over 100 light-years across"
     },
     {
       "id": "barnards_loop",
@@ -3665,7 +3728,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A massive arc spanning Orion, possibly caused by a supernova millions of years ago"
     },
     {
       "id": "tarantula",
@@ -3729,7 +3793,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A giant stellar nursery in the Large Magellanic Cloud, the most active nebula in the Local Group"
     },
     {
       "id": "milky_way",
@@ -3793,7 +3858,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Our home galaxy, the barred spiral galaxy containing the Solar System"
     },
     {
       "id": "m31",
@@ -3857,7 +3923,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The largest galaxy in the Local Group, visible to the naked eye and a neighbor of the Milky Way"
     },
     {
       "id": "m33",
@@ -3921,7 +3988,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Third-largest Local Group galaxy, naked-eye loose spiral"
     },
     {
       "id": "lmc",
@@ -3985,7 +4053,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Largest Milky Way satellite, fuzzy cloud in southern sky"
     },
     {
       "id": "smc",
@@ -4049,7 +4118,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "LMC companion, second-dwarf galaxy in southern sky"
     },
     {
       "id": "m87",
@@ -4113,7 +4183,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Giant elliptical in Virgo Cluster, trillion-star metropolis"
     },
     {
       "id": "m104",
@@ -4177,7 +4248,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Edge-on spiral with large bulge and dust ring"
     },
     {
       "id": "m51",
@@ -4241,7 +4313,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "First spiral discovered, interacting pair with companion"
     },
     {
       "id": "m81",
@@ -4305,7 +4378,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Near Big Dipper, interacting pair with M82"
     },
     {
       "id": "m82",
@@ -4369,7 +4443,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Famous starburst, ten times Milky Way star formation"
     },
     {
       "id": "ngc1300",
@@ -4433,7 +4508,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Textbook barred spiral, giant windmill in Eridanus"
     },
     {
       "id": "ic1101",
@@ -4497,7 +4573,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of largest known galaxies, giant elliptical"
     },
     {
       "id": "stephens_quintet",
@@ -4561,7 +4638,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Gravitational dance of five galaxies, slow-motion merger in Webb's lens"
     },
     {
       "id": "m45",
@@ -4625,7 +4703,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Pleiades star cluster, easiest blue spoon to spot in winter nights"
     },
     {
       "id": "hyades",
@@ -4689,7 +4768,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Taurus V-shaped head, one of nearest open clusters to Sun"
     },
     {
       "id": "m44",
@@ -4753,7 +4833,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Beehive in Cancer, classic binocular cluster"
     },
     {
       "id": "m67",
@@ -4817,7 +4898,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Famous ancient open cluster, once thought Sun's birthplace"
     },
     {
       "id": "r136",
@@ -4881,7 +4963,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Super star cluster in Spider Nebula core, home of brightest known stars"
     },
     {
       "id": "m13",
@@ -4945,7 +5028,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "North sky's most spectacular globular cluster, 300k stars in Hercules"
     },
     {
       "id": "m22",
@@ -5009,7 +5093,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Bright globular cluster in Sagittarius, naked-eye visible ancient star city"
     },
     {
       "id": "omega_cen",
@@ -5073,7 +5158,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Largest globular cluster in Milky Way, likely remnant nucleus of absorbed dwarf galaxy"
     },
     {
       "id": "local_group",
@@ -5137,7 +5223,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Galaxy community to which Milky Way belongs, small group of over 80 galaxies"
     },
     {
       "id": "virgo_cluster",
@@ -5201,7 +5288,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The nearest large galaxy cluster, whose gravity affects thousands of galaxies"
     },
     {
       "id": "laniakea",
@@ -5265,7 +5353,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The home supercluster of the Milky Way, a basin of 100,000 galaxies"
     },
     {
       "id": "great_attractor",
@@ -5329,7 +5418,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The gravitational abyss behind the Milky Way disk, pulling the Local Supercluster"
     },
     {
       "id": "hercules_corona_wall",
@@ -5393,7 +5483,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of the largest known cosmic structures, a galaxy wall spanning billions of light-years"
     },
     {
       "id": "cmb",
@@ -5457,7 +5548,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The afterglow of the Big Bang, the oldest light in the universe (last scattering surface)"
     },
     {
       "id": "observable_universe",
@@ -5521,7 +5613,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The particle horizon centered on Earth, the entire boundary of human information"
     },
     {
       "id": "m17",
@@ -5585,7 +5678,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of the brightest emission nebulae in the Milky Way, resembling a swan"
     },
     {
       "id": "m27",
@@ -5649,7 +5743,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The first planetary nebula discovered by humans, shaped like a dumbbell"
     },
     {
       "id": "ngc3372",
@@ -5713,7 +5808,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of the largest and brightest nebulae, home to the unstable giant star Eta Carinae"
     },
     {
       "id": "ngc7000",
@@ -5777,7 +5873,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "An emission nebula shaped remarkably like the continent of North America"
     },
     {
       "id": "m101",
@@ -5841,7 +5938,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Spiral galaxy facing us, arms dotted with red stellar nurseries"
     },
     {
       "id": "m64",
@@ -5905,7 +6003,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Majestic spiral arms crossed by a dark dust lane, like a black eye"
     },
     {
       "id": "m83",
@@ -5969,7 +6068,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of the brightest southern spiral galaxies with frequent starbursts"
     },
     {
       "id": "ngc5128",
@@ -6033,7 +6133,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Merged galaxy pierced by a thick dust band"
     },
     {
       "id": "ngc4038",
@@ -6097,7 +6198,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Two spirals tearing apart, flinging long tidal tails"
     },
     {
       "id": "m11",
@@ -6161,7 +6263,8 @@
       ],
       "image_source": "nasa",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Thousands of stars in a triangle, like flying wild ducks"
     },
     {
       "id": "m7",
@@ -6225,7 +6328,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Open cluster recorded in ancient star catalogs two millennia ago"
     },
     {
       "id": "ngc4755",
@@ -6289,7 +6393,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Blue and red supergiants clustered together like a box of gems"
     },
     {
       "id": "gw150514",
@@ -6353,7 +6458,8 @@
       ],
       "image_source": "programmatic",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "First directly detected gravitational wave event: binary black hole merger"
     },
     {
       "id": "eta_carinae",
@@ -6417,7 +6523,8 @@
       ],
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Brightest luminous blue variable in the Milky Way, soon to explode"
     },
     {
       "id": "vesta",
@@ -6481,7 +6588,8 @@
       ],
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Giant protoplanet in the asteroid belt with a 500 km Antarctic super-impact crater"
     },
     {
       "id": "halley",
@@ -6545,7 +6653,8 @@
       ],
       "image_source": "nasa",
       "data_source": "authority",
-      "data_verified": true
+      "data_verified": true,
+      "tagline_en": "Famous periodic comet returning every 76 years, a naked-eye dirty snowball"
     },
     {
       "id": "sirius_b",
@@ -6606,7 +6715,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Mass comparable to the Sun but size of Earth, the first discovered white dwarf"
     },
     {
       "id": "eridani_40a",
@@ -6667,7 +6777,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Vulcan's sun from Star Trek, a tranquil orange-yellow dwarf star"
     },
     {
       "id": "eridani_40b",
@@ -6728,7 +6839,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Naked-eye invisible white dwarf, one of the earliest confirmed white dwarfs"
     },
     {
       "id": "crab_pulsar",
@@ -6789,7 +6901,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Neutron star at the center of the Crab Nebula, spinning every 33 milliseconds"
     },
     {
       "id": "vela_pulsar",
@@ -6850,7 +6963,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Neutron star in the Vela supernova remnant, a classic sample of glitching"
     },
     {
       "id": "sgr_1806_20",
@@ -6911,7 +7025,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The galaxy's strongest magnetar, whose giant flare once lit half the Milky Way"
     },
     {
       "id": "alphacen_a",
@@ -6972,7 +7087,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Primary star of the nearest stellar system to the Sun, resembling a twin of the Sun"
     },
     {
       "id": "alphacen_b",
@@ -7033,7 +7149,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Orange dwarf companion of the Alpha Centauri system, indistinguishable from the primary to the naked eye"
     },
     {
       "id": "castor",
@@ -7094,7 +7211,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A six-star system forming one corner of the Winter Triangle"
     },
     {
       "id": "pollux",
@@ -7155,7 +7273,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The brightest star in Gemini, an orange giant with exoplanets"
     },
     {
       "id": "capella",
@@ -7216,7 +7335,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The brightest star in Auriga, a dazzling four-star system"
     },
     {
       "id": "aldebaran",
@@ -7277,7 +7397,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The red eye of Taurus, an expanding red giant"
     },
     {
       "id": "spica",
@@ -7338,7 +7459,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The brightest star in Virgo, a blue-white binary system"
     },
     {
       "id": "regulus",
@@ -7399,7 +7521,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The heart of Leo, a rapidly rotating blue-white star"
     },
     {
       "id": "formalhaut",
@@ -7460,7 +7583,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A lone bright southern star with a famous debris disk"
     },
     {
       "id": "altair",
@@ -7521,7 +7645,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Vega, one corner of the Summer Triangle, a rapidly rotating oblate spheroid"
     },
     {
       "id": "deneb",
@@ -7582,7 +7707,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The farthest corner of the Summer Triangle, one of the brightest blue-white supergiants"
     },
     {
       "id": "mirfak",
@@ -7643,7 +7769,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The brightest star in Perseus, a yellow-white supergiant at the core of a young cluster"
     },
     {
       "id": "hamal",
@@ -7704,7 +7831,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Brightest star in Aries, an aging orange giant"
     },
     {
       "id": "markab",
@@ -7765,7 +7893,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Corner of Pegasus' Square, a blue-white giant in its twilight"
     },
     {
       "id": "alpheratz",
@@ -7826,7 +7955,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Shared corner of Andromeda and Pegasus, a blue-white subgiant"
     },
     {
       "id": "mirach",
@@ -7887,7 +8017,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Second brightest star in Andromeda, a beacon to the Great Andromeda Galaxy"
     },
     {
       "id": "wezen",
@@ -7948,7 +8079,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Second brightest star in Canis Major, a yellow-white supergiant 188 times solar diameter"
     },
     {
       "id": "adhara",
@@ -8009,7 +8141,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Brightest star in the night sky 4.7 million years ago, a strong extreme UV source"
     },
     {
       "id": "aludra",
@@ -8070,7 +8203,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Blue-white supergiant in Canis Major, ending its life as a supernova"
     },
     {
       "id": "mu_cephei",
@@ -8131,7 +8265,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Blood-red hypergiant, one of the largest stars visible to the naked eye"
     },
     {
       "id": "uy_scuti",
@@ -8192,7 +8327,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "One of the largest known stars, a red supergiant in Scutum"
     },
     {
       "id": "rw_cephei",
@@ -8253,7 +8389,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Irregularly dimming hypergiant, experiencing record dimming in 2022"
     },
     {
       "id": "s_persei",
@@ -8314,7 +8451,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Red supergiant in the direction of the Perseus Double Cluster, a semiregular variable star"
     },
     {
       "id": "mira",
@@ -8375,7 +8513,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The first variable star discovered by humans, pulsating with a period of about 332 days"
     },
     {
       "id": "p_cygni",
@@ -8436,7 +8575,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A 'nova' that brightened unexpectedly in 1600, still ejecting matter"
     },
     {
       "id": "naos",
@@ -8497,7 +8637,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The brightest star in Puppis, one of the hottest stars visible to the naked eye"
     },
     {
       "id": "r136a1",
@@ -8558,7 +8699,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The most massive known star, located in the core of the Tarantula Nebula"
     },
     {
       "id": "algol",
@@ -8619,7 +8761,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "The 'Magic Star' recorded in ancient China as brightening, actually an eclipsing binary"
     },
     {
       "id": "sheliak",
@@ -8680,7 +8823,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "An eclipsing binary where matter flows from one star to another"
     },
     {
       "id": "almaaz",
@@ -8741,7 +8885,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Almach, the 'Pillar One', undergoing a rare eclipse every 27 years"
     },
     {
       "id": "kepler_452",
@@ -8802,7 +8947,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A Sun-like star hosting Kepler-452b, the 'Earth cousin'"
     },
     {
       "id": "kepler_22",
@@ -8863,7 +9009,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "A Sun-like star hosting the first known habitable-zone exoplanet"
     },
     {
       "id": "trappist_1",
@@ -8924,7 +9071,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Red dwarf with seven Earth-sized planets, exoplanet research hub"
     },
     {
       "id": "gliese_581",
@@ -8985,7 +9133,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Red dwarf with multiple exoplanets, classic target for habitability debates"
     },
     {
       "id": "kepler_186",
@@ -9046,7 +9195,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Red dwarf hosting an Earth-sized planet in its habitable zone"
     },
     {
       "id": "cancri_55",
@@ -9107,7 +9257,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Binary system with five planets, including a magma-ocean super-Earth"
     },
     {
       "id": "pegasi_51",
@@ -9170,7 +9321,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Star hosting first exoplanet, 2019 Nobel Prize in Physics"
     },
     {
       "id": "beta_pictoris",
@@ -9231,7 +9383,8 @@
       "image_locked": true,
       "image_source": "doubao_template",
       "data_source": "manual",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "First star directly imaged with a debris disk, namesake of young stellar group"
     },
     {
       "id": "procyon_a",
@@ -9292,7 +9445,8 @@
       "image_locked": false,
       "image_source": "doubao_template",
       "data_source": "llm_doubao",
-      "data_verified": false
+      "data_verified": false,
+      "tagline_en": "Brightest star in Canis Minor, eighth brightest in night sky, ~11.5 light-years away"
     },
     {
       "id": "orcus",
@@ -9353,7 +9507,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Kuiper Belt plutino dwarf planet, 3:2 resonance with Neptune, has satellite Vanth"
     },
     {
       "id": "vanth",
@@ -9414,7 +9569,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Known satellite of Kuiper Belt dwarf planet Orcus"
     },
     {
       "id": "gonggong_225088",
@@ -9475,7 +9631,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Kuiper Belt scattered disk icy dwarf planet named after Chinese water deity Gonggong"
     },
     {
       "id": "pallas",
@@ -9536,7 +9693,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Second-largest asteroid, highly irregular shape, high orbital inclination"
     },
     {
       "id": "juno",
@@ -9597,7 +9755,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Asteroid 3, large main-belt stony asteroid, one of the earliest discovered"
     },
     {
       "id": "hygiea",
@@ -9658,7 +9817,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Large main-belt asteroid, once considered a dwarf planet candidate"
     },
     {
       "id": "sedna",
@@ -9699,17 +9859,18 @@
       "constellation": "鲸鱼座",
       "subtype": "外海王星矮行星",
       "members": "",
-      "note": "质量、半径为近似估计值，存在较大观测不确定性 【2发不一致:physical/mass_sun(1.3e-08 vs 1.04e-08)，待人工核定】 【AI复校 2026-10-27（仅1发成功）：置空:physical/mass_sun; 填充:orbit/orbital_velocity_km_s】",
+      "note": "质量、半径为近似估计值，存在较大观测不确定性 【2发不一致:physical/mass_sun(1.3e-08 vs 1.04e-08)，待人工核定】 【AI复校 2026-10-27（仅1发成功）：置空:physical/mass_sun; 填充:orbit/orbital_velocity_km_s】 【2026-11-11 权威源核查：JPL SBDB 现行解 a=544 AU / P=4.63e6 d / e=0.86；库内 506 AU / 4.164e6 d / e=0.849 为自洽的早期解，且 1.04 km/s 正是该椭圆轨道的时间平均速度，保留不覆盖】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_sedna"
+        "src_sedna",
+        "jpl_sbdb_sedna"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/sedna.webp",
@@ -9719,7 +9880,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Trans-Neptunian dwarf planet, highly eccentric orbit, distant aphelion"
     },
     {
       "id": "disnomia",
@@ -9731,19 +9893,19 @@
       "physical": {
         "mass_kg": 8.2e+19,
         "radius_km": 350,
-        "density_g_cm3": 1.4,
-        "gravity_m_s2": 0.044674938775510195,
-        "escape_velocity_km_s": 0.17684020228120398,
+        "density_g_cm3": 0.456584,
+        "gravity_m_s2": 0.044675,
+        "escape_velocity_km_s": 0.17684,
         "mean_temp_c": -243.14999999999998,
         "surface_pressure_bar": null,
         "albedo": 0.04
       },
       "orbit": {
-        "semimajor_axis_km": 5535121.215899999,
-        "orbital_period_days": 13.8795,
-        "orbital_velocity_km_s": 0.14,
+        "semimajor_axis_km": 37273.0,
+        "orbital_period_days": 15.7859,
+        "orbital_velocity_km_s": 0.171708,
         "inclination_deg": 0.78,
-        "eccentricity": 0.006,
+        "eccentricity": 0.0062,
         "obliquity_deg": null,
         "rotation_period_hours": 137.16
       },
@@ -9760,17 +9922,18 @@
       "constellation": "杜鹃座",
       "subtype": "天然卫星",
       "members": null,
-      "note": "质量、半径、密度为近似估算值；轨道参数存在观测误差 【2发不一致:orbit/orbital_period_years(0.038 vs 0.0136)，待人工核定】",
+      "note": "质量、半径、密度为近似估算值；轨道参数存在观测误差 【2发不一致:orbit/orbital_period_years(0.038 vs 0.0136)，待人工核定】 【2026-11-11 权威源核查：Brown & Schaller 2007 的 Eris 系统质量与 Dysnomia 轨道给出 a≈37273 km、P=15.7859 d、e≈0.0062（与开普勒第三定律自洽）；原 5.535e6 km 系把 0.037 AU 误当半长轴。质量 8.2e19 kg 仅为动力学上限、半径 350 km 为光度估计，密度无可靠实测，此处按 M/R 派生仅供展示】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_dysnomia"
+        "src_dysnomia",
+        "brown2007"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/disnomia.webp",
@@ -9780,7 +9943,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Eris's only known moon, discovered in 2005"
     },
     {
       "id": "quaoar",
@@ -9841,7 +10005,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Kuiper Belt dwarf planet with rings, beyond Neptune"
     },
     {
       "id": "chiron",
@@ -9853,9 +10018,9 @@
       "physical": {
         "mass_kg": 3.7e+18,
         "radius_km": 106,
-        "density_g_cm3": 0.7416440536147451,
-        "gravity_m_s2": 0.021977394090423635,
-        "escape_velocity_km_s": 0.06825838810849412,
+        "density_g_cm3": 0.741644,
+        "gravity_m_s2": 0.021977,
+        "escape_velocity_km_s": 0.068258,
         "mean_temp_c": -183.14999999999998,
         "surface_pressure_bar": null,
         "albedo": null
@@ -9863,7 +10028,7 @@
       "orbit": {
         "semimajor_axis_km": 2047994849.8829997,
         "orbital_period_days": 18415.905,
-        "orbital_velocity_km_s": 6.6,
+        "orbital_velocity_km_s": 7.786898,
         "inclination_deg": 6.92,
         "eccentricity": 0.38,
         "obliquity_deg": null,
@@ -9882,17 +10047,18 @@
       "constellation": "人马座",
       "subtype": "半人马天体",
       "members": "",
-      "note": "参数为近似值，凯龙星归类存在争议，也被编号为95P/凯龙彗星 【2发一致】",
+      "note": "参数为近似值，凯龙星归类存在争议，也被编号为95P/凯龙彗星 【2发一致】 【2026-11-11 权威源核查：JPL SBDB a=13.7 AU、P=18500 d、e=0.38；该椭圆轨道时间平均速度 7.79 km/s，原记 6.6 km/s 无对应物理量，已修正】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_chiron"
+        "src_chiron",
+        "jpl_sbdb_chiron"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/chiron.webp",
@@ -9902,7 +10068,8 @@
       "image_credit": "程序化示意图",
       "image_url": null,
       "image_source": "programmatic",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Centaur minor planet between Saturn and Uranus, comet-like features"
     },
     {
       "id": "oj_287",
@@ -9912,17 +10079,17 @@
       "parent": null,
       "tagline": "巨蟹座耀变体，由一对超大质量双黑洞构成，约12年周期性爆发",
       "physical": {
-        "mass_kg": 3.65e+41,
-        "radius_km": 542112391470.5291,
+        "mass_kg": 3.6498149999999996e+40,
+        "radius_km": 54205785705.14808,
         "density_g_cm3": null,
-        "gravity_m_s2": 83539437.58573388,
-        "escape_velocity_km_s": 9498557.395341285,
+        "gravity_m_s2": 829.021448,
+        "escape_velocity_km_s": 299792.458,
         "mean_temp_c": null,
         "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": 3365952090749.9995,
+        "semimajor_axis_km": 2059140216474.7896,
         "orbital_period_days": 4353.78,
         "orbital_velocity_km_s": null,
         "inclination_deg": null,
@@ -9943,17 +10110,18 @@
       "constellation": "巨蟹座",
       "subtype": "超大质量黑洞系统（活动星系核/耀变体BL Lac型）",
       "members": "主黑洞183.5亿倍太阳质量；次黑洞约1.46亿倍太阳质量，环绕主黑洞运动",
-      "note": "主黑洞质量存在新旧模型差异；爆发由次黑洞撞击主黑洞吸积盘产生 【2发一致】",
+      "note": "主黑洞质量存在新旧模型差异；爆发由次黑洞撞击主黑洞吸积盘产生 【2发一致】 【2026-11-11 权威源核查：主黑洞 1.835e10 M☉（Valtonen et al. 2008），原 3.65e41 kg 大 10 倍；半径按 Rs=2GM/c² 同步修正，伴星轨道半长轴按 P=11.92 yr 用开普勒第三定律重算。逃逸速度原值 9.5e6 km/s 是把半径 km 数值当 m 代入所致（差 √1000 倍），牛顿形式值应为光速 c≈299785 km/s（事件视界），表面重力同步重算】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_oj_287"
+        "src_oj_287",
+        "valtonen2008"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/oj_287.webp",
@@ -9963,7 +10131,8 @@
       "image_credit": "程序化示意图",
       "image_url": null,
       "image_source": "programmatic",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Cancer blazar powered by supermassive binary black holes, ~12-year bursts"
     },
     {
       "id": "j2157-3602",
@@ -10024,7 +10193,8 @@
       "image_credit": "程序化示意图",
       "image_url": null,
       "image_source": "programmatic",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Fastest-growing supermassive black hole in a distant quasar core"
     },
     {
       "id": "phoenix_a",
@@ -10085,7 +10255,8 @@
       "image_credit": "程序化示意图",
       "image_url": null,
       "image_source": "programmatic",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "Phoenix A supermassive black hole at the center of the Phoenix Cluster"
     },
     {
       "id": "gaia_bh1",
@@ -10146,7 +10317,8 @@
       "image_credit": "程序化示意图",
       "image_url": null,
       "image_source": "programmatic",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "A dormant stellar-mass black hole 1560 light-years away with a G-type companion"
     },
     {
       "id": "51_pegasi_b",
@@ -10207,7 +10379,8 @@
       "image_credit": "程序化示意图",
       "image_url": null,
       "image_source": "programmatic",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "The first hot Jupiter discovered orbiting a Sun-like star"
     },
     {
       "id": "proxima_centauri_b",
@@ -10268,7 +10441,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "An Earth-like exoplanet orbiting Proxima Centauri in the habitable zone"
     },
     {
       "id": "kepler_452b",
@@ -10329,7 +10503,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "An exoplanet in Cygnus, often called Earth 2.0"
     },
     {
       "id": "kepler_22b",
@@ -10390,7 +10565,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "An exoplanet in the habitable zone orbiting Kepler-22"
     },
     {
       "id": "k2-18_b",
@@ -10452,7 +10628,8 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false,
-      "host_star": "K2-18"
+      "host_star": "K2-18",
+      "tagline_en": "An exoplanet in Leo, a hydrogen ocean planet with detected dimethyl sulfide"
     },
     {
       "id": "lhs_1140_b",
@@ -10462,21 +10639,21 @@
       "parent": null,
       "tagline": "位于宜居带的岩石超级地球，环绕红矮星LHS 1140",
       "physical": {
-        "mass_kg": 3.340512e+25,
-        "radius_km": 10922.49,
-        "density_g_cm3": 7.8,
-        "gravity_m_s2": 18.687703156962144,
-        "escape_velocity_km_s": 20.204764331953363,
+        "mass_kg": 3.34442344041e+25,
+        "radius_km": 11034.11317076,
+        "density_g_cm3": 5.9432,
+        "gravity_m_s2": 18.33296,
+        "escape_velocity_km_s": 20.114073,
         "mean_temp_c": -47.14999999999998,
         "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
-        "semimajor_axis_km": 13089813.686249997,
-        "orbital_period_days": null,
-        "orbital_velocity_km_s": 37.0,
+        "semimajor_axis_km": 14151958.568219999,
+        "orbital_period_days": 24.73723,
+        "orbital_velocity_km_s": 41.603667,
         "inclination_deg": 89.9,
-        "eccentricity": null,
+        "eccentricity": 0.043,
         "obliquity_deg": null,
         "rotation_period_hours": 306.7
       },
@@ -10493,17 +10670,18 @@
       "constellation": "鲸鱼座",
       "subtype": "超级地球（岩石行星）",
       "members": "",
-      "note": "参数存在版本差异，近年测量质量约5.6倍地球质量，半径约1.73倍地球半径，潮汐锁定可能性高 【2发不一致，争议字段已置空待补:distance_ly(48.9 vs 41);physical/mass_kg(3.34e+25 vs 6.63e+24);physical/radius_km(11030 vs 8750);orbit/orbital_period_years(0.0677 vs 0.035);orbit/eccentricity(0.04 vs 0.06)】",
+      "note": "参数存在版本差异，近年测量质量约5.6倍地球质量，半径约1.73倍地球半径，潮汐锁定可能性高 【2发不一致，争议字段已置空待补:distance_ly(48.9 vs 41);physical/mass_kg(3.34e+25 vs 6.63e+24);physical/radius_km(11030 vs 8750);orbit/orbital_period_years(0.0677 vs 0.035);orbit/eccentricity(0.04 vs 0.06)】 【2026-11-11 权威源核查：NASA Exoplanet Archive 默认参数：M=0.01761957 Mj、R=0.15434053 Rj、P=24.73723 d、a=0.0946 AU、e=0.043、ρ=5.9 g/cm³；原密度 7.8 与质量/半径不符】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_lhs_1140_b"
+        "src_lhs_1140_b",
+        "nasa_exoplanet_archive"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/lhs_1140_b.webp",
@@ -10514,7 +10692,8 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false,
-      "host_star": "LHS 1140"
+      "host_star": "LHS 1140",
+      "tagline_en": "A rocky super-Earth in the habitable zone orbiting red dwarf LHS 1140"
     },
     {
       "id": "wasp-12_b",
@@ -10524,19 +10703,19 @@
       "parent": null,
       "tagline": "一颗距离母星极近的热木星，正在被恒星潮汐吞噬",
       "physical": {
-        "mass_kg": 1.51e+27,
-        "radius_km": 148000.0,
-        "density_g_cm3": 0.24,
-        "gravity_m_s2": 4.600867421475529,
-        "escape_velocity_km_s": 36.90334343601887,
+        "mass_kg": 2.7902511e+27,
+        "radius_km": 140481.78,
+        "density_g_cm3": 0.240267,
+        "gravity_m_s2": 9.436034,
+        "escape_velocity_km_s": 51.489627,
         "mean_temp_c": 2326.85,
         "surface_pressure_bar": null,
         "albedo": 0.06
       },
       "orbit": {
         "semimajor_axis_km": 3500590.1743799997,
-        "orbital_period_days": 3.5063999999999997,
-        "orbital_velocity_km_s": 230.0,
+        "orbital_period_days": 1.091418901,
+        "orbital_velocity_km_s": 233.246924,
         "inclination_deg": 86.0,
         "eccentricity": 0.049,
         "obliquity_deg": null,
@@ -10555,17 +10734,18 @@
       "constellation": "御夫座",
       "subtype": "热木星",
       "members": null,
-      "note": "参数为文献近似值，行星存在大气流失，半径存在测量分歧 【2发一致】",
+      "note": "参数为文献近似值，行星存在大气流失，半径存在测量分歧 【2发一致】 【2026-11-11 权威源核查：周期真值 1.0914189 d（原 3.5064 d 错误）；半径 1.965 Rj 取 NASA Archive，质量 1.47 Mj 取文献值，二者派生 ρ=0.24 g/cm³ 与 v=230 km/s 均与记录一致，证明原记录的密度/速度正确、错的是周期与质量/半径】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_wasp_12_b"
+        "src_wasp_12_b",
+        "nasa_exoplanet_archive"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/wasp-12_b.webp",
@@ -10576,7 +10756,8 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false,
-      "host_star": "WASP-12"
+      "host_star": "WASP-12",
+      "tagline_en": "A hot Jupiter extremely close to its star, being tidally disrupted"
     },
     {
       "id": "55_cancri_e",
@@ -10586,19 +10767,19 @@
       "parent": "cancri_55",
       "tagline": "巨蟹座55A周围的超级地球，极热碳行星，被称为钻石行星",
       "physical": {
-        "mass_kg": 4.02e+25,
-        "radius_km": 12500.0,
-        "density_g_cm3": 5.9,
-        "gravity_m_s2": 17.1708672,
-        "escape_velocity_km_s": 20.718872556198612,
+        "mass_kg": 4.77175266399e+25,
+        "radius_km": 11958.9172396,
+        "density_g_cm3": 6.660606,
+        "gravity_m_s2": 22.267959,
+        "escape_velocity_km_s": 23.078157,
         "mean_temp_c": 2126.85,
         "surface_pressure_bar": null,
         "albedo": 0.4
       },
       "orbit": {
-        "semimajor_axis_km": 2303807.20878,
-        "orbital_period_days": 3.3603,
-        "orbital_velocity_km_s": 75.0,
+        "semimajor_axis_km": 2309791.123608,
+        "orbital_period_days": 0.7365474,
+        "orbital_velocity_km_s": 228.054231,
         "inclination_deg": 83.5,
         "eccentricity": 0.05,
         "obliquity_deg": null,
@@ -10617,17 +10798,18 @@
       "constellation": "巨蟹座",
       "subtype": "超级地球",
       "members": null,
-      "note": "参数为近似值，该行星潮汐锁定，是一颗碳富集的超级地球 【2发仅1发成功，待人工核定】",
+      "note": "参数为近似值，该行星潮汐锁定，是一颗碳富集的超级地球 【2发仅1发成功，待人工核定】 【2026-11-11 权威源核查：NASA Archive：M=0.02513923 Mj、R=0.1672763 Rj、P=0.7365474 d、a=0.01544 AU、ρ=6.66；原 P=3.3603 d 与 v=75 km/s 均无对应物理量，按主值重算 v≈228 km/s】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_55_cancri_e"
+        "src_55_cancri_e",
+        "nasa_exoplanet_archive"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/55_cancri_e.webp",
@@ -10637,7 +10819,8 @@
       "image_credit": "AI 生成",
       "image_url": null,
       "image_source": "doubao",
-      "image_locked": false
+      "image_locked": false,
+      "tagline_en": "A super-Earth around 55 Cancri A, a hot carbon planet dubbed a diamond planet"
     },
     {
       "id": "hd_189733_b",
@@ -10647,21 +10830,21 @@
       "parent": null,
       "tagline": "位于狐狸座的热木星，呈深蓝色，存在硅酸盐雨",
       "physical": {
-        "mass_kg": 1.13e+27,
-        "radius_km": 76400.0,
-        "density_g_cm3": 0.95,
-        "gravity_m_s2": 12.920458594885005,
-        "escape_velocity_km_s": 44.43248893882076,
+        "mass_kg": 2.1448868999999997e+27,
+        "radius_km": 80785.95999999999,
+        "density_g_cm3": 0.971199,
+        "gravity_m_s2": 21.934049,
+        "escape_velocity_km_s": 59.530887,
         "mean_temp_c": 926.85,
         "surface_pressure_bar": null,
         "albedo": 0.4
       },
       "orbit": {
         "semimajor_axis_km": 4637533.991699999,
-        "orbital_period_days": 11.32275,
-        "orbital_velocity_km_s": 152.0,
+        "orbital_period_days": 2.21857567,
+        "orbital_velocity_km_s": 152.012389,
         "inclination_deg": 85.7,
-        "eccentricity": 0.004,
+        "eccentricity": 0.0,
         "obliquity_deg": null,
         "rotation_period_hours": 2.72
       },
@@ -10678,17 +10861,18 @@
       "constellation": "狐狸座",
       "subtype": "热木星",
       "members": null,
-      "note": "参数为文献近似值，该行星是首颗测得颜色的系外行星，存在熔融硅酸盐雨 【2发一致】",
+      "note": "参数为文献近似值，该行星是首颗测得颜色的系外行星，存在熔融硅酸盐雨 【2发一致】 【2026-11-11 权威源核查：NASA Archive：M=1.13 Mj、R=1.13 Rj、P=2.21857567 d；原 11.32275 d 错误，而记录的 v=152 km/s 与正确周期吻合（本次保留），质量原值少了一半】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_hd_189733_b"
+        "src_hd_189733_b",
+        "nasa_exoplanet_archive"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/hd_189733_b.webp",
@@ -10699,7 +10883,8 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false,
-      "host_star": "HD 189733"
+      "host_star": "HD 189733",
+      "tagline_en": "A hot Jupiter in Vulpecula, deep blue with silicate rain"
     },
     {
       "id": "wasp_107_b",
@@ -10761,7 +10946,8 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false,
-      "host_star": "WASP-107"
+      "host_star": "WASP-107",
+      "tagline_en": "A low-density hot Jupiter with a methane and water vapor-rich atmosphere"
     },
     {
       "id": "kepler_16b",
@@ -10771,19 +10957,19 @@
       "parent": null,
       "tagline": "环绕双星系统开普勒16的系外行星，是首个被证实的环双星行星",
       "physical": {
-        "mass_kg": 1.04e+27,
-        "radius_km": 60300.0,
-        "density_g_cm3": 0.964,
-        "gravity_m_s2": 19.089076453003088,
-        "escape_velocity_km_s": 47.98064839320298,
+        "mass_kg": 6.320772900000001e+26,
+        "radius_km": 53890.6696,
+        "density_g_cm3": 0.964142,
+        "gravity_m_s2": 14.525438,
+        "escape_velocity_km_s": 39.567299,
         "mean_temp_c": 14.850000000000023,
         "surface_pressure_bar": null,
         "albedo": null
       },
       "orbit": {
         "semimajor_axis_km": 105436579.26935999,
-        "orbital_period_days": 230.838,
-        "orbital_velocity_km_s": null,
+        "orbital_period_days": 228.776,
+        "orbital_velocity_km_s": 33.515598,
         "inclination_deg": 90.032,
         "eccentricity": 0.0069,
         "obliquity_deg": null,
@@ -10802,17 +10988,18 @@
       "constellation": "天鹅座",
       "subtype": "气态巨行星",
       "members": null,
-      "note": "参数为观测近似值，该行星环绕两颗恒星运转 【2发一致】",
+      "note": "参数为观测近似值，该行星环绕两颗恒星运转 【2发一致】 【2026-11-11 权威源核查：NASA Archive：M=0.333 Mj、R=0.7538 Rj、P=228.776 d、ρ=0.964；原质量/半径偏大导致密度派生值偏高，按权威主值重算并补齐轨道速度】",
       "discovery": {
         "known_since": null,
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "src_kepler_16b"
+        "src_kepler_16b",
+        "nasa_exoplanet_archive"
       ],
       "verified": "2026-10-27",
-      "data_verified": false,
+      "data_verified": true,
       "data_source": "llm_doubao",
       "article": null,
       "image": "assets/planets/kepler_16b.webp",
@@ -10823,7 +11010,8 @@
       "image_url": null,
       "image_source": "doubao",
       "image_locked": false,
-      "host_star": "开普勒16"
+      "host_star": "开普勒16",
+      "tagline_en": "Exoplanet orbiting binary Kepler-16, the first confirmed circumbinary planet"
     }
   ],
   "source_registry": {
@@ -11470,6 +11658,30 @@
     "src_kepler_16b": {
       "name": "Wikipedia · Kepler-16b",
       "url": "https://en.wikipedia.org/wiki/Kepler-16b"
+    },
+    "nasa_exoplanet_archive": {
+      "name": "NASA Exoplanet Archive · Planetary Systems (ps, default_flag=1)",
+      "url": "https://exoplanetarchive.ipac.caltech.edu/"
+    },
+    "jpl_sbdb_chiron": {
+      "name": "NASA/JPL Small-Body Database · 2060 Chiron",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=2060"
+    },
+    "jpl_sbdb_sedna": {
+      "name": "NASA/JPL Small-Body Database · 90377 Sedna",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=90377"
+    },
+    "kervella2016": {
+      "name": "Kervella et al. 2016 · Proxima's orbit around α Centauri (A&A 598, L7)",
+      "url": "https://arxiv.org/abs/1611.03495"
+    },
+    "valtonen2008": {
+      "name": "Valtonen et al. 2008 · OJ 287 binary black hole model (Nature 452, 851)",
+      "url": "https://doi.org/10.1038/nature06896"
+    },
+    "brown2007": {
+      "name": "Brown & Schaller 2007 · The Mass of Dwarf Planet Eris (Science 316, 1585)",
+      "url": "https://doi.org/10.1126/science.1139415"
     }
   }
 }

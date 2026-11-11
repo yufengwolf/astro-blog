@@ -4,7 +4,7 @@ description: "下载星野笔记的天体数据集：177 个天体的质量、�
 
 # 天体数据集
 
-本站收录的 177 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-10-27。
+本站收录的 177 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-11-11。
 
 <div class="dl-cards">
   <a class="dl-card" href="../data/astro.json" download>
@@ -38,6 +38,7 @@ description: "下载星野笔记的天体数据集：177 个天体的质量、�
 数值数据整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料（公共领域或自由许可）；一句话简介为本站原创撰写。
 
 主要数据源：
+
 - NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/
 - NASA NSSDC Sun Fact Sheet（2024-05-09 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html
 - NASA NSSDC Moon Fact Sheet https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
@@ -51,6 +52,7 @@ description: "下载星野笔记的天体数据集：177 个天体的质量、�
 - LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102
 - Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/
 - 诺贝尔物理学奖 2019 新闻稿（飞马座51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/
+- NASA Exoplanet Archive · Planetary Systems 默认参数（5 颗系外行星主值，2026-11-11 核对） https://exoplanetarchive.ipac.caltech.edu/
 
 ## 待补充
 

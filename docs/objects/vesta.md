@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/vesta.webp" alt="灶神星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA15506" target="_blank" rel="noopener">NASA/JPL · Vesta Coat of Many Colors</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/vesta.webp" alt="灶神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA15506&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Vesta Coat of Many Colors&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA15506" target="_blank" rel="noopener">NASA/JPL · Vesta Coat of Many Colors</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge asteroid">小行星</span>
     <h1>灶神星 <small>4 Vesta</small></h1>
-    <p class="obj-tagline">小行星带的巨型原行星，南极有一个直径 500 公里的超级撞击坑</p>
+    <p class="obj-tagline" data-obj-id="vesta">小行星带的巨型原行星，南极有一个直径 500 公里的超级撞击坑</p>
     <p class="obj-summary">平均直径 525.4 km · 质量 2.59×10²⁰ kg</p>
   </div>
 </div>

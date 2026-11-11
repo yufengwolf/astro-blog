@@ -1169,3 +1169,45 @@ html[data-md-color-scheme="slate"] .md-header {
   margin-bottom: 0.5rem;
 }
 .solar-embed.solar-show-rotate .solar-rotate { display: flex; }
+
+/* ===== 全站中英切换（按钮由 i18n.js 注入，紧邻顶栏明暗模式切换） ===== */
+.site-lang-option {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.md-header__button.site-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: auto;
+  min-width: 2.7rem;
+  padding: 0 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 0.2rem;
+  color: var(--md-header-fg-color);
+  transition: background-color 0.2s;
+}
+.md-header__button.site-lang-btn:hover,
+.md-header__button.site-lang-btn:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.site-lang-btn .sl-zh,
+.site-lang-btn .sl-en { opacity: 0.45; transition: opacity 0.2s; }
+.site-lang-btn:not(.is-en) .sl-zh,
+.site-lang-btn.is-en .sl-en { opacity: 1; }
+.site-lang-btn .sl-sep { opacity: 0.35; font-weight: 400; }
+html[data-md-color-scheme="default"] .md-header__button.site-lang-btn:hover,
+html[data-md-color-scheme="default"] .md-header__button.site-lang-btn:focus-visible {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+@media screen and (max-width: 76.1875em) {
+  .site-lang-option { display: flex; }
+  .md-header__button.site-lang-btn { min-width: 2.4rem; font-size: 0.66rem; padding: 0 0.3rem; }
+}
+/* 英文模式：天体名按「主名/别名」互换后仍保持原有版式 */
+html[data-lang="en"] .astro-card-title .en,
+html[data-lang="en"] .obj-hero h1 small { opacity: 0.65; }

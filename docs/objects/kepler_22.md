@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_22.webp" alt="开普勒22" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/kepler_22.webp" alt="开普勒22" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>开普勒22 <small>Kepler-22</small></h1>
-    <p class="obj-tagline">拥有首颗宜居带系外行星的类太阳恒星</p>
+    <p class="obj-tagline" data-obj-id="kepler_22">拥有首颗宜居带系外行星的类太阳恒星</p>
     <p class="obj-summary">直径 1,209,127 km · 质量 1.7×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>613.38 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>5,596 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G5V</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄矮星（G5V）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow dwarf (G5V)">黄矮星（G5V）</td></tr>
 <tr><th scope="row">光度</th><td>3.02×10²⁶ W（0.79 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>644 光年</td></tr>
-<tr><th scope="row">星座</th><td>天鹅座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cygnus">天鹅座</td></tr>
 </tbody>
 </table>
 </section>
@@ -49,7 +49,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>拥有 Kepler-22b：第一颗被确认位于类太阳恒星宜居带内的系外行星，半径约 2.4 倍地球，可能是一颗'水世界'。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="Hosts Kepler-22b: the first confirmed exoplanet located in the habitable zone of a Sun-like star, with a radius roughly 2.4 times Earth&#x27;s, and may be an &#x27;ocean world&#x27;. 【AI Review 2026-10-27: Fill:orbit/rotation_period_hours】">拥有 Kepler-22b：第一颗被确认位于类太阳恒星宜居带内的系外行星，半径约 2.4 倍地球，可能是一颗'水世界'。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>2011 年开普勒望远镜发现其行星</td></tr>
 </tbody>
 </table>

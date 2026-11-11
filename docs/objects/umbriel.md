@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/umbriel.webp" alt="天卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00040" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/umbriel.webp" alt="天卫二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00040&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Voyager 2&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00040" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>天卫二 <small>Umbriel</small></h1>
-    <p class="obj-tagline">天王星系统中最暗的卫星，表面古老撞击坑密布</p>
+    <p class="obj-tagline" data-obj-id="umbriel">天王星系统中最暗的卫星，表面古老撞击坑密布</p>
     <p class="obj-summary">平均直径 1,169 km · 质量 1.22×10²¹ kg</p>
   </div>
 </div>

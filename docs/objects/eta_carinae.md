@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eta_carinae.webp" alt="海山二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA20294" target="_blank" rel="noopener">NASA/STScI · 哈勃 WFPC2 海山二与 Homunculus 星云</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/eta_carinae.webp" alt="海山二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA20294&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/STScI · Eta Carinae and the Homunculus Nebula, Hubble WFPC2&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA20294" target="_blank" rel="noopener">NASA/STScI · 哈勃 WFPC2 海山二与 Homunculus 星云</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>海山二 <small>Eta Carinae</small></h1>
-    <p class="obj-tagline">银河系内最亮的高光度蓝变星，随时可能爆发为超新星</p>
+    <p class="obj-tagline" data-obj-id="eta_carinae">银河系内最亮的高光度蓝变星，随时可能爆发为超新星</p>
     <p class="obj-summary">直径 83,484,000 km</p>
   </div>
 </div>
@@ -24,10 +24,10 @@ hide:
 <tbody>
 <tr><th scope="row">平均直径</th><td>83,484,000 km（60 × 太阳直径）</td></tr>
 <tr><th scope="row">光谱型</th><td>LBV</td></tr>
-<tr><th scope="row">恒星类型</th><td>高光度蓝变星（LBV）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Luminous blue variable (LBV)">高光度蓝变星（LBV）</td></tr>
 <tr><th scope="row">光度</th><td>1.91×10³³ W（5×10⁶ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>7,500 光年</td></tr>
-<tr><th scope="row">星座</th><td>船底座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Carina">船底座</td></tr>
 </tbody>
 </table>
 </section>
@@ -36,7 +36,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>质量（约 100~150 M☉）、半径（约 60~800 R☉）与温度随 1843 年「假超新星」大爆发剧烈变化，无法给出单一数值，故留 null；周身被自己抛出的 Homunculus 星云包裹。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Mass (approx. 100~150 M☉), radius (approx. 60~800 R☉) and temperature changed drastically during the 1843 &#x27;Great Eruption&#x27; false supernova, a single value cannot be given, hence null; surrounded by the Homunculus Nebula ejected by itself.">质量（约 100~150 M☉）、半径（约 60~800 R☉）与温度随 1843 年「假超新星」大爆发剧烈变化，无法给出单一数值，故留 null；周身被自己抛出的 Homunculus 星云包裹。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知（南天亮星）</td></tr>
 </tbody>
 </table>

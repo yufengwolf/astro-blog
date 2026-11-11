@@ -1,0 +1,1011 @@
+{
+  "_meta": {
+    "generator": "scripts/translate_fields.py",
+    "rule": "按 id + 字段关联；值为英文译稿，源文案改动需重新生成",
+    "fields": [
+      "subtype",
+      "note",
+      "atmosphere",
+      "spectral_type",
+      "constellation",
+      "image_credit",
+      "members",
+      "host_star"
+    ]
+  },
+  "objects": {
+    "sun": {
+      "subtype": "Yellow dwarf (G2V main-sequence star)",
+      "note": "[AI rechecked 2026-10-27: filled:distance_ly]",
+      "atmosphere": "Photosphere: hydrogen 90.97%, helium 8.89% (rest are trace elements such as oxygen, carbon, neon, etc.)",
+      "image_credit": "NASA/SDO · AIA extreme ultraviolet imaging"
+    },
+    "mercury": {
+      "image_credit": "NASA/MESSENGER · Global color composite (enhanced color)"
+    },
+    "venus": {
+      "image_credit": "NASA/JPL · Magellan radar global view"
+    },
+    "earth": {
+      "atmosphere": "Nitrogen ~78%, Oxygen ~21% (trace amounts of argon, carbon dioxide, etc.)"
+    },
+    "mars": {
+      "atmosphere": "Carbon dioxide 95.1%, Nitrogen 2.6%, Argon 1.9% (trace amounts of oxygen, carbon monoxide, etc.)",
+      "image_credit": "NASA/JPL · Viking Global Color View"
+    },
+    "jupiter": {
+      "atmosphere": "Hydrogen 89.8%, Helium 10.2% (trace amounts of methane, ammonia, etc.)",
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "saturn": {
+      "atmosphere": "Hydrogen 96.3%, Helium 3.25% (with trace amounts of methane, ammonia, etc.)"
+    },
+    "ceres": {
+      "image_credit": "NASA/JPL-Caltech/UCLA · Dawn"
+    },
+    "makemake": {
+      "image_credit": "AI-generated"
+    },
+    "haumea": {
+      "image_credit": "AI-generated"
+    },
+    "eris": {
+      "image_credit": "NASA/ESA artistic concept"
+    },
+    "moon": {
+      "image_credit": "NASA/GSFC full moon composite"
+    },
+    "phobos": {
+      "image_credit": "NASA/JPL/MSSS · Mars Global Surveyor"
+    },
+    "io": {
+      "image_credit": "NASA/JPL · Galileo"
+    },
+    "europa": {
+      "image_credit": "NASA/JPL · Galileo"
+    },
+    "ganymede": {
+      "image_credit": "NASA/JPL · Galileo"
+    },
+    "callisto": {
+      "image_credit": "NASA/JPL · Galileo"
+    },
+    "mimas": {
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "enceladus": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "tethys": {
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "dione": {
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "rhea": {
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "titan": {
+      "atmosphere": "Nitrogen ~95%, methane ~5%",
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "hyperion": {
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "iapetus": {
+      "image_credit": "NASA/JPL/SSI · Cassini"
+    },
+    "triton": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "miranda": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "ariel": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "umbriel": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "titania": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "oberon": {
+      "image_credit": "NASA/JPL · Voyager 2"
+    },
+    "pistol_star": {
+      "subtype": "Luminous blue variable (LBV)",
+      "note": "[AI Reproduced 2026-10-27: physical/mass_sun, physical/mass_kg set to empty]",
+      "spectral_type": "LBV (Blue Supergiant)",
+      "constellation": "Sagittarius",
+      "image_credit": "Procedural Schematic"
+    },
+    "stephenson_2_18": {
+      "subtype": "Red Supergiant (M6Ia)",
+      "spectral_type": "M6Ia (Red Supergiant)",
+      "constellation": "Scutum",
+      "image_credit": "Procedural Schematic"
+    },
+    "arcturus": {
+      "subtype": "Red giant (K0III)",
+      "spectral_type": "K0III (Red giant)",
+      "constellation": "Boötes",
+      "image_credit": "Procedural Schematic"
+    },
+    "antares": {
+      "subtype": "Red supergiant (M1.5Iab-Ib)",
+      "note": "[AI Reproduced 2026-10-27: physical/mass_sun, physical/mass_kg set to empty]",
+      "spectral_type": "M1.5Iab-Ib (Red supergiant)",
+      "constellation": "Scorpius",
+      "image_credit": "Procedural Schematic"
+    },
+    "rigel": {
+      "subtype": "Blue supergiant (B8Ia)",
+      "note": "[AI rechecked 2026-10-27: set empty:physical/radius_km]",
+      "spectral_type": "B8Ia (Blue supergiant)",
+      "constellation": "Orion",
+      "image_credit": "Procedural Schematic"
+    },
+    "betelgeuse": {
+      "subtype": "Red supergiant (M1-M2Ia)",
+      "spectral_type": "M1-M2Ia (Red supergiant)",
+      "constellation": "Orion",
+      "image_credit": "Procedural Schematic"
+    },
+    "vega": {
+      "subtype": "blue-white main-sequence star (A0V)",
+      "note": "【AI Review 2026-10-27：Fill:orbit/rotation_period_hours】",
+      "spectral_type": "A0V (main-sequence star)",
+      "constellation": "Lyra",
+      "image_credit": "Procedural Schematic"
+    },
+    "sirius_a": {
+      "subtype": "blue-white main-sequence star (A1V)",
+      "spectral_type": "A1V (main-sequence star)",
+      "constellation": "Canis Major",
+      "image_credit": "Procedural Schematic"
+    },
+    "proxima_centauri": {
+      "subtype": "red dwarf (M5.5Ve)",
+      "note": "【AI Review 2026-10-27：Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】 【2026-11-11 Authority Source Verification: Kervella et al. 2016 gives a=8700(+700/-400) AU、P=547000 yr、e=0.50; the original 13000 AU was the instantaneous linear separation at that time instead of the semi-major axis, and the orbital velocity has been recalculated according to a/P/e】",
+      "spectral_type": "M5.5Ve (red dwarf)",
+      "constellation": "Centaurus",
+      "image_credit": "Procedural Schematic"
+    },
+    "m87_star": {
+      "subtype": "supermassive black hole",
+      "note": "Schwarzschild radius ~128 AU, larger than Neptune's orbit; accretion disk jets extend thousands of light-years.",
+      "constellation": "Virgo",
+      "image_credit": "Procedural Schematic"
+    },
+    "sgr_a_star": {
+      "subtype": "supermassive black hole",
+      "note": "Schwarzschild radius ~0.085 AU (~12.7 million km); orbital determination by decades-long tracking of surrounding stellar orbits.",
+      "constellation": "Sagittarius",
+      "image_credit": "Procedural Schematic"
+    },
+    "ton618": {
+      "subtype": "quasar (supermassive black hole)",
+      "note": "Schwarzschild radius ~1300 AU; luminosity ~4×10⁴⁰ W. A 2019 remeasurement yielded a lower mass (~40.7 billion M☉), the classical estimate of 66 billion M☉ is adopted here.",
+      "constellation": "Canes Venatici",
+      "image_credit": "Procedural Schematic"
+    },
+    "ic1101_bh": {
+      "subtype": "supermassive black hole",
+      "note": "Literature estimates range 40–100 billion M☉; the median value of 50 billion M☉ is adopted here for order-of-magnitude reference only.",
+      "constellation": "Serpens",
+      "image_credit": "Procedural Schematic"
+    },
+    "gw190521": {
+      "subtype": "Intermediate-mass black hole",
+      "note": "Formed by the merger of two black holes of 85 M☉ + 66 M☉; approximately 8 M☉ was radiated in the form of gravitational waves; the signal lasted only 0.1 seconds. The distance is luminosity distance (caused by cosmic expansion, larger than comoving distance).",
+      "constellation": "Centaurus",
+      "image_credit": "Procedural Schematic"
+    },
+    "cyg_x1": {
+      "subtype": "Stellar-mass black hole (X-ray binary)",
+      "note": "2021 VLBA precise measurement: 21.2 M☉, 7240 light-years; horizon rotation speed ≥95% the speed of light.",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "v404_cyg": {
+      "subtype": "Stellar-mass black hole (X-ray binary)",
+      "note": "Mass estimate 9~12 M☉, 9 M☉ is adopted here; outburst in June 2015 made it one of the brightest X-ray flares in the preceding 50 years.",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "m42": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "Diameter approximately 24 light-years; gas cloud mass approximately 2000 M☉, with thousands of stars forming inside.",
+      "constellation": "Orion",
+      "image_credit": "NASA/JPL-Caltech · Multi-telescope composite Orion Nebula (infrared)"
+    },
+    "m1": {
+      "subtype": "Supernova remnant",
+      "note": "Diameter approx. 11 light-years; supernova remnant from the 1054 CE explosion, hosting a 33-millisecond pulsar at its core.",
+      "constellation": "Taurus",
+      "image_credit": "NASA/STScI · Hubble's most detailed image of the Crab Nebula"
+    },
+    "m16": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "Diameter approx. 70 light-years; the \"Pillars of Creation\" captured by Hubble in 1995 ranks among the most famous astronomical photographs ever taken.",
+      "constellation": "Serpens",
+      "image_credit": "NASA/JPL-Caltech · WISE infrared panoramic view of the Eagle Nebula"
+    },
+    "m20": {
+      "subtype": "Emission + reflection mixed nebula",
+      "note": "Diameter approx. 40 light-years; three dark dust lanes divide the nebula into three lobes, hence its name.",
+      "constellation": "Sagittarius",
+      "image_credit": "NASA/STScI · Trifid Nebula panorama (Atlas mosaic)"
+    },
+    "m8": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "Apparent size 110×50 light-years (elliptical), equivalent diameter approx. 90 light-years; contains open cluster NGC 6530 within.",
+      "constellation": "Sagittarius",
+      "image_credit": "NASA/JPL-Caltech · WISE mosaic of the Lagoon Nebula"
+    },
+    "horsehead": {
+      "subtype": "Dark nebula",
+      "note": "Diameter ~3.5 light-years; it does not emit light itself, a dark dust lane in front of the background emission nebula IC 434.",
+      "constellation": "Orion",
+      "image_credit": "NASA/STScI · Hubble Horsehead Nebula (Infrared)"
+    },
+    "m57": {
+      "subtype": "Planetary nebula",
+      "note": "Diameter ~2.6 light-years; gaseous shell ejected by a dying star, with a white dwarf visible at the center.",
+      "constellation": "Lyra",
+      "image_credit": "NASA/ESA/STScI · Hubble Ring Nebula True Shape"
+    },
+    "ngc7293": {
+      "subtype": "Planetary nebula",
+      "note": "Diameter ~5.7 light-years; resembles a giant eye, nearby and large, a representative planetary nebula.",
+      "constellation": "Aquarius",
+      "image_credit": "NASA/JPL-Caltech · GALEX Ultraviolet Eye of God Panorama"
+    },
+    "m2_9": {
+      "subtype": "Bipolar planetary nebula",
+      "note": "Diameter ~1.4 light-years; interactions within the binary system shape its symmetric two-lobed structure.",
+      "constellation": "Ophiuchus",
+      "image_credit": "NASA/ESA/STScI · Hubble Bipolar Planetary Nebula M2-9"
+    },
+    "rosette": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "Diameter ~130 light-years; a 2024 NOIRLab study proposed a closer distance (~2600 light-years) and smaller size (~55 light-years); the classical value is adopted here.",
+      "constellation": "Monoceros",
+      "image_credit": "NASA/JPL-Caltech · Spitzer Infrared Rosette Nebula"
+    },
+    "barnards_loop": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "Diameter ~300 light-years; the ionized edge of the Orion Molecular Cloud Complex.",
+      "constellation": "Orion",
+      "image_credit": "Procedural Schematic"
+    },
+    "tarantula": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "Diameter ~1000 light-years; if placed at the Milky Way's location, its radiance would be bright enough to cast shadows.",
+      "constellation": "Dorado",
+      "image_credit": "NASA/CXC/STScI/JPL-Caltech · Tarantula Nebula Multi-wavelength Composite (Chandra+Hubble+Spitzer)"
+    },
+    "milky_way": {
+      "subtype": "Barred spiral galaxy (SBbc)",
+      "note": "Diameter ~100,000 light-years (100,000–200,000 light-years for different apertures); the Sun is ~26,000 light-years from the Galactic Center, with an orbital period of ~230 million years.",
+      "image_credit": "NASA/JPL-Caltech · Artist's concept of Milky Way structure (not a real photograph)",
+      "members": "~400 billion stars"
+    },
+    "m31": {
+      "subtype": "Spiral galaxy (SA(s)b)",
+      "note": "Diameter ~220,000 light-years; it will merge with the Milky Way in ~4 billion years.",
+      "constellation": "Andromeda",
+      "image_credit": "NASA/JPL-Caltech · GALEX ultraviolet mosaic of the Andromeda Galaxy",
+      "members": "~1 trillion stars"
+    },
+    "m33": {
+      "subtype": "Spiral galaxy (SA(s)cd)",
+      "note": "Diameter ~61,000 light-years (D25 isophote); distance estimate 2.38~3.07 million light-years, adopted 2.88 million.",
+      "constellation": "Triangulum",
+      "image_credit": "ESA/NASA/JPL-Caltech/GBT/VLA/IRAM · M33 infrared multi-band composite (Herschel/Planck/IRAS/COBE)",
+      "members": "~40 billion stars"
+    },
+    "lmc": {
+      "subtype": "Irregular (Magellanic-type) dwarf galaxy",
+      "note": "Diameter ~14,000 light-years; host galaxy of the Tarantula Nebula.",
+      "constellation": "Dorado / Mensa",
+      "image_credit": "ESA/NASA/JPL-Caltech · Herschel infrared full view of the Large Magellanic Cloud",
+      "members": "~10 billion stars"
+    },
+    "smc": {
+      "subtype": "Irregular dwarf galaxy",
+      "note": "Diameter approx. 7000 light-years; connected to the Large Magellanic Cloud by a gas bridge.",
+      "constellation": "Tucana",
+      "image_credit": "ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · Small Magellanic Cloud infrared composite (Herschel/Planck/IRAS/COBE)",
+      "members": "Hundreds of millions of stars"
+    },
+    "m87": {
+      "subtype": "Giant elliptical galaxy (E0)",
+      "note": "Diameter 12~240,000 light-years, adopt 240,000 light-years; central black hole M87* has a separate entry.",
+      "constellation": "Virgo",
+      "image_credit": "NASA/JPL-Caltech · Spitzer infrared M87 elliptical galaxy (host galaxy of the first imaged black hole)",
+      "members": "Trillions of stars + famous jet"
+    },
+    "m104": {
+      "subtype": "Spiral galaxy (Sa/Sb, edge-on)",
+      "note": "Diameter approx. 50,000 light-years (D25 isophote); the bulge and edge-on dust ring form the \"Sombrero\" shape.",
+      "constellation": "Virgo",
+      "image_credit": "NASA/JPL-Caltech · Spitzer Infrared Sombrero Galaxy",
+      "members": "~800 billion stars"
+    },
+    "m51": {
+      "subtype": "Spiral galaxy (SA(s)bc pec)",
+      "note": "Diameter ~77,000 light-years; distance estimate 23~31 million light-years, adopted 28 million.",
+      "constellation": "Canes Venatici",
+      "image_credit": "NASA/STScI · Hubble Space Telescope Whirlpool Galaxy",
+      "members": "Includes companion galaxy NGC 5195 (M51b)"
+    },
+    "m81": {
+      "subtype": "Spiral galaxy (SA(s)ab)",
+      "note": "Diameter ~94,000 light-years (WISE aperture).",
+      "constellation": "Ursa Major",
+      "image_credit": "NASA/JPL-Caltech/ESA/Harvard-Smithsonian CfA · M81 (GALEX+Hubble+Spitzer composite)",
+      "members": "Forms an interacting galaxy pair with M82"
+    },
+    "m82": {
+      "subtype": "Starburst irregular galaxy",
+      "note": "Diameter ~37,000 light-years; gravitational interaction with M81 triggers intense starburst.",
+      "constellation": "Ursa Major",
+      "image_credit": "NASA/JPL-Caltech/SAO/NOAO · M82 visible light + NuSTAR X-ray composite"
+    },
+    "ngc1300": {
+      "subtype": "Barred spiral galaxy (SBbc)",
+      "note": "Diameter ~110,000 light-years; central bar structure and outward-extending spiral arms are highly regular.",
+      "constellation": "Eridanus",
+      "image_credit": "NASA/ESA/STScI · Hubble Space Telescope NGC 1300"
+    },
+    "ic1101": {
+      "subtype": "Giant elliptical galaxy (cD)",
+      "note": "A 2024 A&A study measured a diameter of ~1.7 million light-years; values vary greatly with aperture, and the galactic halo may extend to ~6 million light-years. The 1.7 million light-year value is adopted here (radius 850,000).",
+      "constellation": "Serpens",
+      "image_credit": "Procedural Schematic"
+    },
+    "stephens_quintet": {
+      "subtype": "Compact galaxy group",
+      "note": "The group spans about 350,000 light-years; four galaxies are undergoing merging and tidal disruption (NGC 7320 is merely a foreground galaxy).",
+      "constellation": "Pegasus",
+      "image_credit": "NASA/ESA · Hubble Space Telescope Stephan's Quintet (1999)"
+    },
+    "m45": {
+      "subtype": "open cluster",
+      "note": "Diameter of about 14 light-years; age of about 100 million years, young stars are wrapped by a blue reflection nebula.",
+      "constellation": "Taurus",
+      "image_credit": "NASA/JPL-Caltech · Spitzer Infrared Pleiades (Seven Sisters + reflection nebula)",
+      "members": "about 1000 member stars"
+    },
+    "hyades": {
+      "subtype": "open cluster",
+      "note": "Diameter of about 15 light-years; age of about 625 million years, forming the V-shape of the Taurus head.",
+      "constellation": "Taurus",
+      "image_credit": "Procedural Schematic",
+      "members": "about 300~400 member stars"
+    },
+    "m44": {
+      "subtype": "open cluster",
+      "note": "Diameter of about 16 light-years; age of 6~7 hundred million years, an open cluster barely visible to the naked eye.",
+      "constellation": "Cancer",
+      "image_credit": "NASA/STScI · Beehive Cluster (Keck/CFHT observation, two exoplanets marked)",
+      "members": "about 1000 member stars"
+    },
+    "m67": {
+      "subtype": "open cluster",
+      "note": "Diameter ~20 light-years; age ~4 billion years, more than 100 Sun-like stars.",
+      "constellation": "Cancer",
+      "image_credit": "Procedural Schematic",
+      "members": "More than 500 member stars"
+    },
+    "r136": {
+      "subtype": "Massive star cluster (OB cluster)",
+      "note": "Diameter ~10 light-years; age only 100~200 ten thousand years, containing several giants with a hundred times the mass of the Sun.",
+      "constellation": "Dorado",
+      "image_credit": "NASA/STScI · Hubble Panorama of the Large Magellanic Cloud's Tarantula Nebula (starburst region hosting R136 cluster)",
+      "members": "Contains R136a1, one of the brightest known stars (~215~315 M☉)"
+    },
+    "m13": {
+      "subtype": "Globular cluster",
+      "note": "Diameter ~145 light-years; the first human radio message was transmitted toward it by Arecibo in 1974.",
+      "constellation": "Hercules",
+      "image_credit": "Procedural Schematic",
+      "members": "about 300,000 member stars"
+    },
+    "m22": {
+      "subtype": "Globular cluster",
+      "note": "diameter about 100 light-years; one of the brightest globular clusters, individual stars can be resolved with binoculars.",
+      "constellation": "Sagittarius",
+      "image_credit": "Procedural Schematic",
+      "members": "hundreds of thousands of member stars"
+    },
+    "omega_cen": {
+      "subtype": "Globular cluster",
+      "note": "diameter about 170 light-years; anomalous mass and stellar population, possibly the core of a dwarf galaxy accreted by the Milky Way.",
+      "constellation": "Centaurus",
+      "image_credit": "NASA/JPL-Caltech · WISE Omega Centauri Globular Cluster",
+      "members": "about 10 million member stars"
+    },
+    "local_group": {
+      "subtype": "Galaxy Group",
+      "note": "diameter about 10 million light-years; total mass estimated at 2~5×10¹² M☉ (the Milky Way + Andromeda combined is already about 3×10¹² M☉).",
+      "image_credit": "Procedural Schematic",
+      "members": "more than 80 galaxies (including the Milky Way, Andromeda, Triangulum, Large and Small Magellanic Clouds, etc.)"
+    },
+    "virgo_cluster": {
+      "subtype": "Galaxy cluster",
+      "note": "Diameter ~15 million light-years; the Local Group is falling toward it under its gravitational pull.",
+      "constellation": "Virgo",
+      "image_credit": "NASA/JPL-Caltech · GALEX Ultraviolet Virgo Cluster",
+      "members": "~1300–2000 galaxies"
+    },
+    "laniakea": {
+      "subtype": "Supercluster",
+      "note": "Diameter ~520 million light-years; defined by Tully et al. in 2014 based on galaxy flow fields, later studies suggest it is not a gravitationally bound structure.",
+      "image_credit": "Procedural Schematic",
+      "members": "~100,000 galaxies"
+    },
+    "great_attractor": {
+      "subtype": "Gravitational anomaly region",
+      "note": "Region scale ~400 million light-years; lies behind the Zone of Avoidance, discovered via galaxy peculiar velocities. Centered near the Norma Cluster (ACO 3627); its mass composition remains debated.",
+      "constellation": "Norma / Triangulum Australe",
+      "image_credit": "Procedural Schematic"
+    },
+    "hercules_corona_wall": {
+      "subtype": "Cosmic Wall (galaxy filamentary structure)",
+      "note": "Diameter ~10 billion light-years (comoving scale; size remains debated); discovered in 2013 based on gamma-ray burst distribution.",
+      "constellation": "Hercules — Corona Borealis",
+      "image_credit": "Procedural Schematic"
+    },
+    "cmb": {
+      "subtype": "Cosmic Microwave Background (last scattering surface)",
+      "note": "Comoving distance ~45.7 billion light-years; temperature 2.725 K, fluctuations only ~10⁻⁵, these fluctuations are the seeds of all present-day galaxy structures.",
+      "image_credit": "ESA/NASA · Planck satellite all-sky map (released 2013)"
+    },
+    "observable_universe": {
+      "subtype": "Observable Universe (particle horizon)",
+      "note": "Radius ~46.5 billion light-years (comoving distance); age ~13.8 billion years; ordinary matter 4.9%, dark matter 26.8%, dark energy 68.3%.",
+      "image_credit": "ESA/NASA · Planck satellite and Cosmic Microwave Background (artistic concept)",
+      "members": "An estimated 2 trillion galaxies"
+    },
+    "m17": {
+      "subtype": "H II region / emission nebula",
+      "note": "A large star-forming region in the direction of Sagittarius, containing open cluster NGC 6618; it appears swan/horseshoe-shaped in visible light.",
+      "constellation": "Sagittarius",
+      "image_credit": "NASA/JPL-Caltech · Spitzer Infrared Swan Nebula M17"
+    },
+    "m27": {
+      "subtype": "Planetary nebula",
+      "note": "Gas shell ejected by a dying star with a central white dwarf; the first planetary nebula in the Messier catalog.",
+      "constellation": "Vulpecula",
+      "image_credit": "NASA/STScI · Hubble Dumbbell Nebula M27"
+    },
+    "ngc3372": {
+      "subtype": "Emission nebula (containing luminous blue variables)",
+      "note": "The equivalent diameter varies (approx. 260~460 light-years, depending on whether outer dark nebula structures are included); it contains Eta Carinae, the Keyhole Nebula and multiple massive star clusters.",
+      "constellation": "Carina",
+      "image_credit": "NASA/ESA/CSA/STScI · Webb Telescope Carina Nebula \"Cosmic Cliffs\""
+    },
+    "ngc7000": {
+      "subtype": "Emission nebula (H II region)",
+      "note": "It belongs to the same giant H II region as the Pelican Nebula (IC 5070), separated into two parts by dust lanes.",
+      "constellation": "Cygnus",
+      "image_credit": "NASA/JPL-Caltech/Caltech/IPAC · North America Nebula (visible + infrared composite)"
+    },
+    "m101": {
+      "subtype": "Spiral galaxy (Sc)",
+      "note": "In 2011, Hubble assembled 51 images to produce its largest and sharpest spiral panorama to date.",
+      "constellation": "Ursa Major",
+      "image_credit": "NASA/STScI/JPL-Caltech/Chandra · Multi-wavelength composite of Pinwheel Galaxy M101"
+    },
+    "m64": {
+      "subtype": "Spiral galaxy (Sb)",
+      "note": "Also known as the Sleeping Beauty Galaxy; gas in its outer disk rotates in the opposite direction, thought to be a remnant of an ancient galaxy merger.",
+      "constellation": "Coma Berenices",
+      "image_credit": "NASA/STScI · Hubble Black Eye Galaxy M64"
+    },
+    "m83": {
+      "subtype": "Barred spiral galaxy (starburst galaxy)",
+      "note": "6 supernova outbursts have been observed, a frequent target for amateur and professional observers.",
+      "constellation": "Hydra",
+      "image_credit": "NASA/JPL-Caltech · GALEX ultraviolet Southern Pinwheel Galaxy M83"
+    },
+    "ngc5128": {
+      "subtype": "Lenticular/elliptical galaxy (merger remnant)",
+      "note": "One of the closest radio galaxies (radio source Cen A); the central supermassive black hole jet extends thousands of light-years.",
+      "constellation": "Centaurus",
+      "image_credit": "NASA/JPL-Caltech · Spitzer infrared Centaurus A"
+    },
+    "ngc4038": {
+      "subtype": "Merging galaxy pair (Antennae Galaxies)",
+      "note": "The effective radius includes two tidal tails (the two cores of NGC 4038 and NGC 4039 are about 25,000 light-years apart); the merger-triggered starburst has formed tens of thousands of star clusters.",
+      "constellation": "Corvus",
+      "image_credit": "NASA/ESA/STScI · Hubble Antennae Galaxies (NGC 4038/4039)"
+    },
+    "m11": {
+      "subtype": "open cluster",
+      "note": "One of the open clusters with the largest known membership; a bright cluster in the Scutum Star Cloud.",
+      "constellation": "Scutum",
+      "image_credit": "NASA/JPL-Caltech/UMD · Wild Duck Cluster M11 captured by Deep Impact"
+    },
+    "m7": {
+      "subtype": "open cluster",
+      "note": "A small number of deep-sky objects recorded by ancient people naked-eye, a large clump of starlight visible to the naked eye.",
+      "constellation": "Scorpius",
+      "image_credit": "Procedural Schematic"
+    },
+    "ngc4755": {
+      "subtype": "open cluster",
+      "note": "Age of only about 7 million years; a small colourful cluster near Crux, visible with binoculars by naked eye.",
+      "constellation": "Crux",
+      "image_credit": "Procedural Schematic"
+    },
+    "gw150514": {
+      "subtype": "Binary black hole merger (gravitational wave event)",
+      "note": "Initial state: 36 M☉ + 29 M☉ binary black holes, approximately 62 M☉ after merger, about 3 M☉ of mass released in the form of gravitational waves; distance estimated from the luminosity distance at redshift z≈0.09.",
+      "image_credit": "NASA/CXC · Schematic of gravitational waves from binary black hole merger"
+    },
+    "eta_carinae": {
+      "subtype": "Luminous blue variable (LBV)",
+      "note": "Mass (approx. 100~150 M☉), radius (approx. 60~800 R☉) and temperature changed drastically during the 1843 'Great Eruption' false supernova, a single value cannot be given, hence null; surrounded by the Homunculus Nebula ejected by itself.",
+      "constellation": "Carina",
+      "image_credit": "NASA/STScI · Eta Carinae and the Homunculus Nebula, Hubble WFPC2"
+    },
+    "vesta": {
+      "note": "The second largest body in the asteroid belt, a differentiated protoplanet (iron core + rocky mantle + crust); parent body of HED meteorites; Rheasilvia impact crater in the Antarctic region has a diameter of about 500 km, and the central peak on the crater floor is about 20 km high. 【AI Review 2026-10-27: Clear:physical/temp_k; Fill:distance_ly,orbit/obliquity_deg】"
+    },
+    "halley": {
+      "note": "Nucleus is peanut-shaped, approximately 15×8×8 km; retrograde orbit (inclination 162°); perihelion speed can reach 54.6 km/s; its 1986 apparition was imaged up close by the Giotto spacecraft, next apparition is July 2061.",
+      "image_credit": "Nucleus of Comet Halley photographed by ESA/NASA Giotto in 1986"
+    },
+    "sirius_b": {
+      "subtype": "White dwarf (DA2)",
+      "note": "Dense remnant with mass comparable to the Sun and radius of only about 5634 km (smaller than Earth), surface gravity roughly 400,000 times that of Earth; it is the first member in the Sirius system to exhaust fuel and evolve, while the bright companion Sirius A remains a main-sequence star. 【AI Review 2026-10-27: Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】",
+      "constellation": "Canis Major",
+      "image_credit": "Procedural Schematic"
+    },
+    "eridani_40a": {
+      "subtype": "Orange dwarf (K1V main-sequence star)",
+      "note": "Also named Keid, it forms a triple system with white dwarf B and red dwarf C; the B/C binary takes about 8000 years to orbit it; it is well-known for appearing in Star Trek canon as the sun of the Vulcans. 【AI Review 2026-10-27: Fill:orbit/rotation_period_hours】",
+      "constellation": "Eridanus",
+      "image_credit": "Procedural Schematic"
+    },
+    "eridani_40b": {
+      "subtype": "White dwarf (DA4)",
+      "note": "It appears faint yet 'white', which implies an extremely small volume — this observational reasoning laid the foundation for white dwarf physics; it also orbits together with a red dwarf (40 Eridani C). 【AI Review 2026-10-27: Fill:orbit/semimajor_axis_au,orbit/eccentricity】",
+      "constellation": "Eridanus",
+      "image_credit": "Procedural Schematic"
+    },
+    "crab_pulsar": {
+      "subtype": "Neutron star (pulsar)",
+      "note": "Neutron star left by the supernova explosion in 1054; rotation period 33.39 ms; diameter only ~20 km, surface temperature ~1.6×10⁶ K, a bright synchrotron radiation source across all wavebands (radio to gamma-ray). 【AI Review 2026-10-27 (Only 1 submission succeeded): Clear:physical/temp_k; Fill:physical/lum_sun,orbit/rotation_period_hours】",
+      "constellation": "Taurus",
+      "image_credit": "Procedural Schematic"
+    },
+    "vela_pulsar": {
+      "subtype": "Neutron star (pulsar)",
+      "note": "Located at the center of the Vela Supernova Remnant, rotation period 89.33 ms; famous for periodic 'glitches' (sudden spin-up), a natural laboratory for probing superfluid structures inside neutron stars. 【AI Review 2026-10-27 (Only 1 submission succeeded): Clear:physical/radius_sun,physical/radius_km; Fill:physical/temp_k,physical/lum_sun,orbit/rotation_period_hours】",
+      "constellation": "Vela",
+      "image_credit": "Procedural Schematic"
+    },
+    "sgr_1806_20": {
+      "subtype": "Magnetar (Soft Gamma Repeater)",
+      "note": "Magnetar with the strongest magnetic field in the universe (~10¹⁵ G), rotation period 7.5 s; its giant flare on 27 December 2004 released more energy in 0.1 s than the Sun emits in 250,000 years — it would be lethal if occurring much closer. Mass not directly measured (typical neutron star value ~1.4 M☉), hence left blank.",
+      "constellation": "Sagittarius",
+      "image_credit": "Procedural Schematic"
+    },
+    "alphacen_a": {
+      "subtype": "Yellow dwarf (G2V main-sequence star)",
+      "note": "G2V star with nearly identical spectrum and mass to the Sun; forms a close binary with Alpha Centauri B (orbital period ~80 yr), while Proxima Centauri orbits this bright pair at ~0.2 ly away.",
+      "constellation": "Centaurus",
+      "image_credit": "Procedural Schematic"
+    },
+    "alphacen_b": {
+      "subtype": "Orange dwarf (K1V main-sequence star)",
+      "note": "Slightly smaller and fainter orange dwarf companion; combined apparent magnitude -0.27, the third-brightest 'star' in the sky (listed as fourth in a few references).",
+      "constellation": "Centaurus",
+      "image_credit": "Procedural Schematic"
+    },
+    "castor": {
+      "subtype": "White main-sequence star (A1Vm sextuple star system)",
+      "note": "One vertex of the Winter Triangle. Appears as a single star to the naked eye, but it is a multiple system of six stars: pairs A and B are each spectroscopic binaries, plus a distant red dwarf companion pair (YY Geminorum).",
+      "constellation": "Gemini",
+      "image_credit": "Procedural Schematic"
+    },
+    "pollux": {
+      "subtype": "Orange giant (K0III)",
+      "note": "The brightest star in Gemini (brighter than its 'brother' Pollux, despite a later Bayer designation). Its exoplanet Thestias (β Geminorum b) was confirmed in 2006, with a mass of approximately 2.3 Jupiter masses and an orbital period of about 590 days. 【AI Review 2026-10-27：Empty:physical/lum_sun】",
+      "constellation": "Gemini",
+      "image_credit": "Procedural Schematic"
+    },
+    "capella": {
+      "subtype": "Yellow giant (G3III quadruple system)",
+      "note": "The fifth-brightest star in the northern sky. The primary pair consists of two yellow giants (orbiting each other in roughly 104 days), with two additional faint red dwarf companions.",
+      "constellation": "Auriga",
+      "image_credit": "Procedural Schematic"
+    },
+    "aldebaran": {
+      "subtype": "Red giant (K5III)",
+      "note": "The brightest star in Taurus; its radius has expanded to about 44 times that of the Sun. It lies along the line of sight to the Hyades cluster but is a much closer foreground star and not a member of the cluster. 【AI Review 2026-10-27：Fill:orbit/rotation_period_hours】",
+      "constellation": "Taurus",
+      "image_credit": "Procedural Schematic"
+    },
+    "spica": {
+      "subtype": "Blue giant (B1III-IV binary)",
+      "note": "The two blue-white stars orbit each other in only about 4 days; strong tidal forces distort them into egg shapes (ellipsoidal variable). It forms the Spring Triangle with Denebola and Arcturus. 【AI Review 2026-10-27：Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】",
+      "constellation": "Virgo",
+      "image_credit": "Procedural Schematic"
+    },
+    "regulus": {
+      "subtype": "Blue-white main-sequence star (B8IVn)",
+      "note": "Nearly aligned with the ecliptic, it is frequently occulted by the Moon and planets. Its rotation period of about 15.9 hours distorts it into a noticeably oblate spheroid; the surface gravity at the poles is roughly twice that at the equator.",
+      "constellation": "Leo",
+      "image_credit": "Procedural Schematic"
+    },
+    "formalhaut": {
+      "subtype": "White main-sequence star (A3V)",
+      "note": "A bright star isolated in the southern sky (no other bright stars within 20°). Its debris disk was among the first debris disks imaged directly by telescopes, and the nature of the candidate planet Fomalhaut b within the disk remains controversial.",
+      "constellation": "Piscis Austrinus",
+      "image_credit": "Procedural Schematic"
+    },
+    "altair": {
+      "subtype": "White main-sequence star (A7Vn)",
+      "note": "One vertex of the Summer Triangle. Its rotation period of about 7.77 hours distorts it into an oblate spheroid (equatorial radius roughly 25% larger than polar radius), a deformation confirmed directly by interferometry; the folklore that it faces Vega across the Milky Way is widely known. 【AI Review 2026-10-27：Clear:physical/radius_sun,physical/radius_km】",
+      "constellation": "Aquila",
+      "image_credit": "Procedural Schematic"
+    },
+    "deneb": {
+      "subtype": "Blue-white supergiant (A2Iae)",
+      "note": "Luminous at roughly 200,000 times the Sun's luminosity, it is one of the brightest known A-type supergiants; its estimated distance of 1400~2600 light-years remains debated (depending on measurement methods), and approximately 2600 light-years is adopted here.",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "mirfak": {
+      "subtype": "Yellow-white supergiant (F5Ib)",
+      "note": "The brightest star in Perseus and a core member of the young open cluster Melotte 20; its luminosity is about 5000 times that of the Sun, and it is one of the brightest yellow-white supergiants visible to the naked eye.",
+      "constellation": "Perseus",
+      "image_credit": "Procedural Schematic"
+    },
+    "hamal": {
+      "subtype": "Orange giant (K2III)",
+      "note": "The brightest star in Aries, with a mass only slightly larger than the Sun, yet its radius has expanded to about 15 times; the vernal equinox was near it more than two thousand years ago, hence the name 'Age of Aries'. 【AI Review 2026-10-27: Clear:physical/lum_sun; Fill:orbit/rotation_period_hours】",
+      "constellation": "Aries",
+      "image_credit": "Procedural Schematic"
+    },
+    "markab": {
+      "subtype": "Blue-white giant (B9III)",
+      "note": "A corner of the Great Square of Pegasus, a blue-white giant leaving the main sequence and evolving toward the red giant stage. 【AI Review 2026-10-27: Clear:physical/radius_sun,physical/radius_km】",
+      "constellation": "Pegasus",
+      "image_credit": "Procedural Schematic"
+    },
+    "alpheratz": {
+      "subtype": "Blue-white subgiant (B8IV)",
+      "note": "Historically classified as both Alpha Andromedae and Delta Pegasi, it is a shared corner of the two constellations; it is itself a spectroscopic binary, with the primary star hundreds of times brighter than the companion. 【AI Review 2026-10-27: Fill:orbit/semimajor_axis_au,orbit/orbital_period_years】",
+      "constellation": "Andromeda",
+      "image_credit": "Procedural Schematic"
+    },
+    "mirach": {
+      "subtype": "Red giant (M0III)",
+      "note": "Jump two stations northeast from it to find the Andromeda Galaxy (M31), a classic landmark for deep-sky observation; it is itself a spectroscopic binary.",
+      "constellation": "Andromeda",
+      "image_credit": "Procedural Schematic"
+    },
+    "wezen": {
+      "subtype": "Yellow-white supergiant (F8Ia)",
+      "note": "The second-brightest star in Canis Major after Sirius; its diameter is about 188 times that of the Sun, yet its surface temperature is only a little more than half that of the Sun. It is a \"puffy\" supergiant and will end its life as a supernova.",
+      "constellation": "Canis Major",
+      "image_credit": "Procedural Schematic"
+    },
+    "adhara": {
+      "subtype": "Blue-white bright giant (B2II)",
+      "note": "It was closer to Earth about 4.7 million years ago and once became the brightest star in the whole sky at magnitude -3.99; today it remains the strongest extreme ultraviolet radiation source in the night sky, and its ultraviolet photons dominate the ionization state of the Local Interstellar Cloud. 【AI Review 2026-10-27 (Only 1 run succeeded): Empty:physical/lum_sun】",
+      "constellation": "Canis Major",
+      "image_credit": "Procedural Schematic"
+    },
+    "aludra": {
+      "subtype": "Blue-white supergiant (B5Ia)",
+      "note": "Together with Wezen and Aludra, it belongs to the Arabic \"the Virgins\" (al-Adhara) asterism; its mass is nearly 20 solar masses, luminosity exceeds 100,000 times that of the Sun, and it has reached the late stage of its life.",
+      "constellation": "Canis Major",
+      "image_credit": "Procedural Schematic"
+    },
+    "mu_cephei": {
+      "subtype": "Red supergiant (M2Ia)",
+      "note": "Also known as the Garnet Star, famous for its garnet-like blood-red hue; its estimated radius ranges from 972~1650 R☉ depending on aperture, and 1260 R☉ is adopted here. Almost all of its ultraviolet light is absorbed by its own atmosphere.",
+      "constellation": "Cepheus",
+      "image_credit": "Procedural Schematic"
+    },
+    "uy_scuti": {
+      "subtype": "Red supergiant (M4Ia)",
+      "note": "Once known for an old estimate of about 1708 R☉; latest observations revise its radius down to approximately 909 R☉ — still nearly one thousand times that of the Sun. Semiregular variable star, varying by about 1 magnitude over roughly 8.5 months.",
+      "constellation": "Scutum",
+      "image_credit": "Procedural Schematic"
+    },
+    "rw_cephei": {
+      "subtype": "Orange-yellow hypergiant (K2 0-Ia)",
+      "note": "Semiregular variable star with a radius more than one thousand times the Sun's; in 2022 it underwent its deepest dimming on record, possibly linked to a large-scale dust ejection event.",
+      "constellation": "Cepheus",
+      "image_credit": "Procedural Schematic"
+    },
+    "s_persei": {
+      "subtype": "Red supergiant (M3.5I)",
+      "note": "Red supergiant lying toward the Perseus Double Cluster, with a mass of roughly 20 M☉ and radius of about 1200 R☉; its brightness variation is close to 1 magnitude, making it the 'hidden giant' in the Double Cluster observing field.",
+      "constellation": "Perseus",
+      "image_credit": "Procedural Schematic"
+    },
+    "mira": {
+      "subtype": "Red giant (M7IIIe variable star)",
+      "note": "Its magnitude fluctuates between 2 mag and 10 mag with a period of approximately 332 days: visible to the naked eye at maximum brightness, requiring a telescope at minimum. It is losing mass vigorously, trailing a roughly 13-light-year-long tail in its stellar wind.",
+      "constellation": "Cetus",
+      "image_credit": "Procedural Schematic"
+    },
+    "p_cygni": {
+      "subtype": "Luminous blue variable (LBV)",
+      "note": "Suddenly brightened to 3rd magnitude in 1600, then faded slowly; it still ejects material via a powerful stellar wind. Similar to Eta Carinae, it is the prototype of the \"false supernova\" phenomenon.",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "naos": {
+      "subtype": "Blue supergiant (O5Ibf)",
+      "note": "Surface temperature ~42000 K, one of the hottest stars visible to the naked eye; luminosity ~500,000 times that of the Sun, stellar wind speed up to ~2200 km/s. 【AI Review 2026-10-27: Clear:physical/mass_sun,physical/mass_kg,physical/lum_sun; Fill:orbit/rotation_period_hours】",
+      "constellation": "Puppis",
+      "image_credit": "Procedural Schematic"
+    },
+    "r136a1": {
+      "subtype": "Wolf-Rayet star (WN5h)",
+      "note": "Currently the most massive known star (~291 M☉, near the theoretical upper limit of stellar mass), luminosity ~7.24 million times that of the Sun; its powerful stellar wind sheds mass equivalent to several Earths each year. 【AI Review 2026-10-27: Clear:physical/lum_sun】",
+      "constellation": "Dorado",
+      "image_credit": "Procedural Schematic"
+    },
+    "algol": {
+      "subtype": "Eclipsing binary (triple star system)",
+      "note": "Every 2.87 days, the fainter companion passes in front of the primary star, brightness plummets from magnitude 2.1 to 3.4 and lasts ~10 hours — a cosmic \"blink\"; it was named the \"Demon Star\" in ancient China for this reason. 【AI Review 2026-10-27: Clear:physical/lum_sun; Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/inclination_deg】",
+      "constellation": "Perseus",
+      "image_credit": "Procedural Schematic"
+    },
+    "sheliak": {
+      "subtype": "Eclipsing binary (mass-transfer system)",
+      "note": "The two stars are so close that material flows from one to the other, enveloped by a common envelope; light variation is nearly continuous, and it is one of the earliest confirmed eclipsing binaries. 【AI Review 2026-10-27: Clear:physical/mass_sun; Fill:orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity,orbit/rotation_period_hours】",
+      "constellation": "Lyra",
+      "image_credit": "Procedural Schematic"
+    },
+    "almaaz": {
+      "subtype": "Eclipsing variable star (F0Iab primary + dust disk companion)",
+      "note": "A rare stellar eclipse lasting about 2 years occurs every 27.1 years; the occulting body is thought to be a companion wrapped in a massive dust disk. Estimates for the primary mass diverge widely (roughly 2.2~15 M☉), with no consensus, so mass is left blank honestly. 【AI Review 2026-10-27: Leave blank:distance_ly; Fill:physical/mass_sun,physical/mass_kg,orbit/orbital_period_years,orbit/inclination_deg,orbit/eccentricity】",
+      "constellation": "Auriga",
+      "image_credit": "Procedural Schematic"
+    },
+    "kepler_452": {
+      "subtype": "Yellow dwarf (G2V)",
+      "note": "Hosts exoplanet Kepler-452b: the first confirmed planet with an Earth-like radius located in the habitable zone of a Sun-like star, with an orbital period of about 385 days, nicknamed 'Earth's cousin'. 【AI Review 2026-10-27: Leave blank:distance_ly】",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "kepler_22": {
+      "subtype": "Yellow dwarf (G5V)",
+      "note": "Hosts Kepler-22b: the first confirmed exoplanet located in the habitable zone of a Sun-like star, with a radius roughly 2.4 times Earth's, and may be an 'ocean world'. 【AI Review 2026-10-27: Fill:orbit/rotation_period_hours】",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "trappist_1": {
+      "subtype": "Red dwarf (M8V)",
+      "note": "An ultracool red dwarf only slightly larger than Jupiter, yet it hosts 7 Earth-sized planets; 3~4 of them lie in the habitable zone. All planets are tightly packed, appearing as large 'moons' in the sky when viewed from the innermost world. JWST is searching its atmospheres for signs of life.",
+      "constellation": "Aquarius",
+      "image_credit": "Procedural Schematic"
+    },
+    "gliese_581": {
+      "subtype": "Red dwarf (M3V)",
+      "note": "A red dwarf merely 20.4 light-years from Earth with multiple confirmed exoplanets. Whether Gliese 581g/c/d are habitable sparked long-running debates, marking one of the most famous early episodes in exoplanet science. 【AI Review 2026-10-27: Fill:orbit/rotation_period_hours】",
+      "constellation": "Libra",
+      "image_credit": "Procedural Schematic"
+    },
+    "kepler_186": {
+      "subtype": "Red dwarf (M1V)",
+      "note": "It has five planets; the outermost one, Kepler-186f, is the first confirmed exoplanet within the habitable zone with a radius close to Earth. However, its sunlight is far dimmer than Earth’s, and noon there may resemble dusk on Earth.",
+      "constellation": "Cygnus",
+      "image_credit": "Procedural Schematic"
+    },
+    "cancri_55": {
+      "subtype": "Yellow dwarf (G8V binary)",
+      "note": "A binary system with five discovered exoplanets; 55 Cancri e is a famous 'super-Earth' whose surface temperature is high enough to melt rock, possibly forming a magma ocean.",
+      "constellation": "Cancer",
+      "image_credit": "Procedural Schematic"
+    },
+    "pegasi_51": {
+      "subtype": "Yellow subgiant (G2IV)",
+      "note": "The first exoplanet discovered orbiting a Sun-like star (51 Pegasi b, a 'hot Jupiter') was found here; the two discoverers were awarded the 2019 Nobel Prize in Physics, marking the start of the exoplanet era.",
+      "constellation": "Pegasus",
+      "image_credit": "Procedural Schematic"
+    },
+    "beta_pictoris": {
+      "subtype": "White main-sequence star (A6V)",
+      "note": "It hosts the first stellar debris disk imaged directly, with two confirmed giant planets (Beta Pictoris b/c) in the disk. It is also the namesake of the 'Beta Pictoris moving group', a group of young stars only about 20 million years old. 【AI Reviewed 2026-10-27：Fill:orbit/rotation_period_hours】",
+      "constellation": "Pictor",
+      "image_credit": "Procedural Schematic"
+    },
+    "procyon_a": {
+      "subtype": "Main-sequence star (F5V-IV)",
+      "note": "Procyon B is a white dwarf with a mass of approximately 0.6 solar masses and a radius roughly equal to Earth's. 【AI Review 2026-10-27：Clear:physical/radius_sun,physical/radius_km】",
+      "constellation": "Canis Minor",
+      "image_credit": "AI-generated",
+      "members": "Binary system composed of Procyon A (primary star) and Procyon B (white dwarf companion)"
+    },
+    "orcus": {
+      "subtype": "Trans-Neptunian object (plutino, plutoid)",
+      "note": "Diameter approximately 910 km (range 870–960 km); mass equals the total mass of the Orcus+Vanth binary system, with Orcus itself accounting for about 90%; in 3:2 orbital resonance with Neptune, belonging to the plutino group. 【AI Review 2026-10-27：Clear:physical/mass_sun,orbit/rotation_period_hours】",
+      "constellation": "Pisces",
+      "image_credit": "AI-generated",
+      "members": "Satellite: Vanth (diameter approximately 222 km)"
+    },
+    "vanth": {
+      "subtype": "Icy satellite (plutino companion)",
+      "note": "Diameter approximately 440 km; mass roughly 1/20 of Orcus, density and albedo are approximate estimates. The two bodies orbit each other in nearly circular orbits and are mutually tidally locked, forming a 2:3 Neptune-resonant plutino binary system.",
+      "constellation": "Ophiuchus",
+      "image_credit": "AI-generated"
+    },
+    "gonggong_225088": {
+      "subtype": "Scattered disc dwarf planet (icy body)",
+      "note": "Diameter ~1230 km (radius 615 km); mass adopted as 1.75×10^21 kg, with a range of 1.75~2.25×10^21 kg from different observations; early measurement of rotation period was 22.4 h, later HST observations revised it to ~22.4 h or 44.8 h (caused by suspected bimodal albedo), 22.4 h is adopted here; surface temperature ~30 K, albedo ~0.1~0.15; distance calculated from semi-major axis 67.5 AU. 【AI Review 2026-10-27 (only 1 run succeeded): Clear:distance_ly,physical/mass_sun,physical/mass_kg; Fill:orbit/orbital_velocity_km_s】",
+      "constellation": "Gemini",
+      "image_credit": "AI-generated",
+      "members": "Has 1 known satellite: Xiangliu (Xiangliu, diameter ~100 km)"
+    },
+    "pallas": {
+      "subtype": "Main-belt asteroid",
+      "note": "Pallas is the second-largest asteroid in the Solar System (second only to Ceres by volume and mass), but due to its highly irregular shape (similar to a flattened potato), its equivalent radius is approximately 512 km. Its orbital inclination reaches 34.8 degrees, much larger than other large asteroids. 【AI Review 2026-10-27: Clear:orbit/obliquity_deg,orbit/rotation_period_hours】",
+      "constellation": "Pisces",
+      "image_credit": "AI-generated"
+    },
+    "juno": {
+      "subtype": "S-type asteroid",
+      "note": "Parameters are approximate observational values; size and mass have certain measurement errors 【2 runs consistent】",
+      "constellation": "Virgo",
+      "image_credit": "AI-generated"
+    },
+    "hygiea": {
+      "subtype": "C-type asteroid",
+      "note": "Mass and radius are approximate observational values; whether it is a dwarf planet remains controversial 【2 runs inconsistent:orbit/rotation_period_hours(13.83 vs 27.6), pending manual verification】 【AI Review 2026-10-27: Fill:orbit/obliquity_deg】",
+      "constellation": "Virgo",
+      "image_credit": "AI-generated"
+    },
+    "sedna": {
+      "subtype": "Trans-Neptunian dwarf planet",
+      "note": "Mass and radius are approximate estimates with large observational uncertainties 【2 inconsistent:physical/mass_sun(1.3e-08 vs 1.04e-08), pending manual verification】 【AI review 2026-10-27 (only 1 succeeded): clear:physical/mass_sun; fill:orbit/orbital_velocity_km_s】 【2026-11-11 authoritative source check: current JPL SBDB solution a=544 AU / P=4.63e6 d / e=0.86; the 506 AU / 4.164e6 d / e=0.849 stored in database is a self-consistent early solution, and 1.04 km/s is exactly the time-averaged velocity of this elliptical orbit, retain without overwriting】",
+      "constellation": "Cetus",
+      "image_credit": "AI-generated"
+    },
+    "disnomia": {
+      "subtype": "natural satellite",
+      "note": "Mass, radius and density are approximate estimates; orbital parameters have observational errors 【2 inconsistent:orbit/orbital_period_years(0.038 vs 0.0136), pending manual verification】 【2026-11-11 authoritative source check: masses of the Eris system and Dysnomia orbit from Brown & Schaller 2007 give a≈37273 km, P=15.7859 d, e≈0.0062 (consistent with Kepler's third law); the original 5.535e6 km misread 0.037 AU as semi-major axis. Mass 8.2e19 kg is only a dynamical upper limit, radius 350 km is a photometric estimate, density has no reliable measurement, values derived from M/R here are for display only】",
+      "constellation": "Tucana",
+      "image_credit": "AI-generated"
+    },
+    "quaoar": {
+      "subtype": "Kuiper belt dwarf planet",
+      "note": "Radius and mass are approximate measurements; planetary ring detected 【only 1 of 2 succeeded, pending manual verification】 【AI review 2026-10-27: clear:orbit/rotation_period_hours】",
+      "constellation": "Ophiuchus",
+      "image_credit": "AI-generated",
+      "members": "Satellite: Weywot"
+    },
+    "chiron": {
+      "subtype": "centaur object",
+      "note": "Parameters are approximate; classification of Chiron is disputed, also designated as comet 95P/Chiron 【2 consistent】 【2026-11-11 authoritative source check: JPL SBDB a=13.7 AU, P=18500 d, e=0.38; the time-averaged velocity of this elliptical orbit is 7.79 km/s, original 6.6 km/s corresponds to no physical quantity and has been corrected】",
+      "constellation": "Sagittarius",
+      "image_credit": "Procedural Schematic"
+    },
+    "oj_287": {
+      "subtype": "supermassive black hole system (active galactic nucleus / BL Lac-type blazar)",
+      "note": "Primary black hole mass differs between old and new models; outbursts arise from secondary black hole impacting the accretion disk of the primary black hole 【2 consistent】 【2026-11-11 authoritative source check: primary black hole 1.835e10 M☉ (Valtonen et al. 2008), original 3.65e41 kg is 10 times larger; radius updated synchronously via Rs=2GM/c², companion semi-major axis recalculated using Kepler's third law with P=11.92 yr. The original escape velocity 9.5e6 km/s resulted from substituting radius in km as m (off by √1000 times); Newtonian value should be speed of light c≈299785 km/s (event horizon), surface gravity recalculated synchronously】",
+      "constellation": "Cancer",
+      "image_credit": "Procedural Schematic",
+      "members": "Primary black hole: 18.35 billion solar masses; secondary black hole: ~146 million solar masses, orbiting the primary black hole"
+    },
+    "j2157-3602": {
+      "subtype": "supermassive black hole",
+      "note": "Mass and luminosity are approximate measured values; black hole event horizon radius is estimated via the Schwarzschild formula 【2-source consistent】",
+      "constellation": "Microscopium",
+      "image_credit": "Procedural Schematic",
+      "members": "Host quasar J2157-3602"
+    },
+    "phoenix_a": {
+      "subtype": "supermassive black hole",
+      "note": "Mass of approximately 100 billion solar masses, one of the most massive known black holes; event horizon radius is an approximate value 【2-source inconsistent, disputed field cleared pending supplement:physical/radius_km(296000000.0 vs 295250000000)】",
+      "constellation": "Phoenix",
+      "image_credit": "Procedural Schematic"
+    },
+    "gaia_bh1": {
+      "subtype": "Stellar-mass black hole",
+      "note": "Black hole parameters are approximate observational fitting values; companion star orbital parameters carry certain measurement uncertainties 【2-source inconsistent, disputed field cleared pending supplement:orbit/orbital_period_years(0.33 vs 0.508)】",
+      "constellation": "Ophiuchus",
+      "image_credit": "Procedural Schematic",
+      "members": "Black hole + G-type main-sequence companion star"
+    },
+    "51_pegasi_b": {
+      "subtype": "Hot Jupiter",
+      "note": "Parameters are approximate measurements, lower mass limit ~0.46 Jupiter mass 【2 sources inconsistent, disputed field cleared pending supplement:physical/radius_km(714920 vs 71492)】",
+      "constellation": "Pegasus",
+      "image_credit": "Procedural Schematic"
+    },
+    "proxima_centauri_b": {
+      "subtype": "rocky planet",
+      "note": "Parameters are approximate observational values, mass ~1.17 Earth mass, radius ~1.08 Earth radius, tidally locked, atmosphere existence unknown 【2 sources inconsistent, disputed field cleared pending supplement:physical/mass_kg(2.4e+24 vs 1.27e+24);orbit/orbital_period_years(0.0765 vs 0.065);orbit/inclination_deg(88.0 vs 133)】",
+      "constellation": "Centaurus",
+      "image_credit": "AI-generated"
+    },
+    "kepler_452b": {
+      "subtype": "super-Earth",
+      "note": "Parameters such as mass and density not precisely determined; radius ~1.6 Earth radius 【2 sources consistent】",
+      "constellation": "Cygnus",
+      "image_credit": "AI-generated"
+    },
+    "kepler_22b": {
+      "subtype": "super-Earth",
+      "note": "Mass not precisely determined, radius ~2.4 Earth radius, temperature is equilibrium temperature 【2 sources inconsistent, disputed field cleared pending supplement:orbit/eccentricity(0.06 vs 0)】",
+      "constellation": "Cygnus",
+      "image_credit": "AI-generated"
+    },
+    "k2-18_b": {
+      "subtype": "sub-Neptune",
+      "note": "Mass, radius and temperature are approximate values; hydrogen atmosphere exists, some studies speculate liquid water ocean exists 【2 sources inconsistent, disputed field cleared pending supplement:physical/mass_kg(1.9e+25 vs 8.1e+25);physical/radius_km(15600 vs 26000);orbit/orbital_period_years(0.055 vs 0.0238)】",
+      "constellation": "Leo",
+      "image_credit": "AI-generated"
+    },
+    "lhs_1140_b": {
+      "subtype": "super-Earth (rocky planet)",
+      "note": "Parameter version differences exist, recent measured mass ~5.6 Earth mass, radius ~1.73 Earth radius, high possibility of tidal locking 【2 sources inconsistent, disputed field cleared pending supplement:distance_ly(48.9 vs 41);physical/mass_kg(3.34e+25 vs 6.63e+24);physical/radius_km(11030 vs 8750);orbit/orbital_period_years(0.0677 vs 0.035);orbit/eccentricity(0.04 vs 0.06)】 【2026-11-11 authoritative source verification: NASA Exoplanet Archive default parameters: M=0.01761957 Mj、R=0.15434053 Rj、P=24.73723 d、a=0.0946 AU、e=0.043、ρ=5.9 g/cm³; original density 7.8 inconsistent with mass/radius】",
+      "constellation": "Cetus",
+      "image_credit": "AI-generated"
+    },
+    "wasp-12_b": {
+      "subtype": "Hot Jupiter",
+      "note": "Parameters are approximate literature values. The planet suffers atmospheric escape, and there are discrepancies in radius measurements 【2 passes consistent】 【2026-11-11 Authority source verification: True period 1.0914189 d (original 3.5064 d erroneous); radius 1.965 Rj from NASA Archive, mass 1.47 Mj from literature. Derived ρ=0.24 g/cm³ and v=230 km/s both match records, confirming density/velocity in original record are correct while period and mass/radius are wrong】",
+      "constellation": "Auriga",
+      "image_credit": "AI-generated"
+    },
+    "55_cancri_e": {
+      "subtype": "super-Earth",
+      "note": "Parameters are approximate values. The planet is tidally locked and a carbon-rich super-Earth 【Only 1 out of 2 passes succeeded, pending manual review】 【2026-11-11 Authority source verification: NASA Archive: M=0.02513923 Mj, R=0.1672763 Rj, P=0.7365474 d, a=0.01544 AU, ρ=6.66; original P=3.3603 d and v=75 km/s have no corresponding physical quantities. Recalculated v≈228 km/s using primary values】",
+      "constellation": "Cancer",
+      "image_credit": "AI-generated"
+    },
+    "hd_189733_b": {
+      "subtype": "Hot Jupiter",
+      "note": "Parameters are approximate literature values. This planet is the first exoplanet with measured color, featuring molten silicate rain 【2 passes consistent】 【2026-11-11 Authority source verification: NASA Archive: M=1.13 Mj, R=1.13 Rj, P=2.21857567 d; original 11.32275 d erroneous, and recorded v=152 km/s matches the correct period (retained here), original mass value was half the true value】",
+      "constellation": "Vulpecula",
+      "image_credit": "AI-generated"
+    },
+    "wasp_107_b": {
+      "subtype": "Gas giant",
+      "note": "Parameters are approximate values. It is an extremely puffy gas giant with mass ~0.12 times Jupiter and radius close to Jupiter 【2 passes inconsistent, disputed fields cleared pending supplement:physical/mass_kg(1.02e+26 vs 2.44e+26);physical/radius_km(105000 vs 79200);orbit/orbital_period_years(0.027 vs 0.094);orbit/eccentricity(0.0 vs 0.06)】",
+      "constellation": "Sextans",
+      "image_credit": "AI-generated"
+    },
+    "kepler_16b": {
+      "subtype": "Gas giant",
+      "note": "Parameters are approximate observational values. The planet orbits two stars 【2 passes consistent】 【2026-11-11 Authority source verification: NASA Archive: M=0.333 Mj, R=0.7538 Rj, P=228.776 d, ρ=0.964; original overestimated mass/radius led to high derived density, recalculated and supplemented orbital velocity using authoritative primary values】",
+      "constellation": "Cygnus",
+      "image_credit": "AI-generated",
+      "host_star": "Kepler-16"
+    }
+  },
+  "meta": {
+    "primary_sources": [
+      "NASA NSSDC Planetary Fact Sheet (8 planets + Pluto, updated 2025-03-18) https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "NASA NSSDC Sun Fact Sheet (updated 2024-05-09) https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html",
+      null,
+      "NASA NSSDC Mars Fact Sheet (Updated 2025‑05‑19, includes Phobos/Deimos parameters) https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html",
+      null,
+      "NASA/JPL Small‑Body Database API (Ceres) https://ssd-api.jpl.nasa.gov/sbdb.api",
+      "Wikipedia astronomical object entries (Black holes / Nebulae / Galaxies / Star clusters / Large‑scale structures, verified 2026‑10‑24) https://en.wikipedia.org/",
+      "Event Horizon Telescope (M87* / Sagittarius A* black‑hole images) https://eventhorizontelescope.org/",
+      "LIGO/Virgo Collaboration · GW190521 detection paper (2020) https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102",
+      "Wikipedia astronomical object entries (Famous nebulae / Galaxies / Star clusters / Small bodies, verified 2026‑10‑24) https://en.wikipedia.org/",
+      "LIGO/Virgo Collaboration · GW150914 detection paper (2016) https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
+      "Wikipedia stellar object entries (Bright stars / Supergiants / Binary stars / Remnants / Exoplanet hosts, verified 2026‑10‑24) https://en.wikipedia.org/",
+      "Nobel Prize in Physics 2019 Press Release (Discovery of 51 Pegasi b) https://www.nobelprize.org/prizes/physics/2019/press-release/",
+      "NASA Exoplanet Archive · Planetary Systems default parameters (Principal values for 5 exoplanets, verified 2026‑11‑11) https://exoplanetarchive.ipac.caltech.edu/"
+    ],
+    "pending": "Physical parameters of the three TNO siblings (Makemake/Haumea/Eris) pending measured values from authoritative sources (honestly set to null for now); R Coronae Borealis is excluded due to lack of reliable distance data; objects such as m7/ngc4755 with no authentic images in NASA repository retain procedural textures"
+  }
+}

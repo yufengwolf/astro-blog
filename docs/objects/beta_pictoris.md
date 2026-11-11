@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/beta_pictoris.webp" alt="绘架座β" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/beta_pictoris.webp" alt="绘架座β" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>绘架座β <small>Beta Pictoris</small></h1>
-    <p class="obj-tagline">第一个被直接拍到碎屑盘的恒星，年轻星群的命名来源</p>
+    <p class="obj-tagline" data-obj-id="beta_pictoris">第一个被直接拍到碎屑盘的恒星，年轻星群的命名来源</p>
     <p class="obj-summary">直径 2,128,842 km · 质量 3.56×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>668.08 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>8,054 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A6V</td></tr>
-<tr><th scope="row">恒星类型</th><td>白主序星（A6V）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="White main-sequence star (A6V)">白主序星（A6V）</td></tr>
 <tr><th scope="row">光度</th><td>3.33×10²⁷ W（8.7 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>63 光年</td></tr>
-<tr><th scope="row">星座</th><td>绘架座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pictor">绘架座</td></tr>
 </tbody>
 </table>
 </section>
@@ -49,7 +49,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座βb/c）；它还是'绘架座β移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="It hosts the first stellar debris disk imaged directly, with two confirmed giant planets (Beta Pictoris b/c) in the disk. It is also the namesake of the &#x27;Beta Pictoris moving group&#x27;, a group of young stars only about 20 million years old. 【AI Reviewed 2026-10-27：Fill:orbit/rotation_period_hours】">第一个被直接拍到的恒星碎屑盘，盘中已确认两颗巨行星（绘架座βb/c）；它还是'绘架座β移动星群'——一群年龄仅约 2000 万年的年轻恒星——的命名来源。 【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>1984 年 IRAS 卫星发现其碎屑盘</td></tr>
 </tbody>
 </table>

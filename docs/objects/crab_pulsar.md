@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/crab_pulsar.webp" alt="蟹云脉冲星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/crab_pulsar.webp" alt="蟹云脉冲星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>蟹云脉冲星 <small>Crab Pulsar</small></h1>
-    <p class="obj-tagline">蟹状星云中心高速自转的中子星，每 33 毫秒转一圈</p>
+    <p class="obj-tagline" data-obj-id="crab_pulsar">蟹状星云中心高速自转的中子星，每 33 毫秒转一圈</p>
     <p class="obj-summary">直径 20.0 km · 质量 2.78×10³⁰ kg</p>
   </div>
 </div>
@@ -26,10 +26,10 @@ hide:
 <tr><th scope="row">平均直径</th><td>20.0 km（0.00157 × 地球直径）</td></tr>
 <tr><th scope="row">表面重力</th><td>1.86×10¹² m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>1.93×10⁵ km/s</td></tr>
-<tr><th scope="row">恒星类型</th><td>中子星（脉冲星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Neutron star (pulsar)">中子星（脉冲星）</td></tr>
 <tr><th scope="row">光度</th><td>2.87×10³¹ W（7.5×10⁴ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>6,524 光年</td></tr>
-<tr><th scope="row">星座</th><td>金牛座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Taurus">金牛座</td></tr>
 </tbody>
 </table>
 </section>
@@ -47,7 +47,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>1054 年超新星爆发留下的中子星，自转周期 33.39 毫秒；直径仅约 20 km，表面温度约 1.6×10⁶ K，是全波段（射电到伽马射线）的明亮同步辐射源。 【AI复校 2026-10-27（仅1发成功）：置空:physical/temp_k; 填充:physical/lum_sun,orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="Neutron star left by the supernova explosion in 1054; rotation period 33.39 ms; diameter only ~20 km, surface temperature ~1.6×10⁶ K, a bright synchrotron radiation source across all wavebands (radio to gamma-ray). 【AI Review 2026-10-27 (Only 1 submission succeeded): Clear:physical/temp_k; Fill:physical/lum_sun,orbit/rotation_period_hours】">1054 年超新星爆发留下的中子星，自转周期 33.39 毫秒；直径仅约 20 km，表面温度约 1.6×10⁶ K，是全波段（射电到伽马射线）的明亮同步辐射源。 【AI复校 2026-10-27（仅1发成功）：置空:physical/temp_k; 填充:physical/lum_sun,orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>1968 年被确认为脉冲星（对应中国宋代记载的 SN 1054 遗迹）</td></tr>
 </tbody>
 </table>

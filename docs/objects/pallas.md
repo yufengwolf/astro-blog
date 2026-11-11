@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/pallas.webp" alt="智神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/pallas.webp" alt="智神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge asteroid">小行星</span>
     <h1>智神星 <small>Pallas</small></h1>
-    <p class="obj-tagline">小行星带第二大天体，形状极不规则，轨道倾角极大。</p>
+    <p class="obj-tagline" data-obj-id="pallas">小行星带第二大天体，形状极不规则，轨道倾角极大。</p>
     <p class="obj-summary">平均直径 512.0 km · 质量 2.11×10²⁰ kg</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">质量</th><td>2.11×10²⁰ kg（3.53×10⁻⁵ M⊕）</td></tr>
 <tr><th scope="row">平均直径</th><td>512.0 km（0.0402 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>3.00244 g/cm³</td></tr>
-<tr><th scope="row">星座</th><td>双鱼座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Pisces">双鱼座</td></tr>
 </tbody>
 </table>
 </section>

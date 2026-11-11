@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/rw_cephei.webp" alt="仙王座 RW" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/rw_cephei.webp" alt="仙王座 RW" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>仙王座 RW <small>RW Cephei</small></h1>
-    <p class="obj-tagline">会不规则变暗的特超巨星，2022 年经历创纪录变暗</p>
+    <p class="obj-tagline" data-obj-id="rw_cephei">会不规则变暗的特超巨星，2022 年经历创纪录变暗</p>
     <p class="obj-summary">直径 1.53×10⁹ km · 质量 2.76×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>69.43 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>4,000 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K2 0-Ia</td></tr>
-<tr><th scope="row">恒星类型</th><td>橙黄特超巨星（K2 0-Ia）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Orange-yellow hypergiant (K2 0-Ia)">橙黄特超巨星（K2 0-Ia）</td></tr>
 <tr><th scope="row">光度</th><td>1.34×10³² W（3.5×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>1 万光年</td></tr>
-<tr><th scope="row">星座</th><td>仙王座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cepheus">仙王座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>半径逾千倍太阳的半规则变星；2022 年它经历了有记录以来最深的一次变暗，可能与一次大规模的尘埃物质抛射有关。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Semiregular variable star with a radius more than one thousand times the Sun&#x27;s; in 2022 it underwent its deepest dimming on record, possibly linked to a large-scale dust ejection event.">半径逾千倍太阳的半规则变星；2022 年它经历了有记录以来最深的一次变暗，可能与一次大规模的尘埃物质抛射有关。</td></tr>
 <tr><th scope="row">发现</th><td>1901 年被确认为变星</td></tr>
 </tbody>
 </table>

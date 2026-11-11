@@ -6,6 +6,7 @@
   docs/objects/<id>.md   天体详情页（结构化数据表 + 卫星链接 + 合成科普文章）
   docs/data.md           数据集下载页
   docs/data/astro_flat.csv  扁平 CSV（数据集下载用）
+  docs/js/i18n-data.js   全站双语数据（天体名 / 分类 / 简介，按 id 索引）
 
 文章约定：docs/articles/<slug>.md 的正文会被合成进对应详情页（astro.json 的 article 字段）。
 用法：python gen_pages.py [--root DIR] [--check]
@@ -18,9 +19,35 @@ import json
 import math
 import re
 import sys
+from html import escape as html_escape
 from pathlib import Path
 
 REPO_URL = "https://github.com/yufengwolf/astro-blog"
+
+# 数据层自由文本英文译稿（按 id + 字段索引）。文件不存在时双语功能自动退化为中文，
+# 译稿由 scripts/translate_fields.py 生成/增量维护，属可审阅数据、进 git。
+FIELD_EN_FILE = Path(__file__).resolve().parent.parent / "docs/data/i18n_fields.json"
+
+
+def load_field_en():
+    try:
+        return json.loads(FIELD_EN_FILE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"objects": {}, "meta": {}}
+
+
+FIELD_EN = load_field_en()
+
+
+def en_attr(en):
+    """生成 data-en 属性；无译稿时返回空串（该单元保持中文，由 i18n 词表兜底）。"""
+    if not en:
+        return ""
+    return f' data-en="{html_escape(str(en), quote=True)}"'
+
+
+def fen(oid, field):
+    return (FIELD_EN.get("objects", {}).get(oid) or {}).get(field)
 
 # 页面版本戳：每次数据/贴图/页面布局批量更新时递增，用于访客（和自己）判断浏览器是否缓存了旧版
 VERSION = "1.9"
@@ -263,8 +290,11 @@ def dash(v):
     return v if v is not None else "—"
 
 
-def table_html(rows):
+def table_html(rows, en_map=None):
     """两列参数表 → 裸 HTML <table> 行列表。
+
+    en_map: {单元格中文原文: 英文译稿}，由调用方按天体 id + 字段从
+    docs/data/i18n_fields.json 构造，只做精确整串查找，不做名称归一化。
 
     空值行（None / "" / "—"）直接不渲染：稀疏天体不再出现整列破折号，
     太阳的轨道表从 7 行缩到实际有值的 2 行。全空时返回空列表，
@@ -279,7 +309,8 @@ def table_html(rows):
         return []
     out = ["<table>", "<thead><tr><th>参数</th><th>数值</th></tr></thead>", "<tbody>"]
     for k, v in kept:
-        out.append(f'<tr><th scope="row">{k}</th><td>{v}</td></tr>')
+        en = (en_map or {}).get(v) if isinstance(v, str) else None
+        out.append(f'<tr><th scope="row">{k}</th><td{en_attr(en)}>{v}</td></tr>')
     out += ["</tbody>", "</table>"]
     return out
 
@@ -314,18 +345,27 @@ def img_block(o, base="", show_credit=False):
     首页 index.md（URL /）传 ""；详情页 objects/<id>.md（URL /objects/<id>/，
     use_directory_urls 默认开启）需退两级到站根，传 "../../"。
     show_credit=True 时附带影像署名（仅详情页；image_credit/image_url 字段，
-    由 scripts/nasa_image.py 登记 NASA 真实影像时写入）。"""
+    由 scripts/nasa_image.py 登记 NASA 真实影像时写入）。
+    影像署名的英文译稿按天体 id 从 i18n_fields.json 精确取，不做文本匹配。
+    署名含来源链接时必须用 data-en-html 整块替换：data-en 走 textContent
+    赋值，会把 <a> 抹掉，切回中文也无法还原链接。"""
     cat = o["category"]
     img = o.get("image")
+    credit_en = fen(o.get("id"), "image_credit") if show_credit else None
     if img:
         inner = (f'<div class="astro-img {cat}">'
                  f'<img src="{base}{img}" alt="{o["name"]}" loading="lazy"></div>')
         if show_credit and o.get("image_credit"):
             credit = o["image_credit"]
+            en_credit = credit_en or credit  # 无译稿时安全降级为原文
             if o.get("image_url"):
-                credit = (f'<a href="{o["image_url"]}" target="_blank" '
-                          f'rel="noopener">{credit}</a>')
-            inner += f'<div class="astro-img-credit">影像：{credit}</div>'
+                href = html_escape(str(o["image_url"]), quote=True)
+                credit = (f'<a href="{href}" target="_blank" rel="noopener">{credit}</a>')
+                en_credit = (f'<a href="{href}" target="_blank" rel="noopener">{en_credit}</a>')
+            en_html = "Image: " + en_credit
+            inner += (f'<div class="astro-img-credit"'
+                      f' data-en-html="{html_escape(en_html, quote=True)}">'
+                      f'影像：{credit}</div>')
             return f'<div class="obj-hero-imgwrap">{inner}</div>'
         return inner
     return (f'<div class="astro-img {cat} astro-img-fallback">'
@@ -440,7 +480,11 @@ def build_index(data):
         L.append("  <p>每颗天体的数据页之下，附一篇深度科普：</p>")
         L.append('  <ul class="astro-article-list">')
         for o in articles:
-            L.append(f'    <li><a href="objects/{o["id"]}/">{o["name"]}（{o["name_en"]}）</a></li>')
+            # 中文形态「水星（Mercury）」是复合串，无法整串命中译表；
+            # 用 data-en 按 id 精确给出英文名（不做名称匹配）。
+            en = html_escape(str(o["name_en"]), quote=True)
+            L.append(f'    <li><a href="objects/{o["id"]}/" data-en="{en}">'
+                     f'{o["name"]}（{o["name_en"]}）</a></li>')
         L.append("  </ul>")
         L.append("</section>")
         L.append("")
@@ -487,10 +531,12 @@ def build_object_index(data):
             moons=dash((o.get("moons") or {}).get("count")),
         ))
     L.append("")
-    L.append('<details class="obj-fields">')
-    L.append("<summary>字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）</summary>")
+    # md_in_html 扩展已启用：details 必须声明 markdown="1"，内部表格才会被解析成
+    # 真正的 <table>（否则整段以纯文本 "| 字段 | 含义 |" 显示）。
+    L.append('<details class="obj-fields" markdown="1">')
+    L.append('<summary data-en="Field reference (raw units in the CSV: mass kg · radius km · density g/cm³ · temperature °C · semi-major axis km · period days · moon count)">字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）</summary>')
     L.append("")
-    L.append('<p><strong>注意：</strong>本表描述的是 <code>astro.json</code> / CSV 的<strong>原始字段</strong>。'
+    L.append('<p data-en-html="&lt;strong&gt;Note:&lt;/strong&gt; this table describes the &lt;strong&gt;raw fields&lt;/strong&gt; in &lt;code&gt;astro.json&lt;/code&gt; / CSV. &lt;code&gt;radius_km&lt;/code&gt; stores the &lt;strong&gt;radius&lt;/strong&gt;; pages and cards show &lt;strong&gt;diameter = 2 × radius&lt;/strong&gt;, switching the primary unit between km and light-years by magnitude, with Earth/Solar diameter multiples, M⊕ / M☉ and °C annotations."><strong>注意：</strong>本表描述的是 <code>astro.json</code> / CSV 的<strong>原始字段</strong>。'
              '<code>radius_km</code> 存的是<strong>半径</strong>；页面与卡片统一按「直径 = 2 × 半径」展示，'
              '主单位按量级自动切换 km / 光年，并辅以地球或太阳直径倍数、M⊕ / M☉、℃ 括注。</p>')
     L.append("")
@@ -657,6 +703,15 @@ def build_object(root, o, by_id, order, registry=None):
     oid = o["id"]
     ph, orb = o.get("physical") or {}, o.get("orbit") or {}
     cat = o["category"]
+    # 数据层自由文本译稿：按 id + 字段取出，再以「中文原文」为精确键供表格渲染。
+    # 源文案改动后这里查不到 → 单元保持中文，由 i18n.js 漂移检测暴露。
+    fmap = FIELD_EN.get("objects", {}).get(oid, {})
+    en_map = {}
+    for f in ("subtype", "note", "atmosphere", "spectral_type", "constellation",
+              "image_credit", "members", "host_star"):
+        v = o.get(f)
+        if isinstance(v, str) and v and fmap.get(f):
+            en_map[v] = fmap[f]
     L = []
     L.append("---")
     # SEO description 用 compact 格式控制长度，且必须给「直径」口径（v1.8 起）
@@ -683,7 +738,7 @@ def build_object(root, o, by_id, order, registry=None):
     L.append('  <div class="obj-hero-info">')
     L.append(f'    <span class="astro-badge {cat}">{CAT_ZH[cat]}</span>')
     L.append(f'    <h1>{o["name"]} <small>{o["name_en"]}</small></h1>')
-    L.append(f'    <p class="obj-tagline">{o["tagline"]}</p>')
+    L.append(f'    <p class="obj-tagline" data-obj-id="{o["id"]}">{o["tagline"]}</p>')
     # 速览摘要：只留 2 个最具辨识度的量，压成单行（compact 保证移动端不折成多行）。
     # 完整带辅单位的明细统一放在下面的「物理参数」表，避免同屏重复。
     summary = []
@@ -770,7 +825,7 @@ def build_object(root, o, by_id, order, registry=None):
     if o.get("constellation"):
         phys_rows.append(("星座", o["constellation"]))
     blocks = []
-    t = table_html(phys_rows)
+    t = table_html(phys_rows, en_map)
     if t:
         blocks.append(("物理参数", "physical", t))
 
@@ -783,7 +838,7 @@ def build_object(root, o, by_id, order, registry=None):
         ("转轴倾角", fmt_angle(orb.get("obliquity_deg"))),
         ("自转周期", fmt_rotation(orb.get("rotation_period_hours"))),
     ]
-    t = table_html(orows)
+    t = table_html(orows, en_map)
     if t:
         blocks.append(("轨道参数", "orbit", t))
 
@@ -822,7 +877,7 @@ def build_object(root, o, by_id, order, registry=None):
         f'{disc.get("discoverer")}，{disc.get("year")} 年' if disc.get("discoverer") else None)
     if disc_str:
         feat_rows.append(("发现", disc_str))
-    t = table_html(feat_rows)
+    t = table_html(feat_rows, en_map)
     if t:
         blocks.append(("其他特征", "features", t))
 
@@ -941,7 +996,10 @@ def build_data_page(data, objs):
     L.append("")
     L.append(f"数值数据整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料（公共领域或自由许可）；一句话简介为本站原创撰写。")
     L.append("")
+    # 「主要数据源：」与列表之间必须留空行，否则整段被 Markdown 塞进一个 <p>，
+    # 既渲染不出 <ul>，也让 i18n.js 按整串精确匹配的数据层译表无法命中。
     L.append("主要数据源：")
+    L.append("")
     for s in meta.get("primary_sources", []):
         L.append(f"- {s}")
     L.append("")
@@ -950,6 +1008,52 @@ def build_data_page(data, objs):
     L.append(f"{meta.get('pending', '—')}")
     L.append("")
     return "\n".join(L)
+
+
+# 全站双语：分类英文名与 i18n.js 的 CATS、universe-data.json 的 category_i18n 同口径
+CAT_EN = {"star": "Star", "planet": "Planet", "dwarf_planet": "Dwarf planet",
+          "moon": "Moon", "galaxy": "Galaxy", "nebula": "Nebula",
+          "cluster": "Cluster", "black_hole": "Black hole",
+          "structure": "Large-scale structure", "asteroid": "Asteroid",
+          "comet": "Comet", "exoplanet": "Exoplanet"}
+
+
+def build_i18n_data(data):
+    """docs/js/i18n-data.js — 全站双语数据（按 id 索引，不做名称匹配）。
+
+    i18n.js 只读这份数据：天体名 / 分类 / 一句话简介的中英双份。
+    tagline_en 缺省时该条只有中文，英文模式自动保留中文原文（安全降级）。
+    fields 是数据层自由文本（类型细分 / 备注 / 大气 / 星座 / 影像署名 / 来源清单）
+    的精确整串译表，按 astro.json 的 id + 字段从 i18n_fields.json 构造：
+    运行时只做「中文原文整串相等」查找，不是名称模糊匹配。
+    """
+    objs = data["objects"]
+    by_id = {o["id"]: o for o in objs}
+    fields = {}
+    for oid, fmap in FIELD_EN.get("objects", {}).items():
+        src = by_id.get(oid, {})
+        for f, en in fmap.items():
+            zh = src.get(f)
+            if isinstance(zh, str) and zh and isinstance(en, str) and en:
+                fields[zh] = en
+    for zh, en in zip(data["meta"].get("primary_sources", []),
+                      FIELD_EN.get("meta", {}).get("primary_sources", [])):
+        if en:
+            fields[zh] = en
+    p_zh = data["meta"].get("pending")
+    p_en = FIELD_EN.get("meta", {}).get("pending")
+    if p_zh and p_en:
+        fields[p_zh] = p_en
+    payload = {
+        "names": {o["id"]: [o["name"], o["name_en"]] for o in objs},
+        "cats": {k: [CAT_ZH[k], CAT_EN[k]] for k in CAT_ZH},
+        "taglines": {o["id"]: [o["tagline"], o.get("tagline_en") or None]
+                     for o in objs if o.get("tagline")},
+        "fields": fields,
+    }
+    return ("/* 由 scripts/gen_pages.py 从 docs/data/astro.json 生成，请勿手改 */\n"
+            "window.SITE_I18N_DATA = "
+            + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
 
 
 def build_csv(objs):
@@ -991,7 +1095,8 @@ def main():
 
     outputs = {"docs/index.md": build_index(data), "docs/data.md": build_data_page(data, objs),
                "docs/compare.md": build_compare(data),
-               "docs/objects/index.md": build_object_index(data)}
+               "docs/objects/index.md": build_object_index(data),
+               "docs/js/i18n-data.js": build_i18n_data(data)}
     for o in objs:
         outputs[f"docs/objects/{o['id']}.md"] = build_object(
             root, o, by_id, order, data.get("source_registry") or {})

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/callisto.webp" alt="木卫四" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA03456" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/callisto.webp" alt="木卫四" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA03456&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Galileo&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA03456" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫四 <small>Callisto</small></h1>
-    <p class="obj-tagline">太阳系撞击坑最密集的天体之一，表面几乎未被地质活动改造</p>
+    <p class="obj-tagline" data-obj-id="callisto">太阳系撞击坑最密集的天体之一，表面几乎未被地质活动改造</p>
     <p class="obj-summary">平均直径 4,821 km · 质量 1.08×10²³ kg</p>
   </div>
 </div>

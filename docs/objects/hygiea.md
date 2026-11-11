@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/hygiea.webp" alt="健神星" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img asteroid"><img src="../../assets/planets/hygiea.webp" alt="健神星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge asteroid">小行星</span>
     <h1>健神星 <small>Hygiea</small></h1>
-    <p class="obj-tagline">主小行星带大型小行星，曾被认定为矮行星候选天体</p>
+    <p class="obj-tagline" data-obj-id="hygiea">主小行星带大型小行星，曾被认定为矮行星候选天体</p>
     <p class="obj-summary">平均直径 434.0 km · 质量 8.3×10¹⁹ kg</p>
   </div>
 </div>
@@ -25,7 +25,7 @@ hide:
 <tr><th scope="row">质量</th><td>8.3×10¹⁹ kg（1.39×10⁻⁵ M⊕）</td></tr>
 <tr><th scope="row">平均直径</th><td>434.0 km（0.0341 × 地球直径）</td></tr>
 <tr><th scope="row">平均密度</th><td>1.93914 g/cm³</td></tr>
-<tr><th scope="row">星座</th><td>室女座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Virgo">室女座</td></tr>
 </tbody>
 </table>
 </section>

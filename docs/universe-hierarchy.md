@@ -70,6 +70,7 @@ hide:
 .uh-nm{font-weight:600;color:var(--md-default-fg-color,#e6edf6)}
 .uh-alias{font-weight:400;font-size:.78rem;margin-left:6px;
   color:var(--md-default-fg-color--light,#9aa6c4);opacity:.85}
+[data-lang="en"] .uh-alias[data-cn-only]{display:none}
 .uh-nm a{color:inherit;text-decoration:none}
 .uh-nm a:hover{text-decoration:underline}
 .uh-badge{font-size:.7rem;padding:1px 8px;border-radius:999px;color:#10202b;font-weight:700;white-space:nowrap}
@@ -137,7 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var CAT_SET = new Set();
   (function collect(n){ CAT_SET.add(nodeCat(n)); (n.children||[]).forEach(collect); })(DATA);
 
-  var lang = 'zh';
+  // 语言状态以全站 i18n.js 为准；独立打开本页 / jsdom 单测时退化为页面内切换
+  var lang = (window.SITE_LANG === 'en') ? 'en' : 'zh';
   var expanded = new Set();          // 存 id 路径，切换语言不失效
   var activeTypes = new Set();       // 存中文 category key，切换语言不失效
   var query = '';
@@ -163,6 +165,10 @@ document.addEventListener('DOMContentLoaded', function () {
     setText('uh-lang', t.lang);
     var q = document.getElementById('uh-q'); if (q) q.placeholder = t.search;
     var sec = document.getElementById('uh'); if (sec) sec.setAttribute('data-lang', lang);
+  }
+  function setLang(l){
+    lang = (l === 'en') ? 'en' : 'zh';
+    applyUI(); renderChips(); renderLegend(); renderCrumb(); render();
   }
   // 展开状态与筛选状态用 id / 受控 category，不依赖任何名称
   function pathOf(parent, id){ return parent ? parent + '/' + id : id; }
@@ -210,6 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
     } else nm.textContent = label;
     if (n.alias){
       var al = document.createElement('span'); al.className = 'uh-alias';
+      // 纯中文别名是中文习惯名（如「福波斯」），英文语境下 name_en 已是主名，
+      // 再显示中文只会重复；编号型别名（M42 / Sgr A*）在两种语言下都保留。
+      if (/[一-鿿]/.test(n.alias)) al.setAttribute('data-cn-only', '1');
       al.textContent = n.alias;
       nm.appendChild(al);
     }
@@ -286,9 +295,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.getElementById('uh-collapse').addEventListener('click', function (){ expanded.clear(); render(); });
   document.getElementById('uh-lang').addEventListener('click', function (){
-    lang = lang === 'zh' ? 'en' : 'zh';
-    applyUI(); renderChips(); renderLegend(); renderCrumb(); render();
+    var next = lang === 'zh' ? 'en' : 'zh';
+    if (window.setSiteLang) window.setSiteLang(next);   // 全站统一切换（会派发事件回来）
+    else setLang(next);                                 // 无 i18n.js 时降级为页内切换
   });
+  document.addEventListener('site:langchange', function (e){ setLang(e.detail.lang); });
 
   applyUI(); renderChips(); renderLegend(); render();
 });

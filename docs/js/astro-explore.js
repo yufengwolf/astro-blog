@@ -84,9 +84,15 @@
       if (!inShown[c.getAttribute('data-name')]) c.hidden = true;
     });
 
-    if (countEl) countEl.textContent = '显示 ' + shown.length + ' / ' + cards.length + ' 个天体';
+    if (countEl) {
+      var tpl = window.siteT ? window.siteT('objectCount') : '显示 {shown} / {total} 个天体';
+      countEl.textContent = tpl.replace('{shown}', shown.length).replace('{total}', cards.length);
+    }
     if (emptyEl) emptyEl.hidden = shown.length > 0;
   }
+
+  // 顶栏切换语言后重算计数文案（i18n.js 派发 site:langchange）
+  if (window.onSiteLang) window.onSiteLang(apply);
 
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/io.webp" alt="木卫一" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA02308" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/io.webp" alt="木卫一" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA02308&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Galileo&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA02308" target="_blank" rel="noopener">NASA/JPL · 伽利略</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>木卫一 <small>Io</small></h1>
-    <p class="obj-tagline">太阳系火山活动最剧烈的天体，表面遍布硫磺沉积物</p>
+    <p class="obj-tagline" data-obj-id="io">太阳系火山活动最剧烈的天体，表面遍布硫磺沉积物</p>
     <p class="obj-summary">平均直径 3,643 km · 质量 8.93×10²² kg</p>
   </div>
 </div>

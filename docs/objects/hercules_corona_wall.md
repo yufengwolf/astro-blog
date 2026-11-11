@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/hercules_corona_wall.webp" alt="武仙-北冕座长城" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/hercules_corona_wall.webp" alt="武仙-北冕座长城" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>武仙-北冕座长城 <small>Hercules–Corona Borealis Great Wall</small></h1>
-    <p class="obj-tagline">已知最大的宇宙结构之一，横跨百亿光年的星系巨墙</p>
+    <p class="obj-tagline" data-obj-id="hercules_corona_wall">已知最大的宇宙结构之一，横跨百亿光年的星系巨墙</p>
     <p class="obj-summary">直径（等效球径） 10,000,000,000 光年 · 质量 1.99×10⁴⁸ kg</p>
   </div>
 </div>
@@ -25,8 +25,8 @@ hide:
 <tr><th scope="row">质量</th><td>1.99×10⁴⁸ kg（1×10¹⁸ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>10,000,000,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>100 亿光年</td></tr>
-<tr><th scope="row">类型</th><td>宇宙长城（星系丝状结构）</td></tr>
-<tr><th scope="row">星座</th><td>武仙座 — 北冕座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Cosmic Wall (galaxy filamentary structure)">宇宙长城（星系丝状结构）</td></tr>
+<tr><th scope="row">星座</th><td data-en="Hercules — Corona Borealis">武仙座 — 北冕座</td></tr>
 </tbody>
 </table>
 </section>
@@ -35,8 +35,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>宇宙长城（星系丝状结构）</td></tr>
-<tr><th scope="row">备注</th><td>直径约 100 亿光年（共动尺度，口径存在争议）；2013 年基于伽马射线暴分布发现。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Cosmic Wall (galaxy filamentary structure)">宇宙长城（星系丝状结构）</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~10 billion light-years (comoving scale; size remains debated); discovered in 2013 based on gamma-ray burst distribution.">直径约 100 亿光年（共动尺度，口径存在争议）；2013 年基于伽马射线暴分布发现。</td></tr>
 <tr><th scope="row">发现</th><td>2013 年（Horvath 等发现）</td></tr>
 </tbody>
 </table>

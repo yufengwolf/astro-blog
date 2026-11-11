@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mirach.webp" alt="奎宿九" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mirach.webp" alt="奎宿九" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>奎宿九 <small>Mirach</small></h1>
-    <p class="obj-tagline">仙女座第二亮的星，通往仙女座大星系的路标</p>
+    <p class="obj-tagline" data-obj-id="mirach">仙女座第二亮的星，通往仙女座大星系的路标</p>
     <p class="obj-summary">直径 139,140,000 km · 质量 6.96×10³⁰ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>115.55 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,800 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M0III</td></tr>
-<tr><th scope="row">恒星类型</th><td>红巨星（M0III）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red giant (M0III)">红巨星（M0III）</td></tr>
 <tr><th scope="row">光度</th><td>6.89×10²⁹ W（1.8×10³ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>197 光年</td></tr>
-<tr><th scope="row">星座</th><td>仙女座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Andromeda">仙女座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>从它出发向东北跳两站就能找到仙女座大星系（M31），是深空观测的经典路标；它本身也是一颗光谱双星。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Jump two stations northeast from it to find the Andromeda Galaxy (M31), a classic landmark for deep-sky observation; it is itself a spectroscopic binary.">从它出发向东北跳两站就能找到仙女座大星系（M31），是深空观测的经典路标；它本身也是一颗光谱双星。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/deimos.webp" alt="火卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA11826" target="_blank" rel="noopener">NASA/JPL/UA · HiRISE</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/deimos.webp" alt="火卫二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA11826&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL/UA · HiRISE&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA11826" target="_blank" rel="noopener">NASA/JPL/UA · HiRISE</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>火卫二 <small>Deimos</small></h1>
-    <p class="obj-tagline">火星较小的卫星，形状极不规则，表面覆盖细腻的风化层</p>
+    <p class="obj-tagline" data-obj-id="deimos">火星较小的卫星，形状极不规则，表面覆盖细腻的风化层</p>
     <p class="obj-summary">平均直径 12.6 km · 质量 2.4×10¹⁵ kg</p>
   </div>
 </div>

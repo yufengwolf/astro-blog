@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/neptune.webp" alt="海王星" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA01492" target="_blank" rel="noopener">NASA/JPL</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img planet"><img src="../../assets/planets/neptune.webp" alt="海王星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA01492&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA01492" target="_blank" rel="noopener">NASA/JPL</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge planet">行星</span>
     <h1>海王星 <small>Neptune</small></h1>
-    <p class="obj-tagline">太阳系最外侧的行星，风速可达每小时 2100 公里</p>
+    <p class="obj-tagline" data-obj-id="neptune">太阳系最外侧的行星，风速可达每小时 2100 公里</p>
     <p class="obj-summary">平均直径 49,528 km · 质量 1.02×10²⁶ kg</p>
   </div>
 </div>

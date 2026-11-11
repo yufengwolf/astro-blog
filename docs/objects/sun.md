@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sun.webp" alt="太阳" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e002069" target="_blank" rel="noopener">NASA/SDO · AIA 极紫外成像</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sun.webp" alt="太阳" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/GSFC_20171208_Archive_e002069&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/SDO · AIA extreme ultraviolet imaging&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/GSFC_20171208_Archive_e002069" target="_blank" rel="noopener">NASA/SDO · AIA 极紫外成像</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>太阳 <small>Sun</small></h1>
-    <p class="obj-tagline">太阳系的中心恒星，独占太阳系总质量的 99.86%</p>
+    <p class="obj-tagline" data-obj-id="sun">太阳系的中心恒星，独占太阳系总质量的 99.86%</p>
     <p class="obj-summary">直径 1,391,400 km · 质量 1.99×10³⁰ kg</p>
   </div>
 </div>
@@ -40,7 +40,7 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>617.66 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>5,772 K</td></tr>
 <tr><th scope="row">光谱型</th><td>G2V</td></tr>
-<tr><th scope="row">恒星类型</th><td>黄矮星（G2V 主序星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Yellow dwarf (G2V main-sequence star)">黄矮星（G2V 主序星）</td></tr>
 <tr><th scope="row">光度</th><td>3.83×10²⁶ W（1 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>0 光年</td></tr>
 </tbody>
@@ -61,9 +61,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">大气成分</th><td>光球层：氢 90.97%、氦 8.89%（其余为氧、碳、氖等微量）</td></tr>
+<tr><th scope="row">大气成分</th><td data-en="Photosphere: hydrogen 90.97%, helium 8.89% (rest are trace elements such as oxygen, carbon, neon, etc.)">光球层：氢 90.97%、氦 8.89%（其余为氧、碳、氖等微量）</td></tr>
 <tr><th scope="row">全球磁场</th><td>是</td></tr>
-<tr><th scope="row">备注</th><td>【AI复校 2026-10-27：填充:distance_ly】</td></tr>
+<tr><th scope="row">备注</th><td data-en="[AI rechecked 2026-10-27: filled:distance_ly]">【AI复校 2026-10-27：填充:distance_ly】</td></tr>
 <tr><th scope="row">发现</th><td>史前</td></tr>
 </tbody>
 </table>

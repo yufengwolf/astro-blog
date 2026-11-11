@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img nebula"><img src="../../assets/planets/rosette.webp" alt="玫瑰星云" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA09268" target="_blank" rel="noopener">NASA/JPL-Caltech · 斯皮策红外玫瑰星云</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img nebula"><img src="../../assets/planets/rosette.webp" alt="玫瑰星云" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA09268&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL-Caltech · Spitzer Infrared Rosette Nebula&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA09268" target="_blank" rel="noopener">NASA/JPL-Caltech · 斯皮策红外玫瑰星云</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge nebula">星云</span>
     <h1>玫瑰星云 <small>Rosette Nebula</small></h1>
-    <p class="obj-tagline">麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云</p>
+    <p class="obj-tagline" data-obj-id="rosette">麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云</p>
     <p class="obj-summary">直径（等效球径） 130 光年</p>
   </div>
 </div>
@@ -24,8 +24,8 @@ hide:
 <tbody>
 <tr><th scope="row">直径（等效球径）</th><td>130 光年</td></tr>
 <tr><th scope="row">距离</th><td>5,000 光年</td></tr>
-<tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
-<tr><th scope="row">星座</th><td>麒麟座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
+<tr><th scope="row">星座</th><td data-en="Monoceros">麒麟座</td></tr>
 </tbody>
 </table>
 </section>
@@ -34,8 +34,8 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>发射星云（H II 区）</td></tr>
-<tr><th scope="row">备注</th><td>直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~130 light-years; a 2024 NOIRLab study proposed a closer distance (~2600 light-years) and smaller size (~55 light-years); the classical value is adopted here.">直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。</td></tr>
 <tr><th scope="row">发现</th><td>1690 年（Flamsteed 发现）</td></tr>
 </tbody>
 </table>

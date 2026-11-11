@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mu_cephei.webp" alt="造父四" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/mu_cephei.webp" alt="造父四" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>造父四 <small>Mu Cephei</small></h1>
-    <p class="obj-tagline">血红色的特超巨星，肉眼可见的最大恒星之一</p>
+    <p class="obj-tagline" data-obj-id="mu_cephei">血红色的特超巨星，肉眼可见的最大恒星之一</p>
     <p class="obj-summary">直径 1.75×10⁹ km · 质量 3.82×10³¹ kg</p>
   </div>
 </div>
@@ -28,10 +28,10 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>76.25 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,750 K</td></tr>
 <tr><th scope="row">光谱型</th><td>M2Ia</td></tr>
-<tr><th scope="row">恒星类型</th><td>红特超巨星（M2Ia）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Red supergiant (M2Ia)">红特超巨星（M2Ia）</td></tr>
 <tr><th scope="row">光度</th><td>1.19×10³² W（3.1×10⁵ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2,840 光年</td></tr>
-<tr><th scope="row">星座</th><td>仙王座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cepheus">仙王座</td></tr>
 </tbody>
 </table>
 </section>
@@ -40,7 +40,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>又名'石榴星'（Garnet Star），因石榴石般的血红色闻名；半径估计在 972~1650 R☉ 之间依口径而变，此处取 1260 R☉。它的紫外光几乎全被自身大气吸收。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Also known as the Garnet Star, famous for its garnet-like blood-red hue; its estimated radius ranges from 972~1650 R☉ depending on aperture, and 1260 R☉ is adopted here. Almost all of its ultraviolet light is absorbed by its own atmosphere.">又名'石榴星'（Garnet Star），因石榴石般的血红色闻名；半径估计在 972~1650 R☉ 之间依口径而变，此处取 1260 R☉。它的紫外光几乎全被自身大气吸收。</td></tr>
 <tr><th scope="row">发现</th><td>自古已知；1780 年代赫歇尔注意到其红色</td></tr>
 </tbody>
 </table>

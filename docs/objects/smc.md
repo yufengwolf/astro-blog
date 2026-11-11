@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/smc.webp" alt="小麦哲伦云" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA25164" target="_blank" rel="noopener">ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · 小麦哲伦云红外合成（Herschel/Planck/IRAS/COBE）</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img galaxy"><img src="../../assets/planets/smc.webp" alt="小麦哲伦云" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA25164&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · Small Magellanic Cloud infrared composite (Herschel/Planck/IRAS/COBE)&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA25164" target="_blank" rel="noopener">ESA/NASA/JPL-Caltech/CSIRO/NANTEN2 · 小麦哲伦云红外合成（Herschel/Planck/IRAS/COBE）</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge galaxy">星系</span>
     <h1>小麦哲伦云 <small>Small Magellanic Cloud</small></h1>
-    <p class="obj-tagline">大麦哲伦云的伴侣，南天第二矮星系</p>
+    <p class="obj-tagline" data-obj-id="smc">大麦哲伦云的伴侣，南天第二矮星系</p>
     <p class="obj-summary">直径（等效球径） 7,000 光年 · 质量 1.29×10⁴⁰ kg</p>
   </div>
 </div>
@@ -25,8 +25,8 @@ hide:
 <tr><th scope="row">质量</th><td>1.29×10⁴⁰ kg（6.5×10⁹ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>7,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>20 万光年</td></tr>
-<tr><th scope="row">类型</th><td>不规则矮星系</td></tr>
-<tr><th scope="row">星座</th><td>杜鹃座</td></tr>
+<tr><th scope="row">类型</th><td data-en="Irregular dwarf galaxy">不规则矮星系</td></tr>
+<tr><th scope="row">星座</th><td data-en="Tucana">杜鹃座</td></tr>
 </tbody>
 </table>
 </section>
@@ -35,9 +35,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>不规则矮星系</td></tr>
-<tr><th scope="row">已知成员</th><td>数亿颗恒星</td></tr>
-<tr><th scope="row">备注</th><td>直径约 7000 光年；与大麦哲伦云之间有气体桥相连。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Irregular dwarf galaxy">不规则矮星系</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="Hundreds of millions of stars">数亿颗恒星</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter approx. 7000 light-years; connected to the Large Magellanic Cloud by a gas bridge.">直径约 7000 光年；与大麦哲伦云之间有气体桥相连。</td></tr>
 <tr><th scope="row">发现</th><td>1519 年（麦哲伦环球记录）</td></tr>
 </tbody>
 </table>

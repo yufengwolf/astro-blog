@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/hamal.webp" alt="娄宿三" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/hamal.webp" alt="娄宿三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>娄宿三 <small>Hamal</small></h1>
-    <p class="obj-tagline">白羊座最亮的星，一颗步入暮年的橙巨星</p>
+    <p class="obj-tagline" data-obj-id="hamal">白羊座最亮的星，一颗步入暮年的橙巨星</p>
     <p class="obj-summary">直径 21,135,366 km · 质量 2.84×10³⁰ kg</p>
   </div>
 </div>
@@ -28,9 +28,9 @@ hide:
 <tr><th scope="row">逃逸速度</th><td>189.51 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>4,553 K</td></tr>
 <tr><th scope="row">光谱型</th><td>K2III</td></tr>
-<tr><th scope="row">恒星类型</th><td>橙巨星（K2III）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Orange giant (K2III)">橙巨星（K2III）</td></tr>
 <tr><th scope="row">距离</th><td>66 光年</td></tr>
-<tr><th scope="row">星座</th><td>白羊座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Aries">白羊座</td></tr>
 </tbody>
 </table>
 </section>
@@ -48,7 +48,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。 【AI复校 2026-10-27：置空:physical/lum_sun; 填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="The brightest star in Aries, with a mass only slightly larger than the Sun, yet its radius has expanded to about 15 times; the vernal equinox was near it more than two thousand years ago, hence the name &#x27;Age of Aries&#x27;. 【AI Review 2026-10-27: Clear:physical/lum_sun; Fill:orbit/rotation_period_hours】">白羊座最亮的星，质量仅比太阳大一点，半径却已膨胀到约 15 倍；两千多年前春分点就位于它附近，'白羊座时代'因此得名。 【AI复校 2026-10-27：置空:physical/lum_sun; 填充:orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/local_group.webp" alt="本星系群" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img structure"><img src="../../assets/planets/local_group.webp" alt="本星系群" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge structure">大尺度结构</span>
     <h1>本星系群 <small>Local Group</small></h1>
-    <p class="obj-tagline">银河系所属的星系社群，80 多个星系的小团体</p>
+    <p class="obj-tagline" data-obj-id="local_group">银河系所属的星系社群，80 多个星系的小团体</p>
     <p class="obj-summary">直径（等效球径） 10,000,000 光年 · 质量 5.97×10⁴² kg</p>
   </div>
 </div>
@@ -24,7 +24,7 @@ hide:
 <tbody>
 <tr><th scope="row">质量</th><td>5.97×10⁴² kg（3×10¹² M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>10,000,000 光年</td></tr>
-<tr><th scope="row">类型</th><td>星系群</td></tr>
+<tr><th scope="row">类型</th><td data-en="Galaxy Group">星系群</td></tr>
 </tbody>
 </table>
 </section>
@@ -33,9 +33,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">类型</th><td>星系群</td></tr>
-<tr><th scope="row">已知成员</th><td>80 余个星系（含银河系、仙女座、三角座、大小麦哲伦云等）</td></tr>
-<tr><th scope="row">备注</th><td>直径约 1000 万光年；总质量估值 2~5×10¹² M☉（银河系 + 仙女座合计已约 3×10¹² M☉）。</td></tr>
+<tr><th scope="row">类型</th><td data-en="Galaxy Group">星系群</td></tr>
+<tr><th scope="row">已知成员</th><td data-en="more than 80 galaxies (including the Milky Way, Andromeda, Triangulum, Large and Small Magellanic Clouds, etc.)">80 余个星系（含银河系、仙女座、三角座、大小麦哲伦云等）</td></tr>
+<tr><th scope="row">备注</th><td data-en="diameter about 10 million light-years; total mass estimated at 2~5×10¹² M☉ (the Milky Way + Andromeda combined is already about 3×10¹² M☉).">直径约 1000 万光年；总质量估值 2~5×10¹² M☉（银河系 + 仙女座合计已约 3×10¹² M☉）。</td></tr>
 <tr><th scope="row">发现</th><td>1920 年代（哈勃确立河外星系后）</td></tr>
 </tbody>
 </table>

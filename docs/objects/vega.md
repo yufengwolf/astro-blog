@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/vega.webp" alt="织女星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/vega.webp" alt="织女星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>织女星 <small>Vega</small></h1>
-    <p class="obj-tagline">天琴座α，夏季大三角的顶点，一颗 A 型主序星，曾是北极星</p>
+    <p class="obj-tagline" data-obj-id="vega">天琴座α，夏季大三角的顶点，一颗 A 型主序星，曾是北极星</p>
     <p class="obj-summary">直径 3,283,704 km · 质量 4.26×10³⁰ kg</p>
   </div>
 </div>
@@ -39,11 +39,11 @@ hide:
 <tr><th scope="row">表面重力</th><td>105.35 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>588.17 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>9,600 K</td></tr>
-<tr><th scope="row">光谱型</th><td>A0V（主序星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白主序星（A0V）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="A0V (main-sequence star)">A0V（主序星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="blue-white main-sequence star (A0V)">蓝白主序星（A0V）</td></tr>
 <tr><th scope="row">光度</th><td>1.53×10²⁸ W（40 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>25 光年</td></tr>
-<tr><th scope="row">星座</th><td>天琴座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Lyra">天琴座</td></tr>
 </tbody>
 </table>
 </section>
@@ -61,7 +61,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
+<tr><th scope="row">备注</th><td data-en="【AI Review 2026-10-27：Fill:orbit/rotation_period_hours】">【AI复校 2026-10-27：填充:orbit/rotation_period_hours】</td></tr>
 <tr><th scope="row">发现</th><td>史前</td></tr>
 </tbody>
 </table>

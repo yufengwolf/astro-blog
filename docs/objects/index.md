@@ -167,10 +167,10 @@ description: "本站收录的全部 177 个天体的关键数据总表：质量�
 | [婚神星](juno.md) | 小行星 | <a href="sun.md">太阳</a> | 2.67×10¹⁹ kg | 272.0 km | 2.534 g/cm³ | 163 K | — | 4.4 年（1,592 天） | 0 |
 | [健神星](hygiea.md) | 小行星 | <a href="sun.md">太阳</a> | 8.3×10¹⁹ kg | 434.0 km | 1.93914 g/cm³ | 160 K | — | 5.6 年（2,031 天） | 0 |
 | [赛德娜](sedna.md) | 矮行星 | <a href="sun.md">太阳</a> | 1×10²¹ kg | 1,990 km | 0.24235 g/cm³ | 12 K | 0 光年 | 11400.0 年（4,163,850 天） | 0 |
-| [阋卫一](disnomia.md) | 卫星 | <a href="eris.md">阋神星</a> | 8.2×10¹⁹ kg | 700.0 km | 1.4 g/cm³ | 30 K | 96 光年 | 13.9 天 | 0 |
+| [阋卫一](disnomia.md) | 卫星 | <a href="eris.md">阋神星</a> | 8.2×10¹⁹ kg | 700.0 km | 0.456584 g/cm³ | 30 K | 96 光年 | 15.8 天 | 0 |
 | [创神星](quaoar.md) | 矮行星 | <a href="sun.md">太阳</a> | 1.2×10²¹ kg | 1,110 km | 1.67577 g/cm³ | 42 K | 44 光年 | 287.5 年（105,009 天） | 1 |
 | [凯龙星](chiron.md) | 小行星 | <a href="sun.md">太阳</a> | 3.7×10¹⁸ kg | 212.0 km | 0.741644 g/cm³ | 90 K | 0 光年 | 50.4 年（18,416 天） | — |
-| [OJ 287](oj_287.md) | 黑洞 | — | 3.65×10⁴¹ kg | 0.115 光年 | — | — | 40 亿光年 | 11.9 年（4,354 天） | — |
+| [OJ 287](oj_287.md) | 黑洞 | — | 3.65×10⁴⁰ kg | 1.08×10¹¹ km | — | — | 40 亿光年 | 11.9 年（4,354 天） | — |
 | [J2157-3602](j2157-3602.md) | 黑洞 | — | 6.76×10⁴⁰ kg | 2.01×10¹¹ km | — | — | 124 亿光年 | — | — |
 | [凤凰座A](phoenix_a.md) | 黑洞 | — | 1.99×10⁴¹ kg | 5.91×10¹¹ km | — | — | 57 亿光年 | — | — |
 | [盖亚BH1](gaia_bh1.md) | 黑洞 | — | 1.95×10³¹ kg | 57.9 km | — | — | 1,560 光年 | — | — |
@@ -179,17 +179,17 @@ description: "本站收录的全部 177 个天体的关键数据总表：质量�
 | [开普勒452b](kepler_452b.md) | 行星 | <a href="kepler_452.md">开普勒452</a> | — | 25,200 km | — | 265 K | 1,402 光年 | 151.2 天 | — |
 | [开普勒22b](kepler_22b.md) | 行星 | <a href="kepler_22.md">开普勒22</a> | — | 30,400 km | — | 262 K | 620 光年 | 233.8 天 | — |
 | [K2-18 b](k2-18_b.md) | 行星 | — | — | — | 2.6 g/cm³ | 270 K | 124 光年 | — | — |
-| [LHS 1140 b](lhs_1140_b.md) | 行星 | — | 3.34×10²⁵ kg | 21,845 km | 7.8 g/cm³ | 226 K | — | — | — |
-| [WASP-12 b](wasp-12_b.md) | 行星 | — | 1.51×10²⁷ kg | 296,000 km | 0.24 g/cm³ | 2,600 K | 1,410 光年 | 3.5 天 | — |
-| [巨蟹座55e](55_cancri_e.md) | 行星 | <a href="cancri_55.md">巨蟹座55</a> | 4.02×10²⁵ kg | 25,000 km | 5.9 g/cm³ | 2,400 K | 40 光年 | 3.4 天 | — |
-| [HD 189733 b](hd_189733_b.md) | 行星 | — | 1.13×10²⁷ kg | 152,800 km | 0.95 g/cm³ | 1,200 K | 64 光年 | 11.3 天 | — |
+| [LHS 1140 b](lhs_1140_b.md) | 行星 | — | 3.34×10²⁵ kg | 22,068 km | 5.9432 g/cm³ | 226 K | — | 24.7 天 | — |
+| [WASP-12 b](wasp-12_b.md) | 行星 | — | 2.79×10²⁷ kg | 280,964 km | 0.240267 g/cm³ | 2,600 K | 1,410 光年 | 1.09 天 | — |
+| [巨蟹座55e](55_cancri_e.md) | 行星 | <a href="cancri_55.md">巨蟹座55</a> | 4.77×10²⁵ kg | 23,918 km | 6.66061 g/cm³ | 2,400 K | 40 光年 | 0.74 天 | — |
+| [HD 189733 b](hd_189733_b.md) | 行星 | — | 2.14×10²⁷ kg | 161,572 km | 0.971199 g/cm³ | 1,200 K | 64 光年 | 2.2 天 | — |
 | [WASP-107 b](wasp_107_b.md) | 行星 | — | — | — | 0.12 g/cm³ | 730 K | 200 光年 | — | — |
-| [开普勒16b](kepler_16b.md) | 行星 | — | 1.04×10²⁷ kg | 120,600 km | 0.964 g/cm³ | 288 K | 245 光年 | 230.8 天 | — |
+| [开普勒16b](kepler_16b.md) | 行星 | — | 6.32×10²⁶ kg | 107,781 km | 0.964142 g/cm³ | 288 K | 245 光年 | 228.8 天 | — |
 
-<details class="obj-fields">
-<summary>字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）</summary>
+<details class="obj-fields" markdown="1">
+<summary data-en="Field reference (raw units in the CSV: mass kg · radius km · density g/cm³ · temperature °C · semi-major axis km · period days · moon count)">字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）</summary>
 
-<p><strong>注意：</strong>本表描述的是 <code>astro.json</code> / CSV 的<strong>原始字段</strong>。<code>radius_km</code> 存的是<strong>半径</strong>；页面与卡片统一按「直径 = 2 × 半径」展示，主单位按量级自动切换 km / 光年，并辅以地球或太阳直径倍数、M⊕ / M☉、℃ 括注。</p>
+<p data-en-html="&lt;strong&gt;Note:&lt;/strong&gt; this table describes the &lt;strong&gt;raw fields&lt;/strong&gt; in &lt;code&gt;astro.json&lt;/code&gt; / CSV. &lt;code&gt;radius_km&lt;/code&gt; stores the &lt;strong&gt;radius&lt;/strong&gt;; pages and cards show &lt;strong&gt;diameter = 2 × radius&lt;/strong&gt;, switching the primary unit between km and light-years by magnitude, with Earth/Solar diameter multiples, M⊕ / M☉ and °C annotations."><strong>注意：</strong>本表描述的是 <code>astro.json</code> / CSV 的<strong>原始字段</strong>。<code>radius_km</code> 存的是<strong>半径</strong>；页面与卡片统一按「直径 = 2 × 半径」展示，主单位按量级自动切换 km / 光年，并辅以地球或太阳直径倍数、M⊕ / M☉、℃ 括注。</p>
 
 | 字段 | 含义 | 单位 |
 |---|---|---|

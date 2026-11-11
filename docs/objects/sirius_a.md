@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_a.webp" alt="天狼星A" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/sirius_a.webp" alt="天狼星A" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>天狼星A <small>Sirius A</small></h1>
-    <p class="obj-tagline">大犬座α的主星，夜空中最亮的恒星，一颗 A 型主序星</p>
+    <p class="obj-tagline" data-obj-id="sirius_a">大犬座α的主星，夜空中最亮的恒星，一颗 A 型主序星</p>
     <p class="obj-summary">直径 2,379,294 km · 质量 4.1×10³⁰ kg</p>
   </div>
 </div>
@@ -39,11 +39,11 @@ hide:
 <tr><th scope="row">表面重力</th><td>193.16 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>677.93 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>9,940 K</td></tr>
-<tr><th scope="row">光谱型</th><td>A1V（主序星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>蓝白主序星（A1V）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="A1V (main-sequence star)">A1V（主序星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="blue-white main-sequence star (A1V)">蓝白主序星（A1V）</td></tr>
 <tr><th scope="row">光度</th><td>9.57×10²⁷ W（25 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>9 光年</td></tr>
-<tr><th scope="row">星座</th><td>大犬座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Canis Major">大犬座</td></tr>
 </tbody>
 </table>
 </section>

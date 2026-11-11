@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/sedna.webp" alt="赛德娜" loading="lazy"></div><div class="astro-img-credit">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img dwarf_planet"><img src="../../assets/planets/sedna.webp" alt="赛德娜" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge dwarf_planet">矮行星</span>
     <h1>赛德娜 <small>Sedna</small></h1>
-    <p class="obj-tagline">外海王星矮行星，轨道极扁，远日点极其遥远</p>
+    <p class="obj-tagline" data-obj-id="sedna">外海王星矮行星，轨道极扁，远日点极其遥远</p>
     <p class="obj-summary">平均直径 1,990 km · 质量 1×10²¹ kg</p>
   </div>
 </div>
@@ -28,7 +28,7 @@ hide:
 <tr><th scope="row">表面重力</th><td>0.07 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>0.366 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>12 K（-261.1 °C）</td></tr>
-<tr><th scope="row">星座</th><td>鲸鱼座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Cetus">鲸鱼座</td></tr>
 </tbody>
 </table>
 </section>
@@ -59,7 +59,7 @@ hide:
 
 <section class="obj-source">
   <h2>数据来源</h2>
-  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Sedna" target="_blank" rel="noopener">Wikipedia · Sedna</a>；核对日期：2026-10-27。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Sedna" target="_blank" rel="noopener">Wikipedia · Sedna</a>、<a href="https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=90377" target="_blank" rel="noopener">NASA/JPL Small-Body Database · 90377 Sedna</a>；核对日期：2026-10-27。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../hygiea/">健神星</a></p>

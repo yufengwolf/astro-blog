@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div><div class="astro-img-credit">影像：<a href="https://images.nasa.gov/details/PIA00347" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img moon"><img src="../../assets/planets/enceladus.webp" alt="土卫二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: &lt;a href=&quot;https://images.nasa.gov/details/PIA00347&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NASA/JPL · Voyager 2&lt;/a&gt;">影像：<a href="https://images.nasa.gov/details/PIA00347" target="_blank" rel="noopener">NASA/JPL · 旅行者 2 号</a></div></div>
   <div class="obj-hero-info">
     <span class="astro-badge moon">卫星</span>
     <h1>土卫二 <small>Enceladus</small></h1>
-    <p class="obj-tagline">南极喷泉将地下海洋的物质直接送入太空的冰质小卫星</p>
+    <p class="obj-tagline" data-obj-id="enceladus">南极喷泉将地下海洋的物质直接送入太空的冰质小卫星</p>
     <p class="obj-summary">平均直径 504.2 km · 质量 1.08×10²⁰ kg</p>
   </div>
 </div>

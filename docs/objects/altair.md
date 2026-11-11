@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/altair.webp" alt="河鼓二" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/altair.webp" alt="河鼓二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>河鼓二 <small>Altair</small></h1>
-    <p class="obj-tagline">牛郎星，夏季大三角的一角，扁球状飞速自转</p>
+    <p class="obj-tagline" data-obj-id="altair">牛郎星，夏季大三角的一角，扁球状飞速自转</p>
     <p class="obj-summary">质量 3.7×10³⁰ kg</p>
   </div>
 </div>
@@ -37,10 +37,10 @@ hide:
 <tr><th scope="row">质量</th><td>3.7×10³⁰ kg（1.86 M☉）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>7,700 K</td></tr>
 <tr><th scope="row">光谱型</th><td>A7Vn</td></tr>
-<tr><th scope="row">恒星类型</th><td>白主序星（A7Vn）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="White main-sequence star (A7Vn)">白主序星（A7Vn）</td></tr>
 <tr><th scope="row">光度</th><td>4.06×10²⁷ W（10.6 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>17 光年</td></tr>
-<tr><th scope="row">星座</th><td>天鹰座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Aquila">天鹰座</td></tr>
 </tbody>
 </table>
 </section>
@@ -58,7 +58,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>夏季大三角的一角。约 7.77 小时一圈的自转把它甩成扁球（赤道半径比极半径大约 25%），干涉测量已直接证实这一形变；与织女星隔银河相望的传说广为流传。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】</td></tr>
+<tr><th scope="row">备注</th><td data-en="One vertex of the Summer Triangle. Its rotation period of about 7.77 hours distorts it into an oblate spheroid (equatorial radius roughly 25% larger than polar radius), a deformation confirmed directly by interferometry; the folklore that it faces Vega across the Milky Way is widely known. 【AI Review 2026-10-27：Clear:physical/radius_sun,physical/radius_km】">夏季大三角的一角。约 7.77 小时一圈的自转把它甩成扁球（赤道半径比极半径大约 25%），干涉测量已直接证实这一形变；与织女星隔银河相望的传说广为流传。 【AI复校 2026-10-27：置空:physical/radius_sun,physical/radius_km】</td></tr>
 <tr><th scope="row">发现</th><td>自古已知</td></tr>
 </tbody>
 </table>

@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pistol_star.webp" alt="手枪星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/pistol_star.webp" alt="手枪星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>手枪星 <small>Pistol Star</small></h1>
-    <p class="obj-tagline">银河系中心附近的蓝色特超巨星，曾抛出手枪星云，是已知最明亮的恒星之一</p>
+    <p class="obj-tagline" data-obj-id="pistol_star">银河系中心附近的蓝色特超巨星，曾抛出手枪星云，是已知最明亮的恒星之一</p>
     <p class="obj-summary">直径 428,551,200 km</p>
   </div>
 </div>
@@ -24,11 +24,11 @@ hide:
 <tbody>
 <tr><th scope="row">平均直径</th><td>428,551,200 km（308 × 太阳直径）</td></tr>
 <tr><th scope="row">平均表面温度</th><td>11,800 K</td></tr>
-<tr><th scope="row">光谱型</th><td>LBV（蓝色特超巨星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>高光度蓝变星（LBV）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="LBV (Blue Supergiant)">LBV（蓝色特超巨星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="Luminous blue variable (LBV)">高光度蓝变星（LBV）</td></tr>
 <tr><th scope="row">光度</th><td>6.35×10³² W（1.66×10⁶ L☉）</td></tr>
 <tr><th scope="row">距离</th><td>2 万光年</td></tr>
-<tr><th scope="row">星座</th><td>人马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Sagittarius">人马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -37,7 +37,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】</td></tr>
+<tr><th scope="row">备注</th><td data-en="[AI Reproduced 2026-10-27: physical/mass_sun, physical/mass_kg set to empty]">【AI复校 2026-10-27：置空:physical/mass_sun,physical/mass_kg】</td></tr>
 <tr><th scope="row">发现</th><td>1990 年代（哈勃发现）</td></tr>
 </tbody>
 </table>

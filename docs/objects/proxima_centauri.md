@@ -5,11 +5,11 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/proxima_centauri.webp" alt="比邻星" loading="lazy"></div><div class="astro-img-credit">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/proxima_centauri.webp" alt="比邻星" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
     <span class="astro-badge star">恒星</span>
     <h1>比邻星 <small>Proxima Centauri</small></h1>
-    <p class="obj-tagline">半人马座α三星系统的成员，距离太阳最近的恒星，一颗暗弱的红矮星</p>
+    <p class="obj-tagline" data-obj-id="proxima_centauri">半人马座α三星系统的成员，距离太阳最近的恒星，一颗暗弱的红矮星</p>
     <p class="obj-summary">直径 214,276 km · 质量 2.43×10²⁹ kg</p>
   </div>
 </div>
@@ -39,11 +39,11 @@ hide:
 <tr><th scope="row">表面重力</th><td>1410.47 m/s²</td></tr>
 <tr><th scope="row">逃逸速度</th><td>549.75 km/s</td></tr>
 <tr><th scope="row">平均表面温度</th><td>3,040 K</td></tr>
-<tr><th scope="row">光谱型</th><td>M5.5Ve（红矮星）</td></tr>
-<tr><th scope="row">恒星类型</th><td>红矮星（M5.5Ve）</td></tr>
+<tr><th scope="row">光谱型</th><td data-en="M5.5Ve (red dwarf)">M5.5Ve（红矮星）</td></tr>
+<tr><th scope="row">恒星类型</th><td data-en="red dwarf (M5.5Ve)">红矮星（M5.5Ve）</td></tr>
 <tr><th scope="row">光度</th><td>6.51×10²³ W（0.0017 L☉）</td></tr>
 <tr><th scope="row">距离</th><td>4 光年</td></tr>
-<tr><th scope="row">星座</th><td>半人马座</td></tr>
+<tr><th scope="row">星座</th><td data-en="Centaurus">半人马座</td></tr>
 </tbody>
 </table>
 </section>
@@ -52,9 +52,9 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">半长轴</th><td>1,944,772,319,100 km</td></tr>
+<tr><th scope="row">半长轴</th><td>1,301,501,475,090 km</td></tr>
 <tr><th scope="row">轨道周期</th><td>547000.0 年（199,791,750 天）</td></tr>
-<tr><th scope="row">平均轨道速度</th><td>0.500 km/s</td></tr>
+<tr><th scope="row">平均轨道速度</th><td>0.443 km/s</td></tr>
 <tr><th scope="row">轨道偏心率</th><td>0.5</td></tr>
 </tbody>
 </table>
@@ -64,7 +64,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
-<tr><th scope="row">备注</th><td>【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】</td></tr>
+<tr><th scope="row">备注</th><td data-en="【AI Review 2026-10-27：Fill:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】 【2026-11-11 Authority Source Verification: Kervella et al. 2016 gives a=8700(+700/-400) AU、P=547000 yr、e=0.50; the original 13000 AU was the instantaneous linear separation at that time instead of the semi-major axis, and the orbital velocity has been recalculated according to a/P/e】">【AI复校 2026-10-27：填充:orbit/semimajor_axis_au,orbit/orbital_period_years,orbit/orbital_velocity_km_s,orbit/eccentricity】 【2026-11-11 权威源核查：Kervella et al. 2016 给出 a=8700(+700/-400) AU、P=547000 yr、e=0.50；原 13000 AU 是当时的瞬时线性分离而非半长轴，已按 a/P/e 重算轨道速度】</td></tr>
 <tr><th scope="row">发现</th><td>1915（Innes）</td></tr>
 </tbody>
 </table>
@@ -73,7 +73,7 @@ hide:
 
 <section class="obj-source">
   <h2>数据来源</h2>
-  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Proxima_Centauri" target="_blank" rel="noopener">Wikipedia · Proxima Centauri</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Proxima_Centauri" target="_blank" rel="noopener">Wikipedia · Proxima Centauri</a>、<a href="https://arxiv.org/abs/1611.03495" target="_blank" rel="noopener">Kervella et al. 2016 · Proxima's orbit around α Centauri (A&A 598, L7)</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../sirius_a/">天狼星A</a></p>
