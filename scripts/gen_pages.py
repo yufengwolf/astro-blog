@@ -608,8 +608,14 @@ def build_compare(data):
     L.append("")
     L.append("# 天体对比")
     L.append("")
-    L.append(f"选择任意两个天体（可按类型筛选），下方会按**真实直径比例**绘制它们的球体，并列出体积、质量等关键数据的直观倍数。"
-             f"尺寸悬殊时较小的一方会按比例缩为**一个点**（附实际倍数说明），不再失真放大；本站收录的 {n} 个天体均可参与对比。")
+    en_intro = (f"Pick any two objects (filterable by type); below, spheres are drawn to true diameter scale, "
+               f"listing intuitive multiples of volume, mass and other key data. When sizes differ vastly, "
+               f"the smaller one is scaled to a dot (with actual ratio noted), avoiding distortion; "
+               f"all {n} catalogued objects can be compared.")
+    zh_intro = (f"选择任意两个天体（可按类型筛选），下方会按<strong>真实直径比例</strong>绘制它们的球体，"
+               f"并列出体积、质量等关键数据的直观倍数。尺寸悬殊时较小的一方会按比例缩为<strong>一个点</strong>"
+               f"（附实际倍数说明），不再失真放大；本站收录的 {n} 个天体均可参与对比。")
+    L.append(f'<p data-en="{en_intro}">{zh_intro}</p>')
     L.append("")
     L.append('<div class="sizecmp-bar">')
     L.append('  <div class="sizecmp-pick">')

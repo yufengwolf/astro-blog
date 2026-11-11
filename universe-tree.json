@@ -228,13 +228,14 @@
                               "repo_id": "eta_carinae"
                             },
                             {
-                              "id": "c.canopus",
+                              "id": "canopus",
                               "name": "老人星",
                               "name_en": "Canopus",
                               "type": "亮巨星",
                               "category": "恒星",
                               "info": "全天第二亮恒星，光谱型 A9 II",
-                              "source": "NASA"
+                              "source": "NASA",
+                              "repo_id": "canopus"
                             }
                           ]
                         },
@@ -916,13 +917,14 @@
                                   ]
                                 },
                                 {
-                                  "id": "c.barnard-s-star",
+                                  "id": "barnard_s_star",
                                   "name": "巴纳德星",
                                   "name_en": "Barnard's Star",
                                   "type": "M4V 红矮星",
                                   "category": "恒星",
                                   "info": "距离约 5.96 光年，自行极高；巴纳德星 b 已证伪",
-                                  "source": "NASA"
+                                  "source": "NASA",
+                                  "repo_id": "barnard_s_star"
                                 },
                                 {
                                   "id": "c.sirius",

@@ -1,18 +1,18 @@
 ---
-description: "收录 177 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 179 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">177 个天体的质量、直径、密度、温度</p>
+  <p class="astro-hero-sub">179 个天体的质量、直径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部 177</button>
-    <button type="button" class="chip" data-filter="star">恒星 56</button>
+    <button type="button" class="chip active" data-filter="all">全部 179</button>
+    <button type="button" class="chip" data-filter="star">恒星 58</button>
     <button type="button" class="chip" data-filter="planet">行星 19</button>
     <button type="button" class="chip" data-filter="dwarf_planet">矮行星 9</button>
     <button type="button" class="chip" data-filter="moon">卫星 23</button>
@@ -1986,6 +1986,28 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
+  <article class="astro-card" data-category="star" data-name="老人星 Canopus" data-mass="1.591136e+31" data-radius="49394700.0" data-density="3.152e-05" data-temp="7126.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/canopus/">
+      <div class="astro-img star"><img src="assets/planets/canopus.webp" alt="老人星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">老人星<span class="en">Canopus</span></div>
+        <p class="astro-card-tagline">船底座α，全天第二亮恒星，A9 II 型亮巨星，距地球约 310 光年</p>
+        <div class="astro-card-stats"><span>1.59×10³¹ kg</span><span>98,789,400 km</span><span>4.1×10³⁰ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="巴纳德星 Barnard's Star" data-mass="2.8640447999999997e+29" data-radius="136357.2" data-density="26.96851131" data-temp="2860.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/barnard_s_star/">
+      <div class="astro-img star"><img src="assets/planets/barnard_s_star.webp" alt="巴纳德星" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">巴纳德星<span class="en">Barnard's Star</span></div>
+        <p class="astro-card-tagline">蛇夫座红矮星（M4V），距太阳仅约 5.96 光年，以极高的自行著称</p>
+        <div class="astro-card-stats"><span>2.86×10²⁹ kg</span><span>272,714 km</span><span>1.34×10²⁴ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
 </div>
 <p class="astro-empty" id="astro-empty" hidden>没有匹配的天体，换个关键词或分类试试。</p>
 
@@ -2007,4 +2029,4 @@ description: "收录 177 个天体的结构化数据：质量、直径、密度�
   <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-11）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.9 · 收录 177 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.9 · 收录 179 个天体（全部配图）</p>

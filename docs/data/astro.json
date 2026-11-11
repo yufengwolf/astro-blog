@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-11-11",
-    "object_count": 177,
+    "object_count": 179,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -11012,6 +11012,130 @@
       "image_locked": false,
       "host_star": "开普勒16",
       "tagline_en": "Exoplanet orbiting binary Kepler-16, the first confirmed circumbinary planet"
+    },
+    {
+      "id": "canopus",
+      "name": "老人星",
+      "name_en": "Canopus",
+      "category": "star",
+      "parent": null,
+      "tagline": "船底座α，全天第二亮恒星，A9 II 型亮巨星，距地球约 310 光年",
+      "physical": {
+        "mass_kg": 1.591136e+31,
+        "radius_km": 49394700.0,
+        "density_g_cm3": 3.152e-05,
+        "gravity_m_s2": 0.4352,
+        "escape_velocity_km_s": 207.3584,
+        "mean_temp_c": 7126.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A9 II",
+      "luminosity_w": 4.09596e+30,
+      "distance_ly": 310.0,
+      "constellation": "船底座",
+      "discovery": {
+        "known_since": "史前",
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "doubao_astro"
+      ],
+      "verified": "2026-11-11",
+      "article": null,
+      "image": "assets/planets/canopus.webp",
+      "source_dates": {
+        "doubao_astro": "2026-11-11"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_locked": false,
+      "subtype": "A9 II 亮巨星（F型亮巨星候选）",
+      "members": 1,
+      "image_source": "doubao_template",
+      "data_source": "llm_doubao",
+      "data_verified": false,
+      "tagline_en": "Alpha Carinae, second-brightest star in the night sky, an A9 II bright giant about 310 light-years away",
+      "note": "光谱型存在 A9 II 与 F0 Ib/II 的分类分歧；质量由演化轨迹反推，文献给出 8–10 M☉；光度受热改正与消光影响，另有 13300–15000 L☉ 的估计；距离来自 Hipparcos 视差（无 Gaia 视差，因过亮）。"
+    },
+    {
+      "id": "barnard_s_star",
+      "name": "巴纳德星",
+      "name_en": "Barnard's Star",
+      "category": "star",
+      "parent": null,
+      "tagline": "蛇夫座红矮星（M4V），距太阳仅约 5.96 光年，以极高的自行著称",
+      "physical": {
+        "mass_kg": 2.8640447999999997e+29,
+        "radius_km": 136357.2,
+        "density_g_cm3": 26.96851131,
+        "gravity_m_s2": 1028.0396,
+        "escape_velocity_km_s": 529.4915,
+        "mean_temp_c": 2860.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M4.0V",
+      "luminosity_w": 1.3398000000000001e+24,
+      "distance_ly": 5.96,
+      "constellation": "蛇夫座",
+      "discovery": {
+        "known_since": "近代",
+        "discoverer": "Edward Emerson Barnard",
+        "year": 1916
+      },
+      "sources": [
+        "doubao_astro"
+      ],
+      "verified": "2026-11-11",
+      "article": null,
+      "image": "assets/planets/barnard_s_star.webp",
+      "source_dates": {
+        "doubao_astro": "2026-11-11"
+      },
+      "image_credit": "AI 生成",
+      "image_url": null,
+      "image_locked": false,
+      "subtype": "M4V 红矮星",
+      "members": 1,
+      "image_source": "doubao_template",
+      "data_source": "llm_doubao",
+      "data_verified": false,
+      "tagline_en": "An M4V red dwarf in Ophiuchus, only ~5.96 light-years away, famous for its high proper motion",
+      "note": "光度为热光度（bolometric），目视光度仅约 0.0004 L☉；有效温度不同测量在 3134–3278 K 之间；质量近年光谱拟合给出约 0.159 M☉，本表取经典共识值 0.144 M☉。"
     }
   ],
   "source_registry": {
@@ -11682,6 +11806,10 @@
     "brown2007": {
       "name": "Brown & Schaller 2007 · The Mass of Dwarf Planet Eris (Science 316, 1585)",
       "url": "https://doi.org/10.1126/science.1139415"
+    },
+    "doubao_astro": {
+      "name": "豆包大模型（本地 127.0.0.1:9090，数据经 NASA/Wikipedia 等权威源交叉核对）",
+      "url": "http://127.0.0.1:9090/v1"
     }
   }
 }

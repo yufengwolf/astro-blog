@@ -51,4 +51,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../tarantula/">蜘蛛星云</a></p>
 <p class="obj-nav">下一颗：<a href="../m31/">仙女座星系</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 179 个天体已全部配图</p>

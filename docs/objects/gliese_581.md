@@ -64,4 +64,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../trappist_1/">特拉比斯特 1</a></p>
 <p class="obj-nav">下一颗：<a href="../kepler_186/">开普勒186</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 177 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 179 个天体已全部配图</p>

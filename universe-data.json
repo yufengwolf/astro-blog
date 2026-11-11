@@ -226,7 +226,7 @@
                               "source": "ESA"
                             },
                             {
-                              "id": "c.canopus",
+                              "id": "canopus",
                               "name": "老人星",
                               "name_en": "Canopus",
                               "type": "亮巨星",
@@ -863,7 +863,7 @@
                                   ]
                                 },
                                 {
-                                  "id": "c.barnard-s-star",
+                                  "id": "barnard_s_star",
                                   "name": "巴纳德星",
                                   "name_en": "Barnard's Star",
                                   "type": "M4V 红矮星",
