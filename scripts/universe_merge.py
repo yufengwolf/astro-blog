@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-universe_merge.py — 把仓库 astro.json 的天体精确挂接到宇宙层级骨架，
+universe_merge.py — 把仓库 astro.json 的天体按【英文 id 唯一关联】挂接到宇宙层级骨架，
 产出融合数据源 universe-tree.json。
 
 设计原则（用户硬约束）：
-1. universe-data.json 是「宇宙层级」章节的层级事实源，其 _convention 字段定义命名与分类规范。
-   骨架已为全部仓库天体建好精确节点；归属不靠猜，改 JSON 即改层级。
-2. 名称严格对齐：name 与骨架节点**字节级精确一致**（大小写、空格都有语义），
-   norm() 为恒等函数，不做 lower、不去空白、不去括号、不做星尾差异等模糊匹配。
-   仅额外支持骨架显式声明的 alias 精确匹配。对不上就报错，改数据而不放宽匹配。
-3. 归属严格：每个节点带受控 category；融合时校验
-   (a) 节点 category 与仓库 category 一致；
-   (b) 仓库 parent 链与骨架祖先链兼容。
-   任一不一致都作为「归属冲突」输出，绝不静默塞进默认容器。
-4. parent=None 的天体不按类别一刀切分配；骨架里已给出其精确位置，
-   查不到位置的明确报错而不是臆测。
+1. 事实源分工：universe-data.json 是「层级拓扑」事实源（节点位置、容器、归属）；
+   astro.json 是「天体名称 / 属性 / 来源」唯一事实源。骨架中的 name / name_en 只是
+   供人审阅的镜像，须与 astro.json 字节级一致，绝不作为关联依据。
+2. 唯一匹配：只按节点 id 做双向 1:1 精确关联。本站天体节点 id == astro.json.id；
+   层级容器与本站未收录天体使用 c. 前缀。禁止 lower / 去空白 / 去括号 / 星尾差异 /
+   alias 兜底等任何名称模糊匹配。id 缺失、重复、孤立立即报错，改数据而不放宽匹配。
+3. 一致性闸：天体节点的 name / name_en 镜像、category 必须与 astro.json 一致；
+   type_i18n / category_i18n 必须覆盖全部节点的 type / category，保证双语可切换。
+4. 归属严格：校验仓库 parent 链与骨架祖先链兼容（精确祖先或同容器祖先），
+   不按类别一刀切分配，不静默塞进默认容器。
 5. 写入前比对磁盘内容：无变化则跳过，避免 mkdocs serve 监听触发重建死循环。
 
 用法：python scripts/universe_merge.py
 """
-import json, os
+import json, os, re
 from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,119 +38,143 @@ TYPE_MAP = {
     "comet": "彗星", "structure": "宇宙结构",
 }
 
-
-def norm(name):
-    """字节级精确匹配：不做任何归一化。大小写与空白都有语义，
-    防止靠容错掩盖 astro.json 与骨架之间的命名漂移。"""
-    return name
+ID_RE = re.compile(r"[a-z0-9._-]+")
+CONTAINER_PREFIX = "c."
 
 
 base = json.load(open(BASE, encoding="utf-8"))
 repo = json.load(open(REPO, encoding="utf-8"))
 repo_objs = {o["id"]: o for o in repo["objects"]}
 
-# ---------- 骨架索引（name 优先，alias 补充） ----------
-by_name, by_alias, parents = {}, {}, {}
-dupes = []
+type_i18n = base.get("type_i18n", {})
+cat_i18n = base.get("category_i18n", {})
+
+# ---------- 骨架索引：只按 id，不做任何名称匹配 ----------
+by_id, parents = {}, {}
+dupes, invalid_ids = [], []
 
 def walk(n, parent=None):
-    if "name" not in n:
-        return
-    k = norm(n["name"])
-    if k in by_name:
-        dupes.append(k)
+    nid = n.get("id")
+    if not nid:
+        raise SystemExit("骨架节点缺少 id：「%s」" % n.get("name", "?"))
+    if not ID_RE.fullmatch(nid):
+        invalid_ids.append(nid)
+    if nid in by_id:
+        dupes.append(nid)
     else:
-        by_name[k] = n
+        by_id[nid] = n
     parents[id(n)] = parent
     if n.get("category") not in CATS:
-        raise SystemExit(f"骨架节点「{n['name']}」category 越界: {n.get('category')}")
-    if n.get("alias"):
-        by_alias.setdefault(norm(n["alias"]), n)
+        raise SystemExit("骨架节点「%s」category 越界: %s" % (nid, n.get("category")))
     for c in n.get("children", []):
         walk(c, n)
 
 walk(base)
-if dupes:
-    raise SystemExit(f"骨架存在重复名称（归一化后）: {dupes}")
 
-# ---------- 精确挂接 ----------
-tagged, mismatches, unmatched = [], [], []
+body_ids = {i for i in by_id if not i.startswith(CONTAINER_PREFIX)}
+container_ids = set(by_id) - body_ids
+orphans = sorted(body_ids - set(repo_objs))       # 骨架有、astro 无
+uncovered = sorted(set(repo_objs) - body_ids)      # astro 有、骨架无
 
-for o in repo["objects"]:
-    k = norm(o["name"])
-    target = by_name.get(k) or by_alias.get(k)
+# ---------- 按 id 唯一关联 + 镜像/类型一致性闸 ----------
+tagged, name_bad, cat_bad, i18n_bad = [], [], [], []
+
+for rid, o in repo_objs.items():
+    target = by_id.get(rid)
     if target is None:
-        unmatched.append((o["id"], o["name"]))
-        continue
+        continue                                   # 已在 uncovered 中报错
+    if target.get("name") != o["name"]:
+        name_bad.append((rid, "name", target.get("name"), o["name"]))
+    if target.get("name_en") != o.get("name_en"):
+        name_bad.append((rid, "name_en", target.get("name_en"), o.get("name_en")))
     want = TYPE_MAP.get(o["category"])
-    if want and target["category"] != want:
-        mismatches.append((o["id"], o["name"], want, target["category"]))
-    if not target.get("repo_id"):
-        target["repo_id"] = o["id"]
-    tagged.append((o["name"], target["name"]))
+    if want and target.get("category") != want:
+        cat_bad.append((rid, o["name"], want, target.get("category")))
+    target["repo_id"] = rid
+    tagged.append(rid)
 
-# ---------- 归属校验：仓库 parent 链 vs 骨架祖先链 ----------
+for nid, n in by_id.items():
+    if n.get("type") not in type_i18n:
+        i18n_bad.append((nid, "type", n.get("type")))
+    if n.get("category") not in cat_i18n:
+        i18n_bad.append((nid, "category", n.get("category")))
+
+# ---------- 归属校验：仓库 parent 链 vs 骨架祖先链（按 id） ----------
 # 仓库 parent 表示「物理母天体」（如行星绕太阳、卫星绕行星），
 # 骨架则按「引力从属 / 包含关系」组织（如行星归入内/外行星系统分组）。
 # 两者都是合法语义，因此判定为「容器兼容」：
 #   (1) 母天体本身就是骨架祖先 —— 精确层级父；
 #   (2) 母天体与子天体同属一个容器（母天体的父节点是子天体的祖先）—— 分组式层级。
-# 若母天体落在完全无关的大类（如把类星体挂进银河系），两条都不成立，会被检出。
-def ancestor_names(n):
+def ancestor_ids(n):
     out = []
     p = parents.get(id(n))
     while p is not None:
-        out.append(norm(p["name"]))
+        out.append(p["id"])
         p = parents.get(id(p))
     return out
-
-def skeleton_node(rid):
-    o = repo_objs.get(rid)
-    return by_name.get(norm(o["name"])) if o else None
 
 conflicts = []
 for o in repo["objects"]:
     prid = o.get("parent")
     if not prid or prid not in repo_objs:
         continue
-    child, parent = skeleton_node(o["id"]), skeleton_node(prid)
+    child, parent = by_id.get(o["id"]), by_id.get(prid)
     if child is None or parent is None:
         continue
-    chain = ancestor_names(child)
-    exact = norm(parent["name"]) in chain
+    chain = ancestor_ids(child)
+    exact = prid in chain
     pp = parents.get(id(parent))
-    same_container = pp is not None and norm(pp["name"]) in chain
+    same_container = pp is not None and pp["id"] in chain
     if not (exact or same_container):
-        conflicts.append((o["id"], o["name"], repo_objs[prid]["name"],
-                          " > ".join(chain[:3]) or "（根节点下）"))
+        conflicts.append((o["id"], repo_objs[prid]["id"], " > ".join(chain[:3]) or "（根节点下）"))
 
 # ---------- 摘要 ----------
 print("=" * 64)
-print("【融合】astro.json 精确挂接 -> universe-tree.json")
+print("【融合】astro.json 按英文 id 唯一关联 -> universe-tree.json")
 print("=" * 64)
-print(f"骨架节点: {len(by_name)}   仓库天体: {len(repo_objs)}   精确命中: {len(tagged)}")
-print(f"category 类型不一致: {len(mismatches)}")
-for m in mismatches:
-    print(f"  ! {m[0]:20s} {m[1]:16s} 应为「{m[2]}」但骨架为「{m[3]}」")
-print(f"归属冲突(parent 链与骨架不一致): {len(conflicts)}")
+print("骨架节点: %d  (本站天体 %d / 容器+未收录 %d)   仓库天体: %d   id 精确命中: %d"
+      % (len(by_id), len(body_ids), len(container_ids), len(repo_objs), len(tagged)))
+print("id 重复: %d   非法 id: %d   容器 id 与 astro 冲突: %d"
+      % (len(dupes), len(invalid_ids), len(container_ids & set(repo_objs))))
+for d in dupes:
+    print("  ! 重复 id: %s" % d)
+for d in invalid_ids:
+    print("  ! 非法 id: %s" % d)
+print("孤立节点(骨架有 / astro 无): %d   未覆盖(astro 有 / 骨架无): %d"
+      % (len(orphans), len(uncovered)))
+for u in orphans:
+    print("  ! 孤立: %s" % u)
+for u in uncovered:
+    print("  ! 未覆盖: %s  %s" % (u, repo_objs[u]["name"]))
+print("名称镜像不一致(name / name_en): %d" % len(name_bad))
+for m in name_bad:
+    print("  ! %s 的 %s 镜像为「%s」，astro.json 为「%s」" % m)
+print("category 类型不一致: %d" % len(cat_bad))
+for m in cat_bad:
+    print("  ! %s %s 应为「%s」但骨架为「%s」" % m)
+print("词表缺项(type_i18n / category_i18n): %d   (type %d 条 / category %d 条)"
+      % (len(i18n_bad), len(type_i18n), len(cat_i18n)))
+for m in i18n_bad:
+    print("  ! %s 的 %s「%s」缺英文词表" % m)
+print("归属冲突(parent 链与骨架不一致): %d" % len(conflicts))
 for c in conflicts:
-    print(f"  ! {c[0]:20s} {c[1]:16s} 仓库父={c[2]:14s} 骨架祖先={c[3]}")
-print(f"未匹配(骨架缺节点): {len(unmatched)}")
-for u in unmatched:
-    print(f"  ! {u[0]:20s} {u[1]}")
-print("\n按 category 分布(骨架):", dict(Counter(
-    n.get("category") for n in by_name.values())))
+    print("  ! %s 仓库父=%s 骨架祖先=%s" % c)
+print("\n按 category 分布(骨架):", dict(Counter(n.get("category") for n in by_id.values())))
+
+problems = sum(len(x) for x in (dupes, invalid_ids, orphans, uncovered,
+                                name_bad, cat_bad, i18n_bad, conflicts))
+if problems:
+    print("\n[错误] 共 %d 处不一致，请改数据（不要放宽匹配）" % problems)
 
 # ---------- 写出（写前比对防 serve 死循环） ----------
 new_text = json.dumps(base, ensure_ascii=False, indent=2) + "\n"
 if os.path.exists(OUT):
     with open(OUT, encoding="utf-8") as f:
         if f.read() == new_text:
-            print(f"\n融合数据源无变化，跳过写出: {os.path.relpath(OUT, ROOT)}")
-            raise SystemExit(0)
+            print("\n融合数据源无变化，跳过写出: %s" % os.path.relpath(OUT, ROOT))
+            raise SystemExit(1 if problems else 0)
 with open(OUT, "w", encoding="utf-8") as f:
     f.write(new_text)
-print(f"\n已写出融合数据源: {os.path.relpath(OUT, ROOT)}")
-
-if mismatches or conflicts or unmatched:
-    print("\n[警告] 存在待修正的归属/类型问题，详见上方清单")
+print("\n已写出融合数据源: %s" % os.path.relpath(OUT, ROOT))
+if problems:
+    raise SystemExit(1)

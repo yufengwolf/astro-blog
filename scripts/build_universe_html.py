@@ -8,8 +8,9 @@ docs/universe-hierarchy.md。
   - 页面是 Material 主题内的普通 .md 页：自动带左侧导航、顶部栏、站内搜索、仓库字体/配色。
   - 思维导图内容（树 / 搜索 / 大类筛选 / 折叠 / 面包屑）由 JSON 驱动生成，内嵌在页面里，
     不依赖 iframe、不依赖外部 a.html。
-  - 样式全部使用 Material 主题 CSS 变量（--md-*），随浅/深色切换自动适配，视觉与全站一致；
-    控件采用「通透淡层 + 主题边框」的 Material 标准做法，避免深色主题下层层叠黑、与全站割裂。
+  - 数据按英文 id 关联；中文 / EN 切换只读取 name / name_en 与顶层 type_i18n /
+    category_i18n 词表，不做任何名称匹配。展开状态路径用稳定 id，切换语言不丢失。
+  - 样式全部使用 Material 主题 CSS 变量（--md-*），随浅/深色切换自动适配，视觉与全站一致。
   - universe-tree.json 为唯一事实源；改 JSON 后随 `mkdocs build` 自动重生（见 universe_hook.py）。
   - 写入前比对磁盘已有内容：内容无变化则跳过写入，避免 mkdocs serve 监听 docs/ 触发重建死循环。
 """
@@ -32,16 +33,17 @@ hide:
   - toc
 ---
 
-下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。层级数据由 `universe-data.json` 提供，天体详情与仓库数据（`astro.json`）精确对齐；**命名遵循统一规范，类型与归属严格按天体真实性质挂接**。带「归属未细化」的容器表示现有资料不足以确定更精确的层级，不做臆测归类。名称右侧带 `↗` 的节点可跳转本站详情卡片；搜索支持中文名与 M/NGC 等规范编号。
+<p id="uh-intro">下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。层级数据由 universe-data.json 提供，天体详情与仓库数据（astro.json）按英文 id 唯一关联；命名遵循统一规范，类型与归属严格按天体真实性质挂接。名称右侧带 ↗ 的节点可跳转本站详情卡片；搜索支持中文名、英文名与 M/NGC 等规范编号，右上角可切换中文 / EN。</p>
 
-<section id="uh" class="uh">
+<section id="uh" class="uh" data-lang="zh">
   <div class="uh-bar">
     <label class="uh-search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
-      <input id="uh-q" type="text" placeholder="搜索天体名称 / 类型…" autocomplete="off">
+      <input id="uh-q" type="text" placeholder="搜索天体名称 / 类型 / 英文名…" autocomplete="off">
     </label>
     <button class="uh-btn" id="uh-expand">展开全部</button>
     <button class="uh-btn" id="uh-collapse">折叠全部</button>
+    <button class="uh-btn uh-lang" id="uh-lang">EN</button>
   </div>
   <div class="uh-chips" id="uh-chips"></div>
   <div class="uh-crumb" id="uh-crumb"></div>
@@ -66,6 +68,8 @@ hide:
   font-size:.85rem;font-family:inherit;transition:.15s}
 .uh-btn:hover{background:var(--md-default-fg-color--lighter,rgba(125,125,125,.18));
   border-color:var(--md-accent-fg-color,#7c4dff)}
+.uh-btn.uh-lang{border-color:var(--md-accent-fg-color,#7c4dff);
+  color:var(--md-accent-fg-color,#7c4dff);min-width:58px;font-weight:600}
 .uh-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .uh-chip{font-size:.75rem;padding:4px 10px;border-radius:999px;
   border:1px solid var(--md-default-fg-color--lightest,rgba(125,125,125,.16));
@@ -117,12 +121,26 @@ hide:
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var DATA = JSON.parse(document.getElementById('uh-data').textContent);
+  var TYPE_EN = DATA.type_i18n || {};
+  var CAT_EN = DATA.category_i18n || {};
   var CAT_COLOR = {
     '宇宙结构':'#f06292','星系':'#ba68c8','星云':'#4db6ac','恒星':'#ffd54f',
     '行星':'#64b5f6','卫星':'#4dd0e1','星团':'#81c784','矮行星':'#ffb74d',
     '小行星':'#b0bec5','彗星':'#cfd8dc','黑洞':'#e57373','其他':'#90a4ae'
   };
   var CAT_ORDER = ['宇宙结构','星系','星云','恒星','行星','卫星','星团','矮行星','小行星','彗星','黑洞','其他'];
+  var I18N = {
+    zh: {
+      intro: '下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。层级数据由 universe-data.json 提供，天体详情与仓库数据（astro.json）按英文 id 唯一关联；命名遵循统一规范，类型与归属严格按天体真实性质挂接。带「归属未细化」的容器表示现有资料不足以确定更精确的层级，不做臆测归类。名称右侧带 ↗ 的节点可跳转本站详情卡片；搜索支持中文名、英文名与 M/NGC 等规范编号，右上角可切换中文 / EN。',
+      search: '搜索天体名称 / 类型 / 英文名…', expand: '展开全部', collapse: '折叠全部',
+      lang: 'EN', empty: '没有匹配的天体。试试别的名称或清空筛选。', link: '查看本站详情卡片'
+    },
+    en: {
+      intro: 'A hierarchy of celestial objects organized by gravitational affiliation and containment, from the Observable Universe down to planets, moons, clusters and nebulae. Hierarchy comes from universe-data.json; object details in astro.json are linked by a unique English id. Naming follows a strict convention and every affiliation reflects the object real physical nature. Containers marked "Unspecified" mean current sources do not support a finer placement — no guessing. Nodes with ↗ open the object detail card; search supports Chinese names, English names and M/NGC catalog numbers. Use the top-right button to switch language.',
+      search: 'Search name / type / catalog number…', expand: 'Expand all', collapse: 'Collapse all',
+      lang: '中文', empty: 'No matching objects. Try another name or clear the filters.', link: 'Open object detail card'
+    }
+  };
   function catOf(t){
     t = t || '';
     if (/黑洞/.test(t)) return '黑洞';
@@ -148,54 +166,88 @@ document.addEventListener('DOMContentLoaded', function () {
   var CAT_SET = new Set();
   (function collect(n){ CAT_SET.add(nodeCat(n)); (n.children||[]).forEach(collect); })(DATA);
 
-  var expanded = new Set();
-  var activeTypes = new Set();
+  var lang = 'zh';
+  var expanded = new Set();          // 存 id 路径，切换语言不失效
+  var activeTypes = new Set();       // 存中文 category key，切换语言不失效
   var query = '';
+  var curCrumb = [];
   var treeEl = document.getElementById('uh-tree');
   var crumbEl = document.getElementById('uh-crumb');
+  var chipsEl = document.getElementById('uh-chips');
+  var legendEl = document.getElementById('uh-legend');
 
-  function pathOf(parent, name){ return parent ? parent + '/' + name : name; }
+  function T(){ return I18N[lang]; }
+  function disp(n){ return lang === 'en' ? (n.name_en || n.name) : n.name; }
+  function catLabel(c){ return lang === 'en' ? (CAT_EN[c] || c) : c; }
+  function typeLabel(n){
+    if (lang !== 'en') return n.type || '';
+    return TYPE_EN[n.type] || CAT_EN[nodeCat(n)] || n.type || '';
+  }
+  function setText(id, txt){ var el = document.getElementById(id); if (el) el.textContent = txt; }
+  function applyUI(){
+    var t = T();
+    setText('uh-intro', t.intro);
+    setText('uh-expand', t.expand);
+    setText('uh-collapse', t.collapse);
+    setText('uh-lang', t.lang);
+    var q = document.getElementById('uh-q'); if (q) q.placeholder = t.search;
+    var sec = document.getElementById('uh'); if (sec) sec.setAttribute('data-lang', lang);
+  }
+  // 展开状态与筛选状态用 id / 受控 category，不依赖任何名称
+  function pathOf(parent, id){ return parent ? parent + '/' + id : id; }
   function countDesc(n){ var c=0; (n.children||[]).forEach(function(x){ c += 1 + countDesc(x); }); return c; }
   function matches(n){
     if (activeTypes.size && !activeTypes.has(nodeCat(n))) return false;
     if (!query) return true;
     var q = query.toLowerCase();
     return (n.name||'').toLowerCase().indexOf(q) >= 0
+        || (n.name_en||'').toLowerCase().indexOf(q) >= 0
         || (n.alias||'').toLowerCase().indexOf(q) >= 0
         || (n.type||'').toLowerCase().indexOf(q) >= 0
-        || nodeCat(n).indexOf(q) >= 0;
+        || (TYPE_EN[n.type]||'').toLowerCase().indexOf(q) >= 0
+        || nodeCat(n).indexOf(q) >= 0
+        || (CAT_EN[nodeCat(n)]||'').toLowerCase().indexOf(q) >= 0
+        || (n.id||'').toLowerCase().indexOf(q) >= 0;
   }
   function subHasMatch(n){ if (matches(n)) return true; return (n.children||[]).some(subHasMatch); }
+  function esc(s){ return (s||'').replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
+  function renderCrumb(){
+    crumbEl.innerHTML = curCrumb.map(function(n){
+      return '<span class="uh-sep">›</span><b>' + esc(disp(n)) + '</b>';
+    }).join(' ');
+  }
 
   function renderNode(n, parentPath, depth, ancestors){
-    var path = pathOf(parentPath, n.name);
+    var path = pathOf(parentPath, n.id);
     var hasKids = (n.children||[]).length > 0;
     var filtering = query || activeTypes.size > 0;
     var isOpen = expanded.has(path) || (!filtering && depth < 2) || (filtering && (n.children||[]).some(subHasMatch));
     var node = document.createElement('div'); node.className = 'uh-node';
 
     var head = document.createElement('div'); head.className = 'uh-head';
+    head.setAttribute('data-id', n.id);
     var ar = document.createElement('span');
     ar.className = 'uh-arrow' + (hasKids ? '' : ' leaf') + (isOpen ? ' open' : '');
     ar.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+    var label = disp(n);
     var nm = document.createElement('span'); nm.className = 'uh-nm';
     if (query){
-      var idx = (n.name||'').toLowerCase().indexOf(query.toLowerCase());
-      if (~idx && query){
-        nm.innerHTML = esc(n.name.slice(0,idx)) + '<mark>' + esc(n.name.slice(idx, idx+query.length)) + '</mark>' + esc(n.name.slice(idx+query.length));
-      } else nm.textContent = n.name;
-    } else nm.textContent = n.name;
+      var idx = label.toLowerCase().indexOf(query.toLowerCase());
+      if (~idx){
+        nm.innerHTML = esc(label.slice(0,idx)) + '<mark>' + esc(label.slice(idx, idx+query.length)) + '</mark>' + esc(label.slice(idx+query.length));
+      } else nm.textContent = label;
+    } else nm.textContent = label;
     if (n.alias){
       var al = document.createElement('span'); al.className = 'uh-alias';
       al.textContent = n.alias;
       nm.appendChild(al);
     }
     var badge = document.createElement('span'); badge.className = 'uh-badge';
-    badge.style.background = colorOf(n); badge.textContent = n.type || '';
+    badge.style.background = colorOf(n); badge.textContent = typeLabel(n);
     head.appendChild(ar); head.appendChild(nm); head.appendChild(badge);
     if (n.repo_id){
       var link = document.createElement('a'); link.className = 'uh-link';
-      link.href = '/objects/' + n.repo_id + '/'; link.title = '查看本站详情卡片';
+      link.href = '/objects/' + n.repo_id + '/'; link.title = T().link;
       link.textContent = '↗';
       link.addEventListener('click', function(e){ e.stopPropagation(); });
       head.appendChild(link);
@@ -204,9 +256,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     head.addEventListener('click', function (){
       if (hasKids){ if (expanded.has(path)) expanded.delete(path); else expanded.add(path); }
-      crumbEl.innerHTML = ancestors.concat([n.name]).map(function(a){
-        return '<span class="uh-sep">›</span><b>' + esc(a) + '</b>';
-      }).join(' ');
+      curCrumb = ancestors.concat([n]);
+      renderCrumb();
       render();
     });
     node.appendChild(head);
@@ -214,59 +265,65 @@ document.addEventListener('DOMContentLoaded', function () {
     if (hasKids){
       var kids = document.createElement('div'); kids.className = 'uh-children';
       var list = filtering ? n.children.filter(subHasMatch) : n.children;
-      list.forEach(function(c){ kids.appendChild(renderNode(c, path, depth+1, ancestors.concat([n.name]))); });
+      list.forEach(function(c){ kids.appendChild(renderNode(c, path, depth+1, ancestors.concat([n]))); });
       kids.classList.toggle('collapsed', !isOpen);
       node.appendChild(kids);
     }
     return node;
   }
 
-  function esc(s){ return (s||'').replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
-
   function render(){
     treeEl.innerHTML = '';
     if (query || activeTypes.size){
       var list = DATA.children.filter(subHasMatch);
-      if (!list.length){ treeEl.innerHTML = '<div class="uh-empty">没有匹配的天体。试试别的名称或清空筛选。</div>'; return; }
+      if (!list.length){ treeEl.innerHTML = '<div class="uh-empty">' + esc(T().empty) + '</div>'; return; }
       list.forEach(function(c){ treeEl.appendChild(renderNode(c, '', 1, [])); });
     } else {
       treeEl.appendChild(renderNode(DATA, '', 0, []));
     }
   }
 
-  var chipsEl = document.getElementById('uh-chips');
-  CAT_ORDER.filter(function(c){ return CAT_SET.has(c); }).forEach(function(t){
-    var c = document.createElement('span'); c.className = 'uh-chip';
-    c.innerHTML = '<span class="uh-dot" style="background:' + CAT_COLOR[t] + '"></span>' + t;
-    c.addEventListener('click', function (){
-      if (activeTypes.has(t)){ activeTypes.delete(t); c.classList.remove('on'); }
-      else { activeTypes.add(t); c.classList.add('on'); }
-      render();
+  function renderChips(){
+    chipsEl.innerHTML = '';
+    CAT_ORDER.filter(function(c){ return CAT_SET.has(c); }).forEach(function(t){
+      var c = document.createElement('span'); c.className = 'uh-chip' + (activeTypes.has(t) ? ' on' : '');
+      c.innerHTML = '<span class="uh-dot" style="background:' + CAT_COLOR[t] + '"></span>' + esc(catLabel(t));
+      c.addEventListener('click', function (){
+        if (activeTypes.has(t)){ activeTypes.delete(t); c.classList.remove('on'); }
+        else { activeTypes.add(t); c.classList.add('on'); }
+        render();
+      });
+      chipsEl.appendChild(c);
     });
-    chipsEl.appendChild(c);
-  });
-  var legendEl = document.getElementById('uh-legend');
-  CAT_ORDER.filter(function(c){ return CAT_SET.has(c); }).forEach(function(t){
-    var s = document.createElement('span');
-    s.innerHTML = '<i style="background:' + CAT_COLOR[t] + '"></i>' + t;
-    legendEl.appendChild(s);
-  });
+  }
+  function renderLegend(){
+    legendEl.innerHTML = '';
+    CAT_ORDER.filter(function(c){ return CAT_SET.has(c); }).forEach(function(t){
+      var s = document.createElement('span');
+      s.innerHTML = '<i style="background:' + CAT_COLOR[t] + '"></i>' + esc(catLabel(t));
+      legendEl.appendChild(s);
+    });
+  }
 
   document.getElementById('uh-q').addEventListener('input', function(e){ query = e.target.value.trim(); render(); });
   document.getElementById('uh-expand').addEventListener('click', function (){
     (function walk(n, p){
-      var path = pathOf(p, n.name);
+      var path = pathOf(p, n.id);
       if ((n.children||[]).length){ expanded.add(path); n.children.forEach(function(c){ walk(c, path); }); }
     })(DATA, '');
     render();
   });
   document.getElementById('uh-collapse').addEventListener('click', function (){ expanded.clear(); render(); });
+  document.getElementById('uh-lang').addEventListener('click', function (){
+    lang = lang === 'zh' ? 'en' : 'zh';
+    applyUI(); renderChips(); renderLegend(); renderCrumb(); render();
+  });
 
-  render();
+  applyUI(); renderChips(); renderLegend(); render();
 });
 </script>
 
-> 本页数据由仓库根目录的 `universe-tree.json` 驱动生成（经 `scripts/universe_merge.py` 融合 `universe-data.json` 与 `docs/data/astro.json`）；数据源改动后随 `mkdocs build` 自动同步，无需手动操作。
+> 本页数据由仓库根目录的 `universe-tree.json` 驱动生成（经 `scripts/universe_merge.py` 按英文 id 唯一关联 `universe-data.json` 与 `docs/data/astro.json`）；数据源改动后随 `mkdocs build` 自动同步，无需手动操作。
 """
 
 new_html = MD.replace("__TREE__", tree_json)

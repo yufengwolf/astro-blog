@@ -24,8 +24,8 @@
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
 ├─ viz-manifest.json     # 3D 覆盖契约（gen_viz_manifest.py 生成；消费外部 links.json 快照；go.html?body=<id> 透传；详情页条件嵌入）
-├─ universe-data.json    # 【宇宙层级】层级与命名事实源（282 节点 + 顶层 _convention 8 条规范）
-├─ universe-tree.json    # 【宇宙层级】融合产物（177 个 repo_id；页面唯一事实源，universe_merge.py 生成）
+├─ universe-data.json    # 【宇宙层级】层级拓扑事实源（282 节点；稳定英文 id + 双语词表 + _convention 10 条）
+├─ universe-tree.json    # 【宇宙层级】融合产物（177 个 repo_id = id；页面唯一事实源，universe_merge.py 生成）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -38,10 +38,10 @@
 │  ├─ lint_data.py       # 数据 lint: 结构+派生量校验（不过则阻断）
 │  ├─ gen_pages.py       # 页面生成器 v1.9（--check 校验同步；HTML 参数表 + 双列 grid；直径口径/单位统一唯一实现；详情页 3D 块按 viz-manifest 条件嵌入）
 │  ├─ gen_viz_manifest.py # 生成 viz-manifest.json（消费 scripts/solar3d_links.json 快照；go.html?body=<id>&embed=1 透传；--sync 刷新快照；size-of-space 待接入）
-│  ├─ universe_merge.py   # 【宇宙层级】骨架 + astro.json → universe-tree.json（字节级精确挂接 + 类型/归属校验，不追加不臆测）
-│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（按 category 着色/筛选，alias 可搜）
+│  ├─ universe_merge.py   # 【宇宙层级】骨架 + astro.json → universe-tree.json（按英文 id 双向 1:1 唯一关联 + 镜像/类型/词表/归属校验）
+│  ├─ build_universe_html.py # 【宇宙层级】universe-tree.json → docs/universe-hierarchy.md（中文/EN 切换、按 category 着色、双语搜索）
 │  ├─ universe_hook.py    # 【宇宙层级】MkDocs 构建钩子：build 前自动跑上面两步，JSON 改动即同步页面
-│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 交互回归（搜索/筛选/展开/详情链接实跑）
+│  ├─ check_universe_dom.js # 【宇宙层级】jsdom 31 项回归（id 唯一 / 双语切换 / 英文名搜索 / 搜索筛选展开链接）
 │  ├─ star_types.py      # 恒星 9 光谱型定义 + 映射 + 色相偏移
 │  ├─ gen_star_types_doubao.py # 每型 1 张豆包 AI 代表图（--sun 生成太阳底图）
 │  ├─ build_star_images.py# 恒星套模板 + limb 圆拟合 + 色相微调
@@ -63,7 +63,7 @@
    ├─ js/solar-embed.js  # 3D 嵌入块：全屏切换 + 移动端横屏提示 + 多来源切换按钮
    ├─ stylesheets/site.css   # 含 .solar-embed 嵌入块样式
    ├─ solar-demo.md      # 【手写】太阳系 3D 交互站主页（导航卡片 iframe）
-   ├─ universe-hierarchy.md    # 【生成】宇宙层级思维导图（主题化 MkDocs 页面，JSON 内嵌，带侧边栏/站内字体；导航直接指向）
+   ├─ universe-hierarchy.md    # 【生成】宇宙层级思维导图（主题化 MkDocs 页面，JSON 内嵌，中文/EN 切换；导航直接指向）
    └─ assets/planets/*.webp  # 星球贴图（152/152，透明背景 600px）
 ```
 
@@ -204,32 +204,45 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 ## 八、宇宙天体层级思维导图
 
-主题化页面 `docs/universe-hierarchy.md`（左侧导航「宇宙层级」**直接打开**，融入 Material 主题，含侧边栏 / 站内字体 / 配色），以可折叠树呈现天体的**层级 / 从属关系**。数据源分三层：`universe-data.json`（层级 + 命名事实源）→ `universe-tree.json`（融合产物）→ 页面内嵌 JSON。
+主题化页面 `docs/universe-hierarchy.md`（左侧导航「宇宙层级」**直接打开**，融入 Material 主题，含侧边栏 / 站内字体 / 配色），以可折叠树呈现天体的**层级 / 从属关系**。**事实源分工**：`universe-data.json` 只定义层级拓扑与容器；`docs/data/astro.json` 是天体名称（中 / 英）、物理属性与来源的唯一事实源；两者靠**稳定英文 id 唯一关联**，不靠中文名匹配（翻译或改名都不会断链）。
 
-- `universe-data.json`：**层级与命名的事实源**（282 个节点）。顶层 `_convention` 定义 8 条规范；每个节点带受控 `category`，M/NGC 编号与西文别名放 `alias`，备注放 `info`。命名与 `astro.json.name` **字节级精确对齐**：大小写有语义（`天狼星A` 与 `开普勒16b` 后缀不同不可混），不做小写/去空白/星尾差异等容错；归属严格，无确证依据的放进明确标注「归属未细化」的容器，不按类别臆测。
-- `universe-tree.json`：`scripts/universe_merge.py` 把 `astro.json` 的 **177 个天体**按 `name`（或骨架 `alias`）**精确挂接**到骨架并打上 `repo_id`，同时校验「节点 `category` 与仓库 `category` 一致」和「仓库 `parent` 链与骨架祖先链容器兼容」。骨架就是事实源，**不再追加节点、不再按类别默认归属**；异常项（category 不一致 / 归属冲突 / 未匹配 / 骨架重名）必须为零才算数据合格。
-- `docs/universe-hierarchy.md`：`scripts/build_universe_html.py` 从 `universe-tree.json` 生成**主题化页面**（内嵌 JSON + 交互脚本，样式全部用 Material 主题 CSS 变量，自动继承站内字体 / 配色）。含搜索（名称 / `alias` 编号 / 类型 / `category`）、大类筛选、展开·折叠全部、面包屑；**每节点一行**，节点显示规范编号 `alias`；**177 个**带 `repo_id` 的节点行尾「↗」直达 `objects/<id>/` 详情卡片（不影响行内展开 / 折叠）。
-- `universe_hook.py`：MkDocs 构建钩子。每次 `mkdocs build` 前自动依次运行 `universe_merge.py` 与 `build_universe_html.py`，**数据改动后构建即自动同步页面**。两个生成脚本都在写入前比对磁盘内容，无变化则跳过写入，避免 `mkdocs serve`「重写→重建」死循环。
+### 数据契约（硬约束，写在骨架顶层 `_convention` 10 条）
+
+| 字段 | 规则 |
+|---|---|
+| `id` | 每节点必有，全局唯一、仅 ASCII `[a-z0-9._-]`、一经确定不改。本站天体 `id == astro.json.id`（177 个）；层级容器与本站未收录天体用 `c.` 前缀（105 个） |
+| `name` / `name_en` | 天体节点是 `astro.json` 的展示镜像（融合脚本字节级强校验）；容器节点在骨架定义标准天文学英文名。全 282 节点 `name_en` 齐备 |
+| `type_i18n` / `category_i18n` | 顶层共用词表（105 条类型 / 12 条大类），页面按语言查表切换，融合脚本校验覆盖率 |
+| `alias` | 通用编号（`M42`、`Sgr A*`），只用于展示与搜索，**不参与关联** |
+
+规范涵盖：事实源分工、稳定 id、唯一匹配、编号命名、大小写语义、格式、受控 `type` / `category`、双语、归属严格。
+
+### 生成链
+
+- `universe-data.json`：**层级拓扑事实源**（282 节点）。归属严格，无确证依据的放进标注「归属未细化」的容器，不按类别臆测。
+- `universe-tree.json`：`scripts/universe_merge.py` **只按 id** 做双向 1:1 关联，打上 `repo_id`（等于 id），并校验「名称镜像 / `category` / 中英词表覆盖 / 仓库 `parent` 链与骨架祖先链容器兼容」。**禁止** `lower()`、去空白、去括号、星尾差异、`alias` 兜底等任何名称模糊匹配；id 缺失、重复、孤立立即报错（EXIT=1）。
+- `docs/universe-hierarchy.md`：`scripts/build_universe_html.py` 生成主题化页面，支持**中文 / EN 一键切换**（节点名、说明、类型徽章、大类 chips、图例、搜索提示、空态文案），中文名 / 英文名 / M·NGC 编号 / id 搜索、大类筛选、展开折叠、面包屑。**展开状态与筛选状态按 id / 受控 `category` 存储，切换语言不丢失**；177 个带 `repo_id` 的节点行尾「↗」直达 `objects/<id>/`。
+- `universe_hook.py`：构建钩子，`mkdocs build` 前自动跑上面两步；两个生成脚本写前比对内容，无变化跳过写入，避免 `mkdocs serve` 死循环。
 
 ```mermaid
 flowchart LR
-    UD["universe-data.json<br/>层级+命名事实源 282 节点<br/>_convention 8 条"] --> M["universe_merge.py<br/>字节级精确挂接 + 类型/归属校验"]
-    AS["docs/data/astro.json<br/>177 天体 + parent 链"] --> M
-    M --> UT["universe-tree.json<br/>177 个 repo_id"]
-    UT --> B["build_universe_html.py<br/>按 category 着色 + alias 可搜"]
+    UD["universe-data.json<br/>层级拓扑 282 节点<br/>稳定英文 id + 双语词表"] --> M["universe_merge.py<br/>按 id 双向 1:1 唯一关联<br/>镜像/类型/词表/归属校验"]
+    AS["docs/data/astro.json<br/>177 天体：名称中英 · 属性 · parent"] --> M
+    M --> UT["universe-tree.json<br/>177 个 repo_id (= id)"]
+    UT --> B["build_universe_html.py<br/>中文/EN 切换 · category 着色 · 双语搜索"]
     B --> PG["docs/universe-hierarchy.md<br/>Material 主题化页面"]
     H["universe_hook.py<br/>on_pre_build"] -. 自动触发 .-> M
     H -. 自动触发 .-> B
 ```
 
-刷新流程（改 `astro.json` / `universe-data.json` 后；**两边的 `name` 必须字节级一致**）：
+刷新流程（改 `astro.json` / `universe-data.json` 后；**新增天体必须在骨架补同 id 节点，容器一律 `c.` 前缀**）：
 
 ```bash
-python scripts/universe_merge.py       # 校验：177 精确命中 / 0 不一致 / 0 冲突 / 0 未匹配
+python scripts/universe_merge.py       # 必须 177 id 精确命中 / 0 镜像不一致 / 0 词表缺项 / 0 归属冲突
 python scripts/build_universe_html.py  # universe-tree.json → docs/universe-hierarchy.md
 python scripts/gen_pages.py --check && mkdocs build --strict
 # 注：上面两步已接入 universe_hook.py，随 mkdocs build 自动执行；手动跑用于单独调试
-node scripts/check_universe_dom.js     # 可选：jsdom 实跑搜索/筛选/展开/详情链接（需本机有 jsdom）
+node scripts/check_universe_dom.js     # jsdom 实跑 31 项：id 唯一 / 双语切换 / 英文名搜索 / 展开状态保留
 ```
 
 ## 九、文档维护约定

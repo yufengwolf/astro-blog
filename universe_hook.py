@@ -5,7 +5,7 @@ universe_hook.py — MkDocs 构建钩子（hooks）
 
 在每次 `mkdocs build` 之前，由 JSON 数据源自动重新生成「宇宙层级」思维导图页：
   1. scripts/universe_merge.py    —— universe-data.json + astro.json -> universe-tree.json（融合数据源）
-  2. scripts/build_universe_html.py —— universe-tree.json -> docs/universe-hierarchy.html（自包含静态页）
+  2. scripts/build_universe_html.py —— universe-tree.json -> docs/universe-hierarchy.md（Material 主题化页面）
 
 这样 universe-data.json / astro.json 任何改动，只要跑 `mkdocs build` 页面就自动同步，
 无需手动执行生成脚本——实现「数据驱动、改动自适应」。
