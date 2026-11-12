@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-11-12",
-    "object_count": 213,
+    "object_count": 223,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -2432,7 +2432,7 @@
       "name": "天狼星A",
       "name_en": "Sirius A",
       "category": "star",
-      "parent": null,
+      "parent": "sirius",
       "tagline": "大犬座α的主星，夜空中最亮的恒星，一颗 A 型主序星",
       "physical": {
         "mass_kg": 4.096104e+30,
@@ -2493,7 +2493,7 @@
       "name": "比邻星",
       "name_en": "Proxima Centauri",
       "category": "star",
-      "parent": null,
+      "parent": "alpha_centauri",
       "tagline": "半人马座α三星系统的成员，距离太阳最近的恒星，一颗暗弱的红矮星",
       "physical": {
         "mass_kg": 2.425848e+29,
@@ -6530,7 +6530,7 @@
       "name": "天狼星B",
       "name_en": "Sirius B",
       "category": "star",
-      "parent": "sirius_a",
+      "parent": "sirius",
       "tagline": "质量与太阳相当，体积却只有地球大小——最早被发现的白矮星",
       "physical": {
         "mass_kg": 2.0241912e+30,
@@ -6592,7 +6592,7 @@
       "name": "波江座40A",
       "name_en": "40 Eridani A",
       "category": "star",
-      "parent": null,
+      "parent": "eridani_40",
       "tagline": "《星际迷航》中瓦肯人的太阳，一颗宁静的橙黄矮星",
       "physical": {
         "mass_kg": 1.550952e+30,
@@ -6654,7 +6654,7 @@
       "name": "波江座40B",
       "name_en": "40 Eridani B",
       "category": "star",
-      "parent": "eridani_40a",
+      "parent": "eridani_40",
       "tagline": "肉眼不可见的白矮星，人类最早确认的白矮星之一",
       "physical": {
         "mass_kg": 1.1095272000000001e+30,
@@ -6902,7 +6902,7 @@
       "name": "南门二A",
       "name_en": "Alpha Centauri A",
       "category": "star",
-      "parent": null,
+      "parent": "alpha_centauri",
       "tagline": "距太阳系最近的恒星系统主星，与太阳宛如孪生",
       "physical": {
         "mass_kg": 2.18724e+30,
@@ -6964,7 +6964,7 @@
       "name": "南门二B",
       "name_en": "Alpha Centauri B",
       "category": "star",
-      "parent": "alphacen_a",
+      "parent": "alpha_centauri",
       "tagline": "南门二系统的橙矮星伴星，肉眼与主星不可分",
       "physical": {
         "mass_kg": 1.8034788e+30,
@@ -10823,7 +10823,7 @@
       "name": "开普勒16b",
       "name_en": "Kepler-16b",
       "category": "planet",
-      "parent": null,
+      "parent": "kepler_16",
       "tagline": "环绕双星系统开普勒16的系外行星，是首个被证实的环双星行星",
       "physical": {
         "mass_kg": 6.320772900000001e+26,
@@ -11581,7 +11581,7 @@
       "name": "五车二Aa",
       "name_en": "Capella Aa",
       "category": "star",
-      "parent": null,
+      "parent": "capella",
       "tagline": "五车二 A 子系统的亮巨星主星",
       "physical": {
         "mass_kg": 5.108938804e+30,
@@ -11643,7 +11643,7 @@
       "name": "五车二Ab",
       "name_en": "Capella Ab",
       "category": "star",
-      "parent": null,
+      "parent": "capella",
       "tagline": "五车二 A 子系统的次巨星伴星",
       "physical": {
         "mass_kg": 4.938090576e+30,
@@ -11705,7 +11705,7 @@
       "name": "五车二Ba",
       "name_en": "Capella Ba",
       "category": "star",
-      "parent": null,
+      "parent": "capella",
       "tagline": "五车二系统远端红矮星",
       "physical": {
         "mass_kg": 1.0541276e+30,
@@ -11767,7 +11767,7 @@
       "name": "五车二Bb",
       "name_en": "Capella Bb",
       "category": "star",
-      "parent": null,
+      "parent": "capella",
       "tagline": "五车二系统暗弱红矮星伴星",
       "physical": {
         "mass_kg": 1.0541276e+30,
@@ -11829,7 +11829,7 @@
       "name": "北河二A1",
       "name_en": "Castor A1",
       "category": "star",
-      "parent": null,
+      "parent": "castor",
       "tagline": "北河二主星，A型主序星",
       "physical": {
         "mass_kg": 5.489419199999999e+30,
@@ -11891,7 +11891,7 @@
       "name": "北河二A2",
       "name_en": "Castor A2",
       "category": "star",
-      "parent": null,
+      "parent": "castor",
       "tagline": "北河二A的伴星，红矮星耀星",
       "physical": {
         "mass_kg": 1.1933519999999999e+30,
@@ -11953,7 +11953,7 @@
       "name": "北河二B1",
       "name_en": "Castor B1",
       "category": "star",
-      "parent": null,
+      "parent": "castor",
       "tagline": "北河二六合星系统B子系统主星",
       "physical": {
         "mass_kg": 5.9269816e+30,
@@ -12015,7 +12015,7 @@
       "name": "北河二B2",
       "name_en": "Castor B2",
       "category": "star",
-      "parent": null,
+      "parent": "castor",
       "tagline": "北河二 B 子系统的红矮星伴星",
       "physical": {
         "mass_kg": 9.9446e+29,
@@ -12077,7 +12077,7 @@
       "name": "北河二C1",
       "name_en": "Castor C1",
       "category": "star",
-      "parent": null,
+      "parent": "castor",
       "tagline": "北河二六合星系统的红矮星子星",
       "physical": {
         "mass_kg": 1.1933519999999999e+30,
@@ -12139,7 +12139,7 @@
       "name": "北河二C2",
       "name_en": "Castor C2",
       "category": "star",
-      "parent": null,
+      "parent": "castor",
       "tagline": "北河二六合星系统中的红矮星",
       "physical": {
         "mass_kg": 9.9446e+29,
@@ -12201,7 +12201,7 @@
       "name": "开普勒16A",
       "name_en": "Kepler-16 A",
       "category": "star",
-      "parent": null,
+      "parent": "kepler_16",
       "tagline": "开普勒16双星系统的 K 型主星",
       "physical": {
         "mass_kg": 1.3717581239999998e+30,
@@ -12263,7 +12263,7 @@
       "name": "开普勒16B",
       "name_en": "Kepler-16 B",
       "category": "star",
-      "parent": null,
+      "parent": "kepler_16",
       "tagline": "开普勒16双星系统的 M 型伴星",
       "physical": {
         "mass_kg": 4.02955192e+29,
@@ -12325,7 +12325,7 @@
       "name": "南河三B",
       "name_en": "Procyon B",
       "category": "star",
-      "parent": null,
+      "parent": "procyon_a",
       "tagline": "第三亮白矮星",
       "physical": {
         "mass_kg": 1.17744064e+30,
@@ -13085,6 +13085,628 @@
       "data_verified": false,
       "tagline_en": "The innermost, low-mass planet of Gliese 581",
       "note": "质量下限约 1.7–3.2 M⊕，轨道周期仅 3.1 天。"
+    },
+    {
+      "id": "sirius",
+      "name": "天狼星",
+      "name_en": "Sirius",
+      "category": "star_system",
+      "parent": null,
+      "tagline": "全天最亮恒星，实为 A1V 主序星与白矮星组成的双星系统",
+      "tagline_en": "The brightest star in the night sky: a binary of an A1V main-sequence star and a white dwarf",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 8.6,
+      "constellation": "大犬座",
+      "subtype": "双星系统（A1V + DA2）",
+      "members": 2,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_sirius"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_sirius": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "alpha_centauri",
+      "name": "南门二",
+      "name_en": "Alpha Centauri",
+      "category": "star_system",
+      "parent": null,
+      "tagline": "距太阳最近的恒星系统，A/B 双星与远距红矮星比邻星构成三合星",
+      "tagline_en": "The nearest star system: a triple of A/B binaries plus the distant red dwarf Proxima Centauri",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 4.37,
+      "constellation": "半人马座",
+      "subtype": "三合星系统（G2V + K1V + M5.5V）",
+      "members": 3,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_alpha_centauri",
+        "wiki_proxima"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_alpha_centauri": "2026-11-12",
+        "wiki_proxima": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "kepler_16",
+      "name": "开普勒16",
+      "name_en": "Kepler-16",
+      "category": "star_system",
+      "parent": null,
+      "tagline": "首个被确认拥有环双星行星的食双星系统",
+      "tagline_en": "The first eclipsing binary confirmed to host a circumbinary planet",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 245.4,
+      "constellation": "天鹅座",
+      "subtype": "双星系统（K 型主序星 + M 型红矮星）",
+      "members": 2,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_kepler16"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_kepler16": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "eridani_40",
+      "name": "波江座40",
+      "name_en": "40 Eridani",
+      "category": "star_system",
+      "parent": null,
+      "tagline": "16.3 光年外的三合星系统，含人类发现的第一颗白矮星",
+      "tagline_en": "A triple system 16.3 ly away containing the first white dwarf ever discovered",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 16.35,
+      "constellation": "波江座",
+      "subtype": "三合星系统（K1V + DA4 + M4.5Ve）",
+      "members": 3,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_40_eridani"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_40_eridani": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "epsilon_lyrae",
+      "name": "织女二",
+      "name_en": "Epsilon Lyrae",
+      "category": "star_system",
+      "parent": null,
+      "tagline": "著名的「双双星」：两对双星再互绕，构成四合星系统",
+      "tagline_en": "The famous Double Double: two binary pairs orbiting each other, a quadruple system",
+      "physical": {
+        "mass_kg": null,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": null,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": null,
+      "luminosity_w": null,
+      "distance_ly": 160.0,
+      "constellation": "天琴座",
+      "subtype": "四合星系统",
+      "members": 4,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_epsilon_lyrae"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_epsilon_lyrae": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "eridani_40c",
+      "name": "波江座40C",
+      "name_en": "40 Eridani C",
+      "category": "star",
+      "parent": "eridani_40",
+      "tagline": "一颗耀星红矮星，与白矮星 B 组成近距离双星对",
+      "tagline_en": "A flare red dwarf forming a close pair with the white dwarf 40 Eridani B",
+      "physical": {
+        "mass_kg": 4.0483824e+29,
+        "radius_km": 215667.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 2826.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "M4.5Ve",
+      "luminosity_w": 3.0624e+24,
+      "distance_ly": 16.35,
+      "constellation": "波江座",
+      "subtype": "红矮星",
+      "members": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_40_eridani"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_40_eridani": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "epsilon_lyrae_a1",
+      "name": "织女二A1",
+      "name_en": "Epsilon Lyrae A1",
+      "category": "star",
+      "parent": "epsilon_lyrae",
+      "tagline": "织女二 ε1 对的 A 成员，A 型主序星",
+      "tagline_en": "A-type primary of the Epsilon Lyrae epsilon-1 pair",
+      "physical": {
+        "mass_kg": 4.0364519999999996e+30,
+        "radius_km": 1934045.9999999998,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 7669.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A3V",
+      "luminosity_w": 9.1872e+27,
+      "distance_ly": 162.0,
+      "constellation": "天琴座",
+      "subtype": "A 型主序星",
+      "members": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_epsilon_lyrae"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_epsilon_lyrae": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "epsilon_lyrae_a2",
+      "name": "织女二A2",
+      "name_en": "Epsilon Lyrae A2",
+      "category": "star",
+      "parent": "epsilon_lyrae",
+      "tagline": "织女二 ε1 对的 B 成员，F 型主序星",
+      "tagline_en": "F-type companion of the Epsilon Lyrae epsilon-1 pair",
+      "physical": {
+        "mass_kg": 3.2013240000000003e+30,
+        "radius_km": null,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 6773.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "F0V",
+      "luminosity_w": 3.2155200000000003e+27,
+      "distance_ly": 162.0,
+      "constellation": "天琴座",
+      "subtype": "主序星",
+      "members": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_epsilon_lyrae"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_epsilon_lyrae": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "epsilon_lyrae_b1",
+      "name": "织女二B1",
+      "name_en": "Epsilon Lyrae B1",
+      "category": "star",
+      "parent": "epsilon_lyrae",
+      "tagline": "织女二 ε2 对的 A 成员，快速自转的 A 型主序星",
+      "tagline_en": "Rapidly rotating A-type primary of the Epsilon Lyrae epsilon-2 pair",
+      "physical": {
+        "mass_kg": 4.195524e+30,
+        "radius_km": 1447056.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 7542.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A6Vn",
+      "luminosity_w": 1.1101200000000001e+28,
+      "distance_ly": 156.0,
+      "constellation": "天琴座",
+      "subtype": "A 型主序星",
+      "members": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_epsilon_lyrae"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_epsilon_lyrae": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
+    },
+    {
+      "id": "epsilon_lyrae_b2",
+      "name": "织女二B2",
+      "name_en": "Epsilon Lyrae B2",
+      "category": "star",
+      "parent": "epsilon_lyrae",
+      "tagline": "织女二 ε2 对的 B 成员，A7V 主序星",
+      "tagline_en": "A7V companion of the Epsilon Lyrae epsilon-2 pair",
+      "physical": {
+        "mass_kg": 4.2750599999999996e+30,
+        "radius_km": 1419228.0,
+        "density_g_cm3": null,
+        "gravity_m_s2": null,
+        "escape_velocity_km_s": null,
+        "mean_temp_c": 7578.85,
+        "surface_pressure_bar": null,
+        "albedo": null
+      },
+      "orbit": {
+        "semimajor_axis_km": null,
+        "orbital_period_days": null,
+        "orbital_velocity_km_s": null,
+        "inclination_deg": null,
+        "eccentricity": null,
+        "obliquity_deg": null,
+        "rotation_period_hours": null
+      },
+      "moons": {
+        "count": null,
+        "notable": []
+      },
+      "rings": null,
+      "magnetic_field": null,
+      "atmosphere": null,
+      "spectral_type": "A7Vn",
+      "luminosity_w": 1.22496e+28,
+      "distance_ly": 156.0,
+      "constellation": "天琴座",
+      "subtype": "A7V 主序星",
+      "members": null,
+      "discovery": {
+        "known_since": null,
+        "discoverer": null,
+        "year": null
+      },
+      "sources": [
+        "wiki_epsilon_lyrae"
+      ],
+      "verified": "2026-11-12",
+      "article": null,
+      "image": null,
+      "source_dates": {
+        "wiki_epsilon_lyrae": "2026-11-12"
+      },
+      "image_credit": null,
+      "image_url": null,
+      "image_locked": false,
+      "image_source": null,
+      "data_source": "manual",
+      "data_verified": false,
+      "note": "【2026-11-12 聚星系统扩充：成员构成与参数据 Wikipedia / Gaia 视差核对，未引入轨道根数】"
     }
   ],
   "source_registry": {
@@ -13759,6 +14381,22 @@
     "wiki_barnards_loop": {
       "name": "Wikipedia · barnards_loop",
       "url": "https://en.wikipedia.org/wiki/Barnard's_Loop"
+    },
+    "wiki_alpha_centauri": {
+      "name": "Wikipedia · Alpha Centauri",
+      "url": "https://en.wikipedia.org/wiki/Alpha_Centauri"
+    },
+    "wiki_kepler16": {
+      "name": "Wikipedia · Kepler-16",
+      "url": "https://en.wikipedia.org/wiki/Kepler-16"
+    },
+    "wiki_40_eridani": {
+      "name": "Wikipedia · 40 Eridani",
+      "url": "https://en.wikipedia.org/wiki/40_Eridani"
+    },
+    "wiki_epsilon_lyrae": {
+      "name": "Wikipedia · Epsilon Lyrae",
+      "url": "https://en.wikipedia.org/wiki/Epsilon_Lyrae"
     }
   }
 }

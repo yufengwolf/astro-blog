@@ -855,11 +855,11 @@
                               ]
                             },
                             {
-                              "id": "c.alpha-centauri",
+                              "id": "alpha_centauri",
                               "name": "南门二",
                               "name_en": "Alpha Centauri",
                               "type": "三合星系统",
-                              "category": "恒星",
+                              "category": "聚星系统",
                               "alias": "半人马座α",
                               "info": "距离太阳约 4.37 光年",
                               "source": "ESA",
@@ -919,7 +919,8 @@
                                   ],
                                   "repo_id": "proxima_centauri"
                                 }
-                              ]
+                              ],
+                              "repo_id": "alpha_centauri"
                             },
                             {
                               "id": "barnard_s_star",
@@ -932,11 +933,11 @@
                               "repo_id": "barnard_s_star"
                             },
                             {
-                              "id": "c.sirius",
+                              "id": "sirius",
                               "name": "天狼星",
                               "name_en": "Sirius",
                               "type": "双星系统",
-                              "category": "恒星",
+                              "category": "聚星系统",
                               "info": "全天最亮恒星，距离约 8.6 光年",
                               "source": "NASA",
                               "children": [
@@ -956,7 +957,8 @@
                                   "category": "恒星",
                                   "repo_id": "sirius_b"
                                 }
-                              ]
+                              ],
+                              "repo_id": "sirius"
                             },
                             {
                               "id": "procyon_a",
@@ -1264,6 +1266,53 @@
                                 }
                               ],
                               "repo_id": "gliese_581"
+                            },
+                            {
+                              "id": "epsilon_lyrae",
+                              "name": "织女二",
+                              "name_en": "Epsilon Lyrae",
+                              "type": "四合星系统",
+                              "category": "聚星系统",
+                              "info": "「双双星」：ε1 与 ε2 两对双星彼此再互绕，距地约 160 光年",
+                              "children": [
+                                {
+                                  "id": "epsilon_lyrae_a1",
+                                  "name": "织女二A1",
+                                  "name_en": "Epsilon Lyrae A1",
+                                  "type": "A 型主序星",
+                                  "category": "恒星",
+                                  "info": "ε1 对 A 成员，A3V",
+                                  "repo_id": "epsilon_lyrae_a1"
+                                },
+                                {
+                                  "id": "epsilon_lyrae_a2",
+                                  "name": "织女二A2",
+                                  "name_en": "Epsilon Lyrae A2",
+                                  "type": "主序星",
+                                  "category": "恒星",
+                                  "info": "ε1 对 B 成员，F0V",
+                                  "repo_id": "epsilon_lyrae_a2"
+                                },
+                                {
+                                  "id": "epsilon_lyrae_b1",
+                                  "name": "织女二B1",
+                                  "name_en": "Epsilon Lyrae B1",
+                                  "type": "A 型主序星",
+                                  "category": "恒星",
+                                  "info": "ε2 对 A 成员，A6Vn",
+                                  "repo_id": "epsilon_lyrae_b1"
+                                },
+                                {
+                                  "id": "epsilon_lyrae_b2",
+                                  "name": "织女二B2",
+                                  "name_en": "Epsilon Lyrae B2",
+                                  "type": "A7V 主序星",
+                                  "category": "恒星",
+                                  "info": "ε2 对 B 成员，A7Vn",
+                                  "repo_id": "epsilon_lyrae_b2"
+                                }
+                              ],
+                              "repo_id": "epsilon_lyrae"
                             }
                           ]
                         },
@@ -1323,23 +1372,6 @@
                                   "type": "红超巨星",
                                   "category": "恒星",
                                   "repo_id": "betelgeuse"
-                                },
-                                {
-                                  "id": "eridani_40a",
-                                  "name": "波江座40A",
-                                  "name_en": "40 Eridani A",
-                                  "type": "K1V 橙矮星",
-                                  "category": "恒星",
-                                  "info": "波江座 40 三合星系统主星，距约 16 光年",
-                                  "repo_id": "eridani_40a"
-                                },
-                                {
-                                  "id": "eridani_40b",
-                                  "name": "波江座40B",
-                                  "name_en": "40 Eridani B",
-                                  "type": "白矮星",
-                                  "category": "恒星",
-                                  "repo_id": "eridani_40b"
                                 },
                                 {
                                   "id": "vela_pulsar",
@@ -1609,6 +1641,43 @@
                                   "category": "恒星",
                                   "info": "已知体积最大的红超巨星之一",
                                   "repo_id": "stephenson_2_18"
+                                },
+                                {
+                                  "id": "eridani_40",
+                                  "name": "波江座40",
+                                  "name_en": "40 Eridani",
+                                  "type": "三合星系统",
+                                  "category": "聚星系统",
+                                  "info": "K1V 主星 + 白矮星 B + 红矮星 C；B/C 近距离互绕，整体约 16.3 光年",
+                                  "children": [
+                                    {
+                                      "id": "eridani_40a",
+                                      "name": "波江座40A",
+                                      "name_en": "40 Eridani A",
+                                      "type": "K1V 橙矮星",
+                                      "category": "恒星",
+                                      "info": "波江座 40 三合星系统主星，距约 16 光年",
+                                      "repo_id": "eridani_40a"
+                                    },
+                                    {
+                                      "id": "eridani_40b",
+                                      "name": "波江座40B",
+                                      "name_en": "40 Eridani B",
+                                      "type": "白矮星",
+                                      "category": "恒星",
+                                      "repo_id": "eridani_40b"
+                                    },
+                                    {
+                                      "id": "eridani_40c",
+                                      "name": "波江座40C",
+                                      "name_en": "40 Eridani C",
+                                      "type": "红矮星",
+                                      "category": "恒星",
+                                      "info": "M4.5Ve 耀星，与白矮星 B 组成 230 年周期的双星对",
+                                      "repo_id": "eridani_40c"
+                                    }
+                                  ],
+                                  "repo_id": "eridani_40"
                                 }
                               ]
                             },
@@ -1911,11 +1980,11 @@
                                   "repo_id": "kepler_22"
                                 },
                                 {
-                                  "id": "c.kepler-16",
+                                  "id": "kepler_16",
                                   "name": "开普勒16",
                                   "name_en": "Kepler-16",
                                   "type": "双星系统",
-                                  "category": "恒星",
+                                  "category": "聚星系统",
                                   "alias": "Kepler-16",
                                   "info": "环双星行星系统",
                                   "children": [
@@ -1944,7 +2013,8 @@
                                       "info": "首个被证实的环双星行星",
                                       "repo_id": "kepler_16b"
                                     }
-                                  ]
+                                  ],
+                                  "repo_id": "kepler_16"
                                 },
                                 {
                                   "id": "c.psr-b1257-12",

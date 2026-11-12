@@ -210,14 +210,15 @@
     '影像：': 'Image: ', 'AIA 极紫外成像': 'AIA extreme-UV image',
     '直径 ': 'Diameter ', '质量 ': 'Mass ', '分类：': 'Category: ',
     '核对日期：': 'Verified: ', '核对）': ' verified)',
-    '个天体已全部配图': ' objects, all illustrated'
+    '个天体已全部配图': ' objects, all illustrated',
+    '已配图': ' illustrated'
   };
   Object.keys(EXTRA).forEach(function (k) { ZH2EN[k] = EXTRA[k]; });
 
   // 带数字 / 变量的文本：正则替换（保留数值，只换中文骨架）
   var PATTERNS = [
     [/^(\S+?) (\d+)$/, function (m, zh, num) { return (ZH2EN[zh] || zh) + ' ' + num; }],
-    [/收录 (\d+) 个天体（全部配图）/, '$1 objects (all illustrated)'],
+    [/收录 (\d+) 个天体（(\d+) 已配图）/, '$1 objects ($2 illustrated)'],
     [/本站收录的全部 (\d+) 个天体/, 'All $1 objects in this catalogue'],
     [/最近更新：/, 'Last updated: '],
     [/个天体的质量、直径、密度、温度/, ' objects: mass, diameter, density, temperature'],
@@ -254,6 +255,7 @@
     [/；核对日期：/g, '; verified: '],
     [/（核对日期：/g, ' (verified: '],
     [/ 核对）/g, ' verified)'],
+    [/(\d+) 个天体（(\d+) 已配图）/g, '$1 objects ($2 illustrated)'],
     [/个天体已全部配图/g, ' objects, all illustrated'],
     [/。数值整理自 NASA NSSDC \/ JPL \/ Wikipedia 等公开天文资料。发现错误请到 /g,
      '. Values compiled from NASA NSSDC / JPL / Wikipedia and other open sources. Report errors at '],

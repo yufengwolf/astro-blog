@@ -14,7 +14,7 @@ hide:
   </div>
 </div>
 
-<p class="obj-parent">分类：恒星</p>
+<p class="obj-parent">母天体：<a href="../procyon_a/">南河三</a> · 分类：恒星</p>
 
 <div class="obj-data-grid">
 <section class="obj-data-block">
@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../kepler_16_b/">开普勒16B</a></p>
 <p class="obj-nav">下一颗：<a href="../trappist_1_b/">TRAPPIST-1 b</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 213 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 223 个天体（213 已配图）</p>

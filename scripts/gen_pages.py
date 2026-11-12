@@ -497,7 +497,8 @@ def build_index(data):
              f'发现数据错误？欢迎到 <a href="{REPO_URL}/issues">GitHub Issues</a> 反馈。</p>')
     L.append("</section>")
     L.append("")
-    L.append(f'<p class="obj-version">数据版本 v{VERSION} · 收录 {meta["object_count"]} 个天体（全部配图）</p>')
+    illustrated = sum(1 for o in data_objs if o.get("image"))
+    L.append(f'<p class="obj-version">数据版本 v{VERSION} · 收录 {meta["object_count"]} 个天体（{illustrated} 已配图）</p>')
     L.append("")
     return "\n".join(L)
 
@@ -956,7 +957,8 @@ def build_object(root, o, by_id, order, registry=None):
         nxt = by_id[order[idx + 1]]
         L.append(f'<p class="obj-nav">下一颗：<a href="../{nxt["id"]}/">{nxt["name"]}</a> →</p>')
     L.append("")
-    L.append(f'<p class="obj-version">数据版本 v{VERSION}（{VERIFIED} 核对）· {len(order)} 个天体已全部配图</p>')
+    illustrated = sum(1 for o in data_objs if o.get("image"))
+    L.append(f'<p class="obj-version">数据版本 v{VERSION}（{VERIFIED} 核对）· {len(order)} 个天体（{illustrated} 已配图）</p>')
     L.append("")
     return "\n".join(L)
 

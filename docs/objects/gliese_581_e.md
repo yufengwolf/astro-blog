@@ -64,5 +64,6 @@ hide:
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../gliese_581_c/">格利泽581c</a></p>
+<p class="obj-nav">下一颗：<a href="../sirius/">天狼星</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 213 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 223 个天体（213 已配图）</p>

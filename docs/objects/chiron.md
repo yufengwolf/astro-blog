@@ -53,4 +53,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../quaoar/">创神星</a></p>
 <p class="obj-nav">下一颗：<a href="../oj_287/">OJ 287</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 213 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 223 个天体（213 已配图）</p>

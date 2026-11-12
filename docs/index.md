@@ -1,19 +1,19 @@
 ---
-description: "收录 213 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 223 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">213 个天体的质量、直径、密度、温度</p>
+  <p class="astro-hero-sub">223 个天体的质量、直径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部 213</button>
-    <button type="button" class="chip" data-filter="star">恒星 68</button>
-    <button type="button" class="chip" data-filter="star_system">聚星系统 3</button>
+    <button type="button" class="chip active" data-filter="all">全部 223</button>
+    <button type="button" class="chip" data-filter="star">恒星 73</button>
+    <button type="button" class="chip" data-filter="star_system">聚星系统 8</button>
     <button type="button" class="chip" data-filter="planet">行星 32</button>
     <button type="button" class="chip" data-filter="dwarf_planet">矮行星 9</button>
     <button type="button" class="chip" data-filter="moon">卫星 33</button>
@@ -2383,6 +2383,116 @@ description: "收录 213 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge planet">行星</span>
     </a>
   </article>
+  <article class="astro-card" data-category="star_system" data-name="天狼星 Sirius" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/sirius/">
+      <div class="astro-img star_system astro-img-fallback"><span>天</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">天狼星<span class="en">Sirius</span></div>
+        <p class="astro-card-tagline">全天最亮恒星，实为 A1V 主序星与白矮星组成的双星系统</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge star_system">聚星系统</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star_system" data-name="南门二 Alpha Centauri" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/alpha_centauri/">
+      <div class="astro-img star_system astro-img-fallback"><span>南</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">南门二<span class="en">Alpha Centauri</span></div>
+        <p class="astro-card-tagline">距太阳最近的恒星系统，A/B 双星与远距红矮星比邻星构成三合星</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge star_system">聚星系统</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star_system" data-name="开普勒16 Kepler-16" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/kepler_16/">
+      <div class="astro-img star_system astro-img-fallback"><span>开</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">开普勒16<span class="en">Kepler-16</span></div>
+        <p class="astro-card-tagline">首个被确认拥有环双星行星的食双星系统</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge star_system">聚星系统</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star_system" data-name="波江座40 40 Eridani" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/eridani_40/">
+      <div class="astro-img star_system astro-img-fallback"><span>波</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">波江座40<span class="en">40 Eridani</span></div>
+        <p class="astro-card-tagline">16.3 光年外的三合星系统，含人类发现的第一颗白矮星</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge star_system">聚星系统</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star_system" data-name="织女二 Epsilon Lyrae" data-mass="" data-radius="" data-density="" data-temp="" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/epsilon_lyrae/">
+      <div class="astro-img star_system astro-img-fallback"><span>织</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">织女二<span class="en">Epsilon Lyrae</span></div>
+        <p class="astro-card-tagline">著名的「双双星」：两对双星再互绕，构成四合星系统</p>
+        <div class="astro-card-stats"></div>
+      </div>
+      <span class="astro-badge star_system">聚星系统</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="波江座40C 40 Eridani C" data-mass="4.0483824e+29" data-radius="215667.0" data-density="" data-temp="2826.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/eridani_40c/">
+      <div class="astro-img star astro-img-fallback"><span>波</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">波江座40C<span class="en">40 Eridani C</span></div>
+        <p class="astro-card-tagline">一颗耀星红矮星，与白矮星 B 组成近距离双星对</p>
+        <div class="astro-card-stats"><span>4.05×10²⁹ kg</span><span>431,334 km</span><span>3.06×10²⁴ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="织女二A1 Epsilon Lyrae A1" data-mass="4.0364519999999996e+30" data-radius="1934045.9999999998" data-density="" data-temp="7669.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/epsilon_lyrae_a1/">
+      <div class="astro-img star astro-img-fallback"><span>织</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">织女二A1<span class="en">Epsilon Lyrae A1</span></div>
+        <p class="astro-card-tagline">织女二 ε1 对的 A 成员，A 型主序星</p>
+        <div class="astro-card-stats"><span>4.04×10³⁰ kg</span><span>3,868,092 km</span><span>9.19×10²⁷ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="织女二A2 Epsilon Lyrae A2" data-mass="3.2013240000000003e+30" data-radius="" data-density="" data-temp="6773.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/epsilon_lyrae_a2/">
+      <div class="astro-img star astro-img-fallback"><span>织</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">织女二A2<span class="en">Epsilon Lyrae A2</span></div>
+        <p class="astro-card-tagline">织女二 ε1 对的 B 成员，F 型主序星</p>
+        <div class="astro-card-stats"><span>3.2×10³⁰ kg</span><span>3.22×10²⁷ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="织女二B1 Epsilon Lyrae B1" data-mass="4.195524e+30" data-radius="1447056.0" data-density="" data-temp="7542.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/epsilon_lyrae_b1/">
+      <div class="astro-img star astro-img-fallback"><span>织</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">织女二B1<span class="en">Epsilon Lyrae B1</span></div>
+        <p class="astro-card-tagline">织女二 ε2 对的 A 成员，快速自转的 A 型主序星</p>
+        <div class="astro-card-stats"><span>4.2×10³⁰ kg</span><span>2,894,112 km</span><span>1.11×10²⁸ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="star" data-name="织女二B2 Epsilon Lyrae B2" data-mass="4.2750599999999996e+30" data-radius="1419228.0" data-density="" data-temp="7578.85" data-period="" data-moons="">
+    <a class="astro-card-link" href="objects/epsilon_lyrae_b2/">
+      <div class="astro-img star astro-img-fallback"><span>织</span></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">织女二B2<span class="en">Epsilon Lyrae B2</span></div>
+        <p class="astro-card-tagline">织女二 ε2 对的 B 成员，A7V 主序星</p>
+        <div class="astro-card-stats"><span>4.28×10³⁰ kg</span><span>2,838,456 km</span><span>1.22×10²⁸ W</span></div>
+      </div>
+      <span class="astro-badge star">恒星</span>
+    </a>
+  </article>
 </div>
 <p class="astro-empty" id="astro-empty" hidden>没有匹配的天体，换个关键词或分类试试。</p>
 
@@ -2417,4 +2527,4 @@ description: "收录 213 个天体的结构化数据：质量、直径、密度�
   <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-12）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.9 · 收录 213 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.9 · 收录 223 个天体（213 已配图）</p>

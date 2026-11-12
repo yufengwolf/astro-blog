@@ -52,19 +52,30 @@ ok(errors.length === 0, '无 JS 运行时错误', errors.join(' | ').slice(0, 30
 
 // ---------- 数据契约：英文 id 唯一关联 + 双语字段 ----------
 const tree = JSON.parse(jsonScript[2]);
+// 期望值一律从融合源 universe-tree.json 动态推导，不写死节点数：
+// 每次往 astro.json 扩充天体 / 聚星系统后，硬编码计数都会变成假 FAIL。
+const srcTree = JSON.parse(fs.readFileSync('universe-tree.json', 'utf8'));
+const srcMain = [];
+(function w(n) { srcMain.push(n); (n.children || []).forEach(w); })(srcTree);
+const srcWithRepo = srcMain.filter(n => n.repo_id);
+const srcContainers = srcMain.filter(n => n.id.startsWith('c.'));
 const nodes = [];
 (function w(n) { nodes.push(n); (n.children || []).forEach(w); })(tree);
 const ids = nodes.map(n => n.id);
-ok(ids.length === 285, '内嵌节点数', `count=${ids.length}`);
+ok(ids.length === srcMain.length, '内嵌节点数与融合源一致', `count=${ids.length}`);
 ok(ids.every(i => typeof i === 'string' && /^[a-z0-9._-]+$/.test(i)), '全部 id 为 ASCII 稳定标识');
 ok(new Set(ids).size === ids.length, 'id 全局唯一', `unique=${new Set(ids).size}`);
 const withRepo = nodes.filter(n => n.repo_id);
-ok(withRepo.length === 208 && withRepo.every(n => n.id === n.repo_id),
+ok(withRepo.length === srcWithRepo.length && withRepo.every(n => n.id === n.repo_id),
    '天体节点 id === repo_id（唯一关联，无名称匹配）', `count=${withRepo.length}`);
-ok(nodes.filter(n => n.id.startsWith('c.')).length === 77, '容器使用 c. 命名空间');
+// 真实天体卡与 c. 容器必须命名空间互斥，且不能有「非 c. 又无 repo_id」的漏挂节点。
+ok(nodes.every(n => n.repo_id ? !n.id.startsWith('c.') : n.id.startsWith('c.'))
+   && nodes.filter(n => n.id.startsWith('c.')).length === srcContainers.length,
+   '容器使用 c. 命名空间且与天体节点互斥', `containers=${srcContainers.length}`);
 ok(nodes.every(n => typeof n.name_en === 'string' && n.name_en.length > 0),
    '全部节点具备 name_en');
-ok(Object.keys(tree.type_i18n || {}).length === 106 && Object.keys(tree.category_i18n || {}).length === 13,
+ok(Object.keys(tree.type_i18n || {}).length === Object.keys(srcTree.type_i18n || {}).length
+   && Object.keys(tree.category_i18n || {}).length === Object.keys(srcTree.category_i18n || {}).length,
    '类型/大类中英词表齐备');
 
 // ---------- 初始渲染（中文） ----------
