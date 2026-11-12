@@ -3024,7 +3024,7 @@
       "parent": null,
       "tagline": "冬夜最亮的星云，银河系最近的恒星摇篮之一",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 3.9768e+33,
         "radius_km": 113528400000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3055,7 +3055,7 @@
       "constellation": "猎户座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "直径约 24 光年；气体云质量约 2000 M☉，内部正在形成上千颗恒星。",
+      "note": "直径约 24 光年；气体云质量约 2000 M☉，内部正在形成上千颗恒星。 总质量约 1000–2000 M☉（气体为主）。",
       "discovery": {
         "known_since": "1610 年（Peiresc 发现）",
         "discoverer": null,
@@ -3064,11 +3064,11 @@
       "sources": [
         "wiki_m42"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m42.webp",
       "source_dates": {
-        "wiki_m42": "2026-10-24"
+        "wiki_m42": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · 多望远镜合成猎户座大星云（红外）",
       "image_url": "https://images.nasa.gov/details/PIA25434",
@@ -3089,7 +3089,7 @@
       "parent": null,
       "tagline": "北宋天文学家见证的超新星残骸，宇宙中最著名的遗迹星云",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 9.942e+30,
         "radius_km": 52033850000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3120,7 +3120,7 @@
       "constellation": "金牛座",
       "subtype": "超新星遗迹",
       "members": null,
-      "note": "直径约 11 光年；1054 年爆发的超新星残骸，中心有 33 毫秒脉冲星。",
+      "note": "直径约 11 光年；1054 年爆发的超新星残骸，中心有 33 毫秒脉冲星。 超新星抛射物质量约 4.6 M☉（含中心中子星可忽略）。",
       "discovery": {
         "known_since": "1054 年（中国记录超新星）；1731 年 Messier 编目",
         "discoverer": null,
@@ -3129,11 +3129,11 @@
       "sources": [
         "wiki_m1"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m1.webp",
       "source_dates": {
-        "wiki_m1": "2026-10-24"
+        "wiki_m1": "2026-11-12"
       },
       "image_credit": "NASA/STScI · 哈勃蟹状星云最详细影像",
       "image_url": "https://images.nasa.gov/details/PIA03606",
@@ -3154,7 +3154,7 @@
       "parent": null,
       "tagline": "哈勃「创生之柱」的故乡，巨蛇座里的恒星工厂",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.19304e+34,
         "radius_km": 331124500000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3185,7 +3185,7 @@
       "constellation": "巨蛇座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "直径约 70 光年；1995 年哈勃拍摄的「创生之柱」是有史以来最著名的天文照片之一。",
+      "note": "直径约 70 光年；1995 年哈勃拍摄的「创生之柱」是有史以来最著名的天文照片之一。 总质量约 6×10^3 – 10^4 M☉（含气体与年轻恒星）。",
       "discovery": {
         "known_since": "1746 年（Chéseaux 发现）",
         "discoverer": null,
@@ -3194,11 +3194,11 @@
       "sources": [
         "wiki_m16"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m16.webp",
       "source_dates": {
-        "wiki_m16": "2026-10-24"
+        "wiki_m16": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · WISE 红外鹰状星云全景",
       "image_url": "https://images.nasa.gov/details/PIA25433",
@@ -3219,7 +3219,7 @@
       "parent": null,
       "tagline": "发射、反射与暗带三合一的彩色星云，人马座里的调色盘",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 3.38028e+33,
         "radius_km": 189214000000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3250,7 +3250,7 @@
       "constellation": "人马座",
       "subtype": "发射 + 反射混合星云",
       "members": null,
-      "note": "直径约 40 光年；三条尘埃暗带把星云切成三瓣，故得名。",
+      "note": "直径约 40 光年；三条尘埃暗带把星云切成三瓣，故得名。 总质量约 1700 M☉（含电离/未电离云与尘；研究 1.7–3.2×10^3）。",
       "discovery": {
         "known_since": "1764 年（Messier 发现）",
         "discoverer": null,
@@ -3259,11 +3259,11 @@
       "sources": [
         "wiki_m20"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m20.webp",
       "source_dates": {
-        "wiki_m20": "2026-10-24"
+        "wiki_m20": "2026-11-12"
       },
       "image_credit": "NASA/STScI · 三叶星云全景（Atlas 马赛克）",
       "image_url": "https://images.nasa.gov/details/PIA04220",
@@ -3284,7 +3284,7 @@
       "parent": null,
       "tagline": "人马座里的巨大发射星云，肉眼可见的银河宝库",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.59072e+34,
         "radius_km": 425731500000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3315,7 +3315,7 @@
       "constellation": "人马座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "视尺寸 110×50 光年（椭圆），等效口径取约 90 光年；内部含疏散星团 NGC 6530。",
+      "note": "视尺寸 110×50 光年（椭圆），等效口径取约 90 光年；内部含疏散星团 NGC 6530。 总质量约 8×10^3 M☉。",
       "discovery": {
         "known_since": "1654 年（Hodierna 发现）",
         "discoverer": null,
@@ -3324,11 +3324,11 @@
       "sources": [
         "wiki_m8"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m8.webp",
       "source_dates": {
-        "wiki_m8": "2026-10-24"
+        "wiki_m8": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · WISE 礁湖星云马赛克",
       "image_url": "https://images.nasa.gov/details/PIA13453",
@@ -3349,7 +3349,7 @@
       "parent": null,
       "tagline": "猎户座腰带旁的暗尘埃剪影，夜空最 recognizable 的剪影",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 4.971e+32,
         "radius_km": 16556225000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3380,7 +3380,7 @@
       "constellation": "猎户座",
       "subtype": "暗星云",
       "members": null,
-      "note": "直径约 3.5 光年；本身不发光，是背景发射星云 IC 434 前的尘埃暗带。",
+      "note": "直径约 3.5 光年；本身不发光，是背景发射星云 IC 434 前的尘埃暗带。 IC 434 前方暗云总质量约 250 M☉（致密马头仅约 25–40 M☉）。",
       "discovery": {
         "known_since": "1888 年（Fleming 在照相底片上发现）",
         "discoverer": null,
@@ -3389,11 +3389,11 @@
       "sources": [
         "wiki_horsehead"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/horsehead.webp",
       "source_dates": {
-        "wiki_horsehead": "2026-10-24"
+        "wiki_horsehead": "2026-11-12"
       },
       "image_credit": "NASA/STScI · 哈勃马头星云（红外）",
       "image_url": "https://images.nasa.gov/details/PIA04215",
@@ -3414,7 +3414,7 @@
       "parent": null,
       "tagline": "天琴座里的太空烟圈，恒星暮年的典型肖像",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 3.9768e+29,
         "radius_km": 12298910000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3445,7 +3445,7 @@
       "constellation": "天琴座",
       "subtype": "行星状星云",
       "members": null,
-      "note": "直径约 2.6 光年；濒死恒星抛出的气壳，中央可见白矮星。",
+      "note": "直径约 2.6 光年；濒死恒星抛出的气壳，中央可见白矮星。 电离气体质量约 0.1–0.2 M☉（含外层晕更大）。",
       "discovery": {
         "known_since": "1779 年（Messier 发现）",
         "discoverer": null,
@@ -3454,11 +3454,11 @@
       "sources": [
         "wiki_m57"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m57.webp",
       "source_dates": {
-        "wiki_m57": "2026-10-24"
+        "wiki_m57": "2026-11-12"
       },
       "image_credit": "NASA/ESA/STScI · 哈勃环状星云真实形状",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464",
@@ -3479,7 +3479,7 @@
       "parent": null,
       "tagline": "宝瓶座里的「上帝之眼」，离地球最近的行星状星云",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 2.9826e+29,
         "radius_km": 27152209000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3510,7 +3510,7 @@
       "constellation": "宝瓶座",
       "subtype": "行星状星云",
       "members": null,
-      "note": "直径约 5.7 光年；形似巨眼，又近又大，是行星状星云的代表。",
+      "note": "直径约 5.7 光年；形似巨眼，又近又大，是行星状星云的代表。 约 0.1–0.2 M☉。",
       "discovery": {
         "known_since": "1824 年（Harding 发现）",
         "discoverer": null,
@@ -3519,11 +3519,11 @@
       "sources": [
         "wiki_ngc7293"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ngc7293.webp",
       "source_dates": {
-        "wiki_ngc7293": "2026-10-24"
+        "wiki_ngc7293": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · GALEX 紫外上帝之眼全景",
       "image_url": "https://images.nasa.gov/details/PIA15658",
@@ -3544,7 +3544,7 @@
       "parent": null,
       "tagline": "蛇夫座里的蝶翼状星云，双极喷流的活样本",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+29,
         "radius_km": 6622490000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3575,7 +3575,7 @@
       "constellation": "蛇夫座",
       "subtype": "双极行星状星云",
       "members": null,
-      "note": "直径约 1.4 光年；双星系统相互作用塑造出对称的双翼结构。",
+      "note": "直径约 1.4 光年；双星系统相互作用塑造出对称的双翼结构。 约 0.1 M☉（小质量行星状星云）。",
       "discovery": {
         "known_since": "1952 年（Minkowski 发现）",
         "discoverer": null,
@@ -3584,7 +3584,7 @@
       "sources": [
         "wiki_m2_9"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m2_9.webp",
       "source_dates": {
@@ -3609,7 +3609,7 @@
       "parent": null,
       "tagline": "麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+34,
         "radius_km": 614945500000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3640,7 +3640,7 @@
       "constellation": "麒麟座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。",
+      "note": "直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。 总质量约 10^4 M☉（含气体与年轻星团）。",
       "discovery": {
         "known_since": "1690 年（Flamsteed 发现）",
         "discoverer": null,
@@ -3649,11 +3649,11 @@
       "sources": [
         "wiki_rosette"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/rosette.webp",
       "source_dates": {
-        "wiki_rosette": "2026-10-24"
+        "wiki_rosette": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · 斯皮策红外玫瑰星云",
       "image_url": "https://images.nasa.gov/details/PIA09268",
@@ -3674,7 +3674,7 @@
       "parent": null,
       "tagline": "横跨猎户座大半边的巨大圆弧，可能源于数百万年前的一次超新星",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.332228e+34,
         "radius_km": 1419105000000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3705,20 +3705,22 @@
       "constellation": "猎户座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "直径约 300 光年；猎户座分子云复合体被电离的边缘。",
+      "note": "直径约 300 光年；猎户座分子云复合体被电离的边缘。 电离气体质量约 6700 M☉（巨大弥散壳层，几何假设影响大）。",
       "discovery": {
         "known_since": "1895 年（Barnard 拍照发现）",
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "wiki_barnard"
+        "wiki_barnard",
+        "wiki_barnards_loop"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/barnards_loop.webp",
       "source_dates": {
-        "wiki_barnard": "2026-10-24"
+        "wiki_barnard": "2026-10-24",
+        "wiki_barnards_loop": "2026-11-12"
       },
       "image_credit": "程序化示意图",
       "image_url": null,
@@ -3739,7 +3741,7 @@
       "parent": "lmc",
       "tagline": "大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+36,
         "radius_km": 4730350000000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -3770,7 +3772,7 @@
       "constellation": "剑鱼座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。",
+      "note": "直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。 总质量约 10^6 M☉（含 R136 星团与气体；本星系群最活跃恒星形成区）。",
       "discovery": {
         "known_since": "1751 年（Lacaille 发现）",
         "discoverer": null,
@@ -3779,11 +3781,11 @@
       "sources": [
         "wiki_tarantula"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/tarantula.webp",
       "source_dates": {
-        "wiki_tarantula": "2026-10-24"
+        "wiki_tarantula": "2026-11-12"
       },
       "image_credit": "NASA/CXC/STScI/JPL-Caltech · 蜘蛛星云多波段合成（Chandra+哈勃+斯皮策）",
       "image_url": "https://images.nasa.gov/details/PIA14415",
@@ -4324,7 +4326,7 @@
       "parent": null,
       "tagline": "北斗七星附近的完美旋涡，与 M82 组成经典相互作用对",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.3918799999999999e+42,
         "radius_km": 4.446529e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -4355,7 +4357,7 @@
       "constellation": "大熊座",
       "subtype": "旋涡星系（SA(s)ab）",
       "members": "与 M82 构成相互作用星系对",
-      "note": "直径约 9.4 万光年（WISE 口径）。",
+      "note": "直径约 9.4 万光年（WISE 口径）。 总质量约 7×10^11 M☉（动力学估计，不同方法 5×10^10 – 10^12 量级）。",
       "discovery": {
         "known_since": "1774 年（Bode 发现）",
         "discoverer": null,
@@ -4364,11 +4366,11 @@
       "sources": [
         "wiki_m81"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m81.webp",
       "source_dates": {
-        "wiki_m81": "2026-10-24"
+        "wiki_m81": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech/ESA/Harvard-Smithsonian CfA · M81（GALEX+哈勃+斯皮策合成）",
       "image_url": "https://images.nasa.gov/details/PIA09579",
@@ -4389,7 +4391,7 @@
       "parent": "m81",
       "tagline": "著名的星暴星系，恒星诞生的速度是银河系的十倍",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+41,
         "radius_km": 1.7502295e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -4420,7 +4422,7 @@
       "constellation": "大熊座",
       "subtype": "星暴不规则星系",
       "members": null,
-      "note": "直径约 3.7 万光年；与 M81 的引力相互作用触发剧烈星暴。",
+      "note": "直径约 3.7 万光年；与 M81 的引力相互作用触发剧烈星暴。 总质量约 10^11 M☉（估计范围大，约 5×10^10 – 4×10^11）。",
       "discovery": {
         "known_since": "1774 年（Bode 发现）",
         "discoverer": null,
@@ -4429,11 +4431,11 @@
       "sources": [
         "wiki_m82"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m82.webp",
       "source_dates": {
-        "wiki_m82": "2026-10-24"
+        "wiki_m82": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech/SAO/NOAO · M82 可见光 + NuSTAR X 射线合成",
       "image_url": "https://images.nasa.gov/details/PIA18841",
@@ -4454,7 +4456,7 @@
       "parent": null,
       "tagline": "棒旋星系的教科书标本，波江座里的巨大风车",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+41,
         "radius_km": 5.203385e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -4485,7 +4487,7 @@
       "constellation": "波江座",
       "subtype": "棒旋星系（SBbc）",
       "members": null,
-      "note": "直径约 11 万光年；中央棒结构与两端伸出的旋臂极其规整。",
+      "note": "直径约 11 万光年；中央棒结构与两端伸出的旋臂极其规整。 总质量约 10^11 M☉（棒旋星系，含暗物质晕）。",
       "discovery": {
         "known_since": "1835 年（Herschel 发现）",
         "discoverer": null,
@@ -4494,11 +4496,11 @@
       "sources": [
         "wiki_ngc1300"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ngc1300.webp",
       "source_dates": {
-        "wiki_ngc1300": "2026-10-24"
+        "wiki_ngc1300": "2026-11-12"
       },
       "image_credit": "NASA/ESA/STScI · 哈勃望远镜 NGC 1300",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002154",
@@ -4519,7 +4521,7 @@
       "parent": null,
       "tagline": "已知直径最大的星系之一，宇宙中的巨型椭圆巨兽",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 6.76056e+42,
         "radius_km": 8.041595e+18,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -4550,7 +4552,7 @@
       "constellation": "巨蛇座",
       "subtype": "巨型椭圆星系（cD）",
       "members": null,
-      "note": "2024 年 A&A 研究测得直径约 170 万光年；不同口径争议极大，星系晕或延展至约 600 万光年。此处取 170 万光年（半径 85 万）。",
+      "note": "2024 年 A&A 研究测得直径约 170 万光年；不同口径争议极大，星系晕或延展至约 600 万光年。此处取 170 万光年（半径 85 万）。 恒星总质量约 3.4×10^12 M☉（2026 深场成像；含暗物质晕总质量可能达 10^14 M☉ 量级，极不确定）。",
       "discovery": {
         "known_since": "1793 年（Herschel 发现）",
         "discoverer": null,
@@ -4559,11 +4561,11 @@
       "sources": [
         "wiki_ic1101"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ic1101.webp",
       "source_dates": {
-        "wiki_ic1101": "2026-10-24"
+        "wiki_ic1101": "2026-11-12"
       },
       "image_credit": "程序化示意图",
       "image_url": null,
@@ -4584,7 +4586,7 @@
       "parent": null,
       "tagline": "五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+42,
         "radius_km": 1.6556225e+18,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -4615,20 +4617,22 @@
       "constellation": "飞马座",
       "subtype": "致密星系群",
       "members": "NGC 7317 / 7318A / 7318B / 7319 / 7320",
-      "note": "群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。",
+      "note": "群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。 致密星系群（4 个真实成员）动力学质量约 10^12 M☉；前景星系 NGC 7320 不计入。",
       "discovery": {
         "known_since": "1877 年（Stephan 发现）",
         "discoverer": null,
         "year": null
       },
       "sources": [
-        "wiki_quintet"
+        "wiki_quintet",
+        "wiki_stephens_quintet"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/stephens_quintet.webp",
       "source_dates": {
-        "wiki_quintet": "2026-10-24"
+        "wiki_quintet": "2026-10-24",
+        "wiki_stephens_quintet": "2026-11-12"
       },
       "image_credit": "NASA/ESA · 哈勃望远镜斯蒂芬五重星系（1999）",
       "image_url": "https://images.nasa.gov/details/PIA04201",
@@ -5624,7 +5628,7 @@
       "parent": "milky_way",
       "tagline": "银河系中最亮的发射星云之一，形似一只展翅的天鹅",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.59072e+33,
         "radius_km": 189214000000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -5655,7 +5659,7 @@
       "constellation": "人马座",
       "subtype": "H II 区 / 发射星云",
       "members": 1000,
-      "note": "人马座方向的巨大恒星形成区，内含疏散星团 NGC 6618；可见光下呈天鹅/马蹄形。",
+      "note": "人马座方向的巨大恒星形成区，内含疏散星团 NGC 6618；可见光下呈天鹅/马蹄形。 电离星云总质量约 800 M☉（所在分子云复合体约 3×10^4 M☉）。",
       "discovery": {
         "known_since": "1745 年 de Chéseaux 记录，1764 年梅西耶编目",
         "discoverer": null,
@@ -5664,11 +5668,11 @@
       "sources": [
         "wiki_m17"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m17.webp",
       "source_dates": {
-        "wiki_m17": "2026-10-24"
+        "wiki_m17": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · 斯皮策红外天鹅星云 M17",
       "image_url": "https://images.nasa.gov/details/PIA12071",
@@ -5689,7 +5693,7 @@
       "parent": "milky_way",
       "tagline": "人类发现的第一个行星状星云，形似一只哑铃",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 3.9768e+29,
         "radius_km": 11825875000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -5720,7 +5724,7 @@
       "constellation": "狐狸座",
       "subtype": "行星状星云",
       "members": null,
-      "note": "垂死恒星抛出的气壳，中心白矮星；是梅西耶目录中第一个行星状星云。",
+      "note": "垂死恒星抛出的气壳，中心白矮星；是梅西耶目录中第一个行星状星云。 约 0.1–0.4 M☉。",
       "discovery": {
         "known_since": "1764 年梅西耶发现",
         "discoverer": null,
@@ -5729,11 +5733,11 @@
       "sources": [
         "wiki_m27"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m27.webp",
       "source_dates": {
-        "wiki_m27": "2026-10-24"
+        "wiki_m27": "2026-11-12"
       },
       "image_credit": "NASA/STScI · 哈勃哑铃星云 M27",
       "image_url": "https://images.nasa.gov/details/PIA04249",
@@ -5754,7 +5758,7 @@
       "parent": "milky_way",
       "tagline": "全天最大最亮的星云之一，藏着最不稳定的巨星海山二",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.78956e+36,
         "radius_km": 2175961000000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -5785,7 +5789,7 @@
       "constellation": "船底座",
       "subtype": "发射星云（含高光度蓝变星）",
       "members": 14000,
-      "note": "等效直径口径不一（约 260~460 光年，取决于是否计入外围暗星云结构）；内部包含海山二、钥匙孔星云与多个大质量星团。",
+      "note": "等效直径口径不一（约 260~460 光年，取决于是否计入外围暗星云结构）；内部包含海山二、钥匙孔星云与多个大质量星团。 气体+尘埃总质量约 6.5×10^5 – 9×10^5 M☉（Herschel）。",
       "discovery": {
         "known_since": "1751-52 年拉卡伊发现",
         "discoverer": null,
@@ -5794,11 +5798,11 @@
       "sources": [
         "wiki_ngc3372"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ngc3372.webp",
       "source_dates": {
-        "wiki_ngc3372": "2026-10-24"
+        "wiki_ngc3372": "2026-11-12"
       },
       "image_credit": "NASA/ESA/CSA/STScI · 韦布望远镜船底座星云「宇宙悬崖」",
       "image_url": "https://images.nasa.gov/details/carina_nebula",
@@ -5819,7 +5823,7 @@
       "parent": "milky_way",
       "tagline": "形状酷似北美洲大陆的发射星云",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 7.9536e+33,
         "radius_km": 425731500000000.0,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -5850,7 +5854,7 @@
       "constellation": "天鹅座",
       "subtype": "发射星云（H II 区）",
       "members": null,
-      "note": "与鹈鹕星云（IC 5070）同属一个巨大 H II 区，被尘埃带分隔成两块。",
+      "note": "与鹈鹕星云（IC 5070）同属一个巨大 H II 区，被尘埃带分隔成两块。 总质量约 4000 M☉。",
       "discovery": {
         "known_since": "1786 年赫歇尔记录",
         "discoverer": null,
@@ -5859,11 +5863,11 @@
       "sources": [
         "wiki_ngc7000"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ngc7000.webp",
       "source_dates": {
-        "wiki_ngc7000": "2026-10-24"
+        "wiki_ngc7000": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech/Caltech/IPAC · 北美洲星云（可见+红外合成）",
       "image_url": "https://images.nasa.gov/details/PIA13845",
@@ -5884,7 +5888,7 @@
       "parent": null,
       "tagline": "正面朝我们的旋涡星系，旋臂上缀满红色恒星育婴室",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.9884e+42,
         "radius_km": 8.041595e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -5915,7 +5919,7 @@
       "constellation": "大熊座",
       "subtype": "旋涡星系（Sc）",
       "members": null,
-      "note": "2011 年哈勃以 51 幅图拼接成其迄今最大最清晰的旋涡全景。",
+      "note": "2011 年哈勃以 51 幅图拼接成其迄今最大最清晰的旋涡全景。 总质量约 10^12 M☉（估计范围 3×10^11 – 10^12）。",
       "discovery": {
         "known_since": "1781 年 Méchain 发现",
         "discoverer": null,
@@ -5924,11 +5928,11 @@
       "sources": [
         "wiki_m101"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m101.webp",
       "source_dates": {
-        "wiki_m101": "2026-10-24"
+        "wiki_m101": "2026-11-12"
       },
       "image_credit": "NASA/STScI/JPL-Caltech/Chandra · 风车星系 M101 多波段合成",
       "image_url": "https://images.nasa.gov/details/PIA15630",
@@ -5949,7 +5953,7 @@
       "parent": null,
       "tagline": "壮丽旋臂前横着一条暗尘埃带，像一只乌黑的眼睛",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 2.38608e+41,
         "radius_km": 2.554389e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -5980,7 +5984,7 @@
       "constellation": "后发座",
       "subtype": "旋涡星系（Sb）",
       "members": null,
-      "note": "又名睡美人星系；外盘气体反向旋转，被认为是远古星系并合的遗迹。",
+      "note": "又名睡美人星系；外盘气体反向旋转，被认为是远古星系并合的遗迹。 总质量约 1.2×10^11 M☉（恒星质量约 1.15×10^11，含晕更大）。",
       "discovery": {
         "known_since": "1779 年梅西耶记录",
         "discoverer": null,
@@ -5989,11 +5993,11 @@
       "sources": [
         "wiki_m64"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m64.webp",
       "source_dates": {
-        "wiki_m64": "2026-10-24"
+        "wiki_m64": "2026-11-12"
       },
       "image_credit": "NASA/STScI · 哈勃黑眼星系 M64",
       "image_url": "https://images.nasa.gov/details/0400392",
@@ -6014,7 +6018,7 @@
       "parent": null,
       "tagline": "南天最亮的旋涡星系之一，恒星爆发此起彼伏",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 3.9768e+41,
         "radius_km": 2.6016925e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -6045,7 +6049,7 @@
       "constellation": "长蛇座",
       "subtype": "棒旋星系（星暴星系）",
       "members": null,
-      "note": "已观测到 6 次超新星爆发，是业余与专业观测的常客。",
+      "note": "已观测到 6 次超新星爆发，是业余与专业观测的常客。 总质量约 2×10^11 M☉（恒星 ~2.5–3.7×10^10，含暗物质晕，估计范围大）。",
       "discovery": {
         "known_since": "1752 年拉卡伊发现",
         "discoverer": null,
@@ -6054,11 +6058,11 @@
       "sources": [
         "wiki_m83"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/m83.webp",
       "source_dates": {
-        "wiki_m83": "2026-10-24"
+        "wiki_m83": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · GALEX 紫外南风车星系 M83",
       "image_url": "https://images.nasa.gov/details/PIA04629",
@@ -6079,7 +6083,7 @@
       "parent": null,
       "tagline": "被一条厚重尘埃带拦腰横穿的并合遗迹星系",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.78956e+42,
         "radius_km": 2.83821e+17,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -6110,7 +6114,7 @@
       "constellation": "半人马座",
       "subtype": "透镜/椭圆星系（并合遗迹）",
       "members": null,
-      "note": "距离最近的射电星系之一（射电源 Cen A）；中心超大质量黑洞喷流长达数千光年。",
+      "note": "距离最近的射电星系之一（射电源 Cen A）；中心超大质量黑洞喷流长达数千光年。 总质量约 9×10^11 M☉（不同方法 4×10^11 – 9×10^11）。",
       "discovery": {
         "known_since": "1826 年 James Dunlop 发现",
         "discoverer": null,
@@ -6119,11 +6123,11 @@
       "sources": [
         "wiki_ngc5128"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ngc5128.webp",
       "source_dates": {
-        "wiki_ngc5128": "2026-10-24"
+        "wiki_ngc5128": "2026-11-12"
       },
       "image_credit": "NASA/JPL-Caltech · 斯皮策红外半人马 A",
       "image_url": "https://images.nasa.gov/details/PIA06007",
@@ -6144,7 +6148,7 @@
       "parent": null,
       "tagline": "两个正在撕扯合并的旋涡星系，甩出两条长长的潮汐尾",
       "physical": {
-        "mass_kg": null,
+        "mass_kg": 1.19304e+42,
         "radius_km": 2.365175e+18,
         "density_g_cm3": null,
         "gravity_m_s2": null,
@@ -6175,7 +6179,7 @@
       "constellation": "乌鸦座",
       "subtype": "并合星系对（触须星系）",
       "members": null,
-      "note": "等效半径含两条潮汐尾（NGC 4038 与 NGC 4039 两核相距约 2.5 万光年）；合并触发的星暴诞生了数万个星团。",
+      "note": "等效半径含两条潮汐尾（NGC 4038 与 NGC 4039 两核相距约 2.5 万光年）；合并触发的星暴诞生了数万个星团。 合并中的一对星系，每个前身总质量约 3×10^11 M☉，合计约 6×10^11（随模型 5–6×10^11）。",
       "discovery": {
         "known_since": "1785 年赫歇尔发现",
         "discoverer": null,
@@ -6184,11 +6188,11 @@
       "sources": [
         "wiki_ngc4038"
       ],
-      "verified": "2026-10-24",
+      "verified": "2026-11-12",
       "article": null,
       "image": "assets/planets/ngc4038.webp",
       "source_dates": {
-        "wiki_ngc4038": "2026-10-24"
+        "wiki_ngc4038": "2026-11-12"
       },
       "image_credit": "NASA/ESA/STScI · 哈勃天线星系（NGC 4038/4039）",
       "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001327",
@@ -13894,6 +13898,14 @@
     "exo_catalog": {
       "name": "系外行星星表/文献值（NASA Exoplanet Archive 等）",
       "url": "https://exoplanetarchive.ipac.caltech.edu/"
+    },
+    "wiki_stephens_quintet": {
+      "name": "Wikipedia · stephens_quintet",
+      "url": "https://en.wikipedia.org/wiki/Stephan's_Quintet"
+    },
+    "wiki_barnards_loop": {
+      "name": "Wikipedia · barnards_loop",
+      "url": "https://en.wikipedia.org/wiki/Barnard's_Loop"
     }
   }
 }

@@ -1,5 +1,5 @@
 ---
-description: "玫瑰星云（Rosette Nebula）的天体数据：—、直径（等效球径） 130 光年、距离 5,000 光年、温度 —。数据整理自公开天文资料。"
+description: "玫瑰星云（Rosette Nebula）的天体数据：1.99×10³⁴ kg、直径（等效球径） 130 光年、距离 5,000 光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge nebula">星云</span>
     <h1>玫瑰星云 <small>Rosette Nebula</small></h1>
     <p class="obj-tagline" data-obj-id="rosette">麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云</p>
-    <p class="obj-summary">直径（等效球径） 130 光年</p>
+    <p class="obj-summary">直径（等效球径） 130 光年 · 质量 1.99×10³⁴ kg</p>
   </div>
 </div>
 
@@ -22,6 +22,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
+<tr><th scope="row">质量</th><td>1.99×10³⁴ kg（1×10⁴ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>130 光年</td></tr>
 <tr><th scope="row">距离</th><td>5,000 光年</td></tr>
 <tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
@@ -35,7 +36,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
-<tr><th scope="row">备注</th><td data-en="Diameter ~130 light-years; a 2024 NOIRLab study proposed a closer distance (~2600 light-years) and smaller size (~55 light-years); the classical value is adopted here.">直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~130 light-years; a 2024 NOIRLab study proposed a closer distance (~2600 light-years) and smaller size (~55 light-years); the classical value is adopted here.">直径约 130 光年；NOIRLab 2024 年新研究给出更近距离（约 2600 光年）与更小尺度（约 55 光年），此处取经典值。 总质量约 10^4 M☉（含气体与年轻星团）。</td></tr>
 <tr><th scope="row">发现</th><td>1690 年（Flamsteed 发现）</td></tr>
 </tbody>
 </table>
@@ -44,7 +45,7 @@ hide:
 
 <section class="obj-source">
   <h2>数据来源</h2>
-  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Rosette_Nebula" target="_blank" rel="noopener">Wikipedia · Rosette Nebula</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Rosette_Nebula" target="_blank" rel="noopener">Wikipedia · Rosette Nebula</a>；核对日期：2026-11-12。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../m2_9/">双喷射星星云</a></p>

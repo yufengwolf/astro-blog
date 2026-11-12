@@ -1,5 +1,5 @@
 ---
-description: "蜘蛛星云（Tarantula Nebula (30 Doradus)）的天体数据：—、直径（等效球径） 1,000 光年、距离 16 万光年、温度 —。数据整理自公开天文资料。"
+description: "蜘蛛星云（Tarantula Nebula (30 Doradus)）的天体数据：1.99×10³⁶ kg、直径（等效球径） 1,000 光年、距离 16 万光年、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge nebula">星云</span>
     <h1>蜘蛛星云 <small>Tarantula Nebula (30 Doradus)</small></h1>
     <p class="obj-tagline" data-obj-id="tarantula">大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云</p>
-    <p class="obj-summary">直径（等效球径） 1,000 光年</p>
+    <p class="obj-summary">直径（等效球径） 1,000 光年 · 质量 1.99×10³⁶ kg</p>
   </div>
 </div>
 
@@ -22,6 +22,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
+<tr><th scope="row">质量</th><td>1.99×10³⁶ kg（1×10⁶ M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>1,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>16 万光年</td></tr>
 <tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
@@ -35,7 +36,7 @@ hide:
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
 <tr><th scope="row">类型</th><td data-en="Emission nebula (H II region)">发射星云（H II 区）</td></tr>
-<tr><th scope="row">备注</th><td data-en="Diameter ~1000 light-years; if placed at the Milky Way&#x27;s location, its radiance would be bright enough to cast shadows.">直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。</td></tr>
+<tr><th scope="row">备注</th><td data-en="Diameter ~1000 light-years; if placed at the Milky Way&#x27;s location, its radiance would be bright enough to cast shadows.">直径约 1000 光年；若放到银河系位置，其光辉足以投出物体阴影。 总质量约 10^6 M☉（含 R136 星团与气体；本星系群最活跃恒星形成区）。</td></tr>
 <tr><th scope="row">发现</th><td>1751 年（Lacaille 发现）</td></tr>
 </tbody>
 </table>
@@ -44,7 +45,7 @@ hide:
 
 <section class="obj-source">
   <h2>数据来源</h2>
-  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Tarantula_Nebula" target="_blank" rel="noopener">Wikipedia · Tarantula Nebula</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Tarantula_Nebula" target="_blank" rel="noopener">Wikipedia · Tarantula Nebula</a>；核对日期：2026-11-12。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../barnards_loop/">巴纳德环</a></p>

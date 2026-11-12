@@ -600,134 +600,134 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge black_hole">黑洞</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="猎户座大星云 Orion Nebula (M42)" data-mass="" data-radius="113528400000000.0" data-density="" data-temp="9727" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="猎户座大星云 Orion Nebula (M42)" data-mass="3.9768e+33" data-radius="113528400000000.0" data-density="" data-temp="9727" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m42/">
       <div class="astro-img nebula"><img src="assets/planets/m42.webp" alt="猎户座大星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">猎户座大星云<span class="en">Orion Nebula (M42)</span></div>
         <p class="astro-card-tagline">冬夜最亮的星云，银河系最近的恒星摇篮之一</p>
-        <div class="astro-card-stats"><span>24 光年</span><span>10,000 K</span></div>
+        <div class="astro-card-stats"><span>3.98×10³³ kg</span><span>24 光年</span><span>10,000 K</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="蟹状星云 Crab Nebula (M1)" data-mass="" data-radius="52033850000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="蟹状星云 Crab Nebula (M1)" data-mass="9.942e+30" data-radius="52033850000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m1/">
       <div class="astro-img nebula"><img src="assets/planets/m1.webp" alt="蟹状星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">蟹状星云<span class="en">Crab Nebula (M1)</span></div>
         <p class="astro-card-tagline">北宋天文学家见证的超新星残骸，宇宙中最著名的遗迹星云</p>
-        <div class="astro-card-stats"><span>11 光年</span></div>
+        <div class="astro-card-stats"><span>9.94×10³⁰ kg</span><span>11 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="鹰状星云 Eagle Nebula (M16)" data-mass="" data-radius="331124500000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="鹰状星云 Eagle Nebula (M16)" data-mass="1.19304e+34" data-radius="331124500000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m16/">
       <div class="astro-img nebula"><img src="assets/planets/m16.webp" alt="鹰状星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">鹰状星云<span class="en">Eagle Nebula (M16)</span></div>
         <p class="astro-card-tagline">哈勃「创生之柱」的故乡，巨蛇座里的恒星工厂</p>
-        <div class="astro-card-stats"><span>70 光年</span></div>
+        <div class="astro-card-stats"><span>1.19×10³⁴ kg</span><span>70 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="三叶星云 Trifid Nebula (M20)" data-mass="" data-radius="189214000000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="三叶星云 Trifid Nebula (M20)" data-mass="3.38028e+33" data-radius="189214000000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m20/">
       <div class="astro-img nebula"><img src="assets/planets/m20.webp" alt="三叶星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">三叶星云<span class="en">Trifid Nebula (M20)</span></div>
         <p class="astro-card-tagline">发射、反射与暗带三合一的彩色星云，人马座里的调色盘</p>
-        <div class="astro-card-stats"><span>40 光年</span></div>
+        <div class="astro-card-stats"><span>3.38×10³³ kg</span><span>40 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="礁湖星云 Lagoon Nebula (M8)" data-mass="" data-radius="425731500000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="礁湖星云 Lagoon Nebula (M8)" data-mass="1.59072e+34" data-radius="425731500000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m8/">
       <div class="astro-img nebula"><img src="assets/planets/m8.webp" alt="礁湖星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">礁湖星云<span class="en">Lagoon Nebula (M8)</span></div>
         <p class="astro-card-tagline">人马座里的巨大发射星云，肉眼可见的银河宝库</p>
-        <div class="astro-card-stats"><span>90 光年</span></div>
+        <div class="astro-card-stats"><span>1.59×10³⁴ kg</span><span>90 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="马头星云 Horsehead Nebula" data-mass="" data-radius="16556225000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="马头星云 Horsehead Nebula" data-mass="4.971e+32" data-radius="16556225000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/horsehead/">
       <div class="astro-img nebula"><img src="assets/planets/horsehead.webp" alt="马头星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">马头星云<span class="en">Horsehead Nebula</span></div>
         <p class="astro-card-tagline">猎户座腰带旁的暗尘埃剪影，夜空最 recognizable 的剪影</p>
-        <div class="astro-card-stats"><span>3.5 光年</span></div>
+        <div class="astro-card-stats"><span>4.97×10³² kg</span><span>3.5 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="环状星云 Ring Nebula (M57)" data-mass="" data-radius="12298910000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="环状星云 Ring Nebula (M57)" data-mass="3.9768e+29" data-radius="12298910000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m57/">
       <div class="astro-img nebula"><img src="assets/planets/m57.webp" alt="环状星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">环状星云<span class="en">Ring Nebula (M57)</span></div>
         <p class="astro-card-tagline">天琴座里的太空烟圈，恒星暮年的典型肖像</p>
-        <div class="astro-card-stats"><span>2.6 光年</span></div>
+        <div class="astro-card-stats"><span>3.98×10²⁹ kg</span><span>2.6 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="螺旋星云 Helix Nebula (NGC 7293)" data-mass="" data-radius="27152209000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="螺旋星云 Helix Nebula (NGC 7293)" data-mass="2.9826e+29" data-radius="27152209000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ngc7293/">
       <div class="astro-img nebula"><img src="assets/planets/ngc7293.webp" alt="螺旋星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">螺旋星云<span class="en">Helix Nebula (NGC 7293)</span></div>
         <p class="astro-card-tagline">宝瓶座里的「上帝之眼」，离地球最近的行星状星云</p>
-        <div class="astro-card-stats"><span>5.74 光年</span></div>
+        <div class="astro-card-stats"><span>2.98×10²⁹ kg</span><span>5.74 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="双喷射星星云 M2-9 (Twin Jet Nebula)" data-mass="" data-radius="6622490000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="双喷射星星云 M2-9 (Twin Jet Nebula)" data-mass="1.9884e+29" data-radius="6622490000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m2_9/">
       <div class="astro-img nebula"><img src="assets/planets/m2_9.webp" alt="双喷射星星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">双喷射星星云<span class="en">M2-9 (Twin Jet Nebula)</span></div>
         <p class="astro-card-tagline">蛇夫座里的蝶翼状星云，双极喷流的活样本</p>
-        <div class="astro-card-stats"><span>1.4 光年</span></div>
+        <div class="astro-card-stats"><span>1.99×10²⁹ kg</span><span>1.4 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="玫瑰星云 Rosette Nebula" data-mass="" data-radius="614945500000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="玫瑰星云 Rosette Nebula" data-mass="1.9884e+34" data-radius="614945500000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/rosette/">
       <div class="astro-img nebula"><img src="assets/planets/rosette.webp" alt="玫瑰星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">玫瑰星云<span class="en">Rosette Nebula</span></div>
         <p class="astro-card-tagline">麒麟座里盛开的宇宙玫瑰，直径逾百光年的发射星云</p>
-        <div class="astro-card-stats"><span>130 光年</span></div>
+        <div class="astro-card-stats"><span>1.99×10³⁴ kg</span><span>130 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="巴纳德环 Barnard's Loop" data-mass="" data-radius="1419105000000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="巴纳德环 Barnard's Loop" data-mass="1.332228e+34" data-radius="1419105000000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/barnards_loop/">
       <div class="astro-img nebula"><img src="assets/planets/barnards_loop.webp" alt="巴纳德环" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">巴纳德环<span class="en">Barnard's Loop</span></div>
         <p class="astro-card-tagline">横跨猎户座大半边的巨大圆弧，可能源于数百万年前的一次超新星</p>
-        <div class="astro-card-stats"><span>300 光年</span></div>
+        <div class="astro-card-stats"><span>1.33×10³⁴ kg</span><span>300 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="蜘蛛星云 Tarantula Nebula (30 Doradus)" data-mass="" data-radius="4730350000000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="蜘蛛星云 Tarantula Nebula (30 Doradus)" data-mass="1.9884e+36" data-radius="4730350000000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/tarantula/">
       <div class="astro-img nebula"><img src="assets/planets/tarantula.webp" alt="蜘蛛星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">蜘蛛星云<span class="en">Tarantula Nebula (30 Doradus)</span></div>
         <p class="astro-card-tagline">大麦哲伦云里的巨型恒星工厂，本星系群最活跃的星云</p>
-        <div class="astro-card-stats"><span>1,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.99×10³⁶ kg</span><span>1,000 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
@@ -820,57 +820,57 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="波德星系 Messier 81" data-mass="" data-radius="4.446529e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="波德星系 Messier 81" data-mass="1.3918799999999999e+42" data-radius="4.446529e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m81/">
       <div class="astro-img galaxy"><img src="assets/planets/m81.webp" alt="波德星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">波德星系<span class="en">Messier 81</span></div>
         <p class="astro-card-tagline">北斗七星附近的完美旋涡，与 M82 组成经典相互作用对</p>
-        <div class="astro-card-stats"><span>94,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.39×10⁴² kg</span><span>94,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="雪茄星系 Messier 82 (Cigar Galaxy)" data-mass="" data-radius="1.7502295e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="雪茄星系 Messier 82 (Cigar Galaxy)" data-mass="1.9884e+41" data-radius="1.7502295e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m82/">
       <div class="astro-img galaxy"><img src="assets/planets/m82.webp" alt="雪茄星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">雪茄星系<span class="en">Messier 82 (Cigar Galaxy)</span></div>
         <p class="astro-card-tagline">著名的星暴星系，恒星诞生的速度是银河系的十倍</p>
-        <div class="astro-card-stats"><span>37,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.99×10⁴¹ kg</span><span>37,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="NGC 1300 NGC 1300" data-mass="" data-radius="5.203385e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="NGC 1300 NGC 1300" data-mass="1.9884e+41" data-radius="5.203385e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ngc1300/">
       <div class="astro-img galaxy"><img src="assets/planets/ngc1300.webp" alt="NGC 1300" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">NGC 1300<span class="en">NGC 1300</span></div>
         <p class="astro-card-tagline">棒旋星系的教科书标本，波江座里的巨大风车</p>
-        <div class="astro-card-stats"><span>110,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.99×10⁴¹ kg</span><span>110,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="IC 1101 IC 1101" data-mass="" data-radius="8.041595e+18" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="IC 1101 IC 1101" data-mass="6.76056e+42" data-radius="8.041595e+18" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ic1101/">
       <div class="astro-img galaxy"><img src="assets/planets/ic1101.webp" alt="IC 1101" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">IC 1101<span class="en">IC 1101</span></div>
         <p class="astro-card-tagline">已知直径最大的星系之一，宇宙中的巨型椭圆巨兽</p>
-        <div class="astro-card-stats"><span>1,700,000 光年</span></div>
+        <div class="astro-card-stats"><span>6.76×10⁴² kg</span><span>1,700,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="斯蒂芬五重星系 Stephan's Quintet" data-mass="" data-radius="1.6556225e+18" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="斯蒂芬五重星系 Stephan's Quintet" data-mass="1.9884e+42" data-radius="1.6556225e+18" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/stephens_quintet/">
       <div class="astro-img galaxy"><img src="assets/planets/stephens_quintet.webp" alt="斯蒂芬五重星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">斯蒂芬五重星系<span class="en">Stephan's Quintet</span></div>
         <p class="astro-card-tagline">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
-        <div class="astro-card-stats"><span>350,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.99×10⁴² kg</span><span>350,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
@@ -1040,101 +1040,101 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge structure">大尺度结构</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="天鹅星云 Omega Nebula" data-mass="" data-radius="189214000000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="天鹅星云 Omega Nebula" data-mass="1.59072e+33" data-radius="189214000000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m17/">
       <div class="astro-img nebula"><img src="assets/planets/m17.webp" alt="天鹅星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天鹅星云<span class="en">Omega Nebula</span></div>
         <p class="astro-card-tagline">银河系中最亮的发射星云之一，形似一只展翅的天鹅</p>
-        <div class="astro-card-stats"><span>40 光年</span></div>
+        <div class="astro-card-stats"><span>1.59×10³³ kg</span><span>40 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="哑铃星云 Dumbbell Nebula" data-mass="" data-radius="11825875000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="哑铃星云 Dumbbell Nebula" data-mass="3.9768e+29" data-radius="11825875000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m27/">
       <div class="astro-img nebula"><img src="assets/planets/m27.webp" alt="哑铃星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">哑铃星云<span class="en">Dumbbell Nebula</span></div>
         <p class="astro-card-tagline">人类发现的第一个行星状星云，形似一只哑铃</p>
-        <div class="astro-card-stats"><span>2.5 光年</span></div>
+        <div class="astro-card-stats"><span>3.98×10²⁹ kg</span><span>2.5 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="船底座星云 Carina Nebula" data-mass="" data-radius="2175961000000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="船底座星云 Carina Nebula" data-mass="1.78956e+36" data-radius="2175961000000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ngc3372/">
       <div class="astro-img nebula"><img src="assets/planets/ngc3372.webp" alt="船底座星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">船底座星云<span class="en">Carina Nebula</span></div>
         <p class="astro-card-tagline">全天最大最亮的星云之一，藏着最不稳定的巨星海山二</p>
-        <div class="astro-card-stats"><span>460 光年</span></div>
+        <div class="astro-card-stats"><span>1.79×10³⁶ kg</span><span>460 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="nebula" data-name="北美洲星云 North America Nebula" data-mass="" data-radius="425731500000000.0" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="nebula" data-name="北美洲星云 North America Nebula" data-mass="7.9536e+33" data-radius="425731500000000.0" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ngc7000/">
       <div class="astro-img nebula"><img src="assets/planets/ngc7000.webp" alt="北美洲星云" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">北美洲星云<span class="en">North America Nebula</span></div>
         <p class="astro-card-tagline">形状酷似北美洲大陆的发射星云</p>
-        <div class="astro-card-stats"><span>90 光年</span></div>
+        <div class="astro-card-stats"><span>7.95×10³³ kg</span><span>90 光年</span></div>
       </div>
       <span class="astro-badge nebula">星云</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="风车星系 Pinwheel Galaxy" data-mass="" data-radius="8.041595e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="风车星系 Pinwheel Galaxy" data-mass="1.9884e+42" data-radius="8.041595e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m101/">
       <div class="astro-img galaxy"><img src="assets/planets/m101.webp" alt="风车星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">风车星系<span class="en">Pinwheel Galaxy</span></div>
         <p class="astro-card-tagline">正面朝我们的旋涡星系，旋臂上缀满红色恒星育婴室</p>
-        <div class="astro-card-stats"><span>170,000 光年</span><span>9.95×10³⁶ W</span></div>
+        <div class="astro-card-stats"><span>1.99×10⁴² kg</span><span>170,000 光年</span><span>9.95×10³⁶ W</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="黑眼星系 Black Eye Galaxy" data-mass="" data-radius="2.554389e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="黑眼星系 Black Eye Galaxy" data-mass="2.38608e+41" data-radius="2.554389e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m64/">
       <div class="astro-img galaxy"><img src="assets/planets/m64.webp" alt="黑眼星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">黑眼星系<span class="en">Black Eye Galaxy</span></div>
         <p class="astro-card-tagline">壮丽旋臂前横着一条暗尘埃带，像一只乌黑的眼睛</p>
-        <div class="astro-card-stats"><span>54,000 光年</span></div>
+        <div class="astro-card-stats"><span>2.39×10⁴¹ kg</span><span>54,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="南风车星系 Southern Pinwheel Galaxy" data-mass="" data-radius="2.6016925e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="南风车星系 Southern Pinwheel Galaxy" data-mass="3.9768e+41" data-radius="2.6016925e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/m83/">
       <div class="astro-img galaxy"><img src="assets/planets/m83.webp" alt="南风车星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">南风车星系<span class="en">Southern Pinwheel Galaxy</span></div>
         <p class="astro-card-tagline">南天最亮的旋涡星系之一，恒星爆发此起彼伏</p>
-        <div class="astro-card-stats"><span>55,000 光年</span></div>
+        <div class="astro-card-stats"><span>3.98×10⁴¹ kg</span><span>55,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="半人马 A Centaurus A" data-mass="" data-radius="2.83821e+17" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="半人马 A Centaurus A" data-mass="1.78956e+42" data-radius="2.83821e+17" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ngc5128/">
       <div class="astro-img galaxy"><img src="assets/planets/ngc5128.webp" alt="半人马 A" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">半人马 A<span class="en">Centaurus A</span></div>
         <p class="astro-card-tagline">被一条厚重尘埃带拦腰横穿的并合遗迹星系</p>
-        <div class="astro-card-stats"><span>60,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.79×10⁴² kg</span><span>60,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>
   </article>
-  <article class="astro-card" data-category="galaxy" data-name="天线星系 Antennae Galaxies" data-mass="" data-radius="2.365175e+18" data-density="" data-temp="" data-period="" data-moons="">
+  <article class="astro-card" data-category="galaxy" data-name="天线星系 Antennae Galaxies" data-mass="1.19304e+42" data-radius="2.365175e+18" data-density="" data-temp="" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/ngc4038/">
       <div class="astro-img galaxy"><img src="assets/planets/ngc4038.webp" alt="天线星系" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">天线星系<span class="en">Antennae Galaxies</span></div>
         <p class="astro-card-tagline">两个正在撕扯合并的旋涡星系，甩出两条长长的潮汐尾</p>
-        <div class="astro-card-stats"><span>500,000 光年</span></div>
+        <div class="astro-card-stats"><span>1.19×10⁴² kg</span><span>500,000 光年</span></div>
       </div>
       <span class="astro-badge galaxy">星系</span>
     </a>

@@ -1,5 +1,5 @@
 ---
-description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：—、直径（等效球径） 350,000 光年、光度 —、温度 —。数据整理自公开天文资料。"
+description: "斯蒂芬五重星系（Stephan's Quintet）的天体数据：1.99×10⁴² kg、直径（等效球径） 350,000 光年、光度 —、温度 —。数据整理自公开天文资料。"
 hide:
   - toc
 ---
@@ -10,7 +10,7 @@ hide:
     <span class="astro-badge galaxy">星系</span>
     <h1>斯蒂芬五重星系 <small>Stephan's Quintet</small></h1>
     <p class="obj-tagline" data-obj-id="stephens_quintet">五个星系的引力共舞，韦布镜头下的宇宙慢镜头并合</p>
-    <p class="obj-summary">直径（等效球径） 350,000 光年</p>
+    <p class="obj-summary">直径（等效球径） 350,000 光年 · 质量 1.99×10⁴² kg</p>
   </div>
 </div>
 
@@ -22,6 +22,7 @@ hide:
 <table>
 <thead><tr><th>参数</th><th>数值</th></tr></thead>
 <tbody>
+<tr><th scope="row">质量</th><td>1.99×10⁴² kg（1×10¹² M☉）</td></tr>
 <tr><th scope="row">直径（等效球径）</th><td>350,000 光年</td></tr>
 <tr><th scope="row">距离</th><td>29,000 万光年</td></tr>
 <tr><th scope="row">类型</th><td data-en="Compact galaxy group">致密星系群</td></tr>
@@ -36,7 +37,7 @@ hide:
 <tbody>
 <tr><th scope="row">类型</th><td data-en="Compact galaxy group">致密星系群</td></tr>
 <tr><th scope="row">已知成员</th><td>NGC 7317 / 7318A / 7318B / 7319 / 7320</td></tr>
-<tr><th scope="row">备注</th><td data-en="The group spans about 350,000 light-years; four galaxies are undergoing merging and tidal disruption (NGC 7320 is merely a foreground galaxy).">群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。</td></tr>
+<tr><th scope="row">备注</th><td data-en="The group spans about 350,000 light-years; four galaxies are undergoing merging and tidal disruption (NGC 7320 is merely a foreground galaxy).">群跨度约 35 万光年；其中 4 个星系正经历并合与潮汐撕裂（NGC 7320 只是前景星系）。 致密星系群（4 个真实成员）动力学质量约 10^12 M☉；前景星系 NGC 7320 不计入。</td></tr>
 <tr><th scope="row">发现</th><td>1877 年（Stephan 发现）</td></tr>
 </tbody>
 </table>
@@ -45,7 +46,7 @@ hide:
 
 <section class="obj-source">
   <h2>数据来源</h2>
-  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Stephan%27s_Quintet" target="_blank" rel="noopener">Wikipedia · Stephan's Quintet</a>；核对日期：2026-10-24。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>数据来源：<a href="https://en.wikipedia.org/wiki/Stephan%27s_Quintet" target="_blank" rel="noopener">Wikipedia · Stephan's Quintet</a>、<a href="https://en.wikipedia.org/wiki/Stephan's_Quintet" target="_blank" rel="noopener">Wikipedia · stephens_quintet</a>；核对日期：2026-11-12。数值整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料。发现错误请到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
 <p class="obj-nav">← 上一颗：<a href="../ic1101/">IC 1101</a></p>
