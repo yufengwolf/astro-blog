@@ -24,8 +24,8 @@
 ├─ mkdocs.yml            # 站点配置（nav/主题/插件）
 ├─ 维护指南.md           # 自助维护全流程（命令速查 + 踩坑 + 流程图）
 ├─ viz-manifest.json     # 3D 覆盖契约（gen_viz_manifest.py 生成；消费外部 links.json 快照；go.html?body=<id> 透传；详情页条件嵌入）
-├─ universe-data.json    # 【宇宙层级】层级拓扑事实源（主树 286 + 非结构 6 = 292 节点；稳定英文 id + 双语词表 + _convention 11 条；非结构存 non_structure 数组）
-├─ universe-tree.json    # 【宇宙层级】融合产物（主树 195 + 非结构 7 个 repo_id = id；页面唯一事实源，universe_merge.py 生成）
+├─ universe-data.json    # 【宇宙层级】层级拓扑事实源（主树 285 + 非结构 6 = 291 节点；稳定英文 id + 双语词表 + _convention 11 条；非结构存 non_structure 数组）
+├─ universe-tree.json    # 【宇宙层级】融合产物（主树 208 + 非结构 5 = 213 个 repo_id = id；页面唯一事实源，universe_merge.py 生成）
 ├─ requirements.txt      # 锁定 mkdocs-material==9.7.7
 ├─ articles/             # 科普文章源（合成进详情页，不在 docs/ 内）
 ├─ scripts/
@@ -219,8 +219,8 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 | 字段 | 规则 |
 |---|---|
-| `id` | 每节点必有，全局唯一、仅 ASCII `[a-z0-9._-]`、一经确定不改。本站天体 `id == astro.json.id`（213 个）；层级容器与本站未收录天体用 `c.` 前缀（78 个） |
-| `name` / `name_en` | 天体节点是 `astro.json` 的展示镜像（融合脚本字节级强校验）；容器节点在骨架定义标准天文学英文名。全 292 节点 `name_en` 齐备 |
+| `id` | 每节点必有，全局唯一、仅 ASCII `[a-z0-9._-]`、一经确定不改。本站天体 `id == astro.json.id`（213 个）；层级容器与本站未收录天体用 `c.` 前缀（77 个） |
+| `name` / `name_en` | 天体节点是 `astro.json` 的展示镜像（融合脚本字节级强校验）；容器节点在骨架定义标准天文学英文名。全 291 节点 `name_en` 齐备 |
 | `type_i18n` / `category_i18n` | 顶层共用词表（105 条类型 / 12 条大类），页面按语言查表切换，融合脚本校验覆盖率 |
 | `alias` | 通用编号（`M42`、`Sgr A*`），只用于展示与搜索，**不参与关联** |
 
@@ -228,14 +228,14 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 ### 生成链
 
-- `universe-data.json`：**层级拓扑事实源**（主树 286 + 非结构 6 = 292 节点）。引力束缚结构走 `children` 层级树；宇宙微波背景、遥远类星体与活动星系核等**非引力束缚对象**单独放 `non_structure` 数组（仍按 id 与 astro.json 关联，但刻意移出层级树，避免与真实空间归属混淆），页面主树底部以「暂未分类」容器呈现。归属严格，无确证依据的放进标注「归属未细化」的容器，不按类别臆测。
+- `universe-data.json`：**层级拓扑事实源**（主树 285 + 非结构 6 = 291 节点）。引力束缚结构走 `children` 层级树；宇宙微波背景、遥远类星体与活动星系核等**非引力束缚对象**单独放 `non_structure` 数组（仍按 id 与 astro.json 关联，但刻意移出层级树，避免与真实空间归属混淆），页面主树底部以「暂未分类」容器呈现。归属严格，无确证依据的放进标注「归属未细化」的容器，不按类别臆测。
 - `universe-tree.json`：`scripts/universe_merge.py` **只按 id** 做双向 1:1 关联，打上 `repo_id`（等于 id），并校验「名称镜像 / `category` / 中英词表覆盖 / 仓库 `parent` 链与骨架祖先链容器兼容」。**`non_structure` 节点同样参与 id / `category` / 词表校验，但跳过 parent 链归属冲突检查**（它们被刻意移出层级树）。**禁止** `lower()`、去空白、去括号、星尾差异、`alias` 兜底等任何名称模糊匹配；id 缺失、重复、孤立立即报错（EXIT=1）。
 - `docs/universe-hierarchy.md`：`scripts/build_universe_html.py` 生成主题化页面，支持**中文 / EN 一键切换**（节点名、说明、类型徽章、大类 chips、图例、搜索提示、空态文案），中文名 / 英文名 / M·NGC 编号 / id 搜索、大类筛选、展开折叠、面包屑；层级树底部以**「暂未分类」容器**收纳非引力束缚现象（CMB / 类星体-AGN 等），随主树展开折叠、支持双语与搜索过滤。**展开状态与筛选状态按 id / 受控 `category` 存储，切换语言不丢失**；208 个主树带 `repo_id` 的节点行尾「↗」直达 `objects/<id>/`。
 - `universe_hook.py`：构建钩子，`mkdocs build` 前自动跑上面两步；两个生成脚本写前比对内容，无变化跳过写入，避免 `mkdocs serve` 死循环。
 
 ```mermaid
 flowchart LR
-    UD["universe-data.json<br/>层级拓扑 292 节点（主树 286 + 非结构 6）<br/>稳定英文 id + 双语词表"] --> M["universe_merge.py<br/>按 id 双向 1:1 唯一关联<br/>镜像/类型/词表/归属校验<br/>non_structure 跳过归属冲突"]
+    UD["universe-data.json<br/>层级拓扑 291 节点（主树 285 + 非结构 6）<br/>稳定英文 id + 双语词表"] --> M["universe_merge.py<br/>按 id 双向 1:1 唯一关联<br/>镜像/类型/词表/归属校验<br/>non_structure 跳过归属冲突"]
     AS["docs/data/astro.json<br/>213 天体：名称中英 · 属性 · parent"] --> M
     M --> UT["universe-tree.json<br/>202 个 repo_id (= id)"]
     UT --> B["build_universe_html.py<br/>中文/EN 切换 · category 着色 · 双语搜索"]

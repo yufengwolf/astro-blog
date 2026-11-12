@@ -854,425 +854,415 @@
                               ]
                             },
                             {
-                              "id": "c.local-bubble-solar-neighborhood",
-                              "name": "本地泡（太阳邻域恒星系统）",
-                              "name_en": "Local Bubble (Solar Neighborhood)",
-                              "type": "恒星分组",
-                              "category": "宇宙结构",
-                              "info": "太阳周边约数百光年内的近邻恒星与恒星系统，均位于本地臂",
+                              "id": "c.alpha-centauri",
+                              "name": "南门二",
+                              "name_en": "Alpha Centauri",
+                              "type": "三合星系统",
+                              "category": "恒星",
+                              "alias": "半人马座α",
+                              "info": "距离太阳约 4.37 光年",
+                              "source": "ESA",
                               "children": [
                                 {
-                                  "id": "c.alpha-centauri",
-                                  "name": "南门二",
-                                  "name_en": "Alpha Centauri",
-                                  "type": "三合星系统",
+                                  "id": "alphacen_a",
+                                  "name": "南门二A",
+                                  "name_en": "Alpha Centauri A",
+                                  "type": "G2V 主序星",
                                   "category": "恒星",
-                                  "alias": "半人马座α",
-                                  "info": "距离太阳约 4.37 光年",
-                                  "source": "ESA",
-                                  "children": [
-                                    {
-                                      "id": "alphacen_a",
-                                      "name": "南门二A",
-                                      "name_en": "Alpha Centauri A",
-                                      "type": "G2V 主序星",
-                                      "category": "恒星",
-                                      "repo_id": "alphacen_a"
-                                    },
-                                    {
-                                      "id": "alphacen_b",
-                                      "name": "南门二B",
-                                      "name_en": "Alpha Centauri B",
-                                      "type": "K1V 橙矮星",
-                                      "category": "恒星",
-                                      "repo_id": "alphacen_b"
-                                    },
-                                    {
-                                      "id": "proxima_centauri",
-                                      "name": "比邻星",
-                                      "name_en": "Proxima Centauri",
-                                      "type": "M5.5V 红矮星",
-                                      "category": "恒星",
-                                      "alias": "南门二C",
-                                      "info": "距离太阳约 4.22 光年，离我们最近的恒星",
-                                      "children": [
-                                        {
-                                          "id": "proxima_centauri_b",
-                                          "name": "比邻星b",
-                                          "name_en": "Proxima Centauri b",
-                                          "type": "系外行星",
-                                          "category": "行星",
-                                          "info": "位于宜居带的类地行星",
-                                          "repo_id": "proxima_centauri_b"
-                                        },
-                                        {
-                                          "id": "proxima_centauri_c",
-                                          "name": "比邻星c",
-                                          "name_en": "Proxima Centauri c",
-                                          "type": "系外行星",
-                                          "category": "行星",
-                                          "info": "候选超级地球，存在争议",
-                                          "repo_id": "proxima_centauri_c"
-                                        },
-                                        {
-                                          "id": "proxima_centauri_d",
-                                          "name": "比邻星d",
-                                          "name_en": "Proxima Centauri d",
-                                          "type": "系外行星",
-                                          "category": "行星",
-                                          "info": "已确认的极小类地行星",
-                                          "repo_id": "proxima_centauri_d"
-                                        }
-                                      ],
-                                      "repo_id": "proxima_centauri"
-                                    }
-                                  ]
+                                  "repo_id": "alphacen_a"
                                 },
                                 {
-                                  "id": "barnard_s_star",
-                                  "name": "巴纳德星",
-                                  "name_en": "Barnard's Star",
-                                  "type": "M4V 红矮星",
+                                  "id": "alphacen_b",
+                                  "name": "南门二B",
+                                  "name_en": "Alpha Centauri B",
+                                  "type": "K1V 橙矮星",
                                   "category": "恒星",
-                                  "info": "距离约 5.96 光年，自行极高；巴纳德星 b 已证伪",
-                                  "source": "NASA",
-                                  "repo_id": "barnard_s_star"
+                                  "repo_id": "alphacen_b"
                                 },
                                 {
-                                  "id": "c.sirius",
-                                  "name": "天狼星",
-                                  "name_en": "Sirius",
-                                  "type": "双星系统",
+                                  "id": "proxima_centauri",
+                                  "name": "比邻星",
+                                  "name_en": "Proxima Centauri",
+                                  "type": "M5.5V 红矮星",
                                   "category": "恒星",
-                                  "info": "全天最亮恒星，距离约 8.6 光年",
-                                  "source": "NASA",
+                                  "alias": "南门二C",
+                                  "info": "距离太阳约 4.22 光年，离我们最近的恒星",
                                   "children": [
                                     {
-                                      "id": "sirius_a",
-                                      "name": "天狼星A",
-                                      "name_en": "Sirius A",
-                                      "type": "A1V 主序星",
-                                      "category": "恒星",
-                                      "repo_id": "sirius_a"
+                                      "id": "proxima_centauri_b",
+                                      "name": "比邻星b",
+                                      "name_en": "Proxima Centauri b",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "位于宜居带的类地行星",
+                                      "repo_id": "proxima_centauri_b"
                                     },
                                     {
-                                      "id": "sirius_b",
-                                      "name": "天狼星B",
-                                      "name_en": "Sirius B",
-                                      "type": "白矮星",
-                                      "category": "恒星",
-                                      "repo_id": "sirius_b"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "id": "procyon_a",
-                                  "name": "南河三",
-                                  "name_en": "Procyon",
-                                  "type": "双星系统",
-                                  "category": "恒星",
-                                  "info": "距离约 11.4 光年",
-                                  "source": "NASA",
-                                  "children": [
+                                      "id": "proxima_centauri_c",
+                                      "name": "比邻星c",
+                                      "name_en": "Proxima Centauri c",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "候选超级地球，存在争议",
+                                      "repo_id": "proxima_centauri_c"
+                                    },
                                     {
-                                      "id": "procyon_b",
-                                      "name": "南河三B",
-                                      "name_en": "Procyon B",
-                                      "type": "白矮星",
-                                      "category": "恒星",
-                                      "repo_id": "procyon_b"
+                                      "id": "proxima_centauri_d",
+                                      "name": "比邻星d",
+                                      "name_en": "Proxima Centauri d",
+                                      "type": "系外行星",
+                                      "category": "行星",
+                                      "info": "已确认的极小类地行星",
+                                      "repo_id": "proxima_centauri_d"
                                     }
                                   ],
-                                  "repo_id": "procyon_a"
-                                },
-                                {
-                                  "id": "vega",
-                                  "name": "织女星",
-                                  "name_en": "Vega",
-                                  "type": "A0V 主序星",
-                                  "category": "恒星",
-                                  "info": "天琴座 α，距离约 25 光年",
-                                  "source": "NASA",
-                                  "repo_id": "vega"
-                                },
-                                {
-                                  "id": "arcturus",
-                                  "name": "大角星",
-                                  "name_en": "Arcturus",
-                                  "type": "红巨星",
-                                  "category": "恒星",
-                                  "info": "牧夫座 α，光谱型 K0 III，距离约 37 光年",
-                                  "source": "NASA",
-                                  "repo_id": "arcturus"
-                                },
-                                {
-                                  "id": "altair",
-                                  "name": "河鼓二",
-                                  "name_en": "Altair",
-                                  "type": "A7V 主序星",
-                                  "category": "恒星",
-                                  "alias": "牛郎星",
-                                  "info": "天鹰座 α，距离约 16.7 光年",
-                                  "source": "NASA",
-                                  "repo_id": "altair"
-                                },
-                                {
-                                  "id": "aldebaran",
-                                  "name": "毕宿五",
-                                  "name_en": "Aldebaran",
-                                  "type": "红巨星",
-                                  "category": "恒星",
-                                  "info": "金牛座 α，光谱型 K5 III",
-                                  "source": "NASA",
-                                  "repo_id": "aldebaran"
-                                },
-                                {
-                                  "id": "capella",
-                                  "name": "五车二",
-                                  "name_en": "Capella",
-                                  "type": "四合星系统",
-                                  "category": "恒星",
-                                  "alias": "御夫座α",
-                                  "info": "两对双星互相绕转，距离约 42 光年",
-                                  "source": "NASA",
-                                  "children": [
-                                    {
-                                      "id": "capella_aa",
-                                      "name": "五车二Aa",
-                                      "name_en": "Capella Aa",
-                                      "type": "G 型巨星",
-                                      "category": "恒星",
-                                      "repo_id": "capella_aa"
-                                    },
-                                    {
-                                      "id": "capella_ab",
-                                      "name": "五车二Ab",
-                                      "name_en": "Capella Ab",
-                                      "type": "G 型巨星",
-                                      "category": "恒星",
-                                      "repo_id": "capella_ab"
-                                    },
-                                    {
-                                      "id": "capella_ba",
-                                      "name": "五车二Ba",
-                                      "name_en": "Capella Ba",
-                                      "type": "M 型矮星",
-                                      "category": "恒星",
-                                      "repo_id": "capella_ba"
-                                    },
-                                    {
-                                      "id": "capella_bb",
-                                      "name": "五车二Bb",
-                                      "name_en": "Capella Bb",
-                                      "type": "M 型矮星",
-                                      "category": "恒星",
-                                      "repo_id": "capella_bb"
-                                    }
-                                  ],
-                                  "repo_id": "capella"
-                                },
-                                {
-                                  "id": "castor",
-                                  "name": "北河二",
-                                  "name_en": "Castor",
-                                  "type": "六合星系统",
-                                  "category": "恒星",
-                                  "alias": "双子座α",
-                                  "info": "三组双星构成，距离约 51 光年",
-                                  "source": "NASA",
-                                  "children": [
-                                    {
-                                      "id": "castor_a1",
-                                      "name": "北河二A1",
-                                      "name_en": "Castor A1",
-                                      "type": "A 型主序星",
-                                      "category": "恒星",
-                                      "repo_id": "castor_a1"
-                                    },
-                                    {
-                                      "id": "castor_a2",
-                                      "name": "北河二A2",
-                                      "name_en": "Castor A2",
-                                      "type": "A 型主序星",
-                                      "category": "恒星",
-                                      "repo_id": "castor_a2"
-                                    },
-                                    {
-                                      "id": "castor_b1",
-                                      "name": "北河二B1",
-                                      "name_en": "Castor B1",
-                                      "type": "A 型主序星",
-                                      "category": "恒星",
-                                      "repo_id": "castor_b1"
-                                    },
-                                    {
-                                      "id": "castor_b2",
-                                      "name": "北河二B2",
-                                      "name_en": "Castor B2",
-                                      "type": "A 型主序星",
-                                      "category": "恒星",
-                                      "repo_id": "castor_b2"
-                                    },
-                                    {
-                                      "id": "castor_c1",
-                                      "name": "北河二C1",
-                                      "name_en": "Castor C1",
-                                      "type": "M 型矮星",
-                                      "category": "恒星",
-                                      "repo_id": "castor_c1"
-                                    },
-                                    {
-                                      "id": "castor_c2",
-                                      "name": "北河二C2",
-                                      "name_en": "Castor C2",
-                                      "type": "M 型矮星",
-                                      "category": "恒星",
-                                      "repo_id": "castor_c2"
-                                    }
-                                  ],
-                                  "repo_id": "castor"
-                                },
-                                {
-                                  "id": "pollux",
-                                  "name": "北河三",
-                                  "name_en": "Pollux",
-                                  "type": "红巨星",
-                                  "category": "恒星",
-                                  "alias": "双子座β",
-                                  "info": "光谱型 K0 III；拥有行星北河三b（Thestias）",
-                                  "source": "NASA",
-                                  "children": [
-                                    {
-                                      "id": "pollux_b",
-                                      "name": "北河三b",
-                                      "name_en": "Pollux b",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "已确认的气态巨行星",
-                                      "repo_id": "pollux_b"
-                                    }
-                                  ],
-                                  "repo_id": "pollux"
-                                },
-                                {
-                                  "id": "trappist_1",
-                                  "name": "特拉比斯特 1",
-                                  "name_en": "TRAPPIST-1",
-                                  "type": "恒星系统",
-                                  "category": "恒星",
-                                  "alias": "TRAPPIST-1",
-                                  "info": "M8V 红矮星，距离约 40 光年；7 颗类地行星，多颗位于宜居带",
-                                  "children": [
-                                    {
-                                      "id": "trappist_1_b",
-                                      "name": "TRAPPIST-1 b",
-                                      "name_en": "TRAPPIST-1 b",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "repo_id": "trappist_1_b"
-                                    },
-                                    {
-                                      "id": "trappist_1_c",
-                                      "name": "TRAPPIST-1 c",
-                                      "name_en": "TRAPPIST-1 c",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "repo_id": "trappist_1_c"
-                                    },
-                                    {
-                                      "id": "trappist_1_d",
-                                      "name": "TRAPPIST-1 d",
-                                      "name_en": "TRAPPIST-1 d",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "repo_id": "trappist_1_d"
-                                    },
-                                    {
-                                      "id": "trappist_1_e",
-                                      "name": "TRAPPIST-1 e",
-                                      "name_en": "TRAPPIST-1 e",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "位于宜居带",
-                                      "repo_id": "trappist_1_e"
-                                    },
-                                    {
-                                      "id": "trappist_1_f",
-                                      "name": "TRAPPIST-1 f",
-                                      "name_en": "TRAPPIST-1 f",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "位于宜居带",
-                                      "repo_id": "trappist_1_f"
-                                    },
-                                    {
-                                      "id": "trappist_1_g",
-                                      "name": "TRAPPIST-1 g",
-                                      "name_en": "TRAPPIST-1 g",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "位于宜居带",
-                                      "repo_id": "trappist_1_g"
-                                    },
-                                    {
-                                      "id": "trappist_1_h",
-                                      "name": "TRAPPIST-1 h",
-                                      "name_en": "TRAPPIST-1 h",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "repo_id": "trappist_1_h"
-                                    }
-                                  ],
-                                  "repo_id": "trappist_1"
-                                },
-                                {
-                                  "id": "gliese_581",
-                                  "name": "格利泽581",
-                                  "name_en": "Gliese 581",
-                                  "type": "M 型红矮星",
-                                  "category": "恒星",
-                                  "alias": "Gliese 581",
-                                  "info": "距离约 20 光年；格利泽581g/d 存在争议，未被确认",
-                                  "children": [
-                                    {
-                                      "id": "gliese_581_b",
-                                      "name": "格利泽581b",
-                                      "name_en": "Gliese 581 b",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "已确认",
-                                      "repo_id": "gliese_581_b"
-                                    },
-                                    {
-                                      "id": "gliese_581_c",
-                                      "name": "格利泽581c",
-                                      "name_en": "Gliese 581 c",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "已确认",
-                                      "repo_id": "gliese_581_c"
-                                    },
-                                    {
-                                      "id": "gliese_581_e",
-                                      "name": "格利泽581e",
-                                      "name_en": "Gliese 581 e",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "已确认",
-                                      "repo_id": "gliese_581_e"
-                                    },
-                                    {
-                                      "id": "c.gliese-581-g",
-                                      "name": "格利泽581g",
-                                      "name_en": "Gliese 581 g",
-                                      "type": "系外行星",
-                                      "category": "行星",
-                                      "info": "存在争议，未确认"
-                                    }
-                                  ],
-                                  "repo_id": "gliese_581"
+                                  "repo_id": "proxima_centauri"
                                 }
                               ]
+                            },
+                            {
+                              "id": "barnard_s_star",
+                              "name": "巴纳德星",
+                              "name_en": "Barnard's Star",
+                              "type": "M4V 红矮星",
+                              "category": "恒星",
+                              "info": "距离约 5.96 光年，自行极高；巴纳德星 b 已证伪",
+                              "source": "NASA",
+                              "repo_id": "barnard_s_star"
+                            },
+                            {
+                              "id": "c.sirius",
+                              "name": "天狼星",
+                              "name_en": "Sirius",
+                              "type": "双星系统",
+                              "category": "恒星",
+                              "info": "全天最亮恒星，距离约 8.6 光年",
+                              "source": "NASA",
+                              "children": [
+                                {
+                                  "id": "sirius_a",
+                                  "name": "天狼星A",
+                                  "name_en": "Sirius A",
+                                  "type": "A1V 主序星",
+                                  "category": "恒星",
+                                  "repo_id": "sirius_a"
+                                },
+                                {
+                                  "id": "sirius_b",
+                                  "name": "天狼星B",
+                                  "name_en": "Sirius B",
+                                  "type": "白矮星",
+                                  "category": "恒星",
+                                  "repo_id": "sirius_b"
+                                }
+                              ]
+                            },
+                            {
+                              "id": "procyon_a",
+                              "name": "南河三",
+                              "name_en": "Procyon",
+                              "type": "双星系统",
+                              "category": "恒星",
+                              "info": "距离约 11.4 光年",
+                              "source": "NASA",
+                              "children": [
+                                {
+                                  "id": "procyon_b",
+                                  "name": "南河三B",
+                                  "name_en": "Procyon B",
+                                  "type": "白矮星",
+                                  "category": "恒星",
+                                  "repo_id": "procyon_b"
+                                }
+                              ],
+                              "repo_id": "procyon_a"
+                            },
+                            {
+                              "id": "vega",
+                              "name": "织女星",
+                              "name_en": "Vega",
+                              "type": "A0V 主序星",
+                              "category": "恒星",
+                              "info": "天琴座 α，距离约 25 光年",
+                              "source": "NASA",
+                              "repo_id": "vega"
+                            },
+                            {
+                              "id": "arcturus",
+                              "name": "大角星",
+                              "name_en": "Arcturus",
+                              "type": "红巨星",
+                              "category": "恒星",
+                              "info": "牧夫座 α，光谱型 K0 III，距离约 37 光年",
+                              "source": "NASA",
+                              "repo_id": "arcturus"
+                            },
+                            {
+                              "id": "altair",
+                              "name": "河鼓二",
+                              "name_en": "Altair",
+                              "type": "A7V 主序星",
+                              "category": "恒星",
+                              "alias": "牛郎星",
+                              "info": "天鹰座 α，距离约 16.7 光年",
+                              "source": "NASA",
+                              "repo_id": "altair"
+                            },
+                            {
+                              "id": "aldebaran",
+                              "name": "毕宿五",
+                              "name_en": "Aldebaran",
+                              "type": "红巨星",
+                              "category": "恒星",
+                              "info": "金牛座 α，光谱型 K5 III",
+                              "source": "NASA",
+                              "repo_id": "aldebaran"
+                            },
+                            {
+                              "id": "capella",
+                              "name": "五车二",
+                              "name_en": "Capella",
+                              "type": "四合星系统",
+                              "category": "恒星",
+                              "alias": "御夫座α",
+                              "info": "两对双星互相绕转，距离约 42 光年",
+                              "source": "NASA",
+                              "children": [
+                                {
+                                  "id": "capella_aa",
+                                  "name": "五车二Aa",
+                                  "name_en": "Capella Aa",
+                                  "type": "G 型巨星",
+                                  "category": "恒星",
+                                  "repo_id": "capella_aa"
+                                },
+                                {
+                                  "id": "capella_ab",
+                                  "name": "五车二Ab",
+                                  "name_en": "Capella Ab",
+                                  "type": "G 型巨星",
+                                  "category": "恒星",
+                                  "repo_id": "capella_ab"
+                                },
+                                {
+                                  "id": "capella_ba",
+                                  "name": "五车二Ba",
+                                  "name_en": "Capella Ba",
+                                  "type": "M 型矮星",
+                                  "category": "恒星",
+                                  "repo_id": "capella_ba"
+                                },
+                                {
+                                  "id": "capella_bb",
+                                  "name": "五车二Bb",
+                                  "name_en": "Capella Bb",
+                                  "type": "M 型矮星",
+                                  "category": "恒星",
+                                  "repo_id": "capella_bb"
+                                }
+                              ],
+                              "repo_id": "capella"
+                            },
+                            {
+                              "id": "castor",
+                              "name": "北河二",
+                              "name_en": "Castor",
+                              "type": "六合星系统",
+                              "category": "恒星",
+                              "alias": "双子座α",
+                              "info": "三组双星构成，距离约 51 光年",
+                              "source": "NASA",
+                              "children": [
+                                {
+                                  "id": "castor_a1",
+                                  "name": "北河二A1",
+                                  "name_en": "Castor A1",
+                                  "type": "A 型主序星",
+                                  "category": "恒星",
+                                  "repo_id": "castor_a1"
+                                },
+                                {
+                                  "id": "castor_a2",
+                                  "name": "北河二A2",
+                                  "name_en": "Castor A2",
+                                  "type": "A 型主序星",
+                                  "category": "恒星",
+                                  "repo_id": "castor_a2"
+                                },
+                                {
+                                  "id": "castor_b1",
+                                  "name": "北河二B1",
+                                  "name_en": "Castor B1",
+                                  "type": "A 型主序星",
+                                  "category": "恒星",
+                                  "repo_id": "castor_b1"
+                                },
+                                {
+                                  "id": "castor_b2",
+                                  "name": "北河二B2",
+                                  "name_en": "Castor B2",
+                                  "type": "A 型主序星",
+                                  "category": "恒星",
+                                  "repo_id": "castor_b2"
+                                },
+                                {
+                                  "id": "castor_c1",
+                                  "name": "北河二C1",
+                                  "name_en": "Castor C1",
+                                  "type": "M 型矮星",
+                                  "category": "恒星",
+                                  "repo_id": "castor_c1"
+                                },
+                                {
+                                  "id": "castor_c2",
+                                  "name": "北河二C2",
+                                  "name_en": "Castor C2",
+                                  "type": "M 型矮星",
+                                  "category": "恒星",
+                                  "repo_id": "castor_c2"
+                                }
+                              ],
+                              "repo_id": "castor"
+                            },
+                            {
+                              "id": "pollux",
+                              "name": "北河三",
+                              "name_en": "Pollux",
+                              "type": "红巨星",
+                              "category": "恒星",
+                              "alias": "双子座β",
+                              "info": "光谱型 K0 III；拥有行星北河三b（Thestias）",
+                              "source": "NASA",
+                              "children": [
+                                {
+                                  "id": "pollux_b",
+                                  "name": "北河三b",
+                                  "name_en": "Pollux b",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "已确认的气态巨行星",
+                                  "repo_id": "pollux_b"
+                                }
+                              ],
+                              "repo_id": "pollux"
+                            },
+                            {
+                              "id": "trappist_1",
+                              "name": "特拉比斯特 1",
+                              "name_en": "TRAPPIST-1",
+                              "type": "恒星系统",
+                              "category": "恒星",
+                              "alias": "TRAPPIST-1",
+                              "info": "M8V 红矮星，距离约 40 光年；7 颗类地行星，多颗位于宜居带",
+                              "children": [
+                                {
+                                  "id": "trappist_1_b",
+                                  "name": "TRAPPIST-1 b",
+                                  "name_en": "TRAPPIST-1 b",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "repo_id": "trappist_1_b"
+                                },
+                                {
+                                  "id": "trappist_1_c",
+                                  "name": "TRAPPIST-1 c",
+                                  "name_en": "TRAPPIST-1 c",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "repo_id": "trappist_1_c"
+                                },
+                                {
+                                  "id": "trappist_1_d",
+                                  "name": "TRAPPIST-1 d",
+                                  "name_en": "TRAPPIST-1 d",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "repo_id": "trappist_1_d"
+                                },
+                                {
+                                  "id": "trappist_1_e",
+                                  "name": "TRAPPIST-1 e",
+                                  "name_en": "TRAPPIST-1 e",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "位于宜居带",
+                                  "repo_id": "trappist_1_e"
+                                },
+                                {
+                                  "id": "trappist_1_f",
+                                  "name": "TRAPPIST-1 f",
+                                  "name_en": "TRAPPIST-1 f",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "位于宜居带",
+                                  "repo_id": "trappist_1_f"
+                                },
+                                {
+                                  "id": "trappist_1_g",
+                                  "name": "TRAPPIST-1 g",
+                                  "name_en": "TRAPPIST-1 g",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "位于宜居带",
+                                  "repo_id": "trappist_1_g"
+                                },
+                                {
+                                  "id": "trappist_1_h",
+                                  "name": "TRAPPIST-1 h",
+                                  "name_en": "TRAPPIST-1 h",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "repo_id": "trappist_1_h"
+                                }
+                              ],
+                              "repo_id": "trappist_1"
+                            },
+                            {
+                              "id": "gliese_581",
+                              "name": "格利泽581",
+                              "name_en": "Gliese 581",
+                              "type": "M 型红矮星",
+                              "category": "恒星",
+                              "alias": "Gliese 581",
+                              "info": "距离约 20 光年；格利泽581g/d 存在争议，未被确认",
+                              "children": [
+                                {
+                                  "id": "gliese_581_b",
+                                  "name": "格利泽581b",
+                                  "name_en": "Gliese 581 b",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "已确认",
+                                  "repo_id": "gliese_581_b"
+                                },
+                                {
+                                  "id": "gliese_581_c",
+                                  "name": "格利泽581c",
+                                  "name_en": "Gliese 581 c",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "已确认",
+                                  "repo_id": "gliese_581_c"
+                                },
+                                {
+                                  "id": "gliese_581_e",
+                                  "name": "格利泽581e",
+                                  "name_en": "Gliese 581 e",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "已确认",
+                                  "repo_id": "gliese_581_e"
+                                },
+                                {
+                                  "id": "c.gliese-581-g",
+                                  "name": "格利泽581g",
+                                  "name_en": "Gliese 581 g",
+                                  "type": "系外行星",
+                                  "category": "行星",
+                                  "info": "存在争议，未确认"
+                                }
+                              ],
+                              "repo_id": "gliese_581"
                             }
                           ]
                         },
