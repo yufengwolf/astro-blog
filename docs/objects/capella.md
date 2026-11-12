@@ -5,16 +5,16 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/capella.webp" alt="五车二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star_system"><img src="../../assets/planets/capella.webp" alt="五车二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
-    <span class="astro-badge star">恒星</span>
+    <span class="astro-badge star_system">聚星系统</span>
     <h1>五车二 <small>Capella</small></h1>
     <p class="obj-tagline" data-obj-id="capella">御夫座最亮的星，四星系统金光耀眼</p>
     <p class="obj-summary">直径 16,696,800 km · 质量 5.11×10³⁰ kg</p>
   </div>
 </div>
 
-<p class="obj-parent">分类：恒星</p>
+<p class="obj-parent">分类：聚星系统</p>
 
 
 <div class="solar-embed obj-viz">

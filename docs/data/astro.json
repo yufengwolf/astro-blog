@@ -7025,7 +7025,7 @@
       "id": "castor",
       "name": "北河二",
       "name_en": "Castor",
-      "category": "star",
+      "category": "star_system",
       "parent": null,
       "tagline": "六颗恒星组成的聚星系统，冬季大三角的一角",
       "physical": {
@@ -7149,7 +7149,7 @@
       "id": "capella",
       "name": "五车二",
       "name_en": "Capella",
-      "category": "star",
+      "category": "star_system",
       "parent": null,
       "tagline": "御夫座最亮的星，四星系统金光耀眼",
       "physical": {
@@ -9259,7 +9259,7 @@
       "id": "procyon_a",
       "name": "南河三",
       "name_en": "Procyon",
-      "category": "star",
+      "category": "star_system",
       "parent": null,
       "tagline": "小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。",
       "physical": {

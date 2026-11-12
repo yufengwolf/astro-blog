@@ -53,7 +53,7 @@ def fen(oid, field):
 VERSION = "1.9"
 VERIFIED = "2026-10-24"
 SUP = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
-CAT_ZH = {"star": "恒星", "planet": "行星", "dwarf_planet": "矮行星",
+CAT_ZH = {"star": "恒星", "star_system": "聚星系统", "planet": "行星", "dwarf_planet": "矮行星",
           "moon": "卫星", "asteroid": "小行星", "exoplanet": "系外行星",
           "black_hole": "黑洞", "nebula": "星云", "galaxy": "星系",
           "cluster": "星团", "structure": "大尺度结构", "comet": "彗星"}
@@ -83,9 +83,11 @@ DENSITY_CATS = {"planet", "dwarf_planet", "moon", "asteroid", "comet"}
 # 有「表面温度」概念的类别：温度主单位统一 K，这些类别额外括注 ℃
 SURFACE_TEMP_CATS = DENSITY_CATS | {"exoplanet"}
 # 展示顺序（首页 chips / hero 统计 / 总表分类列）
-CAT_ORDER = ("star", "planet", "dwarf_planet", "moon", "galaxy", "nebula",
+CAT_ORDER = ("star", "star_system", "planet", "dwarf_planet", "moon", "galaxy", "nebula",
              "cluster", "black_hole", "structure", "asteroid", "comet",
              "exoplanet")
+# 恒星口径天体：聚星系统父卡（多星系统）物理量与展示同恒星（质量 M☉ / 光度 / 光谱型等）
+STAR_LIKE = {"star", "star_system"}
 
 
 def sup(n):
@@ -134,7 +136,7 @@ def size_label(cat):
         return "事件视界直径"
     if cat in EXT_CATS:
         return "直径（等效球径）"
-    if cat == "star":
+    if cat in STAR_LIKE:
         return "直径"
     return "平均直径"
 
@@ -435,7 +437,7 @@ def build_index(data):
         m, r = ph.get("mass_kg"), ph.get("radius_km")
         cat = o["category"]
         # 卡片用 compact 格式（只给主单位），避免辅单位把三行 stats 撑得过长
-        if cat == "star":
+        if cat in STAR_LIKE:
             key_stat = fmt_lum(o.get("luminosity_w"), cat, True) or fmt_temp(ph.get("mean_temp_c"), cat, True)
         elif cat == "galaxy":
             key_stat = fmt_lum(o.get("luminosity_w"), cat, True) or fmt_diameter(r, cat, True)
@@ -724,7 +726,7 @@ def build_object(root, o, by_id, order, registry=None):
     desc_mass = dash(fmt_mass(ph.get("mass_kg"), cat, True))
     desc_diameter = dash(fmt_diameter(ph.get("radius_km"), cat, True))
     size_lbl = size_label(cat)
-    if cat in ("star", "galaxy"):
+    if cat in STAR_LIKE or cat == "galaxy":
         desc_extra = f'光度 {dash(fmt_lum(o.get("luminosity_w"), cat, True))}'
     elif cat == "black_hole" or cat in EXT_CATS:
         desc_extra = f'距离 {dash(fmt_distance(o.get("distance_ly")))}'
@@ -822,11 +824,11 @@ def build_object(root, o, by_id, order, registry=None):
         ]
     if o.get("spectral_type"):
         phys_rows.append(("光谱型", o["spectral_type"]))
-    if cat == "star" and o.get("subtype"):
+    if cat in STAR_LIKE and o.get("subtype"):
         phys_rows.append(("恒星类型", o["subtype"]))
-    if cat == "star" and o.get("luminosity_w"):
+    if cat in STAR_LIKE and o.get("luminosity_w"):
         phys_rows.append(("光度", fmt_lum(o["luminosity_w"], cat)))
-    if o.get("distance_ly") is not None and cat == "star":
+    if o.get("distance_ly") is not None and cat in STAR_LIKE:
         phys_rows.append(("距离", fmt_distance(o["distance_ly"])))
     if o.get("constellation"):
         phys_rows.append(("星座", o["constellation"]))
@@ -865,8 +867,8 @@ def build_object(root, o, by_id, order, registry=None):
             feat_rows.append(("全球磁场", fmt_yn(o["magnetic_field"])))
         if o.get("rings") is not None:
             feat_rows.append(("环系", fmt_yn(o["rings"])))
-        if cat == "star":
-            # 恒星补充：双星/聚星成员数（members）与备注（note）
+        if cat in STAR_LIKE:
+            # 恒星/聚星系统补充：双星/聚星成员数（members）与备注（note）
             if o.get("members"):
                 feat_rows.append(("已知成员", o["members"]))
             if o.get("note"):
@@ -1017,7 +1019,7 @@ def build_data_page(data, objs):
 
 
 # 全站双语：分类英文名与 i18n.js 的 CATS、universe-data.json 的 category_i18n 同口径
-CAT_EN = {"star": "Star", "planet": "Planet", "dwarf_planet": "Dwarf planet",
+CAT_EN = {"star": "Star", "star_system": "Multiple Star System", "planet": "Planet", "dwarf_planet": "Dwarf planet",
           "moon": "Moon", "galaxy": "Galaxy", "nebula": "Nebula",
           "cluster": "Cluster", "black_hole": "Black hole",
           "structure": "Large-scale structure", "asteroid": "Asteroid",

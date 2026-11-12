@@ -27,12 +27,12 @@ BASE = os.path.join(ROOT, "universe-data.json")
 REPO = os.path.join(ROOT, "docs", "data", "astro.json")
 OUT  = os.path.join(ROOT, "universe-tree.json")
 
-CATS = {"宇宙结构", "星系", "星云", "恒星", "行星", "卫星", "星团",
+CATS = {"宇宙结构", "星系", "星云", "恒星", "聚星系统", "行星", "卫星", "星团",
         "矮行星", "小行星", "彗星", "黑洞", "其他"}
 
 # 仓库 category(英文) -> 受控中文 category
 TYPE_MAP = {
-    "star": "恒星", "planet": "行星", "moon": "卫星",
+    "star": "恒星", "star_system": "聚星系统", "planet": "行星", "moon": "卫星",
     "galaxy": "星系", "nebula": "星云", "black_hole": "黑洞",
     "cluster": "星团", "dwarf_planet": "矮行星", "asteroid": "小行星",
     "comet": "彗星", "structure": "宇宙结构",

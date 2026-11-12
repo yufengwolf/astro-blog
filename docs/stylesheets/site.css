@@ -355,6 +355,7 @@
 }
 .astro-badge.planet { background: rgba(43, 95, 158, 0.85); }
 .astro-badge.star { background: rgba(224, 108, 0, 0.88); }
+.astro-badge.star_system { background: rgba(191, 136, 0, 0.88); }
 .astro-badge.dwarf_planet { background: rgba(106, 79, 160, 0.85); }
 .astro-badge.moon { background: rgba(92, 103, 115, 0.85); }
 .astro-badge.asteroid { background: rgba(140, 110, 60, 0.85); }

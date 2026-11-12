@@ -45,6 +45,7 @@
   // ---- 分类配色（用于无贴图天体纯色圆 + 倍数卡圆点）----
   var CAT_COLOR = {
     star: ["#f5a623", "#e06c00"],
+    star_system: ["#ffc966", "#bf8800"],
     planet: ["#4a90d9", "#2b5f9e"],
     dwarf_planet: ["#9b7fc4", "#6a4fa0"],
     moon: ["#8d99ae", "#5c6773"],

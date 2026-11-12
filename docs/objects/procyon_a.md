@@ -5,16 +5,16 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star_system"><img src="../../assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: AI-generated">影像：AI 生成</div></div>
   <div class="obj-hero-info">
-    <span class="astro-badge star">恒星</span>
+    <span class="astro-badge star_system">聚星系统</span>
     <h1>南河三 <small>Procyon</small></h1>
     <p class="obj-tagline" data-obj-id="procyon_a">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
     <p class="obj-summary">质量 2.97×10³⁰ kg</p>
   </div>
 </div>
 
-<p class="obj-parent">分类：恒星</p>
+<p class="obj-parent">分类：聚星系统</p>
 
 
 <div class="solar-embed obj-viz">

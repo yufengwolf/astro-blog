@@ -151,7 +151,8 @@
 
   // 分类：与 universe-data.json 的 category_i18n 保持一致
   var CATS = {
-    star: ['恒星', 'Star'], planet: ['行星', 'Planet'], moon: ['卫星', 'Moon'],
+    star: ['恒星', 'Star'], star_system: ['聚星系统', 'Multiple Star System'],
+    planet: ['行星', 'Planet'], moon: ['卫星', 'Moon'],
     galaxy: ['星系', 'Galaxy'], nebula: ['星云', 'Nebula'], cluster: ['星团', 'Cluster'],
     dwarf_planet: ['矮行星', 'Dwarf planet'], asteroid: ['小行星', 'Asteroid'],
     black_hole: ['黑洞', 'Black hole'], structure: ['大尺度结构', 'Large-scale structure'],
@@ -530,7 +531,7 @@
     });
     // 分类徽章按 class 映射，避免依赖中文文本
     Array.prototype.forEach.call(scope.querySelectorAll('.astro-badge'), function (el) {
-      var key = (el.className.match(/\b(star|planet|moon|galaxy|nebula|cluster|dwarf_planet|asteroid|black_hole|structure|comet)\b/) || [])[1];
+      var key = (el.className.match(/\b(star_system|star|planet|moon|galaxy|nebula|cluster|dwarf_planet|asteroid|black_hole|structure|comet)\b/) || [])[1];
       if (!key || !CATS[key]) return;
       if (!nameOrig.has(el)) nameOrig.set(el, el.textContent);
       el.textContent = lang === 'en' ? CATS[key][1] : nameOrig.get(el);

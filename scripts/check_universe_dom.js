@@ -64,7 +64,7 @@ ok(withRepo.length === 208 && withRepo.every(n => n.id === n.repo_id),
 ok(nodes.filter(n => n.id.startsWith('c.')).length === 77, '容器使用 c. 命名空间');
 ok(nodes.every(n => typeof n.name_en === 'string' && n.name_en.length > 0),
    '全部节点具备 name_en');
-ok(Object.keys(tree.type_i18n || {}).length === 106 && Object.keys(tree.category_i18n || {}).length === 12,
+ok(Object.keys(tree.type_i18n || {}).length === 106 && Object.keys(tree.category_i18n || {}).length === 13,
    '类型/大类中英词表齐备');
 
 // ---------- 初始渲染（中文） ----------

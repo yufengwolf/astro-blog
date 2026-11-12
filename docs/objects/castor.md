@@ -5,16 +5,16 @@ hide:
 ---
 
 <div class="obj-hero">
-  <div class="obj-hero-imgwrap"><div class="astro-img star"><img src="../../assets/planets/castor.webp" alt="北河二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
+  <div class="obj-hero-imgwrap"><div class="astro-img star_system"><img src="../../assets/planets/castor.webp" alt="北河二" loading="lazy"></div><div class="astro-img-credit" data-en-html="Image: Procedural Schematic">影像：程序化示意图</div></div>
   <div class="obj-hero-info">
-    <span class="astro-badge star">恒星</span>
+    <span class="astro-badge star_system">聚星系统</span>
     <h1>北河二 <small>Castor</small></h1>
     <p class="obj-tagline" data-obj-id="castor">六颗恒星组成的聚星系统，冬季大三角的一角</p>
     <p class="obj-summary">直径 2,906,635 km · 质量 4.71×10³⁰ kg</p>
   </div>
 </div>
 
-<p class="obj-parent">分类：恒星</p>
+<p class="obj-parent">分类：聚星系统</p>
 
 <div class="obj-data-grid">
 <section class="obj-data-block">

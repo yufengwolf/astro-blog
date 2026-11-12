@@ -12,7 +12,8 @@ description: "收录 213 个天体的结构化数据：质量、直径、密度�
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
     <button type="button" class="chip active" data-filter="all">全部 213</button>
-    <button type="button" class="chip" data-filter="star">恒星 71</button>
+    <button type="button" class="chip" data-filter="star">恒星 68</button>
+    <button type="button" class="chip" data-filter="star_system">聚星系统 3</button>
     <button type="button" class="chip" data-filter="planet">行星 32</button>
     <button type="button" class="chip" data-filter="dwarf_planet">矮行星 9</button>
     <button type="button" class="chip" data-filter="moon">卫星 33</button>
@@ -1282,15 +1283,15 @@ description: "收录 213 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="star" data-name="北河二 Castor" data-mass="4.7144964e+30" data-radius="1453317.3" data-density="0.36666154925252775" data-temp="10012.85" data-period="" data-moons="">
+  <article class="astro-card" data-category="star_system" data-name="北河二 Castor" data-mass="4.7144964e+30" data-radius="1453317.3" data-density="0.36666154925252775" data-temp="10012.85" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/castor/">
-      <div class="astro-img star"><img src="assets/planets/castor.webp" alt="北河二" loading="lazy"></div>
+      <div class="astro-img star_system"><img src="assets/planets/castor.webp" alt="北河二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">北河二<span class="en">Castor</span></div>
         <p class="astro-card-tagline">六颗恒星组成的聚星系统，冬季大三角的一角</p>
         <div class="astro-card-stats"><span>4.71×10³⁰ kg</span><span>2,906,635 km</span><span>1.15×10²⁸ W</span></div>
       </div>
-      <span class="astro-badge star">恒星</span>
+      <span class="astro-badge star_system">聚星系统</span>
     </a>
   </article>
   <article class="astro-card" data-category="star" data-name="北河三 Pollux" data-mass="3.7978439999999995e+30" data-radius="6122160.000000001" data-density="0.003951249791118462" data-temp="4312.85" data-period="" data-moons="">
@@ -1304,15 +1305,15 @@ description: "收录 213 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="star" data-name="五车二 Capella" data-mass="5.110187999999999e+30" data-radius="8348400.0" data-density="0.002096710742367298" data-temp="4696.85" data-period="" data-moons="">
+  <article class="astro-card" data-category="star_system" data-name="五车二 Capella" data-mass="5.110187999999999e+30" data-radius="8348400.0" data-density="0.002096710742367298" data-temp="4696.85" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/capella/">
-      <div class="astro-img star"><img src="assets/planets/capella.webp" alt="五车二" loading="lazy"></div>
+      <div class="astro-img star_system"><img src="assets/planets/capella.webp" alt="五车二" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">五车二<span class="en">Capella</span></div>
         <p class="astro-card-tagline">御夫座最亮的星，四星系统金光耀眼</p>
         <div class="astro-card-stats"><span>5.11×10³⁰ kg</span><span>16,696,800 km</span><span>3.01×10²⁸ W</span></div>
       </div>
-      <span class="astro-badge star">恒星</span>
+      <span class="astro-badge star_system">聚星系统</span>
     </a>
   </article>
   <article class="astro-card" data-category="star" data-name="毕宿五 Aldebaran" data-mass="2.3065439999999998e+30" data-radius="30701241.0" data-density="1.902853449951671e-05" data-temp="3636.85" data-period="" data-moons="">
@@ -1678,15 +1679,15 @@ description: "收录 213 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
-  <article class="astro-card" data-category="star" data-name="南河三 Procyon" data-mass="2.97e+30" data-radius="" data-density="" data-temp="6256.85" data-period="" data-moons="">
+  <article class="astro-card" data-category="star_system" data-name="南河三 Procyon" data-mass="2.97e+30" data-radius="" data-density="" data-temp="6256.85" data-period="" data-moons="">
     <a class="astro-card-link" href="objects/procyon_a/">
-      <div class="astro-img star"><img src="assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div>
+      <div class="astro-img star_system"><img src="assets/planets/procyon_a.webp" alt="南河三" loading="lazy"></div>
       <div class="astro-card-body">
         <div class="astro-card-title">南河三<span class="en">Procyon</span></div>
         <p class="astro-card-tagline">小犬座最亮恒星，夜空中第八亮恒星，距离地球约11.5光年。</p>
         <div class="astro-card-stats"><span>2.97×10³⁰ kg</span><span>2.64×10²⁷ W</span></div>
       </div>
-      <span class="astro-badge star">恒星</span>
+      <span class="astro-badge star_system">聚星系统</span>
     </a>
   </article>
   <article class="astro-card" data-category="dwarf_planet" data-name="亡神星 Orcus" data-mass="6.34e+20" data-radius="455" data-density="1.6068171506641575" data-temp="-228.14999999999998" data-period="89559.3" data-moons="1">
