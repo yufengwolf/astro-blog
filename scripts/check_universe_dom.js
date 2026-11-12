@@ -18,16 +18,10 @@ const html = `<!DOCTYPE html><html><body>
     <label class="uh-search"><input id="uh-q" type="text"></label>
     <button class="uh-btn" id="uh-expand">展开全部</button>
     <button class="uh-btn" id="uh-collapse">折叠全部</button>
-    <button class="uh-btn uh-lang" id="uh-lang">EN</button>
   </div>
   <div class="uh-chips" id="uh-chips"></div>
   <div class="uh-crumb" id="uh-crumb"></div>
   <div class="uh-tree" id="uh-tree"></div>
-  <div class="uh-ns" id="uh-ns">
-    <h3 class="uh-ns-title" id="uh-ns-title"></h3>
-    <p class="uh-ns-note" id="uh-ns-note"></p>
-    <div class="uh-tree" id="uh-ns-tree"></div>
-  </div>
   <div class="uh-legend" id="uh-legend"></div>
 </section>
 <script id="uh-data" type="application/json">${jsonScript[2]}</script>
@@ -81,6 +75,24 @@ ok($$('.uh-link').length > 0, '详情卡片链接渲染', `count=${$$('.uh-link'
 ok($$('.uh-chip').length >= 8, '大类筛选 chips', `count=${$$('.uh-chip').length}`);
 ok($$('.uh-head[data-id]').length === $$('.uh-head').length, '节点行带稳定 data-id');
 
+// 修复①：默认仅展开地球层级路径；根的直接子节点（depth=1，如夏普利超星系团）
+// 此前因强制展开规则永远无法折叠，点击只往 expanded 加路径、关不掉。
+const earthNode = $$('.uh-head[data-id="earth"]')[0];
+ok(!!earthNode, '存在地球节点');
+if (earthNode) {
+  const ec = earthNode.closest('.uh-node').parentElement; // 包含 earth 的 .uh-children
+  ok(ec && ec.classList.contains('uh-children') && !ec.classList.contains('collapsed'),
+     '地球默认在展开路径上（可见）');
+}
+const shapleySel = '.uh-head[data-id="c.shapley-supercluster"]';
+const shapleyKids = () => { const h = $$(shapleySel)[0]; return h ? h.closest('.uh-node').querySelector('.uh-children') : null; };
+ok(!!$$(shapleySel)[0], '存在 depth=1 节点（夏普利超星系团）');
+ok(shapleyKids() && shapleyKids().classList.contains('collapsed'), 'depth=1 节点默认折叠（修复前无法收起）');
+$$(shapleySel)[0].dispatchEvent(new window.Event('click'));   // 点击会整体重渲染，需重新查询 DOM
+ok(shapleyKids() && !shapleyKids().classList.contains('collapsed'), '点击后可展开');
+$$(shapleySel)[0].dispatchEvent(new window.Event('click'));
+ok(shapleyKids() && shapleyKids().classList.contains('collapsed'), '再次点击可折叠（修复后正常）');
+
 // 大小写语义：搜索 开普勒16 应同时出现 B(恒星) 与 b(行星)
 const q = $('#uh-q');
 function search(v) {
@@ -122,10 +134,9 @@ ok(bad.length === 0, '详情链接 URL 格式正确', `total=${$$('.uh-link').le
 ok($$('.uh-badge').every(b => /^rgb|^#/.test(b.style.background)) || $$('.uh-badge').length > 0,
    '类型徽章着色正常');
 
-// ---------- 中英文切换 ----------
-const langBtn = $('#uh-lang');
-ok(!!langBtn, '存在中文 / EN 切换按钮');
-langBtn.dispatchEvent(new window.Event('click'));
+// ---------- 中英文切换（页面仅依赖全站 i18n.js 派发的 site:langchange 事件） ----------
+function setLang(l){ doc.dispatchEvent(new window.CustomEvent('site:langchange', { detail: { lang: l } })); }
+setLang('en');
 ok($('#uh').getAttribute('data-lang') === 'en', '切换后 data-lang=en');
 const enNames = $$('.uh-nm').map(n => n.textContent);
 ok(enNames.some(t => t.includes('Observable Universe')) && !enNames.some(t => t.includes('可观测宇宙')),
@@ -145,18 +156,23 @@ ok(enHit.some(t => t.includes('Sirius')), '英文名搜索命中', `hits=${enHit
 q.value = ''; q.dispatchEvent(new window.Event('input'));
 $('#uh-expand').dispatchEvent(new window.Event('click'));
 const openEn = $$('.uh-children:not(.collapsed)').length;
-langBtn.dispatchEvent(new window.Event('click'));
+setLang('zh');
 const openZh = $$('.uh-children:not(.collapsed)').length;
 ok(openEn > 0 && openEn === openZh, '切换语言不丢失展开状态（id 路径）', `en=${openEn} zh=${openZh}`);
 ok($('#uh').getAttribute('data-lang') === 'zh' && $$('.uh-nm').some(n => CJK.test(n.textContent)),
    '可切回中文');
 
-// ---------- 非结构 · 宇宙学现象 独立区块 ----------
-ok($$('#uh-ns-tree .uh-head').length === 9, '非结构区块渲染 9 个节点', `heads=${$$('#uh-ns-tree .uh-head').length}`);
-ok($('#uh-ns-title').textContent.length > 0 && $('#uh-ns-note').textContent.length > 0,
-   '非结构区块标题/说明已填充');
-const nsTitleEn = (function(){ langBtn.dispatchEvent(new window.Event('click')); const t = $('#uh-ns-title').textContent; langBtn.dispatchEvent(new window.Event('click')); return t; })();
-ok(!CJK.test(nsTitleEn), '非结构区块标题可切换为英文', nsTitleEn.slice(0, 48));
+// ---------- 非结构现象并入主树底部「暂未分类」容器 ----------
+const uncat = $$('.uh-node').find(n => {
+  const h = n.querySelector('.uh-nm');
+  return h && /暂未分类|Uncategorized/.test(h.textContent);
+});
+ok(!!uncat, '存在「暂未分类」容器节点（原非结构现象，移出独立区块）');
+if (uncat) {
+  const sub = [...uncat.querySelectorAll('.uh-head')].map(h => h.textContent);
+  ok(sub.some(t => t.includes('宇宙微波背景')) && sub.some(t => t.includes('TON 618')),
+     '暂未分类含 CMB 与类星体-AGN 子节点', `sub=${sub.length}`);
+}
 
 console.log('\n' + (fail.length ? `FAILED: ${fail.length}` : 'ALL PASS'));
 process.exit(fail.length ? 1 : 0);

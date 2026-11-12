@@ -66,4 +66,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../trappist_1_h/">TRAPPIST-1 h</a></p>
 <p class="obj-nav">下一颗：<a href="../proxima_centauri_d/">比邻星d</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 215 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 213 个天体已全部配图</p>

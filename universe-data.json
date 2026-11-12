@@ -2574,34 +2574,6 @@
       ]
     },
     {
-      "id": "c.gravitational-wave-merger-events-detection-records",
-      "name": "引力波并合事件（探测记录）",
-      "name_en": "Gravitational-Wave Merger Events (Detection Records)",
-      "type": "事件分组",
-      "category": "宇宙结构",
-      "info": "LIGO/Virgo 探测到的双黑洞并合事件，是观测记录而非可归位的静态天体",
-      "children": [
-        {
-          "id": "gw150514",
-          "name": "GW150914 并合黑洞",
-          "name_en": "GW150914",
-          "type": "引力波事件",
-          "category": "黑洞",
-          "info": "人类首次直接探测到的引力波事件（2015）",
-          "source": "LIGO/Virgo 2016"
-        },
-        {
-          "id": "gw190521",
-          "name": "GW190521",
-          "name_en": "GW190521",
-          "type": "引力波事件",
-          "category": "黑洞",
-          "info": "中等质量黑洞形成的并合事件（2019）",
-          "source": "LIGO/Virgo 2020"
-        }
-      ]
-    },
-    {
       "id": "cmb",
       "name": "宇宙微波背景",
       "name_en": "Cosmic Microwave Background",

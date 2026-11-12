@@ -3,7 +3,7 @@
     "name": "星野天体数据库",
     "version": "1.0.0",
     "updated": "2026-11-12",
-    "object_count": 215,
+    "object_count": 213,
     "license_note": "数值数据整理自 NASA 公开资料（公共领域）；一句话简介为本站原创撰写。",
     "primary_sources": [
       "NASA NSSDC Planetary Fact Sheet（八大行星+冥王星，2025-03-18 更新）https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
@@ -14,9 +14,7 @@
       "NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api",
       "Wikipedia 各天体条目（黑洞/星云/星系/星团/大尺度结构，2026-10-24 核对）https://en.wikipedia.org/",
       "Event Horizon Telescope（M87* / 人马座A* 黑洞照片）https://eventhorizontelescope.org/",
-      "LIGO/Virgo 合作组 · GW190521 探测论文（2020）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102",
       "Wikipedia 各天体条目（著名星云/星系/星团/小天体，2026-10-24 核对）https://en.wikipedia.org/",
-      "LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
       "Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/",
       "诺贝尔物理学奖 2019 新闻稿（飞马座51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/",
       "NASA Exoplanet Archive · Planetary Systems 默认参数（5 颗系外行星主值，2026-11-11 核对） https://exoplanetarchive.ipac.caltech.edu/"
@@ -2817,74 +2815,6 @@
       "data_source": "manual",
       "data_verified": false,
       "tagline_en": "The black hole at the core of IC 1101, with highly debated mass estimates"
-    },
-    {
-      "id": "gw190521",
-      "name": "GW190521",
-      "name_en": "GW190521",
-      "category": "black_hole",
-      "parent": null,
-      "tagline": "人类确认的第一个中等质量黑洞，双黑洞并合的产物",
-      "physical": {
-        "mass_kg": 2.823528e+32,
-        "radius_km": 419.36151136,
-        "density_g_cm3": null,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
-        "mean_temp_c": null,
-        "surface_pressure_bar": null,
-        "albedo": null
-      },
-      "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
-        "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
-        "obliquity_deg": null,
-        "rotation_period_hours": null
-      },
-      "moons": {
-        "count": null,
-        "notable": []
-      },
-      "rings": null,
-      "magnetic_field": null,
-      "atmosphere": null,
-      "spectral_type": null,
-      "luminosity_w": null,
-      "distance_ly": 17000000000.0,
-      "constellation": "半人马座",
-      "subtype": "中等质量黑洞",
-      "members": null,
-      "note": "由 85 M☉ + 66 M☉ 两个黑洞并合而成，约 8 M☉ 以引力波形式辐射；信号仅持续 0.1 秒。距离为光度距离（宇宙膨胀所致，大于共动距离）。",
-      "discovery": {
-        "known_since": "2019-05-21（LIGO/Virgo 探测到并合信号）",
-        "discoverer": null,
-        "year": null
-      },
-      "sources": [
-        "wiki_gw190521",
-        "ligo_gw190521"
-      ],
-      "verified": "2026-10-24",
-      "article": null,
-      "image": "assets/planets/gw190521.webp",
-      "source_dates": {
-        "wiki_gw190521": "2026-10-24",
-        "ligo_gw190521": "2026-10-24"
-      },
-      "image_credit": "程序化示意图",
-      "image_url": null,
-      "image_locked": true,
-      "srcs": [
-        "wiki_gw190521",
-        "ligo_gw190521"
-      ],
-      "image_source": "programmatic",
-      "data_source": "manual",
-      "data_verified": false,
-      "tagline_en": "Humanity's first confirmed intermediate-mass black hole, product of a binary black hole merger"
     },
     {
       "id": "cyg_x1",
@@ -6399,71 +6329,6 @@
       "data_source": "manual",
       "data_verified": false,
       "tagline_en": "Blue and red supergiants clustered together like a box of gems"
-    },
-    {
-      "id": "gw150514",
-      "name": "GW150914 并合黑洞",
-      "name_en": "GW150914",
-      "category": "black_hole",
-      "parent": null,
-      "tagline": "人类第一个直接探测到的引力波事件：双黑洞并合",
-      "physical": {
-        "mass_kg": 1.232808e+32,
-        "radius_km": 183.10150496,
-        "density_g_cm3": null,
-        "gravity_m_s2": null,
-        "escape_velocity_km_s": null,
-        "mean_temp_c": null,
-        "surface_pressure_bar": null,
-        "albedo": null
-      },
-      "orbit": {
-        "semimajor_axis_km": null,
-        "orbital_period_days": null,
-        "orbital_velocity_km_s": null,
-        "inclination_deg": null,
-        "eccentricity": null,
-        "obliquity_deg": null,
-        "rotation_period_hours": null
-      },
-      "moons": {
-        "count": null,
-        "notable": []
-      },
-      "rings": null,
-      "magnetic_field": null,
-      "atmosphere": null,
-      "spectral_type": null,
-      "luminosity_w": null,
-      "distance_ly": 1300000000,
-      "constellation": null,
-      "subtype": "双黑洞并合（引力波事件）",
-      "members": null,
-      "note": "初态为 36 M☉ + 29 M☉ 双黑洞，并合后约 62 M☉，约 3 M☉ 质量以引力波形式释放；距离按红移 z≈0.09 的光度距离估算。",
-      "discovery": {
-        "known_since": "2015 年 9 月 14 日（LIGO 探测，2016 年公布）",
-        "discoverer": null,
-        "year": null
-      },
-      "sources": [
-        "ligo_gw150914"
-      ],
-      "verified": "2026-10-24",
-      "article": null,
-      "image": "assets/planets/gw150514.webp",
-      "source_dates": {
-        "ligo_gw150914": "2026-10-24"
-      },
-      "image_credit": "NASA/CXC · 双黑洞并合引力波示意图",
-      "image_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000415",
-      "image_locked": true,
-      "srcs": [
-        "ligo_gw150914"
-      ],
-      "image_source": "programmatic",
-      "data_source": "manual",
-      "data_verified": false,
-      "tagline_en": "First directly detected gravitational wave event: binary black hole merger"
     },
     {
       "id": "eta_carinae",
@@ -13343,10 +13208,6 @@
       "name": "Wikipedia · IC 1101",
       "url": "https://en.wikipedia.org/wiki/IC_1101"
     },
-    "wiki_gw190521": {
-      "name": "Wikipedia · GW190521",
-      "url": "https://en.wikipedia.org/wiki/GW190521"
-    },
     "wiki_cygx1": {
       "name": "Wikipedia · Cygnus X-1",
       "url": "https://en.wikipedia.org/wiki/Cygnus_X-1"
@@ -13358,10 +13219,6 @@
     "eht": {
       "name": "Event Horizon Telescope 合作组",
       "url": "https://eventhorizontelescope.org/"
-    },
-    "ligo_gw190521": {
-      "name": "LIGO/Virgo 合作组 · GW190521（PhysRevLett 2020）",
-      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102"
     },
     "wiki_m42": {
       "name": "Wikipedia · Orion Nebula",
@@ -13566,10 +13423,6 @@
     "wiki_ngc4755": {
       "name": "Wikipedia · NGC 4755（珠宝盒星团）",
       "url": "https://en.wikipedia.org/wiki/NGC_4755"
-    },
-    "ligo_gw150914": {
-      "name": "LIGO/Virgo 合作组 · GW150914 探测论文（PRL 2016）",
-      "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102"
     },
     "wiki_etacarinae": {
       "name": "Wikipedia · Eta Carinae",

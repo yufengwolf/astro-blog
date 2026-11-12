@@ -50,4 +50,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../omega_cen/">半人马座ω</a></p>
 <p class="obj-nav">下一颗：<a href="../virgo_cluster/">室女座星系团</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 215 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 213 个天体已全部配图</p>

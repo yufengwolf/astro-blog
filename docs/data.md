@@ -1,10 +1,10 @@
 ---
-description: "下载星野笔记的天体数据集：215 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"
+description: "下载星野笔记的天体数据集：213 个天体的质量、半径、密度、温度、轨道与卫星数据，JSON 与 CSV 两种格式。"
 ---
 
 # 天体数据集
 
-本站收录的 215 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-11-12。
+本站收录的 213 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-11-12。
 
 <div class="dl-cards">
   <a class="dl-card" href="../data/astro.json" download>
@@ -47,9 +47,7 @@ description: "下载星野笔记的天体数据集：215 个天体的质量、�
 - NASA/JPL Small-Body Database API（谷神星）https://ssd-api.jpl.nasa.gov/sbdb.api
 - Wikipedia 各天体条目（黑洞/星云/星系/星团/大尺度结构，2026-10-24 核对）https://en.wikipedia.org/
 - Event Horizon Telescope（M87* / 人马座A* 黑洞照片）https://eventhorizontelescope.org/
-- LIGO/Virgo 合作组 · GW190521 探测论文（2020）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.125.101102
 - Wikipedia 各天体条目（著名星云/星系/星团/小天体，2026-10-24 核对）https://en.wikipedia.org/
-- LIGO/Virgo 合作组 · GW150914 探测论文（2016）https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102
 - Wikipedia 各恒星条目（亮星/超巨星/双星/残骸/系外宿主，2026-10-24 核对）https://en.wikipedia.org/
 - 诺贝尔物理学奖 2019 新闻稿（飞马座51b 的发现）https://www.nobelprize.org/prizes/physics/2019/press-release/
 - NASA Exoplanet Archive · Planetary Systems 默认参数（5 颗系外行星主值，2026-11-11 核对） https://exoplanetarchive.ipac.caltech.edu/

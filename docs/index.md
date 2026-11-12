@@ -1,17 +1,17 @@
 ---
-description: "收录 215 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 213 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">215 个天体的质量、直径、密度、温度</p>
+  <p class="astro-hero-sub">213 个天体的质量、直径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部 215</button>
+    <button type="button" class="chip active" data-filter="all">全部 213</button>
     <button type="button" class="chip" data-filter="star">恒星 71</button>
     <button type="button" class="chip" data-filter="planet">行星 32</button>
     <button type="button" class="chip" data-filter="dwarf_planet">矮行星 9</button>
@@ -19,7 +19,7 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
     <button type="button" class="chip" data-filter="galaxy">星系 18</button>
     <button type="button" class="chip" data-filter="nebula">星云 16</button>
     <button type="button" class="chip" data-filter="cluster">星团 11</button>
-    <button type="button" class="chip" data-filter="black_hole">黑洞 12</button>
+    <button type="button" class="chip" data-filter="black_hole">黑洞 10</button>
     <button type="button" class="chip" data-filter="structure">大尺度结构 7</button>
     <button type="button" class="chip" data-filter="asteroid">小行星 5</button>
     <button type="button" class="chip" data-filter="comet">彗星 1</button>
@@ -563,17 +563,6 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
         <div class="astro-card-title">IC 1101 中心黑洞<span class="en">IC 1101 black hole</span></div>
         <p class="astro-card-tagline">IC 1101 星系核心的黑洞，质量估值在天文界争议极大</p>
         <div class="astro-card-stats"><span>9.94×10⁴⁰ kg</span><span>2.95×10¹¹ km</span></div>
-      </div>
-      <span class="astro-badge black_hole">黑洞</span>
-    </a>
-  </article>
-  <article class="astro-card" data-category="black_hole" data-name="GW190521 GW190521" data-mass="2.823528e+32" data-radius="419.36151136" data-density="" data-temp="" data-period="" data-moons="">
-    <a class="astro-card-link" href="objects/gw190521/">
-      <div class="astro-img black_hole"><img src="assets/planets/gw190521.webp" alt="GW190521" loading="lazy"></div>
-      <div class="astro-card-body">
-        <div class="astro-card-title">GW190521<span class="en">GW190521</span></div>
-        <p class="astro-card-tagline">人类确认的第一个中等质量黑洞，双黑洞并合的产物</p>
-        <div class="astro-card-stats"><span>2.82×10³² kg</span><span>838.7 km</span></div>
       </div>
       <span class="astro-badge black_hole">黑洞</span>
     </a>
@@ -1170,17 +1159,6 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
         <div class="astro-card-stats"><span>18.6 光年</span></div>
       </div>
       <span class="astro-badge cluster">星团</span>
-    </a>
-  </article>
-  <article class="astro-card" data-category="black_hole" data-name="GW150914 并合黑洞 GW150914" data-mass="1.232808e+32" data-radius="183.10150496" data-density="" data-temp="" data-period="" data-moons="">
-    <a class="astro-card-link" href="objects/gw150514/">
-      <div class="astro-img black_hole"><img src="assets/planets/gw150514.webp" alt="GW150914 并合黑洞" loading="lazy"></div>
-      <div class="astro-card-body">
-        <div class="astro-card-title">GW150914 并合黑洞<span class="en">GW150914</span></div>
-        <p class="astro-card-tagline">人类第一个直接探测到的引力波事件：双黑洞并合</p>
-        <div class="astro-card-stats"><span>1.23×10³² kg</span><span>366.2 km</span></div>
-      </div>
-      <span class="astro-badge black_hole">黑洞</span>
     </a>
   </article>
   <article class="astro-card" data-category="star" data-name="海山二 Eta Carinae" data-mass="" data-radius="41742000.0" data-density="" data-temp="" data-period="" data-moons="">
@@ -2438,4 +2416,4 @@ description: "收录 215 个天体的结构化数据：质量、直径、密度�
   <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-12）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.9 · 收录 215 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.9 · 收录 213 个天体（全部配图）</p>
