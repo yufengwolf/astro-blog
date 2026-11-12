@@ -270,17 +270,17 @@
   // value 是可含内联标签的英文 HTML。源文案改动后此处若未同步，
   // check_site_i18n.js 的「译表漂移检测」会报错，绝不静默放行。
   var BLOCKS = {
-    '全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-11）。发现数据错误？欢迎到 GitHub Issues 反馈。':
-      'All values compiled from NASA / JPL / Wikipedia and other open astronomical sources. Every object page lists its sources and verification date (last verified: 2026-11-11). Spotted an error? Please report it on <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a>.',
-    '本站收录的全部 177 个天体。点击名称进入详情页（完整数据 + 科普文章）；需要筛选排序？回到天体总览工具页。':
-      'All 177 objects in this catalogue. Click a name for the full data page and article. Need filtering or sorting? Back to <a href="../">the Object Explorer</a>.',
+    '全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-12）。发现数据错误？欢迎到 GitHub Issues 反馈。':
+      'All values compiled from NASA / JPL / Wikipedia and other open astronomical sources. Every object page lists its sources and verification date (last verified: 2026-11-12). Spotted an error? Please report it on <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a>.',
+    '本站收录的全部 215 个天体。点击名称进入详情页（完整数据 + 科普文章）；需要筛选排序？回到天体总览工具页。':
+      'All 215 objects in this catalogue. Click a name for the full data page and article. Need filtering or sorting? Back to <a href="../">the Object Explorer</a>.',
     '字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）':
       'Field reference (raw units in the CSV: mass kg · radius km · density g/cm³ · temperature °C · semi-major axis km · period days · moon count)',
     '注意：本表描述的是 astro.json / CSV 的原始字段。radius_km 存的是半径；页面与卡片统一按「直径 = 2 × 半径」展示，主单位按量级自动切换 km / 光年，并辅以地球或太阳直径倍数、M⊕ / M☉、℃ 括注。':
       '<strong>Note:</strong> this table describes the <strong>raw fields</strong> in <code>astro.json</code> / CSV. <code>radius_km</code> stores the <strong>radius</strong>; pages and cards show <strong>diameter = 2 × radius</strong>, switching the primary unit between km and light-years by magnitude, with Earth/Solar diameter multiples, M⊕ / M☉ and °C annotations.',
     '需要筛选排序？回到天体总览工具页。': 'Need filtering or sorting? Back to <a href="../">the Object Explorer</a>.',
-    '本站收录的 177 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-11-11。':
-      'Structured data for all 177 objects in this catalogue, available as JSON and CSV. Last updated: 2026-11-11.',
+    '本站收录的 215 个天体的结构化数据，提供 JSON 与 CSV 两种格式下载。最近更新：2026-11-12。':
+      'Structured data for all 215 objects in this catalogue, available as JSON and CSV. Last updated: 2026-11-12.',
     '数值数据整理自 NASA NSSDC / JPL / Wikipedia 等公开天文资料（公共领域或自由许可）；一句话简介为本站原创撰写。':
       'Numeric data compiled from NASA NSSDC / JPL / Wikipedia and other open sources (public domain or free licences); the one-line descriptions are written by this site.',
     '选择任意两个天体（可按类型筛选），下方会按真实直径比例绘制它们的球体，并列出体积、质量等关键数据的直观倍数。尺寸悬殊时较小的一方会按比例缩为一个点（附实际倍数说明），不再失真放大；本站收录的 177 个天体均可参与对比。':

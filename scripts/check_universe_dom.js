@@ -65,9 +65,9 @@ ok(ids.length === 286, '内嵌节点数', `count=${ids.length}`);
 ok(ids.every(i => typeof i === 'string' && /^[a-z0-9._-]+$/.test(i)), '全部 id 为 ASCII 稳定标识');
 ok(new Set(ids).size === ids.length, 'id 全局唯一', `unique=${new Set(ids).size}`);
 const withRepo = nodes.filter(n => n.repo_id);
-ok(withRepo.length === 195 && withRepo.every(n => n.id === n.repo_id),
+ok(withRepo.length === 208 && withRepo.every(n => n.id === n.repo_id),
    '天体节点 id === repo_id（唯一关联，无名称匹配）', `count=${withRepo.length}`);
-ok(nodes.filter(n => n.id.startsWith('c.')).length === 91, '容器使用 c. 命名空间');
+ok(nodes.filter(n => n.id.startsWith('c.')).length === 78, '容器使用 c. 命名空间');
 ok(nodes.every(n => typeof n.name_en === 'string' && n.name_en.length > 0),
    '全部节点具备 name_en');
 ok(Object.keys(tree.type_i18n || {}).length === 106 && Object.keys(tree.category_i18n || {}).length === 12,

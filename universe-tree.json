@@ -906,20 +906,22 @@
                                           "repo_id": "proxima_centauri_b"
                                         },
                                         {
-                                          "id": "c.proxima-centauri-c",
+                                          "id": "proxima_centauri_c",
                                           "name": "比邻星c",
                                           "name_en": "Proxima Centauri c",
                                           "type": "系外行星",
                                           "category": "行星",
-                                          "info": "候选超级地球，存在争议"
+                                          "info": "候选超级地球，存在争议",
+                                          "repo_id": "proxima_centauri_c"
                                         },
                                         {
-                                          "id": "c.proxima-centauri-d",
+                                          "id": "proxima_centauri_d",
                                           "name": "比邻星d",
                                           "name_en": "Proxima Centauri d",
                                           "type": "系外行星",
                                           "category": "行星",
-                                          "info": "已确认的极小类地行星"
+                                          "info": "已确认的极小类地行星",
+                                          "repo_id": "proxima_centauri_d"
                                         }
                                       ],
                                       "repo_id": "proxima_centauri"
@@ -1141,12 +1143,13 @@
                                   "source": "NASA",
                                   "children": [
                                     {
-                                      "id": "c.pollux-b",
+                                      "id": "pollux_b",
                                       "name": "北河三b",
                                       "name_en": "Pollux b",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "已确认的气态巨行星"
+                                      "info": "已确认的气态巨行星",
+                                      "repo_id": "pollux_b"
                                     }
                                   ],
                                   "repo_id": "pollux"
@@ -1161,56 +1164,63 @@
                                   "info": "M8V 红矮星，距离约 40 光年；7 颗类地行星，多颗位于宜居带",
                                   "children": [
                                     {
-                                      "id": "c.trappist-1-b",
+                                      "id": "trappist_1_b",
                                       "name": "TRAPPIST-1 b",
                                       "name_en": "TRAPPIST-1 b",
                                       "type": "系外行星",
-                                      "category": "行星"
+                                      "category": "行星",
+                                      "repo_id": "trappist_1_b"
                                     },
                                     {
-                                      "id": "c.trappist-1-c",
+                                      "id": "trappist_1_c",
                                       "name": "TRAPPIST-1 c",
                                       "name_en": "TRAPPIST-1 c",
                                       "type": "系外行星",
-                                      "category": "行星"
+                                      "category": "行星",
+                                      "repo_id": "trappist_1_c"
                                     },
                                     {
-                                      "id": "c.trappist-1-d",
+                                      "id": "trappist_1_d",
                                       "name": "TRAPPIST-1 d",
                                       "name_en": "TRAPPIST-1 d",
                                       "type": "系外行星",
-                                      "category": "行星"
+                                      "category": "行星",
+                                      "repo_id": "trappist_1_d"
                                     },
                                     {
-                                      "id": "c.trappist-1-e",
+                                      "id": "trappist_1_e",
                                       "name": "TRAPPIST-1 e",
                                       "name_en": "TRAPPIST-1 e",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "位于宜居带"
+                                      "info": "位于宜居带",
+                                      "repo_id": "trappist_1_e"
                                     },
                                     {
-                                      "id": "c.trappist-1-f",
+                                      "id": "trappist_1_f",
                                       "name": "TRAPPIST-1 f",
                                       "name_en": "TRAPPIST-1 f",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "位于宜居带"
+                                      "info": "位于宜居带",
+                                      "repo_id": "trappist_1_f"
                                     },
                                     {
-                                      "id": "c.trappist-1-g",
+                                      "id": "trappist_1_g",
                                       "name": "TRAPPIST-1 g",
                                       "name_en": "TRAPPIST-1 g",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "位于宜居带"
+                                      "info": "位于宜居带",
+                                      "repo_id": "trappist_1_g"
                                     },
                                     {
-                                      "id": "c.trappist-1-h",
+                                      "id": "trappist_1_h",
                                       "name": "TRAPPIST-1 h",
                                       "name_en": "TRAPPIST-1 h",
                                       "type": "系外行星",
-                                      "category": "行星"
+                                      "category": "行星",
+                                      "repo_id": "trappist_1_h"
                                     }
                                   ],
                                   "repo_id": "trappist_1"
@@ -1225,28 +1235,31 @@
                                   "info": "距离约 20 光年；格利泽581g/d 存在争议，未被确认",
                                   "children": [
                                     {
-                                      "id": "c.gliese-581-b",
+                                      "id": "gliese_581_b",
                                       "name": "格利泽581b",
                                       "name_en": "Gliese 581 b",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "已确认"
+                                      "info": "已确认",
+                                      "repo_id": "gliese_581_b"
                                     },
                                     {
-                                      "id": "c.gliese-581-c",
+                                      "id": "gliese_581_c",
                                       "name": "格利泽581c",
                                       "name_en": "Gliese 581 c",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "已确认"
+                                      "info": "已确认",
+                                      "repo_id": "gliese_581_c"
                                     },
                                     {
-                                      "id": "c.gliese-581-e",
+                                      "id": "gliese_581_e",
                                       "name": "格利泽581e",
                                       "name_en": "Gliese 581 e",
                                       "type": "系外行星",
                                       "category": "行星",
-                                      "info": "已确认"
+                                      "info": "已确认",
+                                      "repo_id": "gliese_581_e"
                                     },
                                     {
                                       "id": "c.gliese-581-g",

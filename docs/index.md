@@ -1,19 +1,19 @@
 ---
-description: "收录 202 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
+description: "收录 215 个天体的结构化数据：质量、直径、密度、表面温度、轨道周期与卫星数量，支持按分类筛选、按任意数值排序。"
 ---
 
 <div class="astro-hero">
   <h1>天体数据库</h1>
-  <p class="astro-hero-sub">202 个天体的质量、直径、密度、温度</p>
+  <p class="astro-hero-sub">215 个天体的质量、直径、密度、温度</p>
   <p class="astro-hero-links"><a href="#articles">科普文章</a><span class="sep">·</span><a href="objects/">天体库总表</a></p>
 </div>
 
 <div class="astro-toolbar">
   <input type="search" id="astro-search" placeholder="搜索天体…" aria-label="搜索天体">
   <div class="astro-chips" role="group" aria-label="按分类筛选">
-    <button type="button" class="chip active" data-filter="all">全部 202</button>
+    <button type="button" class="chip active" data-filter="all">全部 215</button>
     <button type="button" class="chip" data-filter="star">恒星 71</button>
-    <button type="button" class="chip" data-filter="planet">行星 19</button>
+    <button type="button" class="chip" data-filter="planet">行星 32</button>
     <button type="button" class="chip" data-filter="dwarf_planet">矮行星 9</button>
     <button type="button" class="chip" data-filter="moon">卫星 33</button>
     <button type="button" class="chip" data-filter="galaxy">星系 18</button>
@@ -2261,6 +2261,149 @@ description: "收录 202 个天体的结构化数据：质量、直径、密度�
       <span class="astro-badge star">恒星</span>
     </a>
   </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 b TRAPPIST-1 b" data-mass="8.205528000000001e+24" data-radius="7110.036000000001" data-density="5.45" data-temp="399" data-period="1.510826" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_b/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_b.webp" alt="TRAPPIST-1 b" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 b<span class="en">TRAPPIST-1 b</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 系统最内侧的岩质行星，一年仅 1.5 天</p>
+        <div class="astro-card-stats"><span>8.21×10²⁴ kg</span><span>14,220 km</span><span>672 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 c TRAPPIST-1 c" data-mass="7.811376000000001e+24" data-radius="6988.987" data-density="5.463" data-temp="341" data-period="2.421937" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_c/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_c.webp" alt="TRAPPIST-1 c" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 c<span class="en">TRAPPIST-1 c</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 系统中第二近的岩质行星</p>
+        <div class="astro-card-stats"><span>7.81×10²⁴ kg</span><span>13,978 km</span><span>614 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 d TRAPPIST-1 d" data-mass="2.317136e+24" data-radius="5020.348" data-density="4.372" data-temp="300" data-period="4.049219" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_d/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_d.webp" alt="TRAPPIST-1 d" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 d<span class="en">TRAPPIST-1 d</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 中最小的行星之一，可能拥有水</p>
+        <div class="astro-card-stats"><span>2.32×10²⁴ kg</span><span>10,041 km</span><span>573 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 e TRAPPIST-1 e" data-mass="4.1326239999999997e+24" data-radius="5861.320000000001" data-density="4.899" data-temp="251" data-period="6.101013" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_e/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_e.webp" alt="TRAPPIST-1 e" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 e<span class="en">TRAPPIST-1 e</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 中位于宜居带内的岩质行星</p>
+        <div class="astro-card-stats"><span>4.13×10²⁴ kg</span><span>11,723 km</span><span>524 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 f TRAPPIST-1 f" data-mass="6.204907999999999e+24" data-radius="6657.695" data-density="5.02" data-temp="218" data-period="9.20754" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_f/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_f.webp" alt="TRAPPIST-1 f" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 f<span class="en">TRAPPIST-1 f</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 外侧的岩质行星</p>
+        <div class="astro-card-stats"><span>6.2×10²⁴ kg</span><span>13,315 km</span><span>491 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 g TRAPPIST-1 g" data-mass="7.889012000000001e+24" data-radius="7192.859" data-density="5.061" data-temp="197" data-period="12.352446" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_g/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_g.webp" alt="TRAPPIST-1 g" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 g<span class="en">TRAPPIST-1 g</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 中质量较大的岩质行星</p>
+        <div class="astro-card-stats"><span>7.89×10²⁴ kg</span><span>14,386 km</span><span>470 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="TRAPPIST-1 h TRAPPIST-1 h" data-mass="1.946872e+24" data-radius="4810.1050000000005" data-density="4.176" data-temp="171" data-period="18.772866" data-moons="0">
+    <a class="astro-card-link" href="objects/trappist_1_h/">
+      <div class="astro-img planet"><img src="assets/planets/trappist_1_h.webp" alt="TRAPPIST-1 h" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">TRAPPIST-1 h<span class="en">TRAPPIST-1 h</span></div>
+        <p class="astro-card-tagline">TRAPPIST-1 系统最外侧、最小的行星</p>
+        <div class="astro-card-stats"><span>1.95×10²⁴ kg</span><span>9,620 km</span><span>444 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="比邻星c Proxima Centauri c" data-mass="4.1804e+25" data-radius="" data-density="" data-temp="39" data-period="1928" data-moons="0">
+    <a class="astro-card-link" href="objects/proxima_centauri_c/">
+      <div class="astro-img planet"><img src="assets/planets/proxima_centauri_c.webp" alt="比邻星c" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">比邻星c<span class="en">Proxima Centauri c</span></div>
+        <p class="astro-card-tagline">比邻星外侧的冷超级地球候选体</p>
+        <div class="astro-card-stats"><span>4.18×10²⁵ kg</span><span>312 K</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="比邻星d Proxima Centauri d" data-mass="1.5527200000000002e+24" data-radius="" data-density="" data-temp="" data-period="5.15" data-moons="0">
+    <a class="astro-card-link" href="objects/proxima_centauri_d/">
+      <div class="astro-img planet"><img src="assets/planets/proxima_centauri_d.webp" alt="比邻星d" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">比邻星d<span class="en">Proxima Centauri d</span></div>
+        <p class="astro-card-tagline">迄今径向速度法探测到的最轻系外行星之一</p>
+        <div class="astro-card-stats"><span>1.55×10²⁴ kg</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="北河三b Pollux b" data-mass="4.3653999999999995e+27" data-radius="" data-density="" data-temp="" data-period="589.64" data-moons="0">
+    <a class="astro-card-link" href="objects/pollux_b/">
+      <div class="astro-img planet"><img src="assets/planets/pollux_b.webp" alt="北河三b" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">北河三b<span class="en">Pollux b</span></div>
+        <p class="astro-card-tagline">围绕明亮巨星北河三的气体巨行星</p>
+        <div class="astro-card-stats"><span>4.37×10²⁷ kg</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="格利泽581b Gliese 581 b" data-mass="9.435760000000001e+25" data-radius="" data-density="" data-temp="" data-period="5.3686" data-moons="0">
+    <a class="astro-card-link" href="objects/gliese_581_b/">
+      <div class="astro-img planet"><img src="assets/planets/gliese_581_b.webp" alt="格利泽581b" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">格利泽581b<span class="en">Gliese 581 b</span></div>
+        <p class="astro-card-tagline">格利泽581系统中质量最大的行星</p>
+        <div class="astro-card-stats"><span>9.44×10²⁵ kg</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="格利泽581c Gliese 581 c" data-mass="3.3741800000000003e+25" data-radius="" data-density="" data-temp="" data-period="12.92" data-moons="0">
+    <a class="astro-card-link" href="objects/gliese_581_c/">
+      <div class="astro-img planet"><img src="assets/planets/gliese_581_c.webp" alt="格利泽581c" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">格利泽581c<span class="en">Gliese 581 c</span></div>
+        <p class="astro-card-tagline">曾被称为‘宜居带超级地球’的行星</p>
+        <div class="astro-card-stats"><span>3.37×10²⁵ kg</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
+  <article class="astro-card" data-category="planet" data-name="格利泽581e Gliese 581 e" data-mass="1.13468e+25" data-radius="" data-density="" data-temp="" data-period="3.1481" data-moons="0">
+    <a class="astro-card-link" href="objects/gliese_581_e/">
+      <div class="astro-img planet"><img src="assets/planets/gliese_581_e.webp" alt="格利泽581e" loading="lazy"></div>
+      <div class="astro-card-body">
+        <div class="astro-card-title">格利泽581e<span class="en">Gliese 581 e</span></div>
+        <p class="astro-card-tagline">格利泽581系统最内侧的轻质量行星</p>
+        <div class="astro-card-stats"><span>1.13×10²⁵ kg</span></div>
+      </div>
+      <span class="astro-badge planet">行星</span>
+    </a>
+  </article>
 </div>
 <p class="astro-empty" id="astro-empty" hidden>没有匹配的天体，换个关键词或分类试试。</p>
 
@@ -2274,12 +2417,25 @@ description: "收录 202 个天体的结构化数据：质量、直径、密度�
     <li><a href="objects/jupiter/" data-en="Jupiter">木星（Jupiter）</a></li>
     <li><a href="objects/saturn/" data-en="Saturn">土星（Saturn）</a></li>
     <li><a href="objects/pluto/" data-en="Pluto">冥王星（Pluto）</a></li>
+    <li><a href="objects/trappist_1_b/" data-en="TRAPPIST-1 b">TRAPPIST-1 b（TRAPPIST-1 b）</a></li>
+    <li><a href="objects/trappist_1_c/" data-en="TRAPPIST-1 c">TRAPPIST-1 c（TRAPPIST-1 c）</a></li>
+    <li><a href="objects/trappist_1_d/" data-en="TRAPPIST-1 d">TRAPPIST-1 d（TRAPPIST-1 d）</a></li>
+    <li><a href="objects/trappist_1_e/" data-en="TRAPPIST-1 e">TRAPPIST-1 e（TRAPPIST-1 e）</a></li>
+    <li><a href="objects/trappist_1_f/" data-en="TRAPPIST-1 f">TRAPPIST-1 f（TRAPPIST-1 f）</a></li>
+    <li><a href="objects/trappist_1_g/" data-en="TRAPPIST-1 g">TRAPPIST-1 g（TRAPPIST-1 g）</a></li>
+    <li><a href="objects/trappist_1_h/" data-en="TRAPPIST-1 h">TRAPPIST-1 h（TRAPPIST-1 h）</a></li>
+    <li><a href="objects/proxima_centauri_c/" data-en="Proxima Centauri c">比邻星c（Proxima Centauri c）</a></li>
+    <li><a href="objects/proxima_centauri_d/" data-en="Proxima Centauri d">比邻星d（Proxima Centauri d）</a></li>
+    <li><a href="objects/pollux_b/" data-en="Pollux b">北河三b（Pollux b）</a></li>
+    <li><a href="objects/gliese_581_b/" data-en="Gliese 581 b">格利泽581b（Gliese 581 b）</a></li>
+    <li><a href="objects/gliese_581_c/" data-en="Gliese 581 c">格利泽581c（Gliese 581 c）</a></li>
+    <li><a href="objects/gliese_581_e/" data-en="Gliese 581 e">格利泽581e（Gliese 581 e）</a></li>
   </ul>
 </section>
 
 <section class="astro-note">
   <h2>数据说明</h2>
-  <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-11）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
+  <p>全部数值整理自 NASA / JPL / Wikipedia 等公开天文资料，每个天体页面均标注来源与核对日期（最近核对：2026-11-12）。发现数据错误？欢迎到 <a href="https://github.com/yufengwolf/astro-blog/issues">GitHub Issues</a> 反馈。</p>
 </section>
 
-<p class="obj-version">数据版本 v1.9 · 收录 202 个天体（全部配图）</p>
+<p class="obj-version">数据版本 v1.9 · 收录 215 个天体（全部配图）</p>

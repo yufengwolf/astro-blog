@@ -55,4 +55,4 @@ hide:
 <p class="obj-nav">← 上一颗：<a href="../rw_cephei/">仙王座 RW</a></p>
 <p class="obj-nav">下一颗：<a href="../mira/">蒭藁增二</a> →</p>
 
-<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 202 个天体已全部配图</p>
+<p class="obj-version">数据版本 v1.9（2026-10-24 核对）· 215 个天体已全部配图</p>

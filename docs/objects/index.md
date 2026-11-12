@@ -1,10 +1,10 @@
 ---
-description: "本站收录的全部 202 个天体的关键数据总表：质量、直径、密度、温度、轨道周期与卫星数量。"
+description: "本站收录的全部 215 个天体的关键数据总表：质量、直径、密度、温度、轨道周期与卫星数量。"
 ---
 
 # 天体库
 
-本站收录的全部 202 个天体。点击名称进入详情页（完整数据 + 科普文章）；需要筛选排序？回到<a href="../">天体总览工具页</a>。
+本站收录的全部 215 个天体。点击名称进入详情页（完整数据 + 科普文章）；需要筛选排序？回到<a href="../">天体总览工具页</a>。
 
 | 天体 | 分类 | 母天体 | 质量 | 直径 | 密度 | 均温 | 距离 | 轨道周期 | 卫星数 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -210,6 +210,19 @@ description: "本站收录的全部 202 个天体的关键数据总表：质量�
 | [开普勒16A](kepler_16_a.md) | 恒星 | — | 1.37×10³⁰ kg | 902,879 km | — | 4,450 K | 245 光年 | — | — |
 | [开普勒16B](kepler_16_b.md) | 恒星 | — | 4.03×10²⁹ kg | 314,735 km | — | 3,160 K | 245 光年 | — | — |
 | [南河三B](procyon_b.md) | 恒星 | — | 1.18×10³⁰ kg | 17,170 km | — | 7,740 K | 11 光年 | — | — |
+| [TRAPPIST-1 b](trappist_1_b.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 8.21×10²⁴ kg | 14,220 km | 5.45 g/cm³ | 672 K | — | 1.51 天 | 0 |
+| [TRAPPIST-1 c](trappist_1_c.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 7.81×10²⁴ kg | 13,978 km | 5.463 g/cm³ | 614 K | — | 2.4 天 | 0 |
+| [TRAPPIST-1 d](trappist_1_d.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 2.32×10²⁴ kg | 10,041 km | 4.372 g/cm³ | 573 K | — | 4.0 天 | 0 |
+| [TRAPPIST-1 e](trappist_1_e.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 4.13×10²⁴ kg | 11,723 km | 4.899 g/cm³ | 524 K | — | 6.1 天 | 0 |
+| [TRAPPIST-1 f](trappist_1_f.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 6.2×10²⁴ kg | 13,315 km | 5.02 g/cm³ | 491 K | — | 9.2 天 | 0 |
+| [TRAPPIST-1 g](trappist_1_g.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 7.89×10²⁴ kg | 14,386 km | 5.061 g/cm³ | 470 K | — | 12.4 天 | 0 |
+| [TRAPPIST-1 h](trappist_1_h.md) | 行星 | <a href="trappist_1.md">特拉比斯特 1</a> | 1.95×10²⁴ kg | 9,620 km | 4.176 g/cm³ | 444 K | — | 18.8 天 | 0 |
+| [比邻星c](proxima_centauri_c.md) | 行星 | <a href="proxima_centauri.md">比邻星</a> | 4.18×10²⁵ kg | — | — | 312 K | — | 5.3 年（1,928 天） | 0 |
+| [比邻星d](proxima_centauri_d.md) | 行星 | <a href="proxima_centauri.md">比邻星</a> | 1.55×10²⁴ kg | — | — | — | — | 5.2 天 | 0 |
+| [北河三b](pollux_b.md) | 行星 | <a href="pollux.md">北河三</a> | 4.37×10²⁷ kg | — | — | — | — | 589.6 天 | 0 |
+| [格利泽581b](gliese_581_b.md) | 行星 | <a href="gliese_581.md">格利泽581</a> | 9.44×10²⁵ kg | — | — | — | — | 5.4 天 | 0 |
+| [格利泽581c](gliese_581_c.md) | 行星 | <a href="gliese_581.md">格利泽581</a> | 3.37×10²⁵ kg | — | — | — | — | 12.9 天 | 0 |
+| [格利泽581e](gliese_581_e.md) | 行星 | <a href="gliese_581.md">格利泽581</a> | 1.13×10²⁵ kg | — | — | — | — | 3.1 天 | 0 |
 
 <details class="obj-fields" markdown="1">
 <summary data-en="Field reference (raw units in the CSV: mass kg · radius km · density g/cm³ · temperature °C · semi-major axis km · period days · moon count)">字段说明（下载 CSV 的原始单位：质量 kg · 半径 km · 密度 g/cm³ · 温度 ℃ · 半长轴 km · 周期 天 · 卫星数 颗）</summary>
