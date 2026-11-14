@@ -27,11 +27,12 @@ PARENT_RULES = {
     "star": {None, "star", "star_system", "nebula", "cluster"},
     # 聚星系统（多星系统父卡）：本身可为顶层，或从属于星团/星云等分组
     "star_system": {None, "star", "nebula", "cluster"},
-    "planet": {"star"},
+    # planet/exoplanet 也允许父为 star_system：环双星/聚星系统行星（如 kepler_16b 绕双星 kepler_16）
+    "planet": {"star", "star_system"},
     "dwarf_planet": {"star"},
     "moon": {"planet", "dwarf_planet"},
     "asteroid": {"star"},
-    "exoplanet": {"star"},
+    "exoplanet": {"star", "star_system"},
     "black_hole": {None, "galaxy", "star"},
     "nebula": {None, "galaxy", "star"},
     "galaxy": {None, "galaxy", "structure"},
