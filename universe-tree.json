@@ -2408,117 +2408,6 @@
               "repo_id": "local_group"
             },
             {
-              "id": "virgo_cluster",
-              "name": "室女座星系团",
-              "name_en": "Virgo Cluster",
-              "type": "富星系团",
-              "category": "宇宙结构",
-              "info": "拉尼亚凯亚内部大型富星系团",
-              "children": [
-                {
-                  "id": "m87",
-                  "name": "室女座A",
-                  "name_en": "Messier 87",
-                  "type": "巨椭圆星系",
-                  "category": "星系",
-                  "alias": "M87",
-                  "children": [
-                    {
-                      "id": "m87_star",
-                      "name": "M87*",
-                      "name_en": "M87*",
-                      "type": "超大质量黑洞",
-                      "category": "黑洞",
-                      "source": "EHT 2019",
-                      "repo_id": "m87_star"
-                    }
-                  ],
-                  "repo_id": "m87"
-                },
-                {
-                  "id": "c.m49-giant-elliptical-galaxy",
-                  "name": "M49（巨椭圆星系）",
-                  "name_en": "M49 (Giant Elliptical Galaxy)",
-                  "type": "巨椭圆星系",
-                  "category": "星系",
-                  "alias": "M49"
-                },
-                {
-                  "id": "c.m60-giant-elliptical-galaxy",
-                  "name": "M60（巨椭圆星系）",
-                  "name_en": "M60 (Giant Elliptical Galaxy)",
-                  "type": "巨椭圆星系",
-                  "category": "星系",
-                  "alias": "M60"
-                },
-                {
-                  "id": "m104",
-                  "name": "草帽星系",
-                  "name_en": "Sombrero Galaxy (M104)",
-                  "type": "旋涡星系",
-                  "category": "星系",
-                  "alias": "M104",
-                  "repo_id": "m104"
-                }
-              ],
-              "repo_id": "virgo_cluster"
-            },
-            {
-              "id": "c.m81-group",
-              "name": "M81星系群",
-              "name_en": "M81 Group",
-              "type": "星系群",
-              "category": "宇宙结构",
-              "children": [
-                {
-                  "id": "m81",
-                  "name": "波德星系",
-                  "name_en": "Messier 81",
-                  "type": "旋涡星系",
-                  "category": "星系",
-                  "alias": "M81",
-                  "repo_id": "m81"
-                },
-                {
-                  "id": "m82",
-                  "name": "雪茄星系",
-                  "name_en": "Messier 82 (Cigar Galaxy)",
-                  "type": "星暴星系",
-                  "category": "星系",
-                  "alias": "M82",
-                  "repo_id": "m82"
-                }
-              ]
-            },
-            {
-              "id": "c.centaurus-a-group",
-              "name": "半人马座A星系群",
-              "name_en": "Centaurus A Group",
-              "type": "星系群",
-              "category": "宇宙结构",
-              "info": "距离约 1200 万光年的近邻星系群",
-              "children": [
-                {
-                  "id": "ngc5128",
-                  "name": "半人马 A",
-                  "name_en": "Centaurus A",
-                  "type": "透镜状星系",
-                  "category": "星系",
-                  "alias": "NGC 5128",
-                  "repo_id": "ngc5128"
-                },
-                {
-                  "id": "m83",
-                  "name": "南风车星系",
-                  "name_en": "Southern Pinwheel Galaxy",
-                  "type": "旋涡星系",
-                  "category": "星系",
-                  "alias": "M83",
-                  "repo_id": "m83"
-                }
-              ]
-            },
-            {
               "id": "great_attractor",
               "name": "巨引源",
               "name_en": "Great Attractor",
@@ -2604,6 +2493,227 @@
                   "category": "星系",
                   "alias": "NGC 4038",
                   "repo_id": "ngc4038"
+                }
+              ]
+            },
+            {
+              "id": "c.hydra-centaurus-sc",
+              "name": "长蛇-半人马座超星系团",
+              "name_en": "Hydra–Centaurus Supercluster",
+              "type": "超星系团",
+              "category": "宇宙结构",
+              "info": "含巨引源（Great Attractor）方向的本超星系团邻近结构，拉尼亚凯亚的引力邻居。",
+              "source": "Tully 2014"
+            },
+            {
+              "id": "c.norma",
+              "name": "矩尺座超星系团",
+              "name_en": "Norma Supercluster",
+              "type": "超星系团",
+              "category": "宇宙结构",
+              "info": "南天矩尺座方向，靠近银河系隐匿带，含巨引源核心区。",
+              "source": "Tully 2014"
+            },
+            {
+              "id": "c.pavoindus",
+              "name": "孔雀-印地安座超星系团",
+              "name_en": "Pavo–Indus Supercluster",
+              "type": "超星系团",
+              "category": "宇宙结构",
+              "info": "南天孔雀座—印地安座方向的近邻超星系团。",
+              "source": "Tully 2014"
+            },
+            {
+              "id": "c.virgo-supercluster",
+              "name": "室女座超星系团（本地超星系团）",
+              "name_en": "Virgo Supercluster (Local Supercluster)",
+              "type": "超星系团",
+              "category": "宇宙结构",
+              "info": "即本地超星系团，以室女座星系团为核心，含本星系群及众多近邻星系群/团。",
+              "source": "Tully 1982 / 2014",
+              "children": [
+                {
+                  "id": "virgo_cluster",
+                  "name": "室女座星系团",
+                  "name_en": "Virgo Cluster",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "拉尼亚凯亚内部大型富星系团",
+                  "children": [
+                    {
+                      "id": "m87",
+                      "name": "室女座A",
+                      "name_en": "Messier 87",
+                      "type": "巨椭圆星系",
+                      "category": "星系",
+                      "alias": "M87",
+                      "children": [
+                        {
+                          "id": "m87_star",
+                          "name": "M87*",
+                          "name_en": "M87*",
+                          "type": "超大质量黑洞",
+                          "category": "黑洞",
+                          "source": "EHT 2019",
+                          "repo_id": "m87_star"
+                        }
+                      ],
+                      "repo_id": "m87"
+                    },
+                    {
+                      "id": "c.m49-giant-elliptical-galaxy",
+                      "name": "M49（巨椭圆星系）",
+                      "name_en": "M49 (Giant Elliptical Galaxy)",
+                      "type": "巨椭圆星系",
+                      "category": "星系",
+                      "alias": "M49"
+                    },
+                    {
+                      "id": "c.m60-giant-elliptical-galaxy",
+                      "name": "M60（巨椭圆星系）",
+                      "name_en": "M60 (Giant Elliptical Galaxy)",
+                      "type": "巨椭圆星系",
+                      "category": "星系",
+                      "alias": "M60"
+                    },
+                    {
+                      "id": "m104",
+                      "name": "草帽星系",
+                      "name_en": "Sombrero Galaxy (M104)",
+                      "type": "旋涡星系",
+                      "category": "星系",
+                      "alias": "M104",
+                      "repo_id": "m104"
+                    }
+                  ],
+                  "repo_id": "virgo_cluster"
+                },
+                {
+                  "id": "c.m81-group",
+                  "name": "M81星系群",
+                  "name_en": "M81 Group",
+                  "type": "星系群",
+                  "category": "宇宙结构",
+                  "children": [
+                    {
+                      "id": "m81",
+                      "name": "波德星系",
+                      "name_en": "Messier 81",
+                      "type": "旋涡星系",
+                      "category": "星系",
+                      "alias": "M81",
+                      "repo_id": "m81"
+                    },
+                    {
+                      "id": "m82",
+                      "name": "雪茄星系",
+                      "name_en": "Messier 82 (Cigar Galaxy)",
+                      "type": "星暴星系",
+                      "category": "星系",
+                      "alias": "M82",
+                      "repo_id": "m82"
+                    }
+                  ]
+                },
+                {
+                  "id": "c.centaurus-a-group",
+                  "name": "半人马座A星系群",
+                  "name_en": "Centaurus A Group",
+                  "type": "星系群",
+                  "category": "宇宙结构",
+                  "info": "距离约 1200 万光年的近邻星系群",
+                  "children": [
+                    {
+                      "id": "ngc5128",
+                      "name": "半人马 A",
+                      "name_en": "Centaurus A",
+                      "type": "透镜状星系",
+                      "category": "星系",
+                      "alias": "NGC 5128",
+                      "repo_id": "ngc5128"
+                    },
+                    {
+                      "id": "m83",
+                      "name": "南风车星系",
+                      "name_en": "Southern Pinwheel Galaxy",
+                      "type": "旋涡星系",
+                      "category": "星系",
+                      "alias": "M83",
+                      "repo_id": "m83"
+                    }
+                  ]
+                },
+                {
+                  "id": "c.fornax",
+                  "name": "天炉座星系团",
+                  "name_en": "Fornax Cluster",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "南天近邻富星系团，距本星系群约 6200 万光年。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.eridanus",
+                  "name": "波江座星系团",
+                  "name_en": "Eridanus Cluster",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "波江座方向的星系群/团结构。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.ursamajor",
+                  "name": "大熊座星系团",
+                  "name_en": "Ursa Major Cluster",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "大熊座方向的近邻星系云。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.antlia",
+                  "name": "唧筒座星系团",
+                  "name_en": "Antlia Cluster",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "唧筒座方向的近邻星系团。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.centauruscluster",
+                  "name": "半人马座星系团（A3526）",
+                  "name_en": "Centaurus Cluster (Abell 3526)",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "半人马座方向的富星系团，邻近巨引源。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.pegasuscluster",
+                  "name": "飞马座星系团",
+                  "name_en": "Pegasus Cluster",
+                  "type": "富星系团",
+                  "category": "宇宙结构",
+                  "info": "飞马座方向的近邻星系团。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.sculptorgroup",
+                  "name": "玉夫座星系群",
+                  "name_en": "Sculptor Group",
+                  "type": "星系群",
+                  "category": "宇宙结构",
+                  "info": "南天近邻星系群，成员含玉夫座矮星系等。",
+                  "source": "NASA/IPAC"
+                },
+                {
+                  "id": "c.leo1group",
+                  "name": "狮子 I 星系群",
+                  "name_en": "Leo I Group",
+                  "type": "星系群",
+                  "category": "宇宙结构",
+                  "info": "本星系群近邻的矮星系群。",
+                  "source": "NASA/IPAC"
                 }
               ]
             }
@@ -2715,11 +2825,11 @@
     },
     {
       "id": "c.coma-cluster",
-      "name": "后发座星系团",
-      "name_en": "Coma Cluster",
-      "type": "富星系团",
+      "name": "后发座超星系团",
+      "name_en": "Coma Supercluster",
+      "type": "超星系团",
       "category": "宇宙结构",
-      "info": "遥远致密的富星系团",
+      "info": "由后发座星系团（Abell 1656）等构成的近邻超星系团，属后发—武仙大尺度纤维。",
       "children": [
         {
           "id": "c.ngc4889",
@@ -2774,6 +2884,15 @@
           "category": "星系",
           "info": "团内亮成员椭圆星系",
           "source": "NASA/IPAC"
+        },
+        {
+          "id": "c.a1367",
+          "name": "Abell 1367（狮子座星系团）",
+          "name_en": "Abell 1367 (Leo Cluster)",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "后发超星系团内的富星系团，含强扰动星系。",
+          "source": "NASA/IPAC"
         }
       ]
     },
@@ -2796,6 +2915,53 @@
       "info": "致密相互作用星系群（HCG 92），属飞马座星系团复合体，经核实不属拉尼亚凯亚",
       "source": "NASA/IPAC",
       "repo_id": "stephens_quintet"
+    },
+    {
+      "id": "c.perseuspisces",
+      "name": "英仙-双鱼座超星系团",
+      "name_en": "Perseus–Pisces Supercluster",
+      "type": "超星系团",
+      "category": "宇宙结构",
+      "info": "本地宇宙大尺度纤维结构，沿英仙座—双鱼座方向延展的富星系团链，是拉尼亚凯亚之外近邻最大超星系团之一。",
+      "source": "Tully et al. 2014",
+      "children": [
+        {
+          "id": "c.a262",
+          "name": "Abell 262（Andromeda Cluster）",
+          "name_en": "Abell 262 (Andromeda Cluster)",
+          "type": "富星系团",
+          "category": "宇宙结构",
+          "info": "英仙-双鱼超星系团内的富星系团，邻近 M31。",
+          "source": "NASA/IPAC"
+        }
+      ]
+    },
+    {
+      "id": "c.hercules",
+      "name": "武仙座超星系团",
+      "name_en": "Hercules Supercluster",
+      "type": "超星系团",
+      "category": "宇宙结构",
+      "info": "位于武仙座方向的后发—武仙超星系团复合体的一部分。",
+      "source": "Tully et al. 2014"
+    },
+    {
+      "id": "c.sculptorsc",
+      "name": "玉夫座超星系团",
+      "name_en": "Sculptor Supercluster",
+      "type": "超星系团",
+      "category": "宇宙结构",
+      "info": "南天玉夫座方向的近邻超星系团，与拉尼亚凯亚相邻。",
+      "source": "Tully et al. 2014"
+    },
+    {
+      "id": "c.horologium",
+      "name": "时钟座超星系团",
+      "name_en": "Horologium Supercluster",
+      "type": "超星系团",
+      "category": "宇宙结构",
+      "info": "南天时钟座—网罟座方向的超星系团结构。",
+      "source": "Tully et al. 2014"
     }
   ],
   "non_structure": [

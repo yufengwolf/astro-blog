@@ -16,6 +16,18 @@ hide:
 
 <p class="obj-parent">分类：恒星</p>
 
+
+<div class="solar-embed obj-viz">
+  <div class="solar-bar">
+    <span class="solar-title">3D 交互可视化</span>
+    <span class="solar-bar-btns"></span>
+  </div>
+  <div class="solar-frame">
+    <iframe src="https://astro-solar-3d.pages.dev/go?body=trappist1&embed=1" title="特拉比斯特 1 三维模型" loading="lazy" allowfullscreen allow="fullscreen"></iframe>
+  </div>
+  <p class="obj-viz-note">由外部 3D 项目（astro-solar-3d）提供，与本站数据独立维护；嵌入为精简界面，<a href="https://astro-solar-3d.pages.dev/go?body=trappist1" target="_blank" rel="noopener">打开完整交互版 ↗</a>。</p>
+</div>
+
 <div class="obj-data-grid">
 <section class="obj-data-block">
 <h2 id="physical">物理参数</h2>

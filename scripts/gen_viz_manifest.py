@@ -34,22 +34,28 @@ LINKS_LIVE = "https://astro-solar-3d.pages.dev/links.json"
 # 我库天体 id → 外部 links.json 的 id（仅收录确认存在的别名错配，绝不臆造）。
 # 例：我库用 sgr_a_star，外部用 sagA（Sagittarius A*）；我库用 cyg_x1，外部用 cygx1。
 ALIASES = {
-    "cyg_x1": "cygx1",
-    "sgr_a_star": "sagA",
-    "alphacen_a": "alphaCen",
-    "alphacen_b": "alphaCen",
-    "51_pegasi_b": "peg51",
-    # —— 以下为 2026-11-09 增补：我库 id 与外部 links.json id 错配（已逐一核对外部 name 确认）——
-    "proxima_centauri": "proxima",       # 比邻星（半人马座 αC）
-    "proxima_centauri_b": "proxima",     # 比邻星 b
-    "omega_cen": "omegaCen",             # 半人马座ω 星团
-    "kepler_452": "kepler452",           # 开普勒452 系统
-    "kepler_452b": "kepler452",          # 开普勒452b
+    # —— 纯重命名 / 分隔符差异（已逐一核对外部 name 确认）——
+    "cyg_x1": "cygx1",                   # 天鹅座 X-1
+    "sgr_a_star": "sagA",                # 人马座 A*
+    "51_pegasi_b": "peg51",              # 飞马座 51b
+    "proxima_centauri": "proxima",        # 比邻星（半人马座 αC）
+    "proxima_centauri_b": "proxima",      # 比邻星 b
+    "omega_cen": "omegaCen",              # 半人马座ω 星团
+    "kepler_452": "kepler452",           # 开普勒 452 系统
+    "kepler_452b": "kepler452",          # 开普勒 452b
     "procyon_a": "procyon",              # 南河三（小犬座 α）
-    "sirius_a": "sirius",                # 天狼星A（外部仅建模为 sirius 星）
-    "sirius_b": "sirius",                # 天狼星 B（同上）
+    "sirius_a": "sirius",                # 天狼星A（外部仅建模 sirius 系统；sirius_b 已独立建模）
     "m45": "pleiades",                   # 昴星团 M45（七姐妹）
-    "pegasi_51": "peg51",                # 飞马座51（首颗热木星母星）
+    "pegasi_51": "peg51",                # 飞马座 51（首颗热木星母星）
+    # —— 2026-11-14 增补：外部用短名/驼峰，我库用下划线全名（astro id → 外部 body id）——
+    "beta_pictoris": "betapic",          # 绘架座β
+    "eta_carinae": "etacar",             # 船底座η
+    "mu_cephei": "mucep",                # 仙王座μ
+    "p_cygni": "pcygni",                 # 天鹅座 P
+    "trappist_1": "trappist1",           # TRAPPIST-1
+    "uy_scuti": "uyscuti",               # 盾牌座 UY
+    "kepler_16b": "kepler_16_b",         # 开普勒 16b
+    "barnard_s_star": "barnard",         # 巴纳德星
 }
 
 
