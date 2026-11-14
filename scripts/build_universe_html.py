@@ -22,6 +22,95 @@ OUT  = os.path.join(ROOT, "docs", "universe-hierarchy.md")
 
 with open(TREE, encoding="utf-8") as f:
     data = json.load(f)
+
+# —— 节点级 3D 外链（cosmic-web）——
+# 主站层级节点 id 与 3D 仓 nodes[] id 命名空间不同（c.kebab vs camelCase），
+# 用显式 alias 关联（稳定英文 id，禁止模糊名称匹配）。给匹配节点附加 cosmos3d 外链。
+SOLAR3D_BASE = "https://astro-solar-3d.pages.dev"
+SOLAR3D_LINKS = os.path.join(ROOT, "scripts", "solar3d_links.json")
+NODE3D_ALIASES = {
+    # 宇宙结构 / 超星系团 / 星系团 / 星系群
+    "observable_universe": "universe",
+    "laniakea": "laniakea",
+    "c.perseuspisces": "perseuspisces",
+    "c.coma-cluster": "coma",
+    "c.shapley-supercluster": "shapley",
+    "c.hercules": "hercules",
+    "c.sculptorsc": "sculptorsc",
+    "c.horologium": "horologium",
+    "c.pisces-cetus-supercluster-complex": "piscescetus",
+    "hercules_corona_wall": "hcbg",
+    "c.virgo-supercluster": "virgo",
+    "c.hydra-centaurus-sc": "hydra",
+    "c.norma": "norma",
+    "c.pavoindus": "pavoindus",
+    "c.a1367": "a1367",
+    "c.a262": "a262",
+    "local_group": "localgroup",
+    "virgo_cluster": "virgocluster",
+    "c.fornax": "fornax",
+    "c.eridanus": "eridanus",
+    "c.ursamajor": "ursamajor",
+    "c.antlia": "antlia",
+    "c.centauruscluster": "centauruscluster",
+    "c.pegasuscluster": "pegasuscluster",
+    "c.m81-group": "m81group",
+    "c.centaurus-a-group": "cenagroup",
+    "c.sculptorgroup": "sculptorgroup",
+    "c.leo1group": "leo1group",
+    # 本星系群成员星系
+    "milky_way": "milkyway",
+    "m31": "andromeda",
+    "m33": "triangulum",
+    "lmc": "lmc",
+    "smc": "smc",
+    # 太阳系 / 行星系统
+    "c.solar-system": "solar",
+    "earth": "earth-moon",
+    "mars": "mars",
+    "jupiter": "jupiter",
+    "saturn": "saturn",
+    "uranus": "uranus",
+    "neptune": "neptune",
+    "pluto": "pluto",
+    # 聚星系统（多星系统）
+    "sirius": "sys_sirius",
+    "alpha_centauri": "sys_alphacen",
+    "procyon_a": "sys_procyon",
+    "eridani_40": "sys_eridani40",
+    "capella": "sys_capella",
+    "castor": "sys_castor",
+    "kepler_16": "sys_kepler16",
+    "epsilon_lyrae": "sys_epsilonlyr",
+    "algol": "sys_algol",
+    "cyg_x1": "sys_cygx1",
+}
+
+def _load_node3d():
+    node3d = {}
+    try:
+        with open(SOLAR3D_LINKS, encoding="utf-8") as f:
+            links = json.load(f)
+        for n in links.get("nodes", []):
+            node3d[n["id"]] = n
+    except (OSError, ValueError):
+        pass
+    return node3d
+
+node3d = _load_node3d()
+
+def _enrich_node(node):
+    nid = node.get("id")
+    if nid in NODE3D_ALIASES:
+        t = node3d.get(NODE3D_ALIASES[nid])
+        if t:
+            node["cosmos3d"] = SOLAR3D_BASE + "/" + t.get("url", "cosmos.html?node=" + NODE3D_ALIASES[nid])
+    for c in node.get("children", []) or []:
+        _enrich_node(c)
+
+for _root in [data] + (data.get("non_structure", []) or []):
+    _enrich_node(_root)
+
 # 安全嵌入：避免数据里的 "</script" 提前闭合脚本块
 tree_json = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace(
     "</script", "<\\/script"
@@ -103,6 +192,10 @@ hide:
 .uh-link{flex:none;margin-left:6px;color:var(--md-accent-fg-color,#7c4dff);font-size:.8rem;
   text-decoration:none;opacity:.65;transition:.15s}
 .uh-link:hover{opacity:1;text-decoration:underline}
+.uh-3d{flex:none;margin-left:6px;color:var(--md-accent-fg-color,#7c4dff);font-size:.7rem;font-weight:700;
+  text-decoration:none;background:color-mix(in srgb,var(--md-accent-fg-color,#7c4dff) 16%,transparent);
+  border:1px solid var(--md-accent-fg-color,#7c4dff);border-radius:6px;padding:1px 6px;transition:.15s}
+.uh-3d:hover{opacity:1;text-decoration:none;background:color-mix(in srgb,var(--md-accent-fg-color,#7c4dff) 30%,transparent)}
 .uh-cnt{font-size:.7rem;color:var(--md-default-fg-color--light,#9aa6c4);margin-left:auto;flex:none}
 .uh-nm mark{background:var(--md-primary-fg-color,#7c4dff);color:#fff;border-radius:3px;padding:0 1px}
 .uh-empty{color:var(--md-default-fg-color--light,#9aa6c4);text-align:center;padding:30px;font-size:.85rem}
@@ -155,12 +248,14 @@ document.addEventListener('DOMContentLoaded', function () {
     zh: {
       intro: '下面按「引力从属 / 包含关系」组织的天体层级思维导图，从「可观测宇宙」一路下钻到行星、卫星、星团与星云。层级数据由 universe-data.json 提供，天体详情与仓库数据（astro.json）按英文 id 唯一关联；命名遵循统一规范，类型与归属严格按天体真实性质挂接。带「归属未细化」的容器表示现有资料不足以确定更精确的层级，不做臆测归类。名称右侧带 ↗ 的节点可跳转本站详情卡片；搜索支持中文名、英文名与 M/NGC 等规范编号，页面语言请用顶栏的中 / EN 按钮切换。',
       search: '搜索天体名称 / 类型 / 英文名…', expand: '展开全部', collapse: '折叠全部',
-      empty: '没有匹配的天体。试试别的名称或清空筛选。', link: '查看本站详情卡片'
+      empty: '没有匹配的天体。试试别的名称或清空筛选。', link: '查看本站详情卡片',
+      cosmos3d: '在 3D 宇宙网中查看'
     },
     en: {
       intro: 'A hierarchy of celestial objects organized by gravitational affiliation and containment, from the Observable Universe down to planets, moons, clusters and nebulae. Hierarchy comes from universe-data.json; object details in astro.json are linked by a unique English id. Naming follows a strict convention and every affiliation reflects the object real physical nature. Containers marked "Unspecified" mean current sources do not support a finer placement — no guessing. Nodes with ↗ open the object detail card; search supports Chinese names, English names and M/NGC catalog numbers. Use the top-right button in the site header to switch language.',
       search: 'Search name / type / catalog number…', expand: 'Expand all', collapse: 'Collapse all',
-      empty: 'No matching objects. Try another name or clear the filters.', link: 'Open object detail card'
+      empty: 'No matching objects. Try another name or clear the filters.', link: 'Open object detail card',
+      cosmos3d: 'View in 3D cosmic web'
     }
   };
   function catOf(t){
@@ -281,6 +376,13 @@ document.addEventListener('DOMContentLoaded', function () {
       link.textContent = '↗';
       link.addEventListener('click', function(e){ e.stopPropagation(); });
       head.appendChild(link);
+    }
+    if (n.cosmos3d){
+      var l3 = document.createElement('a'); l3.className = 'uh-3d';
+      l3.href = n.cosmos3d; l3.target = '_blank'; l3.rel = 'noopener';
+      l3.title = T().cosmos3d; l3.textContent = '3D';
+      l3.addEventListener('click', function(e){ e.stopPropagation(); });
+      head.appendChild(l3);
     }
     if (hasKids){ var c = document.createElement('span'); c.className = 'uh-cnt'; c.textContent = countDesc(n); head.appendChild(c); }
 

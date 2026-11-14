@@ -1,7 +1,7 @@
 // 宇宙层级页 jsdom 交互回归校验（常驻维护工具）
 // 用法：仓库根目录执行 `node scripts/check_universe_dom.js`（需本机可 require('jsdom')）
 // 直接从生成的 docs/universe-hierarchy.md 抽取内嵌 JSON + 逻辑脚本实跑，
-// 覆盖：初始渲染 / alias / 详情链接 / 筛选 / 搜索（含大小写语义与英文名）/
+// 覆盖：初始渲染 / alias / 详情链接 / 节点级 3D 外链 / 筛选 / 搜索（含大小写语义与英文名）/
 // id 唯一关联 / 中英文切换 / 切换后展开状态保留 / 展开折叠 / URL 格式。
 const fs = require('fs');
 const { JSDOM } = require('jsdom');
@@ -135,6 +135,15 @@ if (chip) {
 $('#uh-expand').dispatchEvent(new window.Event('click'));
 const openAfterExpand = $$('.uh-children:not(.collapsed)').length;
 ok(openAfterExpand > 0, '展开全部生效', `open=${openAfterExpand}`);
+// 节点级 3D 外链（cosmic-web）：展开全部后，每个带 cosmos3d 的节点应渲染一个 .uh-3d 链接
+const cosmicNodes = nodes.filter(n => n.cosmos3d);
+ok(cosmicNodes.length > 0, '存在带 3D 外链的节点', `data=${cosmicNodes.length}`);
+ok(cosmicNodes.every(n => /^https:\/\/astro-solar-3d\.pages\.dev\//.test(n.cosmos3d)),
+   '3D 外链指向 astro-solar-3d 站点');
+const l3 = $$('.uh-3d');
+ok(l3.length === cosmicNodes.length, '3D 链接渲染数量与数据一致', `dom=${l3.length} data=${cosmicNodes.length}`);
+ok(l3.every(a => /^https:\/\/astro-solar-3d\.pages\.dev\//.test(a.getAttribute('href')) && a.target === '_blank'),
+   '3D 链接 URL 与 target=_blank 正确');
 $('#uh-collapse').dispatchEvent(new window.Event('click'));
 const collapsed = $$('.uh-children.collapsed').length;
 ok(collapsed > 0, '折叠全部生效', `collapsed=${collapsed}`);
