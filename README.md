@@ -13,7 +13,7 @@
 - **AI 编排录入**：只给一个名字，`add_object.py` 让豆包自动定位类型、抽数据、写库，并**自动出图 + 自动生成页面/构建**。
 - **详情页三段式布局（v1.7）**：hero 只留 2 项单行速览，物理/轨道/其他特征三表在桌面双列、移动单列；空值行直接不渲染，正文列去掉右侧 TOC 后铺满，为后续 3D 头像/轨道嵌入预留栅格位。详见[维护指南](维护指南.md)。
 - **展示单位统一（v1.8）**：全站口径从"半径"改为"直径 = 2 × 半径"，主单位按量级自动切换 km / 光年，辅单位给地球/太阳直径倍数或 M⊕ / M☉；温度统一 K、有表面温度的固态天体括注 ℃；黑洞称"事件视界直径"。单位字符串由 `gen_pages.py` 唯一实现，对比页（`compare.js`）改读预生成 `*_text` 字段，消除两套口径。详见[维护指南](维护指南.md)。
-- **详情页 3D 可视化（v1.9 重构）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。本仓库只做「消费者」：提供 iframe 窗口 + `go.html?body=<id>&embed=1` 地址，把天体 id 透传给外部仓库 `astro-solar-3d`（真实三维太阳系，210 天体支持 `?body=<id>` 直达外链），**绝不硬编码场景**；契约（哪些天体有 3D）来自外部仓库的 `links.json` 快照（`--sync` 刷新）。当前 141/223 有覆盖（63%）。size-of-space 待部署 CF Pages 后再接入。详见[维护指南](维护指南.md)。
+- **详情页 3D 可视化（v1.9 重构）**：每个天体详情页在 hero 正下方、参数表之前**条件渲染**「3D 交互可视化」块——有 `viz-manifest.json` 覆盖才渲染、无则优雅降级（不占位置）。本仓库只做「消费者」：提供 iframe 窗口 + `go.html?body=<id>&embed=1` 地址，把天体 id 透传给外部仓库 `astro-solar-3d`（真实三维太阳系，210 天体支持 `?body=<id>` 直达外链），**绝不硬编码场景**；契约（哪些天体有 3D）来自外部仓库的 `links.json` 快照（`--sync` 刷新）。当前 142/223 有覆盖（64%）。size-of-space 待部署 CF Pages 后再接入。详见[维护指南](维护指南.md)。
 
 ---
 
@@ -204,7 +204,7 @@ P3 给**每个天体详情页**加了一个条件渲染的「3D 交互可视化�
 
 - **契约来源 `viz-manifest.json`**（仓库根）：由 `scripts/gen_viz_manifest.py` **消费**外部仓库发布的 `links.json` 快照（仓库内 `scripts/solar3d_links.json`，`--sync` 可从线上刷新）机械派生。即「哪些天体有 3D」这张表由外部仓库填充，本仓库只读它；`gen_pages` 渲染详情页前读 `viz-manifest.json`，无条目就不渲染（优雅降级）。
 - **外链格式**（astro-solar-3d 规定）：万能入口 `go.html?body=<ID>` 只给 id，外部仓库自动落到正确页面（太阳系/卫星系/银河系…）；追加 `&embed=1` 隐藏导航/菜单只留天体特写（适合 iframe）；详情页块还附「打开完整交互版 ↗」链接（去掉 `embed=1` 的新标签地址）。
-- **当前唯一外部 3D 源**：`astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`，我方自有，真实三维太阳系），其 `links.json` 含 **210** 个天体（行星/卫星/冥王星/深空恒星星云），支持 `?body=<id>` 直达外链。详情页匹配我库 223 天体后，当前 **141 个**（63%）有 3D 覆盖。
+- **当前唯一外部 3D 源**：`astro-solar-3d`（Cloudflare Pages `astro-solar-3d.pages.dev`，我方自有，真实三维太阳系），其 `links.json` 含 **210** 个天体（行星/卫星/冥王星/深空恒星星云），支持 `?body=<id>` 直达外链。详情页匹配我库 223 天体后，当前 **142 个**（64%）有 3D 覆盖。
 - **size-of-space 暂未接入**：用户尚未把它部署到 CF Pages（fork 带 `deploy.yml` 但未开 Pages），待部署后再作为第二个来源加回 `gen_viz_manifest.py`。
 
 > 改 3D 覆盖度：外部仓库新增天体后，运行 `python scripts/gen_viz_manifest.py --sync` 刷新 `solar3d_links.json` 快照（或手动复制其部署产物的 `links.json`），再重跑 `gen_viz_manifest.py` + `gen_pages` 即可，无需改代码。仅当**我库 id 与外部 id 命名不一致**时才需在 `gen_viz_manifest.py` 的 `ALIASES` 里加一条（如 `sgr_a_star→sagA`、`cyg_x1→cygx1`）。

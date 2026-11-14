@@ -23,11 +23,19 @@ OUT  = os.path.join(ROOT, "docs", "universe-hierarchy.md")
 with open(TREE, encoding="utf-8") as f:
     data = json.load(f)
 
-# —— 节点级 3D 外链（cosmic-web）——
-# 主站层级节点 id 与 3D 仓 nodes[] id 命名空间不同（c.kebab vs camelCase），
-# 用显式 alias 关联（稳定英文 id，禁止模糊名称匹配）。给匹配节点附加 cosmos3d 外链。
+# —— 节点级 3D 外链（两档）——
+# 根因：恒星系统 / 天体节点（如天狼星）若走 3D 仓的 cosmic-web 节点链接
+# （cosmos.html?node=sys_sirius），在该尺度下只是银河系里的一个点，体验“降级成银河系”。
+# 正确做法：
+#   1) 有 repo_id 且 3D 仓有该天体的真实场景 → 复用 viz-manifest 的 go?body=<id>
+#      （与对象详情页完全一致，能看到真实双星 / 行星 / 星系场景）。
+#   2) 纯宇宙网容器（超星系团 / 星系团 / 星系群等无 repo_id 的节点）→ 走 3D 仓
+#      nodes[] 的 go.html?node=<id> 宇宙网聚焦视图（这类结构本就是宇宙网节点）。
+# NODE3D_ALIASES：主站层级 id 与 3D 仓 nodes[] id 命名空间不同（c.kebab vs camelCase），
+# 用显式 alias 关联（稳定英文 id，禁止模糊名称匹配）。
 SOLAR3D_BASE = "https://astro-solar-3d.pages.dev"
 SOLAR3D_LINKS = os.path.join(ROOT, "scripts", "solar3d_links.json")
+VIZ_MANIFEST = os.path.join(ROOT, "viz-manifest.json")
 NODE3D_ALIASES = {
     # 宇宙结构 / 超星系团 / 星系团 / 星系群
     "observable_universe": "universe",
@@ -99,12 +107,32 @@ def _load_node3d():
 
 node3d = _load_node3d()
 
+# viz-manifest：id -> 对象级真实场景外链（go?body=<id>，与详情页一致）
+def _load_viz_full():
+    out = {}
+    try:
+        with open(VIZ_MANIFEST, encoding="utf-8") as f:
+            m = json.load(f)
+        for oid, entries in m.get("objects", {}).items():
+            if entries and entries[0].get("full"):
+                out[oid] = entries[0]["full"]
+    except (OSError, ValueError):
+        pass
+    return out
+
+viz_full = _load_viz_full()
+
 def _enrich_node(node):
     nid = node.get("id")
-    if nid in NODE3D_ALIASES:
+    rid = node.get("repo_id")
+    # 1) 优先：自身是天体（有 repo_id）且 3D 仓有真实场景 → 与详情页一致
+    if rid and rid in viz_full:
+        node["cosmos3d"] = viz_full[rid]
+    # 2) 否则：纯宇宙网容器节点 → 走 3D 仓 nodes[] 的 go.html?node=<id> 宇宙网聚焦视图
+    elif nid in NODE3D_ALIASES:
         t = node3d.get(NODE3D_ALIASES[nid])
         if t:
-            node["cosmos3d"] = SOLAR3D_BASE + "/" + t.get("url", "cosmos.html?node=" + NODE3D_ALIASES[nid])
+            node["cosmos3d"] = SOLAR3D_BASE + "/" + t.get("goUrl", "go.html?node=" + NODE3D_ALIASES[nid])
     for c in node.get("children", []) or []:
         _enrich_node(c)
 

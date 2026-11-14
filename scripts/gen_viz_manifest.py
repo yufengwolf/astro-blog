@@ -56,6 +56,7 @@ ALIASES = {
     "uy_scuti": "uyscuti",               # 盾牌座 UY
     "kepler_16b": "kepler_16_b",         # 开普勒 16b
     "barnard_s_star": "barnard",         # 巴纳德星
+    "alpha_centauri": "alphaCen",        # 南门二（聚星系统；外部系统体 alphaCen）
 }
 
 

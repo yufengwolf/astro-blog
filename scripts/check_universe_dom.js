@@ -135,11 +135,21 @@ if (chip) {
 $('#uh-expand').dispatchEvent(new window.Event('click'));
 const openAfterExpand = $$('.uh-children:not(.collapsed)').length;
 ok(openAfterExpand > 0, '展开全部生效', `open=${openAfterExpand}`);
-// 节点级 3D 外链（cosmic-web）：展开全部后，每个带 cosmos3d 的节点应渲染一个 .uh-3d 链接
+// 节点级 3D 外链（两档）：有 repo_id 的天体走 go?body=<id> 真实场景；纯宇宙网容器走 go.html?node=<id>。
+// 关键回归：天体/聚星系统绝不能退化成 cosmos.html 点位视图（此前天狼星只显示银河系即此 bug）。
 const cosmicNodes = nodes.filter(n => n.cosmos3d);
 ok(cosmicNodes.length > 0, '存在带 3D 外链的节点', `data=${cosmicNodes.length}`);
 ok(cosmicNodes.every(n => /^https:\/\/astro-solar-3d\.pages\.dev\//.test(n.cosmos3d)),
    '3D 外链指向 astro-solar-3d 站点');
+const degraded = cosmicNodes.filter(n => /cosmos\.html/.test(n.cosmos3d));
+ok(degraded.length === 0, '3D 外链不使用 cosmos.html 点位视图（避免退化成银河系）', `bad=${degraded.map(n => n.id).join(',')}`);
+// 所有「有 3D 系统体」的聚星系统必须跳真实场景 go?body=<外部系统体>，而非节点点位
+const sysExpect = { sirius: 'sirius', alpha_centauri: 'alphaCen', capella: 'capella', castor: 'castor', procyon_a: 'procyon', algol: 'algol' };
+for (const [id, body] of Object.entries(sysExpect)) {
+  const node = nodes.find(n => n.id === id);
+  ok(node && node.cosmos3d && new RegExp('go\\?body=' + body + '($|&)').test(node.cosmos3d),
+     `${id}→真实场景 go?body=${body}`, node && node.cosmos3d);
+}
 const l3 = $$('.uh-3d');
 ok(l3.length === cosmicNodes.length, '3D 链接渲染数量与数据一致', `dom=${l3.length} data=${cosmicNodes.length}`);
 ok(l3.every(a => /^https:\/\/astro-solar-3d\.pages\.dev\//.test(a.getAttribute('href')) && a.target === '_blank'),

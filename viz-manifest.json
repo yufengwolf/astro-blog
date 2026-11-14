@@ -56,6 +56,16 @@
         "full": "https://astro-solar-3d.pages.dev/go?body=almaaz"
       }
     ],
+    "alpha_centauri": [
+      {
+        "repo": "solar-3d",
+        "kind": "system",
+        "title": "真实三维系统",
+        "name": "南门二（半人马座 α）",
+        "src": "https://astro-solar-3d.pages.dev/go?body=alphaCen&embed=1",
+        "full": "https://astro-solar-3d.pages.dev/go?body=alphaCen"
+      }
+    ],
     "alphacen_a": [
       {
         "repo": "solar-3d",
