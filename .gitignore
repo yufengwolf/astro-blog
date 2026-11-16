@@ -1,5 +1,6 @@
 # MkDocs 构建产物（Cloudflare Pages 服务器上构建，不进仓库）
 site/
+mkdocs.log
 
 # Python
 __pycache__/

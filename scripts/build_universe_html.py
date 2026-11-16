@@ -94,6 +94,51 @@ NODE3D_ALIASES = {
     "cyg_x1": "sys_cygx1",
 }
 
+# 聚星系统直达真实双星场景：主站节点 id（系统体 + 组件星）→ 3D 仓 stellar-system nodeId。
+# 根因：这类天体走 go?body=<id> 只落在 galaxy.html 的"一颗星"（用户看到的"大银河系"），
+#       必须走 go?node=<sys_id> 才能进 3D 仓 makeStellarSystem 的真实互绕双星/聚星场景。
+# 清单来自 3D 仓 src/data/stellar-orbits.js 的 STELLAR_SYSTEMS[].nodeId + bodies[]，
+# 用稳定英文 id 显式关联，禁止任何名称模糊匹配。
+STELLAR_SYSTEM_BODIES = {
+    "sirius": "sys_sirius",
+    "sirius_a": "sys_sirius",
+    "sirius_b": "sys_sirius",
+    "alpha_centauri": "sys_alphacen",
+    "alphacen_a": "sys_alphacen",
+    "alphacen_b": "sys_alphacen",
+    "proxima_centauri": "sys_alphacen",
+    "procyon": "sys_procyon",
+    "procyon_a": "sys_procyon",
+    "procyon_b": "sys_procyon",
+    "eridani_40": "sys_eridani40",
+    "eridani_40a": "sys_eridani40",
+    "eridani_40b": "sys_eridani40",
+    "eridani_40c": "sys_eridani40",
+    "capella": "sys_capella",
+    "capella_aa": "sys_capella",
+    "capella_ab": "sys_capella",
+    "capella_ba": "sys_capella",
+    "capella_bb": "sys_capella",
+    "castor": "sys_castor",
+    "castor_a1": "sys_castor",
+    "castor_a2": "sys_castor",
+    "castor_b1": "sys_castor",
+    "castor_b2": "sys_castor",
+    "castor_c1": "sys_castor",
+    "castor_c2": "sys_castor",
+    "kepler_16": "sys_kepler16",
+    "kepler_16_a": "sys_kepler16",
+    "kepler_16b": "sys_kepler16",
+    "algol": "sys_algol",
+    "cyg_x1": "sys_cygx1",
+    "v404_cyg": "sys_v404cyg",
+    "epsilon_lyrae": "sys_epsilonlyr",
+    "epsilon_lyrae_a1": "sys_epsilonlyr",
+    "epsilon_lyrae_a2": "sys_epsilonlyr",
+    "epsilon_lyrae_b1": "sys_epsilonlyr",
+    "epsilon_lyrae_b2": "sys_epsilonlyr",
+}
+
 def _load_node3d():
     node3d = {}
     try:
@@ -125,10 +170,16 @@ viz_full = _load_viz_full()
 def _enrich_node(node):
     nid = node.get("id")
     rid = node.get("repo_id")
-    # 1) 优先：自身是天体（有 repo_id）且 3D 仓有真实场景 → 与详情页一致
-    if rid and rid in viz_full:
+    # 0) 最高优先：聚星系统（系统体 + 组件星）→ 直达真实双星/聚星互绕场景 go?node=<sys_id>
+    #    必须排在分支 1 之前，否则 sirius 等有 repo_id 的节点会落回 galaxy 视图（大银河系）。
+    sys_id = STELLAR_SYSTEM_BODIES.get(nid)
+    if sys_id and sys_id in node3d:
+        t = node3d[sys_id]
+        node["cosmos3d"] = SOLAR3D_BASE + "/" + t.get("goUrl", "go.html?node=" + sys_id)
+    # 1) 自身是天体（有 repo_id）且 3D 仓有真实场景 → 与详情页一致（go?body=<id>）
+    elif rid and rid in viz_full:
         node["cosmos3d"] = viz_full[rid]
-    # 2) 否则：纯宇宙网容器节点 → 走 3D 仓 nodes[] 的 go.html?node=<id> 宇宙网聚焦视图
+    # 2) 纯宇宙网容器节点 → 走 3D 仓 nodes[] 的 go.html?node=<id> 宇宙网聚焦视图
     elif nid in NODE3D_ALIASES:
         t = node3d.get(NODE3D_ALIASES[nid])
         if t:

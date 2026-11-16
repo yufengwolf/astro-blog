@@ -143,12 +143,17 @@ ok(cosmicNodes.every(n => /^https:\/\/astro-solar-3d\.pages\.dev\//.test(n.cosmo
    '3D 外链指向 astro-solar-3d 站点');
 const degraded = cosmicNodes.filter(n => /cosmos\.html/.test(n.cosmos3d));
 ok(degraded.length === 0, '3D 外链不使用 cosmos.html 点位视图（避免退化成银河系）', `bad=${degraded.map(n => n.id).join(',')}`);
-// 所有「有 3D 系统体」的聚星系统必须跳真实场景 go?body=<外部系统体>，而非节点点位
-const sysExpect = { sirius: 'sirius', alpha_centauri: 'alphaCen', capella: 'capella', castor: 'castor', procyon_a: 'procyon', algol: 'algol' };
-for (const [id, body] of Object.entries(sysExpect)) {
+// 聚星系统（系统体 + 组件星）必须直达真实双星场景 go?node=sys_*（makeStellarSystem），
+// 不能落 go?body=<id>（那只是 galaxy.html 里的一颗星 = 用户看到的"大银河系"）。
+const sysExpect = {
+  sirius: 'sys_sirius', sirius_a: 'sys_sirius', sirius_b: 'sys_sirius',
+  alpha_centauri: 'sys_alphacen', procyon_a: 'sys_procyon', capella: 'sys_capella',
+  castor: 'sys_castor', kepler_16: 'sys_kepler16', algol: 'sys_algol', cyg_x1: 'sys_cygx1',
+};
+for (const [id, sysId] of Object.entries(sysExpect)) {
   const node = nodes.find(n => n.id === id);
-  ok(node && node.cosmos3d && new RegExp('go\\?body=' + body + '($|&)').test(node.cosmos3d),
-     `${id}→真实场景 go?body=${body}`, node && node.cosmos3d);
+  ok(node && node.cosmos3d && new RegExp('go(\\.html)?\\?node=' + sysId + '($|&)').test(node.cosmos3d),
+     `${id}→双星场景 go?node=${sysId}`, node && node.cosmos3d);
 }
 const l3 = $$('.uh-3d');
 ok(l3.length === cosmicNodes.length, '3D 链接渲染数量与数据一致', `dom=${l3.length} data=${cosmicNodes.length}`);
